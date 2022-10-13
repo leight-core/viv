@@ -1,0 +1,37 @@
+{
+	"cs": {
+		"dayjs": "cs",
+		"moment": "cs",
+		"antd": "cs_CZ"
+	},
+	"cs_CZ": {
+		"dayjs": "cs",
+		"moment": "cs",
+		"antd": "cs_CZ"
+	},
+	"cs-CZ": {
+		"dayjs": "cs",
+		"moment": "cs",
+		"antd": "cs_CZ"
+	},
+	"en": {
+		"dayjs": "en-gb",
+		"moment": "en-gb",
+		"antd": "en_US"
+	},
+	"en_US": {
+		"dayjs": "en-gb",
+		"moment": "en-gb",
+		"antd": "en_US"
+	},
+	"de": {
+		"dayjs": "de",
+		"moment": "de",
+		"antd": "de_DE"
+	},
+	"ru": {
+		"dayjs": "ru",
+		"moment": "ru",
+		"antd": "ru_RU"
+	}
+}
