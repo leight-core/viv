@@ -1,81 +1,81 @@
-import {ISdk} from "@leight-core/api";
 import {
-	cleanup,
-	generateImports,
-	toGeneratorCommons
-}             from "@leight-core/server";
+    cleanup,
+    generateImports,
+    ISdk,
+    toGeneratorCommons
+} from "@leight-core/viv";
 
 export function generateQueryEndpoint(sdk: ISdk): string {
-	const generatorCommons = toGeneratorCommons(sdk);
+    const generatorCommons = toGeneratorCommons(sdk);
 
-	sdk.imports.push(...[
-		{
-			imports: [
-				"FC",
-				"ConsumerProps",
-			],
-			from:    "\"react\"",
-		},
-		{imports: ["useQueryClient"], from: "\"@tanstack/react-query\""},
-		{
-			imports: [
-				"ISourceContext",
-				"IToOptionMapper",
-				"QueryInfer",
-				"SourceInfer",
-			],
-			from:    "\"@leight-core/api\"",
-		},
-		{
-			imports: [
-				"BlockProvider",
-				"useSourceContext",
-				"ISourceProviderProps",
-				"createQueryHook",
-				"createPromiseHook",
-				"createPromise",
-				"toLink",
-				"SourceProvider",
-				"SourceContext",
-				"List",
-				"IListProps",
-				"InfiniteList",
-				"IInfiniteListProps",
-				"IFilterProviderProps",
-				"FilterProvider",
-				"useOptionalFilterContext",
-				"useFilterContext",
-				"IOrderByProviderProps",
-				"OrderByProvider",
-				"useOptionalOrderByContext",
-				"useOrderByContext",
-				"SourceControlProvider",
-				"ISourceControlProviderProps",
-				"IFilterWithoutTranslationProps",
-				"Filter",
-				"IQuerySourceSelectProps",
-				"QuerySourceSelect",
-				"SelectionProvider",
-				"ISelectionProviderProps",
-				"useOptionalSelectionContext",
-				"useSelectionContext",
-				"Table",
-				"ITableProps",
-				"DrawerSelectItem",
-				"IDrawerSelectItemProps",
-			],
-			from:    "\"@leight-core/client\"",
-		},
-	]);
+    sdk.imports.push(...[
+        {
+            imports: [
+                "FC",
+                "ConsumerProps",
+            ],
+            from:    "\"react\"",
+        },
+        {imports: ["useQueryClient"], from: "\"@tanstack/react-query\""},
+        {
+            imports: [
+                "ISourceContext",
+                "IToOptionMapper",
+                "QueryInfer",
+                "SourceInfer",
+            ],
+            from:    "\"@leight-core/viv\"",
+        },
+        {
+            imports: [
+                "BlockProvider",
+                "useSourceContext",
+                "ISourceProviderProps",
+                "createQueryHook",
+                "createPromiseHook",
+                "createPromise",
+                "toLink",
+                "SourceProvider",
+                "SourceContext",
+                "List",
+                "IListProps",
+                "InfiniteList",
+                "IInfiniteListProps",
+                "IFilterProviderProps",
+                "FilterProvider",
+                "useOptionalFilterContext",
+                "useFilterContext",
+                "IOrderByProviderProps",
+                "OrderByProvider",
+                "useOptionalOrderByContext",
+                "useOrderByContext",
+                "SourceControlProvider",
+                "ISourceControlProviderProps",
+                "IFilterWithoutTranslationProps",
+                "Filter",
+                "IQuerySourceSelectProps",
+                "QuerySourceSelect",
+                "SelectionProvider",
+                "ISelectionProviderProps",
+                "useOptionalSelectionContext",
+                "useSelectionContext",
+                "Table",
+                "ITableProps",
+                "DrawerSelectItem",
+                "IDrawerSelectItemProps",
+            ],
+            from:    "\"@leight-core/viv\"",
+        },
+    ]);
 
-	const queryParams = `I${generatorCommons.name}QueryParams`;
-	const name        = generatorCommons.name;
-	const source      = generatorCommons.generics[0];
-	const request     = `SourceInfer.Query<${source}>`;
-	const response    = `SourceInfer.Item<${source}>`;
+    const queryParams = `I${generatorCommons.name}QueryParams`;
+    const name        = generatorCommons.name;
+    const source      = generatorCommons.generics[0];
+    const request     = `SourceInfer.Query<${source}>`;
+    const response    = `SourceInfer.Item<${source}>`;
 
-	// language=text
-	return cleanup(`
+    // language=text
+    return cleanup(`
 /**
  * Generated file; DO NOT modify as it could be overridden by a generator.
  */

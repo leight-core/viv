@@ -1,9 +1,9 @@
-import {IVisibleContext} from "@leight-core/api";
 import {
-	useContext,
-	useOptionalContext
-}                        from "@leight-core/client";
-import {createContext}   from "react";
+    IVisibleContext,
+    useContext,
+    useOptionalContext
+}                      from "@leight-core/viv";
+import {createContext} from "react";
 
 export const VisibleContext = createContext<IVisibleContext>(null as any);
 

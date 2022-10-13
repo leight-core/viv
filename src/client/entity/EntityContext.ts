@@ -1,6 +1,8 @@
-import {IEntityContext} from "@leight-core/api";
-import {useContext}     from "@leight-core/client";
-import {createContext}  from "react";
+import {
+    IEntityContext,
+    useContext
+}                      from "@leight-core/viv";
+import {createContext} from "react";
 
 export const EntityContext = createContext(null as unknown as IEntityContext<any>);
 

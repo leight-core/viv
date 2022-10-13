@@ -1,47 +1,47 @@
-import {ISdk} from "@leight-core/api";
 import {
-	cleanup,
-	generateImports,
-	toGeneratorCommons
-}             from "@leight-core/server";
+    cleanup,
+    generateImports,
+    ISdk,
+    toGeneratorCommons
+} from "@leight-core/viv";
 
 export function generateMutationEndpoint(sdk: ISdk): string {
-	const generatorCommons = toGeneratorCommons(sdk);
+    const generatorCommons = toGeneratorCommons(sdk);
 
-	sdk.imports.push(...[
-		{imports: ["FC"], from: "\"react\""},
-		{
-			imports: [
-				"IQueryParams",
-				"SourceInfer",
-			],
-			from:    "\"@leight-core/api\""
-		},
-		{
-			imports: [
-				"Form",
-				"IFormProps",
-				"MobileForm",
-				"IMobileFormProps",
-				"useSourceContext",
-				"ISourceProviderProps",
-				"createQueryHook",
-				"createPromiseHook",
-				"createPromise",
-				"toLink",
-				"createMutationHook",
-				"createPromise",
-			],
-			from:    "\"@leight-core/client\"",
-		},
-	]);
+    sdk.imports.push(...[
+        {imports: ["FC"], from: "\"react\""},
+        {
+            imports: [
+                "IQueryParams",
+                "SourceInfer",
+            ],
+            from:    "\"@leight-core/viv\""
+        },
+        {
+            imports: [
+                "Form",
+                "IFormProps",
+                "MobileForm",
+                "IMobileFormProps",
+                "useSourceContext",
+                "ISourceProviderProps",
+                "createQueryHook",
+                "createPromiseHook",
+                "createPromise",
+                "toLink",
+                "createMutationHook",
+                "createPromise",
+            ],
+            from:    "\"@leight-core/viv\"",
+        },
+    ]);
 
-	const name        = generatorCommons.name;
-	const generics    = generatorCommons.generics.join(", ");
-	const queryParams = `I${name}QueryParams`;
+    const name        = generatorCommons.name;
+    const generics    = generatorCommons.generics.join(", ");
+    const queryParams = `I${name}QueryParams`;
 
-	// language=text
-	return cleanup(`
+    // language=text
+    return cleanup(`
 /**
  * Generated file; DO NOT modify as it could be overridden by a generator.
  */

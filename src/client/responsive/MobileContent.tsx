@@ -1,15 +1,15 @@
-import {useIsMobile} from "@leight-core/client";
+import {useIsMobile} from "@leight-core/viv";
 import {
-	FC,
-	PropsWithChildren,
-	ReactNode
+    FC,
+    PropsWithChildren,
+    ReactNode
 }                    from "react";
 
 export type IMobileContentProps = PropsWithChildren<{
-	fallback?: ReactNode | null;
-	force?: boolean;
+    fallback?: ReactNode | null;
+    force?: boolean;
 }>;
 
 export const MobileContent: FC<IMobileContentProps> = ({force = false, children, fallback = null}) => {
-	return <>{force || useIsMobile() ? children : fallback}</>;
+    return <>{useIsMobile() || force ? children : fallback}</>;
 };

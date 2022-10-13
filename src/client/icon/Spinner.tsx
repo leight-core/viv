@@ -1,11 +1,11 @@
 import React, {
-	FC,
-	PropsWithChildren
+    FC,
+    PropsWithChildren
 }                   from "react";
 import {LoaderIcon} from "./LoaderIcon";
 
 export type ISpinner = PropsWithChildren<{
-	done?: boolean,
+    done?: boolean,
 }>;
 
 /**
@@ -13,9 +13,9 @@ export type ISpinner = PropsWithChildren<{
  * When true, children prop is rendered.
  */
 export const Spinner: FC<ISpinner> = (
-	{
-		done = false,
-		children
-	}) => {
-	return (done ? <>{children}</> : <LoaderIcon/>);
+    {
+        done = false,
+        children
+    }) => {
+    return (done ? <>{children}</> : <LoaderIcon/>);
 };

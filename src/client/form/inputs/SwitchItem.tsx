@@ -1,22 +1,22 @@
 import {
-	FormItem,
-	IFormItemProps
-}                  from "@leight-core/client";
+    FormItem,
+    IFormItemProps,
+    INamePath
+}                  from "@leight-core/viv";
 import {
-	Switch as CoolSwitch,
-	SwitchProps
+    Switch as CoolSwitch,
+    SwitchProps
 }                  from "antd";
-import {NamePath}  from "rc-field-form/lib/interface";
 import React, {FC} from "react";
 
 export interface ISwitchItemProps extends Partial<IFormItemProps> {
-	/**
-	 * Field name:
-	 *
-	 * - https://ant.design/components/form/#NamePath
-	 */
-	field: NamePath;
-	switchProps?: Partial<SwitchProps>;
+    /**
+     * Field name:
+     *
+     * - https://ant.design/components/form/#NamePath
+     */
+    field: INamePath;
+    switchProps?: Partial<SwitchProps>;
 }
 
 /**
@@ -29,10 +29,11 @@ export interface ISwitchItemProps extends Partial<IFormItemProps> {
  * - https://ant.design/components/switch/
  */
 export const SwitchItem: FC<ISwitchItemProps> = ({field, switchProps, ...props}) => {
-	return <FormItem
-		field={field}
-		valuePropName={"checked"}
-		{...props}
-		children={<CoolSwitch defaultChecked={false} {...switchProps}/>}
-	/>;
+    return <FormItem
+        field={field}
+        valuePropName={"checked"}
+        {...props}
+    >
+        <CoolSwitch defaultChecked={false} {...switchProps}/>
+    </FormItem>;
 };

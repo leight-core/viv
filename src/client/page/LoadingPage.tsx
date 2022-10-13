@@ -1,24 +1,25 @@
 import {
-	EmptyPage,
-	IEmptyPageProps,
-	LoaderIcon
-}               from "@leight-core/client";
+    EmptyPage,
+    IEmptyPageProps,
+    LoaderIcon
+}               from "@leight-core/viv";
 import {Result} from "antd";
 import {
-	FC,
-	ReactNode
+    FC,
+    ReactNode
 }               from "react";
 
 export interface ILoadingPageProps extends Partial<IEmptyPageProps> {
-	icon?: ReactNode;
+    icon?: ReactNode;
 }
 
 export const LoadingPage: FC<ILoadingPageProps> = ({children, icon = <LoaderIcon style={{fontSize: 42}}/>, ...props}) => {
-	return <EmptyPage title={"common.loading"} {...props}>
-		<Result
-			style={{marginTop: "10vh"}}
-			icon={icon}
-			children={children}
-		/>
-	</EmptyPage>;
+    return <EmptyPage title={"common.loading"} {...props}>
+        <Result
+            style={{marginTop: "10vh"}}
+            icon={icon}
+        >
+            {children}
+        </Result>
+    </EmptyPage>;
 };

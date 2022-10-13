@@ -1,14 +1,14 @@
-import {useIsTablet} from "@leight-core/client";
+import {useIsTablet} from "@leight-core/viv";
 import {
-	FC,
-	PropsWithChildren,
-	ReactNode
+    FC,
+    PropsWithChildren,
+    ReactNode
 }                    from "react";
 
 export type ITabletContentProps = PropsWithChildren<{
-	fallback?: ReactNode | null;
+    fallback?: ReactNode | null;
 }>;
 
 export const TabletContent: FC<ITabletContentProps> = ({children, fallback = null}) => {
-	return <>{useIsTablet() ? children : fallback}</>;
+    return <>{useIsTablet() ? children : fallback}</>;
 };

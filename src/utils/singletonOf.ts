@@ -3,6 +3,6 @@
  * is no global tracking of memoized stuff.
  */
 export const singletonOf = <T>(func: () => T): () => T => {
-	let $instance: T | undefined;
-	return () => $instance || ($instance = func());
+    let $instance: T | undefined;
+    return () => $instance || ($instance = func());
 };

@@ -1,3 +1,7 @@
-import fileSize from "filesize";
+import {filesize} from "filesize";
 
-export const toHumanBytes = (size: number) => fileSize(size);
+/**
+ * @TODO Move this to FileService
+ * @param size
+ */
+export const toHumanBytes = (size: number) => filesize(size);

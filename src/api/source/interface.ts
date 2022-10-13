@@ -1,9 +1,9 @@
-import {IQueryParams}       from "@leight-core/api";
+import {IQueryParams}       from "@leight-core/viv";
 import {
-	UseMutationOptions,
-	UseMutationResult,
-	UseQueryOptions,
-	UseQueryResult
+    UseMutationOptions,
+    UseMutationResult,
+    UseQueryOptions,
+    UseQueryResult
 }                           from "@tanstack/react-query";
 import {AxiosRequestConfig} from "axios";
 
@@ -13,13 +13,13 @@ export type IPromiseCallback<TRequest, TResponse, TQueryParams extends IQueryPar
 export type IHookCallback<TRequest, TResponse, TQueryParams extends IQueryParams = any> = () => IPromiseCallback<TRequest, TResponse, TQueryParams>;
 
 export interface IWithFulltext {
-	fulltext?: string;
+    fulltext?: string;
 }
 
 export interface IWithIdentity {
-	id: string;
+    id: string;
 }
 
 export interface IWithIdentityQuery extends IQueryParams {
-	id: string;
+    id: string;
 }

@@ -1,9 +1,9 @@
 import {
-	EmptyPage,
-	ITemplateProps,
-	LoaderIcon,
-	Template
-}             from "@leight-core/client";
+    EmptyPage,
+    ITemplateProps,
+    LoaderIcon,
+    Template
+}             from "@leight-core/viv";
 import {Card} from "antd";
 import {FC}   from "react";
 
@@ -15,13 +15,13 @@ export interface IPlaceholderPageProps extends Partial<ITemplateProps> {
  * to show at least "something".
  */
 export const PlaceholderPage: FC<IPlaceholderPageProps> = props => {
-	return <EmptyPage title={"component.placeholder"}>
-		<Card style={{minHeight: "65vh"}}>
-			<Template
-				icon={<LoaderIcon/>}
-				label={"component.placeholder"}
-				{...props}
-			/>
-		</Card>
-	</EmptyPage>;
+    return <EmptyPage title={"component.placeholder"}>
+        <Card style={{minHeight: "65vh"}}>
+            <Template
+                icon={<LoaderIcon/>}
+                label={"component.placeholder"}
+                {...props}
+            />
+        </Card>
+    </EmptyPage>;
 };

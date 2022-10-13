@@ -1,15 +1,15 @@
 import {
-	DependencyList,
-	useEffect,
-	useRef
+    DependencyList,
+    useEffect,
+    useRef
 } from "react";
 
 export const useUpdate = (deps: DependencyList[], callback: () => void) => {
-	const init = useRef(false);
-	useEffect(() => {
-		if (init.current) {
-			callback();
-		}
-		init.current = true;
-	}, deps);
+    const init = useRef(false);
+    useEffect(() => {
+        if (init.current) {
+            callback();
+        }
+        init.current = true;
+    }, deps);
 };

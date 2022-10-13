@@ -1,28 +1,28 @@
 import {Typography}     from "antd";
 import {
-	FC,
-	PropsWithChildren
+    FC,
+    PropsWithChildren
 }                       from "react";
 import {useTranslation} from "react-i18next";
 
 export type ICopyTextProps = PropsWithChildren<{
-	copy: string;
-	/**
-	 * Translation label for copy tooltips
-	 */
-	tooltip: string;
+    copy: string;
+    /**
+     * Translation label for copy tooltips
+     */
+    tooltip: string;
 }>;
 
-export const CopyText: FC<ICopyTextProps> = ({children, tooltip, copy}) => {
-	const {t} = useTranslation();
-	return <Typography.Text
-		copyable={{
-			text:     copy,
-			tooltips: [
-				t(tooltip + ".copy"),
-				t(tooltip + ".copied")
-			]
-		}}
-		children={children}
-	/>;
+export const CopyText: FC<ICopyTextProps> = ({tooltip, copy, ...props}) => {
+    const {t} = useTranslation();
+    return <Typography.Text
+        copyable={{
+            text:     copy,
+            tooltips: [
+                t(tooltip + ".copy"),
+                t(tooltip + ".copied")
+            ]
+        }}
+        {...props}
+    />;
 };

@@ -1,42 +1,42 @@
-import {ISdk} from "@leight-core/api";
 import {
-	cleanup,
-	generateImports,
-	toGeneratorCommons
-}             from "@leight-core/server";
+    cleanup,
+    generateImports,
+    ISdk,
+    toGeneratorCommons
+} from "@leight-core/viv";
 
 export function generateCreateEndpoint(sdk: ISdk): string {
-	const generatorCommons = toGeneratorCommons(sdk);
+    const generatorCommons = toGeneratorCommons(sdk);
 
-	sdk.imports.push(...[
-		{imports: ["FC"], from: "\"react\""},
-		{
-			imports: [
-				"SourceInfer",
-			],
-			from:    "\"@leight-core/api\""
-		},
-		{
-			imports: [
-				"Form",
-				"IFormProps",
-				"MobileForm",
-				"IMobileFormProps",
-				"createPromiseHook",
-				"createPromise",
-				"toLink",
-				"createMutationHook",
-			],
-			from:    "\"@leight-core/client\"",
-		},
-	]);
+    sdk.imports.push(...[
+        {imports: ["FC"], from: "\"react\""},
+        {
+            imports: [
+                "SourceInfer",
+            ],
+            from:    "\"@leight-core/viv\""
+        },
+        {
+            imports: [
+                "Form",
+                "IFormProps",
+                "MobileForm",
+                "IMobileFormProps",
+                "createPromiseHook",
+                "createPromise",
+                "toLink",
+                "createMutationHook",
+            ],
+            from:    "\"@leight-core/viv\"",
+        },
+    ]);
 
-	const name        = generatorCommons.name;
-	const source      = generatorCommons.generics[0];
-	const queryParams = `I${name}QueryParams`;
+    const name        = generatorCommons.name;
+    const source      = generatorCommons.generics[0];
+    const queryParams = `I${name}QueryParams`;
 
-	// language=text
-	return cleanup(`
+    // language=text
+    return cleanup(`
 /**
  * Generated file; DO NOT modify as it could be overridden by a generator.
  */

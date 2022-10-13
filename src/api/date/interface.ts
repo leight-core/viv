@@ -1,3 +1,3 @@
 export interface IDayJsContext {
-	readonly dayjs: any;
+    readonly dayjs: any;
 }

@@ -1,15 +1,15 @@
 import {UseQueryResult} from "@tanstack/react-query";
 
 export interface ISourceContext<TResponse> {
-	readonly name: string;
+    readonly name: string;
 
-	readonly result: UseQueryResult<TResponse[], any>;
+    readonly result: UseQueryResult<TResponse[], any>;
 
-	hasData(): boolean;
+    hasData(): boolean;
 
-	data(): TResponse[];
+    data(): TResponse[];
 
-	reset(): void;
+    reset(): void;
 
-	map(mapper: (item: TResponse) => any): any;
+    map(mapper: (item: TResponse) => any): any;
 }

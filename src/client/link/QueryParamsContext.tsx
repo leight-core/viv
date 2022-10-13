@@ -1,11 +1,9 @@
 import {
-	IQueryParams,
-	IQueryParamsContext
-}                      from "@leight-core/api";
-import {
-	useContext,
-	useOptionalContext
-}                      from "@leight-core/client";
+    IQueryParams,
+    IQueryParamsContext,
+    useContext,
+    useOptionalContext
+}                      from "@leight-core/viv";
 import {createContext} from "react";
 
 export const QueryParamsContext = createContext<IQueryParamsContext<any>>(null as any);

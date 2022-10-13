@@ -1,4 +1,6 @@
-import {ISdk}                     from "@leight-core/api";
-import {generateMutationEndpoint} from "@leight-core/server";
+import {
+    generateMutationEndpoint,
+    ISdk
+} from "@leight-core/viv";
 
 export const generateEndpoint = (sdk: ISdk) => generateMutationEndpoint(sdk);

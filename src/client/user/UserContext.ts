@@ -1,13 +1,13 @@
-import {IUser}         from "@leight-core/api";
 import {
-	useContext,
-	useOptionalContext
-}                      from "@leight-core/client";
+    IUser,
+    useContext,
+    useOptionalContext
+}                      from "@leight-core/viv";
 import {createContext} from "react";
 
 export interface IUserContext {
-	user: IUser;
-	isReady: boolean;
+    user: IUser;
+    isReady: boolean;
 }
 
 export const UserContext = createContext(null as unknown as IUserContext);

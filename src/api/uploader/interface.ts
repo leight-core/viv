@@ -1,14 +1,14 @@
 import {
-	IEventHandlers,
-	IEventResult,
-	IEvents
-}                   from "@leight-core/api";
+    IEventHandlers,
+    IEventResult,
+    IEvents
+}                   from "@leight-core/viv";
 import {UploadFile} from "antd/lib/upload/interface";
 
 export type IUploaderEventTypes =
-	"uploading"
-	| "error"
-	| "done";
+    "uploading"
+    | "error"
+    | "done";
 
 /**
  * Crazy thing this one: we override response from UploadFile to enforce user defined
@@ -17,11 +17,11 @@ export type IUploaderEventTypes =
 export type IOnUploaderDone<TResponse = void> = (file: UploadFile<TResponse> & { response: TResponse }) => IEventResult;
 
 export interface IUploaderEventHandlers<TResponse = void> extends IEventHandlers {
-	uploading(file: UploadFile): IEventResult;
+    uploading(file: UploadFile): IEventResult;
 
-	error(file: UploadFile): IEventResult;
+    error(file: UploadFile): IEventResult;
 
-	done: IOnUploaderDone<TResponse>;
+    done: IOnUploaderDone<TResponse>;
 }
 
 export interface IUploaderEvents<TResponse = void> extends IEvents<IUploaderEventTypes, IUploaderEventHandlers<TResponse>> {

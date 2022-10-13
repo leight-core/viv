@@ -1,18 +1,18 @@
 import {
-	Col,
-	Row
+    Col,
+    Row
 } from "antd";
 import React, {
-	FC,
-	PropsWithChildren
+    FC,
+    PropsWithChildren
 } from "react";
 
 export type ICenteredProps = PropsWithChildren<{
-	span?: number;
+    span?: number;
 }>;
 
 export const Centered: FC<ICenteredProps> = props => {
-	return <Row justify={"center"}>
-		<Col {...props}/>
-	</Row>;
+    return <Row justify={"center"}>
+        <Col {...props}/>
+    </Row>;
 };

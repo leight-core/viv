@@ -1,4 +1,4 @@
-import {IBootstrapConfig} from "@leight-core/api";
+import {IBootstrapConfig} from "@leight-core/viv";
 import axios              from "axios";
 import axiosRetry         from "axios-retry";
 import {Router}           from "next/router";
@@ -7,24 +7,24 @@ import {useEffect}        from "react";
 import {bootstrapLocale}  from "./bootstrapLocale";
 
 export const bootstrap = async (): Promise<IBootstrapConfig> => {
-	Router.events.on("routeChangeStart", () => NProgress.start());
-	Router.events.on("routeChangeComplete", () => NProgress.done());
-	Router.events.on("routeChangeError", () => NProgress.done());
+    Router.events.on("routeChangeStart", () => NProgress.start());
+    Router.events.on("routeChangeComplete", () => NProgress.done());
+    Router.events.on("routeChangeError", () => NProgress.done());
 
-	axios.defaults.timeout = 1000 * 60;
+    axios.defaults.timeout = 1000 * 60;
 
-	axiosRetry(axios, {
-		retries:    3,
-		retryDelay: axiosRetry.exponentialDelay,
-	});
+    axiosRetry(axios, {
+        retries:    3,
+        retryDelay: axiosRetry.exponentialDelay,
+    });
 
-	return {
-		locale: await bootstrapLocale(),
-	};
+    return {
+        locale: await bootstrapLocale(),
+    };
 };
 
 export const useBootstrap = (setBootstrapConfig: (config: IBootstrapConfig) => void) => {
-	useEffect(() => {
-		(async () => setBootstrapConfig(await bootstrap()))();
-	}, []);
+    useEffect(() => {
+        (async () => setBootstrapConfig(await bootstrap()))();
+    }, []);
 };

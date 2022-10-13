@@ -1,5 +1,7 @@
-import {IDayJsContext} from "@leight-core/api";
-import {useContext}    from "@leight-core/client";
+import {
+    IDayJsContext,
+    useContext
+}                      from "@leight-core/viv";
 import {createContext} from "react";
 
 export const DayjsContext = createContext(null as unknown as IDayJsContext);

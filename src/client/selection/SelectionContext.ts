@@ -1,9 +1,9 @@
-import {ISelectionContext} from "@leight-core/api";
 import {
-	useContext,
-	useOptionalContext
-}                          from "@leight-core/client";
-import {createContext}     from "react";
+    ISelectionContext,
+    useContext,
+    useOptionalContext
+}                      from "@leight-core/viv";
+import {createContext} from "react";
 
 export const SelectionContext = createContext<ISelectionContext<any>>(null as any);
 

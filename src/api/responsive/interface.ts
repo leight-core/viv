@@ -1,7 +1,7 @@
 export interface IResponsiveContext {
-	isBrowser(): boolean;
+    isBrowser(): boolean;
 
-	isMobile(): boolean;
+    isMobile(): boolean;
 
-	isTablet(): boolean;
+    isTablet(): boolean;
 }

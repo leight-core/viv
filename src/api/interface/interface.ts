@@ -10,17 +10,17 @@ export type Nullable<T> = { [P in keyof T]: T[P] | null };
 export type Undefinable<T> = { [P in keyof T]: T[P] | undefined };
 
 export type NullableWithOptional<T> =
-	PickRequired<T>
-	& Nullable<PickOptional<T>>;
+    PickRequired<T>
+    & Nullable<PickOptional<T>>;
 export type UndefinableWithOptional<T> =
-	PickRequired<T>
-	& Undefinable<PickOptional<T>>;
+    PickRequired<T>
+    & Undefinable<PickOptional<T>>;
 
 export type NullableOptional<T> = Partial<NullableWithOptional<T>>;
 export type UndefinableOptional<T> = Partial<UndefinableWithOptional<T>>;
 
 export interface IndexOf<T> {
-	[index: string]: T;
+    [index: string]: T;
 }
 
 export type IfVoid<TType, TExtends = void> = TExtends extends void ? TType : TType & TExtends;

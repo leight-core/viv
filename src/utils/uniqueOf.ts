@@ -5,10 +5,10 @@
  * @param key
  */
 export const uniqueOf = <T>(array: T[], key?: keyof T): T[] => {
-	return key ? [
-		...new Map(array.map(item => [
-			item[key],
-			item
-		])).values()
-	] : [...new Set(array)];
+    return key ? [
+        ...new Map(array.map(item => [
+            item[key],
+            item
+        ])).values()
+    ] : [...new Set(array)];
 };

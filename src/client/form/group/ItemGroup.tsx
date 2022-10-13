@@ -1,16 +1,16 @@
 import {
-	ItemGroupProvider,
-	useOptionalItemGroupContext
-}                 from "@leight-core/client";
+    ItemGroupProvider,
+    useOptionalItemGroupContext
+}                 from "@leight-core/viv";
 import {NamePath} from "rc-field-form/lib/interface";
 import {
-	FC,
-	PropsWithChildren
+    FC,
+    PropsWithChildren
 }                 from "react";
 
 export type IItemGroupProps = PropsWithChildren<{
-	prefix: NamePath;
-	translation?: string;
+    prefix: NamePath;
+    translation?: string;
 }>;
 
 /**
@@ -21,7 +21,7 @@ export type IItemGroupProps = PropsWithChildren<{
  * Also, do no not use some kind of "global" item group.
  */
 export const ItemGroup: FC<IItemGroupProps> = ({prefix, ...props}) => {
-	const itemGroupContext = useOptionalItemGroupContext();
-	const name             = ([] as (string | number)[]).concat(itemGroupContext ? itemGroupContext.prefix : [], Array.isArray(prefix) ? prefix : [prefix]);
-	return <ItemGroupProvider prefix={name} {...props}/>;
+    const itemGroupContext = useOptionalItemGroupContext();
+    const name             = ([] as (string | number)[]).concat(itemGroupContext ? itemGroupContext.prefix : [], Array.isArray(prefix) ? prefix : [prefix]);
+    return <ItemGroupProvider prefix={name} {...props}/>;
 };

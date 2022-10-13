@@ -1,9 +1,9 @@
 export interface IVisibleContext {
-	readonly visible: boolean;
+    readonly visible: boolean;
 
-	setVisible(visible: boolean): void;
+    setVisible(visible: boolean): void;
 
-	show(): void;
+    show(): void;
 
-	hide(): void;
+    hide(): void;
 }

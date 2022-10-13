@@ -1,6 +1,8 @@
-import {IResponsiveContext} from "@leight-core/api";
-import {useContext}         from "@leight-core/client";
-import {createContext}      from "react";
+import {
+    IResponsiveContext,
+    useContext
+}                      from "@leight-core/viv";
+import {createContext} from "react";
 
 export const ResponsiveContext = createContext(null as unknown as IResponsiveContext);
 

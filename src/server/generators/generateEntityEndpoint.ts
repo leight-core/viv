@@ -1,55 +1,55 @@
-import {ISdk} from "@leight-core/api";
 import {
-	cleanup,
-	generateImports,
-	toGeneratorCommons
-}             from "@leight-core/server";
+    cleanup,
+    generateImports,
+    ISdk,
+    toGeneratorCommons
+} from "@leight-core/viv";
 
 export function generateEntityEndpoint(sdk: ISdk): string {
-	const generatorCommons = toGeneratorCommons(sdk);
+    const generatorCommons = toGeneratorCommons(sdk);
 
-	sdk.imports.push(...[
-		{
-			imports: [
-				"FC",
-			],
-			from:    "\"react\"",
-		},
-		{imports: ["useQueryClient"], from: "\"@tanstack/react-query\""},
-		{
-			imports: [
-				"QueryInfer",
-			],
-			from:    "\"@leight-core/api\"",
-		},
-		{
-			imports: [
-				"createQueryHook",
-				"createPromiseHook",
-				"createPromise",
-				"toLink",
-				"IFilterProviderProps",
-				"FilterProvider",
-				"useOptionalFilterContext",
-				"useFilterContext",
-				"IOrderByProviderProps",
-				"OrderByProvider",
-				"useOptionalOrderByContext",
-				"useOrderByContext",
-				"SourceControlProvider",
-				"ISourceControlProviderProps",
-			],
-			from:    "\"@leight-core/client\"",
-		},
-	]);
+    sdk.imports.push(...[
+        {
+            imports: [
+                "FC",
+            ],
+            from:    "\"react\"",
+        },
+        {imports: ["useQueryClient"], from: "\"@tanstack/react-query\""},
+        {
+            imports: [
+                "QueryInfer",
+            ],
+            from:    "\"@leight-core/viv\"",
+        },
+        {
+            imports: [
+                "createQueryHook",
+                "createPromiseHook",
+                "createPromise",
+                "toLink",
+                "IFilterProviderProps",
+                "FilterProvider",
+                "useOptionalFilterContext",
+                "useFilterContext",
+                "IOrderByProviderProps",
+                "OrderByProvider",
+                "useOptionalOrderByContext",
+                "useOrderByContext",
+                "SourceControlProvider",
+                "ISourceControlProviderProps",
+            ],
+            from:    "\"@leight-core/viv\"",
+        },
+    ]);
 
-	const queryParams = `I${generatorCommons.name}QueryParams`;
-	const name        = generatorCommons.name;
-	const request     = generatorCommons.generics[0];
-	const response    = generatorCommons.generics[1];
+    const queryParams = `I${generatorCommons.name}QueryParams`;
+    const name        = generatorCommons.name;
+    const request     = generatorCommons.generics[0];
+    const response    = generatorCommons.generics[1];
 
-	// language=text
-	return cleanup(`
+    // language=text
+    return cleanup(`
 /**
  * Generated file; DO NOT modify as it could be overridden by a generator.
  */

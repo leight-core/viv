@@ -9,6 +9,9 @@
 		"strictPropertyInitialization": true,
 		"strict": true,
 		"allowJs": true,
+        "useDefineForClassFields": true,
+        "disableSolutionSearching": true,
+        "checkJs": true,
 		"noImplicitAny": true,
 		"target": "ES2021",
 		"module": "CommonJS",
@@ -30,12 +33,13 @@
 		],
 		"baseUrl": "src",
 		"paths": {
-			"@leight-core/api": [
+			"@leight-core/viv": [
 				"."
 			]
 		}
 	},
 	"include": [
-		"src/**/*"
+		"src/**/*",
+        "src/**/*.json"
 	]
 }

@@ -1,22 +1,22 @@
 import {
-	FormItem,
-	IFormItemProps
-}                  from "@leight-core/client";
+    FormItem,
+    IFormItemProps,
+    INamePath
+}                  from "@leight-core/viv";
 import {
-	Checkbox as CoolCheckbox,
-	CheckboxProps
+    Checkbox as CoolCheckbox,
+    CheckboxProps
 }                  from "antd";
-import {NamePath}  from "rc-field-form/lib/interface";
 import React, {FC} from "react";
 
 export interface ICheckboxItemProps extends Partial<IFormItemProps> {
-	/**
-	 * Field name:
-	 *
-	 * - https://ant.design/components/form/#NamePath
-	 */
-	field: NamePath;
-	checkboxProps?: Partial<CheckboxProps>;
+    /**
+     * Field name:
+     *
+     * - https://ant.design/components/form/#NamePath
+     */
+    field: INamePath;
+    checkboxProps?: Partial<CheckboxProps>;
 }
 
 /**
@@ -29,10 +29,11 @@ export interface ICheckboxItemProps extends Partial<IFormItemProps> {
  * - https://ant.design/components/checkbox/
  */
 export const CheckboxItem: FC<ICheckboxItemProps> = ({field, checkboxProps, ...props}) => {
-	return <FormItem
-		field={field}
-		valuePropName={"checked"}
-		{...props}
-		children={<CoolCheckbox defaultChecked={false} {...checkboxProps}/>}
-	/>;
+    return <FormItem
+        field={field}
+        valuePropName={"checked"}
+        {...props}
+    >
+        <CoolCheckbox defaultChecked={false} {...checkboxProps}/>
+    </FormItem>;
 };

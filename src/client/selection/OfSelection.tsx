@@ -1,24 +1,24 @@
 import {
-	ISelectionContext,
-	IWithIdentity
-}                            from "@leight-core/api";
-import {useSelectionContext} from "@leight-core/client";
-import {useEffect}           from "react";
+    ISelectionContext,
+    IWithIdentity,
+    useSelectionContext
+}                  from "@leight-core/viv";
+import {useEffect} from "react";
 
 export interface IOfSelection<TItem extends Record<string, any> & IWithIdentity = any, TOnChange = any> {
-	value?: TOnChange;
-	selectionContext: ISelectionContext<TItem>;
+    value?: TOnChange;
+    selectionContext: ISelectionContext<TItem>;
 }
 
 export interface IOfSelectionProps<TItem extends Record<string, any> & IWithIdentity = any, TOnChange = any> {
-	value?: TOnChange;
+    value?: TOnChange;
 
-	/**
-	 * Resolves values of selection into selection context.
-	 *
-	 * @param ofSelection
-	 */
-	ofSelection(ofSelection: IOfSelection<TItem, TOnChange>): void;
+    /**
+     * Resolves values of selection into selection context.
+     *
+     * @param ofSelection
+     */
+    ofSelection(ofSelection: IOfSelection<TItem, TOnChange>): void;
 }
 
 /**
@@ -29,17 +29,17 @@ export interface IOfSelectionProps<TItem extends Record<string, any> & IWithIden
  * @constructor
  */
 export function OfSelection<TItem extends Record<string, any> & IWithIdentity = any, TOnChange = any>(
-	{
-		value,
-		ofSelection,
-	}: IOfSelectionProps<TItem, TOnChange>) {
-	const selectionContext = useSelectionContext<TItem>();
-	useEffect(() => {
-		selectionContext.clear();
-		ofSelection({
-			value,
-			selectionContext,
-		});
-	}, [JSON.stringify(value)]);
-	return null;
+    {
+        value,
+        ofSelection,
+    }: IOfSelectionProps<TItem, TOnChange>) {
+    const selectionContext = useSelectionContext<TItem>();
+    useEffect(() => {
+        selectionContext.clear();
+        ofSelection({
+            value,
+            selectionContext,
+        });
+    }, [JSON.stringify(value)]);
+    return null;
 }

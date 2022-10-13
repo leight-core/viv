@@ -1,4 +1,6 @@
-import {ISdk}                  from "@leight-core/api";
-import {generateFetchEndpoint} from "@leight-core/server";
+import {
+    generateFetchEndpoint,
+    ISdk
+} from "@leight-core/viv";
 
 export const generateListEndpoint = (sdk: ISdk) => generateFetchEndpoint(sdk);

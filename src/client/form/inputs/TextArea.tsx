@@ -1,17 +1,17 @@
-import {useOptionalFormItemContext} from "@leight-core/client";
+import {useOptionalFormItemContext} from "@leight-core/viv";
 import {Input}                      from "antd";
 import {
-	ComponentProps,
-	FC,
-	forwardRef
+    ComponentProps,
+    FC,
+    forwardRef
 }                                   from "react";
 
 export interface ITextAreaProps extends Partial<ComponentProps<typeof Input.TextArea>> {
-	usePlaceholder?: boolean;
+    usePlaceholder?: boolean;
 }
 
 export const TextArea: FC<ITextAreaProps> = forwardRef(({usePlaceholder, ...props}, ref) => {
-	const formItemContext = useOptionalFormItemContext();
-	formItemContext && usePlaceholder && (props.placeholder = formItemContext.label);
-	return <Input.TextArea ref={ref as any} {...props}/>;
+    const formItemContext = useOptionalFormItemContext();
+    formItemContext && usePlaceholder && (props.placeholder = formItemContext.label);
+    return <Input.TextArea ref={ref as any} {...props}/>;
 });

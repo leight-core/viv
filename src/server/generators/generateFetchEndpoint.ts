@@ -1,73 +1,73 @@
-import {ISdk} from "@leight-core/api";
 import {
-	cleanup,
-	generateImports
-}             from "@leight-core/server";
+    cleanup,
+    generateImports,
+    ISdk
+} from "@leight-core/viv";
 
 export function generateFetchEndpoint(sdk: ISdk): string {
-	const name        = sdk.endpoint.name.replace("Endpoint", "");
-	const response    = `SourceInfer.Item<${(sdk.endpoint.generics?.[0] || "void")}>`;
-	const queryParams = `I${name}QueryParams`;
-	const api         = sdk.endpoint.api;
+    const name        = sdk.endpoint.name.replace("Endpoint", "");
+    const response    = `SourceInfer.Item<${(sdk.endpoint.generics?.[0] || "void")}>`;
+    const queryParams = `I${name}QueryParams`;
+    const api         = sdk.endpoint.api;
 
-	sdk.imports.push(...[
-		{
-			imports: [
-				"FC",
-				"createContext",
-				"ReactElement",
-				"ReactNode",
-			],
-			from:    "\"react\""
-		},
-		{
-			imports: [
-				"BreadcrumbProps",
-				"Breadcrumb",
-			],
-			from:    "\"antd\""
-		},
-		{
-			imports: [
-				"IEntityContext",
-				"SourceInfer",
-				"IWithIdentityQuery",
-				"INavigate",
-			],
-			from:    "\"@leight-core/api\""
-		},
-		{
-			imports: [
-				"isCallable",
-			],
-			from:    "\"@leight-core/utils\""
-		},
-		{imports: ["useQueryClient"], from: "\"@tanstack/react-query\""},
-		{
-			imports: [
-				"toLink",
-				"createQueryHook",
-				"createPromiseHook",
-				"createPromise",
-				"useContext",
-				"useOptionalContext",
-				"IEntityProviderProps",
-				"EntityContext",
-				"EntityProvider",
-				"IQueryProps",
-				"Query",
-				"BrowserPage",
-				"IBrowserPageProps",
-				"MobilePage",
-				"IMobilePageProps",
-				"useParams",
-			],
-			from:    "\"@leight-core/client\""
-		},
-	]);
+    sdk.imports.push(...[
+        {
+            imports: [
+                "FC",
+                "createContext",
+                "ReactElement",
+                "ReactNode",
+            ],
+            from:    "\"react\""
+        },
+        {
+            imports: [
+                "BreadcrumbProps",
+                "Breadcrumb",
+            ],
+            from:    "\"antd\""
+        },
+        {
+            imports: [
+                "IEntityContext",
+                "SourceInfer",
+                "IWithIdentityQuery",
+                "INavigate",
+            ],
+            from:    "\"@leight-core/viv\""
+        },
+        {
+            imports: [
+                "isCallable",
+            ],
+            from:    "\"@leight-core/viv\""
+        },
+        {imports: ["useQueryClient"], from: "\"@tanstack/react-query\""},
+        {
+            imports: [
+                "toLink",
+                "createQueryHook",
+                "createPromiseHook",
+                "createPromise",
+                "useContext",
+                "useOptionalContext",
+                "IEntityProviderProps",
+                "EntityContext",
+                "EntityProvider",
+                "IQueryProps",
+                "Query",
+                "BrowserPage",
+                "IBrowserPageProps",
+                "MobilePage",
+                "IMobilePageProps",
+                "useParams",
+            ],
+            from:    "\"@leight-core/viv\""
+        },
+    ]);
 
-	// language=text
-	return cleanup(`
+    // language=text
+    return cleanup(`
 /**
  * Generated file; DO NOT modify as it could be overridden by a generator.
  */

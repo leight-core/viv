@@ -1,6 +1,8 @@
-import {II18NextContext} from "@leight-core/api";
-import {useContext}      from "@leight-core/client";
-import {createContext}   from "react";
+import {
+    II18NextContext,
+    useContext
+}                      from "@leight-core/viv";
+import {createContext} from "react";
 
 export const I18NextContext = createContext<II18NextContext>(null as unknown as II18NextContext);
 

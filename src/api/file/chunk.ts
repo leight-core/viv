@@ -1,39 +1,39 @@
 import {
-	IContainer,
-	IEndpointRequest,
-	IFile,
-	IFileService,
-	IQueryParams
-} from "@leight-core/api";
+    IContainer,
+    IEndpointRequest,
+    IFile,
+    IFileService,
+    IQueryParams
+} from "@leight-core/viv";
 
 export interface IChunkCommit {
-	readonly path: string;
-	readonly name: string,
-	readonly replace: boolean;
+    readonly path: string;
+    readonly name: string,
+    readonly replace: boolean;
 }
 
 export interface IChunkServiceConfig {
-	readonly path: string;
+    readonly path: string;
 }
 
 export interface IChunkServiceDeps {
-	readonly config?: IChunkServiceConfig;
-	readonly fileService: IFileService;
+    readonly config?: IChunkServiceConfig;
+    readonly fileService: IFileService;
 }
 
 export interface IChunkService {
-	toFile(chunkId: string): string;
+    toFile(chunkId: string): string;
 
-	chunk(chunkId: string, chunk: Promise<Buffer>): Promise<void>;
+    chunk(chunkId: string, chunk: Promise<Buffer>): Promise<void>;
 
-	commit(chunkId: string, commit: IChunkCommit): IFile;
+    commit(chunkId: string, commit: IChunkCommit): IFile;
 }
 
 export type IChunkServiceFactory = (deps: IChunkServiceDeps) => IChunkService;
 
 export type IChunkCommitEvent = <//
-	TContainer extends IContainer,
-	TRequest,
-	TResponse,
-	TQuery extends IQueryParams = any,
-	>(file: IFile, params: IEndpointRequest<TContainer, TRequest, TResponse, TQuery>) => Promise<IFile>;
+    TContainer extends IContainer,
+    TRequest,
+    TResponse,
+    TQuery extends IQueryParams = any,
+    >(file: IFile, params: IEndpointRequest<TContainer, TRequest, TResponse, TQuery>) => Promise<IFile>;

@@ -1,17 +1,17 @@
-import {useOptionalFormItemContext} from "@leight-core/client";
+import {useOptionalFormItemContext} from "@leight-core/viv";
 import {Input}                      from "antd";
 import {
-	ComponentProps,
-	FC,
-	forwardRef
+    ComponentProps,
+    FC,
+    forwardRef
 }                                   from "react";
 
 export interface IPasswordInputProps extends Partial<ComponentProps<typeof Input.Password>> {
-	usePlaceholder?: boolean;
+    usePlaceholder?: boolean;
 }
 
 export const PasswordInput: FC<IPasswordInputProps> = forwardRef(({usePlaceholder, ...props}, ref) => {
-	const formItemContext = useOptionalFormItemContext();
-	formItemContext && usePlaceholder && (props.placeholder = formItemContext.label);
-	return <Input.Password ref={ref as any} {...props}/>;
+    const formItemContext = useOptionalFormItemContext();
+    formItemContext && usePlaceholder && (props.placeholder = formItemContext.label);
+    return <Input.Password ref={ref as any} {...props}/>;
 });

@@ -1,8 +1,8 @@
-import {IBlockContext} from "@leight-core/api";
 import {
-	useContext,
-	useOptionalContext
-}                      from "@leight-core/client";
+    IBlockContext,
+    useContext,
+    useOptionalContext
+}                      from "@leight-core/viv";
 import {createContext} from "react";
 
 export const BlockContext = createContext<IBlockContext>(null as unknown as IBlockContext);
