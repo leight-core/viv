@@ -1,9 +1,11 @@
 import {
+    createContext,
     IEntityContext,
-    useContext
-}                      from "@leight-core/viv";
-import {createContext} from "react";
+    useContext,
+    useOptionalContext
+} from "@leight-core/viv";
 
-export const EntityContext = createContext(null as unknown as IEntityContext<any>);
+export const EntityContext = createContext<IEntityContext<any>>();
 
-export const useEntityContext = <TEntity>(): IEntityContext<TEntity> => useContext(EntityContext, "EntityContext");
+export const useEntityContext         = <TEntity>() => useContext<IEntityContext<TEntity>>(EntityContext, "EntityContext");
+export const useOptionalEntityContext = <TEntity>() => useOptionalContext<IEntityContext<TEntity>>(EntityContext);

@@ -1,8 +1,7 @@
 import {
-    BlockProvider,
+    LoaderProvider,
     ScrollToTop,
-    useBlockContext,
-    useLayoutBlockContext,
+    useLayoutLoaderContext,
     useMenuSelectionContext,
     useOptionalSiderCollapseContext
 }                       from "@leight-core/viv";
@@ -35,20 +34,13 @@ export type IEmptyPageProps = PropsWithChildren<{
      *
      * Defaults to `false`.
      */
-    blocked?: boolean;
+    defaultLoading?: boolean;
     /**
      * Selected menu items.
      */
     menuSelection?: string[];
     values?: any;
 }>;
-
-const EmptyPageInternal: FC<PropsWithChildren<any>> = ({children}) => {
-    const blockContext = useBlockContext();
-    return <Spin spinning={blockContext.isBlocked()}>
-        {children}
-    </Spin>;
-};
 
 /**
  * Quite simple empty page without any additional features.
@@ -57,25 +49,27 @@ export const EmptyPage: FC<IEmptyPageProps> = (
     {
         title,
         tabTitle,
-        blocked = false,
+        defaultLoading = false,
         collapsed,
         menuSelection = [],
         values,
-        ...props
+        children,
     }) => {
-    const {t}          = useTranslation();
-    const blockContext = useLayoutBlockContext();
+    const {t}                 = useTranslation();
+    const layoutLoaderContext = useLayoutLoaderContext();
     useMenuSelectionContext().useSelection(menuSelection);
     useOptionalSiderCollapseContext()?.useCollapse(collapsed, true);
     useEffect(() => {
-        blockContext.unblock(true);
+        layoutLoaderContext.done();
     }, []);
     tabTitle = tabTitle || (title ? `${title}.title` : undefined);
     return <>
         {tabTitle && <Head><title key={"title"}>{t(tabTitle, values)}</title></Head>}
         <ScrollToTop/>
-        <BlockProvider locked={blocked}>
-            <EmptyPageInternal {...props}/>
-        </BlockProvider>
+        <LoaderProvider defaultLoading={defaultLoading}>
+            {loaderContext => <Spin spinning={loaderContext.isLoading()}>
+                {children}
+            </Spin>}
+        </LoaderProvider>
     </>;
 };

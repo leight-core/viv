@@ -1,5 +1,5 @@
 import {
-    FormBlockProvider,
+    FormLoadingProvider,
     IFormErrors,
     IMobileFormContext,
     isCallable,
@@ -23,7 +23,7 @@ export const MobileFormProvider: FC<IMobileFormProviderProps> = ({translation, c
     const {t}                           = useTranslation();
     const [form]                        = Form.useForm();
     const [isSubmitVisible, showSubmit] = useState(true);
-    return <FormBlockProvider>
+    return <FormLoadingProvider>
         <MobileFormContext.Provider
             value={{
                 translation,
@@ -45,5 +45,5 @@ export const MobileFormProvider: FC<IMobileFormProviderProps> = ({translation, c
         >
             {isCallable(children) ? <MobileFormContext.Consumer>{children as any}</MobileFormContext.Consumer> : children as ReactNode}
         </MobileFormContext.Provider>
-    </FormBlockProvider>;
+    </FormLoadingProvider>;
 };

@@ -17,7 +17,7 @@ import {
     IWithIdentity,
     MobileFormItem,
     useMobileFormContext,
-    useOptionalBlockContext,
+    useOptionalLoaderContext,
     VisibleProvider
 }                    from "@leight-core/viv";
 import {SwipeAction} from "antd-mobile";
@@ -90,8 +90,8 @@ export function DrawerSelectItem<TItem extends Record<string, any> & IWithIdenti
         children,
         ...props
     }: IDrawerSelectItemProps<TItem, TOnChange>) {
-    const formContext  = useMobileFormContext();
-    const blockContext = useOptionalBlockContext();
+    const formContext   = useMobileFormContext();
+    const loaderContext = useOptionalLoaderContext();
 
     return <VisibleProvider>
         {visibleContext => {
@@ -107,7 +107,7 @@ export function DrawerSelectItem<TItem extends Record<string, any> & IWithIdenti
                         field={field}
                         withVisible
                         rightActions={rightActions}
-                        disabled={blockContext?.isBlocked()}
+                        disabled={loaderContext?.isLoading()}
                         {...props}
                     >
                         <DrawerSelect

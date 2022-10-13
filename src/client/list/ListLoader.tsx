@@ -43,7 +43,7 @@ export function ListLoader<TItem>(
         renderEmpty,
         renderNothing,
     }: IListLoaderProps<TItem>) {
-    const sourceContext = useSourceContext<TItem>();
+    const sourceContext = useSourceContext();
     const cursorContext = useCursorContext();
     return <>
         {cursorContext.page === undefined || cursorContext.pages === undefined ?

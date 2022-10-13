@@ -1,9 +1,10 @@
 import {
-    IDayJsContext,
-    useContext
-}                      from "@leight-core/viv";
-import {createContext} from "react";
+    contextFactory,
+    IDayJsContext
+} from "@leight-core/viv";
 
-export const DayjsContext = createContext(null as unknown as IDayJsContext);
-
-export const useDayjsContext = () => useContext(DayjsContext, "DayjsContext");
+export const [
+                 DayjsContext,
+                 useDayjsContext,
+                 useOptionalDayjsContext,
+             ] = contextFactory<IDayJsContext>("DayjsContext");

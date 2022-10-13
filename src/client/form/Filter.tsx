@@ -82,7 +82,7 @@ type IFilterFormProps<TFilter> =
 
 const FilterForm = <TFilter, >({translation, onClear, formProps, toForm = filter => filter, toFilter = value => value, ...props}: IFilterFormProps<TFilter>) => {
     const visibleContext = useOptionalVisibleContext();
-    const filterContext  = useFilterContext<TFilter>();
+    const filterContext  = useFilterContext();
     const sourceContext  = useOptionalSourceContext();
     const cursorContext  = useOptionalCursorContext();
 
@@ -133,7 +133,7 @@ export function Filter<TFilter = any>(
         ...props
     }: IFilterProps<TFilter>): JSX.Element {
     const {t}           = useTranslation();
-    const filterContext = useFilterContext<TFilter>();
+    const filterContext = useFilterContext();
     const cursorContext = useOptionalCursorContext();
     return inline ?
         <FilterForm

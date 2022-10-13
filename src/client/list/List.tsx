@@ -45,7 +45,7 @@ export const List = <TResponse, >(
         withLoading = "isFetching",
         ...props
     }: IListProps<TResponse>) => {
-    const sourceContext = useSourceContext<TResponse>();
+    const sourceContext = useSourceContext();
     return <PaginationProvider>
         {paginationContext => <CoolList
             header={header?.(sourceContext)}

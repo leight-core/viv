@@ -1,11 +1,10 @@
 import {
-    IVisibleContext,
-    useContext,
-    useOptionalContext
-}                      from "@leight-core/viv";
-import {createContext} from "react";
+    contextFactory,
+    IVisibleContext
+} from "@leight-core/viv";
 
-export const VisibleContext = createContext<IVisibleContext>(null as any);
-
-export const useVisibleContext         = () => useContext<IVisibleContext>(VisibleContext, "VisibleContext");
-export const useOptionalVisibleContext = () => useOptionalContext<IVisibleContext>(VisibleContext as any);
+export const [
+                 VisibleContext,
+                 useVisibleContext,
+                 useOptionalVisibleContext,
+             ] = contextFactory<IVisibleContext>("VisibleContext");

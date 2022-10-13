@@ -3,7 +3,7 @@ import {
     I18NextProvider,
     IResponsiveProviderProps,
     ITranslationsQuery,
-    LayoutBlockProvider,
+    LayoutLoaderProvider,
     MenuSelectionProvider,
     ResponsiveProvider,
     TranslationLoader
@@ -49,7 +49,7 @@ export const App: FC<IAppProps> = (
                     <CookiesProvider>
                         <TranslationLoader useQuery={useTranslationQuery} logo={logo}>
                             <MenuSelectionProvider>
-                                <LayoutBlockProvider {...props}/>
+                                <LayoutLoaderProvider {...props}/>
                             </MenuSelectionProvider>
                         </TranslationLoader>
                     </CookiesProvider>

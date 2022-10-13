@@ -1,6 +1,7 @@
 export * from "./archive";
 export * from "./auth";
 export * from "./backup";
+export * from "./container";
 export * from "./endpoint";
 export * from "./file";
 export * from "./generators";

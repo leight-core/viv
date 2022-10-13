@@ -1,11 +1,12 @@
 import {
-    ISourceContext,
-    useContext,
-    useOptionalContext
-}                      from "@leight-core/viv";
-import {createContext} from "react";
+    contextFactory,
+    ISourceContext
+} from "@leight-core/viv";
 
-export const SourceContext = createContext<ISourceContext<any>>(null as any);
+export const sourceContextFactory = <TResponse>(name: string) => contextFactory<ISourceContext<TResponse>>(name);
 
-export const useSourceContext         = <TResponse>() => useContext<ISourceContext<TResponse>>(SourceContext, "SourceContext");
-export const useOptionalSourceContext = <TResponse>() => useOptionalContext<ISourceContext<TResponse>>(SourceContext as any);
+export const [
+                 SourceContext,
+                 useSourceContext,
+                 useOptionalSourceContext,
+             ] = contextFactory<ISourceContext<any>>("SourceContext");

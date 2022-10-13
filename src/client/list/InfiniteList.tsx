@@ -79,7 +79,7 @@ export const InfiniteList = <TResponse, >(
         header,
         ...props
     }: IInfiniteListProps<TResponse>) => {
-    const sourceContext = useSourceContext<TResponse>();
+    const sourceContext = useSourceContext();
     const cursorContext = useCursorContext();
     const filterContext = useOptionalFilterContext();
     if (withFulltext && header) {

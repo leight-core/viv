@@ -1,5 +1,4 @@
 import {
-    IWithFulltext,
     useFilterContext,
     useOptionalCursorContext,
     useSourceContext
@@ -16,7 +15,7 @@ export interface IFulltextBarProps extends Partial<ComponentProps<typeof SearchB
 }
 
 export const FulltextBar: FC<IFulltextBarProps> = props => {
-    const filterContext     = useFilterContext<IWithFulltext>();
+    const filterContext     = useFilterContext();
     const {fulltext}        = filterContext.filter || {fulltext: ""};
     const sourceContext     = useSourceContext();
     const cursorContext     = useOptionalCursorContext();

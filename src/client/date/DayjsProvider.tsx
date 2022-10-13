@@ -1,13 +1,26 @@
-import {DayjsContext} from "@leight-core/viv";
+import {
+    DayjsContext,
+    IDayJsContext,
+    IProviderChildren,
+    withProviderChildren
+} from "@leight-core/viv";
 import {
     FC,
-    PropsWithChildren
-}                     from "react";
+    useRef
+} from "react";
 
-export type IDayjsProviderProps = PropsWithChildren<{
+export interface IDayjsProviderProps {
     dayjs: any;
-}>;
+    children?: IProviderChildren<IDayJsContext>;
+}
 
-export const DayjsProvider: FC<IDayjsProviderProps> = ({dayjs, ...props}) => {
-    return <DayjsContext.Provider value={{dayjs}} {...props}/>;
+export const DayjsProvider: FC<IDayjsProviderProps> = ({dayjs, children}) => {
+    const context = useRef<IDayJsContext>({
+        dayjs,
+    });
+    return <DayjsContext.Provider
+        value={context.current}
+    >
+        {withProviderChildren(children, DayjsContext)}
+    </DayjsContext.Provider>;
 };

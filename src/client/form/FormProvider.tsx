@@ -1,9 +1,12 @@
 import {
-    FormBlockProvider,
     FormContext,
+    FormLoadingProvider,
     FormUtils,
+    IFormContext,
     IFormErrors,
-    IFormFields
+    IFormFields,
+    IProviderChildren,
+    withProviderChildren
 }                       from "@leight-core/viv";
 import {
     Form as CoolForm,
@@ -11,20 +14,20 @@ import {
 }                       from "antd";
 import React, {
     FC,
-    PropsWithChildren,
     useState
 }                       from "react";
 import {useTranslation} from "react-i18next";
 
-export type IFormProviderProps = PropsWithChildren<{
+export interface IFormProviderProps {
     translation?: string;
-}>;
+    children?: IProviderChildren<IFormContext>;
+}
 
-export const FormProvider: FC<IFormProviderProps> = ({translation, ...props}) => {
+export const FormProvider: FC<IFormProviderProps> = ({translation, children, ...props}) => {
     const {t}                 = useTranslation();
     const [errors, setErrors] = useState<IFormErrors>({errors: []});
     const [form]              = CoolForm.useForm();
-    return <FormBlockProvider>
+    return <FormLoadingProvider>
         <FormContext.Provider
             value={{
                 translation,
@@ -51,6 +54,8 @@ export const FormProvider: FC<IFormProviderProps> = ({translation, ...props}) =>
                 },
             }}
             {...props}
-        />
-    </FormBlockProvider>;
+        >
+            {withProviderChildren(children, FormContext)}
+        </FormContext.Provider>
+    </FormLoadingProvider>;
 };

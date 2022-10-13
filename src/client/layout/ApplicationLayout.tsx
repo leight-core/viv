@@ -3,7 +3,7 @@ import {
     LoaderIcon,
     MobileContent,
     PlaceholderPage,
-    useLayoutBlockContext
+    useLayoutLoaderContext,
 } from "@leight-core/viv";
 import {
     Layout,
@@ -33,9 +33,9 @@ export type IApplicationLayoutProps = PropsWithChildren<{
 }>;
 
 export const ApplicationLayout: FC<IApplicationLayoutProps> = ({header, footer, contentStyle, ...props}) => {
-    const layoutBlockContext = useLayoutBlockContext();
+    const layoutLoaderContext = useLayoutLoaderContext();
     return <Layout>
-        <Spin indicator={<LoaderIcon/>} spinning={layoutBlockContext.isBlocked()}>
+        <Spin indicator={<LoaderIcon/>} spinning={layoutLoaderContext.isLoading()}>
             <BrowserContent>
                 {header}
                 <Layout>

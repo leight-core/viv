@@ -23,8 +23,8 @@ import {
     SourceReset,
     Translate,
     useCursorContext,
-    useOptionalBlockContext,
     useOptionalFilterContext,
+    useOptionalLoaderContext,
     useVisibleContext
 }                     from "@leight-core/viv";
 import {
@@ -169,7 +169,7 @@ export function DrawerSelect<TItem extends Record<string, any> & IWithIdentity =
     const visibleContext = useVisibleContext();
     const cursorContext  = useCursorContext();
     const filterContext  = useOptionalFilterContext();
-    const blockContext   = useOptionalBlockContext();
+    const loaderContext  = useOptionalLoaderContext();
 
     const $toPreview = (selection?: ISelection<TItem>) => {
         const preview = toPreview(selection);
@@ -261,7 +261,7 @@ export function DrawerSelect<TItem extends Record<string, any> & IWithIdentity =
                     </>}
                 </SourceProvider>
             </Drawer>
-            {blockContext?.isBlocked() ? <Centered>
+            {loaderContext?.isLoading() ? <Centered>
                 <DotLoading/>
             </Centered> : <Space>
                 {icon ? <Typography.Text type={"secondary"}>{icon}</Typography.Text> : null}

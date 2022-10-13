@@ -15,9 +15,8 @@ import {
     ItemGroupProvider,
     IToFormError,
     LoaderIcon,
-    useBlockContext,
-    useFormBlockContext,
-    useFormContext,
+    useFormLoaderContext,
+    useLoaderContext,
     useNavigate,
     useOptionalVisibleContext,
     usePassThroughMutation,
@@ -86,37 +85,42 @@ export interface IFormProps<TRequest, TResponse, TQueryParams extends IQueryPara
     withTokenProps?: ComponentProps<typeof WithToken>;
 }
 
-const FormInternal = <TRequest, TResponse, TQueryParams extends IQueryParams>(
+/**
+ * Simple but powerful Antd Form wrapper providing some extra cool features like Token checks on a user or translations and many more.
+ */
+export function Form<TRequest = any, TResponse = void, TQueryParams extends IQueryParams = any>(
     {
+        translation,
+        tokens,
+        withTokenProps,
         useMutation = usePassThroughMutation,
         mutationQueryParams,
-        toMutation = values => values,
-        toForm = () => null as any,
-        onSuccess = () => null,
-        toError = () => ({}),
         onFailure,
-        shouldHide = true,
-        onValuesChange,
+        toForm = () => null as any,
+        toMutation = values => values,
+        onSuccess = () => null,
         onChange,
+        onValuesChange,
+        toError = () => ({}),
+        shouldHide = true,
         children,
         ...props
-    }: IFormProps<TRequest, TResponse, TQueryParams>) => {
-    const formContext      = useFormContext();
-    const blockContext     = useBlockContext();
-    const formBlockContext = useFormBlockContext();
-    const visibleContext   = useOptionalVisibleContext();
-    const doNavigate       = useNavigate();
-    const {t}              = useTranslation();
+    }: IFormProps<TRequest, TResponse, TQueryParams>): JSX.Element {
+    const loaderContext     = useLoaderContext();
+    const formLoaderContext = useFormLoaderContext();
+    const visibleContext    = useOptionalVisibleContext();
+    const doNavigate        = useNavigate();
+    const {t}               = useTranslation();
 
     const mutation = useMutation(mutationQueryParams, {
         onSettled: () => {
-            blockContext.unblock();
-            formBlockContext.unblock();
+            loaderContext.done();
+            formLoaderContext.done();
         }
     });
 
     const navigate: INavigate = (href, queryParams) => {
-        blockContext.block();
+        loaderContext.loading();
         doNavigate(href, queryParams);
     };
 
@@ -141,53 +145,6 @@ const FormInternal = <TRequest, TResponse, TQueryParams extends IQueryParams>(
         message.error(t("error." + error));
     });
 
-    return <CoolForm
-        layout={"vertical"}
-        form={formContext.form}
-        colon={false}
-        size={"large"}
-        onFinish={values => {
-            blockContext.block();
-            formBlockContext.block();
-            mutation.mutate(toMutation(values), {
-                onSuccess: response => {
-                    blockContext.unblock();
-                    formBlockContext.unblock();
-                    shouldHide && visibleContext?.hide();
-                    onSuccess({
-                        navigate,
-                        values,
-                        response,
-                        formContext,
-                        t: (text, data) => t(formContext.translation ? `${formContext.translation}.${text}` : text, data),
-                    });
-                },
-                onError:   error => onFailure?.({error: (error && error.response && error.response.data) || error, formContext}),
-            });
-        }}
-        labelAlign={"left"}
-        scrollToFirstError
-        initialValues={toForm()}
-        onFieldsChange={() => onChange?.({values: formContext.values(), formContext})}
-        onValuesChange={(changed, values) => onValuesChange?.({values, changed, formContext})}
-        {...props}
-    >
-        <Spin indicator={<LoaderIcon/>} spinning={formBlockContext.isBlocked()}>
-            {children}
-        </Spin>
-    </CoolForm>;
-};
-
-/**
- * Simple but powerful Antd Form wrapper providing some extra cool features like Token checks on a user or translations and many more.
- */
-export function Form<TRequest = any, TResponse = void, TQueryParams extends IQueryParams = any>(
-    {
-        translation,
-        tokens,
-        withTokenProps,
-        ...props
-    }: IFormProps<TRequest, TResponse, TQueryParams>): JSX.Element {
     return <WithToken
         tokens={tokens}
         label={translation ? `${translation}.403` : undefined}
@@ -196,9 +153,43 @@ export function Form<TRequest = any, TResponse = void, TQueryParams extends IQue
         <FormProvider
             translation={translation}
         >
-            <ItemGroupProvider prefix={[]}>
-                <FormInternal<TRequest, TResponse, TQueryParams> {...props}/>
-            </ItemGroupProvider>
+            {formContext => <ItemGroupProvider prefix={[]}>
+                <CoolForm
+                    layout={"vertical"}
+                    form={formContext.form}
+                    colon={false}
+                    size={"large"}
+                    onFinish={values => {
+                        loaderContext.loading();
+                        formLoaderContext.loading();
+                        mutation.mutate(toMutation(values), {
+                            onSuccess: response => {
+                                loaderContext.done();
+                                formLoaderContext.done();
+                                shouldHide && visibleContext?.hide();
+                                onSuccess({
+                                    navigate,
+                                    values,
+                                    response,
+                                    formContext,
+                                    t: (text, data) => t(formContext.translation ? `${formContext.translation}.${text}` : text, data),
+                                });
+                            },
+                            onError:   error => onFailure?.({error: (error && error.response && error.response.data) || error, formContext}),
+                        });
+                    }}
+                    labelAlign={"left"}
+                    scrollToFirstError
+                    initialValues={toForm()}
+                    onFieldsChange={() => onChange?.({values: formContext.values(), formContext})}
+                    onValuesChange={(changed, values) => onValuesChange?.({values, changed, formContext})}
+                    {...props}
+                >
+                    <Spin indicator={<LoaderIcon/>} spinning={formLoaderContext.isLoading()}>
+                        {children}
+                    </Spin>
+                </CoolForm>
+            </ItemGroupProvider>}
         </FormProvider>
     </WithToken>;
 }

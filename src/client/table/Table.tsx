@@ -39,7 +39,7 @@ export const Table = <TResponse, >(
         ...props
     }: ITableProps<TResponse>) => {
     const {t}              = useTranslation();
-    const sourceContext    = useSourceContext<TResponse>();
+    const sourceContext    = useSourceContext();
     const selectionContext = useOptionalSelectionContext<TResponse>();
 
     const createColumn = (props: any) => {

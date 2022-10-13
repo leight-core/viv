@@ -58,8 +58,8 @@ export const SourceProvider = <TResponse extends IWithIdentity>(
         children,
     }: ISourceProviderProps<TResponse>
 ) => {
-    const filterContext      = useOptionalFilterContext<any>();
-    const orderByContext     = useOptionalOrderByContext<any>();
+    const filterContext      = useOptionalFilterContext();
+    const orderByContext     = useOptionalOrderByContext();
     const cursorContext      = useOptionalCursorContext();
     const queryParamsContext = useOptionalQueryParamsContext<any>();
     const [data, setData]    = useState<TResponse[]>([]);

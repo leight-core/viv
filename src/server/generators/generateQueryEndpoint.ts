@@ -237,7 +237,7 @@ export interface I${name}DrawerItemProps extends Omit<IDrawerSelectItemProps<${r
 
 export const ${name}DrawerItem: FC<I${name}DrawerItemProps> = ({onSelection, ...props}) => {
 	return <BlockProvider>
-		{blockContext => <DrawerSelectItem<${response}>
+		{loaderContext => <DrawerSelectItem<${response}>
 			sourceProviderProps={{
 				name: "${name}",
 				useQuery: use${name}Query,
@@ -247,10 +247,10 @@ export const ${name}DrawerItem: FC<I${name}DrawerItemProps> = ({onSelection, ...
 			onSelection={onSelection}
 			ofSelection={({value, selectionContext}) => {
 				if (value) {
-					blockContext.block();
+					loaderContext.block();
 					${name}Promise({filter: {id: value as any}}).then(items => {
 						selectionContext.defaults(items);
-						blockContext.unblock(true);
+						loaderContext.unblock(true);
 						onSelection?.(selectionContext.selection());
 					});
 				}

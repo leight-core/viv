@@ -1,8 +1,3 @@
-import {
-    Context,
-    createContext as coolCreateContext
-} from "react";
+import {createContext as coolCreateContext} from "react";
 
-export const createContext = <TContext>(): Context<TContext> => {
-    return coolCreateContext(null as TContext);
-};
+export const createContext = <TContext>() => coolCreateContext<TContext>(null as any);

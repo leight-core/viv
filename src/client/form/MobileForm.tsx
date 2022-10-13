@@ -1,5 +1,5 @@
 import {
-    FormBlockContext,
+    FormLoaderContext,
     IFormError,
     IMobileFormChanged,
     IMobileFormContext,
@@ -154,9 +154,9 @@ export function MobileForm<TRequest = any, TResponse = void, TQueryParams extend
                     message.error(t("error." + error));
                 });
 
-                return <FormBlockContext.Consumer>
-                    {formBlockContext =>
-                        <Spin indicator={<LoaderIcon/>} spinning={formBlockContext.isBlocked()}>
+                return <FormLoaderContext.Consumer>
+                    {formLoaderContext =>
+                        <Spin indicator={<LoaderIcon/>} spinning={formLoaderContext.isLoading()}>
                             <Form
                                 layout={"vertical"}
                                 form={formContext.form}
@@ -197,7 +197,7 @@ export function MobileForm<TRequest = any, TResponse = void, TQueryParams extend
                                 {...props}
                             />
                         </Spin>}
-                </FormBlockContext.Consumer>;
+                </FormLoaderContext.Consumer>;
             }}
         </MobileFormProvider>
     </WithToken>;
