@@ -7,6 +7,7 @@ import {
     FC,
     ReactNode,
     useEffect,
+    useRef,
     useState
 } from "react";
 
@@ -46,7 +47,7 @@ export const CursorProvider: FC<ICursorProviderProps> = (
         ]);
     }, [defaultSize]);
 
-    const context: ICursorContext = {
+    const context = useRef<ICursorContext>({
         name,
         page,
         pages,
@@ -81,10 +82,10 @@ export const CursorProvider: FC<ICursorProviderProps> = (
         },
         hasMore:      () => pages ? page < pages : false,
         more:         append => context.next(append),
-    };
+    });
 
     return <CursorContext.Provider
-        value={context}
+        value={context.current}
     >
         {isCallable(children) ? <CursorContext.Consumer>{children as any}</CursorContext.Consumer> : children as ReactNode}
     </CursorContext.Provider>;

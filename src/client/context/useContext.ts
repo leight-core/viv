@@ -11,13 +11,11 @@ import {
  * @param hint optional hint in the error
  */
 export const useContext = <TContext>(context: Context<TContext>, name: string, hint?: string): TContext => {
-    const current = coolUseContext<TContext>(context);
-    if (!current) {
+    const $context = coolUseContext(context);
+    if (!$context) {
         throw new Error(`There is no [${name}] context available.${hint ? " " + hint : ""} `);
     }
-    return current;
+    return $context;
 };
 
-export const useOptionalContext = <TContext>(context: Context<TContext | null>): TContext | null => {
-    return coolUseContext<TContext | null>(context);
-};
+export const useOptionalContext = <TContext>(context: Context<TContext>): TContext | null => coolUseContext(context);

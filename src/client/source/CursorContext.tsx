@@ -1,12 +1,12 @@
 import {
+    createContext,
     ICursorContext,
     useContext,
     useOptionalContext
-}                      from "@leight-core/viv";
-import {createContext} from "react";
+} from "@leight-core/viv";
 
-export const CursorContext = createContext<ICursorContext>(null as any);
+export const CursorContext = createContext<ICursorContext>();
 
 export const useCursorContext = () => useContext<ICursorContext>(CursorContext, "CursorContext");
 
-export const useOptionalCursorContext = () => useOptionalContext<ICursorContext>(CursorContext as any);
+export const useOptionalCursorContext = () => useOptionalContext<ICursorContext>(CursorContext);

@@ -1,11 +1,11 @@
 import {
+    createContext,
     IBlockContext,
     useContext,
     useOptionalContext
-}                      from "@leight-core/viv";
-import {createContext} from "react";
+} from "@leight-core/viv";
 
-export const BlockContext = createContext<IBlockContext>(null as unknown as IBlockContext);
+export const BlockContext = createContext<IBlockContext>();
 
 export const useBlockContext         = () => useContext<IBlockContext>(BlockContext, "BlockContext");
-export const useOptionalBlockContext = () => useOptionalContext<IBlockContext>(BlockContext as any);
+export const useOptionalBlockContext = () => useOptionalContext<IBlockContext>(BlockContext);

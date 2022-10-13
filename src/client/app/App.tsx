@@ -30,12 +30,7 @@ export type IAppProps = PropsWithChildren<{
 }>;
 
 /**
- * Common default Application:
- *
- * - uses default server-side config loading (for discovery)
- * - uses server-side discovery by default
- * - uses server-side translations by default (with a setup of i18n)
- * - uses server-side default user login check
+ * Common default Application providing all necessary internal contexts.
  */
 export const App: FC<IAppProps> = (
     {
