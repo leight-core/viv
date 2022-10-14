@@ -1,17 +1,17 @@
 import {
-    isCallable,
+    IProviderChildren,
     IVisibleContext,
-    VisibleContext
+    VisibleContext,
+    withProviderChildren
 } from "@leight-core/viv";
 import {
     FC,
-    ReactNode,
     useState
 } from "react";
 
 export interface IVisibleProviderProps {
     defaultVisible?: boolean;
-    children?: ReactNode | ((visibleContext: IVisibleContext) => ReactNode);
+    children?: IProviderChildren<IVisibleContext>;
 }
 
 export const VisibleProvider: FC<IVisibleProviderProps> = ({defaultVisible = false, children}) => {
@@ -24,6 +24,6 @@ export const VisibleProvider: FC<IVisibleProviderProps> = ({defaultVisible = fal
             hide: () => setVisible(false),
         }}
     >
-        {isCallable(children) ? <VisibleContext.Consumer>{children as any}</VisibleContext.Consumer> : children as ReactNode}
+        {withProviderChildren(children, VisibleContext)}
     </VisibleContext.Provider>;
 };

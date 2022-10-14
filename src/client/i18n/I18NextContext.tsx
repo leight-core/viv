@@ -1,9 +1,10 @@
 import {
-    II18NextContext,
-    useContext
-}                      from "@leight-core/viv";
-import {createContext} from "react";
+    contextFactory,
+    II18NextContext
+} from "@leight-core/viv";
 
-export const I18NextContext = createContext<II18NextContext>(null as unknown as II18NextContext);
-
-export const useI18NextContext = () => useContext<II18NextContext>(I18NextContext, "I18NextContext");
+export const [
+                 I18NextContext,
+                 useI18NextContext,
+                 useOptionalI18NextContext
+             ] = contextFactory<II18NextContext>("I18NextContext");

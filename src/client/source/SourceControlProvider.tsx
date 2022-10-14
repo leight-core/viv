@@ -1,7 +1,5 @@
 import {
-    CursorContext,
     CursorProvider,
-    FilterContext,
     FilterProvider,
     ICursorContext,
     ICursorProviderProps,
@@ -13,21 +11,19 @@ import {
     IQueryParamsContext,
     IQueryParamsProviderProps,
     isCallable,
-    OrderByContext,
     OrderByProvider,
-    QueryParamsContext,
     QueryParamsProvider
 }                  from "@leight-core/viv";
 import {ReactNode} from "react";
 
-export interface ISourceControlProviderRender<TFilter = any, TOrderBy = any, TQueryParams extends IQueryParams | undefined = undefined> {
+export interface ISourceControlProviderRender<TFilter = any, TOrderBy = any, TQueryParams extends IQueryParams = any> {
     queryContext: IQueryParamsContext<TQueryParams>;
     filterContext: IFilterContext<TFilter>;
     orderByContext: IOrderByContext<TOrderBy>;
     cursorContext: ICursorContext;
 }
 
-export interface ISourceControlProviderProps<TFilter = any, TOrderBy = any, TQueryParams extends IQueryParams | undefined = undefined> {
+export interface ISourceControlProviderProps<TFilter = any, TOrderBy = any, TQueryParams extends IQueryParams = any> {
     name: string;
     filterProviderProps?: IFilterProviderProps<TFilter>;
     orderByProviderProps?: IOrderByProviderProps<TOrderBy>;
@@ -53,7 +49,7 @@ export interface ISourceControlProviderProps<TFilter = any, TOrderBy = any, TQue
     children?: ReactNode | ((render: ISourceControlProviderRender<TFilter, TOrderBy, TQueryParams>) => ReactNode);
 }
 
-export function SourceControlProvider<TFilter = any, TOrderBy = any, TQueryParams extends IQueryParams | undefined = undefined>(
+export function SourceControlProvider<TFilter = any, TOrderBy = any, TQueryParams extends IQueryParams = any>(
     {
         name,
         filterProviderProps,
@@ -73,40 +69,32 @@ export function SourceControlProvider<TFilter = any, TOrderBy = any, TQueryParam
         defaultQueryParams={defaultQueryParams}
         {...queryParamsProviderProps}
     >
-        <FilterProvider<TFilter>
+        {queryContext => <FilterProvider<TFilter>
             name={`${name}.Filter`}
             defaultFilter={defaultFilter}
             applyFilter={applyFilter}
             defaultSource={defaultSource}
             {...filterProviderProps}
         >
-            <OrderByProvider<TOrderBy>
+            {filterContext => <OrderByProvider<TOrderBy>
                 name={`${name}.OrderBy`}
                 defaultOrderBy={defaultOrderBy}
                 {...orderByProviderProps}
             >
-                <CursorProvider
+                {orderByContext => <CursorProvider
                     name={`${name}.Cursor`}
                     defaultPage={defaultPage}
                     defaultSize={defaultSize}
                     {...cursorProviderProps}
                 >
-                    {isCallable(children) ? <QueryParamsContext.Consumer>
-                        {queryContext => <FilterContext.Consumer>
-                            {filterContext => <OrderByContext.Consumer>
-                                {orderByContext => <CursorContext.Consumer>
-                                    {cursorContext => (children as ((render: ISourceControlProviderRender<TFilter, TOrderBy, TQueryParams>) => ReactNode))({
-                                        cursorContext,
-                                        orderByContext,
-                                        queryContext,
-                                        filterContext,
-                                    })}
-                                </CursorContext.Consumer>}
-                            </OrderByContext.Consumer>}
-                        </FilterContext.Consumer>}
-                    </QueryParamsContext.Consumer> : children as ReactNode}
-                </CursorProvider>
-            </OrderByProvider>
-        </FilterProvider>
+                    {cursorContext => isCallable(children) ? (children as ((render: ISourceControlProviderRender<TFilter, TOrderBy, TQueryParams>) => ReactNode))({
+                        cursorContext,
+                        orderByContext,
+                        queryContext,
+                        filterContext,
+                    }) : children as ReactNode}
+                </CursorProvider>}
+            </OrderByProvider>}
+        </FilterProvider>}
     </QueryParamsProvider>;
 }

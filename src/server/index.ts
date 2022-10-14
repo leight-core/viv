@@ -8,6 +8,7 @@ export * from "./generators";
 export * from "./import";
 export * from "./logger";
 export * from "./next.js";
+export * from "./prisma";
 export * from "./response";
 export * from "./restore";
 export * from "./sdk";

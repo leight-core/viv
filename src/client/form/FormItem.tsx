@@ -1,5 +1,5 @@
 import {
-    FormItemContext,
+    FormItemProvider,
     IFormItemContext,
     INamePath,
     ShowToken,
@@ -12,7 +12,10 @@ import {
     Input
 }                       from "antd";
 import {Rule}           from "rc-field-form/lib/interface";
-import {FC}             from "react";
+import {
+    FC,
+    useMemo
+}                       from "react";
 import {useTranslation} from "react-i18next";
 
 export interface IFormItemProps extends Partial<FormItemProps> {
@@ -82,7 +85,7 @@ export const FormItem: FC<IFormItemProps> = (
     itemGroupContext?.translation && hasTooltip && (props.tooltip = t(itemGroupContext.translation + "." + fieldName + ".label.tooltip"));
     formContext.translation && withHelp && (props.help = t(formContext.translation + "." + fieldName + ".label.help"));
     itemGroupContext?.translation && withHelp && (props.help = t(itemGroupContext.translation + "." + fieldName + ".label.help"));
-    const context: IFormItemContext = {
+    const context = useMemo<IFormItemContext>(() => ({
         field,
         label:     t(["form-item." + fieldName + ".label"].concat(labels)) as string,
         getValue:  () => formContext.form.getFieldValue(field),
@@ -92,10 +95,10 @@ export const FormItem: FC<IFormItemProps> = (
                 formContext.form.setFields([{name: field, errors: errors.map(item => t(item))}]);
             }, 0);
         },
-    };
+    }), []);
     onNormalize && !props.normalize && (props.normalize = value => onNormalize(value, context));
     return <ShowToken tokens={showWith}>
-        <FormItemContext.Provider value={context}>
+        <FormItemProvider context={context}>
             <Form.Item
                 name={field}
                 label={showLabel === false ? null : t(["form-item." + fieldName + ".label"].concat(labels))}
@@ -104,6 +107,6 @@ export const FormItem: FC<IFormItemProps> = (
             >
                 {children}
             </Form.Item>
-        </FormItemContext.Provider>
+        </FormItemProvider>
     </ShowToken>;
 };

@@ -1,12 +1,13 @@
 import {
-    IResponsiveContext,
-    useContext
-}                      from "@leight-core/viv";
-import {createContext} from "react";
+    contextFactory,
+    IResponsiveContext
+} from "@leight-core/viv";
 
-export const ResponsiveContext = createContext(null as unknown as IResponsiveContext);
-
-export const useResponsiveContext = () => useContext(ResponsiveContext, "ResponsiveContext");
+export const [
+                 ResponsiveContext,
+                 useResponsiveContext,
+                 useOptionalResponsiveContext,
+             ] = contextFactory<IResponsiveContext>("ResponsiveContext");
 
 export const useIsMobile  = () => useResponsiveContext().isMobile();
 export const useIsBrowser = () => useResponsiveContext().isBrowser();

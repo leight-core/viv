@@ -10,8 +10,9 @@ import {Context} from "react";
  * this method would not help.
  * @param name
  */
-export const contextFactory = <TContext>(name: string): [Context<TContext>, () => TContext, () => TContext | null] => {
-    const context = createContext<TContext>();
+export const contextFactory = <TContext>(name: string): [Context<TContext | null>, () => TContext, () => TContext | null] => {
+    const context       = createContext<TContext>();
+    context.displayName = name;
     return [
         context,
         () => useContext<TContext>(context, name),

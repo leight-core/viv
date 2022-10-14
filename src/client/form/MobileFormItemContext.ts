@@ -1,12 +1,10 @@
 import {
-    IMobileFormItemContext,
-    useContext,
-    useOptionalContext
-}                      from "@leight-core/viv";
-import {createContext} from "react";
+    contextFactory,
+    IMobileFormItemContext
+} from "@leight-core/viv";
 
-export const MobileFormItemContext = createContext<IMobileFormItemContext>(null as any);
-
-export const useMobileFormItemContext = () => useContext<IMobileFormItemContext>(MobileFormItemContext, "MobileFormItemContext");
-
-export const useOptionalMobileFormItemContext = () => useOptionalContext<IMobileFormItemContext>(MobileFormItemContext as any);
+export const [
+                 MobileFormItemContext,
+                 useMobileFormItemContext,
+                 useOptionalMobileFormItemContext,
+             ] = contextFactory<IMobileFormItemContext>("MobileFormItemContext");

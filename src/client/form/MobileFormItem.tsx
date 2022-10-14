@@ -1,7 +1,7 @@
 import {
     IMobileFormItemContext,
     INamePath,
-    MobileFormItemContext,
+    MobileFormItemProvider,
     ShowToken,
     useMobileFormContext,
     useOptionalItemGroupContext,
@@ -16,7 +16,8 @@ import {CloseOutline}   from "antd-mobile-icons";
 import {Rule}           from "rc-field-form/lib/interface";
 import {
     ComponentProps,
-    FC
+    FC,
+    useMemo
 }                       from "react";
 import {useTranslation} from "react-i18next";
 
@@ -47,6 +48,25 @@ export type IMobileFormItemProps =
         onNormalize?(value: any, formItemContext: IMobileFormItemContext): void,
     }
 
+/**
+ * @TODO Refactor the form stuff (mobile/normal)
+ * @param field
+ * @param rightActions
+ * @param leftActions
+ * @param required
+ * @param showLabel
+ * @param hasTooltip
+ * @param withVisible
+ * @param children
+ * @param labels
+ * @param withHelp
+ * @param showWith
+ * @param onNormalize
+ * @param toClear
+ * @param onClear
+ * @param props
+ * @constructor
+ */
 export const MobileFormItem: FC<IMobileFormItemProps> = (
     {
         field,
@@ -69,11 +89,11 @@ export const MobileFormItem: FC<IMobileFormItemProps> = (
     const formContext      = useMobileFormContext();
     const itemGroupContext = useOptionalItemGroupContext();
     const visibleContext   = useOptionalVisibleContext();
-    field                  = ([] as (string | number)[]).concat(itemGroupContext?.prefix || [], Array.isArray(field) ? field : [field]);
+    field      = ([] as (string | number)[]).concat(itemGroupContext?.prefix || [], Array.isArray(field) ? field : [field]);
     const fieldName        = Array.isArray(field) ? field.join(".") : field;
     const rules: Rule[]    = [];
-    labels                 = Array.isArray(labels) ? labels : [labels];
-    props.help             = props.help ? t("" + props.help) : props.help;
+    labels     = Array.isArray(labels) ? labels : [labels];
+    props.help = props.help ? t("" + props.help) : props.help;
     formContext.translation && hasTooltip && (props.help = t(formContext.translation + "." + fieldName + ".label.tooltip"));
     itemGroupContext?.translation && hasTooltip && (props.help = t(itemGroupContext.translation + "." + fieldName + ".label.tooltip"));
     formContext.translation && labels.push(formContext.translation + "." + fieldName + ".label");
@@ -91,7 +111,7 @@ export const MobileFormItem: FC<IMobileFormItemProps> = (
     rules.push(() => ({validator: () => Promise.resolve()}));
     formContext.translation && withHelp && (props.help = t(formContext.translation + "." + fieldName + ".label.help"));
     itemGroupContext?.translation && withHelp && (props.help = t(itemGroupContext.translation + "." + fieldName + ".label.help"));
-    const context: IMobileFormItemContext = {
+    const context = useMemo<IMobileFormItemContext>(() => ({
         field,
         label:     t(["form-item." + fieldName + ".label"].concat(labels)) as string,
         getValue:  () => formContext.form.getFieldValue(field),
@@ -101,7 +121,7 @@ export const MobileFormItem: FC<IMobileFormItemProps> = (
                 formContext.form.setFields([{name: field, errors: errors.map(item => t(item))}]);
             }, 0);
         },
-    };
+    }), []);
     onNormalize && !props.normalize && (props.normalize = value => onNormalize(value, context));
     return <ShowToken tokens={showWith}>
         <SwipeAction
@@ -119,7 +139,7 @@ export const MobileFormItem: FC<IMobileFormItemProps> = (
                 }
             ] : []}
         >
-            <MobileFormItemContext.Provider value={context}>
+            <MobileFormItemProvider context={context}>
                 <Form.Item
                     name={field}
                     label={showLabel === false ? null : t(["form-item." + fieldName + ".label"].concat(labels))}
@@ -129,7 +149,7 @@ export const MobileFormItem: FC<IMobileFormItemProps> = (
                 >
                     {children}
                 </Form.Item>
-            </MobileFormItemContext.Provider>
+            </MobileFormItemProvider>
         </SwipeAction>
     </ShowToken>;
 };

@@ -3,7 +3,6 @@ import {
     ScrollToTop,
     useLayoutLoaderContext,
     useMenuSelectionContext,
-    useOptionalSiderCollapseContext
 }                       from "@leight-core/viv";
 import {Spin}           from "antd";
 import Head             from "next/head";
@@ -26,10 +25,6 @@ export type IEmptyPageProps = PropsWithChildren<{
      */
     tabTitle?: string;
     /**
-     * Should the sider be collapsed?
-     */
-    collapsed?: boolean;
-    /**
      * Initial blocking state of a view; when true, view shows a loader.
      *
      * Defaults to `false`.
@@ -50,7 +45,6 @@ export const EmptyPage: FC<IEmptyPageProps> = (
         title,
         tabTitle,
         defaultLoading = false,
-        collapsed,
         menuSelection = [],
         values,
         children,
@@ -58,7 +52,6 @@ export const EmptyPage: FC<IEmptyPageProps> = (
     const {t}                 = useTranslation();
     const layoutLoaderContext = useLayoutLoaderContext();
     useMenuSelectionContext().useSelection(menuSelection);
-    useOptionalSiderCollapseContext()?.useCollapse(collapsed, true);
     useEffect(() => {
         layoutLoaderContext.done();
     }, []);

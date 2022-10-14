@@ -1,11 +1,10 @@
 import {
-    createContext,
-    ILoaderContext,
-    useContext,
-    useOptionalContext
+    contextFactory,
+    ILoaderContext
 } from "@leight-core/viv";
 
-export const LoaderContext = createContext<ILoaderContext>();
-
-export const useLoaderContext         = () => useContext<ILoaderContext>(LoaderContext, "LoaderContext");
-export const useOptionalLoaderContext = () => useOptionalContext<ILoaderContext>(LoaderContext);
+export const [
+                 LoaderContext,
+                 useLoaderContext,
+                 useOptionalLoaderContext,
+             ] = contextFactory<ILoaderContext>("LoaderContext");

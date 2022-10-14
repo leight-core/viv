@@ -61,7 +61,7 @@ export const SourceProvider = <TResponse extends IWithIdentity>(
     const filterContext      = useOptionalFilterContext();
     const orderByContext     = useOptionalOrderByContext();
     const cursorContext      = useOptionalCursorContext();
-    const queryParamsContext = useOptionalQueryParamsContext<any>();
+    const queryParamsContext = useOptionalQueryParamsContext();
     const [data, setData]    = useState<TResponse[]>([]);
 
     if (!withCount) {

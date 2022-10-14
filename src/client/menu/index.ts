@@ -1,6 +1,7 @@
 export * from "./BubbleMenu";
 export * from "./DrawerMenu";
 export * from "./HorizontalMenu";
+export * from "./interface";
 export * from "./Menu";
 export * from "./MenuContext";
 export * from "./MenuDivider";

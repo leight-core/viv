@@ -10,7 +10,7 @@ import {
  * @param name name of context - used when an error should be thrown
  * @param hint optional hint in the error
  */
-export const useContext = <TContext>(context: Context<TContext>, name: string, hint?: string): TContext => {
+export const useContext = <TContext>(context: Context<TContext | null>, name: string, hint?: string): TContext => {
     const $context = coolUseContext(context);
     if (!$context) {
         throw new Error(`There is no [${name}] context available.${hint ? " " + hint : ""} `);
@@ -18,4 +18,4 @@ export const useContext = <TContext>(context: Context<TContext>, name: string, h
     return $context;
 };
 
-export const useOptionalContext = <TContext>(context: Context<TContext>): TContext | null => coolUseContext(context);
+export const useOptionalContext = <TContext>(context: Context<TContext | null>): TContext | null => coolUseContext(context);

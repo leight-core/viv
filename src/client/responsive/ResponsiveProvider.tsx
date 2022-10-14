@@ -1,11 +1,12 @@
 import {
+    IProviderChildren,
     IResponsiveContext,
-    ResponsiveContext
+    ResponsiveContext,
+    withProviderChildren
 } from "@leight-core/viv";
 import {
     FC,
-    PropsWithChildren,
-    useRef
+    useMemo
 } from "react";
 import {
     isBrowser as isCoolBrowser,
@@ -13,23 +14,27 @@ import {
     isTablet as isCoolTablet
 } from "react-device-detect";
 
-export type IResponsiveProviderProps = PropsWithChildren<{
+export interface IResponsiveProviderProps {
     isBrowser?: () => boolean;
     isMobile?: () => boolean;
     isTablet?: () => boolean;
-}>;
+    children?: IProviderChildren<IResponsiveContext>;
+}
 
-export const ResponsiveProvider: FC<IResponsiveProviderProps> = ({isBrowser, isMobile, isTablet, ...props}) => {
-    isBrowser     = isBrowser || (() => isCoolBrowser || isCoolTablet);
-    isMobile      = isMobile || (() => isCoolMobile && !isCoolTablet);
-    isTablet      = isTablet || (() => isCoolTablet);
-    const context = useRef<IResponsiveContext>({
-        isBrowser,
-        isMobile,
-        isTablet,
-    });
+export const ResponsiveProvider: FC<IResponsiveProviderProps> = ({isBrowser, isMobile, isTablet, children}) => {
+    const context = useMemo<IResponsiveContext>(() => {
+        isBrowser = isBrowser || (() => isCoolBrowser || isCoolTablet);
+        isMobile  = isMobile || (() => isCoolMobile && !isCoolTablet);
+        isTablet  = isTablet || (() => isCoolTablet);
+        return {
+            isBrowser,
+            isMobile,
+            isTablet,
+        };
+    }, []);
     return <ResponsiveContext.Provider
-        value={context.current}
-        {...props}
-    />;
+        value={context}
+    >
+        {withProviderChildren(children, ResponsiveContext)}
+    </ResponsiveContext.Provider>;
 };

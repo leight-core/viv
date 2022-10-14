@@ -1,12 +1,10 @@
 import {
-    IFormItemContext,
-    useContext,
-    useOptionalContext
-}                      from "@leight-core/viv";
-import {createContext} from "react";
+    contextFactory,
+    IFormItemContext
+} from "@leight-core/viv";
 
-export const FormItemContext = createContext<IFormItemContext>(null as any);
-
-export const useFormItemContext = () => useContext<IFormItemContext>(FormItemContext, "FormItemContext");
-
-export const useOptionalFormItemContext = () => useOptionalContext<IFormItemContext>(FormItemContext as any);
+export const [
+                 FormItemContext,
+                 useFormItemContext,
+                 useOptionalFormItemContext,
+             ] = contextFactory<IFormItemContext>("FormItemContext");

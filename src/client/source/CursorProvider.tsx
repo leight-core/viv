@@ -1,11 +1,11 @@
 import {
     CursorContext,
     ICursorContext,
+    IProviderChildren,
     withProviderChildren
 } from "@leight-core/viv";
 import {
     FC,
-    ReactNode,
     useEffect,
     useState
 } from "react";
@@ -14,7 +14,7 @@ export interface ICursorProviderProps {
     name: string;
     defaultPage?: number;
     defaultSize?: number;
-    children?: ReactNode | ((cursorContext: ICursorContext) => ReactNode);
+    children?: IProviderChildren<ICursorContext>;
 }
 
 export const CursorProvider: FC<ICursorProviderProps> = (

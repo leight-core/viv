@@ -1,5 +1,5 @@
 import {
-    FormLoaderContext,
+    FormLoadingProvider,
     IFormError,
     IMobileFormChanged,
     IMobileFormContext,
@@ -117,10 +117,9 @@ export function MobileForm<TRequest = any, TResponse = void, TQueryParams extend
         icon,
         ...props
     }: IMobileFormProps<TRequest, TResponse, TQueryParams>) {
-    const {t}            = useTranslation();
-    const visibleContext = useOptionalVisibleContext();
-    const doNavigate     = useNavigate();
-
+    const {t}                 = useTranslation();
+    const visibleContext      = useOptionalVisibleContext();
+    const doNavigate          = useNavigate();
     const mutation            = useMutation(mutationQueryParams);
     const navigate: INavigate = (href, queryParams) => doNavigate(href, queryParams);
 
@@ -129,76 +128,75 @@ export function MobileForm<TRequest = any, TResponse = void, TQueryParams extend
         label={translation ? `${translation}.403` : undefined}
         {...withTokenProps}
     >
-        <MobileFormProvider
-            translation={translation}
-        >
-            {formContext => {
-                function handleError(formError: IFormError | IMobileFormErrorHandler<any, any>, error: any, formContext: IMobileFormContext) {
-                    let handle = formError;
-                    if (!isCallable(handle)) {
-                        handle = () => formContext.setErrors({
-                            errors: [
-                                (formError as IFormError),
-                            ],
-                        });
+        <FormLoadingProvider>
+            {formLoadingContext => <MobileFormProvider
+                translation={translation}
+            >
+                {formContext => {
+                    function handleError(formError: IFormError | IMobileFormErrorHandler<any, any>, error: any, formContext: IMobileFormContext) {
+                        let handle = formError;
+                        if (!isCallable(handle)) {
+                            handle = () => formContext.setErrors({
+                                errors: [
+                                    (formError as IFormError),
+                                ],
+                            });
+                        }
+                        (handle as IMobileFormErrorHandler<any, any>)({error, formContext});
                     }
-                    (handle as IMobileFormErrorHandler<any, any>)({error, formContext});
-                }
 
-                onFailure = onFailure || (({error, formContext}) => {
-                    const map       = toError({error, formContext});
-                    const formError = map[error];
-                    const general   = map["general"];
-                    formError && handleError(formError, error, formContext);
-                    !formError && general && handleError(general, error, formContext);
-                    message.error(t("error." + error));
-                });
+                    onFailure = onFailure || (({error, formContext}) => {
+                        const map       = toError({error, formContext});
+                        const formError = map[error];
+                        const general   = map["general"];
+                        formError && handleError(formError, error, formContext);
+                        !formError && general && handleError(general, error, formContext);
+                        message.error(t("error." + error));
+                    });
 
-                return <FormLoaderContext.Consumer>
-                    {formLoaderContext =>
-                        <Spin indicator={<LoaderIcon/>} spinning={formLoaderContext.isLoading()}>
-                            <Form
-                                layout={"vertical"}
-                                form={formContext.form}
-                                initialValues={toForm()}
-                                onFieldsChange={() => onChange?.({values: formContext.values(), formContext})}
-                                onValuesChange={(changed, values) => onValuesChange?.({values, changed, formContext})}
-                                onFinish={values => {
-                                    const $t: (text: string, data?: Record<string, any>) => string = (text, data) => t(formContext.translation ? `${formContext.translation}.${text}` : text, data);
-                                    Toast.show({icon: "loading", maskClickable: false, duration: 0});
-                                    mutation.mutate(toMutation(values), {
-                                        onSuccess: response => {
-                                            message.success($t("success", response as any));
-                                            Toast.show({
-                                                icon:          "success",
-                                                maskClickable: false,
-                                                duration:      500,
-                                            });
-                                            shouldHide && visibleContext?.hide();
-                                            onSuccess({
-                                                navigate,
-                                                values,
-                                                response,
-                                                formContext,
-                                                t: $t,
-                                            });
-                                        },
-                                        onError:   error => {
-                                            Toast.show({
-                                                icon:          "fail",
-                                                maskClickable: false,
-                                                duration:      500,
-                                            });
-                                            onFailure?.({error: (error && error.response && error.response.data) || error, formContext});
-                                        },
-                                    });
-                                }}
-                                footer={submit && formContext.isSubmitVisible ? <MobileSubmit icon={icon} label={submit}/> : undefined}
-                                {...props}
-                            />
-                        </Spin>}
-                </FormLoaderContext.Consumer>;
-            }}
-        </MobileFormProvider>
+                    return <Spin indicator={<LoaderIcon/>} spinning={formLoadingContext.isLoading()}>
+                        <Form
+                            layout={"vertical"}
+                            form={formContext.form}
+                            initialValues={toForm()}
+                            onFieldsChange={() => onChange?.({values: formContext.values(), formContext})}
+                            onValuesChange={(changed, values) => onValuesChange?.({values, changed, formContext})}
+                            onFinish={values => {
+                                const $t: (text: string, data?: Record<string, any>) => string = (text, data) => t(formContext.translation ? `${formContext.translation}.${text}` : text, data);
+                                Toast.show({icon: "loading", maskClickable: false, duration: 0});
+                                mutation.mutate(toMutation(values), {
+                                    onSuccess: response => {
+                                        message.success($t("success", response as any));
+                                        Toast.show({
+                                            icon:          "success",
+                                            maskClickable: false,
+                                            duration:      500,
+                                        });
+                                        shouldHide && visibleContext?.hide();
+                                        onSuccess({
+                                            navigate,
+                                            values,
+                                            response,
+                                            formContext,
+                                            t: $t,
+                                        });
+                                    },
+                                    onError:   error => {
+                                        Toast.show({
+                                            icon:          "fail",
+                                            maskClickable: false,
+                                            duration:      500,
+                                        });
+                                        onFailure?.({error: (error && error.response && error.response.data) || error, formContext});
+                                    },
+                                });
+                            }}
+                            footer={submit && formContext.isSubmitVisible ? <MobileSubmit icon={icon} label={submit}/> : undefined}
+                            {...props}
+                        />
+                    </Spin>;
+                }}
+            </MobileFormProvider>}
+        </FormLoadingProvider>
     </WithToken>;
 }

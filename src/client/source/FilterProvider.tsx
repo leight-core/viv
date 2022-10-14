@@ -1,16 +1,18 @@
 import {
     cleanOf,
     FilterContext,
+    IFilterContext,
+    IProviderChildren,
     isEmpty,
-    merge
+    merge,
+    withProviderChildren
 } from "@leight-core/viv";
 import {
-    PropsWithChildren,
     useEffect,
     useState
 } from "react";
 
-export type IFilterProviderProps<TFilter = any> = PropsWithChildren<{
+export interface IFilterProviderProps<TFilter = any> {
     name: string;
     /**
      * Default pre-set filter; could be overridden by a user. Apply filter prop takes precedence.
@@ -21,9 +23,10 @@ export type IFilterProviderProps<TFilter = any> = PropsWithChildren<{
      */
     applyFilter?: TFilter;
     defaultSource?: any;
-}>;
+    children?: IProviderChildren<IFilterContext>;
+}
 
-export function FilterProvider<TFilter, >({name, defaultFilter, applyFilter, defaultSource, ...props}: IFilterProviderProps<TFilter>) {
+export function FilterProvider<TFilter, >({name, defaultFilter, applyFilter, defaultSource, children}: IFilterProviderProps<TFilter>) {
     /**
      * Currently set filter; applied with defaults/applied.
      */
@@ -68,6 +71,7 @@ export function FilterProvider<TFilter, >({name, defaultFilter, applyFilter, def
             }, 0),
             isEmpty:     () => isEmpty(request),
         }}
-        {...props}
-    />;
+    >
+        {withProviderChildren(children, FilterContext)}
+    </FilterContext.Provider>;
 }

@@ -7,7 +7,7 @@ export interface IMenuSelectionContext {
     /**
      * An effect to select menu item.
      *
-     * @param select
+     * @param selection
      */
     useSelection(selection: string[]): void;
 }

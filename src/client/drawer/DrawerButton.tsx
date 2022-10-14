@@ -4,7 +4,6 @@ import {
     ITranslationProps,
     Translate,
     UseToken,
-    VisibleContext,
     VisibleProvider
 } from "@leight-core/viv";
 import {
@@ -44,31 +43,29 @@ export const DrawerButton: FC<IDrawerButtonProps> = (
     }) => {
     return <Tooltip title={tooltip ? <Translate {...translation} text={tooltip}/> : undefined}>
         <VisibleProvider>
-            <VisibleContext.Consumer>
-                {visibleContext => <>
-                    <Drawer
-                        translation={translation}
-                        width={width}
-                        {...drawerProps}
+            {visibleContext => <>
+                <Drawer
+                    translation={translation}
+                    width={width}
+                    {...drawerProps}
+                >
+                    {children}
+                </Drawer>
+                <UseToken tokens={tokens}>
+                    <Button
+                        onClick={event => {
+                            visibleContext.show();
+                            onClick?.(event);
+                        }}
+                        {...props}
                     >
-                        {children}
-                    </Drawer>
-                    <UseToken tokens={tokens}>
-                        <Button
-                            onClick={event => {
-                                visibleContext.show();
-                                onClick?.(event);
-                            }}
-                            {...props}
-                        >
-                            <Translate
-                                {...translation}
-                                text={label}
-                            />
-                        </Button>
-                    </UseToken>
-                </>}
-            </VisibleContext.Consumer>
+                        <Translate
+                            {...translation}
+                            text={label}
+                        />
+                    </Button>
+                </UseToken>
+            </>}
         </VisibleProvider>
     </Tooltip>;
 };
