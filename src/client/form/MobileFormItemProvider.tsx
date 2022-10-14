@@ -1,19 +1,20 @@
 import {
     IMobileFormItemContext,
-    MobileFormItemContext
-} from "@leight-core/viv";
-import {
-    FC,
-    PropsWithChildren
-} from "react";
+    IProviderChildren,
+    MobileFormItemContext,
+    withProviderChildren
+}           from "@leight-core/viv";
+import {FC} from "react";
 
-export type IMobileFormItemProviderProps = PropsWithChildren<{
+export interface IMobileFormItemProviderProps {
     context: IMobileFormItemContext;
-}>;
+    children?: IProviderChildren<IMobileFormItemContext>;
+}
 
-export const MobileFormItemProvider: FC<IMobileFormItemProviderProps> = ({context, ...props}) => {
+export const MobileFormItemProvider: FC<IMobileFormItemProviderProps> = ({context, children}) => {
     return <MobileFormItemContext.Provider
         value={context}
-        {...props}
-    />;
+    >
+        {withProviderChildren(children, MobileFormItemContext)}
+    </MobileFormItemContext.Provider>;
 };

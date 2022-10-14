@@ -1,7 +1,6 @@
 import {
     IQuery,
     IQueryHook,
-    isCallable,
     ISourceContext,
     IWithIdentity,
     merge,
@@ -10,7 +9,8 @@ import {
     useOptionalCursorContext,
     useOptionalFilterContext,
     useOptionalOrderByContext,
-    useOptionalQueryParamsContext
+    useOptionalQueryParamsContext,
+    withProviderChildren
 } from "@leight-core/viv";
 import {
     useQuery as useCoolQuery,
@@ -18,6 +18,7 @@ import {
 } from "@tanstack/react-query";
 import {
     ReactNode,
+    useMemo,
     useState
 } from "react";
 
@@ -113,7 +114,7 @@ export const SourceProvider = <TResponse extends IWithIdentity>(
     const hasData = () => Array.isArray(data) && data.length > 0;
 
     return <SourceContext.Provider
-        value={{
+        value={useMemo(() => ({
             name,
             result: query,
             hasData,
@@ -123,8 +124,8 @@ export const SourceProvider = <TResponse extends IWithIdentity>(
                 setData([]);
                 cursorContext?.setPage(0);
             },
-        }}
+        }), [])}
     >
-        {isCallable(children) ? <SourceContext.Consumer>{children as any}</SourceContext.Consumer> : children as ReactNode}
+        {withProviderChildren(children, SourceContext)}
     </SourceContext.Provider>;
 };

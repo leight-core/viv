@@ -3,6 +3,7 @@ import {
     FC,
     PropsWithChildren,
     useEffect,
+    useMemo,
     useState
 }                             from "react";
 
@@ -13,7 +14,7 @@ export type IMenuSelectionProviderProps = PropsWithChildren<{
 export const MenuSelectionProvider: FC<IMenuSelectionProviderProps> = ({defaultSelection = [], ...props}) => {
     const [selection, setSelection] = useState<string[]>(defaultSelection);
     return <MenuSelectionContext.Provider
-        value={{
+        value={useMemo(() => ({
             selection,
             useSelection: selection => {
                 useEffect(() => {
@@ -21,7 +22,7 @@ export const MenuSelectionProvider: FC<IMenuSelectionProviderProps> = ({defaultS
                     return () => clearTimeout(id);
                 }, selection);
             }
-        }}
+        }), [])}
         {...props}
     />;
 };

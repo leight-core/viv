@@ -6,6 +6,7 @@ import {
 } from "@leight-core/viv";
 import {
     FC,
+    useMemo,
     useState
 } from "react";
 
@@ -17,12 +18,12 @@ export interface IVisibleProviderProps {
 export const VisibleProvider: FC<IVisibleProviderProps> = ({defaultVisible = false, children}) => {
     const [visible, setVisible] = useState<boolean>(defaultVisible);
     return <VisibleContext.Provider
-        value={{
+        value={useMemo(() => ({
             visible,
             setVisible,
             show: () => setVisible(true),
             hide: () => setVisible(false),
-        }}
+        }), [])}
     >
         {withProviderChildren(children, VisibleContext)}
     </VisibleContext.Provider>;

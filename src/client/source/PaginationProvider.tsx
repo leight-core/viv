@@ -1,18 +1,19 @@
 import {
     IPaginationContext,
-    isCallable,
+    IProviderChildren,
     PaginationContext,
     useCursorContext,
-    useSourceContext
+    useSourceContext,
+    withProviderChildren
 }                       from "@leight-core/viv";
 import {
     FC,
-    ReactNode
+    useMemo
 }                       from "react";
 import {useTranslation} from "react-i18next";
 
 export interface IPaginationProviderProps {
-    children?: ReactNode | ((paginationContext: IPaginationContext) => ReactNode);
+    children?: IProviderChildren<IPaginationContext>;
 }
 
 export const PaginationProvider: FC<IPaginationProviderProps> = ({children}) => {
@@ -20,7 +21,7 @@ export const PaginationProvider: FC<IPaginationProviderProps> = ({children}) => 
     const sourceContext = useSourceContext();
     const cursorContext = useCursorContext();
     return <PaginationContext.Provider
-        value={{
+        value={useMemo(() => ({
             pagination: () => ({
                 responsive:       true,
                 current:          cursorContext.page + 1,
@@ -33,8 +34,8 @@ export const PaginationProvider: FC<IPaginationProviderProps> = ({children}) => 
                 showTotal:        (total, [from, to]) => t(`${sourceContext.name}.list.total`, {total, from, to}),
                 onChange:         (current, size) => cursorContext?.setPage(current - 1, size),
             }),
-        }}
+        }), [])}
     >
-        {isCallable(children) ? <PaginationContext.Consumer>{children as any}</PaginationContext.Consumer> : children as ReactNode}
+        {withProviderChildren(children, PaginationContext)}
     </PaginationContext.Provider>;
 };

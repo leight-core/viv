@@ -24,7 +24,7 @@ export interface IFormProviderProps {
     children?: IProviderChildren<IFormContext>;
 }
 
-export const FormProvider: FC<IFormProviderProps> = ({translation, children, ...props}) => {
+export const FormProvider: FC<IFormProviderProps> = ({translation, children}) => {
     const {t}                 = useTranslation();
     const [errors, setErrors] = useState<IFormErrors>({errors: []});
     const [form]              = CoolForm.useForm();
@@ -59,7 +59,6 @@ export const FormProvider: FC<IFormProviderProps> = ({translation, children, ...
     return <FormLoadingProvider>
         <FormContext.Provider
             value={context}
-            {...props}
         >
             {withProviderChildren(children, FormContext)}
         </FormContext.Provider>

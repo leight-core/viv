@@ -9,6 +9,7 @@ import {
 } from "@leight-core/viv";
 import {
     useEffect,
+    useMemo,
     useState
 } from "react";
 
@@ -55,22 +56,24 @@ export function FilterProvider<TFilter, >({name, defaultFilter, applyFilter, def
         applyFilter
     ]);
 
+    const context = useMemo<IFilterContext>(() => ({
+        name,
+        filter,
+        source,
+        setFilter:   (filter, source) => setTimeout(() => {
+            $setFilter({...filter, ...applyFilter}, filter, source);
+        }, 0),
+        applyFilter: (apply, source) => setTimeout(() => {
+            $setFilter({...filter, ...apply, ...applyFilter}, apply, source);
+        }, 0),
+        mergeFilter: (apply, source) => setTimeout(() => {
+            $setFilter(merge<any, any>(merge<any, any>(filter || {}, apply || {}), applyFilter || {}), apply, source);
+        }, 0),
+        isEmpty:     () => isEmpty(request),
+    }), []);
+
     return <FilterContext.Provider
-        value={{
-            name,
-            filter,
-            source,
-            setFilter:   (filter, source) => setTimeout(() => {
-                $setFilter({...filter, ...applyFilter}, filter, source);
-            }, 0),
-            applyFilter: (apply, source) => setTimeout(() => {
-                $setFilter({...filter, ...apply, ...applyFilter}, apply, source);
-            }, 0),
-            mergeFilter: (apply, source) => setTimeout(() => {
-                $setFilter(merge<any, any>(merge<any, any>(filter || {}, apply || {}), applyFilter || {}), apply, source);
-            }, 0),
-            isEmpty:     () => isEmpty(request),
-        }}
+        value={context}
     >
         {withProviderChildren(children, FilterContext)}
     </FilterContext.Provider>;

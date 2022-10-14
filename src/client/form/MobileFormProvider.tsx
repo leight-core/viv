@@ -9,6 +9,7 @@ import {message}        from "antd";
 import {Form}           from "antd-mobile";
 import {
     FC,
+    useMemo,
     useState
 }                       from "react";
 import {useTranslation} from "react-i18next";
@@ -23,7 +24,7 @@ export const MobileFormProvider: FC<IMobileFormProviderProps> = ({translation, c
     const [form]                        = Form.useForm();
     const [isSubmitVisible, showSubmit] = useState(true);
     return <MobileFormContext.Provider
-        value={{
+        value={useMemo(() => ({
             translation,
             form,
             isSubmitVisible,
@@ -39,7 +40,7 @@ export const MobileFormProvider: FC<IMobileFormProviderProps> = ({translation, c
                     errors: [t("error." + item.error)],
                 })));
             },
-        }}
+        }), [])}
     >
         {withProviderChildren(children, MobileFormContext)}
     </MobileFormContext.Provider>;

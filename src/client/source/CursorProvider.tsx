@@ -7,6 +7,7 @@ import {
 import {
     FC,
     useEffect,
+    useMemo,
     useState
 } from "react";
 
@@ -46,42 +47,45 @@ export const CursorProvider: FC<ICursorProviderProps> = (
         ]);
     }, [defaultSize]);
 
-    const context: ICursorContext = {
-        name,
-        page,
-        pages,
-        total,
-        count,
-        size,
-        append,
-        prepend,
-        setPage:      (page, size = defaultSize) => setPage([
+    const context = useMemo(() => {
+        const context: ICursorContext = {
+            name,
             page,
-            size
-        ]),
-        setPages:     count => {
-            setCount(count);
-            setPages(count !== undefined ? Math.ceil(count / size) : undefined);
-        },
-        setPageCount: setPages,
-        setTotal,
-        next:         append => {
-            setAppend(append);
-            setPage([
-                page + 1,
+            pages,
+            total,
+            count,
+            size,
+            append,
+            prepend,
+            setPage:      (page, size = defaultSize) => setPage([
+                page,
                 size
-            ]);
-        },
-        prev:         prepend => {
-            setPrepend(prepend);
-            setPage([
-                Math.max(0, page - 1),
-                size
-            ]);
-        },
-        hasMore:      () => pages ? page < pages : false,
-        more:         append => context.next(append),
-    };
+            ]),
+            setPages:     count => {
+                setCount(count);
+                setPages(count !== undefined ? Math.ceil(count / size) : undefined);
+            },
+            setPageCount: setPages,
+            setTotal,
+            next:         append => {
+                setAppend(append);
+                setPage([
+                    page + 1,
+                    size
+                ]);
+            },
+            prev:         prepend => {
+                setPrepend(prepend);
+                setPage([
+                    Math.max(0, page - 1),
+                    size
+                ]);
+            },
+            hasMore:      () => pages ? page < pages : false,
+            more:         append => context.next(append),
+        };
+        return context;
+    }, []);
 
     return <CursorContext.Provider
         value={context}

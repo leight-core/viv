@@ -4,8 +4,11 @@ import {
     IQueryParamsContext,
     QueryParamsContext,
     withProviderChildren
-}                 from "@leight-core/viv";
-import {useState} from "react";
+} from "@leight-core/viv";
+import {
+    useMemo,
+    useState
+} from "react";
 
 export interface IQueryParamsProviderProps<TQueryParams extends IQueryParams = any> {
     /**
@@ -22,10 +25,10 @@ export interface IQueryParamsProviderProps<TQueryParams extends IQueryParams = a
 export function QueryParamsProvider<TQueryParams extends IQueryParams = any>({defaultQueryParams, applyQueryParams, children}: IQueryParamsProviderProps<TQueryParams>) {
     const [queryParams, setQueryParams] = useState<TQueryParams | undefined>(applyQueryParams || defaultQueryParams);
     return <QueryParamsContext.Provider
-        value={{
+        value={useMemo(() => ({
             queryParams,
             setQueryParams: queryParams => setQueryParams({...queryParams, ...applyQueryParams}),
-        }}
+        }), [])}
     >
         {withProviderChildren(children, QueryParamsContext)}
     </QueryParamsContext.Provider>;

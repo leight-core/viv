@@ -6,7 +6,7 @@ import {
 } from "@leight-core/viv";
 import {
     FC,
-    useRef,
+    useMemo,
     useState
 } from "react";
 
@@ -17,14 +17,14 @@ export interface FormLoadingProviderProps {
 
 export const FormLoadingProvider: FC<FormLoadingProviderProps> = ({defaultLoading = false, children}) => {
     const [loading, setLoading] = useState(defaultLoading);
-    const context               = useRef<ILoaderContext>({
+    const context               = useMemo<ILoaderContext>(() => ({
         isLoading: () => loading,
         loading:   (loading = true) => setLoading(loading),
         done:      () => setLoading(false),
-    });
+    }), []);
 
     return <FormLoaderContext.Provider
-        value={context.current}
+        value={context}
     >
         {withProviderChildren(children, FormLoaderContext)}
     </FormLoaderContext.Provider>;

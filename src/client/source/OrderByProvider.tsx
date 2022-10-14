@@ -6,6 +6,7 @@ import {
 } from "@leight-core/viv";
 import {
     useEffect,
+    useMemo,
     useState
 } from "react";
 
@@ -24,11 +25,11 @@ export function OrderByProvider<TOrderBy, >({name, defaultOrderBy, children}: IO
         setOrderBy(defaultOrderBy);
     }, [defaultOrderBy]);
     return <OrderByContext.Provider
-        value={{
+        value={useMemo(() => ({
             name,
             orderBy,
             setOrderBy,
-        }}
+        }), [])}
     >
         {withProviderChildren(children, OrderByContext)}
     </OrderByContext.Provider>;

@@ -1,4 +1,5 @@
 import {
+    IProviderChildren,
     isCallable,
     ISelection,
     ISelectionContext,
@@ -8,6 +9,7 @@ import {
 import {
     ReactNode,
     useEffect,
+    useMemo,
     useRef,
     useState
 } from "react";
@@ -32,7 +34,7 @@ export interface ISelectionProviderProps<TSelection = any> {
      */
     onSelection?(selection: ISelection<TSelection>): void;
 
-    children?: ReactNode | ((selectionContext: ISelectionContext<TSelection>) => ReactNode);
+    children?: IProviderChildren<ISelectionContext<TSelection>>;
 }
 
 export function SelectionProvider<TSelection, >({type = "single", defaultSelection, applySelection, onSelection, children}: ISelectionProviderProps<TSelection>) {
@@ -54,72 +56,73 @@ export function SelectionProvider<TSelection, >({type = "single", defaultSelecti
         setSelection(() => ({...defaultSelection, ...applySelection}));
     }, [JSON.stringify(applySelection)]);
 
-    const context: ISelectionContext<TSelection> = {
-        type,
-        isSelected:      id => !!selectionRef.current[id],
-        asSelection:     () => selectionRef.current,
-        toSelection:     () => Object.keys(selectionRef.current),
-        toItems:         () => Object.values(selectionRef.current),
-        select:          (id, $selection, select) => {
-            setSelection(prev => {
-                const $select = select === undefined ? !prev[id] : select;
-                if (type === "single") {
-                    return $select ? {[id]: $selection} : {};
-                }
-                prev[id] = $selection;
-                !$select && (delete prev[id]);
-                return {...prev};
-            });
-        },
-        item:            (item, $select) => context.select(item.id, item, $select),
-        items:           (items, $select) => items.map(item => context.select(item.id, item, $select)),
-        isSelectedItem:  item => context.isSelected(item.id),
-        isEmpty:         () => !context.toSelection().length,
-        toSingle:        () => {
-            if (context.isEmpty()) {
-                throw new Error("Selection is empty!");
-            }
-            return context.toSelection()[0];
-        },
-        onSelection:     callback => onSelectionEvents.current.push(callback),
-        selection:       () => {
-            const items = context.toSelection().reduce((prev, current) => ({...prev, [current]: selectionRef.current[current]}), {});
-            return {
-                isEmpty:   context.isEmpty(),
-                single:    (() => {
-                    try {
-                        return selectionRef.current[context.toSingle()];
-                    } catch (e) {
-                        // swallow "Selection Empty" error
-                    }
-                })(),
-                selected:  context.toSelection(),
-                selection: Object.values(items) as TSelection[],
-                items,
-            };
-        },
-        toSingleItem:    () => selectionRef.current[context.toSingle()],
-        handleSelection: () => {
-            const selection = context.selection();
-            onSelectionEvents.current.map(callback => callback(selection));
-            $setDefault($selection);
-        },
-        clear:           () => {
-            setSelection(() => ({}));
-            $setDefault(() => ({}));
-        },
-        defaults:        items => {
-            context.reset();
-            $setDefault(items.reduce((prev, current) => {
-                return {...prev, [current.id]: current};
-            }, {}));
-            context.items(items, true);
-        },
-        reset:           () => setSelection(() => $default),
-    };
-
     return <SelectionContext.Provider
-        value={context}
+        value={useMemo(() => {
+            const context: ISelectionContext<TSelection> = {
+                type,
+                isSelected:      id => !!selectionRef.current[id],
+                asSelection:     () => selectionRef.current,
+                toSelection:     () => Object.keys(selectionRef.current),
+                toItems:         () => Object.values(selectionRef.current),
+                select:          (id, $selection, select) => {
+                    setSelection(prev => {
+                        const $select = select === undefined ? !prev[id] : select;
+                        if (type === "single") {
+                            return $select ? {[id]: $selection} : {};
+                        }
+                        prev[id] = $selection;
+                        !$select && (delete prev[id]);
+                        return {...prev};
+                    });
+                },
+                item:            (item, $select) => context.select(item.id, item, $select),
+                items:           (items, $select) => items.map(item => context.select(item.id, item, $select)),
+                isSelectedItem:  item => context.isSelected(item.id),
+                isEmpty:         () => !context.toSelection().length,
+                toSingle:        () => {
+                    if (context.isEmpty()) {
+                        throw new Error("Selection is empty!");
+                    }
+                    return context.toSelection()[0];
+                },
+                onSelection:     callback => onSelectionEvents.current.push(callback),
+                selection:       () => {
+                    const items = context.toSelection().reduce((prev, current) => ({...prev, [current]: selectionRef.current[current]}), {});
+                    return {
+                        isEmpty:   context.isEmpty(),
+                        single:    (() => {
+                            try {
+                                return selectionRef.current[context.toSingle()];
+                            } catch (e) {
+                                // swallow "Selection Empty" error
+                            }
+                        })(),
+                        selected:  context.toSelection(),
+                        selection: Object.values(items) as TSelection[],
+                        items,
+                    };
+                },
+                toSingleItem:    () => selectionRef.current[context.toSingle()],
+                handleSelection: () => {
+                    const selection = context.selection();
+                    onSelectionEvents.current.map(callback => callback(selection));
+                    $setDefault($selection);
+                },
+                clear:           () => {
+                    setSelection(() => ({}));
+                    $setDefault(() => ({}));
+                },
+                defaults:        items => {
+                    context.reset();
+                    $setDefault(items.reduce((prev, current) => {
+                        return {...prev, [current.id]: current};
+                    }, {}));
+                    context.items(items, true);
+                },
+                reset:           () => setSelection(() => $default),
+            };
+            return context;
+        }, [])}
     >
         {isCallable(children) ? <SelectionContext.Consumer>{children as any}</SelectionContext.Consumer> : children as ReactNode}
     </SelectionContext.Provider>;

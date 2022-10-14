@@ -1,12 +1,6 @@
-import {
-    IFormFields,
-    IMutationHook
-}                        from "@leight-core/viv";
-import {useMutation}     from "@tanstack/react-query";
-import {FormInstance}    from "antd";
-import CancelablePromise from "cancelable-promise";
-
-type ICancelableResolveCallback = (resolve: any) => void
+import {IFormFields}  from "@leight-core/viv";
+import {useMutation}  from "@tanstack/react-query";
+import {FormInstance} from "antd";
 
 export const FormUtils = {
     /**
@@ -14,8 +8,8 @@ export const FormUtils = {
      *
      * @param form Antd form instance
      */
-    fields: function (form: FormInstance): CancelablePromise<IFormFields[]> {
-        return new CancelablePromise((resolve: ICancelableResolveCallback) => setTimeout(() => {
+    fields: function (form: FormInstance): Promise<IFormFields[]> {
+        return new Promise(resolve => setTimeout(() => {
             resolve(form.getFieldsError().map(item => {
                 return [
                     item.name,
@@ -26,4 +20,4 @@ export const FormUtils = {
     },
 };
 
-export const usePassThroughMutation: IMutationHook<any, any> = () => useMutation<any, any, any, any>(values => new Promise(resolve => resolve(values)));
+export const usePassThroughMutation = () => useMutation<any, any, any, any>(values => new Promise(resolve => resolve(values)));

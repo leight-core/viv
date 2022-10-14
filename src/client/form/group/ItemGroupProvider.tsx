@@ -1,20 +1,27 @@
-import {ItemGroupContext} from "@leight-core/viv";
+import {
+    IItemGroupContext,
+    IProviderChildren,
+    ItemGroupContext,
+    withProviderChildren
+} from "@leight-core/viv";
 import {
     FC,
-    PropsWithChildren
-}                         from "react";
+    useMemo
+} from "react";
 
-export type IItemGroupProviderProps = PropsWithChildren<{
+export interface IItemGroupProviderProps {
     prefix: (string | number)[];
     translation?: string;
-}>;
+    children?: IProviderChildren<IItemGroupContext>;
+}
 
-export const ItemGroupProvider: FC<IItemGroupProviderProps> = ({prefix, translation, ...props}) => {
+export const ItemGroupProvider: FC<IItemGroupProviderProps> = ({prefix, translation, children}) => {
     return <ItemGroupContext.Provider
-        value={{
+        value={useMemo(() => ({
             prefix,
             translation,
-        }}
-        {...props}
-    />;
+        }), [])}
+    >
+        {withProviderChildren(children, ItemGroupContext)}
+    </ItemGroupContext.Provider>;
 };

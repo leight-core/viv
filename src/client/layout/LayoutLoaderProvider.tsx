@@ -6,7 +6,7 @@ import {
 } from "@leight-core/viv";
 import {
     FC,
-    useRef,
+    useMemo,
     useState
 } from "react";
 
@@ -17,14 +17,12 @@ export interface LayoutLoaderProviderProps {
 
 export const LayoutLoaderProvider: FC<LayoutLoaderProviderProps> = ({defaultLoading = false, children}) => {
     const [loading, setLoading] = useState(defaultLoading);
-    const context               = useRef<ILoaderContext>({
-        isLoading: () => loading,
-        loading:   (loading = true) => setLoading(loading),
-        done:      () => setLoading(false),
-    });
-
     return <LayoutLoaderContext.Provider
-        value={context.current}
+        value={useMemo(() => ({
+            isLoading: () => loading,
+            loading:   (loading = true) => setLoading(loading),
+            done:      () => setLoading(false),
+        }), [])}
     >
         {withProviderChildren(children, LayoutLoaderContext)}
     </LayoutLoaderContext.Provider>;

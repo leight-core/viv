@@ -1,15 +1,15 @@
 import {
+    INamePath,
     ItemGroupProvider,
     useOptionalItemGroupContext
-}                 from "@leight-core/viv";
-import {NamePath} from "rc-field-form/lib/interface";
+} from "@leight-core/viv";
 import {
     FC,
     PropsWithChildren
-}                 from "react";
+} from "react";
 
 export type IItemGroupProps = PropsWithChildren<{
-    prefix: NamePath;
+    prefix: INamePath;
     translation?: string;
 }>;
 

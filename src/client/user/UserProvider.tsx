@@ -8,7 +8,8 @@ import {
 import {
     FC,
     PropsWithChildren,
-    ReactNode
+    ReactNode,
+    useMemo
 }                     from "react";
 
 export type IUserProviderProps = PropsWithChildren<{
@@ -21,10 +22,10 @@ export type IUserProviderProps = PropsWithChildren<{
 export const UserProvider: FC<IUserProviderProps> = ({user, isReady, block = true, logo, ...props}) => {
     const $user = User(user);
     return <UserContext.Provider
-        value={{
+        value={useMemo(() => ({
             user: $user,
             isReady,
-        }}
+        }), [])}
     >
         <LoaderLayout
             logo={logo}
