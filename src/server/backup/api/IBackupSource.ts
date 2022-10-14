@@ -1,7 +1,3 @@
-export interface IBackupService {
-    backup(): Promise<any>;
-}
-
 export interface IBackupSource<//
     TEntity extends Record<string, any>,
     TBackup extends Record<string, any> = TEntity,

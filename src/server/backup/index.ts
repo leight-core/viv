@@ -1,2 +1,2 @@
-export * from "./BackupService";
-export * from "./interface";
+export *           from "./BackupService";
+export * as Backup from "./export";

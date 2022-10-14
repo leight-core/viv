@@ -1,5 +1,5 @@
 import {
-    IBackupService,
+    Backup,
     IContainer,
     IJobProgress,
     IServiceContainer,
@@ -8,8 +8,6 @@ import {
 }               from "@leight-core/viv";
 import dayjs    from "dayjs";
 import {Logger} from "winston";
-
-export type IArchiveCallback = (backup: string, file: string) => Promise<any>
 
 export interface IBackupServiceDeps<TContainer extends IContainer> {
     version: string;
@@ -25,7 +23,7 @@ export interface IBackupServiceDeps<TContainer extends IContainer> {
      * @param backup
      * @param file
      */
-    archive?: IArchiveCallback;
+    archive?: Backup.IArchiveCallback;
 }
 
 export interface IBackupMeta {
@@ -33,16 +31,14 @@ export interface IBackupMeta {
     sources: string[];
 }
 
-export const BackupService = <TContainer extends IServiceContainer>(deps: IBackupServiceDeps<TContainer>) => new BackupServiceClass(deps);
-
-export class BackupServiceClass<TContainer extends IServiceContainer> implements IBackupService {
+export class BackupServiceClass<TContainer extends IServiceContainer> implements Backup.IBackupService {
     readonly version: string;
     readonly sources: ISource<any, any, any>[];
     readonly temp?: string;
     readonly container: TContainer;
     readonly logger: Logger;
     readonly jobProgress: IJobProgress;
-    readonly archive?: IArchiveCallback;
+    readonly archive?: Backup.IArchiveCallback;
 
     constructor({version, sources, container, logger, jobProgress, temp, archive}: IBackupServiceDeps<TContainer>) {
         this.version     = version;
@@ -127,3 +123,5 @@ export class BackupServiceClass<TContainer extends IServiceContainer> implements
         });
     }
 }
+
+export const BackupService = <TContainer extends IServiceContainer>(deps: IBackupServiceDeps<TContainer>) => new BackupServiceClass(deps);
