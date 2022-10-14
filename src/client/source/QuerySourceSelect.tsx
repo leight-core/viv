@@ -3,10 +3,8 @@ import {
     isString,
     IToOptionMapper,
     useOptionalFilterContext,
-    useOptionalFormContext,
     useOptionalFormItemContext,
     useSourceContext,
-    useUpdate
 }                       from "@leight-core/viv";
 import {
     Empty,
@@ -34,11 +32,6 @@ export interface IQuerySourceSelectProps<TResponse> extends Partial<Omit<SelectP
      */
     usePlaceholder?: boolean;
     /**
-     * When this "something" changes, input is cleared (value set to undefined); this can be used to externally
-     * clear this input on change.
-     */
-    clearOn?: any;
-    /**
      * When se to true, select will filter values set.
      */
     filter?: boolean;
@@ -65,7 +58,6 @@ export const QuerySourceSelect = <TResponse, >(
          */
         value,
         debounce = 200,
-        clearOn = false,
         usePlaceholder,
         showSearch = false,
         filter = showSearch,
@@ -80,14 +72,8 @@ export const QuerySourceSelect = <TResponse, >(
     const {t}             = useTranslation();
     const sourceContext   = useSourceContext();
     const filterContext   = useOptionalFilterContext();
-    const formContext     = useOptionalFormContext();
     const formItemContext = useOptionalFormItemContext();
     formItemContext && usePlaceholder && (props.placeholder = formItemContext.label);
-    useUpdate([clearOn], () => {
-        clearOn !== false && formItemContext && formContext && formContext.form.setFields([
-            {name: formItemContext.field, value: undefined},
-        ]);
-    });
     useEffect(() => {
         filter && filterContext?.setFilter(toId(value));
     }, [value]);

@@ -1,10 +1,10 @@
 import {
-    createContext,
-    useContext,
-    useOptionalContext
+    contextFactory,
+    IFingerprintContext
 } from "@leight-core/viv";
 
-export const FingerprintContext = createContext();
-
-export const useFingerprintContext         = () => useContext(FingerprintContext, "FingerprintContext");
-export const useOptionalFingerprintContext = () => useOptionalContext(FingerprintContext);
+export const [
+                 FingerprintContext,
+                 useFingerprintContext,
+                 useOptionalFingerprintContext,
+             ] = contextFactory<IFingerprintContext>("FingerprintContext");

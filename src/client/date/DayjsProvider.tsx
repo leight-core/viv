@@ -6,7 +6,7 @@ import {
 } from "@leight-core/viv";
 import {
     FC,
-    useRef
+    useMemo
 } from "react";
 
 export interface IDayjsProviderProps {
@@ -15,11 +15,11 @@ export interface IDayjsProviderProps {
 }
 
 export const DayjsProvider: FC<IDayjsProviderProps> = ({dayjs, children}) => {
-    const context = useRef<IDayJsContext>({
+    const context = useMemo<IDayJsContext>(() => ({
         dayjs,
-    });
+    }), []);
     return <DayjsContext.Provider
-        value={context.current}
+        value={context}
     >
         {withProviderChildren(children, DayjsContext)}
     </DayjsContext.Provider>;

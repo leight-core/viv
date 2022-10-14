@@ -1,15 +1,22 @@
-import FingerprintJS        from "@fingerprintjs/fingerprintjs";
-import {FingerprintContext} from "@leight-core/viv";
-import {useQuery}           from "@tanstack/react-query";
-import axios                from "axios";
+import FingerprintJS from "@fingerprintjs/fingerprintjs";
+import {
+    FingerprintContext,
+    IFingerprintContext,
+    IProviderChildren,
+    withProviderChildren
+}                    from "@leight-core/viv";
+import {useQuery}    from "@tanstack/react-query";
+import axios         from "axios";
 import {
     FC,
-    PropsWithChildren
-}                           from "react";
+    useMemo
+}                    from "react";
 
-export type IFingerprintProviderProps = PropsWithChildren;
+export interface IFingerprintProviderProps {
+    children?: IProviderChildren<IFingerprintContext>;
+}
 
-export const FingerprintProvider: FC<IFingerprintProviderProps> = props => {
+export const FingerprintProvider: FC<IFingerprintProviderProps> = ({children}) => {
     const fingerprint = useQuery(["fingerprint"], () => new Promise<string>(resolve => {
         const done = (fingerprint: string) => {
             resolve((axios.defaults.headers as any)["X-Client-Hash"] = fingerprint);
@@ -25,11 +32,10 @@ export const FingerprintProvider: FC<IFingerprintProviderProps> = props => {
          */
         staleTime: 1000 * 60 * 60 * 60,
     });
-
+    const context     = useMemo<IFingerprintContext>(() => ({fingerprint}), []);
     return <FingerprintContext.Provider
-        value={{
-            fingerprint,
-        }}
-        {...props}
-    />;
+        value={context}
+    >
+        {withProviderChildren(children, FingerprintContext)}
+    </FingerprintContext.Provider>;
 };

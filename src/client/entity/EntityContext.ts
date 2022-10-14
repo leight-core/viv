@@ -1,11 +1,10 @@
 import {
-    createContext,
-    IEntityContext,
-    useContext,
-    useOptionalContext
+    contextFactory,
+    IEntityContext
 } from "@leight-core/viv";
 
-export const EntityContext = createContext<IEntityContext<any>>();
-
-export const useEntityContext         = <TEntity>() => useContext<IEntityContext<TEntity>>(EntityContext, "EntityContext");
-export const useOptionalEntityContext = <TEntity>() => useOptionalContext<IEntityContext<TEntity>>(EntityContext);
+export const [
+                 EntityContext,
+                 useEntityContext,
+                 useOptionalEntityContext,
+             ] = contextFactory<IEntityContext<any>>("EntityContext");

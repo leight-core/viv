@@ -1,14 +1,17 @@
-import {EntityContext} from "@leight-core/viv";
 import {
-    PropsWithChildren,
-    useState
-}                      from "react";
+    EntityContext,
+    IEntityContext,
+    IProviderChildren,
+    withProviderChildren
+}                 from "@leight-core/viv";
+import {useState} from "react";
 
-export type IEntityProviderProps<TEntity> = PropsWithChildren<{
+export interface IEntityProviderProps<TEntity> {
     defaultEntity?: TEntity;
-}>;
+    children?: IProviderChildren<IEntityContext<any>>;
+}
 
-export const EntityProvider = <TEntity, >({defaultEntity, ...props}: IEntityProviderProps<TEntity>) => {
+export const EntityProvider = <TEntity, >({defaultEntity, children}: IEntityProviderProps<TEntity>) => {
     const [entity, update] = useState<TEntity | undefined | null>(defaultEntity);
     return <EntityContext.Provider
         value={{
@@ -22,6 +25,7 @@ export const EntityProvider = <TEntity, >({defaultEntity, ...props}: IEntityProv
             },
             update,
         }}
-        {...props}
-    />;
+    >
+        {withProviderChildren(children, EntityContext)}
+    </EntityContext.Provider>;
 };
