@@ -19,10 +19,6 @@ export type UndefinableWithOptional<T> =
 export type NullableOptional<T> = Partial<NullableWithOptional<T>>;
 export type UndefinableOptional<T> = Partial<UndefinableWithOptional<T>>;
 
-export interface IndexOf<T> {
-    [index: string]: T;
-}
-
 export type IfVoid<TType, TExtends = void> = TExtends extends void ? TType : TType & TExtends;
 
 export type Unboxed<T> = T extends (infer U)[] ? U : T;

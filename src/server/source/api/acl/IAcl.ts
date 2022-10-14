@@ -1,4 +1,4 @@
-export interface ISourceAcl {
+export interface IAcl {
     /**
      * Apply default required tokens:
      * - "*" (all)

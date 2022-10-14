@@ -1,5 +1,5 @@
 import {
-    Backup,
+    IBackupSource,
     IContainer,
     IImportSource,
     IMutationSource,
@@ -25,7 +25,7 @@ export interface ISource<//
     IMutationSource<TCreate, TEntity>,
     IImportSource<TCreate, TEntity>,
     IQuerySource<TEntity, TQuery>,
-    Backup.IBackupSource<TEntity, TBackup>,
+    IBackupSource<TEntity, TBackup>,
     IRestoreSource<TEntity, TBackup>,
     IResolveSource<TCreate> {
     /**
