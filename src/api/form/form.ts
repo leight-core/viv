@@ -1,8 +1,8 @@
-import {INavigate}    from "@leight-core/viv";
+import {
+    INamePath,
+    INavigate
+}                     from "@leight-core/viv";
 import {FormInstance} from "antd";
-import {NamePath}     from "rc-field-form/lib/interface";
-
-export type INamePath = NamePath;
 
 export interface IFormItemContext {
     readonly field: INamePath;
