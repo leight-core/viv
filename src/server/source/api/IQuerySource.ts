@@ -1,6 +1,6 @@
 import {
-    IQuery,
-    QueryInfer
+    InferQuery,
+    IQuery
 } from "@leight-core/viv";
 
 export interface IQuerySource<//
@@ -36,7 +36,7 @@ export interface IQuerySource<//
     /**
      * General method for converting input filter from a query into an output (for example, applying fulltext).
      */
-    withFilter(query: TQuery): QueryInfer.Filter<TQuery> | undefined;
+    withFilter(query: TQuery): InferQuery.Filter<TQuery> | undefined;
 }
 
 export namespace QuerySourceInfer {

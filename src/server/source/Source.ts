@@ -1,6 +1,7 @@
 import {
     ClientError,
     IContainer,
+    InferQuery,
     IPromiseMapper,
     IQuery,
     ISource,
@@ -8,7 +9,6 @@ import {
     IWithIdentity,
     onUnique,
     PromiseMapper,
-    QueryInfer,
     UndefinableOptional
 }               from "@leight-core/viv";
 import {Prisma} from "@prisma/client";
@@ -186,7 +186,7 @@ export abstract class AbstractSource<//
         throw new Error(`Source [${this.name}] does not support counting items by a query.`);
     }
 
-    withFilter({filter}: TQuery): QueryInfer.Filter<TQuery> | undefined {
+    withFilter({filter}: TQuery): InferQuery.Filter<TQuery> | undefined {
         return filter;
     }
 
