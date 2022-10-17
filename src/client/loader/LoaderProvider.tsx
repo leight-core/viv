@@ -3,12 +3,12 @@ import {
     IProviderChildren,
     LoaderContext,
     withProviderChildren
-} from "@leight-core/viv";
+}                from "@leight-core/viv";
 import {
     FC,
-    useMemo,
     useState
-} from "react";
+}                from "react";
+import {useMemo} from "use-memo-one";
 
 export interface ILoaderProviderProps {
     defaultLoading?: boolean;

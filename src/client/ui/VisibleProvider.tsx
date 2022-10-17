@@ -3,12 +3,12 @@ import {
     IVisibleContext,
     VisibleContext,
     withProviderChildren
-} from "@leight-core/viv";
+}                from "@leight-core/viv";
 import {
     FC,
-    useMemo,
     useState
-} from "react";
+}                from "react";
+import {useMemo} from "use-memo-one";
 
 export interface IVisibleProviderProps {
     defaultVisible?: boolean;
@@ -19,7 +19,9 @@ export const VisibleProvider: FC<IVisibleProviderProps> = ({defaultVisible = fal
     const [visible, setVisible] = useState<boolean>(defaultVisible);
     return <VisibleContext.Provider
         value={useMemo(() => ({
-            visible,
+            get visible() {
+                return visible;
+            },
             setVisible,
             show: () => setVisible(true),
             hide: () => setVisible(false),

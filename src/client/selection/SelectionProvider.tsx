@@ -1,18 +1,17 @@
 import {
     IProviderChildren,
-    isCallable,
     ISelection,
     ISelectionContext,
     ISelectionType,
-    SelectionContext
-} from "@leight-core/viv";
+    SelectionContext,
+    withProviderChildren
+}                from "@leight-core/viv";
 import {
-    ReactNode,
     useEffect,
-    useMemo,
     useRef,
     useState
-} from "react";
+}                from "react";
+import {useMemo} from "use-memo-one";
 
 export interface ISelectionProviderProps<TSelection = any> {
     /**
@@ -122,8 +121,8 @@ export function SelectionProvider<TSelection, >({type = "single", defaultSelecti
                 reset:           () => setSelection(() => $default),
             };
             return context;
-        }, [])}
+        }, [type])}
     >
-        {isCallable(children) ? <SelectionContext.Consumer>{children as any}</SelectionContext.Consumer> : children as ReactNode}
+        {withProviderChildren(children, SelectionContext)}
     </SelectionContext.Provider>;
 }

@@ -9,8 +9,8 @@ import {
     FC,
     PropsWithChildren,
     ReactNode,
-    useMemo
 }                     from "react";
+import {useMemo}      from "use-memo-one";
 
 export type IUserProviderProps = PropsWithChildren<{
     logo?: ReactNode;
@@ -25,7 +25,7 @@ export const UserProvider: FC<IUserProviderProps> = ({user, isReady, block = tru
         value={useMemo(() => ({
             user: $user,
             isReady,
-        }), [])}
+        }), [$user.userId])}
     >
         <LoaderLayout
             logo={logo}

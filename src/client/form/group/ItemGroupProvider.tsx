@@ -3,11 +3,9 @@ import {
     IProviderChildren,
     ItemGroupContext,
     withProviderChildren
-} from "@leight-core/viv";
-import {
-    FC,
-    useMemo
-} from "react";
+}                from "@leight-core/viv";
+import {FC,}     from "react";
+import {useMemo} from "use-memo-one";
 
 export interface IItemGroupProviderProps {
     prefix: (string | number)[];
@@ -20,7 +18,10 @@ export const ItemGroupProvider: FC<IItemGroupProviderProps> = ({prefix, translat
         value={useMemo(() => ({
             prefix,
             translation,
-        }), [])}
+        }), [
+            prefix,
+            translation
+        ])}
     >
         {withProviderChildren(children, ItemGroupContext)}
     </ItemGroupContext.Provider>;

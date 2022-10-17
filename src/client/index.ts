@@ -8,7 +8,6 @@ export * from "./date";
 export * from "./dialog";
 export * from "./drawer";
 export * from "./entity";
-export * from "./fingerprint";
 export * from "./form";
 export * from "./i18n";
 export * from "./icon";

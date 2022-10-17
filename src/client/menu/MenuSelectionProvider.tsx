@@ -3,9 +3,9 @@ import {
     FC,
     PropsWithChildren,
     useEffect,
-    useMemo,
     useState
 }                             from "react";
+import {useMemo}              from "use-memo-one";
 
 export type IMenuSelectionProviderProps = PropsWithChildren<{
     defaultSelection?: string[];
@@ -15,7 +15,9 @@ export const MenuSelectionProvider: FC<IMenuSelectionProviderProps> = ({defaultS
     const [selection, setSelection] = useState<string[]>(defaultSelection);
     return <MenuSelectionContext.Provider
         value={useMemo(() => ({
-            selection,
+            get selection() {
+                return selection;
+            },
             useSelection: selection => {
                 useEffect(() => {
                     const id = setTimeout(() => setSelection(selection), 0);

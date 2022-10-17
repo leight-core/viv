@@ -3,12 +3,12 @@ import {
     IProviderChildren,
     OrderByContext,
     withProviderChildren
-} from "@leight-core/viv";
+}                from "@leight-core/viv";
 import {
     useEffect,
-    useMemo,
     useState
-} from "react";
+}                from "react";
+import {useMemo} from "use-memo-one";
 
 export interface IOrderByProviderProps<TOrderBy = any> {
     name: string;
@@ -27,9 +27,11 @@ export function OrderByProvider<TOrderBy, >({name, defaultOrderBy, children}: IO
     return <OrderByContext.Provider
         value={useMemo(() => ({
             name,
-            orderBy,
+            get orderBy() {
+                return orderBy;
+            },
             setOrderBy,
-        }), [])}
+        }), [name])}
     >
         {withProviderChildren(children, OrderByContext)}
     </OrderByContext.Provider>;

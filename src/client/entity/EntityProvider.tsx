@@ -2,19 +2,18 @@ import {
     EntityContext,
     IEntityContext,
     IProviderChildren,
+    IWithIdentity,
     withProviderChildren
-} from "@leight-core/viv";
-import {
-    useMemo,
-    useState
-} from "react";
+}                 from "@leight-core/viv";
+import {useState} from "react";
+import {useMemo}  from "use-memo-one";
 
-export interface IEntityProviderProps<TEntity> {
+export interface IEntityProviderProps<TEntity extends IWithIdentity> {
     defaultEntity?: TEntity;
     children?: IProviderChildren<IEntityContext<TEntity>>;
 }
 
-export const EntityProvider = <TEntity, >({defaultEntity, children}: IEntityProviderProps<TEntity>) => {
+export const EntityProvider = <TEntity extends IWithIdentity>({defaultEntity, children}: IEntityProviderProps<TEntity>) => {
     const [entity, update] = useState<TEntity | undefined | null>(defaultEntity);
     const context          = useMemo<IEntityContext<TEntity | undefined | null>>(() => ({
         entity,
@@ -26,7 +25,7 @@ export const EntityProvider = <TEntity, >({defaultEntity, children}: IEntityProv
             return entity;
         },
         update,
-    }), []);
+    }), [entity?.id]);
     return <EntityContext.Provider
         value={context}
     >

@@ -3,13 +3,13 @@ import {
     ICursorContext,
     IProviderChildren,
     withProviderChildren
-} from "@leight-core/viv";
+}                from "@leight-core/viv";
 import {
     FC,
     useEffect,
-    useMemo,
     useState
-} from "react";
+}                from "react";
+import {useMemo} from "use-memo-one";
 
 export interface ICursorProviderProps {
     name: string;
@@ -47,48 +47,49 @@ export const CursorProvider: FC<ICursorProviderProps> = (
         ]);
     }, [defaultSize]);
 
-    const context = useMemo(() => {
-        const context: ICursorContext = {
-            name,
-            page,
-            pages,
-            total,
-            count,
-            size,
-            append,
-            prepend,
-            setPage:      (page, size = defaultSize) => setPage([
-                page,
-                size
-            ]),
-            setPages:     count => {
-                setCount(count);
-                setPages(count !== undefined ? Math.ceil(count / size) : undefined);
-            },
-            setPageCount: setPages,
-            setTotal,
-            next:         append => {
-                setAppend(append);
-                setPage([
-                    page + 1,
-                    size
-                ]);
-            },
-            prev:         prepend => {
-                setPrepend(prepend);
-                setPage([
-                    Math.max(0, page - 1),
-                    size
-                ]);
-            },
-            hasMore:      () => pages ? page < pages : false,
-            more:         append => context.next(append),
-        };
-        return context;
-    }, []);
-
     return <CursorContext.Provider
-        value={context}
+        value={useMemo(() => {
+            const context: ICursorContext = {
+                name,
+                page,
+                pages,
+                total,
+                count,
+                size,
+                append,
+                prepend,
+                setPage:      (page, size = defaultSize) => setPage([
+                    page,
+                    size
+                ]),
+                setPages:     count => {
+                    setCount(count);
+                    setPages(count !== undefined ? Math.ceil(count / size) : undefined);
+                },
+                setPageCount: setPages,
+                setTotal,
+                next:         append => {
+                    setAppend(append);
+                    setPage([
+                        page + 1,
+                        size
+                    ]);
+                },
+                prev:         prepend => {
+                    setPrepend(prepend);
+                    setPage([
+                        Math.max(0, page - 1),
+                        size
+                    ]);
+                },
+                hasMore:      () => pages ? page < pages : false,
+                more:         append => context.next(append),
+            };
+            return context;
+        }, [
+            name,
+            defaultSize
+        ])}
     >
         {withProviderChildren(children, CursorContext)}
     </CursorContext.Provider>;

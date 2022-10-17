@@ -1,4 +1,5 @@
 import {
+    IProviderChildren,
     IQuery,
     IQueryHook,
     ISourceContext,
@@ -11,16 +12,13 @@ import {
     useOptionalOrderByContext,
     useOptionalQueryParamsContext,
     withProviderChildren
-} from "@leight-core/viv";
+}                 from "@leight-core/viv";
 import {
     useQuery as useCoolQuery,
     UseQueryOptions
-} from "@tanstack/react-query";
-import {
-    ReactNode,
-    useMemo,
-    useState
-} from "react";
+}                 from "@tanstack/react-query";
+import {useState} from "react";
+import {useMemo}  from "use-memo-one";
 
 export interface ISourceProviderProps<TResponse extends IWithIdentity> {
     name: string;
@@ -44,7 +42,7 @@ export interface ISourceProviderProps<TResponse extends IWithIdentity> {
     onSuccess?(response: TResponse[]): void;
 
     withCount?: boolean;
-    children?: ReactNode | ((sourceContext: ISourceContext<TResponse>) => ReactNode);
+    children?: IProviderChildren<ISourceContext<TResponse>>;
 }
 
 export const SourceProvider = <TResponse extends IWithIdentity>(
@@ -68,7 +66,7 @@ export const SourceProvider = <TResponse extends IWithIdentity>(
     if (!withCount) {
         useCountQuery = undefined;
     }
-    if (!useCountQuery) {
+    if (!useCountQuery || !cursorContext) {
         useCountQuery = () => useCoolQuery<number>({
             queryFn: () => 0,
         });
@@ -111,20 +109,23 @@ export const SourceProvider = <TResponse extends IWithIdentity>(
         onSuccess:        count => cursorContext?.setPages(count),
     });
 
-    const hasData = () => Array.isArray(data) && data.length > 0;
-
     return <SourceContext.Provider
-        value={useMemo(() => ({
-            name,
-            result: query,
-            hasData,
-            map:    mapper => hasData() ? (data?.map(mapper) || []) : [],
-            data:   () => hasData() ? (data || []) : [],
-            reset:  () => {
-                setData([]);
-                cursorContext?.setPage(0);
-            },
-        }), [])}
+        value={useMemo(() => {
+            const hasData = () => Array.isArray(data) && data.length > 0;
+            return {
+                name,
+                get result() {
+                    return query;
+                },
+                hasData,
+                map:   mapper => hasData() ? (data?.map(mapper) || []) : [],
+                data:  () => hasData() ? (data || []) : [],
+                reset: () => {
+                    setData([]);
+                    cursorContext?.setPage(0);
+                },
+            };
+        }, [name])}
     >
         {withProviderChildren(children, SourceContext)}
     </SourceContext.Provider>;
