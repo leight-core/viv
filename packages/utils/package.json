@@ -21,6 +21,7 @@
         "lint": "eslint src"
     },
     "dependencies": {
+        "dayjs": "^1.11.5",
         "is-callable": "^1.2.7"
     },
     "devDependencies": {

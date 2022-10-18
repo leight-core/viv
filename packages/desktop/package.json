@@ -22,6 +22,8 @@
     },
     "dependencies": {
         "@leight/shared": "*",
+        "@leight/antd": "*",
+        "@leight/ui": "*",
         "antd": "^4.23.6"
     },
     "devDependencies": {
