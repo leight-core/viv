@@ -1,7 +1,7 @@
+import {toHumanBytes}   from "@leight/utils";
 import {
     Centered,
     IQueryParams,
-    toHumanBytes,
     toLink
 }                       from "@leight/viv";
 import {
@@ -49,7 +49,7 @@ export const Uploader: FC<IUploaderProps> = ({name, limit, translation, action, 
     const [status, setStatus]     = useState<any>("active");
     const [progress, setProgress] = useState(0);
     const {t}                     = useTranslation();
-    const onBeforeUpload          = (file: RcFile): boolean => {
+    const onBeforeUpload = (file: RcFile): boolean => {
         const hasValidSize = file.size / 1024 / 1024 < limit;
         if (!hasValidSize) {
             message.error(t([
@@ -59,7 +59,7 @@ export const Uploader: FC<IUploaderProps> = ({name, limit, translation, action, 
         }
         return hasValidSize;
     };
-    const onChange                = (info: UploadChangeParam) => {
+    const onChange       = (info: UploadChangeParam) => {
         const current = info.fileList.length - 1;
         switch (info.fileList[current].status) {
             case "uploading":

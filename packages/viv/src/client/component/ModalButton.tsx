@@ -1,4 +1,5 @@
-import {isString}       from "@leight/viv";
+import {isString}       from "@leight/utils";
+import {UseToken}       from "@leight/viv";
 import {
     Button,
     ButtonProps,
@@ -11,7 +12,6 @@ import {
     useState
 }                       from "react";
 import {useTranslation} from "react-i18next";
-import {UseToken}       from "../user";
 
 export interface IModalButtonProps extends Omit<Partial<ModalProps>, "onOk"> {
     button?: ButtonProps;

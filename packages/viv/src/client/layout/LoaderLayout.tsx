@@ -1,7 +1,7 @@
 import {AntDesignOutlined} from "@ant-design/icons";
+import {isCallable}        from "@leight/utils";
 import {
     Centered,
-    isCallable,
     LoaderIcon
 }                          from "@leight/viv";
 import {

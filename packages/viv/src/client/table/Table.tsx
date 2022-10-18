@@ -1,5 +1,5 @@
+import {isString}         from "@leight/utils";
 import {
-    isString,
     LoaderIcon,
     PaginationProvider,
     Template,

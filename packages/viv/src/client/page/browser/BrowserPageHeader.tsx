@@ -1,4 +1,4 @@
-import {isString} from "@leight/viv";
+import {ifString} from "@leight/utils";
 import {
     Col,
     PageHeader as CoolPageHeader,
@@ -25,14 +25,14 @@ export interface IBrowserPageHeaderProps extends Partial<CoolPageHeaderProps> {
 
 export const BrowserPageHeader: FC<IBrowserPageHeaderProps> = ({title, icon, headerPostfix, values, components, ...props}) => {
     const {t}    = useTranslation();
-    const $title = isString(title) ? <span>
+    const $title = ifString(title, title => <span>
 		<Trans
             t={t}
             i18nKey={title + ".title"}
             components={components}
             values={values}
         />
-	</span> : title;
+	</span>);
     return <CoolPageHeader
         title={<Row align={"middle"} style={{width: "60vw", height: "45px"}}>
             <Col>

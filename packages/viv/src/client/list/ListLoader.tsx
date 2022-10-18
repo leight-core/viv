@@ -1,8 +1,8 @@
+import {toPercent} from "@leight/utils";
 import {
     ICursorContext,
     ISourceContext,
     ITranslationProps,
-    toPercent,
     Translate,
     useCursorContext,
     useSourceContext
@@ -50,7 +50,7 @@ export function ListLoader<TItem>(
             <DotLoading/> : (cursorContext.pages > 0 ? <Row align={"top"} justify={"center"} gutter={4}>
                 <Col span={"auto"}>{`${cursorContext.page}/${cursorContext.pages}`}</Col>
                 {cursorContext.hasMore() && <Col span={2}><ProgressCircle
-                    percent={toPercent(cursorContext.page || 0, cursorContext.pages || 0)}
+                    percent={toPercent(cursorContext.page, cursorContext.pages)}
                     style={{"--size": "18px", "--track-width": "2px"}}
                 /></Col>}
             </Row> : renderEmpty?.({

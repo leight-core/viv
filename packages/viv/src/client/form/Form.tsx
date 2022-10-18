@@ -1,3 +1,4 @@
+import {isCallable}            from "@leight/utils";
 import {
     FormProvider,
     IFormChanged,
@@ -11,7 +12,6 @@ import {
     IMutationHook,
     INavigate,
     IQueryParams,
-    isCallable,
     ItemGroupProvider,
     IToFormError,
     LoaderIcon,

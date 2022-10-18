@@ -1,9 +1,9 @@
+import {IPromiseMapper} from "@leight/api";
 import {
     IBackupSource,
     IContainer,
     IImportSource,
     IMutationSource,
-    IPromiseMapper,
     IQuery,
     IQuerySource,
     IResolveSource,
@@ -11,7 +11,7 @@ import {
     IWithContainer,
     IWithIdentity,
     UndefinableOptional
-} from "@leight/viv";
+}                       from "@leight/viv";
 
 export interface ISource<//
     TContainer extends IContainer,

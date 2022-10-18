@@ -1,4 +1,4 @@
-import {isString}       from "@leight/viv";
+import {ifString}       from "@leight/utils";
 import {Space}          from "antd";
 import {
     FC,
@@ -15,6 +15,6 @@ export const TabInline: FC<ITabInlineProps> = ({title, icon}) => {
     const {t} = useTranslation();
     return <Space size={0}>
         {icon}
-        {title && (isString(title) ? t(title as string) : title)}
+        {title && ifString(title, title => t(title))}
     </Space>;
 };

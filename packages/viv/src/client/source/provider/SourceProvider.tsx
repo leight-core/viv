@@ -1,12 +1,14 @@
 import {
+    merge,
+    uniqueOf
+}                 from "@leight/utils";
+import {
     IProviderChildren,
     IQuery,
     IQueryHook,
     ISourceContext,
     IWithIdentity,
-    merge,
     SourceContext,
-    uniqueOf,
     useOptionalCursorContext,
     useOptionalFilterContext,
     useOptionalOrderByContext,

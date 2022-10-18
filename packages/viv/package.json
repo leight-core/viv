@@ -23,6 +23,8 @@
         "prisma-generate": "npx prisma generate"
     },
     "dependencies": {
+        "@leight/api": "*",
+        "@leight/utils": "*",
         "@prisma/client": "^4.4.0",
         "@tanstack/query-sync-storage-persister": "^4.10.3",
         "@tanstack/react-query": "^4.6.0",

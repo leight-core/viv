@@ -1,7 +1,9 @@
 import {
-    AclError,
     diffOf,
-    intersectOf,
+    intersectOf
+} from "@leight/utils";
+import {
+    AclError,
     IUser,
     IUserRequest,
     UndefinedUserError

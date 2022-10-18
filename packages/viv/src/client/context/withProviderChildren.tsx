@@ -1,12 +1,12 @@
+import {isCallable} from "@leight/utils";
 import {
     IContextRender,
     IProviderChildren,
-    isCallable
-} from "@leight/viv";
+}                   from "@leight/viv";
 import {
     Context,
     ReactNode
-} from "react";
+}                   from "react";
 
 export const withProviderChildren = <TChildren, TContext extends Context<TChildren | null>>(children: IProviderChildren<TChildren>, Context: TContext) => {
     return isCallable(children) ? <Context.Consumer>{context => {
