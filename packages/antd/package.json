@@ -1,0 +1,47 @@
+{
+    "version": "0.5.0",
+    "name": "@leight/antd",
+    "description": "Wrapper or extension components over antd library. Here are just the simpler ones, somehow 1:1 to the original from antd.",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/leight-core/viv.git"
+    },
+    "engines": {
+        "node": ">=16.0.0"
+    },
+    "sideEffects": false,
+    "main": "lib/cjs/index.js",
+    "module": "lib/esm/index.js",
+    "files": [
+        "lib"
+    ],
+    "scripts": {
+        "build": "tsc -p tsconfig.json && tsc -p tsconfig.json -m es2022 --outDir lib/esm",
+        "lint": "eslint src"
+    },
+    "dependencies": {
+        "@leight/shared": "*",
+        "@leight/utils": "*",
+        "@leight/ui": "*",
+        "antd": "^4.23.6",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@types/react": "^18.0.21",
+        "@typescript-eslint/eslint-plugin": "^5.38.0",
+        "@typescript-eslint/parser": "^5.38.0",
+        "eslint": "^8.24.0",
+        "eslint-plugin-unicorn": "^43.0.2",
+        "typescript": "^4.8.4"
+    },
+    "types": "lib/cjs/index.d.ts",
+    "bugs": {
+        "url": "https://github.com/leight-core/viv/issues"
+    },
+    "homepage": "https://github.com/leight-core/viv#readme",
+    "directories": {
+        "lib": "lib"
+    }
+}
