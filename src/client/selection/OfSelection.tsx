@@ -2,7 +2,7 @@ import {
     ISelectionContext,
     IWithIdentity,
     useSelectionContext
-}                  from "@leight-core/viv";
+}                  from "@leight/viv";
 import {useEffect} from "react";
 
 export interface IOfSelection<TItem extends Record<string, any> & IWithIdentity = any, TOnChange = any> {

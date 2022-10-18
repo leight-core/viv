@@ -1,4 +1,4 @@
-import {useIsTablet} from "@leight-core/viv";
+import {useIsTablet} from "@leight/viv";
 import {
     FC,
     PropsWithChildren,

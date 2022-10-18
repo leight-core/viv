@@ -1,7 +1,7 @@
 import {
     IMenuProps,
     Menu
-}           from "@leight-core/viv";
+}           from "@leight/viv";
 import {FC} from "react";
 
 export interface IHorizontalMenuProps extends Partial<IMenuProps> {

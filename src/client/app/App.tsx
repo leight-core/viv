@@ -7,7 +7,7 @@ import {
     MenuSelectionProvider,
     ResponsiveProvider,
     TranslationLoader
-}                        from "@leight-core/viv";
+}                        from "@leight/viv";
 import {
     QueryClient,
     QueryClientProvider

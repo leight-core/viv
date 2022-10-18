@@ -1,7 +1,7 @@
 import {
     Translate,
     useMobileFormContext
-}              from "@leight-core/viv";
+}              from "@leight/viv";
 import {Space} from "antd";
 import {
     Button,

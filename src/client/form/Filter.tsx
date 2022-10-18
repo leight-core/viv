@@ -14,7 +14,7 @@ import {
     useOptionalCursorContext,
     useOptionalSourceContext,
     useOptionalVisibleContext
-}                       from "@leight-core/viv";
+}                       from "@leight/viv";
 import {
     Button,
     Divider,

@@ -1,7 +1,7 @@
 import {
     contextFactory,
     IFormContext
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export const [
                  FormContext,

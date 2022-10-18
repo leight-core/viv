@@ -1,7 +1,7 @@
 import {
     IQueryParams,
     LinkTo
-}                 from "@leight-core/viv";
+}                 from "@leight/viv";
 import {ItemType} from "antd/lib/menu/hooks/useItems";
 import {
     FC,

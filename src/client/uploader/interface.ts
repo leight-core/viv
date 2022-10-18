@@ -2,7 +2,7 @@ import {
     IEventHandlers,
     IEventResult,
     IEvents
-}                   from "@leight-core/viv";
+}                   from "@leight/viv";
 import {UploadFile} from "antd/lib/upload/interface";
 
 export type IUploaderEventTypes =

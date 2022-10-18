@@ -1,7 +1,7 @@
 import {
     contextFactory,
     ISelectionContext
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export const [
                  SelectionContext,

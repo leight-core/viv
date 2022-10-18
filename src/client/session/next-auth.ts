@@ -1,4 +1,4 @@
-import {ISession}  from "@leight-core/viv";
+import {ISession}  from "@leight/viv";
 import {
     useQuery,
     UseQueryOptions

@@ -1,7 +1,7 @@
 import {
     contextFactory,
     IFilterContext
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 /**
  * Create typed filter context.

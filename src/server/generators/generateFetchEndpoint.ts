@@ -2,7 +2,7 @@ import {
     cleanup,
     generateImports,
     ISdk
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export function generateFetchEndpoint(sdk: ISdk): string {
     const name        = sdk.endpoint.name.replace("Endpoint", "");
@@ -34,13 +34,13 @@ export function generateFetchEndpoint(sdk: ISdk): string {
                 "IWithIdentityQuery",
                 "INavigate",
             ],
-            from:    "\"@leight-core/viv\""
+            from: "\"@leight/viv\""
         },
         {
             imports: [
                 "isCallable",
             ],
-            from:    "\"@leight-core/viv\""
+            from: "\"@leight/viv\""
         },
         {imports: ["useQueryClient"], from: "\"@tanstack/react-query\""},
         {
@@ -62,7 +62,7 @@ export function generateFetchEndpoint(sdk: ISdk): string {
                 "IMobilePageProps",
                 "useParams",
             ],
-            from:    "\"@leight-core/viv\""
+            from: "\"@leight/viv\""
         },
     ]);
 

@@ -2,7 +2,7 @@ import {
     INamePath,
     ItemGroupProvider,
     useOptionalItemGroupContext
-} from "@leight-core/viv";
+} from "@leight/viv";
 import {
     FC,
     PropsWithChildren

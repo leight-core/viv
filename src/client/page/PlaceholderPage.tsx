@@ -3,7 +3,7 @@ import {
     ITemplateProps,
     LoaderIcon,
     Template
-}             from "@leight-core/viv";
+}             from "@leight/viv";
 import {Card} from "antd";
 import {FC}   from "react";
 

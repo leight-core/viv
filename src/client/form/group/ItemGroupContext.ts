@@ -1,7 +1,7 @@
 import {
     contextFactory,
     IItemGroupContext
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export const [
                  ItemGroupContext,

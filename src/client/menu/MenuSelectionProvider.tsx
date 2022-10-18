@@ -1,4 +1,4 @@
-import {MenuSelectionContext} from "@leight-core/viv";
+import {MenuSelectionContext} from "@leight/viv";
 import {
     FC,
     PropsWithChildren,

@@ -5,7 +5,7 @@ import {
     Translate,
     Unboxed,
     useNavigate
-}                    from "@leight-core/viv";
+}                    from "@leight/viv";
 import {ActionSheet} from "antd-mobile";
 import {
     ComponentProps,

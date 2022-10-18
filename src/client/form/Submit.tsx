@@ -1,7 +1,7 @@
 import {
     useFormContext,
     UseToken
-}                       from "@leight-core/viv";
+}                       from "@leight/viv";
 import {
     Button,
     Form

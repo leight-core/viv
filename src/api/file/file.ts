@@ -2,7 +2,7 @@ import {
     IContainer,
     IQuery,
     ISource
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export interface IFileInfo {
     readonly mime: string;

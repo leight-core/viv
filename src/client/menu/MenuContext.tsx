@@ -1,7 +1,7 @@
 import {
     contextFactory,
     IMenuSelectionContext
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export const [
                  MenuSelectionContext,

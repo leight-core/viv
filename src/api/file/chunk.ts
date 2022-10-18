@@ -4,7 +4,7 @@ import {
     IFile,
     IFileService,
     IQueryParams
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export interface IChunkCommit {
     readonly path: string;

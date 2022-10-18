@@ -3,7 +3,7 @@ import {
     IProviderChildren,
     ItemGroupContext,
     withProviderChildren
-}                from "@leight-core/viv";
+}                from "@leight/viv";
 import {FC,}     from "react";
 import {useMemo} from "use-memo-one";
 

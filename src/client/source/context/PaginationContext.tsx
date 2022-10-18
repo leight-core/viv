@@ -1,7 +1,7 @@
 import {
     contextFactory,
     IPaginationContext
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export const [
                  PaginationContext,

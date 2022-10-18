@@ -3,7 +3,7 @@ import {
     ILoaderContext,
     IProviderChildren,
     withProviderChildren
-} from "@leight-core/viv";
+} from "@leight/viv";
 import {
     FC,
     useMemo,

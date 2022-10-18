@@ -12,7 +12,7 @@ import {
     useOptionalOrderByContext,
     useOptionalQueryParamsContext,
     withProviderChildren
-}                 from "@leight-core/viv";
+}                 from "@leight/viv";
 import {
     useQuery as useCoolQuery,
     UseQueryOptions

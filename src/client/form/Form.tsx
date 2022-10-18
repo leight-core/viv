@@ -21,7 +21,7 @@ import {
     useOptionalVisibleContext,
     usePassThroughMutation,
     WithToken
-}                              from "@leight-core/viv";
+}                              from "@leight/viv";
 import {
     Form as CoolForm,
     message,

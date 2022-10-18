@@ -4,7 +4,7 @@ import {
     Translate,
     useMobile,
     useVisibleContext
-} from "@leight-core/viv";
+} from "@leight/viv";
 import {
     Drawer as CoolDrawer,
     Space

@@ -3,7 +3,7 @@ import {
     ScrollToTop,
     useLayoutLoaderContext,
     useMenuSelectionContext,
-}                       from "@leight-core/viv";
+}                       from "@leight/viv";
 import {Spin}           from "antd";
 import Head             from "next/head";
 import {

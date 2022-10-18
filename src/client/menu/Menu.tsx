@@ -1,4 +1,4 @@
-import {useMenuSelectionContext,} from "@leight-core/viv";
+import {useMenuSelectionContext,} from "@leight/viv";
 import {
     Menu as CoolMenu,
     MenuProps

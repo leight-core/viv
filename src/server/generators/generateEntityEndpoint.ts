@@ -3,7 +3,7 @@ import {
     generateImports,
     ISdk,
     toGeneratorCommons
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export function generateEntityEndpoint(sdk: ISdk): string {
     const generatorCommons = toGeneratorCommons(sdk);
@@ -20,7 +20,7 @@ export function generateEntityEndpoint(sdk: ISdk): string {
             imports: [
                 "QueryInfer",
             ],
-            from:    "\"@leight-core/viv\"",
+            from:    "\"@leight/viv\"",
         },
         {
             imports: [
@@ -39,7 +39,7 @@ export function generateEntityEndpoint(sdk: ISdk): string {
                 "SourceControlProvider",
                 "ISourceControlProviderProps",
             ],
-            from:    "\"@leight-core/viv\"",
+            from:    "\"@leight/viv\"",
         },
     ]);
 

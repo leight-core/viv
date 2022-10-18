@@ -1,4 +1,4 @@
-import {IWithIdentity} from "@leight-core/viv";
+import {IWithIdentity} from "@leight/viv";
 
 export interface IResolveSource<//
     TSource extends Record<string, string>,

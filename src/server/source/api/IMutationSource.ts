@@ -1,7 +1,7 @@
 import {
     IWithIdentity,
     UndefinableOptional
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export interface IMutationSource<//
     TCreate extends Record<string, any>,

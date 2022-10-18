@@ -1,7 +1,7 @@
 import {
     InferQuery,
     IQuery
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export interface IQuerySource<//
     TEntity extends Record<string, any>,

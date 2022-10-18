@@ -2,7 +2,7 @@ import {
     FormItem,
     IFormItemProps,
     INamePath
-}                  from "@leight-core/viv";
+}                  from "@leight/viv";
 import {
     Switch as CoolSwitch,
     SwitchProps

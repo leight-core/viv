@@ -1,4 +1,4 @@
-import {LoaderIcon} from "@leight-core/viv";
+import {LoaderIcon} from "@leight/viv";
 import {
     Result,
     ResultProps

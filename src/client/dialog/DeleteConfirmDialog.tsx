@@ -1,7 +1,7 @@
 import {
     ITranslationProps,
     Translate
-}                              from "@leight-core/viv";
+}                              from "@leight/viv";
 import {Typography}            from "antd";
 import {Dialog}                from "antd-mobile";
 import {ExclamationCircleFill} from "antd-mobile-icons";

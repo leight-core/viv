@@ -2,7 +2,7 @@ import {
     cleanup,
     generateImports,
     ISdk
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export function generateGetEndpoint(sdk: ISdk): string {
     const name        = sdk.endpoint.name.replace("Endpoint", "");
@@ -22,7 +22,7 @@ export function generateGetEndpoint(sdk: ISdk): string {
             imports: [
                 "IQueryParams",
                 "IEntityContext"
-            ], from: "\"@leight-core/viv\""
+            ], from: "\"@leight/viv\""
         },
         {imports: ["useQueryClient"], from: "\"@tanstack/react-query\""},
         {
@@ -39,7 +39,7 @@ export function generateGetEndpoint(sdk: ISdk): string {
                 "IQueryProps",
                 "Query",
             ],
-            from:    "\"@leight-core/viv\""
+            from: "\"@leight/viv\""
         },
     ]);
 

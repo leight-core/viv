@@ -1,4 +1,4 @@
-import {IContextRender} from "@leight-core/viv";
+import {IContextRender} from "@leight/viv";
 import {ReactNode}      from "react";
 
 export type IProviderChildren<TContext> =

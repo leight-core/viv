@@ -4,7 +4,7 @@ import {
     IQueryParamsContext,
     QueryParamsContext,
     withProviderChildren
-}                 from "@leight-core/viv";
+}                 from "@leight/viv";
 import {useState} from "react";
 import {useMemo}  from "use-memo-one";
 

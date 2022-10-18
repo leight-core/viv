@@ -2,7 +2,7 @@ import {
     useFilterContext,
     useOptionalCursorContext,
     useSourceContext
-}                  from "@leight-core/viv";
+}                  from "@leight/viv";
 import {SearchBar} from "antd-mobile";
 import {
     ComponentProps,

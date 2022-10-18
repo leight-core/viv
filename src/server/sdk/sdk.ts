@@ -19,7 +19,7 @@ import {
     pickNodes,
     requireNode,
     toNode
-}             from "@leight-core/viv";
+}             from "@leight/viv";
 import {
     outputFile,
     readFileSync,

@@ -1,4 +1,4 @@
-import {IQuery} from "@leight-core/viv";
+import {IQuery} from "@leight/viv";
 
 /**
  * @TODO improve api of this

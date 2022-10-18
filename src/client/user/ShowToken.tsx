@@ -1,4 +1,4 @@
-import {useOptionalUserContext} from "@leight-core/viv";
+import {useOptionalUserContext} from "@leight/viv";
 import {
     FC,
     PropsWithChildren

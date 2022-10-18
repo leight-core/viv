@@ -10,7 +10,7 @@ import {
     onUnique,
     PromiseMapper,
     UndefinableOptional
-}               from "@leight-core/viv";
+}               from "@leight/viv";
 import {Prisma} from "@prisma/client";
 import LRUCache from "lru-cache";
 import crypto   from "node:crypto";

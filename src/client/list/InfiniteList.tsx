@@ -12,7 +12,7 @@ import {
     useNavigate,
     useOptionalFilterContext,
     useSourceContext
-} from "@leight-core/viv";
+} from "@leight/viv";
 import {
     InfiniteScroll,
     List

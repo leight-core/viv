@@ -3,7 +3,7 @@ import {
     IProviderChildren,
     LoaderContext,
     withProviderChildren
-}                from "@leight-core/viv";
+}                from "@leight/viv";
 import {
     FC,
     useState

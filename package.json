@@ -1,6 +1,6 @@
 {
     "version": "0.5.0-experimental1",
-    "name": "@leight-core/viv",
+    "name": "@leight/viv",
     "description": "All-in-one solution for fullstack Next.js development.",
     "license": "MIT",
     "repository": {

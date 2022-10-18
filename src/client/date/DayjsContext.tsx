@@ -1,7 +1,7 @@
 import {
     contextFactory,
     IDayJsContext
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export const [
                  DayjsContext,

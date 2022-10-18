@@ -5,7 +5,7 @@ import {
     Template,
     useOptionalSelectionContext,
     useSourceContext
-}                         from "@leight-core/viv";
+}                         from "@leight/viv";
 import {UseQueryResult}   from "@tanstack/react-query";
 import {
     Empty,

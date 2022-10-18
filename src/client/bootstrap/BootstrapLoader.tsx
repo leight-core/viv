@@ -1,7 +1,7 @@
 import {
     IBootstrapConfig,
     useBootstrap
-}                                 from "@leight-core/viv";
+}                                 from "@leight/viv";
 import {ConfigProvider}           from "antd";
 import type {ConfigProviderProps} from "antd/lib/config-provider";
 import {Session}                  from "next-auth";

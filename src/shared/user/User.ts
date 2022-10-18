@@ -5,7 +5,7 @@ import {
     IUser,
     IUserRequest,
     UndefinedUserError
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export const User = ({userId, tokens = []}: IUserRequest | undefined = {}): IUser => {
     const $user: IUser = ({

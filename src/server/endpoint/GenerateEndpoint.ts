@@ -3,7 +3,7 @@ import {
     IContainer,
     IEndpointHandler,
     IGenerators
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export interface IGenerateEndpointRequest<TContainer extends IContainer> {
     name: string;

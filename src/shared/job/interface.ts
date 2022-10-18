@@ -1,7 +1,7 @@
 import {
     IContainer,
     IEndpointRequest
-}                        from "@leight-core/viv";
+}                        from "@leight/viv";
 import {QueueAddOptions} from "p-queue/dist/options";
 import {Logger}          from "winston";
 

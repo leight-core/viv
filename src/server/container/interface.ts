@@ -2,7 +2,7 @@ import {
     IFileSource,
     IPrismaTransaction,
     IUser
-}                     from "@leight-core/viv";
+}                     from "@leight/viv";
 import {PrismaClient} from "@prisma/client";
 
 /**

@@ -6,7 +6,7 @@ import {
     IContainer,
     IEndpointHandler,
     IFile
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export interface ICommitChunkEndpointRequest<TContainer extends IContainer> {
     chunkService: IChunkService;

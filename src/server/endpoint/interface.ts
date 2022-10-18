@@ -4,7 +4,7 @@ import {
     IQuery,
     IQueryParams,
     IUser
-}                        from "@leight-core/viv";
+}                        from "@leight/viv";
 import {NextApiResponse} from "next";
 
 /**

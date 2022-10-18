@@ -5,7 +5,7 @@ import {
     useCursorContext,
     useSourceContext,
     withProviderChildren
-}                       from "@leight-core/viv";
+}                       from "@leight/viv";
 import {FC,}            from "react";
 import {useTranslation} from "react-i18next";
 import {useMemo}        from "use-memo-one";

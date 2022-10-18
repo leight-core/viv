@@ -3,7 +3,7 @@ import {
     IProviderChildren,
     OrderByContext,
     withProviderChildren
-}                from "@leight-core/viv";
+}                from "@leight/viv";
 import {
     useEffect,
     useState

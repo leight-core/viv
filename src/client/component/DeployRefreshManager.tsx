@@ -1,5 +1,5 @@
 import {ReloadOutlined} from "@ant-design/icons";
-import {IQueryHook}     from "@leight-core/viv";
+import {IQueryHook}     from "@leight/viv";
 import {
     Button,
     Modal

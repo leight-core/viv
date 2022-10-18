@@ -5,7 +5,7 @@ import {
     useOptionalFilterContext,
     useOptionalFormItemContext,
     useSourceContext,
-}                       from "@leight-core/viv";
+}                       from "@leight/viv";
 import {
     Empty,
     Select,

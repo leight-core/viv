@@ -4,7 +4,7 @@ import {
     LoaderLayout,
     User,
     UserContext
-}                     from "@leight-core/viv";
+}                     from "@leight/viv";
 import {
     FC,
     PropsWithChildren,

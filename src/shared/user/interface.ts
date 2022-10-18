@@ -1,4 +1,4 @@
-import {ClientError} from "@leight-core/viv";
+import {ClientError} from "@leight/viv";
 
 export interface IUser {
     readonly userId?: string | null;

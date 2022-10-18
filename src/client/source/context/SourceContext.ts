@@ -1,7 +1,7 @@
 import {
     contextFactory,
     ISourceContext
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export const sourceContextFactory = <TResponse>(name: string) => contextFactory<ISourceContext<TResponse>>(name);
 

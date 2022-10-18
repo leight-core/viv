@@ -4,7 +4,7 @@ import {
     IEventHandlers,
     IEventIndex,
     IEvents
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 /**
  * Simple EventBus implementation intended to be used locally on call site near to the execution site (thus not application-wide).

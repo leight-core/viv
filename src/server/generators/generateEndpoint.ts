@@ -1,6 +1,6 @@
 import {
     generateMutationEndpoint,
     ISdk
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export const generateEndpoint = (sdk: ISdk) => generateMutationEndpoint(sdk);

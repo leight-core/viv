@@ -5,7 +5,7 @@ import {
     ShowToken,
     useFormContext,
     useOptionalItemGroupContext
-}                       from "@leight-core/viv";
+}                       from "@leight/viv";
 import {
     Form,
     FormItemProps,

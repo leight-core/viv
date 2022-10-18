@@ -1,4 +1,4 @@
-import {IImportReflection} from "@leight-core/viv";
+import {IImportReflection} from "@leight/viv";
 
 export const generateImports = (imports: IImportReflection[]): string => {
     const _imports: { [index: string]: string[] } = {};

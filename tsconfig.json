@@ -33,9 +33,9 @@
 		],
 		"baseUrl": "src",
 		"paths": {
-			"@leight-core/viv": [
-				"."
-			]
+			"@leight/viv": [
+                "."
+            ]
 		}
 	},
 	"include": [

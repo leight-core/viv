@@ -4,7 +4,7 @@ import {
     MobileContent,
     PlaceholderPage,
     useLayoutLoaderContext,
-} from "@leight-core/viv";
+} from "@leight/viv";
 import {
     Layout,
     Spin

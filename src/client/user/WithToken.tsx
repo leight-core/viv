@@ -1,7 +1,7 @@
 import {
     Template,
     useOptionalUserContext
-} from "@leight-core/viv";
+} from "@leight/viv";
 import {
     ComponentProps,
     FC,

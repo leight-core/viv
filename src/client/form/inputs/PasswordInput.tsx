@@ -1,4 +1,4 @@
-import {useOptionalFormItemContext} from "@leight-core/viv";
+import {useOptionalFormItemContext} from "@leight/viv";
 import {Input}                      from "antd";
 import {
     ComponentProps,

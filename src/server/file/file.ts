@@ -2,7 +2,7 @@ import {
     IFile,
     IFileService,
     IFileServiceFactory
-}                 from "@leight-core/viv";
+}                 from "@leight/viv";
 import {copySync} from "fs-extra";
 import mime       from "mime-types";
 import fs         from "node:fs";

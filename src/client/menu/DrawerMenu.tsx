@@ -3,7 +3,7 @@ import {
     DrawerButton,
     IDrawerButtonProps,
     useMobile
-}                     from "@leight-core/viv";
+}                     from "@leight/viv";
 import {Menu}         from "antd";
 import {
     ComponentProps,

@@ -2,7 +2,7 @@ import {
     IForeachNodeCallback,
     INode,
     INodePath
-}                 from "@leight-core/viv";
+}                 from "@leight/viv";
 import micromatch from "micromatch";
 import ts         from "typescript";
 

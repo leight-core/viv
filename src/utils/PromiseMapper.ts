@@ -1,4 +1,4 @@
-import {IPromiseMapper} from "@leight-core/viv";
+import {IPromiseMapper} from "@leight/viv";
 
 export function PromiseMapper<TSource, TTarget>(map: (source: TSource) => Promise<TTarget>): IPromiseMapper<TSource, TTarget> {
     return {

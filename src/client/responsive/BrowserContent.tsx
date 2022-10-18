@@ -1,4 +1,4 @@
-import {useIsBrowser} from "@leight-core/viv";
+import {useIsBrowser} from "@leight/viv";
 import {
     FC,
     PropsWithChildren,

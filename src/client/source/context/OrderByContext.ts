@@ -1,7 +1,7 @@
 import {
     contextFactory,
     IOrderByContext
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 /**
  * Create typed order by context.

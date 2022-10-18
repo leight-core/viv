@@ -1,7 +1,7 @@
 import {
     isString,
     ITranslationProps
-}                       from "@leight-core/viv";
+}                       from "@leight/viv";
 import {FC}             from "react";
 import {useTranslation} from "react-i18next";
 

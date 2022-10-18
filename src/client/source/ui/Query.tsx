@@ -2,7 +2,7 @@ import {
     IEntityContext,
     IQueryHook,
     IQueryParams
-}                        from "@leight-core/viv";
+}                        from "@leight/viv";
 import {UseQueryOptions} from "@tanstack/react-query";
 import {
     ReactNode,
