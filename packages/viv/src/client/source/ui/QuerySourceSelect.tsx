@@ -1,6 +1,6 @@
+import {ifString}       from "@leight/utils";
 import {
     IBaseSelectOption,
-    isString,
     IToOptionMapper,
     useOptionalFilterContext,
     useOptionalFormItemContext,
@@ -89,7 +89,7 @@ export const QuerySourceSelect = <TResponse, >(
             const option = toOption(entity);
             return ({
                 ...option,
-                label: isString(option.label) ? t((labelPrefix || "") + option.label, option.label) : option.label,
+                label: ifString(option.label, label => t((labelPrefix || "") + label, label)),
                 entity,
             });
         })}

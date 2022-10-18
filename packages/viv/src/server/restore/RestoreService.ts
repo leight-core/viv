@@ -1,9 +1,11 @@
 import {
+    jsonOf,
+    templateOf
+}                     from "@leight/utils";
+import {
     IBackupMeta,
     IServiceContainer,
     ISource,
-    jsonOf,
-    templateOf,
     unpack
 }                     from "@leight/viv";
 import {PrismaClient} from "@prisma/client";
@@ -27,7 +29,7 @@ export class RestoreServiceClass {
                     const stamp                                            = dayjs().format("YYYY-MM-DD");
                     const restore                                          = path.normalize(`${temp || os.tmpdir()}/restore/${stamp}`);
                     await unpack(archive, restore);
-                    const meta = jsonOf<IBackupMeta>("{restore}/meta.json", {restore});
+                    const meta = await jsonOf<IBackupMeta>("{restore}/meta.json", {restore});
                     await prisma.$transaction(async transaction => {
                         for (const source of sources) {
                             await source.container.withPrisma(transaction).truncate();

@@ -1,7 +1,7 @@
+import {ifString}       from "@leight/utils";
 import {
     INavigate,
     IQueryParams,
-    isString,
     MobileContent,
     useIsMobile,
     useMenuSelectionContext,
@@ -106,7 +106,7 @@ export const MobilePage: FC<IMobilePageProps> = (
                 >
                     <Space size={4}>
                         {icon}
-                        {isString(title) ? t(`${title}.title`) : title}
+                        {ifString(title, title => t(`${title}.title`))}
                     </Space>
                 </NavBar>)}
             </div>

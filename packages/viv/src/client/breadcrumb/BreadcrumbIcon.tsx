@@ -1,4 +1,4 @@
-import {isString}       from "@leight/viv";
+import {isString}       from "@leight/utils";
 import {
     Space,
     SpaceProps

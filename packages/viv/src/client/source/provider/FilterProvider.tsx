@@ -1,10 +1,12 @@
 import {
     cleanOf,
+    isEmpty,
+    merge
+} from "@leight/utils";
+import {
     FilterContext,
     IFilterContext,
     IProviderChildren,
-    isEmpty,
-    merge,
     withProviderChildren
 } from "@leight/viv";
 import {

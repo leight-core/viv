@@ -1,3 +1,4 @@
+import {isCallable} from "@leight/utils";
 import {
     CursorProvider,
     FilterProvider,
@@ -10,11 +11,10 @@ import {
     IQueryParams,
     IQueryParamsContext,
     IQueryParamsProviderProps,
-    isCallable,
     OrderByProvider,
     QueryParamsProvider
-}                  from "@leight/viv";
-import {ReactNode} from "react";
+}                   from "@leight/viv";
+import {ReactNode}  from "react";
 
 export interface ISourceControlProviderRender<TFilter = any, TOrderBy = any, TQueryParams extends IQueryParams = any> {
     queryContext: IQueryParamsContext<TQueryParams>;

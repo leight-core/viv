@@ -1,5 +1,5 @@
 import {RightCircleOutlined} from "@ant-design/icons";
-import {numbersOf}           from "@leight/viv";
+import {numbersOf}           from "@leight/utils";
 import {
     Result,
     ResultProps,

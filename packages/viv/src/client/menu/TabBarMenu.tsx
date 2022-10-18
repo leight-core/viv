@@ -1,6 +1,6 @@
+import {ifString}       from "@leight/utils";
 import {
     IQueryParams,
-    isString,
     useMenuSelectionContext,
     useNavigate
 }                       from "@leight/viv";
@@ -36,7 +36,7 @@ export const TabBarMenu: FC<ITabBarMenuProps> = ({items}) => {
     >
         {(items.filter(i => Boolean(i)) as ITabBarMenuItem[]).map(({href, icon, label}) => <TabBar.Item
             key={href}
-            title={isString(label) ? t(`${label}`) : label}
+            title={ifString(label, label => t(label))}
             icon={icon}
         />)}
     </TabBar>;

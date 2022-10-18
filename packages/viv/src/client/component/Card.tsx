@@ -1,7 +1,5 @@
-import {
-    isString,
-    useMobile
-}                       from "@leight/viv";
+import {isString}       from "@leight/utils";
+import {useMobile}      from "@leight/viv";
 import {
     Card as CoolCard,
     CardProps as CoolCardProps
