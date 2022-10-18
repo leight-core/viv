@@ -99,6 +99,15 @@ export interface ISource<//
     restore(backup?: TBackup): Promise<TEntity | undefined>;
 
     /**
+     * Create or update item.
+     *
+     * It also needs resolveId method to work properly.
+     *
+     * Internally, it should use create() with patch() in unique handler.
+     */
+    import(create: TCreate): Promise<TEntity>;
+
+    /**
      * Resolve ID based on request (for example duplication detection).
      *
      * This should return an ID or throw an exception.
