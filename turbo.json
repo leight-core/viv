@@ -1,16 +1,25 @@
 {
     "$schema": "https://turborepo.org/schema.json",
     "pipeline": {
+        "prisma-generate": {
+            "inputs": [
+                "prisma/schema.prisma"
+            ],
+            "outputMode": "new-only"
+        },
         "build": {
             "dependsOn": [
+                "prisma-generate",
                 "^build"
             ],
             "outputs": [
                 "lib/**"
-            ]
+            ],
+            "outputMode": "new-only"
         },
         "lint": {
-            "outputs": []
+            "outputs": [],
+            "outputMode": "new-only"
         },
         "publish": {
             "dependsOn": [

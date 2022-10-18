@@ -1,0 +1,40 @@
+{
+    "version": "0.5.0",
+    "name": "@leight/shared",
+    "description": "All the components shared between all packages of @leight namespace, mainly types.",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/leight-core/viv.git"
+    },
+    "engines": {
+        "node": ">=16.0.0"
+    },
+    "sideEffects": false,
+    "main": "lib/cjs/index.js",
+    "module": "lib/esm/index.js",
+    "files": [
+        "lib"
+    ],
+    "scripts": {
+        "build": "tsc -p tsconfig.json && tsc -p tsconfig.json -m es6 --outDir lib/esm",
+        "lint": "eslint src"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.38.0",
+        "@typescript-eslint/parser": "^5.38.0",
+        "eslint": "^8.24.0",
+        "eslint-plugin-unicorn": "^43.0.2",
+        "typescript": "^4.8.4"
+    },
+    "types": "lib/cjs/index.d.ts",
+    "bugs": {
+        "url": "https://github.com/leight-core/viv/issues"
+    },
+    "homepage": "https://github.com/leight-core/viv#readme",
+    "directories": {
+        "lib": "lib"
+    }
+}
