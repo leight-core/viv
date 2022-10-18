@@ -8,19 +8,19 @@
         "node": ">=16.0.0"
     },
     "scripts": {
-        "build": "turbo run build lint",
+        "build": "turbo run build lint --no-daemon",
         "lint": "turbo run lint",
         "change": "npx changeset",
         "change-version": "npx changeset version",
-        "change-publish": "npx turbo run build lint && npm run change-version && npx changeset publish"
+        "change-publish": "npm run build && npm run change-version && npx changeset publish"
     },
     "workspaces": [
         "apps/*",
         "packages/*"
     ],
     "devDependencies": {
-        "turbo": "^1.5.6",
-        "@changesets/cli": "^2.25.0"
+        "@changesets/cli": "^2.25.0",
+        "turbo": "^1.5.6"
     },
     "bugs": {
         "url": "https://github.com/leight-core/viv/issues"

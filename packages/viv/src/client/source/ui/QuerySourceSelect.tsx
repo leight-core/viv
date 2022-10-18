@@ -1,6 +1,6 @@
 import {ifString}       from "@leight/utils";
 import {
-    IBaseSelectOption,
+    ISelectOption,
     IToOptionMapper,
     useOptionalFilterContext,
     useOptionalFormItemContext,
@@ -18,7 +18,7 @@ import React, {
 }                       from "react";
 import {useTranslation} from "react-i18next";
 
-export interface IQuerySourceValue<TResponse> extends IBaseSelectOption {
+export interface IQuerySourceValue<TResponse> extends ISelectOption {
     entity: TResponse;
 }
 

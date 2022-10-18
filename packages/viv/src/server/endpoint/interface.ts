@@ -96,11 +96,3 @@ export type IRequestEndpoint<//
     TQueryParams extends IQueryParams = any,
     > = IEndpointHandler<TContainer, TRequest, TResponse, TQueryParams>;
 
-export class ClientError extends Error {
-    readonly code: number;
-
-    constructor(message: string, code = 400) {
-        super(message);
-        this.code = code;
-    }
-}

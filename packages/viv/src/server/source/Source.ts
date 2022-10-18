@@ -1,5 +1,8 @@
-import {IPromiseMapper} from "@leight/api";
-import {PromiseMapper}  from "@leight/utils";
+import {
+    IPromiseMapper,
+    PromiseMapper,
+    UndefinableOptional
+}               from "@leight/shared";
 import {
     ClientError,
     IContainer,
@@ -8,12 +11,11 @@ import {
     ISource,
     IWithContainer,
     IWithIdentity,
-    onUnique,
-    UndefinableOptional
-}                       from "@leight/viv";
-import {Prisma}         from "@prisma/client";
-import LRUCache         from "lru-cache";
-import crypto           from "node:crypto";
+    onUnique
+}               from "@leight/viv";
+import {Prisma} from "@prisma/client";
+import LRUCache from "lru-cache";
+import crypto   from "node:crypto";
 
 export abstract class AbstractSource<//
     TContainer extends IContainer,

@@ -1,2 +1,2 @@
-export *           from "./BackupService";
-export * as Backup from "./export";
+export * from "./api";
+export * from "./BackupService";
