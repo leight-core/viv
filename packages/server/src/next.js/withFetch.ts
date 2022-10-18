@@ -1,7 +1,7 @@
 import {
     getTokenUser,
     ISource,
-}                           from "@leight/viv";
+}                           from "@leight/server";
 import {GetServerSideProps} from "next";
 
 export const withFetch = <TKey extends string, TSource extends ISource<any, any, any, any>>(source: () => Promise<TSource>, key: TKey, query: string): GetServerSideProps => async context => {

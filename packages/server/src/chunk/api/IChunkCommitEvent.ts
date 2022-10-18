@@ -1,8 +1,11 @@
-import {IContainer} from "@leight/server";
+import {
+    IContainer,
+    IEndpointRequest
+} from "@leight/server";
 import {
     IFile,
     IQueryParams
-}                   from "@leight/shared";
+} from "@leight/shared";
 
 export type IChunkCommitEvent = <//
     TContainer extends IContainer,
