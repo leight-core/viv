@@ -8,11 +8,11 @@
         "node": ">=16.0.0"
     },
     "scripts": {
-        "build": "turbo run build",
+        "build": "turbo run build lint",
         "lint": "turbo run lint",
         "change": "npx changeset",
         "change-version": "npx changeset version",
-        "change-publish": "npx changeset publish"
+        "change-publish": "npx turbo run build lint && npm run change-version && npx changeset publish"
     },
     "workspaces": [
         "apps/*",
