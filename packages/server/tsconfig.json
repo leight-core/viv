@@ -13,7 +13,7 @@
         "disableSolutionSearching": true,
         "checkJs": true,
         "noImplicitAny": true,
-        "target": "ES2021",
+        "target": "ES2022",
         "module": "CommonJS",
         "declaration": true,
         "sourceMap": true,
