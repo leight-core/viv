@@ -1,4 +1,4 @@
-import {IChunkServiceFactory} from "@leight-core/viv";
+import {IChunkServiceFactory} from "@leight/viv";
 import {
     outputFileSync,
     removeSync

@@ -1,7 +1,7 @@
 import {
     contextFactory,
     ICursorContext
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export const [
                  CursorContext,

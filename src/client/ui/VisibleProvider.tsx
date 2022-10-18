@@ -3,7 +3,7 @@ import {
     IVisibleContext,
     VisibleContext,
     withProviderChildren
-}                from "@leight-core/viv";
+}                from "@leight/viv";
 import {
     FC,
     useState

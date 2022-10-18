@@ -2,7 +2,7 @@ import {
     EmptyPage,
     IEmptyPageProps,
     LoaderIcon
-}               from "@leight-core/viv";
+}               from "@leight/viv";
 import {Result} from "antd";
 import {
     FC,

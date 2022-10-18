@@ -1,7 +1,7 @@
 import {
     IQueryParams,
     Translate
-}               from "@leight-core/viv";
+}               from "@leight/viv";
 import {Button} from "antd";
 import Link     from "next/link";
 import React, {

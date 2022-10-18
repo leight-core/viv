@@ -2,7 +2,7 @@ import {
     Centered,
     useIsBrowser,
     useIsMobile
-}                       from "@leight-core/viv";
+}                       from "@leight/viv";
 import {Result}         from "antd";
 import {
     ComponentProps,

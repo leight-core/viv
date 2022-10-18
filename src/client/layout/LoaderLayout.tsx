@@ -3,7 +3,7 @@ import {
     Centered,
     isCallable,
     LoaderIcon
-}                          from "@leight-core/viv";
+}                          from "@leight/viv";
 import {
     Card,
     Col,

@@ -3,7 +3,7 @@ import {
     ICursorContext,
     IProviderChildren,
     withProviderChildren
-}                from "@leight-core/viv";
+}                from "@leight/viv";
 import {
     FC,
     useEffect,

@@ -1,4 +1,4 @@
-import {IFormFields}  from "@leight-core/viv";
+import {IFormFields}  from "@leight/viv";
 import {useMutation}  from "@tanstack/react-query";
 import {FormInstance} from "antd";
 

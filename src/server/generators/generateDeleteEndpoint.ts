@@ -3,7 +3,7 @@ import {
     generateImports,
     ISdk,
     toGeneratorCommons
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export function generateDeleteEndpoint(sdk: ISdk): string {
     const generatorCommons = toGeneratorCommons(sdk);
@@ -14,7 +14,7 @@ export function generateDeleteEndpoint(sdk: ISdk): string {
             imports: [
                 "SourceInfer",
             ],
-            from:    "\"@leight-core/viv\""
+            from: "\"@leight/viv\""
         },
         {
             imports: [
@@ -23,7 +23,7 @@ export function generateDeleteEndpoint(sdk: ISdk): string {
                 "toLink",
                 "createMutationHook",
             ],
-            from:    "\"@leight-core/viv\"",
+            from:    "\"@leight/viv\"",
         },
     ]);
 

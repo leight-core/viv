@@ -1,4 +1,4 @@
-import {IQueryParams} from "@leight-core/viv";
+import {IQueryParams} from "@leight/viv";
 import {compile}      from "path-to-regexp";
 
 export const toLink = <TQuery extends IQueryParams | void = void>(href: string, query?: TQuery): string => {

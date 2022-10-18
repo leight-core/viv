@@ -1,4 +1,4 @@
-import {IBootstrapConfig} from "@leight-core/viv";
+import {IBootstrapConfig} from "@leight/viv";
 import axios              from "axios";
 import axiosRetry         from "axios-retry";
 import {Router}           from "next/router";

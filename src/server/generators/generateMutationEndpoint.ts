@@ -3,7 +3,7 @@ import {
     generateImports,
     ISdk,
     toGeneratorCommons
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export function generateMutationEndpoint(sdk: ISdk): string {
     const generatorCommons = toGeneratorCommons(sdk);
@@ -15,7 +15,7 @@ export function generateMutationEndpoint(sdk: ISdk): string {
                 "IQueryParams",
                 "SourceInfer",
             ],
-            from:    "\"@leight-core/viv\""
+            from: "\"@leight/viv\""
         },
         {
             imports: [
@@ -32,7 +32,7 @@ export function generateMutationEndpoint(sdk: ISdk): string {
                 "createMutationHook",
                 "createPromise",
             ],
-            from:    "\"@leight-core/viv\"",
+            from:    "\"@leight/viv\"",
         },
     ]);
 

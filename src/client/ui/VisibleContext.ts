@@ -1,7 +1,7 @@
 import {
     contextFactory,
     IVisibleContext
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export const [
                  VisibleContext,

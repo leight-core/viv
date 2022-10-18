@@ -3,7 +3,7 @@ import {
     II18NextContext,
     IProviderChildren,
     withProviderChildren
-}                from "@leight-core/viv";
+}                from "@leight/viv";
 import {i18n}    from "i18next";
 import {FC,}     from "react";
 import {useMemo} from "use-memo-one";

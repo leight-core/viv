@@ -1,4 +1,4 @@
-import {IQueryParams}       from "@leight-core/viv";
+import {IQueryParams}       from "@leight/viv";
 import {
     UseMutationOptions,
     UseMutationResult,

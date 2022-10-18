@@ -7,7 +7,7 @@ import {
     IJobProgress,
     ISource,
     Logger
-}                    from "@leight-core/viv";
+}                    from "@leight/viv";
 import {measureTime} from "measure-time";
 import {Readable}    from "node:stream";
 import xlsx          from "xlsx";

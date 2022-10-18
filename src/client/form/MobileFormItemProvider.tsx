@@ -3,7 +3,7 @@ import {
     IProviderChildren,
     MobileFormItemContext,
     withProviderChildren
-}           from "@leight-core/viv";
+}           from "@leight/viv";
 import {FC} from "react";
 
 export interface IMobileFormItemProviderProps {

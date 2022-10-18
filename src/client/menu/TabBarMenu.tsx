@@ -3,7 +3,7 @@ import {
     isString,
     useMenuSelectionContext,
     useNavigate
-}                       from "@leight-core/viv";
+}                       from "@leight/viv";
 import {TabBar}         from "antd-mobile";
 import {
     FC,

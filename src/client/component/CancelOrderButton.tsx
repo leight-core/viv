@@ -1,5 +1,5 @@
 import {RollbackOutlined}          from "@ant-design/icons";
-import {useOptionalOrderByContext} from "@leight-core/viv";
+import {useOptionalOrderByContext} from "@leight/viv";
 import {
     Button,
     ButtonProps,

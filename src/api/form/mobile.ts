@@ -4,7 +4,7 @@ import {
     INamePath,
     INavigate,
     Unboxed
-}             from "@leight-core/viv";
+}             from "@leight/viv";
 import {Form} from "antd-mobile";
 
 export interface IMobileFormItemContext {

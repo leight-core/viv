@@ -1,7 +1,7 @@
 import {
     contextFactory,
     IEntityContext
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export const [
                  EntityContext,

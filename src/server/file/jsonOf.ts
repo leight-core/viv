@@ -1,4 +1,4 @@
-import {templateOf} from "@leight-core/viv";
+import {templateOf} from "@leight/viv";
 import fs           from "node:fs";
 import path         from "node:path";
 

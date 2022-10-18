@@ -1,7 +1,7 @@
 import {
     ButtonLink,
     IButtonLinkProps
-}           from "@leight-core/viv";
+}           from "@leight/viv";
 import {FC} from "react";
 
 export interface IBreadcrumbButtonProps extends IButtonLinkProps {

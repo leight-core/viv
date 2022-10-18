@@ -1,7 +1,7 @@
 import {
     contextFactory,
     II18NextContext
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export const [
                  I18NextContext,

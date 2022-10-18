@@ -1,7 +1,7 @@
 import {
     isString,
     useMobile
-}                       from "@leight-core/viv";
+}                       from "@leight/viv";
 import {
     Card as CoolCard,
     CardProps as CoolCardProps

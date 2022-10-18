@@ -1,4 +1,4 @@
-import {BackIcon}       from "@leight-core/viv";
+import {BackIcon}       from "@leight/viv";
 import {
     Button,
     ButtonProps

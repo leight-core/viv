@@ -1,7 +1,7 @@
 import {
     INamePath,
     INavigate
-}                     from "@leight-core/viv";
+}                     from "@leight/viv";
 import {FormInstance} from "antd";
 
 export interface IFormItemContext {

@@ -3,7 +3,7 @@ import {
     IQueryParams,
     toHumanBytes,
     toLink
-}                       from "@leight-core/viv";
+}                       from "@leight/viv";
 import {
     message,
     Progress,

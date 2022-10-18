@@ -1,4 +1,4 @@
-import {ITag}           from "@leight-core/viv";
+import {ITag}           from "@leight/viv";
 import {
     Tag,
     TagProps,

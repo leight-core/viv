@@ -1,7 +1,7 @@
 import {
     useCursorContext,
     useFilterContext
-}                       from "@leight-core/viv";
+}                       from "@leight/viv";
 import {
     Button,
     ButtonProps,

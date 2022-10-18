@@ -6,7 +6,7 @@ import {
     Translate,
     useCursorContext,
     useSourceContext
-}                  from "@leight-core/viv";
+}                  from "@leight/viv";
 import {
     Col,
     Row

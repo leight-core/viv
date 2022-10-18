@@ -6,7 +6,7 @@ import {
     useIsMobile,
     useMenuSelectionContext,
     useNavigate
-}                       from "@leight-core/viv";
+}                       from "@leight/viv";
 import {Space}          from "antd";
 import {
     NavBar,

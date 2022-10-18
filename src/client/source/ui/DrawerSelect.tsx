@@ -26,7 +26,7 @@ import {
     useOptionalFilterContext,
     useOptionalLoaderContext,
     useVisibleContext
-}                     from "@leight-core/viv";
+}                     from "@leight/viv";
 import {
     Col,
     Row,

@@ -3,7 +3,7 @@ import {
     isString,
     MobileContent,
     useNavigate
-}                       from "@leight-core/viv";
+}                       from "@leight/viv";
 import {List}           from "antd-mobile";
 import {
     FC,

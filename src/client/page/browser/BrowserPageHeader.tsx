@@ -1,4 +1,4 @@
-import {isString} from "@leight-core/viv";
+import {isString} from "@leight/viv";
 import {
     Col,
     PageHeader as CoolPageHeader,

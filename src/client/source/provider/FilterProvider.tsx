@@ -6,7 +6,7 @@ import {
     isEmpty,
     merge,
     withProviderChildren
-} from "@leight-core/viv";
+} from "@leight/viv";
 import {
     useEffect,
     useMemo,

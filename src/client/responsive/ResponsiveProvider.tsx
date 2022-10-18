@@ -3,7 +3,7 @@ import {
     IResponsiveContext,
     ResponsiveContext,
     withProviderChildren
-} from "@leight-core/viv";
+} from "@leight/viv";
 import {
     FC,
     useMemo

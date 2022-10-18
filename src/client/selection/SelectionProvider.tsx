@@ -5,7 +5,7 @@ import {
     ISelectionType,
     SelectionContext,
     withProviderChildren
-}                from "@leight-core/viv";
+}                from "@leight/viv";
 import {
     useEffect,
     useRef,

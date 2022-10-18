@@ -3,7 +3,7 @@ import {
     IUser,
     useContext,
     useOptionalContext
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export interface IUserContext {
     user: IUser;

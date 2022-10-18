@@ -19,7 +19,7 @@ import {
     useMobileFormContext,
     useOptionalLoaderContext,
     VisibleProvider
-}                    from "@leight-core/viv";
+}                    from "@leight/viv";
 import {SwipeAction} from "antd-mobile";
 import {AddOutline}  from "antd-mobile-icons";
 import {

@@ -1,7 +1,7 @@
 import {
     IUser,
     User
-}                                  from "@leight-core/viv";
+}                                  from "@leight/viv";
 import {GetServerSidePropsContext} from "next";
 import {
     getToken as getCoolToken,

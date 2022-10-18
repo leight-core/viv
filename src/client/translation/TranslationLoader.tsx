@@ -5,7 +5,7 @@ import {
     ITranslationsQuery,
     LoaderLayout,
     useI18NextContext
-}                            from "@leight-core/viv";
+}                            from "@leight/viv";
 import {
     FC,
     ReactNode,

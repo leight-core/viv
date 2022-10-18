@@ -4,7 +4,7 @@ import {
     IProviderChildren,
     MobileFormContext,
     withProviderChildren
-}                       from "@leight-core/viv";
+}                       from "@leight/viv";
 import {message}        from "antd";
 import {Form}           from "antd-mobile";
 import {

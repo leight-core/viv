@@ -13,7 +13,7 @@ import {
     isCallable,
     OrderByProvider,
     QueryParamsProvider
-}                  from "@leight-core/viv";
+}                  from "@leight/viv";
 import {ReactNode} from "react";
 
 export interface ISourceControlProviderRender<TFilter = any, TOrderBy = any, TQueryParams extends IQueryParams = any> {

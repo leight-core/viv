@@ -18,7 +18,7 @@ import {
     SourceInfer,
     User,
     withMetrics
-}                 from "@leight-core/viv";
+}                 from "@leight/viv";
 import {getToken} from "next-auth/jwt";
 import getRawBody from "raw-body";
 

@@ -3,7 +3,7 @@ import {
     IQueryParams,
     toLink,
     toPromise
-}               from "@leight-core/viv";
+}               from "@leight/viv";
 import {Method} from "axios";
 
 export function createPromise<TRequest, TResponse, TQueryParams extends IQueryParams = any>(link: string, method: Method): IPromiseCallback<TRequest, TResponse, TQueryParams> {

@@ -1,7 +1,7 @@
 import {
     contextFactory,
     IMobileFormItemContext
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export const [
                  MobileFormItemContext,

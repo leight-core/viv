@@ -1,4 +1,4 @@
-import {useSourceContext} from "@leight-core/viv";
+import {useSourceContext} from "@leight/viv";
 import {
     FC,
     useEffect

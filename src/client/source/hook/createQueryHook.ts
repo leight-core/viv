@@ -3,7 +3,7 @@ import {
     IQueryParams,
     toLink,
     toPromise
-}                 from "@leight-core/viv";
+}                 from "@leight/viv";
 import {useQuery} from "@tanstack/react-query";
 import {Method}   from "axios";
 

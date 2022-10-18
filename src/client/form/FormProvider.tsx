@@ -7,7 +7,7 @@ import {
     IFormFields,
     IProviderChildren,
     withProviderChildren
-}                       from "@leight-core/viv";
+}                       from "@leight/viv";
 import {
     Form as CoolForm,
     message

@@ -1,7 +1,7 @@
 import {
     IApiHandler,
     IQueryParams
-}                  from "@leight-core/viv";
+}                  from "@leight/viv";
 import {Histogram} from "prom-client";
 
 const histogram = new Histogram({

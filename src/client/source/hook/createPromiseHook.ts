@@ -2,7 +2,7 @@ import {
     createPromise,
     IHookCallback,
     IQueryParams
-}               from "@leight-core/viv";
+}               from "@leight/viv";
 import {Method} from "axios";
 
 /**

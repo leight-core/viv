@@ -1,7 +1,7 @@
 import {
     contextFactory,
     IQueryParamsContext
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export const [
                  QueryParamsContext,

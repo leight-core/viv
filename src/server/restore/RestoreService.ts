@@ -5,7 +5,7 @@ import {
     jsonOf,
     templateOf,
     unpack
-}                     from "@leight-core/viv";
+}                     from "@leight/viv";
 import {PrismaClient} from "@prisma/client";
 import dayjs          from "dayjs";
 

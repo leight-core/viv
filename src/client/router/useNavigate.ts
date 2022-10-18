@@ -1,7 +1,7 @@
 import {
     INavigate,
     IQueryParams
-}                  from "@leight-core/viv";
+}                  from "@leight/viv";
 import {useRouter} from "next/router";
 
 export const useNavigate = <TQueryParams extends IQueryParams = any>(): INavigate<TQueryParams> => {

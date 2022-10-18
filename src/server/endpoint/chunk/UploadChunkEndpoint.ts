@@ -3,7 +3,7 @@ import {
     IChunkService,
     IContainer,
     IEndpointHandler,
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export interface IUploadChunkEndpointRequest<TContainer extends IContainer> {
     chunkService: IChunkService;

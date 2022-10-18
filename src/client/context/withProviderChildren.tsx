@@ -2,7 +2,7 @@ import {
     IContextRender,
     IProviderChildren,
     isCallable
-} from "@leight-core/viv";
+} from "@leight/viv";
 import {
     Context,
     ReactNode

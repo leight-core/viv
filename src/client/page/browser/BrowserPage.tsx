@@ -11,7 +11,7 @@ import {
     Template,
     useIsBrowser,
     useNavigate
-}                               from "@leight-core/viv";
+}                               from "@leight/viv";
 import {
     BreadcrumbProps,
     Card,

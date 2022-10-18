@@ -11,7 +11,7 @@ import {
     IWithContainer,
     IWithIdentity,
     UndefinableOptional
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export interface ISource<//
     TContainer extends IContainer,

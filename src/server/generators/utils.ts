@@ -1,4 +1,4 @@
-import {ISdk} from "@leight-core/viv";
+import {ISdk} from "@leight/viv";
 
 export interface IGeneratorCommons {
     name: string;

@@ -3,7 +3,7 @@ import {
     generateImports,
     ISdk,
     toGeneratorCommons
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export function generateQueryEndpoint(sdk: ISdk): string {
     const generatorCommons = toGeneratorCommons(sdk);
@@ -24,7 +24,7 @@ export function generateQueryEndpoint(sdk: ISdk): string {
                 "QueryInfer",
                 "SourceInfer",
             ],
-            from:    "\"@leight-core/viv\"",
+            from:    "\"@leight/viv\"",
         },
         {
             imports: [
@@ -64,7 +64,7 @@ export function generateQueryEndpoint(sdk: ISdk): string {
                 "DrawerSelectItem",
                 "IDrawerSelectItemProps",
             ],
-            from:    "\"@leight-core/viv\"",
+            from:    "\"@leight/viv\"",
         },
     ]);
 

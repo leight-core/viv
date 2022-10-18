@@ -3,7 +3,7 @@ import {
     generateImports,
     ISdk,
     toGeneratorCommons
-} from "@leight-core/viv";
+} from "@leight/viv";
 
 export function generateRequestEndpoint(sdk: ISdk): string {
     const generatorCommons = toGeneratorCommons(sdk);
@@ -16,7 +16,7 @@ export function generateRequestEndpoint(sdk: ISdk): string {
                 "createPromise",
                 "toLink",
             ],
-            from:    "\"@leight-core/viv\"",
+            from:    "\"@leight/viv\"",
         },
     ]);
 

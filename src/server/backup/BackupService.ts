@@ -5,7 +5,7 @@ import {
     IServiceContainer,
     ISource,
     pack
-}               from "@leight-core/viv";
+}               from "@leight/viv";
 import dayjs    from "dayjs";
 import {Logger} from "winston";
 

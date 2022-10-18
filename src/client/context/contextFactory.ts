@@ -2,7 +2,7 @@ import {
     createContext,
     useContext,
     useOptionalContext
-}                from "@leight-core/viv";
+}                from "@leight/viv";
 import {Context} from "react";
 
 /**

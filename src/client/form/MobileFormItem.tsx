@@ -6,7 +6,7 @@ import {
     useMobileFormContext,
     useOptionalItemGroupContext,
     useOptionalVisibleContext
-}                       from "@leight-core/viv";
+}                       from "@leight/viv";
 import {
     Form,
     Input,
