@@ -1,17 +1,22 @@
-import {MenuSelectionContext} from "@leight/viv";
+import {
+    Context,
+    IMenuSelectionContext,
+    IProviderChildren,
+    MenuSelectionContext
+}                from "@leight/ui";
 import {
     FC,
-    PropsWithChildren,
     useEffect,
     useState
-}                             from "react";
-import {useMemo}              from "use-memo-one";
+}                from "react";
+import {useMemo} from "use-memo-one";
 
-export type IMenuSelectionProviderProps = PropsWithChildren<{
+export interface IMenuSelectionProviderProps {
     defaultSelection?: string[];
-}>;
+    children?: IProviderChildren<IMenuSelectionContext>;
+}
 
-export const MenuSelectionProvider: FC<IMenuSelectionProviderProps> = ({defaultSelection = [], ...props}) => {
+export const MenuSelectionProvider: FC<IMenuSelectionProviderProps> = ({defaultSelection = [], children}) => {
     const [selection, setSelection] = useState<string[]>(defaultSelection);
     return <MenuSelectionContext.Provider
         value={useMemo(() => ({
@@ -25,6 +30,7 @@ export const MenuSelectionProvider: FC<IMenuSelectionProviderProps> = ({defaultS
                 }, selection);
             }
         }), [])}
-        {...props}
-    />;
+    >
+        {Context.render(children, MenuSelectionContext)}
+    </MenuSelectionContext.Provider>;
 };

@@ -1,12 +1,13 @@
-import {ifString}       from "@leight/utils";
-import {BackIcon}       from "@leight/viv";
-import {Button}         from "antd";
-import {useRouter}      from "next/router";
+import {
+    BackIcon,
+    Translate
+}                  from "@leight/ui";
+import {Button}    from "antd";
+import {useRouter} from "next/router";
 import {
     ComponentProps,
     FC
-}                       from "react";
-import {useTranslation} from "react-i18next";
+}                  from "react";
 
 export interface IBackLinkProps extends Partial<ComponentProps<typeof Button>> {
     /**
@@ -30,7 +31,6 @@ export const BackLink: FC<IBackLinkProps> = (
         ...props
     }) => {
     const router = useRouter();
-    const {t}    = useTranslation();
     return <Button
         type={"link"}
         size={"small"}
@@ -38,6 +38,6 @@ export const BackLink: FC<IBackLinkProps> = (
         onClick={() => router.back()}
         {...props}
     >
-        {ifString(label, label => t(label))}
+        <Translate text={label}/>
     </Button>;
 };

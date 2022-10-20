@@ -1,3 +1,4 @@
+import {TranslationLoader} from "@leight/desktop";
 import {
     DayjsProvider,
     I18NextProvider,
@@ -5,20 +6,19 @@ import {
     ITranslationsQuery,
     LayoutLoaderProvider,
     MenuSelectionProvider,
-    ResponsiveProvider,
-    TranslationLoader
-}                        from "@leight/ui";
+    ResponsiveProvider
+}                          from "@leight/ui";
 import {
     QueryClient,
     QueryClientProvider
-}                        from "@tanstack/react-query";
-import {i18n}            from "i18next";
+}                          from "@tanstack/react-query";
+import {i18n}              from "i18next";
 import {
     FC,
     PropsWithChildren,
     ReactNode
-}                        from "react";
-import {CookiesProvider} from "react-cookie";
+}                          from "react";
+import {CookiesProvider}   from "react-cookie";
 
 export type IAppProps = PropsWithChildren<{
     logo?: ReactNode;

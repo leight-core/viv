@@ -1,12 +1,11 @@
-import {ITag}           from "@leight/shared";
-import {Translate}      from "@leight/ui";
+import {ITag}      from "@leight/shared";
+import {Translate} from "@leight/ui";
 import {
     Tag,
     TagProps,
     Typography
-}                       from "antd";
-import {FC}             from "react";
-import {useTranslation} from "react-i18next";
+}                  from "antd";
+import {FC}        from "react";
 
 export interface ITagsProps extends Omit<Partial<TagProps>, "onClick"> {
     translation?: string;
@@ -16,7 +15,6 @@ export interface ITagsProps extends Omit<Partial<TagProps>, "onClick"> {
 }
 
 export const Tags: FC<ITagsProps> = ({translation, onClick, color = "blue", tags = [], ...props}) => {
-    const {t} = useTranslation();
     return <>{
         tags.length ?
             tags.map(tag => <Tag
@@ -29,6 +27,6 @@ export const Tags: FC<ITagsProps> = ({translation, onClick, color = "blue", tags
                 {...props}
             >
                 {<Translate namespace={translation} text={`${tag.group}.${tag.tag}`}/>}
-            </Tag>) : (translation ? <Typography.Text type={"secondary"}>{t(`${translation}.empty`)}</Typography.Text> : null)
+            </Tag>) : (translation ? <Typography.Text type={"secondary"}><Translate namespace={translation} text={"empty"}/></Typography.Text> : null)
     }</>;
 };

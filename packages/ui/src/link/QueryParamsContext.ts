@@ -7,4 +7,4 @@ export const [
                  QueryParamsContext,
                  useQueryParamsContext,
                  useOptionalQueryParamsContext,
-             ] = Context.factory<IQueryParamsContext>("QueryParamsContext");
+             ] = Context.factory<IQueryParamsContext<any>>("QueryParamsContext");

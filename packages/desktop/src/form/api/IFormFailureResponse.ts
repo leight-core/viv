@@ -1,4 +1,4 @@
-import {IFormContext} from "@leight/mobile";
+import {IFormContext} from "@leight/desktop";
 import {IFormValues}  from "@leight/shared";
 
 /**

@@ -1,3 +1,4 @@
-import {NamePath} from "rc-field-form/lib/interface";
-
-export type INamePath = NamePath;
+export type INamePath =
+    string
+    | number
+    | (string | number)[];

@@ -1,8 +1,8 @@
 import {
     IEventHandlers,
-    IEventResult
+    IEventResult,
+    IEvents
 }                   from "@leight/shared";
-import {IEvents}    from "@leight/viv";
 import {UploadFile} from "antd/lib/upload/interface";
 
 export type IUploaderEventTypes =

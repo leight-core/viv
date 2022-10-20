@@ -1,8 +1,8 @@
+import {ISession}  from "@leight/shared";
 import {
     fetchSession,
     IUseSessionRequest
 }                  from "@leight/ui";
-import {ISession}  from "@leight/viv";
 import {useQuery}  from "@tanstack/react-query";
 import {useRouter} from "next/router";
 
