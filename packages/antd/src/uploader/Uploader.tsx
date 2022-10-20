@@ -1,17 +1,20 @@
-import {Centered}       from "@leight/antd";
-import {IQueryParams}   from "@leight/shared";
-import {toLink}         from "@leight/ui";
-import {toHumanBytes}   from "@leight/utils";
+import {Centered}     from "@leight/antd";
+import {IQueryParams} from "@leight/shared";
+import {
+    toLink,
+    Translate
+}                     from "@leight/ui";
+import {toHumanBytes} from "@leight/utils";
 import {
     message,
     Progress,
     Typography,
     Upload
-}                       from "antd";
+}                     from "antd";
 import {
     RcFile,
     UploadChangeParam
-}                       from "antd/lib/upload";
+}                     from "antd/lib/upload";
 import {
     ComponentProps,
     FC,
@@ -53,7 +56,7 @@ export const Uploader: FC<IUploaderProps> = ({name, limit, translation, action, 
             message.error(t([
                 translation + ".file-too-large",
                 "component.error.file-too-large"
-            ], {size: toHumanBytes(file.size), limit: toHumanBytes(limit * 1024 * 1024)}));
+            ], {size: toHumanBytes(file.size), limit: toHumanBytes(limit * 1024 * 1024)}) as string);
         }
         return hasValidSize;
     };
@@ -90,7 +93,7 @@ export const Uploader: FC<IUploaderProps> = ({name, limit, translation, action, 
         <Centered span={22}>
             <Progress size={"default"} type={"line"} percent={progress} showInfo={false} status={status}/>
         </Centered>
-        <Typography.Title level={3}>{t(translation + ".upload")}</Typography.Title>
-        <Typography.Paragraph>{t(translation + ".upload.hint")}</Typography.Paragraph>
+        <Typography.Title level={3}><Translate namespace={translation} text={"upload"}/></Typography.Title>
+        <Typography.Paragraph><Translate namespace={translation} text={"upload.hint"}/></Typography.Paragraph>
     </Upload.Dragger>;
 };

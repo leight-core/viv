@@ -1,9 +1,9 @@
 import {
+    Context,
     IProviderChildren,
     IVisibleContext,
     VisibleContext,
-    withProviderChildren
-}                from "@leight/viv";
+}                from "@leight/ui";
 import {
     FC,
     useState
@@ -27,6 +27,6 @@ export const VisibleProvider: FC<IVisibleProviderProps> = ({defaultVisible = fal
             hide: () => setVisible(false),
         }), [])}
     >
-        {withProviderChildren(children, VisibleContext)}
+        {Context.render(children, VisibleContext)}
     </VisibleContext.Provider>;
 };

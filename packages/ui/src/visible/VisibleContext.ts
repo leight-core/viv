@@ -1,5 +1,5 @@
 import {
-    contextFactory,
+    Context,
     IVisibleContext
 } from "@leight/ui";
 
@@ -7,4 +7,4 @@ export const [
                  VisibleContext,
                  useVisibleContext,
                  useOptionalVisibleContext,
-             ] = contextFactory<IVisibleContext>("VisibleContext");
+             ] = Context.factory<IVisibleContext>("VisibleContext");

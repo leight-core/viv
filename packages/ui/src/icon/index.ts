@@ -1,3 +1,4 @@
+export * from "./api";
 export * from "./BackIcon";
 export * from "./CancelIcon";
 export * from "./ContextMenuIcon";
@@ -13,7 +14,6 @@ export * from "./FileIcon";
 export * from "./GithubIcon";
 export * from "./GroupIcon";
 export * from "./HomeIcon";
-export * from "./interface";
 export * from "./ListIcon";
 export * from "./LoaderIcon";
 export * from "./MenuIcon";

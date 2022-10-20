@@ -1,4 +1,4 @@
-import {useIsMobile} from "@leight/viv";
+import {useIsMobile} from "@leight/ui";
 import {
     FC,
     PropsWithChildren,

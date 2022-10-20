@@ -1,10 +1,10 @@
 import {
-    contextFactory,
+    Context,
     IMenuSelectionContext
-} from "@leight/viv";
+} from "@leight/ui";
 
 export const [
                  MenuSelectionContext,
                  useMenuSelectionContext,
                  useOptionalMenuSelectionContext
-             ] = contextFactory<IMenuSelectionContext>("MenuSelectionContext");
+             ] = Context.factory<IMenuSelectionContext>("MenuSelectionContext");

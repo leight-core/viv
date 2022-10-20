@@ -28,9 +28,6 @@
             "ESNext"
         ],
         "skipLibCheck": true,
-        "types": [
-            "node"
-        ],
         "baseUrl": "src",
         "paths": {
             "@leight/antd": [

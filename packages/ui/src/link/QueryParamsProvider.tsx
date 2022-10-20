@@ -1,12 +1,12 @@
-import {IQueryParams}       from "@leight/shared";
+import {IQueryParams} from "@leight/shared";
 import {
     Context,
     IProviderChildren,
-    IQueryParamsContext
-}                           from "@leight/ui";
-import {QueryParamsContext} from "@leight/viv";
-import {useState}           from "react";
-import {useMemo}            from "use-memo-one";
+    IQueryParamsContext,
+    QueryParamsContext
+}                     from "@leight/ui";
+import {useState}     from "react";
+import {useMemo}      from "use-memo-one";
 
 export interface IQueryParamsProviderProps<TQueryParams extends IQueryParams = IQueryParams> {
     /**
@@ -20,7 +20,7 @@ export interface IQueryParamsProviderProps<TQueryParams extends IQueryParams = I
     children?: IProviderChildren<IQueryParamsContext<TQueryParams>>;
 }
 
-export function QueryParamsProvider<TQueryParams extends IQueryParams = any>({defaultQueryParams, applyQueryParams, children}: IQueryParamsProviderProps<TQueryParams>) {
+export function QueryParamsProvider<TQueryParams extends IQueryParams = IQueryParams>({defaultQueryParams, applyQueryParams, children}: IQueryParamsProviderProps<TQueryParams>) {
     const [queryParams, setQueryParams] = useState<TQueryParams | undefined>(applyQueryParams || defaultQueryParams);
     return <QueryParamsContext.Provider
         value={useMemo(() => ({
