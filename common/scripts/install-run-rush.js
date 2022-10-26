@@ -83,7 +83,6 @@ function _getRushVersion(logger) {
             'using an unexpected syntax.');
     }
 }
-
 function _run() {
     const [nodePath /* Ex: /bin/node */, scriptPath /* /repo/common/scripts/install-run-rush.js */, ...packageBinArgs /* [build, --to, myproject] */] = process.argv;
     // Detect if this script was directly invoked, or if the install-run-rushx script was invokved to select the
@@ -137,6 +136,5 @@ function _run() {
         return (0, install_run_1.installAndRun)(logger, PACKAGE_NAME, version, bin, packageBinArgs, lockFilePath);
     });
 }
-
 _run();
 //# sourceMappingURL=install-run-rush.js.map
