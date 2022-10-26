@@ -94,7 +94,6 @@ function _parsePackageSpecifier(rawPackageSpecifier) {
         version
     };
 }
-
 /**
  * As a workaround, copyAndTrimNpmrcFile() copies the .npmrc file to the target folder, and also trims
  * unusable lines from the .npmrc file.
@@ -149,7 +148,6 @@ function _copyAndTrimNpmrcFile(logger, sourceNpmrcPath, targetNpmrcPath) {
     }
     fs.writeFileSync(targetNpmrcPath, resultLines.join(os.EOL));
 }
-
 /**
  * syncNpmrc() copies the .npmrc file to the target folder, and also trims unusable lines from the .npmrc file.
  * If the source .npmrc file not exist, then syncNpmrc() will delete an .npmrc that is found in the target folder.
@@ -171,9 +169,7 @@ function _syncNpmrc(logger, sourceNpmrcFolder, targetNpmrcFolder, useNpmrcPublis
         throw new Error(`Error syncing .npmrc file: ${e}`);
     }
 }
-
 let _npmPath = undefined;
-
 /**
  * Get the absolute path to the npm executable
  */
@@ -201,9 +197,7 @@ function getNpmPath() {
     }
     return _npmPath;
 }
-
 exports.getNpmPath = getNpmPath;
-
 function _ensureFolder(folderPath) {
     if (!fs.existsSync(folderPath)) {
         const parentDir = path.dirname(folderPath);
@@ -211,7 +205,6 @@ function _ensureFolder(folderPath) {
         fs.mkdirSync(folderPath);
     }
 }
-
 /**
  * Create missing directories under the specified base directory, and return the resolved directory.
  *
@@ -234,7 +227,6 @@ function _ensureAndJoinPath(baseFolder, ...pathSegments) {
     }
     return joinedPath;
 }
-
 function _getRushTempFolder(rushCommonFolder) {
     const rushTempFolder = process.env[RUSH_TEMP_FOLDER_ENV_VARIABLE_NAME];
     if (rushTempFolder !== undefined) {
@@ -295,9 +287,7 @@ function _resolvePackageVersion(logger, rushCommonFolder, {
         }
     }
 }
-
 let _rushJsonFolder;
-
 /**
  * Find the absolute path to the folder containing rush.json
  */
@@ -320,9 +310,7 @@ function findRushJsonFolder() {
     }
     return _rushJsonFolder;
 }
-
 exports.findRushJsonFolder = findRushJsonFolder;
-
 /**
  * Detects if the package in the specified directory is installed
  */
@@ -338,7 +326,6 @@ function _isPackageAlreadyInstalled(packageInstallFolder) {
         return false;
     }
 }
-
 /**
  * Delete a file. Fail silently if it does not exist.
  */
@@ -351,7 +338,6 @@ function _deleteFile(file) {
         }
     }
 }
-
 /**
  * Removes the following files and directories under the specified folder path:
  *  - installed.flag
@@ -378,7 +364,6 @@ function _cleanInstallFolder(rushTempFolder, packageInstallFolder, lockFilePath)
         throw new Error(`Error cleaning the package install folder (${packageInstallFolder}): ${e}`);
     }
 }
-
 function _createPackageJson(packageInstallFolder, name, version) {
     try {
         const packageJsonContents = {
@@ -397,7 +382,6 @@ function _createPackageJson(packageInstallFolder, name, version) {
         throw new Error(`Unable to create package.json: ${e}`);
     }
 }
-
 /**
  * Run "npm install" in the package install folder.
  */
@@ -418,7 +402,6 @@ function _installPackage(logger, packageInstallFolder, name, version, command) {
         throw new Error(`Unable to install package: ${e}`);
     }
 }
-
 /**
  * Get the ".bin" path for the package.
  */
@@ -427,7 +410,6 @@ function _getBinPath(packageInstallFolder, binName) {
     const resolvedBinName = os.platform() === 'win32' ? `${binName}.cmd` : binName;
     return path.resolve(binFolderPath, resolvedBinName);
 }
-
 /**
  * Write a flag file to the package's install directory, signifying that the install was successful.
  */
@@ -439,7 +421,6 @@ function _writeFlagFile(packageInstallFolder) {
         throw new Error(`Unable to create installed.flag file in ${packageInstallFolder}`);
     }
 }
-
 function installAndRun(logger, packageName, packageVersion, packageBinName, packageBinArgs, lockFilePath = process.env[INSTALL_RUN_LOCKFILE_PATH_VARIABLE]) {
     const rushJsonFolder       = findRushJsonFolder();
     const rushCommonFolder     = path.join(rushJsonFolder, 'common');
@@ -486,9 +467,7 @@ function installAndRun(logger, packageName, packageVersion, packageBinName, pack
         throw result.error || new Error('An unknown error occurred.');
     }
 }
-
 exports.installAndRun = installAndRun;
-
 function runWithErrorAndStatusCode(logger, fn) {
     process.exitCode = 1;
     try {
@@ -498,9 +477,7 @@ function runWithErrorAndStatusCode(logger, fn) {
         logger.error(os.EOL + os.EOL + e.toString() + os.EOL + os.EOL);
     }
 }
-
 exports.runWithErrorAndStatusCode = runWithErrorAndStatusCode;
-
 function _run() {
     const [nodePath /* Ex: /bin/node */, scriptPath /* /repo/common/scripts/install-run-rush.js */, rawPackageSpecifier /* qrcode@^1.2.0 */, packageBinName /* qrcode */, ...packageBinArgs /* [-f, myproject/lib] */] = process.argv;
     if (!nodePath) {
@@ -532,6 +509,5 @@ function _run() {
         return installAndRun(logger, name, version, packageBinName, packageBinArgs);
     });
 }
-
 _run();
 //# sourceMappingURL=install-run.js.map
