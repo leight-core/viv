@@ -1,13 +1,12 @@
-import {isString}       from "@leight/utils";
+import {Translate} from "@leight/ui";
 import {
     Space,
     SpaceProps
-}                       from "antd";
+}                  from "antd";
 import {
     FC,
     ReactNode
-}                       from "react";
-import {useTranslation} from "react-i18next";
+}                  from "react";
 
 export interface IBreadcrumbIconProps extends Partial<SpaceProps> {
     icon?: ReactNode;
@@ -15,9 +14,8 @@ export interface IBreadcrumbIconProps extends Partial<SpaceProps> {
 }
 
 export const BreadcrumbIcon: FC<IBreadcrumbIconProps> = ({icon, label, ...props}) => {
-    const {t} = useTranslation();
     return <Space size={"small"} {...props}>
         {icon}
-        {isString(label) ? t(label as string) : label}
+        {<Translate text={label}/>}
     </Space>;
 };

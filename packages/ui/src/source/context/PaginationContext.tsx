@@ -1,10 +1,10 @@
 import {
-    contextFactory,
+    Context,
     IPaginationContext
-} from "@leight/viv";
+} from "@leight/ui";
 
 export const [
                  PaginationContext,
                  usePaginationContext,
                  useOptionalPaginationContext,
-             ] = contextFactory<IPaginationContext>("PaginationContext");
+             ] = Context.factory<IPaginationContext>("PaginationContext");

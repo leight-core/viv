@@ -1,3 +1,3 @@
-import {IQueryParams} from "@leight/shared";
+import {Url} from "@leight/utils";
 
-export type INavigate<TQueryParams extends IQueryParams = any> = (href: string, queryParams?: TQueryParams) => void;
+export type INavigate<TQuery extends Url.IQuery = Url.IQuery> = (href: string, queryParams?: TQuery) => void;

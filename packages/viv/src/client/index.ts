@@ -1,6 +1,6 @@
 export * from "./app";
 export * from "./bootstrap";
-export * from "./breadcrumb";
+export * from "../../../antd/src/breadcrumb";
 export * from "./button";
 export * from "./component";
 export * from "./context";
@@ -23,7 +23,7 @@ export * from "./selection";
 export * from "./session";
 export * from "./source";
 export * from "./tab";
-export * from "./table";
+export * from "../../../antd/src/table";
 export * from "./template";
 export * from "./translation";
 export * from "./ui";
