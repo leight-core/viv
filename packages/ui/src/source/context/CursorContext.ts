@@ -1,10 +1,10 @@
 import {
-    contextFactory,
+    Context,
     ICursorContext
-} from "@leight/viv";
+} from "@leight/ui";
 
 export const [
                  CursorContext,
                  useCursorContext,
                  useOptionalCursorContext,
-             ] = contextFactory<ICursorContext>("CursorContext");
+             ] = Context.factory<ICursorContext>("CursorContext");

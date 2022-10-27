@@ -1,0 +1,24 @@
+{
+    "name": "@leight-core/viv",
+    "private": true,
+    "description": "All-in-one solution for fullstack Next.js development.",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/leight-core/viv.git"
+    },
+    "engines": {
+        "node": ">=16.0.0"
+    },
+    "scripts": {
+        "build": "npm run lint && tsc -p tsconfig.json && tsc -p tsconfig.json -m es6 --outDir lib/esm",
+        "lint": "eslint src",
+        "prisma format": "npx prisma format",
+        "prisma generate": "npx prisma generate"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+        "turbo": "^1.6.1"
+    }
+}

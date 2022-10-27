@@ -1,0 +1,27 @@
+{
+    "$schema": "https://turborepo.org/schema.json",
+    "pipeline": {
+        "prisma-format": {
+            "dependsOn": [
+                "^prisma-generate"
+            ],
+            "outputs": []
+        },
+        "prisma-generate": {
+            "dependsOn": [
+                "prisma-format",
+                "^prisma-generate"
+            ],
+            "outputs": []
+        },
+        "build": {
+            "dependsOn": [
+                "prisma-generate",
+                "^build"
+            ],
+            "outputs": [
+                "lib"
+            ]
+        }
+    }
+}

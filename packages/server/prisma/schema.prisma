@@ -53,8 +53,8 @@ model VerificationToken {
 // Leight Core Stuff
 
 model Token {
-  id    String    @id @default(cuid())
-  name  String    @unique
+  id   String @id @default(cuid())
+  name String @unique
 
   UserToken UserToken[]
 }
