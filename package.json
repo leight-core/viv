@@ -16,6 +16,7 @@
         "lint": "turbo run lint --no-daemon",
         "depcheck": "turbo run depcheck --no-daemon --parallel",
         "cleanup": "turbo run cleanup --no-daemon --parallel",
+        "changeset": "changeset",
         "npkill": "npx npkill"
     },
     "devDependencies": {
