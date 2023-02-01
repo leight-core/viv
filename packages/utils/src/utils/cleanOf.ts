@@ -1,9 +1,10 @@
-import cleaner, {ICleanerOptions} from "fast-clean";
+import cleaner, {type ICleanerOptions} from "fast-clean";
 
 /**
  * Takes an object and remove all **undefined** properties, preserving nulls.
  */
-export const cleanOf = (obj: any, options?: ICleanerOptions) => cleaner.clean(obj || {}, {
+export const cleanOf = <T>(obj: T, options?: ICleanerOptions): T => cleaner.clean(obj || {}, {
     nullCleaner: false,
     ...options,
 });
+1

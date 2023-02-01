@@ -12,10 +12,61 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/ui/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/utils/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/viv/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/container-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/container/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/context-client/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/file-client/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/file-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/file/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/i18n-client/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/i18n-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/i18n/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/import-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/import/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/job-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/job/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/layout/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/mantine/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/next.js-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/prisma/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/sql/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/trpc-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/trpc/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/user-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/user/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/utils-client/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/utils-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/winston/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/xlsx-import-client/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/xlsx-import-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/xlsx-import/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/zustand/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.github" />
       <excludeFolder url="file://$MODULE_DIR$/lib" />
       <excludeFolder url="file://$MODULE_DIR$/common/temp" />
       <excludeFolder url="file://$MODULE_DIR$/.changeset" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/user/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/user/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/container/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/trpc-server/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/job-server/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/job-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/file/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/i18n/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/i18n-server/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/i18n-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/container/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/job/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/layout/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/layout/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/prisma/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/sql/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/sql/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/utils/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/utils-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/winston/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/xlsx-import-client/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/zustand/lib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

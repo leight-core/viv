@@ -1,27 +1,77 @@
 {
     "$schema": "https://turborepo.org/schema.json",
+    "globalDependencies": [
+        "tsconfig.json"
+    ],
     "pipeline": {
-        "prisma-format": {
+        "prisma:format": {
+            "outputMode": "new-only",
             "dependsOn": [
-                "^prisma-generate"
+                "^prisma:format"
             ],
-            "outputs": []
+            "outputs": [],
+            "inputs": [
+                "prisma/schema.prisma"
+            ]
         },
-        "prisma-generate": {
+        "prisma:generate": {
+            "outputMode": "new-only",
             "dependsOn": [
-                "prisma-format",
-                "^prisma-generate"
+                "prisma:format",
+                "^prisma:generate"
             ],
-            "outputs": []
+            "outputs": [],
+            "inputs": [
+                "prisma/schema.prisma"
+            ]
+        },
+        "lint": {
+            "outputMode": "new-only",
+            "dependsOn": [
+                "^depcheck"
+            ],
+            "outputs": [],
+            "inputs": [
+                "src"
+            ]
         },
         "build": {
+            "outputMode": "new-only",
             "dependsOn": [
-                "prisma-generate",
+                "^prisma:generate",
+                "^lint",
                 "^build"
             ],
             "outputs": [
-                "lib"
+                "lib/**"
+            ],
+            "inputs": [
+                "prisma/schema.prisma",
+                "src",
+                "package.json",
+                "tsconfig.json"
+            ],
+            "env": [
+                "NODE_ENV"
             ]
+        },
+        "build:no-cache": {
+            "dependsOn": [
+                "^cleanup",
+                "^build"
+            ],
+            "cache": false
+        },
+        "depcheck": {
+            "outputMode": "new-only",
+            "inputs": [
+                ".depcheckrc.json",
+                "package.json"
+            ],
+            "outputs": []
+        },
+        "cleanup": {
+            "cache": false
         }
     }
 }
