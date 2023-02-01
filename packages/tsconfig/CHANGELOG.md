@@ -1,6 +1,12 @@
 # @leight/tsconfig
 
-## 0.0.1
+## 0.5.2
+
+### Patch Changes
+
+- Updated TSConfig package for publication
+
+## 0.5.1
 
 ### Patch Changes
 
