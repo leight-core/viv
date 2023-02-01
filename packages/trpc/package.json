@@ -1,5 +1,5 @@
 {
-    "version": "0.5.0",
+    "version": "0.5.1",
     "name": "@leight/trpc",
     "description": "Common tRPC stuff.",
     "license": "MIT",
@@ -30,8 +30,8 @@
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "workspace:^0.5.0",
-        "@leight/user": "workspace:^0.5.0",
+        "@leight/container": "workspace:^0.5.1",
+        "@leight/user": "workspace:^0.5.1",
         "@tanstack/react-query": "^4.24.4",
         "@trpc/server": "^10.9.1",
         "react": "^18.2.0",
@@ -40,8 +40,8 @@
         "zod": "^3.20.2"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.0.0",
-        "@leight/tsconfig": "workspace:^0.0.0",
+        "@leight/eslint-config-eslint": "workspace:^0.0.1",
+        "@leight/tsconfig": "workspace:^0.0.1",
         "@types/node": "^18.11.18",
         "@typescript-eslint/eslint-plugin": "^5.50.0",
         "@typescript-eslint/parser": "^5.50.0",

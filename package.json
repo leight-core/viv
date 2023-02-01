@@ -17,6 +17,8 @@
         "depcheck": "turbo run depcheck --no-daemon --parallel",
         "cleanup": "turbo run cleanup --no-daemon --parallel",
         "changeset": "changeset",
+        "changeset:version": "changeset version",
+        "changeset:publish": "changeset publish",
         "npkill": "npx npkill"
     },
     "devDependencies": {
