@@ -1,7 +1,7 @@
 {
     "name": "@leight-core/viv",
     "private": true,
-    "description": "All-in-one solution for fullstack Next.js development.",
+    "description": "All-in-one solution for fullstack Next.js development with Zustand, Mantine, tRPC and Prisma.",
     "license": "MIT",
     "repository": {
         "type": "git",
@@ -11,14 +11,24 @@
         "node": ">=16.0.0"
     },
     "scripts": {
-        "build": "npm run lint && tsc -p tsconfig.json && tsc -p tsconfig.json -m es6 --outDir lib/esm",
-        "lint": "eslint src",
-        "prisma format": "npx prisma format",
-        "prisma generate": "npx prisma generate"
+        "build": "turbo run build --no-daemon",
+        "build:no-cache": "turbo run build:no-cache --no-daemon --no-cache --force",
+        "lint": "turbo run lint --no-daemon",
+        "depcheck": "turbo run depcheck --no-daemon --parallel",
+        "cleanup": "turbo run cleanup --no-daemon --parallel",
+        "prisma-generate": "prisma format && prisma generate",
+        "npkill": "npx npkill"
     },
     "dependencies": {
+        "@prisma/client": "^4.9.0"
     },
     "devDependencies": {
-        "turbo": "^1.6.1"
+        "@changesets/cli": "^2.26.0",
+        "npkill": "^0.10.0",
+        "prettier": "^2.8.3",
+        "prettier-plugin-tailwindcss": "^0.2.2",
+        "prisma": "^4.9.0",
+        "turbo": "^1.7.1",
+        "typescript": "^4.9.5"
     }
 }

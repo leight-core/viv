@@ -1,7 +1,7 @@
 {
     "version": "0.5.0",
     "name": "@leight/utils",
-    "description": "Set of common, lightweight utilities.",
+    "description": "Some simple utils used in @leight libraries.",
     "license": "MIT",
     "repository": {
         "type": "git",
@@ -13,40 +13,43 @@
     "sideEffects": false,
     "main": "lib/cjs/index.js",
     "module": "lib/esm/index.js",
+    "types": "lib/types/index.d.ts",
     "files": [
         "lib"
     ],
     "scripts": {
-        "build": "tsc -p tsconfig.json && tsc -p tsconfig.json -m es6 --outDir lib/esm",
-        "lint": "eslint src"
+        "build:esm": "tsc -p tsconfig.json -m es2022 --outDir lib/esm",
+        "build:cjs": "tsc -p tsconfig.json -m commonjs --outDir lib/cjs",
+        "build:types": "tsc -p tsconfig.json -m es2022 --declaration --emitDeclarationOnly --outDir lib/types",
+        "build": "concurrently npm:build:*",
+        "dev-watch:esm": "tsc -w -p tsconfig.json -m es2022 --outDir lib/esm --preserveWatchOutput",
+        "dev-watch:cjs": "tsc -w -p tsconfig.json -m commonjs --outDir lib/cjs --preserveWatchOutput",
+        "dev-watch": "concurrently npm:dev-watch:*",
+        "depcheck": "npx depcheck",
+        "lint": "eslint src",
+        "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "axios": "^1.1.3",
-        "dayjs": "^1.11.5",
-        "deepmerge": "^4.2.2",
         "fast-clean": "^1.2.1",
-        "fast-deep-equal": "^3.1.3",
-        "filesize": "^10.0.5",
-        "humanize-duration": "^3.27.3",
-        "i18next": "^22.0.1",
         "is-callable": "^1.2.7",
-        "is-empty": "^1.2.0",
         "is-string": "^1.0.7",
-        "path-to-regexp": "^6.2.1"
+        "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
-        "@types/humanize-duration": "^3.27.1",
+        "@leight/eslint-config-eslint": "workspace:^0.0.0",
+        "@leight/tsconfig": "workspace:^0.0.0",
         "@types/is-callable": "^1.1.0",
-        "@types/is-empty": "^1.2.1",
         "@types/is-string": "^1.0.0",
-        "@types/node": "^18.11.2",
-        "@typescript-eslint/eslint-plugin": "^5.38.0",
-        "@typescript-eslint/parser": "^5.38.0",
-        "eslint": "^8.24.0",
-        "eslint-plugin-unicorn": "^43.0.2",
-        "typescript": "^4.8.4"
+        "@types/node": "^18.11.18",
+        "@typescript-eslint/eslint-plugin": "^5.50.0",
+        "@typescript-eslint/parser": "^5.50.0",
+        "concurrently": "^7.6.0",
+        "del-cli": "^5.0.0",
+        "devalue": "^4.2.3",
+        "eslint": "^8.33.0",
+        "eslint-plugin-unicorn": "^45.0.2",
+        "typescript": "^4.9.5"
     },
-    "types": "lib/cjs/index.d.ts",
     "bugs": {
         "url": "https://github.com/leight-core/viv/issues"
     },

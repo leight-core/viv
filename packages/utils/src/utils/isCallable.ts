@@ -1,3 +1,5 @@
-import {default as isCoolCallable} from "is-callable";
+import isCoolCallable from "is-callable";
 
-export const isCallable = (val: any): boolean => isCoolCallable(val);
+export const isCallable = <T extends (...arg: any[]) => any>(
+    val: any
+): val is T => isCoolCallable(val);
