@@ -11,6 +11,7 @@
         "node": ">=16.0.0"
     },
     "sideEffects": false,
+    "type": "module",
     "main": "lib/cjs/index.js",
     "module": "lib/esm/index.js",
     "types": "lib/types/index.d.ts",
