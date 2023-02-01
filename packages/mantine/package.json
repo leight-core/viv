@@ -1,5 +1,5 @@
 {
-    "version": "0.5.4",
+    "version": "0.5.5",
     "name": "@leight/mantine",
     "description": "Tools and some wrappers for Mantine UI library.",
     "license": "MIT",
@@ -12,7 +12,6 @@
     },
     "sideEffects": false,
     "type": "module",
-    "main": "lib/cjs/index.js",
     "module": "lib/esm/index.js",
     "types": "lib/types/index.d.ts",
     "files": [
@@ -21,7 +20,7 @@
     "scripts": {
         "build:types": "tsc -p tsconfig.json -m es2022 --declaration --emitDeclarationOnly --outDir lib/types",
         "build:esm": "tsc -p tsconfig.json -m es2022 --outDir lib/esm",
-        "build:cjs": "tsc -p tsconfig.json -m commonjs --outDir lib/cjs",
+        "no-build:cjs": "tsc -p tsconfig.json -m commonjs --outDir lib/cjs",
         "build": "concurrently npm:build:*",
         "dev-watch:esm": "tsc -w -p tsconfig.json -m es2022 --outDir lib/esm --preserveWatchOutput",
         "dev-watch:cjs": "tsc -w -p tsconfig.json -m commonjs --outDir lib/cjs --preserveWatchOutput",
@@ -33,12 +32,12 @@
     "dependencies": {
         "@babel/core": "^7.20.12",
         "@emotion/react": "^11.10.5",
-        "@leight/file": "workspace:^0.5.3",
-        "@leight/file-client": "workspace:^0.5.4",
-        "@leight/i18n": "workspace:^0.5.3",
-        "@leight/i18n-client": "workspace:^0.5.4",
-        "@leight/utils": "workspace:^0.5.4",
-        "@leight/utils-client": "workspace:^0.5.5",
+        "@leight/file": "workspace:^0.5.4",
+        "@leight/file-client": "workspace:^0.5.5",
+        "@leight/i18n": "workspace:^0.5.4",
+        "@leight/i18n-client": "workspace:^0.5.5",
+        "@leight/utils": "workspace:^0.5.5",
+        "@leight/utils-client": "workspace:^0.5.6",
         "@mantine/core": "^5.10.2",
         "@mantine/dropzone": "^5.10.2",
         "@mantine/hooks": "^5.10.2",

@@ -1,5 +1,11 @@
 # @leight/prisma
 
+## 0.5.5
+
+### Patch Changes
+
+- Experiment with only ESM exports
+
 ## 0.5.4
 
 ### Patch Changes

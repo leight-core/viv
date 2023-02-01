@@ -1,5 +1,5 @@
 {
-    "version": "0.5.4",
+    "version": "0.5.5",
     "name": "@leight/i18n-client",
     "description": "Some i18n client-side helper stuff.",
     "license": "MIT",
@@ -12,7 +12,6 @@
     },
     "sideEffects": false,
     "type": "module",
-    "main": "lib/cjs/index.js",
     "module": "lib/esm/index.js",
     "types": "lib/types/index.d.ts",
     "files": [
@@ -20,7 +19,7 @@
     ],
     "scripts": {
         "build:esm": "tsc -p tsconfig.json -m es2022 --outDir lib/esm",
-        "build:cjs": "tsc -p tsconfig.json -m commonjs --outDir lib/cjs",
+        "no-build:cjs": "tsc -p tsconfig.json -m commonjs --outDir lib/cjs",
         "build:types": "tsc -p tsconfig.json -m es2022 --declaration --emitDeclarationOnly --outDir lib/types",
         "build": "concurrently npm:build:*",
         "dev-watch:esm": "tsc -w -p tsconfig.json -m es2022 --outDir lib/esm --preserveWatchOutput",
@@ -31,8 +30,8 @@
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/i18n": "workspace:^0.5.3",
-        "@leight/utils": "workspace:^0.5.4",
+        "@leight/i18n": "workspace:^0.5.4",
+        "@leight/utils": "workspace:^0.5.5",
         "i18next": "^22.4.9",
         "next": "^13.1.6",
         "next-i18next": "^13.0.3",

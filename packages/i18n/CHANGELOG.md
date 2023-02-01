@@ -1,5 +1,11 @@
 # @leight/i18n
 
+## 0.5.4
+
+### Patch Changes
+
+- Experiment with only ESM exports
+
 ## 0.5.3
 
 ### Patch Changes

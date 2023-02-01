@@ -1,12 +1,20 @@
 # @leight/sql
 
+## 0.5.4
+
+### Patch Changes
+
+- Experiment with only ESM exports
+- Updated dependencies
+  - @leight/prisma@0.5.5
+
 ## 0.5.3
 
 ### Patch Changes
 
 - Changed package type to "module"
 - Updated dependencies
-    - @leight/prisma@0.5.4
+  - @leight/prisma@0.5.4
 
 ## 0.5.2
 
@@ -14,7 +22,7 @@
 
 - Updatred all packages
 - Updated dependencies
-    - @leight/prisma@0.5.3
+  - @leight/prisma@0.5.3
 
 ## 0.5.1
 
@@ -22,4 +30,4 @@
 
 - e4af2419: Experimental publish of the new @leight packages
 - Updated dependencies [e4af2419]
-    - @leight/prisma@0.5.1
+  - @leight/prisma@0.5.1

@@ -1,5 +1,5 @@
 {
-    "version": "0.5.3",
+    "version": "0.5.4",
     "name": "@leight/file",
     "description": "Common file stuff.",
     "license": "MIT",
@@ -12,7 +12,6 @@
     },
     "sideEffects": false,
     "type": "module",
-    "main": "lib/cjs/index.js",
     "module": "lib/esm/index.js",
     "types": "lib/types/index.d.ts",
     "files": [
@@ -20,7 +19,7 @@
     ],
     "scripts": {
         "build:esm": "tsc -p tsconfig.json -m es2022 --outDir lib/esm",
-        "build:cjs": "tsc -p tsconfig.json -m commonjs --outDir lib/cjs",
+        "no-build:cjs": "tsc -p tsconfig.json -m commonjs --outDir lib/cjs",
         "build:types": "tsc -p tsconfig.json -m es2022 --declaration --emitDeclarationOnly --outDir lib/types",
         "build": "concurrently npm:build:*",
         "dev-watch:esm": "tsc -w -p tsconfig.json -m es2022 --outDir lib/esm --preserveWatchOutput",
@@ -31,7 +30,7 @@
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/prisma": "workspace:^0.5.4",
+        "@leight/prisma": "workspace:^0.5.5",
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
