@@ -1,5 +1,11 @@
 # @leight/mantine
 
+## 0.5.2
+
+### Patch Changes
+
+- Updated another jsx packages
+
 ## 0.5.1
 
 ### Patch Changes
