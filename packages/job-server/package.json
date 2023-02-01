@@ -1,5 +1,5 @@
 {
-    "version": "0.5.1",
+    "version": "0.5.2",
     "name": "@leight/job-server",
     "description": "Job (async execution) stuff on server-side.",
     "license": "MIT",
@@ -34,7 +34,7 @@
         "@leight/job": "workspace:^0.5.1",
         "@leight/prisma": "workspace:^0.5.1",
         "@leight/user": "workspace:^0.5.1",
-        "@leight/utils": "workspace:^0.5.1",
+        "@leight/utils": "workspace:^0.5.2",
         "@leight/winston": "workspace:^0.5.1",
         "delay": "^5.0.0",
         "reflect-metadata": "^0.1.13",
@@ -42,7 +42,7 @@
     },
     "devDependencies": {
         "@leight/eslint-config-eslint": "workspace:^0.0.1",
-        "@leight/tsconfig": "workspace:^0.5.1",
+        "@leight/tsconfig": "workspace:^0.5.5",
         "@types/node": "^18.11.18",
         "@typescript-eslint/eslint-plugin": "^5.50.0",
         "@typescript-eslint/parser": "^5.50.0",

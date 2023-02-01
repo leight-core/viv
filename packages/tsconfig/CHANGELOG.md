@@ -1,5 +1,11 @@
 # @leight/tsconfig
 
+## 0.5.5
+
+### Patch Changes
+
+- 5827da3c: Experimentally used dynamic import on devalue
+
 ## 0.5.4
 
 ### Patch Changes

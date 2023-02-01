@@ -1,5 +1,11 @@
 # @leight/utils
 
+## 0.5.2
+
+### Patch Changes
+
+- 5827da3c: Experimentally used dynamic import on devalue
+
 ## 0.5.1
 
 ### Patch Changes
