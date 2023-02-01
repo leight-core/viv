@@ -1,5 +1,15 @@
 # @leight/xlsx-import
 
+## 0.5.2
+
+### Patch Changes
+
+- Updatred all packages
+- Updated dependencies
+    - @leight/import@0.5.2
+    - @leight/job@0.5.2
+    - @leight/trpc@0.5.2
+
 ## 0.5.1
 
 ### Patch Changes

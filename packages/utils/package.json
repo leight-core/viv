@@ -1,5 +1,5 @@
 {
-    "version": "0.5.2",
+    "version": "0.5.3",
     "name": "@leight/utils",
     "description": "Some simple utils used in @leight libraries.",
     "license": "MIT",
@@ -36,8 +36,8 @@
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.0.1",
-        "@leight/tsconfig": "workspace:^0.5.5",
+        "@leight/eslint-config-eslint": "workspace:^0.0.2",
+        "@leight/tsconfig": "workspace:^0.5.6",
         "@types/is-callable": "^1.1.0",
         "@types/is-string": "^1.0.0",
         "@types/node": "^18.11.18",

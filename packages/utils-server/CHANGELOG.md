@@ -1,5 +1,11 @@
 # @leight/utils-server
 
+## 0.5.2
+
+### Patch Changes
+
+- Updatred all packages
+
 ## 0.5.1
 
 ### Patch Changes
