@@ -1,5 +1,11 @@
 # @leight/prisma
 
+## 0.5.2
+
+### Patch Changes
+
+- Removed postinstall script
+
 ## 0.5.1
 
 ### Patch Changes

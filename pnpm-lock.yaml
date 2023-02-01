@@ -21,7 +21,7 @@ importers:
   packages/container:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
       '@typescript-eslint/parser': ^5.50.0
@@ -56,7 +56,7 @@ importers:
       '@leight/file-server': workspace:^0.5.1
       '@leight/import-server': workspace:^0.5.1
       '@leight/job-server': workspace:^0.5.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@leight/user-server': workspace:^0.5.1
       '@leight/xlsx-import-server': workspace:^0.5.1
       '@types/node': ^18.11.18
@@ -93,7 +93,7 @@ importers:
   packages/context-client:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@leight/utils': workspace:^0.5.1
       '@leight/zustand': workspace:^0.5.1
       '@types/node': ^18.11.18
@@ -170,8 +170,8 @@ importers:
   packages/file:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
-      '@leight/prisma': '*'
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/prisma': ^0.5.2
+      '@leight/tsconfig': workspace:^0.5.1
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
       '@typescript-eslint/parser': ^5.50.0
@@ -202,7 +202,7 @@ importers:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
       '@leight/file': workspace:^0.5.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@leight/utils': workspace:^0.5.1
       '@leight/utils-client': workspace:^0.5.1
       '@types/node': ^18.11.18
@@ -252,7 +252,7 @@ importers:
       '@leight/file': workspace:^0.5.1
       '@leight/next.js-server': workspace:^0.5.1
       '@leight/prisma': workspace:^0.5.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@types/fs-extra': ^11.0.1
       '@types/glob': ^8.0.1
       '@types/node': ^18.11.18
@@ -303,7 +303,7 @@ importers:
   packages/i18n:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
       '@typescript-eslint/parser': ^5.50.0
@@ -331,7 +331,7 @@ importers:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
       '@leight/i18n': workspace:^0.5.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@leight/utils': workspace:^0.5.1
       '@types/node': ^18.11.18
       '@types/react': ^18.0.27
@@ -378,7 +378,7 @@ importers:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
       '@leight/i18n': workspace:^0.5.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@types/node': ^18.11.18
       '@types/react': ^18.0.27
       '@types/react-dom': ^18.0.10
@@ -425,7 +425,7 @@ importers:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
       '@leight/job': workspace:^0.5.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
       '@typescript-eslint/parser': ^5.50.0
@@ -457,7 +457,7 @@ importers:
       '@leight/container': workspace:^0.5.1
       '@leight/eslint-config-eslint': workspace:^0.0.1
       '@leight/import': workspace:^0.5.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
       '@typescript-eslint/parser': ^5.50.0
@@ -488,7 +488,7 @@ importers:
   packages/job:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
       '@typescript-eslint/parser': ^5.50.0
@@ -520,7 +520,7 @@ importers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
       '@leight/job': workspace:^0.5.1
       '@leight/prisma': workspace:^0.5.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@leight/user': workspace:^0.5.1
       '@leight/utils': workspace:^0.5.1
       '@leight/winston': workspace:^0.5.1
@@ -562,7 +562,7 @@ importers:
   packages/layout:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@types/node': ^18.11.18
       '@types/react': ^18.0.27
       '@types/react-dom': ^18.0.10
@@ -603,7 +603,7 @@ importers:
       '@leight/file-client': workspace:^0.5.1
       '@leight/i18n': workspace:^0.5.1
       '@leight/i18n-client': workspace:^0.5.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@leight/utils': workspace:^0.5.1
       '@leight/utils-client': workspace:^0.5.1
       '@mantine/core': ^5.10.2
@@ -661,7 +661,7 @@ importers:
     specifiers:
       '@leight/container': workspace:^0.5.1
       '@leight/eslint-config-eslint': workspace:^0.0.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@leight/user': workspace:^0.5.1
       '@leight/user-server': workspace:^0.5.1
       '@leight/utils': workspace:^0.5.1
@@ -711,7 +711,7 @@ importers:
   packages/prisma:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@prisma/client': ^4.9.0
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
@@ -743,7 +743,7 @@ importers:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
       '@leight/prisma': workspace:^0.5.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
       '@typescript-eslint/parser': ^5.50.0
@@ -776,7 +776,7 @@ importers:
     specifiers:
       '@leight/container': workspace:^0.5.1
       '@leight/eslint-config-eslint': workspace:^0.0.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@leight/user': workspace:^0.5.1
       '@tanstack/react-query': ^4.24.4
       '@trpc/server': ^10.9.1
@@ -818,7 +818,7 @@ importers:
       '@leight/container': workspace:^0.5.1
       '@leight/eslint-config-eslint': workspace:^0.0.1
       '@leight/trpc': workspace:^0.5.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@leight/user': workspace:^0.5.1
       '@leight/user-server': workspace:^0.5.1
       '@trpc/server': ^10.9.1
@@ -866,7 +866,7 @@ importers:
   packages/user:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
       '@typescript-eslint/parser': ^5.50.0
@@ -905,7 +905,7 @@ importers:
       '@leight/container': workspace:^0.5.1
       '@leight/eslint-config-eslint': workspace:^0.0.1
       '@leight/prisma': workspace:^0.5.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@leight/user': workspace:^0.5.1
       '@leight/utils': workspace:^0.5.1
       '@types/node': ^18.11.18
@@ -942,7 +942,7 @@ importers:
   packages/utils:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@types/is-callable': ^1.1.0
       '@types/is-string': ^1.0.0
       '@types/node': ^18.11.18
@@ -982,7 +982,7 @@ importers:
     specifiers:
       '@leight/context-client': workspace:^0.5.1
       '@leight/eslint-config-eslint': workspace:^0.0.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@leight/utils': workspace:^0.5.1
       '@types/node': ^18.11.18
       '@types/react': ^18.0.27
@@ -1022,7 +1022,7 @@ importers:
   packages/utils-server:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
       '@typescript-eslint/parser': ^5.50.0
@@ -1049,7 +1049,7 @@ importers:
   packages/winston:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
       '@typescript-eslint/parser': ^5.50.0
@@ -1081,7 +1081,7 @@ importers:
       '@leight/import': workspace:^0.5.1
       '@leight/job': workspace:^0.5.1
       '@leight/trpc': workspace:^0.5.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
       '@typescript-eslint/parser': ^5.50.0
@@ -1118,7 +1118,7 @@ importers:
       '@emotion/react': ^11.10.5
       '@leight/eslint-config-eslint': workspace:^0.0.1
       '@leight/mantine': workspace:^0.5.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.2
       '@leight/xlsx-import': workspace:^0.5.1
       '@mantine/core': ^5.10.2
       '@mantine/dropzone': ^5.10.2
@@ -1169,7 +1169,7 @@ importers:
       '@leight/import': workspace:^0.5.1
       '@leight/job': workspace:^0.5.1
       '@leight/trpc-server': workspace:^0.5.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@leight/utils': workspace:^0.5.1
       '@leight/utils-server': workspace:^0.5.1
       '@leight/xlsx-import': workspace:^0.5.1
@@ -1215,7 +1215,7 @@ importers:
   packages/zustand:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
-      '@leight/tsconfig': workspace:^0.0.1
+      '@leight/tsconfig': workspace:^0.5.1
       '@types/node': ^18.11.18
       '@types/react': ^18.0.27
       '@types/react-dom': ^18.0.10
