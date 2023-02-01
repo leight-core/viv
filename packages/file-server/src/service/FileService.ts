@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import {PrismaClient} from "@prisma/client";
+import {$PrismaClient, type IPrismaClient} from "@leight/prisma";
 import {
     $FileServiceConfig,
     type IFile,
@@ -13,7 +13,6 @@ import fs from "node:fs";
 import {copySync} from "fs-extra";
 import touch from "touch";
 import coolPath from "node:path";
-import {$PrismaClient} from "@leight/prisma";
 import {detectFileMime} from "mime-detect";
 
 @injectable()
@@ -22,7 +21,7 @@ export class FileService implements IFileService {
         @inject($FileServiceConfig)
         private fileServiceConfig: IFileServiceConfig,
         @inject($PrismaClient)
-        private prismaClient: PrismaClient
+        private prismaClient: IPrismaClient,
     ) {
     }
 

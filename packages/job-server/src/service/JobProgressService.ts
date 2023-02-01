@@ -1,14 +1,13 @@
 import "reflect-metadata";
 import {type IJobProgress, type IJobProgressService, type IJobStatus} from "@leight/job";
 import {inject, injectable} from "tsyringe";
-import {$PrismaClient} from "@leight/prisma";
-import {PrismaClient} from "@prisma/client";
+import {$PrismaClient, type IPrismaClient} from "@leight/prisma";
 import {toPercent} from "@leight/utils";
 
 @injectable()
 export class JobProgressService implements IJobProgressService {
     constructor(
-        @inject($PrismaClient) protected prismaClient: PrismaClient,
+        @inject($PrismaClient) protected prismaClient: IPrismaClient,
     ) {
     }
 

@@ -1,11 +1,12 @@
 import "reflect-metadata";
-import {$PrismaClient} from "@leight/prisma";
-import {type PrismaClient} from "@prisma/client";
+import {$PrismaClient, type IPrismaClient} from "@leight/prisma";
 import {inject, injectable} from "tsyringe";
 
 @injectable()
 export class SqlUtils {
-    constructor(@inject($PrismaClient) protected prisma: PrismaClient) {
+    constructor(
+        @inject($PrismaClient) protected prisma: IPrismaClient,
+    ) {
     }
 
     parse(source: string): string[] {

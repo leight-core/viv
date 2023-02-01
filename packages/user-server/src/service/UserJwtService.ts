@@ -1,5 +1,4 @@
-import {$PrismaClient} from "@leight/prisma";
-import {PrismaClient} from "@prisma/client";
+import {$PrismaClient, type IPrismaClient} from "@leight/prisma";
 import {inject, injectable} from "tsyringe";
 import {type IToken, type IUserJwtService} from "@leight/user";
 
@@ -8,7 +7,9 @@ import {type IToken, type IUserJwtService} from "@leight/user";
  */
 @injectable()
 export class UserJwtService implements IUserJwtService {
-    constructor(@inject($PrismaClient) protected prisma: PrismaClient) {
+    constructor(
+        @inject($PrismaClient) protected prisma: IPrismaClient,
+    ) {
     }
 
     public async token<T extends IToken>(props: T): Promise<T> {

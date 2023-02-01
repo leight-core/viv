@@ -1,5 +1,4 @@
-import {$PrismaClient} from "@leight/prisma";
-import {PrismaClient} from "@prisma/client";
+import {$PrismaClient, type IPrismaClient} from "@leight/prisma";
 import {inject, injectable} from "tsyringe";
 import {type IRegistrationService, type IToken} from "@leight/user";
 
@@ -9,7 +8,9 @@ import {type IRegistrationService, type IToken} from "@leight/user";
  */
 @injectable()
 export class RegistrationService implements IRegistrationService {
-    constructor(@inject($PrismaClient) protected prisma: PrismaClient) {
+    constructor(
+        @inject($PrismaClient) protected prisma: IPrismaClient,
+    ) {
     }
 
     public async handle<T extends IToken>({

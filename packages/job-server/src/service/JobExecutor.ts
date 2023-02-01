@@ -2,8 +2,7 @@ import "reflect-metadata";
 import {$JobProgressService, type IJob, type IJobExecutor, type IJobProgressService} from "@leight/job";
 import {inject, injectable} from "tsyringe";
 import {$UserService, type IUserService} from "@leight/user";
-import {$PrismaClient} from "@leight/prisma";
-import {PrismaClient} from "@prisma/client";
+import {$PrismaClient, type IPrismaClient} from "@leight/prisma";
 import delay from "delay";
 import {Logger} from "@leight/winston";
 import {Pack} from "@leight/utils";
@@ -13,7 +12,7 @@ export class JobExecutor implements IJobExecutor {
     constructor(
         @inject($JobProgressService) protected jobProgressService: IJobProgressService,
         @inject($UserService) protected userService: IUserService,
-        @inject($PrismaClient) protected prismaClient: PrismaClient,
+        @inject($PrismaClient) protected prismaClient: IPrismaClient,
     ) {
     }
 
