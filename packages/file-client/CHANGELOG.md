@@ -1,14 +1,24 @@
 # @leight/file-client
 
+## 0.5.6
+
+### Patch Changes
+
+- Changed whole build to just ESM, optimized build speed
+- Updated dependencies
+    - @leight/utils-client@0.5.7
+    - @leight/utils@0.5.6
+    - @leight/file@0.5.5
+
 ## 0.5.5
 
 ### Patch Changes
 
 - Experiment with only ESM exports
 - Updated dependencies
-  - @leight/utils-client@0.5.6
-  - @leight/utils@0.5.5
-  - @leight/file@0.5.4
+    - @leight/utils-client@0.5.6
+    - @leight/utils@0.5.5
+    - @leight/file@0.5.4
 
 ## 0.5.4
 

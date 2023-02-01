@@ -1,5 +1,11 @@
 # @leight/tsconfig
 
+## 0.5.8
+
+### Patch Changes
+
+- Changed whole build to just ESM, optimized build speed
+
 ## 0.5.7
 
 ### Patch Changes

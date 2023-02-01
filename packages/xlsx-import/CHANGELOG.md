@@ -1,14 +1,24 @@
 # @leight/xlsx-import
 
+## 0.5.5
+
+### Patch Changes
+
+- Changed whole build to just ESM, optimized build speed
+- Updated dependencies
+    - @leight/import@0.5.5
+    - @leight/trpc@0.5.5
+    - @leight/job@0.5.5
+
 ## 0.5.4
 
 ### Patch Changes
 
 - Experiment with only ESM exports
 - Updated dependencies
-  - @leight/import@0.5.4
-  - @leight/trpc@0.5.4
-  - @leight/job@0.5.4
+    - @leight/import@0.5.4
+    - @leight/trpc@0.5.4
+    - @leight/job@0.5.4
 
 ## 0.5.3
 

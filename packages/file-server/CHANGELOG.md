@@ -1,14 +1,25 @@
 # @leight/file-server
 
+## 0.5.5
+
+### Patch Changes
+
+- Changed whole build to just ESM, optimized build speed
+- Updated dependencies
+    - @leight/next.js-server@0.5.5
+    - @leight/container@0.5.5
+    - @leight/prisma@0.5.6
+    - @leight/file@0.5.5
+
 ## 0.5.4
 
 ### Patch Changes
 
 - Experiment with only ESM exports
 - Updated dependencies
-  - @leight/next.js-server@0.5.4
-  - @leight/container@0.5.4
-  - @leight/prisma@0.5.5
+    - @leight/next.js-server@0.5.4
+    - @leight/container@0.5.4
+    - @leight/prisma@0.5.5
   - @leight/file@0.5.4
 
 ## 0.5.3

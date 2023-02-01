@@ -1,13 +1,22 @@
 # @leight/import-server
 
+## 0.5.5
+
+### Patch Changes
+
+- Changed whole build to just ESM, optimized build speed
+- Updated dependencies
+    - @leight/container@0.5.5
+    - @leight/import@0.5.5
+
 ## 0.5.4
 
 ### Patch Changes
 
 - Experiment with only ESM exports
 - Updated dependencies
-  - @leight/container@0.5.4
-  - @leight/import@0.5.4
+    - @leight/container@0.5.4
+    - @leight/import@0.5.4
 
 ## 0.5.3
 

@@ -1,14 +1,27 @@
 # @leight/container-server
 
+## 0.5.5
+
+### Patch Changes
+
+- Changed whole build to just ESM, optimized build speed
+- Updated dependencies
+    - @leight/xlsx-import-server@0.5.5
+    - @leight/import-server@0.5.5
+    - @leight/file-server@0.5.5
+    - @leight/user-server@0.5.5
+    - @leight/job-server@0.5.6
+    - @leight/container@0.5.5
+
 ## 0.5.4
 
 ### Patch Changes
 
 - Experiment with only ESM exports
 - Updated dependencies
-  - @leight/xlsx-import-server@0.5.4
-  - @leight/import-server@0.5.4
-  - @leight/file-server@0.5.4
+    - @leight/xlsx-import-server@0.5.4
+    - @leight/import-server@0.5.4
+    - @leight/file-server@0.5.4
   - @leight/user-server@0.5.4
   - @leight/job-server@0.5.5
   - @leight/container@0.5.4

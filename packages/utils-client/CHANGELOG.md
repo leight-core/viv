@@ -1,13 +1,22 @@
 # @leight/utils-client
 
+## 0.5.7
+
+### Patch Changes
+
+- Changed whole build to just ESM, optimized build speed
+- Updated dependencies
+    - @leight/context-client@0.5.6
+    - @leight/utils@0.5.6
+
 ## 0.5.6
 
 ### Patch Changes
 
 - Experiment with only ESM exports
 - Updated dependencies
-  - @leight/context-client@0.5.5
-  - @leight/utils@0.5.5
+    - @leight/context-client@0.5.5
+    - @leight/utils@0.5.5
 
 ## 0.5.5
 

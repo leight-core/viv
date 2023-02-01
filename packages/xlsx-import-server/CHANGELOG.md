@@ -1,14 +1,29 @@
 # @leight/xlsx-import-server
 
+## 0.5.5
+
+### Patch Changes
+
+- Changed whole build to just ESM, optimized build speed
+- Updated dependencies
+    - @leight/utils-server@0.5.5
+    - @leight/trpc-server@0.5.5
+    - @leight/xlsx-import@0.5.5
+    - @leight/container@0.5.5
+    - @leight/import@0.5.5
+    - @leight/utils@0.5.6
+    - @leight/file@0.5.5
+    - @leight/job@0.5.5
+
 ## 0.5.4
 
 ### Patch Changes
 
 - Experiment with only ESM exports
 - Updated dependencies
-  - @leight/utils-server@0.5.4
-  - @leight/trpc-server@0.5.4
-  - @leight/xlsx-import@0.5.4
+    - @leight/utils-server@0.5.4
+    - @leight/trpc-server@0.5.4
+    - @leight/xlsx-import@0.5.4
   - @leight/container@0.5.4
   - @leight/import@0.5.4
   - @leight/utils@0.5.5

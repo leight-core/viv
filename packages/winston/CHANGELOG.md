@@ -1,5 +1,11 @@
 # @leight/winston
 
+## 0.5.5
+
+### Patch Changes
+
+- Changed whole build to just ESM, optimized build speed
+
 ## 0.5.4
 
 ### Patch Changes
