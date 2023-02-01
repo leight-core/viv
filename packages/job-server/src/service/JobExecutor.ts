@@ -23,7 +23,7 @@ export class JobExecutor implements IJobExecutor {
                 created: new Date(),
                 name,
                 userId: this.userService.required(),
-                params: Pack.pack(params),
+                params: await Pack.pack(params),
             }
         }) as TJob;
         const labels = {name, jobId: job.id};
