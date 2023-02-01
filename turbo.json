@@ -55,13 +55,6 @@
                 "NODE_ENV"
             ]
         },
-        "build:no-cache": {
-            "dependsOn": [
-                "^cleanup",
-                "^build"
-            ],
-            "cache": false
-        },
         "depcheck": {
             "outputMode": "new-only",
             "inputs": [

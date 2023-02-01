@@ -1,5 +1,5 @@
 {
-    "version": "0.5.7",
+    "version": "0.5.8",
     "name": "@leight/utils-client",
     "description": "Some utility stuff usable on client side.",
     "license": "MIT",
@@ -19,14 +19,14 @@
     ],
     "scripts": {
         "build": "tsc -p tsconfig.json --outDir lib",
-        "dev-watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
+        "dev:watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
         "depcheck": "npx depcheck",
         "lint": "eslint src",
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/context-client": "workspace:^0.5.6",
-        "@leight/utils": "workspace:^0.5.6",
+        "@leight/context-client": "workspace:^0.5.7",
+        "@leight/utils": "workspace:^0.5.7",
         "path-to-regexp": "^6.2.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",

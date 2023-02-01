@@ -1,5 +1,5 @@
 {
-    "version": "0.5.5",
+    "version": "0.5.6",
     "name": "@leight/import",
     "description": "Common import stuff.",
     "license": "MIT",
@@ -19,13 +19,13 @@
     ],
     "scripts": {
         "build": "tsc -p tsconfig.json --outDir lib",
-        "dev-watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
+        "dev:watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
         "depcheck": "npx depcheck",
         "lint": "eslint src",
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/job": "workspace:^0.5.5",
+        "@leight/job": "workspace:^0.5.6",
         "reflect-metadata": "^0.1.13",
         "zod": "^3.20.2"
     },

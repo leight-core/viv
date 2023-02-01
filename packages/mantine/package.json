@@ -1,5 +1,5 @@
 {
-    "version": "0.5.6",
+    "version": "0.5.7",
     "name": "@leight/mantine",
     "description": "Tools and some wrappers for Mantine UI library.",
     "license": "MIT",
@@ -19,7 +19,7 @@
     ],
     "scripts": {
         "build": "tsc -p tsconfig.json --outDir lib",
-        "dev-watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
+        "dev:watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
         "depcheck": "npx depcheck",
         "lint": "eslint src",
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
@@ -27,12 +27,12 @@
     "dependencies": {
         "@babel/core": "^7.20.12",
         "@emotion/react": "^11.10.5",
-        "@leight/file": "workspace:^0.5.5",
-        "@leight/file-client": "workspace:^0.5.6",
-        "@leight/i18n": "workspace:^0.5.5",
-        "@leight/i18n-client": "workspace:^0.5.6",
-        "@leight/utils": "workspace:^0.5.6",
-        "@leight/utils-client": "workspace:^0.5.7",
+        "@leight/file": "workspace:^0.5.6",
+        "@leight/file-client": "workspace:^0.5.7",
+        "@leight/i18n": "workspace:^0.5.6",
+        "@leight/i18n-client": "workspace:^0.5.7",
+        "@leight/utils": "workspace:^0.5.7",
+        "@leight/utils-client": "workspace:^0.5.8",
         "@mantine/core": "^5.10.2",
         "@mantine/dropzone": "^5.10.2",
         "@mantine/hooks": "^5.10.2",

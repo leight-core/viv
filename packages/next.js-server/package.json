@@ -1,5 +1,5 @@
 {
-    "version": "0.5.5",
+    "version": "0.5.6",
     "name": "@leight/next.js-server",
     "description": "Next.js related server-side helper stuff.",
     "license": "MIT",
@@ -19,17 +19,17 @@
     ],
     "scripts": {
         "build": "tsc -p tsconfig.json --outDir lib",
-        "dev-watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
+        "dev:watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
         "depcheck": "npx depcheck",
         "lint": "eslint src",
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "workspace:^0.5.5",
-        "@leight/user": "workspace:^0.5.5",
-        "@leight/user-server": "workspace:^0.5.5",
-        "@leight/utils": "workspace:^0.5.6",
-        "@leight/winston": "workspace:^0.5.5",
+        "@leight/container": "workspace:^0.5.6",
+        "@leight/user": "workspace:^0.5.6",
+        "@leight/user-server": "workspace:^0.5.6",
+        "@leight/utils": "workspace:^0.5.7",
+        "@leight/winston": "workspace:^0.5.6",
         "next": "^13.1.6",
         "next-auth": "^4.19.1",
         "raw-body": "^2.5.1",

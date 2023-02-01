@@ -1,12 +1,20 @@
 # @leight/i18n-server
 
+## 0.5.6
+
+### Patch Changes
+
+- Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
+- Updated dependencies
+  - @leight/i18n@0.5.6
+
 ## 0.5.5
 
 ### Patch Changes
 
 - Changed whole build to just ESM, optimized build speed
 - Updated dependencies
-    - @leight/i18n@0.5.5
+  - @leight/i18n@0.5.5
 
 ## 0.5.4
 
@@ -14,7 +22,7 @@
 
 - Experiment with only ESM exports
 - Updated dependencies
-    - @leight/i18n@0.5.4
+  - @leight/i18n@0.5.4
 
 ## 0.5.3
 

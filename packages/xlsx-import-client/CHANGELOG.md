@@ -1,13 +1,21 @@
 # @leight/xlsx-import-client
 
+## 0.5.8
+
+### Patch Changes
+
+- Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
+- Updated dependencies
+  - @leight/mantine@0.5.7
+
 ## 0.5.7
 
 ### Patch Changes
 
 - Changed whole build to just ESM, optimized build speed
 - Updated dependencies
-    - @leight/tsconfig@0.5.8
-    - @leight/mantine@0.5.6
+  - @leight/tsconfig@0.5.8
+  - @leight/mantine@0.5.6
 
 ## 0.5.6
 
@@ -15,7 +23,7 @@
 
 - Experiment with only ESM exports
 - Updated dependencies
-    - @leight/mantine@0.5.5
+  - @leight/mantine@0.5.5
 
 ## 0.5.5
 

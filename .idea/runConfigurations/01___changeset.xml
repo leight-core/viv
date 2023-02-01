@@ -1,9 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="version" type="js.build_tools.npm" folderName="change">
+  <configuration default="false" name="01 - changeset" type="js.build_tools.npm" folderName="change">
     <package-json value="$PROJECT_DIR$/package.json" />
     <command value="run" />
     <scripts>
-      <script value="changeset:version" />
+      <script value="changeset" />
     </scripts>
     <node-interpreter value="project" />
     <package-manager value="pnpm" />

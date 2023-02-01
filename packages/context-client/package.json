@@ -1,5 +1,5 @@
 {
-    "version": "0.5.6",
+    "version": "0.5.7",
     "name": "@leight/context-client",
     "description": "Context helper stuff on client-side, including support for Zustand.",
     "license": "MIT",
@@ -14,19 +14,20 @@
     "type": "module",
     "module": "lib/index.js",
     "types": "lib/index.d.ts",
+    "source": "src/index.ts",
     "files": [
         "lib"
     ],
     "scripts": {
         "build": "tsc -p tsconfig.json --outDir lib",
-        "dev-watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
+        "dev:watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
         "depcheck": "npx depcheck",
         "lint": "eslint src",
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/utils": "workspace:^0.5.6",
-        "@leight/zustand": "workspace:^0.5.5",
+        "@leight/utils": "workspace:^0.5.7",
+        "@leight/zustand": "workspace:^0.5.6",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "reflect-metadata": "^0.1.13",

@@ -1,5 +1,5 @@
 {
-    "version": "0.5.6",
+    "version": "0.5.7",
     "name": "@leight/i18n-client",
     "description": "Some i18n client-side helper stuff.",
     "license": "MIT",
@@ -19,14 +19,14 @@
     ],
     "scripts": {
         "build": "tsc -p tsconfig.json --outDir lib",
-        "dev-watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
+        "dev:watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
         "depcheck": "npx depcheck",
         "lint": "eslint src",
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/i18n": "workspace:^0.5.5",
-        "@leight/utils": "workspace:^0.5.6",
+        "@leight/i18n": "workspace:^0.5.6",
+        "@leight/utils": "workspace:^0.5.7",
         "i18next": "^22.4.9",
         "next": "^13.1.6",
         "next-i18next": "^13.0.3",

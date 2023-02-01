@@ -103,6 +103,8 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/mantine/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/next.js-server/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/prisma/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/trpc/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/user-server/.turbo" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

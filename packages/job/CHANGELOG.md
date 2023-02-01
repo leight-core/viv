@@ -1,5 +1,11 @@
 # @leight/job
 
+## 0.5.6
+
+### Patch Changes
+
+- Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
+
 ## 0.5.5
 
 ### Patch Changes

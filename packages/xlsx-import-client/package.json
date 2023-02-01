@@ -1,5 +1,5 @@
 {
-    "version": "0.5.7",
+    "version": "0.5.8",
     "name": "@leight/xlsx-import-client",
     "description": "Client-side tools for imports.",
     "license": "MIT",
@@ -19,7 +19,7 @@
     ],
     "scripts": {
         "build": "tsc -p tsconfig.json --outDir lib",
-        "dev-watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
+        "dev:watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
         "depcheck": "npx depcheck",
         "lint": "eslint src",
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
@@ -27,7 +27,7 @@
     "dependencies": {
         "@babel/core": "^7.20.12",
         "@emotion/react": "^11.10.5",
-        "@leight/mantine": "workspace:^0.5.6",
+        "@leight/mantine": "workspace:^0.5.7",
         "@leight/tsconfig": "workspace:^0.5.8",
         "@mantine/core": "^5.10.2",
         "@mantine/dropzone": "^5.10.2",
@@ -39,7 +39,7 @@
     "devDependencies": {
         "@leight/eslint-config-eslint": "workspace:^0.0.3",
         "@leight/tsconfig": "*",
-        "@leight/xlsx-import": "workspace:^0.5.5",
+        "@leight/xlsx-import": "workspace:^0.5.6",
         "@types/node": "^18.11.18",
         "@types/react": "^18.0.27",
         "@types/react-dom": "^18.0.10",

@@ -1,5 +1,5 @@
 {
-    "version": "0.5.5",
+    "version": "0.5.6",
     "name": "@leight/import-server",
     "description": "Server-side import stuff.",
     "license": "MIT",
@@ -19,14 +19,14 @@
     ],
     "scripts": {
         "build": "tsc -p tsconfig.json --outDir lib",
-        "dev-watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
+        "dev:watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
         "depcheck": "npx depcheck",
         "lint": "eslint src",
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "workspace:^0.5.5",
-        "@leight/import": "workspace:^0.5.5",
+        "@leight/container": "workspace:^0.5.6",
+        "@leight/import": "workspace:^0.5.6",
         "reflect-metadata": "^0.1.13",
         "tsyringe": "^4.7.0"
     },

@@ -1,5 +1,5 @@
 {
-    "version": "0.5.6",
+    "version": "0.5.7",
     "name": "@leight/job-server",
     "description": "Job (async execution) stuff on server-side.",
     "license": "MIT",
@@ -19,18 +19,18 @@
     ],
     "scripts": {
         "build": "tsc -p tsconfig.json --outDir lib",
-        "dev-watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
+        "dev:watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
         "depcheck": "npx depcheck",
         "lint": "eslint src",
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "workspace:^0.5.5",
-        "@leight/job": "workspace:^0.5.5",
-        "@leight/prisma": "workspace:^0.5.6",
-        "@leight/user": "workspace:^0.5.5",
-        "@leight/utils": "workspace:^0.5.6",
-        "@leight/winston": "workspace:^0.5.5",
+        "@leight/container": "workspace:^0.5.6",
+        "@leight/job": "workspace:^0.5.6",
+        "@leight/prisma": "workspace:^0.5.7",
+        "@leight/user": "workspace:^0.5.6",
+        "@leight/utils": "workspace:^0.5.7",
+        "@leight/winston": "workspace:^0.5.6",
         "delay": "^5.0.0",
         "reflect-metadata": "^0.1.13",
         "tsyringe": "^4.7.0"

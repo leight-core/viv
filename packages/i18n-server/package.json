@@ -1,5 +1,5 @@
 {
-    "version": "0.5.5",
+    "version": "0.5.6",
     "name": "@leight/i18n-server",
     "description": "Some i18n server-side helper stuff.",
     "license": "MIT",
@@ -19,13 +19,13 @@
     ],
     "scripts": {
         "build": "tsc -p tsconfig.json --outDir lib",
-        "dev-watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
+        "dev:watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
         "depcheck": "npx depcheck",
         "lint": "eslint src",
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/i18n": "workspace:^0.5.5",
+        "@leight/i18n": "workspace:^0.5.6",
         "i18next": "^22.4.9",
         "next": "^13.1.6",
         "next-i18next": "^13.0.3",
@@ -44,7 +44,6 @@
         "@typescript-eslint/parser": "^5.50.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
-        "dotenv-cli": "^7.0.0",
         "eslint": "^8.33.0",
         "eslint-plugin-unicorn": "^45.0.2",
         "typescript": "^4.9.5"

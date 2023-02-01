@@ -1,15 +1,26 @@
 # @leight/trpc-server
 
+## 0.5.6
+
+### Patch Changes
+
+- Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
+- Updated dependencies
+  - @leight/user-server@0.5.6
+  - @leight/container@0.5.6
+  - @leight/trpc@0.5.6
+  - @leight/user@0.5.6
+
 ## 0.5.5
 
 ### Patch Changes
 
 - Changed whole build to just ESM, optimized build speed
 - Updated dependencies
-    - @leight/user-server@0.5.5
-    - @leight/container@0.5.5
-    - @leight/trpc@0.5.5
-    - @leight/user@0.5.5
+  - @leight/user-server@0.5.5
+  - @leight/container@0.5.5
+  - @leight/trpc@0.5.5
+  - @leight/user@0.5.5
 
 ## 0.5.4
 
@@ -17,9 +28,9 @@
 
 - Experiment with only ESM exports
 - Updated dependencies
-    - @leight/user-server@0.5.4
-    - @leight/container@0.5.4
-    - @leight/trpc@0.5.4
+  - @leight/user-server@0.5.4
+  - @leight/container@0.5.4
+  - @leight/trpc@0.5.4
   - @leight/user@0.5.4
 
 ## 0.5.3

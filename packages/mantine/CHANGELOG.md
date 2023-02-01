@@ -1,17 +1,30 @@
 # @leight/mantine
 
+## 0.5.7
+
+### Patch Changes
+
+- Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
+- Updated dependencies
+  - @leight/utils-client@0.5.8
+  - @leight/file-client@0.5.7
+  - @leight/i18n-client@0.5.7
+  - @leight/utils@0.5.7
+  - @leight/file@0.5.6
+  - @leight/i18n@0.5.6
+
 ## 0.5.6
 
 ### Patch Changes
 
 - Changed whole build to just ESM, optimized build speed
 - Updated dependencies
-    - @leight/utils-client@0.5.7
-    - @leight/file-client@0.5.6
-    - @leight/i18n-client@0.5.6
-    - @leight/utils@0.5.6
-    - @leight/file@0.5.5
-    - @leight/i18n@0.5.5
+  - @leight/utils-client@0.5.7
+  - @leight/file-client@0.5.6
+  - @leight/i18n-client@0.5.6
+  - @leight/utils@0.5.6
+  - @leight/file@0.5.5
+  - @leight/i18n@0.5.5
 
 ## 0.5.5
 
@@ -19,9 +32,9 @@
 
 - Experiment with only ESM exports
 - Updated dependencies
-    - @leight/utils-client@0.5.6
-    - @leight/file-client@0.5.5
-    - @leight/i18n-client@0.5.5
+  - @leight/utils-client@0.5.6
+  - @leight/file-client@0.5.5
+  - @leight/i18n-client@0.5.5
   - @leight/utils@0.5.5
   - @leight/file@0.5.4
   - @leight/i18n@0.5.4
