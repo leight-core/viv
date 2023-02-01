@@ -1,5 +1,13 @@
 # @leight/utils-client
 
+## 0.5.2
+
+### Patch Changes
+
+- Changed build to react-jsx
+- Updated dependencies
+    - @leight/context-client@0.5.2
+
 ## 0.5.1
 
 ### Patch Changes

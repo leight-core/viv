@@ -1,5 +1,11 @@
 # @leight/tsconfig
 
+## 0.5.4
+
+### Patch Changes
+
+- Changed build to react-jsx
+
 ## 0.5.3
 
 ### Patch Changes

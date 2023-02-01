@@ -1,5 +1,13 @@
 # @leight/xlsx-import-client
 
+## 0.5.3
+
+### Patch Changes
+
+- Changed build to react-jsx
+- Updated dependencies
+    - @leight/tsconfig@0.5.4
+
 ## 0.5.2
 
 ### Patch Changes
