@@ -1,5 +1,11 @@
 # @leight/eslint-config-eslint
 
+## 0.0.3
+
+### Patch Changes
+
+- Changed package type to "module"
+
 ## 0.0.2
 
 ### Patch Changes

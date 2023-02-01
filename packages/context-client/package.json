@@ -1,5 +1,5 @@
 {
-    "version": "0.5.3",
+    "version": "0.5.4",
     "name": "@leight/context-client",
     "description": "Context helper stuff on client-side, including support for Zustand.",
     "license": "MIT",
@@ -31,16 +31,16 @@
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/utils": "workspace:^0.5.3",
-        "@leight/zustand": "workspace:^0.5.2",
+        "@leight/utils": "workspace:^0.5.4",
+        "@leight/zustand": "workspace:^0.5.3",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "reflect-metadata": "^0.1.13",
         "zustand": "^4.3.2"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.0.2",
-        "@leight/tsconfig": "workspace:^0.5.6",
+        "@leight/eslint-config-eslint": "workspace:^0.0.3",
+        "@leight/tsconfig": "workspace:^0.5.7",
         "@types/node": "^18.11.18",
         "@types/react": "^18.0.27",
         "@types/react-dom": "^18.0.10",

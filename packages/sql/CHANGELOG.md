@@ -1,5 +1,13 @@
 # @leight/sql
 
+## 0.5.3
+
+### Patch Changes
+
+- Changed package type to "module"
+- Updated dependencies
+    - @leight/prisma@0.5.4
+
 ## 0.5.2
 
 ### Patch Changes

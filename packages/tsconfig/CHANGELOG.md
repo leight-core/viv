@@ -1,5 +1,11 @@
 # @leight/tsconfig
 
+## 0.5.7
+
+### Patch Changes
+
+- Changed package type to "module"
+
 ## 0.5.6
 
 ### Patch Changes

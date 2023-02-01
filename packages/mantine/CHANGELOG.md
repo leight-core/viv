@@ -1,5 +1,18 @@
 # @leight/mantine
 
+## 0.5.4
+
+### Patch Changes
+
+- Changed package type to "module"
+- Updated dependencies
+    - @leight/file@0.5.3
+    - @leight/file-client@0.5.4
+    - @leight/i18n@0.5.3
+    - @leight/i18n-client@0.5.4
+    - @leight/utils@0.5.4
+    - @leight/utils-client@0.5.5
+
 ## 0.5.3
 
 ### Patch Changes

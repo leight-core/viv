@@ -1,5 +1,17 @@
 # @leight/next.js-server
 
+## 0.5.3
+
+### Patch Changes
+
+- Changed package type to "module"
+- Updated dependencies
+    - @leight/container@0.5.3
+    - @leight/user@0.5.3
+    - @leight/user-server@0.5.3
+    - @leight/utils@0.5.4
+    - @leight/winston@0.5.3
+
 ## 0.5.2
 
 ### Patch Changes

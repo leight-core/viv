@@ -1,5 +1,11 @@
 # @leight/utils-server
 
+## 0.5.3
+
+### Patch Changes
+
+- Changed package type to "module"
+
 ## 0.5.2
 
 ### Patch Changes

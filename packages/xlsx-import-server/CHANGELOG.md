@@ -1,5 +1,20 @@
 # @leight/xlsx-import-server
 
+## 0.5.3
+
+### Patch Changes
+
+- Changed package type to "module"
+- Updated dependencies
+    - @leight/container@0.5.3
+    - @leight/file@0.5.3
+    - @leight/import@0.5.3
+    - @leight/job@0.5.3
+    - @leight/trpc-server@0.5.3
+    - @leight/utils@0.5.4
+    - @leight/utils-server@0.5.3
+    - @leight/xlsx-import@0.5.3
+
 ## 0.5.2
 
 ### Patch Changes
