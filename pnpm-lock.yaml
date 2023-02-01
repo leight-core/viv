@@ -93,7 +93,7 @@ importers:
   packages/context-client:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
-      '@leight/tsconfig': workspace:^0.5.1
+      '@leight/tsconfig': workspace:^0.5.4
       '@leight/utils': workspace:^0.5.1
       '@leight/zustand': workspace:^0.5.1
       '@types/node': ^18.11.18
@@ -170,7 +170,7 @@ importers:
   packages/file:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
-      '@leight/prisma': ^0.5.2
+      '@leight/prisma': workspace:^0.5.2
       '@leight/tsconfig': workspace:^0.5.1
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
@@ -202,9 +202,9 @@ importers:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
       '@leight/file': workspace:^0.5.1
-      '@leight/tsconfig': workspace:^0.5.1
+      '@leight/tsconfig': workspace:^0.5.4
       '@leight/utils': workspace:^0.5.1
-      '@leight/utils-client': workspace:^0.5.1
+      '@leight/utils-client': workspace:^0.5.2
       '@types/node': ^18.11.18
       '@types/react': ^18.0.27
       '@types/react-dom': ^18.0.10
@@ -331,7 +331,7 @@ importers:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.1
       '@leight/i18n': workspace:^0.5.1
-      '@leight/tsconfig': workspace:^0.5.1
+      '@leight/tsconfig': workspace:^0.5.4
       '@leight/utils': workspace:^0.5.1
       '@types/node': ^18.11.18
       '@types/react': ^18.0.27
@@ -980,9 +980,9 @@ importers:
 
   packages/utils-client:
     specifiers:
-      '@leight/context-client': workspace:^0.5.1
+      '@leight/context-client': workspace:^0.5.2
       '@leight/eslint-config-eslint': workspace:^0.0.1
-      '@leight/tsconfig': workspace:^0.5.1
+      '@leight/tsconfig': workspace:^0.5.4
       '@leight/utils': workspace:^0.5.1
       '@types/node': ^18.11.18
       '@types/react': ^18.0.27
@@ -1001,6 +1001,7 @@ importers:
     dependencies:
       '@leight/context-client': link:../context-client
       '@leight/utils': link:../utils
+      path-to-regexp: 6.2.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       reflect-metadata: 0.1.13
@@ -1016,7 +1017,6 @@ importers:
       del-cli: 5.0.0
       eslint: 8.33.0
       eslint-plugin-unicorn: 45.0.2_eslint@8.33.0
-      path-to-regexp: 6.2.1
       typescript: 4.9.5
 
   packages/utils-server:
@@ -1118,7 +1118,7 @@ importers:
       '@emotion/react': ^11.10.5
       '@leight/eslint-config-eslint': workspace:^0.0.1
       '@leight/mantine': workspace:^0.5.1
-      '@leight/tsconfig': workspace:^0.5.2
+      '@leight/tsconfig': workspace:^0.5.4
       '@leight/xlsx-import': workspace:^0.5.1
       '@mantine/core': ^5.10.2
       '@mantine/dropzone': ^5.10.2
@@ -5550,7 +5550,7 @@ packages:
 
   /path-to-regexp/6.2.1:
     resolution: {integrity: sha512-JLyh7xT1kizaEvcaXOQwOc2/Yhw6KZOvPf1S8401UyLk86CU79LN3vl7ztXGm/pZ+YjoyAJ4rxmHwbkBXJX+yw==}
-    dev: true
+    dev: false
 
   /path-type/4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
