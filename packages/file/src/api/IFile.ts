@@ -1,1 +1,1 @@
-export {type File as IFile} from "@prisma/client";
+export {type File as IFile} from "@leight/prisma";

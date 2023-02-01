@@ -67,6 +67,20 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/winston/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/xlsx-import-client/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/zustand/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/file-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/file-client/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/import-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/import/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/i18n-client/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/xlsx-import-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/xlsx-import/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/utils-client/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/user-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/trpc-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/trpc/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/next.js-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/mantine/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/context-client/lib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

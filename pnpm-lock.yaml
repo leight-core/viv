@@ -5,21 +5,16 @@ importers:
   .:
     specifiers:
       '@changesets/cli': ^2.26.0
-      '@prisma/client': ^4.9.0
       npkill: ^0.10.0
       prettier: ^2.8.3
       prettier-plugin-tailwindcss: ^0.2.2
-      prisma: ^4.9.0
       turbo: ^1.7.1
       typescript: ^4.9.5
-    dependencies:
-      '@prisma/client': 4.9.0_prisma@4.9.0
     devDependencies:
       '@changesets/cli': 2.26.0
       npkill: 0.10.0
       prettier: 2.8.3
       prettier-plugin-tailwindcss: 0.2.2_prettier@2.8.3
-      prisma: 4.9.0
       turbo: 1.7.1
       typescript: 4.9.5
 
@@ -64,7 +59,6 @@ importers:
       '@leight/tsconfig': workspace:^0.0.0
       '@leight/user-server': workspace:^0.5.0
       '@leight/xlsx-import-server': workspace:^0.5.0
-      '@prisma/client': ^4.9.0
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
       '@typescript-eslint/parser': ^5.50.0
@@ -73,7 +67,6 @@ importers:
       dotenv-cli: ^7.0.0
       eslint: ^8.33.0
       eslint-plugin-unicorn: ^45.0.2
-      prisma: ^4.9.0
       reflect-metadata: ^0.1.13
       typescript: ^4.9.5
     dependencies:
@@ -83,7 +76,6 @@ importers:
       '@leight/job-server': link:../job-server
       '@leight/user-server': link:../user-server
       '@leight/xlsx-import-server': link:../xlsx-import-server
-      '@prisma/client': 4.9.0_prisma@4.9.0
       reflect-metadata: 0.1.13
     devDependencies:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
@@ -96,7 +88,6 @@ importers:
       dotenv-cli: 7.0.0
       eslint: 8.33.0
       eslint-plugin-unicorn: 45.0.2_eslint@8.33.0
-      prisma: 4.9.0
       typescript: 4.9.5
 
   packages/context-client:
@@ -179,8 +170,8 @@ importers:
   packages/file:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.0
+      '@leight/prisma': '*'
       '@leight/tsconfig': workspace:^0.0.0
-      '@prisma/client': ^4.9.0
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
       '@typescript-eslint/parser': ^5.50.0
@@ -189,11 +180,10 @@ importers:
       dotenv-cli: ^7.0.0
       eslint: ^8.33.0
       eslint-plugin-unicorn: ^45.0.2
-      prisma: ^4.9.0
       reflect-metadata: ^0.1.13
       typescript: ^4.9.5
     dependencies:
-      '@prisma/client': 4.9.0_prisma@4.9.0
+      '@leight/prisma': link:../prisma
       reflect-metadata: 0.1.13
     devDependencies:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
@@ -206,7 +196,6 @@ importers:
       dotenv-cli: 7.0.0
       eslint: 8.33.0
       eslint-plugin-unicorn: 45.0.2_eslint@8.33.0
-      prisma: 4.9.0
       typescript: 4.9.5
 
   packages/file-client:
@@ -264,7 +253,6 @@ importers:
       '@leight/next.js-server': workspace:^0.5.0
       '@leight/prisma': workspace:^0.5.0
       '@leight/tsconfig': workspace:^0.0.0
-      '@prisma/client': ^4.9.0
       '@types/fs-extra': ^11.0.1
       '@types/glob': ^8.0.1
       '@types/node': ^18.11.18
@@ -279,7 +267,6 @@ importers:
       eslint-plugin-unicorn: ^45.0.2
       fs-extra: ^11.1.0
       mime-detect: ^1.1.4
-      prisma: ^4.9.0
       reflect-metadata: ^0.1.13
       touch: ^3.1.0
       tsyringe: ^4.7.0
@@ -290,7 +277,6 @@ importers:
       '@leight/file': link:../file
       '@leight/next.js-server': link:../next.js-server
       '@leight/prisma': link:../prisma
-      '@prisma/client': 4.9.0_prisma@4.9.0
       fs-extra: 11.1.0
       mime-detect: 1.1.4
       reflect-metadata: 0.1.13
@@ -312,7 +298,6 @@ importers:
       dotenv-cli: 7.0.0
       eslint: 8.33.0
       eslint-plugin-unicorn: 45.0.2_eslint@8.33.0
-      prisma: 4.9.0
       typescript: 4.9.5
 
   packages/i18n:
@@ -394,7 +379,6 @@ importers:
       '@leight/eslint-config-eslint': workspace:^0.0.0
       '@leight/i18n': workspace:^0.5.0
       '@leight/tsconfig': workspace:^0.0.0
-      '@prisma/client': ^4.9.0
       '@types/node': ^18.11.18
       '@types/react': ^18.0.27
       '@types/react-dom': ^18.0.10
@@ -408,7 +392,6 @@ importers:
       i18next: ^22.4.9
       next: ^13.1.6
       next-i18next: ^13.0.3
-      prisma: ^4.9.0
       react: ^18.2.0
       react-dom: ^18.2.0
       react-i18next: ^12.1.4
@@ -416,7 +399,6 @@ importers:
       typescript: ^4.9.5
     dependencies:
       '@leight/i18n': link:../i18n
-      '@prisma/client': 4.9.0_prisma@4.9.0
       i18next: 22.4.9
       next: 13.1.6_biqbaboplfbrettd7655fr4n2y
       next-i18next: 13.0.3_orgeahnopbd5moyonutwrwm4pq
@@ -437,7 +419,6 @@ importers:
       dotenv-cli: 7.0.0
       eslint: 8.33.0
       eslint-plugin-unicorn: 45.0.2_eslint@8.33.0
-      prisma: 4.9.0
       typescript: 4.9.5
 
   packages/import:
@@ -543,7 +524,6 @@ importers:
       '@leight/user': workspace:^0.5.0
       '@leight/utils': workspace:^0.5.0
       '@leight/winston': workspace:^0.5.0
-      '@prisma/client': ^4.9.0
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
       '@typescript-eslint/parser': ^5.50.0
@@ -553,7 +533,6 @@ importers:
       dotenv-cli: ^7.0.0
       eslint: ^8.33.0
       eslint-plugin-unicorn: ^45.0.2
-      prisma: ^4.9.0
       reflect-metadata: ^0.1.13
       tsyringe: ^4.7.0
       typescript: ^4.9.5
@@ -564,7 +543,6 @@ importers:
       '@leight/user': link:../user
       '@leight/utils': link:../utils
       '@leight/winston': link:../winston
-      '@prisma/client': 4.9.0_prisma@4.9.0
       delay: 5.0.0
       reflect-metadata: 0.1.13
       tsyringe: 4.7.0
@@ -579,7 +557,6 @@ importers:
       dotenv-cli: 7.0.0
       eslint: 8.33.0
       eslint-plugin-unicorn: 45.0.2_eslint@8.33.0
-      prisma: 4.9.0
       typescript: 4.9.5
 
   packages/layout:
@@ -735,6 +712,7 @@ importers:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.0
       '@leight/tsconfig': workspace:^0.0.0
+      '@prisma/client': ^4.9.0
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
       '@typescript-eslint/parser': ^5.50.0
@@ -742,9 +720,11 @@ importers:
       del-cli: ^5.0.0
       eslint: ^8.33.0
       eslint-plugin-unicorn: ^45.0.2
+      prisma: ^4.9.0
       reflect-metadata: ^0.1.13
       typescript: ^4.9.5
     dependencies:
+      '@prisma/client': 4.9.0_prisma@4.9.0
       reflect-metadata: 0.1.13
     devDependencies:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
@@ -756,6 +736,7 @@ importers:
       del-cli: 5.0.0
       eslint: 8.33.0
       eslint-plugin-unicorn: 45.0.2_eslint@8.33.0
+      prisma: 4.9.0
       typescript: 4.9.5
 
   packages/sql:
@@ -763,7 +744,6 @@ importers:
       '@leight/eslint-config-eslint': workspace:^0.0.0
       '@leight/prisma': workspace:^0.5.0
       '@leight/tsconfig': workspace:^0.0.0
-      '@prisma/client': ^4.9.0
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
       '@typescript-eslint/parser': ^5.50.0
@@ -772,13 +752,11 @@ importers:
       dotenv-cli: ^7.0.0
       eslint: ^8.33.0
       eslint-plugin-unicorn: ^45.0.2
-      prisma: ^4.9.0
       reflect-metadata: ^0.1.13
       tsyringe: ^4.7.0
       typescript: ^4.9.5
     dependencies:
       '@leight/prisma': link:../prisma
-      '@prisma/client': 4.9.0_prisma@4.9.0
       reflect-metadata: 0.1.13
       tsyringe: 4.7.0
     devDependencies:
@@ -792,7 +770,6 @@ importers:
       dotenv-cli: 7.0.0
       eslint: 8.33.0
       eslint-plugin-unicorn: 45.0.2_eslint@8.33.0
-      prisma: 4.9.0
       typescript: 4.9.5
 
   packages/trpc:
@@ -893,7 +870,6 @@ importers:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.0
       '@leight/tsconfig': workspace:^0.0.0
-      '@prisma/client': ^4.9.0
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
       '@typescript-eslint/parser': ^5.50.0
@@ -904,13 +880,11 @@ importers:
       eslint-plugin-unicorn: ^45.0.2
       next: ^13.1.6
       next-auth: ^4.19.1
-      prisma: ^4.9.0
       react: ^18.2.0
       react-dom: ^18.2.0
       reflect-metadata: ^0.1.13
       typescript: ^4.9.5
     dependencies:
-      '@prisma/client': 4.9.0_prisma@4.9.0
       next: 13.1.6_biqbaboplfbrettd7655fr4n2y
       next-auth: 4.19.1_3vryta7zmbcsw4rrqf4axjqggm
       react: 18.2.0
@@ -927,7 +901,6 @@ importers:
       dotenv-cli: 7.0.0
       eslint: 8.33.0
       eslint-plugin-unicorn: 45.0.2_eslint@8.33.0
-      prisma: 4.9.0
       typescript: 4.9.5
 
   packages/user-server:
@@ -938,7 +911,6 @@ importers:
       '@leight/tsconfig': workspace:^0.0.0
       '@leight/user': workspace:^0.5.0
       '@leight/utils': workspace:^0.5.0
-      '@prisma/client': ^4.9.0
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
       '@typescript-eslint/parser': ^5.50.0
@@ -947,7 +919,6 @@ importers:
       dotenv-cli: ^7.0.0
       eslint: ^8.33.0
       eslint-plugin-unicorn: ^45.0.2
-      prisma: ^4.9.0
       reflect-metadata: ^0.1.13
       tsyringe: ^4.7.0
       typescript: ^4.9.5
@@ -956,7 +927,6 @@ importers:
       '@leight/prisma': link:../prisma
       '@leight/user': link:../user
       '@leight/utils': link:../utils
-      '@prisma/client': 4.9.0_prisma@4.9.0
       reflect-metadata: 0.1.13
       tsyringe: 4.7.0
     devDependencies:
@@ -970,7 +940,6 @@ importers:
       dotenv-cli: 7.0.0
       eslint: 8.33.0
       eslint-plugin-unicorn: 45.0.2_eslint@8.33.0
-      prisma: 4.9.0
       typescript: 4.9.5
 
   packages/utils:

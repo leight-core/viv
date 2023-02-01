@@ -19,8 +19,6 @@
         "typescript",
         "eslint",
         "eslint-plugin-unicorn",
-        "prisma",
-        "@prisma/client",
         "next",
         "react",
         "react-dom"
