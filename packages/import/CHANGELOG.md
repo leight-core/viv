@@ -1,12 +1,20 @@
 # @leight/import
 
+## 0.5.7
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/job@0.5.7
+
 ## 0.5.6
 
 ### Patch Changes
 
 - Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
 - Updated dependencies
-  - @leight/job@0.5.6
+    - @leight/job@0.5.6
 
 ## 0.5.5
 

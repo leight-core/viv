@@ -1,5 +1,5 @@
 {
-    "version": "0.5.6",
+    "version": "0.5.7",
     "name": "@leight/import",
     "description": "Common import stuff.",
     "license": "MIT",
@@ -25,13 +25,13 @@
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/job": "workspace:^0.5.6",
+        "@leight/job": "workspace:^0.5.7",
         "reflect-metadata": "^0.1.13",
         "zod": "^3.20.2"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.0.3",
-        "@leight/tsconfig": "workspace:^0.5.8",
+        "@leight/eslint-config-eslint": "workspace:^0.0.4",
+        "@leight/tsconfig": "workspace:^0.5.9",
         "@types/node": "^18.11.18",
         "@typescript-eslint/eslint-plugin": "^5.50.0",
         "@typescript-eslint/parser": "^5.50.0",

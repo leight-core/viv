@@ -1,14 +1,27 @@
 # @leight/container-server
 
+## 0.5.7
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/container@0.5.7
+    - @leight/file-server@0.5.7
+    - @leight/import-server@0.5.7
+    - @leight/job-server@0.5.8
+    - @leight/user-server@0.5.7
+    - @leight/xlsx-import-server@0.5.7
+
 ## 0.5.6
 
 ### Patch Changes
 
 - Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
 - Updated dependencies
-  - @leight/xlsx-import-server@0.5.6
-  - @leight/import-server@0.5.6
-  - @leight/file-server@0.5.6
+    - @leight/xlsx-import-server@0.5.6
+    - @leight/import-server@0.5.6
+    - @leight/file-server@0.5.6
   - @leight/user-server@0.5.6
   - @leight/job-server@0.5.7
   - @leight/container@0.5.6

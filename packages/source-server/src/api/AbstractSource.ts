@@ -1,6 +1,7 @@
 import "reflect-metadata"
 import {type IEntity, type ISource, SourceError} from '@leight/source';
 import {type IQuery} from "@leight/query";
+import {type IToString} from "@leight/utils";
 
 /**
  * Some base stuff of the source.
@@ -9,7 +10,7 @@ export abstract class AbstractSource<TEntity extends IEntity, TQuery extends IQu
     protected name: string;
 
     protected constructor(
-        name: symbol,
+        name: string | IToString,
     ) {
         this.name = name.toString();
     }

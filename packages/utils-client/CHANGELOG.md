@@ -1,13 +1,22 @@
 # @leight/utils-client
 
+## 0.5.9
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/utils@0.5.9
+    - @leight/context-client@0.5.8
+
 ## 0.5.8
 
 ### Patch Changes
 
 - Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
 - Updated dependencies
-  - @leight/context-client@0.5.7
-  - @leight/utils@0.5.7
+    - @leight/context-client@0.5.7
+    - @leight/utils@0.5.7
 
 ## 0.5.7
 

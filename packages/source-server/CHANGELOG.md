@@ -1,5 +1,23 @@
 # @leight/source-server
 
+## 0.5.4
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/utils@0.5.9
+    - @leight/query@0.5.2
+    - @leight/source@0.5.2
+
+## 0.5.3
+
+### Patch Changes
+
+- Fixed AbstractSource
+- Updated dependencies
+    - @leight/utils@0.5.8
+
 ## 0.5.2
 
 ### Patch Changes

@@ -1,14 +1,25 @@
 # @leight/file-server
 
+## 0.5.7
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/container@0.5.7
+    - @leight/file@0.5.7
+    - @leight/next.js-server@0.5.8
+    - @leight/prisma@0.5.8
+
 ## 0.5.6
 
 ### Patch Changes
 
 - Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
 - Updated dependencies
-  - @leight/next.js-server@0.5.6
-  - @leight/container@0.5.6
-  - @leight/prisma@0.5.7
+    - @leight/next.js-server@0.5.6
+    - @leight/container@0.5.6
+    - @leight/prisma@0.5.7
   - @leight/file@0.5.6
 
 ## 0.5.5

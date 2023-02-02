@@ -1,5 +1,17 @@
 # @leight/utils
 
+## 0.5.9
+
+### Patch Changes
+
+- Version bump
+
+## 0.5.8
+
+### Patch Changes
+
+- Fixed AbstractSource
+
 ## 0.5.7
 
 ### Patch Changes

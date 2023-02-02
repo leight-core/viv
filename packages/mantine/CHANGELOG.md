@@ -1,14 +1,27 @@
 # @leight/mantine
 
+## 0.5.8
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/utils@0.5.9
+    - @leight/file@0.5.7
+    - @leight/file-client@0.5.9
+    - @leight/i18n@0.5.7
+    - @leight/i18n-client@0.5.9
+    - @leight/utils-client@0.5.9
+
 ## 0.5.7
 
 ### Patch Changes
 
 - Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
 - Updated dependencies
-  - @leight/utils-client@0.5.8
-  - @leight/file-client@0.5.7
-  - @leight/i18n-client@0.5.7
+    - @leight/utils-client@0.5.8
+    - @leight/file-client@0.5.7
+    - @leight/i18n-client@0.5.7
   - @leight/utils@0.5.7
   - @leight/file@0.5.6
   - @leight/i18n@0.5.6
