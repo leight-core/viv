@@ -6,9 +6,12 @@ import {type IQuery} from "@leight/query";
  * Some base stuff of the source.
  */
 export abstract class AbstractSource<TEntity extends IEntity, TQuery extends IQuery<any, any, any>> implements ISource<TEntity, TQuery> {
+    protected name: string;
+
     protected constructor(
-        protected name: string,
+        name: symbol,
     ) {
+        this.name = name.toString();
     }
 
     async count(query?: TQuery): Promise<number> {
