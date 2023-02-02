@@ -1,5 +1,13 @@
 # @leight/source-server
 
+## 0.5.6
+
+### Patch Changes
+
+- Updated query method, query is optional now
+- Updated dependencies
+    - @leight/source@0.5.4
+
 ## 0.5.5
 
 ### Patch Changes

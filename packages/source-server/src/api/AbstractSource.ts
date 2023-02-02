@@ -19,7 +19,7 @@ export abstract class AbstractSource<TEntity extends IEntity, TQuery extends IQu
         return this.runCount(query);
     }
 
-    async query(query: TQuery): Promise<TEntity[]> {
+    async query(query?: TQuery): Promise<TEntity[]> {
         return this.runQuery(query);
     }
 
@@ -27,7 +27,7 @@ export abstract class AbstractSource<TEntity extends IEntity, TQuery extends IQu
         throw new SourceError(`Source [${this.name}] does not support counting items by a query.`);
     }
 
-    async runQuery(query: TQuery): Promise<TEntity[]> {
+    async runQuery(query?: TQuery): Promise<TEntity[]> {
         throw new SourceError(`Source [${this.name}] does not support querying items.`);
     }
 }

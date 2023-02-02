@@ -1,5 +1,5 @@
 {
-    "version": "0.5.3",
+    "version": "0.5.4",
     "name": "@leight/source",
     "description": "Common Source stuff; source is definition of Data Source (usually on the backend).",
     "license": "MIT",

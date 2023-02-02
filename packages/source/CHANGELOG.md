@@ -1,5 +1,11 @@
 # @leight/source
 
+## 0.5.4
+
+### Patch Changes
+
+- Updated query method, query is optional now
+
 ## 0.5.3
 
 ### Patch Changes

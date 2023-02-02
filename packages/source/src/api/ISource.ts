@@ -13,7 +13,7 @@ export interface ISource<TEntity extends IEntity, TQuery extends IQuery<any, any
     /**
      * Query items.
      */
-    query(query: TQuery): Promise<TEntity[]>;
+    query(query?: TQuery): Promise<TEntity[]>;
 }
 
 export namespace InferSource {
