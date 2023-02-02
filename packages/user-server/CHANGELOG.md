@@ -1,15 +1,26 @@
 # @leight/user-server
 
+## 0.5.8
+
+### Patch Changes
+
+- Improved container stuff
+- Updated dependencies
+  - @leight/container@0.5.8
+  - @leight/prisma@0.5.9
+  - @leight/user@0.5.9
+  - @leight/utils@0.5.10
+
 ## 0.5.7
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/utils@0.5.9
-    - @leight/container@0.5.7
-    - @leight/prisma@0.5.8
-    - @leight/user@0.5.8
+  - @leight/utils@0.5.9
+  - @leight/container@0.5.7
+  - @leight/prisma@0.5.8
+  - @leight/user@0.5.8
 
 ## 0.5.6
 
@@ -17,9 +28,9 @@
 
 - Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
 - Updated dependencies
-    - @leight/container@0.5.6
-    - @leight/prisma@0.5.7
-    - @leight/utils@0.5.7
+  - @leight/container@0.5.6
+  - @leight/prisma@0.5.7
+  - @leight/utils@0.5.7
   - @leight/user@0.5.6
 
 ## 0.5.5

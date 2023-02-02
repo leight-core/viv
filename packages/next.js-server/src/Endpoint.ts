@@ -2,7 +2,7 @@ import {Logger} from "@leight/winston";
 import {type IHrefQuery} from "@leight/utils";
 import getRawBody from "raw-body";
 import {type NextApiRequest, type NextApiResponse} from "next";
-import {TokenServiceContext, UserIdContext, UserServiceContext,} from "@leight/user-server";
+import {TokenServiceContext, UserIdContext, UserServiceContext} from "@leight/user-server";
 import {getToken} from "next-auth/jwt";
 import {TokenError, UserError} from "@leight/user";
 import {type IError, type IHandler, type INextHandler} from "./api";

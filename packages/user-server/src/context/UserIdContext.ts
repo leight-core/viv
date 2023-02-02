@@ -1,8 +1,9 @@
-import {container as coolContainer} from "tsyringe";
 import {$UserId} from "@leight/user";
+import {type IContainer, ServiceContext} from "@leight/container";
 
-export class $UserIdContext {
-    constructor(private container: typeof coolContainer) {
+export class $UserIdContext extends ServiceContext<string | undefined> {
+    constructor(container: IContainer) {
+        super(container, $UserId);
     }
 
     register(userId?: string): this {
@@ -15,15 +16,9 @@ export class $UserIdContext {
         });
         return this;
     }
-
-    resolve(): string | undefined {
-        return this.container.resolve<string | undefined>($UserId);
-    }
 }
 
 /**
  * Creates a wrapper for user id used in UserService.
  */
-export const UserIdContext = (container: typeof coolContainer) => {
-    return new $UserIdContext(container);
-};
+export const UserIdContext = (container: IContainer) => new $UserIdContext(container);

@@ -1,13 +1,22 @@
 # @leight/xlsx-import-client
 
+## 0.5.10
+
+### Patch Changes
+
+- Improved container stuff
+- Updated dependencies
+  - @leight/mantine@0.5.9
+  - @leight/tsconfig@0.5.10
+
 ## 0.5.9
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/mantine@0.5.8
-    - @leight/tsconfig@0.5.9
+  - @leight/mantine@0.5.8
+  - @leight/tsconfig@0.5.9
 
 ## 0.5.8
 
@@ -15,7 +24,7 @@
 
 - Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
 - Updated dependencies
-    - @leight/mantine@0.5.7
+  - @leight/mantine@0.5.7
 
 ## 0.5.7
 

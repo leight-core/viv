@@ -1,5 +1,5 @@
 {
-    "version": "0.5.4",
+    "version": "0.5.5",
     "name": "@leight/source-server",
     "description": "Server-side Source support (aka Repository).",
     "license": "MIT",
@@ -25,14 +25,14 @@
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/query": "^0.5.2",
-        "@leight/source": "^0.5.2",
+        "@leight/query": "^0.5.3",
+        "@leight/source": "^0.5.3",
         "@leight/utils": "^*",
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.0.4",
-        "@leight/tsconfig": "workspace:^0.5.9",
+        "@leight/eslint-config-eslint": "workspace:^0.0.5",
+        "@leight/tsconfig": "workspace:^0.5.10",
         "@types/node": "^18.11.18",
         "@typescript-eslint/eslint-plugin": "^5.50.0",
         "@typescript-eslint/parser": "^5.50.0",

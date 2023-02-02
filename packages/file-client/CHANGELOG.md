@@ -1,14 +1,24 @@
 # @leight/file-client
 
+## 0.5.10
+
+### Patch Changes
+
+- Improved container stuff
+- Updated dependencies
+  - @leight/file@0.5.8
+  - @leight/utils@0.5.10
+  - @leight/utils-client@0.5.10
+
 ## 0.5.9
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/utils@0.5.9
-    - @leight/file@0.5.7
-    - @leight/utils-client@0.5.9
+  - @leight/utils@0.5.9
+  - @leight/file@0.5.7
+  - @leight/utils-client@0.5.9
 
 ## 0.5.8
 
@@ -22,9 +32,9 @@
 
 - Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
 - Updated dependencies
-    - @leight/utils-client@0.5.8
-    - @leight/utils@0.5.7
-    - @leight/file@0.5.6
+  - @leight/utils-client@0.5.8
+  - @leight/utils@0.5.7
+  - @leight/file@0.5.6
 
 ## 0.5.6
 

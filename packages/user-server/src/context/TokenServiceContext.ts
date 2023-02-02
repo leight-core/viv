@@ -1,9 +1,10 @@
-import {container as coolContainer} from "tsyringe";
 import {$TokenService, type ITokenService} from "@leight/user";
+import {type IContainer, ServiceContext} from "@leight/container";
 import {TokenService} from "../service";
 
-export class $TokenServiceContext {
-    constructor(private container: typeof coolContainer) {
+export class $TokenServiceContext extends ServiceContext<ITokenService> {
+    constructor(container: IContainer) {
+        super(container, $TokenService);
     }
 
     register(tokens: string[]): this {
@@ -12,12 +13,6 @@ export class $TokenServiceContext {
         });
         return this;
     }
-
-    resolve(): ITokenService {
-        return this.container.resolve<ITokenService>($TokenService);
-    }
 }
 
-export const TokenServiceContext = (container: typeof coolContainer) => {
-    return new $TokenServiceContext(container);
-};
+export const TokenServiceContext = (container: IContainer) => new $TokenServiceContext(container);

@@ -1,5 +1,15 @@
 # @leight/source-server
 
+## 0.5.5
+
+### Patch Changes
+
+- Improved container stuff
+- Updated dependencies
+    - @leight/query@0.5.3
+    - @leight/source@0.5.3
+    - @leight/utils@0.5.10
+
 ## 0.5.4
 
 ### Patch Changes

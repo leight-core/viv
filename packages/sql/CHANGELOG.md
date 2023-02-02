@@ -1,12 +1,20 @@
 # @leight/sql
 
+## 0.5.8
+
+### Patch Changes
+
+- Improved container stuff
+- Updated dependencies
+  - @leight/prisma@0.5.9
+
 ## 0.5.7
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.8
+  - @leight/prisma@0.5.8
 
 ## 0.5.6
 
@@ -14,7 +22,7 @@
 
 - Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
 - Updated dependencies
-    - @leight/prisma@0.5.7
+  - @leight/prisma@0.5.7
 
 ## 0.5.5
 

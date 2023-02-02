@@ -1,12 +1,20 @@
 # @leight/source
 
+## 0.5.3
+
+### Patch Changes
+
+- Improved container stuff
+- Updated dependencies
+  - @leight/query@0.5.3
+
 ## 0.5.2
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/query@0.5.2
+  - @leight/query@0.5.2
 
 ## 0.5.1
 
@@ -14,4 +22,4 @@
 
 - Added new packages related to Source (Repository)
 - Updated dependencies
-    - @leight/query@0.5.1
+  - @leight/query@0.5.1

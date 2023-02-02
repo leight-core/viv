@@ -1,19 +1,34 @@
 # @leight/xlsx-import-server
 
+## 0.5.8
+
+### Patch Changes
+
+- Improved container stuff
+- Updated dependencies
+  - @leight/container@0.5.8
+  - @leight/file@0.5.8
+  - @leight/import@0.5.8
+  - @leight/job@0.5.8
+  - @leight/trpc-server@0.5.9
+  - @leight/utils@0.5.10
+  - @leight/utils-server@0.5.8
+  - @leight/xlsx-import@0.5.8
+
 ## 0.5.7
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/utils@0.5.9
-    - @leight/container@0.5.7
-    - @leight/file@0.5.7
-    - @leight/import@0.5.7
-    - @leight/job@0.5.7
-    - @leight/trpc-server@0.5.8
-    - @leight/utils-server@0.5.7
-    - @leight/xlsx-import@0.5.7
+  - @leight/utils@0.5.9
+  - @leight/container@0.5.7
+  - @leight/file@0.5.7
+  - @leight/import@0.5.7
+  - @leight/job@0.5.7
+  - @leight/trpc-server@0.5.8
+  - @leight/utils-server@0.5.7
+  - @leight/xlsx-import@0.5.7
 
 ## 0.5.6
 
@@ -21,9 +36,9 @@
 
 - Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
 - Updated dependencies
-    - @leight/utils-server@0.5.6
-    - @leight/trpc-server@0.5.6
-    - @leight/xlsx-import@0.5.6
+  - @leight/utils-server@0.5.6
+  - @leight/trpc-server@0.5.6
+  - @leight/xlsx-import@0.5.6
   - @leight/container@0.5.6
   - @leight/import@0.5.6
   - @leight/utils@0.5.7

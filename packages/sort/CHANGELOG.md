@@ -1,5 +1,11 @@
 # @leight/sort
 
+## 0.5.3
+
+### Patch Changes
+
+- Improved container stuff
+
 ## 0.5.2
 
 ### Patch Changes

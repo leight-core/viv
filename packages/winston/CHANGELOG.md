@@ -1,5 +1,11 @@
 # @leight/winston
 
+## 0.5.8
+
+### Patch Changes
+
+- Improved container stuff
+
 ## 0.5.7
 
 ### Patch Changes

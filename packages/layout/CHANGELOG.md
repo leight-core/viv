@@ -1,5 +1,11 @@
 # @leight/layout
 
+## 0.5.9
+
+### Patch Changes
+
+- Improved container stuff
+
 ## 0.5.8
 
 ### Patch Changes
