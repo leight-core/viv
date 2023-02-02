@@ -1,5 +1,5 @@
 {
-    "version": "0.5.6",
+    "version": "0.5.7",
     "name": "@leight/trpc-server",
     "description": "Set of utils for tRPC server-side.",
     "license": "MIT",
@@ -27,11 +27,11 @@
     "dependencies": {
         "@leight/container": "workspace:^0.5.6",
         "@leight/trpc": "workspace:^0.5.6",
-        "@leight/user": "workspace:^0.5.6",
+        "@leight/user": "workspace:^0.5.7",
         "@leight/user-server": "workspace:^0.5.6",
         "@trpc/server": "^10.9.1",
         "next": "^13.1.6",
-        "next-auth": "^4.19.1",
+        "next-auth": "^4.19.2",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "reflect-metadata": "^0.1.13",

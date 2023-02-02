@@ -1,12 +1,18 @@
 # @leight/i18n-server
 
+## 0.5.7
+
+### Patch Changes
+
+- Added new packages related to Source (Repository)
+
 ## 0.5.6
 
 ### Patch Changes
 
 - Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
 - Updated dependencies
-  - @leight/i18n@0.5.6
+    - @leight/i18n@0.5.6
 
 ## 0.5.5
 

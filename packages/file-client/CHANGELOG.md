@@ -1,14 +1,20 @@
 # @leight/file-client
 
+## 0.5.8
+
+### Patch Changes
+
+- Added new packages related to Source (Repository)
+
 ## 0.5.7
 
 ### Patch Changes
 
 - Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
 - Updated dependencies
-  - @leight/utils-client@0.5.8
-  - @leight/utils@0.5.7
-  - @leight/file@0.5.6
+    - @leight/utils-client@0.5.8
+    - @leight/utils@0.5.7
+    - @leight/file@0.5.6
 
 ## 0.5.6
 

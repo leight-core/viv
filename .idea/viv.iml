@@ -41,6 +41,12 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/xlsx-import-server/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/xlsx-import/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/zustand/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/cursor/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/filter/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/query/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/sort/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/source-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/source/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.github" />
       <excludeFolder url="file://$MODULE_DIR$/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/sql/.turbo" />
@@ -105,6 +111,18 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/prisma/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/trpc/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/user-server/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/cursor/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/cursor/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/query/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/query/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/filter/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/filter/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/sort/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/sort/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/source-server/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/source-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/source/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/source/lib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -1,13 +1,19 @@
 # @leight/i18n-client
 
+## 0.5.8
+
+### Patch Changes
+
+- Added new packages related to Source (Repository)
+
 ## 0.5.7
 
 ### Patch Changes
 
 - Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
 - Updated dependencies
-  - @leight/utils@0.5.7
-  - @leight/i18n@0.5.6
+    - @leight/utils@0.5.7
+    - @leight/i18n@0.5.6
 
 ## 0.5.6
 
