@@ -52,7 +52,10 @@
                 "tsconfig.json"
             ],
             "env": [
-                "NODE_ENV"
+                "NODE_ENV",
+                "NEXT_PUBLIC_CACHE",
+                "NEXT_PUBLIC_VERSION",
+                "BUILD_ID"
             ]
         },
         "depcheck": {

@@ -47,6 +47,46 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/sort/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/source-server/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/source/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight-core/api/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight-core/client/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight-core/server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight-core/utils/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/container-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/container/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/context-client/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/cursor/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/file-client/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/file-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/file/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/filter/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/i18n-client/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/i18n-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/i18n/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/import-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/import/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/job-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/job/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/layout/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/mantine/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/next.js-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/prisma/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/query/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/sort/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/source-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/source/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/sql/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/trpc-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/trpc/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/user-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/user/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/utils-client/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/utils-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/utils/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/winston/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/xlsx-import-client/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/xlsx-import-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/xlsx-import/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/zustand/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.github" />
       <excludeFolder url="file://$MODULE_DIR$/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/sql/.turbo" />
@@ -123,6 +163,86 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/source-server/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/source/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/source/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight-core/api/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight-core/client/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight-core/server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight-core/utils/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/container/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/container/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight-core/api/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight-core/server/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/prisma/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/prisma/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/utils-server/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/utils-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/utils/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/utils/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/sql/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/sql/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/container-server/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/container-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/context-client/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/context-client/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/cursor/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/cursor/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/file/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/file/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/file-client/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/file-client/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/file-server/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/file-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/filter/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/filter/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/i18n/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/i18n/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/i18n-client/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/i18n-client/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/i18n-server/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/i18n-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/source-server/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/import-server/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/mantine/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/job-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/source/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/trpc-server/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/trpc/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/next.js-server/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/trpc/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/layout/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/source/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/job/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/next.js-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/sort/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/import/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/trpc-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/layout/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/import-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/sort/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/mantine/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/source-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/query/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/job/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/query/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/import/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/job-server/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/user/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/user/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/user-server/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/user-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/utils-client/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/utils-client/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/winston/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/winston/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/xlsx-import/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/xlsx-import/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/xlsx-import-client/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/xlsx-import-client/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/xlsx-import-server/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/xlsx-import-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/zustand/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/zustand/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight-core/utils/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight-core/client/.turbo" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

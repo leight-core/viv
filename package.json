@@ -12,7 +12,7 @@
     },
     "scripts": {
         "build": "turbo run build --no-daemon",
-        "build:no-cache": "turbo run build:no-cache --no-daemon --no-cache --force",
+        "prisma:generate": "turbo run prisma:generate --no-daemon --no-cache --force",
         "lint": "turbo run lint --no-daemon",
         "depcheck": "turbo run depcheck --no-daemon --parallel",
         "cleanup": "turbo run cleanup --no-daemon --parallel",
