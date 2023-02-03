@@ -72,8 +72,8 @@ importers:
       '@ant-design/icons': ^5.0.1
       '@ant-design/pro-layout': ^7.6.1
       '@fingerprintjs/fingerprintjs': ^3.4.0
-      '@leight-core/api': workspace:^0.6.207
-      '@leight-core/utils': workspace:^0.5.44
+      '@leight-core/api': workspace:^0.8.0
+      '@leight-core/utils': workspace:^0.6.0
       '@leight/eslint-config-eslint': workspace:^0.0.5
       '@leight/tsconfig': workspace:^0.5.10
       '@leight/utils': ^0.5.10
@@ -148,8 +148,8 @@ importers:
 
   packages/@leight-core/server:
     specifiers:
-      '@leight-core/api': workspace:^0.6.207
-      '@leight-core/utils': workspace:^0.5.44
+      '@leight-core/api': workspace:^0.8.0
+      '@leight-core/utils': workspace:^0.6.0
       '@leight/eslint-config-eslint': workspace:^0.0.5
       '@leight/prisma': ^0.5.9
       '@leight/tsconfig': workspace:^0.5.10
@@ -229,7 +229,7 @@ importers:
 
   packages/@leight-core/utils:
     specifiers:
-      '@leight-core/api': workspace:^0.6.207
+      '@leight-core/api': workspace:^0.8.0
       '@leight/eslint-config-eslint': workspace:^0.0.5
       '@leight/tsconfig': workspace:^0.5.10
       '@types/humanize-duration': ^3.27.1
@@ -1395,6 +1395,7 @@ importers:
       reflect-metadata: ^0.1.13
       typescript: ^4.9.5
     dependencies:
+      devalue: 4.2.3
       fast-clean: 1.2.1
       is-callable: 1.2.7
       is-string: 1.0.7
@@ -1409,7 +1410,6 @@ importers:
       '@typescript-eslint/parser': 5.50.0_4vsywjlpuriuw3tl5oq6zy5a64
       concurrently: 7.6.0
       del-cli: 5.0.0
-      devalue: 4.2.3
       eslint: 8.33.0
       eslint-plugin-unicorn: 45.0.2_eslint@8.33.0
       typescript: 4.9.5
@@ -4320,7 +4320,7 @@ packages:
 
   /devalue/4.2.3:
     resolution: {integrity: sha512-JG6Q248aN0pgFL57e3zqTVeFraBe+5W2ugvv1mLXsJP6YYIYJhRZhAl7QP8haJrqob6X10F9NEkuCvNILZTPeQ==}
-    dev: true
+    dev: false
 
   /dir-glob/3.0.1:
     resolution: {integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==}

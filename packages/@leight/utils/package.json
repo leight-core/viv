@@ -1,5 +1,5 @@
 {
-    "version": "0.5.10",
+    "version": "0.5.11",
     "name": "@leight/utils",
     "description": "Some simple utils used in @leight libraries.",
     "license": "MIT",
@@ -25,6 +25,7 @@
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
+        "devalue": "^4.2.3",
         "fast-clean": "^1.2.1",
         "is-callable": "^1.2.7",
         "is-string": "^1.0.7",
@@ -40,7 +41,6 @@
         "@typescript-eslint/parser": "^5.50.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
-        "devalue": "^4.2.3",
         "eslint": "^8.33.0",
         "eslint-plugin-unicorn": "^45.0.2",
         "typescript": "^4.9.5"

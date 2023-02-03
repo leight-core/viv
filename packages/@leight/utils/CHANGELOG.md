@@ -1,5 +1,11 @@
 # @leight/utils
 
+## 0.5.11
+
+### Patch Changes
+
+- Fixed missed dependency in utils
+
 ## 0.5.10
 
 ### Patch Changes
