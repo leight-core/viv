@@ -1,5 +1,11 @@
 # @leight-core/server
 
+## 0.8.1
+
+### Patch Changes
+
+- Fixed utils package usage in generator
+
 ## 0.8.0
 
 ### Minor Changes

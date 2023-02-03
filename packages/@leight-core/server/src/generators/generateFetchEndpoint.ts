@@ -38,7 +38,7 @@ export function generateFetchEndpoint(sdk: ISdk): string {
 			imports: [
 				"isCallable",
 			],
-			from: "\"@leight-core/utils\""
+			from: "\"@leight/utils\""
 		},
 		{imports: ["useQueryClient"], from: "\"@tanstack/react-query\""},
 		{
