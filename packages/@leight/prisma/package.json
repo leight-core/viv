@@ -27,6 +27,7 @@
     },
     "dependencies": {
         "@leight/source": "*",
+        "@leight/source-server": "*",
         "@prisma/client": "^4.9.0",
         "reflect-metadata": "^0.1.13"
     },

@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import {$JobProgressService, type IJob, type IJobExecutor, type IJobProgressService} from "@leight/job";
+import {$JobProgressService, type IJobExecutor, type IJobProgressService, type IJobSourceConfig} from "@leight/job";
 import {inject, injectable} from "tsyringe";
 import {$UserService, type IUserService} from "@leight/user";
 import {$PrismaClient, type IPrismaClient} from "@leight/prisma";
@@ -16,7 +16,12 @@ export class JobExecutor implements IJobExecutor {
     ) {
     }
 
-    async execute<TJob extends IJob>({name, handler, params}: IJobExecutor.ExecuteProps<TJob>): Promise<TJob> {
+    async execute<TJob extends IJobSourceConfig['Entity']>(
+        {
+            name,
+            handler,
+            params
+        }: IJobExecutor.ExecuteProps<TJob>): Promise<TJob> {
         let logger = Logger(name);
         const job = await this.prismaClient.job.create({
             data: {

@@ -6,8 +6,8 @@ import {
     $FileService,
     type IChunkService,
     type IChunkServiceConfig,
-    type IFile,
     type IFileService,
+    type IFileSourceConfig,
 } from "@leight/file";
 
 @injectable()
@@ -35,7 +35,7 @@ export class ChunkService implements IChunkService {
                             mime,
                             userId,
                             replace,
-                        }: IChunkService.CommitProps): Promise<IFile> {
+                        }: IChunkService.CommitProps): Promise<IFileSourceConfig['Entity']> {
         const $file = this.pathOf(chunkId);
         const file = await this.fileService.store({
             file: $file,

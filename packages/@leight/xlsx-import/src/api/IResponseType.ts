@@ -1,3 +1,3 @@
-import {type IJob} from "@leight/job";
+import {type IJobSourceConfig} from "@leight/job";
 
-export type IResponseType = IJob;
+export type IResponseType = IJobSourceConfig['Entity'];

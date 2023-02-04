@@ -1,8 +1,7 @@
-import {type IJob} from "@leight/job";
+import {type IJobSourceConfig} from "@leight/job";
 
 export interface IImportJobParams {
     fileId: string;
 }
 
-export interface IImportJob extends IJob<IImportJobParams> {
-}
+export type IImportJob = IJobSourceConfig['Entity'];

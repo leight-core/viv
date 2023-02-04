@@ -1,35 +1,32 @@
-import "reflect-metadata"
-import {type IEntity, type ISource, SourceError} from '@leight/source';
-import {type IQuery} from "@leight/query";
-import {type IToString} from "@leight/utils";
+import {type ISource, type ISourceConfig, type ISourceName, SourceError} from '@leight/source';
 
 /**
  * Some base stuff of the source.
  */
-export abstract class AbstractSource<TEntity extends IEntity, TQuery extends IQuery<any, any, any>> implements ISource<TEntity, TQuery> {
+export abstract class AbstractSource<TSourceConfig extends ISourceConfig> implements ISource<TSourceConfig> {
     protected name: string;
 
     protected constructor(
-        name: string | IToString,
+        name: ISourceName,
     ) {
         this.name = name.toString();
     }
 
-    async count(query?: TQuery): Promise<number> {
+    async count(query?: TSourceConfig['Query']): Promise<number> {
         return this.runCount(query);
     }
 
-    async query(query?: TQuery): Promise<TEntity[]> {
+    async query(query?: TSourceConfig['Query']): Promise<TSourceConfig['Entity'][]> {
         return this.runQuery(query);
     }
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    async runCount(query?: TQuery): Promise<number> {
+    async runCount(query?: TSourceConfig['Query']): Promise<number> {
         throw new SourceError(`Source [${this.name}] does not support counting items by a query.`);
     }
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    async runQuery(query?: TQuery): Promise<TEntity[]> {
+    async runQuery(query?: TSourceConfig['Query']): Promise<TSourceConfig['Entity'][]> {
         throw new SourceError(`Source [${this.name}] does not support querying items.`);
     }
 }

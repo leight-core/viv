@@ -2,10 +2,10 @@ import "reflect-metadata";
 import {$PrismaClient, type IPrismaClient} from "@leight/prisma";
 import {
     $FileServiceConfig,
-    type IFile,
     type IFileService,
     type IFileServiceConfig,
     type IFileServiceStoreProps,
+    type IFileSourceConfig,
 } from "@leight/file";
 import {inject, injectable} from "tsyringe";
 import {v4} from "uuid";
@@ -32,7 +32,7 @@ export class FileService implements IFileService {
         );
     }
 
-    public fetch(fileId: string): Promise<IFile> {
+    public fetch(fileId: string): Promise<IFileSourceConfig['Entity']> {
         return this.prismaClient.file.findUniqueOrThrow({where: {id: fileId}});
     }
 
@@ -58,14 +58,15 @@ export class FileService implements IFileService {
         return fs.statSync(file).size;
     }
 
-    public async store({
-                           name,
-                           path,
-                           file,
-                           userId,
-                           mime,
-                           replace = false,
-                       }: IFileServiceStoreProps): Promise<IFile> {
+    public async store(
+        {
+            name,
+            path,
+            file,
+            userId,
+            mime,
+            replace = false,
+        }: IFileServiceStoreProps): Promise<IFileSourceConfig['Entity']> {
         const id = v4();
         const location = this.pathOf(id);
         fs.mkdirSync(coolPath.dirname(location), {recursive: true});

@@ -453,7 +453,8 @@ importers:
   packages/@leight/file:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.5
-      '@leight/prisma': workspace:^0.5.9
+      '@leight/prisma': '*'
+      '@leight/source': '*'
       '@leight/tsconfig': workspace:^0.5.10
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
@@ -466,6 +467,7 @@ importers:
       typescript: ^4.9.5
     dependencies:
       '@leight/prisma': link:../prisma
+      '@leight/source': link:../source
       reflect-metadata: 0.1.13
     devDependencies:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
@@ -794,7 +796,10 @@ importers:
   packages/@leight/job:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.5
+      '@leight/prisma': '*'
+      '@leight/source': '*'
       '@leight/tsconfig': workspace:^0.5.10
+      '@leight/winston': '*'
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
       '@typescript-eslint/parser': ^5.50.0
@@ -804,10 +809,11 @@ importers:
       eslint-plugin-unicorn: ^45.0.2
       reflect-metadata: ^0.1.13
       typescript: ^4.9.5
-      winston: ^3.8.2
     dependencies:
+      '@leight/prisma': link:../prisma
+      '@leight/source': link:../source
+      '@leight/winston': link:../winston
       reflect-metadata: 0.1.13
-      winston: 3.8.2
     devDependencies:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
@@ -826,6 +832,7 @@ importers:
       '@leight/eslint-config-eslint': workspace:^0.0.5
       '@leight/job': workspace:^0.5.8
       '@leight/prisma': workspace:^0.5.9
+      '@leight/source-server': '*'
       '@leight/tsconfig': workspace:^0.5.10
       '@leight/user': workspace:^0.5.9
       '@leight/utils': workspace:^0.5.10
@@ -846,6 +853,7 @@ importers:
       '@leight/container': link:../container
       '@leight/job': link:../job
       '@leight/prisma': link:../prisma
+      '@leight/source-server': link:../source-server
       '@leight/user': link:../user
       '@leight/utils': link:../utils
       '@leight/winston': link:../winston
@@ -1018,6 +1026,7 @@ importers:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.5
       '@leight/source': '*'
+      '@leight/source-server': '*'
       '@leight/tsconfig': workspace:^0.5.10
       '@prisma/client': ^4.9.0
       '@types/node': ^18.11.18
@@ -1032,6 +1041,7 @@ importers:
       typescript: ^4.9.5
     dependencies:
       '@leight/source': link:../source
+      '@leight/source-server': link:../source-server
       '@prisma/client': 4.9.0_prisma@4.9.0
       reflect-metadata: 0.1.13
     devDependencies:
@@ -1045,39 +1055,6 @@ importers:
       eslint: 8.33.0
       eslint-plugin-unicorn: 45.0.2_eslint@8.33.0
       prisma: 4.9.0
-      typescript: 4.9.5
-
-  packages/@leight/prisma-source:
-    specifiers:
-      '@leight/eslint-config-eslint': workspace:^0.0.5
-      '@leight/prisma': '*'
-      '@leight/source': '*'
-      '@leight/source-server': '*'
-      '@leight/tsconfig': workspace:^0.5.10
-      '@types/node': ^18.11.18
-      '@typescript-eslint/eslint-plugin': ^5.50.0
-      '@typescript-eslint/parser': ^5.50.0
-      concurrently: ^7.6.0
-      del-cli: ^5.0.0
-      eslint: ^8.33.0
-      eslint-plugin-unicorn: ^45.0.2
-      reflect-metadata: ^0.1.13
-      typescript: ^4.9.5
-    dependencies:
-      '@leight/prisma': link:../prisma
-      '@leight/source': link:../source
-      '@leight/source-server': link:../source-server
-      reflect-metadata: 0.1.13
-    devDependencies:
-      '@leight/eslint-config-eslint': link:../eslint-config-eslint
-      '@leight/tsconfig': link:../tsconfig
-      '@types/node': 18.11.18
-      '@typescript-eslint/eslint-plugin': 5.50.0_go4drrxstycfikanvu45pi4vgq
-      '@typescript-eslint/parser': 5.50.0_4vsywjlpuriuw3tl5oq6zy5a64
-      concurrently: 7.6.0
-      del-cli: 5.0.0
-      eslint: 8.33.0
-      eslint-plugin-unicorn: 45.0.2_eslint@8.33.0
       typescript: 4.9.5
 
   packages/@leight/query:
@@ -1147,8 +1124,11 @@ importers:
   packages/@leight/source:
     specifiers:
       '@leight/eslint-config-eslint': workspace:^0.0.5
+      '@leight/filter': '*'
       '@leight/query': '*'
+      '@leight/sort': '*'
       '@leight/tsconfig': workspace:^0.5.10
+      '@leight/utils': '*'
       '@types/node': ^18.11.18
       '@typescript-eslint/eslint-plugin': ^5.50.0
       '@typescript-eslint/parser': ^5.50.0
@@ -1160,7 +1140,10 @@ importers:
       reflect-metadata: ^0.1.13
       typescript: ^4.9.5
     dependencies:
+      '@leight/filter': link:../filter
       '@leight/query': link:../query
+      '@leight/sort': link:../sort
+      '@leight/utils': link:../utils
       reflect-metadata: 0.1.13
     devDependencies:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint

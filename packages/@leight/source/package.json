@@ -25,7 +25,10 @@
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
+        "@leight/filter": "*",
         "@leight/query": "*",
+        "@leight/sort": "*",
+        "@leight/utils": "*",
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {

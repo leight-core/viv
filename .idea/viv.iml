@@ -244,6 +244,8 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/zustand/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight-core/utils/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight-core/client/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/prisma-source/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/prisma-source/lib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

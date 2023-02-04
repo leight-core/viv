@@ -4,7 +4,7 @@ import {Divider, Group, Table, Text, useMantineTheme} from "@mantine/core";
 import {Dropzone as CoolDropzone} from "@mantine/dropzone";
 import {LoopProvider} from "@leight/utils-client";
 import {IconUpload, IconX} from "@tabler/icons-react";
-import {type IFile, type IFileWithPath} from "@leight/file";
+import {type IFileSourceConfig, type IFileWithPath} from "@leight/file";
 import {type ComponentProps, type FC, useState} from "react";
 import {switchScheme} from "../utils";
 import {Paper} from "./Paper";
@@ -23,21 +23,22 @@ export interface IDropZoneProps
 
     onDrop?(files: IFileWithPath[], commit: () => void): void;
 
-    onUpload?(file: IFile): void;
+    onUpload?(file: IFileSourceConfig['Entity']): void;
 }
 
 /**
  * Uploader component based on @leight/file-client Upload. Separation is because of this library
  * directly using Mantine, an Upload component is basically standalone.
  */
-export const DropZone: FC<IDropZoneProps> = ({
-                                                 withTranslation,
-                                                 path,
-                                                 limit = 5,
-                                                 onDrop = () => null,
-                                                 onUpload,
-                                                 ...props
-                                             }) => {
+export const DropZone: FC<IDropZoneProps> = (
+    {
+        withTranslation,
+        path,
+        limit = 5,
+        onDrop = () => null,
+        onUpload,
+        ...props
+    }) => {
     const theme = useMantineTheme();
     const [files, setFiles] = useState<IFileWithPath[]>([]);
     return (

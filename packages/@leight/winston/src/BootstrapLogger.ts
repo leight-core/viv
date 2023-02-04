@@ -9,11 +9,12 @@ export interface IBootstrapLoggerRequest {
     withLoki?: boolean;
 }
 
-export const BootstrapLogger = ({
-                                    loggers,
-                                    version = "edge",
-                                    level = "info",
-                                }: IBootstrapLoggerRequest) => {
+export const BootstrapLogger = (
+    {
+        loggers,
+        version = "edge",
+        level = "info",
+    }: IBootstrapLoggerRequest) => {
     return loggers.map((name) =>
         winston.loggers.add(name, createDefaultLogger(name, version, level))
     );

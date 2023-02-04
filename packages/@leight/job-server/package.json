@@ -28,6 +28,7 @@
         "@leight/container": "workspace:^0.5.8",
         "@leight/job": "workspace:^0.5.8",
         "@leight/prisma": "workspace:^0.5.9",
+        "@leight/source-server": "*",
         "@leight/user": "workspace:^0.5.9",
         "@leight/utils": "workspace:^0.5.10",
         "@leight/winston": "workspace:^0.5.8",

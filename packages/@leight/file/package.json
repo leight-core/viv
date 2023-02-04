@@ -25,7 +25,8 @@
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/prisma": "workspace:^0.5.9",
+        "@leight/prisma": "*",
+        "@leight/source": "*",
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
