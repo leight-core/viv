@@ -1,5 +1,16 @@
 # @leight/trpc-server
 
+## 0.5.10
+
+### Patch Changes
+
+- Added support for IRepository, added some sources; re-release of all the other packages
+- Updated dependencies
+    - @leight/container@0.5.9
+    - @leight/trpc@0.5.9
+    - @leight/user@0.5.10
+    - @leight/user-server@0.5.9
+
 ## 0.5.9
 
 ### Patch Changes

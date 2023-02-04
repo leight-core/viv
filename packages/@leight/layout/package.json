@@ -1,5 +1,5 @@
 {
-    "version": "0.5.9",
+    "version": "0.5.10",
     "name": "@leight/layout",
     "description": "Layout related stuff.",
     "license": "MIT",
@@ -30,8 +30,8 @@
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.0.5",
-        "@leight/tsconfig": "workspace:^0.5.10",
+        "@leight/eslint-config-eslint": "workspace:^0.0.6",
+        "@leight/tsconfig": "workspace:^0.5.11",
         "@types/node": "^18.11.18",
         "@types/react": "^18.0.27",
         "@types/react-dom": "^18.0.10",

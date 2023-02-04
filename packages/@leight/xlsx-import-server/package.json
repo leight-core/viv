@@ -1,5 +1,5 @@
 {
-    "version": "0.5.8",
+    "version": "0.5.9",
     "name": "@leight/xlsx-import-server",
     "description": "Support for XLSX import (server-side) using @leight/job stuff.",
     "license": "MIT",
@@ -25,14 +25,14 @@
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "workspace:^0.5.8",
-        "@leight/file": "workspace:^0.5.8",
-        "@leight/import": "workspace:^0.5.8",
-        "@leight/job": "workspace:^0.5.8",
-        "@leight/trpc-server": "workspace:^0.5.9",
-        "@leight/utils": "workspace:^0.5.10",
-        "@leight/utils-server": "workspace:^0.5.8",
-        "@leight/xlsx-import": "workspace:^0.5.8",
+        "@leight/container": "workspace:^0.5.9",
+        "@leight/file": "workspace:^0.5.9",
+        "@leight/import": "workspace:^0.5.9",
+        "@leight/job": "workspace:^0.5.9",
+        "@leight/trpc-server": "workspace:^0.5.10",
+        "@leight/utils": "workspace:^0.5.12",
+        "@leight/utils-server": "workspace:^0.5.9",
+        "@leight/xlsx-import": "workspace:^0.5.9",
         "measure-time": "^5.0.8",
         "reflect-metadata": "^0.1.13",
         "tsyringe": "^4.7.0",
@@ -40,8 +40,8 @@
         "zod": "^3.20.2"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.0.5",
-        "@leight/tsconfig": "workspace:^0.5.10",
+        "@leight/eslint-config-eslint": "workspace:^0.0.6",
+        "@leight/tsconfig": "workspace:^0.5.11",
         "@types/node": "^18.11.18",
         "@typescript-eslint/eslint-plugin": "^5.50.0",
         "@typescript-eslint/parser": "^5.50.0",

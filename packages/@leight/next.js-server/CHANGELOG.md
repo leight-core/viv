@@ -1,5 +1,17 @@
 # @leight/next.js-server
 
+## 0.5.10
+
+### Patch Changes
+
+- Added support for IRepository, added some sources; re-release of all the other packages
+- Updated dependencies
+    - @leight/container@0.5.9
+    - @leight/user@0.5.10
+    - @leight/user-server@0.5.9
+    - @leight/utils@0.5.12
+    - @leight/winston@0.5.9
+
 ## 0.5.9
 
 ### Patch Changes

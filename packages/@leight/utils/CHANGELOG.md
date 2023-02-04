@@ -1,5 +1,11 @@
 # @leight/utils
 
+## 0.5.12
+
+### Patch Changes
+
+- Added support for IRepository, added some sources; re-release of all the other packages
+
 ## 0.5.11
 
 ### Patch Changes

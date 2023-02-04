@@ -1,5 +1,5 @@
 {
-	"version": "0.8.1",
+	"version": "0.8.2",
 	"name": "@leight-core/server",
 	"description": "Server-side helper stuff.",
 	"license": "MIT",
@@ -25,9 +25,9 @@
 		"cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
 	},
 	"dependencies": {
-		"@leight-core/api": "workspace:^0.8.0",
-		"@leight-core/utils": "workspace:^0.6.0",
-		"@leight/prisma": "workspace:^0.5.9",
+		"@leight-core/api": "workspace:^0.8.1",
+		"@leight-core/utils": "workspace:^0.6.1",
+		"@leight/prisma": "workspace:^0.5.10",
 		"dayjs": "^1.11.7",
 		"filesize": "^10.0.6",
 		"fs-extra": "^11.1.0",
@@ -51,8 +51,8 @@
 		"xlsx": "^0.18.5"
 	},
 	"devDependencies": {
-		"@leight/eslint-config-eslint": "workspace:^0.0.5",
-		"@leight/tsconfig": "workspace:^0.5.10",
+		"@leight/eslint-config-eslint": "workspace:^0.0.6",
+		"@leight/tsconfig": "workspace:^0.5.11",
 		"@types/fs-extra": "^11.0.1",
 		"@types/glob": "^8.0.1",
 		"@types/memoizee": "^0.4.8",

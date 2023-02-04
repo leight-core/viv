@@ -1,5 +1,18 @@
 # @leight/mantine
 
+## 0.5.10
+
+### Patch Changes
+
+- Added support for IRepository, added some sources; re-release of all the other packages
+- Updated dependencies
+    - @leight/file@0.5.9
+    - @leight/file-client@0.5.11
+    - @leight/i18n@0.5.9
+    - @leight/i18n-client@0.5.11
+    - @leight/utils@0.5.12
+    - @leight/utils-client@0.5.11
+
 ## 0.5.9
 
 ### Patch Changes

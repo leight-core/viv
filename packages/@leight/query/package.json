@@ -1,5 +1,5 @@
 {
-    "version": "0.5.3",
+    "version": "0.5.4",
     "name": "@leight/query",
     "description": "Common query stuff (for querying data).",
     "license": "MIT",
@@ -25,14 +25,14 @@
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/cursor": "workspace:^0.5.3",
-        "@leight/filter": "workspace:^0.5.3",
-        "@leight/sort": "workspace:^0.5.3",
+        "@leight/cursor": "workspace:^0.5.4",
+        "@leight/filter": "workspace:^0.5.4",
+        "@leight/sort": "workspace:^0.5.4",
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.0.5",
-        "@leight/tsconfig": "workspace:^0.5.10",
+        "@leight/eslint-config-eslint": "workspace:^0.0.6",
+        "@leight/tsconfig": "workspace:^0.5.11",
         "@types/node": "^18.11.18",
         "@typescript-eslint/eslint-plugin": "^5.50.0",
         "@typescript-eslint/parser": "^5.50.0",

@@ -1,5 +1,16 @@
 # @leight/file-server
 
+## 0.5.9
+
+### Patch Changes
+
+- Added support for IRepository, added some sources; re-release of all the other packages
+- Updated dependencies
+    - @leight/container@0.5.9
+    - @leight/file@0.5.9
+    - @leight/next.js-server@0.5.10
+    - @leight/prisma@0.5.10
+
 ## 0.5.8
 
 ### Patch Changes

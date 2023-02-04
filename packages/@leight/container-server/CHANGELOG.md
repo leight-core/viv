@@ -1,5 +1,18 @@
 # @leight/container-server
 
+## 0.5.9
+
+### Patch Changes
+
+- Added support for IRepository, added some sources; re-release of all the other packages
+- Updated dependencies
+    - @leight/container@0.5.9
+    - @leight/file-server@0.5.9
+    - @leight/import-server@0.5.9
+    - @leight/job-server@0.5.10
+    - @leight/user-server@0.5.9
+    - @leight/xlsx-import-server@0.5.9
+
 ## 0.5.8
 
 ### Patch Changes

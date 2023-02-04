@@ -1,5 +1,14 @@
 # @leight/utils-client
 
+## 0.5.11
+
+### Patch Changes
+
+- Added support for IRepository, added some sources; re-release of all the other packages
+- Updated dependencies
+    - @leight/context-client@0.5.10
+    - @leight/utils@0.5.12
+
 ## 0.5.10
 
 ### Patch Changes

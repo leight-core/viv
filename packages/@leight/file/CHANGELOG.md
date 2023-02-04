@@ -1,5 +1,14 @@
 # @leight/file
 
+## 0.5.9
+
+### Patch Changes
+
+- Added support for IRepository, added some sources; re-release of all the other packages
+- Updated dependencies
+    - @leight/prisma@0.5.10
+    - @leight/source@0.5.5
+
 ## 0.5.8
 
 ### Patch Changes

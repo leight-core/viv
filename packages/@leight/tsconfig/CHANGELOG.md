@@ -1,5 +1,11 @@
 # @leight/tsconfig
 
+## 0.5.11
+
+### Patch Changes
+
+- Added support for IRepository, added some sources; re-release of all the other packages
+
 ## 0.5.10
 
 ### Patch Changes

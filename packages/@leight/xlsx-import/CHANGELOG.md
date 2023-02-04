@@ -1,5 +1,15 @@
 # @leight/xlsx-import
 
+## 0.5.9
+
+### Patch Changes
+
+- Added support for IRepository, added some sources; re-release of all the other packages
+- Updated dependencies
+    - @leight/import@0.5.9
+    - @leight/job@0.5.9
+    - @leight/trpc@0.5.9
+
 ## 0.5.8
 
 ### Patch Changes

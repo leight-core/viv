@@ -1,5 +1,11 @@
 # @leight/eslint-config-eslint
 
+## 0.0.6
+
+### Patch Changes
+
+- Added support for IRepository, added some sources; re-release of all the other packages
+
 ## 0.0.5
 
 ### Patch Changes
