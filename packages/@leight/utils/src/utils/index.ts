@@ -4,4 +4,6 @@ export * from "./intersectOf";
 export * from "./isCallable";
 export * from "./isString";
 export * from "./Pack";
+export * from "./toHumanBytes";
+export * from "./toHumanNumber";
 export * from "./toPercent";

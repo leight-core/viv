@@ -28,7 +28,7 @@
         "@leight/file": "workspace:^0.5.8",
         "@leight/utils": "workspace:^0.5.10",
         "@leight/utils-client": "workspace:^0.5.10",
-        "axios": "^1.3.1",
+        "axios": "^1.3.2",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "reflect-metadata": "^0.1.13",

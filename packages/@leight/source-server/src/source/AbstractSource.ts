@@ -23,10 +23,12 @@ export abstract class AbstractSource<TEntity extends IEntity, TQuery extends IQu
         return this.runQuery(query);
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     async runCount(query?: TQuery): Promise<number> {
         throw new SourceError(`Source [${this.name}] does not support counting items by a query.`);
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     async runQuery(query?: TQuery): Promise<TEntity[]> {
         throw new SourceError(`Source [${this.name}] does not support querying items.`);
     }

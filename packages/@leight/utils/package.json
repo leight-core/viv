@@ -27,6 +27,7 @@
     "dependencies": {
         "devalue": "^4.2.3",
         "fast-clean": "^1.2.1",
+        "filesize": "^10.0.6",
         "is-callable": "^1.2.7",
         "is-string": "^1.0.7",
         "reflect-metadata": "^0.1.13"

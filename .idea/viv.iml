@@ -87,6 +87,7 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/xlsx-import-server/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/xlsx-import/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/zustand/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/prisma-source/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.github" />
       <excludeFolder url="file://$MODULE_DIR$/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/sql/.turbo" />

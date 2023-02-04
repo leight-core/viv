@@ -1,3 +1,5 @@
+export * from './api';
+
 /**
  * Symbol for container usage of Prisma.
  */

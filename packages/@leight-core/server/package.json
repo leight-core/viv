@@ -27,7 +27,7 @@
 	"dependencies": {
 		"@leight-core/api": "workspace:^0.8.0",
 		"@leight-core/utils": "workspace:^0.6.0",
-		"@leight/prisma": "^0.5.9",
+		"@leight/prisma": "workspace:^0.5.9",
 		"dayjs": "^1.11.7",
 		"filesize": "^10.0.6",
 		"fs-extra": "^11.1.0",
