@@ -1,5 +1,11 @@
 # @leight/eslint-config-eslint
 
+## 0.0.7
+
+### Patch Changes
+
+- Re-release
+
 ## 0.0.6
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @leight-core/server
 
+## 0.8.4
+
+### Patch Changes
+
+- Re-release
+- Updated dependencies
+	- @leight-core/api@0.8.3
+	- @leight-core/utils@0.6.3
+	- @leight/prisma@0.5.12
+
 ## 0.8.3
 
 ### Patch Changes

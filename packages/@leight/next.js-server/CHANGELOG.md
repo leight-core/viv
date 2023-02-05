@@ -1,5 +1,17 @@
 # @leight/next.js-server
 
+## 0.5.12
+
+### Patch Changes
+
+- Re-release
+- Updated dependencies
+    - @leight/container@0.5.11
+    - @leight/user@0.5.12
+    - @leight/user-server@0.5.11
+    - @leight/utils@0.5.14
+    - @leight/winston@0.5.11
+
 ## 0.5.11
 
 ### Patch Changes

@@ -1,5 +1,5 @@
 {
-    "version": "0.5.12",
+    "version": "0.5.13",
     "name": "@leight/file-client",
     "description": "File stuff for client-side.",
     "license": "MIT",
@@ -30,9 +30,9 @@
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/file": "workspace:^0.5.10",
-        "@leight/utils": "workspace:^0.5.13",
-        "@leight/utils-client": "workspace:^0.5.12",
+        "@leight/file": "workspace:^0.5.11",
+        "@leight/utils": "workspace:^0.5.14",
+        "@leight/utils-client": "workspace:^0.5.13",
         "axios": "^1.3.2",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
@@ -40,8 +40,8 @@
         "uuid": "^9.0.0"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.0.6",
-        "@leight/tsconfig": "workspace:^0.5.11",
+        "@leight/eslint-config-eslint": "workspace:^0.0.7",
+        "@leight/tsconfig": "workspace:^0.5.12",
         "@types/node": "^18.11.19",
         "@types/react": "^18.0.27",
         "@types/react-dom": "^18.0.10",

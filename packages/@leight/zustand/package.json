@@ -1,5 +1,5 @@
 {
-    "version": "0.5.10",
+    "version": "0.5.11",
     "name": "@leight/zustand",
     "description": "Zustand helper stuff.",
     "license": "MIT",
@@ -36,8 +36,8 @@
         "zustand": "^4.3.2"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.0.6",
-        "@leight/tsconfig": "workspace:^0.5.11",
+        "@leight/eslint-config-eslint": "workspace:^0.0.7",
+        "@leight/tsconfig": "workspace:^0.5.12",
         "@types/node": "^18.11.19",
         "@types/react": "^18.0.27",
         "@types/react-dom": "^18.0.10",

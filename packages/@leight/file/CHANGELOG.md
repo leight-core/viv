@@ -1,5 +1,14 @@
 # @leight/file
 
+## 0.5.11
+
+### Patch Changes
+
+- Re-release
+- Updated dependencies
+    - @leight/prisma@0.5.12
+    - @leight/source@0.5.7
+
 ## 0.5.10
 
 ### Patch Changes

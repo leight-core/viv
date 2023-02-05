@@ -1,5 +1,5 @@
 {
-    "version": "0.5.11",
+    "version": "0.5.12",
     "name": "@leight/job-server",
     "description": "Job (async execution) stuff on server-side.",
     "license": "MIT",
@@ -30,20 +30,20 @@
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "workspace:^0.5.10",
-        "@leight/job": "workspace:^0.5.10",
-        "@leight/prisma": "workspace:^0.5.11",
-        "@leight/source-server": "workspace:^0.5.8",
-        "@leight/user": "workspace:^0.5.11",
-        "@leight/utils": "workspace:^0.5.13",
-        "@leight/winston": "workspace:^0.5.10",
+        "@leight/container": "workspace:^0.5.11",
+        "@leight/job": "workspace:^0.5.11",
+        "@leight/prisma": "workspace:^0.5.12",
+        "@leight/source-server": "workspace:^0.5.9",
+        "@leight/user": "workspace:^0.5.12",
+        "@leight/utils": "workspace:^0.5.14",
+        "@leight/winston": "workspace:^0.5.11",
         "delay": "^5.0.0",
         "reflect-metadata": "^0.1.13",
         "tsyringe": "^4.7.0"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.0.6",
-        "@leight/tsconfig": "workspace:^0.5.11",
+        "@leight/eslint-config-eslint": "workspace:^0.0.7",
+        "@leight/tsconfig": "workspace:^0.5.12",
         "@types/node": "^18.11.19",
         "@typescript-eslint/eslint-plugin": "^5.50.0",
         "@typescript-eslint/parser": "^5.50.0",
