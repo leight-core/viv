@@ -57,8 +57,5 @@
     "bugs": {
         "url": "https://github.com/leight-core/viv/issues"
     },
-    "homepage": "https://github.com/leight-core/viv#readme",
-    "directories": {
-        "lib": "lib"
-    }
+    "homepage": "https://github.com/leight-core/viv#readme"
 }
