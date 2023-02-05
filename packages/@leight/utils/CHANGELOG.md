@@ -1,5 +1,11 @@
 # @leight/utils
 
+## 0.5.15
+
+### Patch Changes
+
+- Re-release with fixed typings
+
 ## 0.5.14
 
 ### Patch Changes

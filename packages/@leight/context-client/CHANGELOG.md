@@ -1,13 +1,22 @@
 # @leight/context-client
 
+## 0.5.13
+
+### Patch Changes
+
+- Re-release with fixed typings
+- Updated dependencies
+  - @leight/utils@0.5.15
+  - @leight/zustand@0.5.12
+
 ## 0.5.12
 
 ### Patch Changes
 
 - Re-release
 - Updated dependencies
-    - @leight/utils@0.5.14
-    - @leight/zustand@0.5.11
+  - @leight/utils@0.5.14
+  - @leight/zustand@0.5.11
 
 ## 0.5.11
 
@@ -15,8 +24,8 @@
 
 - Re-release with updated package.json
 - Updated dependencies
-    - @leight/zustand@0.5.10
-    - @leight/utils@0.5.13
+  - @leight/zustand@0.5.10
+  - @leight/utils@0.5.13
 
 ## 0.5.10
 
@@ -24,8 +33,8 @@
 
 - Added support for IRepository, added some sources; re-release of all the other packages
 - Updated dependencies
-    - @leight/utils@0.5.12
-    - @leight/zustand@0.5.9
+  - @leight/utils@0.5.12
+  - @leight/zustand@0.5.9
 
 ## 0.5.9
 
@@ -33,8 +42,8 @@
 
 - Improved container stuff
 - Updated dependencies
-    - @leight/utils@0.5.10
-    - @leight/zustand@0.5.8
+  - @leight/utils@0.5.10
+  - @leight/zustand@0.5.8
 
 ## 0.5.8
 
@@ -42,8 +51,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/utils@0.5.9
-    - @leight/zustand@0.5.7
+  - @leight/utils@0.5.9
+  - @leight/zustand@0.5.7
 
 ## 0.5.7
 
@@ -51,8 +60,8 @@
 
 - Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
 - Updated dependencies
-    - @leight/zustand@0.5.6
-    - @leight/utils@0.5.7
+  - @leight/zustand@0.5.6
+  - @leight/utils@0.5.7
 
 ## 0.5.6
 
@@ -60,8 +69,8 @@
 
 - Changed whole build to just ESM, optimized build speed
 - Updated dependencies
-    - @leight/zustand@0.5.5
-    - @leight/utils@0.5.6
+  - @leight/zustand@0.5.5
+  - @leight/utils@0.5.6
 
 ## 0.5.5
 
@@ -69,8 +78,8 @@
 
 - Experiment with only ESM exports
 - Updated dependencies
-    - @leight/zustand@0.5.4
-    - @leight/utils@0.5.5
+  - @leight/zustand@0.5.4
+  - @leight/utils@0.5.5
 
 ## 0.5.4
 
@@ -78,8 +87,8 @@
 
 - Changed package type to "module"
 - Updated dependencies
-    - @leight/utils@0.5.4
-    - @leight/zustand@0.5.3
+  - @leight/utils@0.5.4
+  - @leight/zustand@0.5.3
 
 ## 0.5.3
 
@@ -87,8 +96,8 @@
 
 - Updatred all packages
 - Updated dependencies
-    - @leight/utils@0.5.3
-    - @leight/zustand@0.5.2
+  - @leight/utils@0.5.3
+  - @leight/zustand@0.5.2
 
 ## 0.5.2
 
@@ -102,5 +111,5 @@
 
 - e4af2419: Experimental publish of the new @leight packages
 - Updated dependencies [e4af2419]
-    - @leight/zustand@0.5.1
-    - @leight/utils@0.5.1
+  - @leight/zustand@0.5.1
+  - @leight/utils@0.5.1

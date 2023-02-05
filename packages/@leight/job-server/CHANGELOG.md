@@ -1,14 +1,28 @@
 # @leight/job-server
 
+## 0.5.13
+
+### Patch Changes
+
+- Re-release with fixed typings
+- Updated dependencies
+    - @leight/container@0.5.12
+    - @leight/job@0.5.12
+    - @leight/prisma@0.5.13
+    - @leight/source-server@0.5.10
+    - @leight/user@0.5.13
+    - @leight/utils@0.5.15
+    - @leight/winston@0.5.12
+
 ## 0.5.12
 
 ### Patch Changes
 
 - Re-release
 - Updated dependencies
-  - @leight/container@0.5.11
-  - @leight/job@0.5.11
-  - @leight/prisma@0.5.12
+    - @leight/container@0.5.11
+    - @leight/job@0.5.11
+    - @leight/prisma@0.5.12
   - @leight/source-server@0.5.9
   - @leight/user@0.5.12
   - @leight/utils@0.5.14

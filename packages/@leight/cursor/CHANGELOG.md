@@ -1,5 +1,11 @@
 # @leight/cursor
 
+## 0.5.7
+
+### Patch Changes
+
+- Re-release with fixed typings
+
 ## 0.5.6
 
 ### Patch Changes

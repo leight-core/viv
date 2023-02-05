@@ -24,6 +24,8 @@ export interface IWithHandlerProps<TRequest, TResponse> {
     onError?(e: Error): Promise<void>;
 }
 
+export type IWithHandler<TRequest, TResponse> = (props: IHandlerRequest<TRequest>) => Promise<TResponse>;
+
 /**
  * Utility function making a clever bridge for handling tRPC calls.
  */
@@ -36,11 +38,12 @@ export const withHandler = <TRequest, TResponse>(
         onError = (e) => {
             throw e;
         },
-    }: IWithHandlerProps<TRequest, TResponse>) => {
-    return async ({
-                      ctx,
-                      input,
-                  }: IHandlerRequest<TRequest>): Promise<TResponse> => {
+    }: IWithHandlerProps<TRequest, TResponse>): IWithHandler<TRequest, TResponse> => {
+    return async (
+        {
+            ctx,
+            input,
+        }: IHandlerRequest<TRequest>): Promise<TResponse> => {
         try {
             ctx.checkAny(withTokens);
         } catch (e) {

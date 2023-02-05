@@ -1,5 +1,5 @@
 {
-    "version": "0.5.12",
+    "version": "0.5.13",
     "name": "@leight/next.js-server",
     "description": "Next.js related server-side helper stuff.",
     "license": "MIT",
@@ -30,11 +30,11 @@
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "workspace:^0.5.11",
-        "@leight/user": "workspace:^0.5.12",
-        "@leight/user-server": "workspace:^0.5.11",
-        "@leight/utils": "workspace:^0.5.14",
-        "@leight/winston": "workspace:^0.5.11",
+        "@leight/container": "workspace:^0.5.12",
+        "@leight/user": "workspace:^0.5.13",
+        "@leight/user-server": "workspace:^0.5.12",
+        "@leight/utils": "workspace:^0.5.15",
+        "@leight/winston": "workspace:^0.5.12",
         "next": "^13.1.6",
         "next-auth": "^4.19.2",
         "raw-body": "^2.5.1",
@@ -43,8 +43,8 @@
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.0.7",
-        "@leight/tsconfig": "workspace:^0.5.12",
+        "@leight/eslint-config-eslint": "workspace:^0.0.8",
+        "@leight/tsconfig": "workspace:^0.5.13",
         "@types/node": "^18.11.19",
         "@types/react": "^18.0.27",
         "@types/react-dom": "^18.0.10",

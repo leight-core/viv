@@ -1,5 +1,5 @@
 {
-	"version": "0.8.3",
+	"version": "0.8.4",
 	"name": "@leight-core/api",
 	"description": "Package with all interfaces used in the whole @leight-core.",
 	"license": "MIT",
@@ -41,8 +41,8 @@
 		"winston": "^3.8.2"
 	},
 	"devDependencies": {
-		"@leight/eslint-config-eslint": "workspace:^0.0.7",
-		"@leight/tsconfig": "workspace:^0.5.12",
+		"@leight/eslint-config-eslint": "workspace:^0.0.8",
+		"@leight/tsconfig": "workspace:^0.5.13",
 		"@types/async-lock": "^1.3.0",
 		"@types/node": "^18.11.19",
 		"@types/react": "^18.0.27",

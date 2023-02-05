@@ -1,13 +1,22 @@
 # @leight/prisma
 
+## 0.5.13
+
+### Patch Changes
+
+- Re-release with fixed typings
+- Updated dependencies
+    - @leight/source@0.5.8
+    - @leight/source-server@0.5.10
+
 ## 0.5.12
 
 ### Patch Changes
 
 - Re-release
 - Updated dependencies
-  - @leight/source@0.5.7
-  - @leight/source-server@0.5.9
+    - @leight/source@0.5.7
+    - @leight/source-server@0.5.9
 
 ## 0.5.11
 

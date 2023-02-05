@@ -1,5 +1,11 @@
 # @leight/tsconfig
 
+## 0.5.13
+
+### Patch Changes
+
+- Re-release with fixed typings
+
 ## 0.5.12
 
 ### Patch Changes

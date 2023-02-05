@@ -1,14 +1,24 @@
 # @leight/job
 
+## 0.5.12
+
+### Patch Changes
+
+- Re-release with fixed typings
+- Updated dependencies
+  - @leight/prisma@0.5.13
+  - @leight/source@0.5.8
+  - @leight/winston@0.5.12
+
 ## 0.5.11
 
 ### Patch Changes
 
 - Re-release
 - Updated dependencies
-    - @leight/prisma@0.5.12
-    - @leight/source@0.5.7
-    - @leight/winston@0.5.11
+  - @leight/prisma@0.5.12
+  - @leight/source@0.5.7
+  - @leight/winston@0.5.11
 
 ## 0.5.10
 
@@ -16,9 +26,9 @@
 
 - Re-release with updated package.json
 - Updated dependencies
-    - @leight/winston@0.5.10
-    - @leight/prisma@0.5.11
-    - @leight/source@0.5.6
+  - @leight/winston@0.5.10
+  - @leight/prisma@0.5.11
+  - @leight/source@0.5.6
 
 ## 0.5.9
 
@@ -26,9 +36,9 @@
 
 - Added support for IRepository, added some sources; re-release of all the other packages
 - Updated dependencies
-    - @leight/prisma@0.5.10
-    - @leight/source@0.5.5
-    - @leight/winston@0.5.9
+  - @leight/prisma@0.5.10
+  - @leight/source@0.5.5
+  - @leight/winston@0.5.9
 
 ## 0.5.8
 

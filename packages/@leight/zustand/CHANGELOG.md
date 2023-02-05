@@ -1,5 +1,11 @@
 # @leight/zustand
 
+## 0.5.12
+
+### Patch Changes
+
+- Re-release with fixed typings
+
 ## 0.5.11
 
 ### Patch Changes

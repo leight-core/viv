@@ -1,15 +1,26 @@
 # @leight/trpc-server
 
+## 0.5.13
+
+### Patch Changes
+
+- Re-release with fixed typings
+- Updated dependencies
+  - @leight/container@0.5.12
+  - @leight/trpc@0.5.12
+  - @leight/user@0.5.13
+  - @leight/user-server@0.5.12
+
 ## 0.5.12
 
 ### Patch Changes
 
 - Re-release
 - Updated dependencies
-    - @leight/container@0.5.11
-    - @leight/trpc@0.5.11
-    - @leight/user@0.5.12
-    - @leight/user-server@0.5.11
+  - @leight/container@0.5.11
+  - @leight/trpc@0.5.11
+  - @leight/user@0.5.12
+  - @leight/user-server@0.5.11
 
 ## 0.5.11
 
@@ -17,10 +28,10 @@
 
 - Re-release with updated package.json
 - Updated dependencies
-    - @leight/user-server@0.5.10
-    - @leight/container@0.5.10
-    - @leight/trpc@0.5.10
-    - @leight/user@0.5.11
+  - @leight/user-server@0.5.10
+  - @leight/container@0.5.10
+  - @leight/trpc@0.5.10
+  - @leight/user@0.5.11
 
 ## 0.5.10
 
@@ -28,10 +39,10 @@
 
 - Added support for IRepository, added some sources; re-release of all the other packages
 - Updated dependencies
-    - @leight/container@0.5.9
-    - @leight/trpc@0.5.9
-    - @leight/user@0.5.10
-    - @leight/user-server@0.5.9
+  - @leight/container@0.5.9
+  - @leight/trpc@0.5.9
+  - @leight/user@0.5.10
+  - @leight/user-server@0.5.9
 
 ## 0.5.9
 
@@ -39,10 +50,10 @@
 
 - Improved container stuff
 - Updated dependencies
-    - @leight/user-server@0.5.8
-    - @leight/container@0.5.8
-    - @leight/trpc@0.5.8
-    - @leight/user@0.5.9
+  - @leight/user-server@0.5.8
+  - @leight/container@0.5.8
+  - @leight/trpc@0.5.8
+  - @leight/user@0.5.9
 
 ## 0.5.8
 
@@ -50,10 +61,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/container@0.5.7
-    - @leight/trpc@0.5.7
-    - @leight/user@0.5.8
-    - @leight/user-server@0.5.7
+  - @leight/container@0.5.7
+  - @leight/trpc@0.5.7
+  - @leight/user@0.5.8
+  - @leight/user-server@0.5.7
 
 ## 0.5.7
 
@@ -61,7 +72,7 @@
 
 - Added new packages related to Source (Repository)
 - Updated dependencies
-    - @leight/user@0.5.7
+  - @leight/user@0.5.7
 
 ## 0.5.6
 
@@ -69,10 +80,10 @@
 
 - Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
 - Updated dependencies
-    - @leight/user-server@0.5.6
-    - @leight/container@0.5.6
-    - @leight/trpc@0.5.6
-    - @leight/user@0.5.6
+  - @leight/user-server@0.5.6
+  - @leight/container@0.5.6
+  - @leight/trpc@0.5.6
+  - @leight/user@0.5.6
 
 ## 0.5.5
 
@@ -80,10 +91,10 @@
 
 - Changed whole build to just ESM, optimized build speed
 - Updated dependencies
-    - @leight/user-server@0.5.5
-    - @leight/container@0.5.5
-    - @leight/trpc@0.5.5
-    - @leight/user@0.5.5
+  - @leight/user-server@0.5.5
+  - @leight/container@0.5.5
+  - @leight/trpc@0.5.5
+  - @leight/user@0.5.5
 
 ## 0.5.4
 
@@ -91,10 +102,10 @@
 
 - Experiment with only ESM exports
 - Updated dependencies
-    - @leight/user-server@0.5.4
-    - @leight/container@0.5.4
-    - @leight/trpc@0.5.4
-    - @leight/user@0.5.4
+  - @leight/user-server@0.5.4
+  - @leight/container@0.5.4
+  - @leight/trpc@0.5.4
+  - @leight/user@0.5.4
 
 ## 0.5.3
 
@@ -102,10 +113,10 @@
 
 - Changed package type to "module"
 - Updated dependencies
-    - @leight/container@0.5.3
-    - @leight/trpc@0.5.3
-    - @leight/user@0.5.3
-    - @leight/user-server@0.5.3
+  - @leight/container@0.5.3
+  - @leight/trpc@0.5.3
+  - @leight/user@0.5.3
+  - @leight/user-server@0.5.3
 
 ## 0.5.2
 
@@ -113,10 +124,10 @@
 
 - Updatred all packages
 - Updated dependencies
-    - @leight/container@0.5.2
-    - @leight/trpc@0.5.2
-    - @leight/user@0.5.2
-    - @leight/user-server@0.5.2
+  - @leight/container@0.5.2
+  - @leight/trpc@0.5.2
+  - @leight/user@0.5.2
+  - @leight/user-server@0.5.2
 
 ## 0.5.1
 
@@ -124,7 +135,7 @@
 
 - e4af2419: Experimental publish of the new @leight packages
 - Updated dependencies [e4af2419]
-    - @leight/user-server@0.5.1
-    - @leight/container@0.5.1
-    - @leight/trpc@0.5.1
-    - @leight/user@0.5.1
+  - @leight/user-server@0.5.1
+  - @leight/container@0.5.1
+  - @leight/trpc@0.5.1
+  - @leight/user@0.5.1

@@ -1,12 +1,20 @@
 # @leight/source-server
 
+## 0.5.10
+
+### Patch Changes
+
+- Re-release with fixed typings
+- Updated dependencies
+    - @leight/source@0.5.8
+
 ## 0.5.9
 
 ### Patch Changes
 
 - Re-release
 - Updated dependencies
-  - @leight/source@0.5.7
+    - @leight/source@0.5.7
 
 ## 0.5.8
 

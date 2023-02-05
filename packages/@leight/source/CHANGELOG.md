@@ -1,14 +1,25 @@
 # @leight/source
 
+## 0.5.8
+
+### Patch Changes
+
+- Re-release with fixed typings
+- Updated dependencies
+    - @leight/filter@0.5.7
+    - @leight/query@0.5.7
+    - @leight/sort@0.5.7
+    - @leight/utils@0.5.15
+
 ## 0.5.7
 
 ### Patch Changes
 
 - Re-release
 - Updated dependencies
-  - @leight/filter@0.5.6
-  - @leight/query@0.5.6
-  - @leight/sort@0.5.6
+    - @leight/filter@0.5.6
+    - @leight/query@0.5.6
+    - @leight/sort@0.5.6
   - @leight/utils@0.5.14
 
 ## 0.5.6

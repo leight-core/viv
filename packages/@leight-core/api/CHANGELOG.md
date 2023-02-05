@@ -1,5 +1,11 @@
 # @leight-core/api
 
+## 0.8.4
+
+### Patch Changes
+
+- Re-release with fixed typings
+
 ## 0.8.3
 
 ### Patch Changes
