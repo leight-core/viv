@@ -27,11 +27,10 @@ export interface ISourceProviderProps<TResponse extends IWithIdentity> {
 	 * Query options.
 	 */
 	options?: UseQueryOptions<any, any, TResponse[]>;
-
-	onSuccess?(response: TResponse[]): void;
-
 	withCount?: boolean;
 	children?: ReactNode | ((sourceContext: ISourceContext<TResponse>) => ReactNode);
+
+	onSuccess?(response: TResponse[]): void;
 }
 
 export const SourceProvider = <TResponse extends IWithIdentity>(

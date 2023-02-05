@@ -1,5 +1,5 @@
 {
-    "version": "0.5.9",
+    "version": "0.5.10",
     "name": "@leight/trpc",
     "description": "Common tRPC stuff.",
     "license": "MIT",
@@ -12,10 +12,15 @@
     },
     "sideEffects": false,
     "type": "module",
-    "module": "lib/index.js",
-    "types": "lib/index.d.ts",
+    "module": "src/index.ts",
+    "types": "src/index.ts",
+    "publishConfig": {
+        "module": "lib/index.js",
+        "types": "lib/index.d.ts"
+    },
     "files": [
-        "lib"
+        "lib",
+        "src"
     ],
     "scripts": {
         "build": "tsc -p tsconfig.json --outDir lib",
@@ -25,8 +30,8 @@
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "workspace:^0.5.9",
-        "@leight/user": "workspace:^0.5.10",
+        "@leight/container": "workspace:^0.5.10",
+        "@leight/user": "workspace:^0.5.11",
         "@tanstack/react-query": "^4.24.4",
         "@trpc/server": "^10.10.0",
         "react": "^18.2.0",
@@ -37,7 +42,7 @@
     "devDependencies": {
         "@leight/eslint-config-eslint": "workspace:^0.0.6",
         "@leight/tsconfig": "workspace:^0.5.11",
-        "@types/node": "^18.11.18",
+        "@types/node": "^18.11.19",
         "@typescript-eslint/eslint-plugin": "^5.50.0",
         "@typescript-eslint/parser": "^5.50.0",
         "concurrently": "^7.6.0",

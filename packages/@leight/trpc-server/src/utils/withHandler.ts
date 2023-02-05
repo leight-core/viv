@@ -27,15 +27,16 @@ export interface IWithHandlerProps<TRequest, TResponse> {
 /**
  * Utility function making a clever bridge for handling tRPC calls.
  */
-export const withHandler = <TRequest, TResponse>({
-                                                     handler,
-                                                     withTokens = ["user"],
-                                                     defaultErrorMessage = "Unhandled kaboom",
-                                                     defaultErrorCode = "INTERNAL_SERVER_ERROR",
-                                                     onError = (e) => {
-                                                         throw e;
-                                                     },
-                                                 }: IWithHandlerProps<TRequest, TResponse>) => {
+export const withHandler = <TRequest, TResponse>(
+    {
+        handler,
+        withTokens = ["user"],
+        defaultErrorMessage = "Unhandled kaboom",
+        defaultErrorCode = "INTERNAL_SERVER_ERROR",
+        onError = (e) => {
+            throw e;
+        },
+    }: IWithHandlerProps<TRequest, TResponse>) => {
     return async ({
                       ctx,
                       input,

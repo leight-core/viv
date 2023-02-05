@@ -35,14 +35,13 @@ export interface IQuerySourceSelectProps<TResponse> extends Partial<Omit<SelectP
 	 * Debounce interval in ms.
 	 */
 	debounce?: number;
+	labelPrefix?: string;
 
 	onSelect?(value: IQuerySourceValue<TResponse>): void;
 
 	onDeselect?(value: IQuerySourceValue<TResponse>): void;
 
 	toId?(value?: string | null): Record<string, string | null | undefined>;
-
-	labelPrefix?: string;
 }
 
 export const QuerySourceSelect = <TResponse, >(

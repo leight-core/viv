@@ -7,6 +7,10 @@ import {Template} from "../template";
 import {LoaderIcon} from "../icon";
 
 export interface IListProps<TResponse> extends Partial<Omit<ListProps<TResponse>, "children" | "header" | "footer">> {
+	loading?: Partial<SpinProps>;
+	withLoading?: keyof Pick<UseQueryResult, "isLoading" | "isFetching" | "isRefetching">;
+	emptyText?: ReactNode;
+
 	header?(sourceContext: ISourceContext<TResponse>): ReactNode;
 
 	footer?(sourceContext: ISourceContext<TResponse>): ReactNode;
@@ -17,12 +21,6 @@ export interface IListProps<TResponse> extends Partial<Omit<ListProps<TResponse>
 	renderItemExtra?(item: TResponse): ReactNode;
 
 	children?(item: TResponse): ReactNode;
-
-	loading?: Partial<SpinProps>;
-
-	withLoading?: keyof Pick<UseQueryResult, "isLoading" | "isFetching" | "isRefetching">;
-
-	emptyText?: ReactNode;
 }
 
 export const ListItem = CoolList.Item;

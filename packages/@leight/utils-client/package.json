@@ -1,5 +1,5 @@
 {
-    "version": "0.5.11",
+    "version": "0.5.12",
     "name": "@leight/utils-client",
     "description": "Some utility stuff usable on client side.",
     "license": "MIT",
@@ -12,10 +12,15 @@
     },
     "sideEffects": false,
     "type": "module",
-    "module": "lib/index.js",
-    "types": "lib/index.d.ts",
+    "module": "src/index.ts",
+    "types": "src/index.ts",
+    "publishConfig": {
+        "module": "lib/index.js",
+        "types": "lib/index.d.ts"
+    },
     "files": [
-        "lib"
+        "lib",
+        "src"
     ],
     "scripts": {
         "build": "tsc -p tsconfig.json --outDir lib",
@@ -25,8 +30,8 @@
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/context-client": "workspace:^0.5.10",
-        "@leight/utils": "workspace:^0.5.12",
+        "@leight/context-client": "workspace:^0.5.11",
+        "@leight/utils": "workspace:^0.5.13",
         "path-to-regexp": "^6.2.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
@@ -35,7 +40,7 @@
     "devDependencies": {
         "@leight/eslint-config-eslint": "workspace:^0.0.6",
         "@leight/tsconfig": "workspace:^0.5.11",
-        "@types/node": "^18.11.18",
+        "@types/node": "^18.11.19",
         "@types/react": "^18.0.27",
         "@types/react-dom": "^18.0.10",
         "@typescript-eslint/eslint-plugin": "^5.50.0",

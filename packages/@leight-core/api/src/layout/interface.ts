@@ -1,12 +1,11 @@
 export interface ISiderCollapseContext {
 	readonly disabled: boolean;
-
-	setDisabled(disabled?: boolean): void;
-
 	/**
 	 * Is menu collapsed (if applicable for the current layout).
 	 */
 	readonly collapsed: boolean;
+
+	setDisabled(disabled?: boolean): void;
 
 	/**
 	 * Hook for collapsing a menu.

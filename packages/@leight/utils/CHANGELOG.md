@@ -1,5 +1,11 @@
 # @leight/utils
 
+## 0.5.13
+
+### Patch Changes
+
+- Re-release with updated package.json
+
 ## 0.5.12
 
 ### Patch Changes

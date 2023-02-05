@@ -1,5 +1,11 @@
 # @leight-core/api
 
+## 0.8.2
+
+### Patch Changes
+
+- Re-release with updated package.json
+
 ## 0.8.1
 
 ### Patch Changes

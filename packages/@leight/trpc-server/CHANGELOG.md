@@ -1,5 +1,16 @@
 # @leight/trpc-server
 
+## 0.5.11
+
+### Patch Changes
+
+- Re-release with updated package.json
+- Updated dependencies
+    - @leight/user-server@0.5.10
+    - @leight/container@0.5.10
+    - @leight/trpc@0.5.10
+    - @leight/user@0.5.11
+
 ## 0.5.10
 
 ### Patch Changes

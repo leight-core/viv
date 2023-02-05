@@ -9,11 +9,10 @@ export interface IHandler<
     THrefQuery extends IHrefQuery = IHrefQuery
 > {
     container: IContainer;
-
-    handler(props: IHandlerProps<TBody, THrefQuery>): Promise<TData | IError>;
-
     /**
      * If specified, tokens would be required to access an endpoint.
      */
     withTokens?: string[];
+
+    handler(props: IHandlerProps<TBody, THrefQuery>): Promise<TData | IError>;
 }

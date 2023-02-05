@@ -12,11 +12,6 @@ export interface IHandlerProps<
     body: TBody;
     query: THrefQuery;
     response: NextApiResponse;
-
-    toBody(): Promise<Buffer>;
-
-    end(chunk?: unknown): void;
-
     /**
      * Access to current user's tokens.
      */
@@ -25,4 +20,8 @@ export interface IHandlerProps<
      * Access to current user.
      */
     userService: IUserService;
+
+    toBody(): Promise<Buffer>;
+
+    end(chunk?: unknown): void;
 }

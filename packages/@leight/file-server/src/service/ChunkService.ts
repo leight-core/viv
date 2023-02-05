@@ -20,10 +20,6 @@ export class ChunkService implements IChunkService {
     ) {
     }
 
-    protected pathOf(chunkId: string) {
-        return this.chunkServiceConfig.path.replace("{chunkId}", chunkId);
-    }
-
     public async chunk(chunkId: string, chunk: Promise<Buffer>): Promise<void> {
         outputFileSync(this.pathOf(chunkId), await chunk, {flag: "a"});
     }
@@ -47,5 +43,9 @@ export class ChunkService implements IChunkService {
         });
         removeSync($file);
         return file;
+    }
+
+    protected pathOf(chunkId: string) {
+        return this.chunkServiceConfig.path.replace("{chunkId}", chunkId);
     }
 }

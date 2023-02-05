@@ -36,28 +36,6 @@ export class FileService implements IFileService {
         return this.prismaClient.file.findUniqueOrThrow({where: {id: fileId}});
     }
 
-
-    protected async mimeOf(file?: string): Promise<string> {
-        if (!file) {
-            return "application/octet-stream";
-        }
-        try {
-            return await detectFileMime(file);
-        } catch (e) {
-            return (
-                this.fileServiceConfig.defaultMimeType ||
-                "application/octet-stream"
-            );
-        }
-    }
-
-    protected sizeOf(file?: string): number {
-        if (!file) {
-            return 0;
-        }
-        return fs.statSync(file).size;
-    }
-
     public async store(
         {
             name,
@@ -100,5 +78,26 @@ export class FileService implements IFileService {
             : this.prismaClient.file.create({
                 data,
             });
+    }
+
+    protected async mimeOf(file?: string): Promise<string> {
+        if (!file) {
+            return "application/octet-stream";
+        }
+        try {
+            return await detectFileMime(file);
+        } catch (e) {
+            return (
+                this.fileServiceConfig.defaultMimeType ||
+                "application/octet-stream"
+            );
+        }
+    }
+
+    protected sizeOf(file?: string): number {
+        if (!file) {
+            return 0;
+        }
+        return fs.statSync(file).size;
     }
 }

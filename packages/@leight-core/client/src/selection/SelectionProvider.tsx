@@ -16,14 +16,13 @@ export interface ISelectionProviderProps<TSelection = any> {
 	 * Apply the given selection all the times (regardless of values set by a user)
 	 */
 	applySelection?: Record<string, TSelection>;
+	children?: ReactNode | ((selectionContext: ISelectionContext<TSelection>) => ReactNode);
 
 	/**
 	 * Default selection handler.
 	 * @param selection
 	 */
 	onSelection?(selection: ISelection<TSelection>): void;
-
-	children?: ReactNode | ((selectionContext: ISelectionContext<TSelection>) => ReactNode);
 }
 
 export function SelectionProvider<TSelection, >(

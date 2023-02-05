@@ -1,5 +1,5 @@
 import {withHandler} from "@leight/trpc-server";
-import {IRequestType, IResponseType} from "@leight/xlsx-import";
+import {type IRequestType, type IResponseType} from "@leight/xlsx-import";
 import {ImportServiceContext} from "../context";
 
 export const XlsxImportProcedure = withHandler<IRequestType, IResponseType>({

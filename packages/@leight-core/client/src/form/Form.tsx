@@ -38,6 +38,22 @@ export interface IFormProps<TRequest, TResponse, TQueryParams extends IQueryPara
 	 */
 	useMutation?: IMutationHook<TRequest, TResponse, TQueryParams>;
 	mutationQueryParams?: TQueryParams;
+	/**
+	 * Map error from outside to a state in the form (like a general error or a field error).
+	 */
+	toError?: (error: IToFormError<any, any>) => IFormErrorMap<any>;
+	/**
+	 * If the form is used under a visible context, this flag controls if it should be automatically hidden on success.
+	 */
+	shouldHide?: boolean;
+	/**
+	 * Optional ACL check - if specified, user must possess any of the given token.
+	 */
+	tokens?: string[];
+	/**
+	 * Props for the WithToken component.
+	 */
+	withTokenProps?: ComponentProps<typeof WithToken>;
 
 	/**
 	 * Map form data to mutation data.
@@ -59,27 +75,9 @@ export interface IFormProps<TRequest, TResponse, TQueryParams extends IQueryPara
 	 */
 	onFailure?(failure: IFormFailure<any>): void;
 
-	/**
-	 * Map error from outside to a state in the form (like a general error or a field error).
-	 */
-	toError?: (error: IToFormError<any, any>) => IFormErrorMap<any>;
-	/**
-	 * If the form is used under a visible context, this flag controls if it should be automatically hidden on success.
-	 */
-	shouldHide?: boolean;
-
 	onValuesChange?(success: IFormValuesChanged<any>): void;
 
 	onChange?(change: IFormChanged<any>): void;
-
-	/**
-	 * Optional ACL check - if specified, user must possess any of the given token.
-	 */
-	tokens?: string[];
-	/**
-	 * Props for the WithToken component.
-	 */
-	withTokenProps?: ComponentProps<typeof WithToken>;
 }
 
 const FormInternal = <TRequest, TResponse, TQueryParams extends IQueryParams>(

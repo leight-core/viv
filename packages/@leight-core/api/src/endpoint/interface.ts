@@ -40,14 +40,14 @@ export interface IEndpoint<// eslint-disable-next-line @typescript-eslint/no-unu
 	TQueryParams extends IQueryParams = any,
 	TContainer extends IContainer = IContainer,
 > {
-	container(): Promise<TContainer>;
-
-	handler(params: IEndpointParams<TRequest, TResponse, TQueryParams, TContainer>): Promise<TResponse | void>;
-
 	/**
 	 * Optional ACLs an endpoint would require on an user.
 	 */
 	acl?: string[];
+
+	container(): Promise<TContainer>;
+
+	handler(params: IEndpointParams<TRequest, TResponse, TQueryParams, TContainer>): Promise<TResponse | void>;
 }
 
 export type IEndpointCallback<// eslint-disable-next-line @typescript-eslint/no-unused-vars

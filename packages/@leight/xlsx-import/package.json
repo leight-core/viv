@@ -1,5 +1,5 @@
 {
-    "version": "0.5.9",
+    "version": "0.5.10",
     "name": "@leight/xlsx-import",
     "description": "Common stuff shared between .",
     "license": "MIT",
@@ -12,10 +12,15 @@
     },
     "sideEffects": false,
     "type": "module",
-    "module": "lib/index.js",
-    "types": "lib/index.d.ts",
+    "module": "src/index.ts",
+    "types": "src/index.ts",
+    "publishConfig": {
+        "module": "lib/index.js",
+        "types": "lib/index.d.ts"
+    },
     "files": [
-        "lib"
+        "lib",
+        "src"
     ],
     "scripts": {
         "build": "tsc -p tsconfig.json --outDir lib",
@@ -25,9 +30,9 @@
         "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/import": "workspace:^0.5.9",
-        "@leight/job": "workspace:^0.5.9",
-        "@leight/trpc": "workspace:^0.5.9",
+        "@leight/import": "workspace:^0.5.10",
+        "@leight/job": "workspace:^0.5.10",
+        "@leight/trpc": "workspace:^0.5.10",
         "reflect-metadata": "^0.1.13",
         "xlsx": "^0.18.5",
         "zod": "^3.20.2"
@@ -35,7 +40,7 @@
     "devDependencies": {
         "@leight/eslint-config-eslint": "workspace:^0.0.6",
         "@leight/tsconfig": "workspace:^0.5.11",
-        "@types/node": "^18.11.18",
+        "@types/node": "^18.11.19",
         "@typescript-eslint/eslint-plugin": "^5.50.0",
         "@typescript-eslint/parser": "^5.50.0",
         "concurrently": "^7.6.0",

@@ -13,11 +13,11 @@ export type IUploaderEventTypes =
 export type IOnUploaderDone<TResponse = void> = (file: UploadFile<TResponse> & { response: TResponse }) => IEventResult;
 
 export interface IUploaderEventHandlers<TResponse = void> extends IEventHandlers {
+	done: IOnUploaderDone<TResponse>;
+
 	uploading(file: UploadFile): IEventResult;
 
 	error(file: UploadFile): IEventResult;
-
-	done: IOnUploaderDone<TResponse>;
 }
 
 export interface IUploaderEvents<TResponse = void> extends IEvents<IUploaderEventTypes, IUploaderEventHandlers<TResponse>> {

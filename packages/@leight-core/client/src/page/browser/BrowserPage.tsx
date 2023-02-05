@@ -16,8 +16,6 @@ export type IPageBreadcrumb =
 	| React.ReactElement<typeof Breadcrumb>;
 
 export interface IBrowserPageProps extends IEmptyPageProps {
-	onBack?(navigate: INavigate<IQueryParams>): void;
-
 	breadcrumbProps?: IPageBreadcrumb;
 	icon?: ReactNode;
 	/**
@@ -36,6 +34,8 @@ export interface IBrowserPageProps extends IEmptyPageProps {
 	 * Components used for translation interpolation. See react-i18n Trans docs.
 	 */
 	components?: IBrowserPageHeaderProps["components"];
+
+	onBack?(navigate: INavigate<IQueryParams>): void;
 }
 
 export const BrowserPage: FC<IBrowserPageProps> = (

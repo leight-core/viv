@@ -1,5 +1,11 @@
 # @leight/user
 
+## 0.5.11
+
+### Patch Changes
+
+- Re-release with updated package.json
+
 ## 0.5.10
 
 ### Patch Changes
