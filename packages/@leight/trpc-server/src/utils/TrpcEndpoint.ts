@@ -1,7 +1,7 @@
 import {getToken} from "next-auth/jwt";
-import {TokenServiceContext, UserIdContext, UserServiceContext,} from "@leight/user-server";
+import {TokenServiceContext, UserIdContext, UserServiceContext} from "@leight/user-server";
 import {childContainer, type IContainer} from "@leight/container";
-import {AnyRouter} from "@trpc/server";
+import {type AnyRouter} from "@trpc/server";
 import {createHandler} from "./createHandler";
 
 export const TrpcEndpoint = <TRouter extends AnyRouter>(

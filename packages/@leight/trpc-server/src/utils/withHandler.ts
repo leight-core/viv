@@ -43,7 +43,7 @@ export const withHandler = <TRequest, TResponse>(
         {
             ctx,
             input,
-        }: IHandlerRequest<TRequest>): Promise<TResponse> => {
+        }) => {
         try {
             ctx.checkAny(withTokens);
         } catch (e) {
