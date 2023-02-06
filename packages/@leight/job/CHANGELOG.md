@@ -1,14 +1,20 @@
 # @leight/job
 
+## 0.5.13
+
+### Patch Changes
+
+- Improved job stuff
+
 ## 0.5.12
 
 ### Patch Changes
 
 - Re-release with fixed typings
 - Updated dependencies
-  - @leight/prisma@0.5.13
-  - @leight/source@0.5.8
-  - @leight/winston@0.5.12
+    - @leight/prisma@0.5.13
+    - @leight/source@0.5.8
+    - @leight/winston@0.5.12
 
 ## 0.5.11
 

@@ -1,5 +1,5 @@
 {
-    "version": "0.5.12",
+    "version": "0.5.13",
     "name": "@leight/xlsx-import",
     "description": "Common stuff shared between .",
     "license": "MIT",
@@ -31,7 +31,7 @@
     },
     "dependencies": {
         "@leight/import": "workspace:^0.5.12",
-        "@leight/job": "workspace:^0.5.12",
+        "@leight/job": "workspace:^0.5.13",
         "@leight/trpc": "workspace:^0.5.12",
         "reflect-metadata": "^0.1.13",
         "xlsx": "^0.18.5",

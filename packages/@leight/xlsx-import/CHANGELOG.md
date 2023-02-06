@@ -1,5 +1,13 @@
 # @leight/xlsx-import
 
+## 0.5.13
+
+### Patch Changes
+
+- Improved job stuff
+- Updated dependencies
+    - @leight/job@0.5.13
+
 ## 0.5.12
 
 ### Patch Changes
