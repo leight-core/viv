@@ -1,5 +1,17 @@
 # @leight-core/client
 
+## 0.8.19
+
+### Patch Changes
+
+- Fixed reqct-query complaining abount count query
+
+## 0.8.18
+
+### Patch Changes
+
+- Trying to fix react-query complaining
+
 ## 0.8.17
 
 ### Patch Changes

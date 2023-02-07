@@ -56,6 +56,7 @@ export const SourceProvider = <TResponse extends IWithIdentity>(
 	}
 	if (!useCountQuery) {
 		useCountQuery = () => useCoolQuery<number>({
+			queryKey: [name, 'count', 'disabled'],
 			queryFn: () => 0,
 		});
 	}

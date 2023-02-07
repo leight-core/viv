@@ -64,7 +64,7 @@ export function createQueryHook<TRequest, TResponse, TQueryParams extends IQuery
 		return useQuery(
 			[
 				link,
-				{query, request}
+				{query, request},
 			],
 			() => toPromise<TRequest, TResponse>(method, toLink(link, query), request, config),
 			{
