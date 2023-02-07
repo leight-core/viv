@@ -1,4 +1,4 @@
-import {II18NextContext} from "@leight-core/api";
+import {type II18NextContext} from "@leight-core/api";
 import {createContext} from "react";
 import {useContext} from "../context";
 

@@ -4,6 +4,7 @@ import {type IQueryHook} from "../source";
 
 export interface II18NextContext {
 	readonly i18next: i18n;
+	readonly t: i18n['t'];
 }
 
 export interface ITranslation {

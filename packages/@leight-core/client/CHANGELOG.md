@@ -1,5 +1,13 @@
 # @leight-core/client
 
+## 0.8.6
+
+### Patch Changes
+
+- Updated i18n stuff
+- Updated dependencies
+	- @leight-core/api@0.8.6
+
 ## 0.8.5
 
 ### Patch Changes
