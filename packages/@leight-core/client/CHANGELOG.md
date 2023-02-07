@@ -1,5 +1,11 @@
 # @leight-core/client
 
+## 0.8.10
+
+### Patch Changes
+
+- Fix
+
 ## 0.8.9
 
 ### Patch Changes
