@@ -39,7 +39,7 @@ export function FilterProvider<TFilter, >(
 	 * Filter set by the user; this is useful to distinguish isEmpty() which could contain applied filters which
 	 * should not be visible by the user
 	 */
-	const [request, setRequest] = useState<TFilter | undefined>(defaultFilter);
+	const [request, setRequest] = useState<TFilter | undefined>();
 	/**
 	 * When used in a form, for example, this is the source used to build-up this filter.
 	 */
@@ -53,10 +53,10 @@ export function FilterProvider<TFilter, >(
 	};
 
 	useEffect(() => {
-		$setFilter(merge<any, any>(defaultFilter || {}, applyFilter || {}));
+		$setFilter(merge<any, any>(defaultFilter || {}, applyFilter || {}), defaultFilter);
 	}, [
-		defaultFilter,
-		applyFilter
+		JSON.stringify(defaultFilter),
+		JSON.stringify(applyFilter),
 	]);
 
 	return <FilterContext.Provider

@@ -1,5 +1,11 @@
 # @leight-core/client
 
+## 0.8.21
+
+### Patch Changes
+
+- Improved filter stuff
+
 ## 0.8.20
 
 ### Patch Changes
