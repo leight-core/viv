@@ -3,11 +3,11 @@ import {UseQueryResult} from "@tanstack/react-query";
 import {Alert, Empty, SpinProps, Table as CoolTable, TableProps} from "antd";
 import type {ColumnProps} from "antd/es/table";
 import React from "react";
-import {useTranslation} from "react-i18next";
 import {useOptionalSelectionContext} from "../selection";
 import {PaginationProvider, useOptionalFilterContext, useSourceContext} from "../source";
 import {Template} from "../template";
 import {LoaderIcon} from "../icon";
+import {useTranslation} from "../i18n";
 
 export interface ITableColumnProps<TItem> extends Omit<ColumnProps<TItem>, "dataIndex"> {
 	readonly dataIndex?: keyof TItem | null;

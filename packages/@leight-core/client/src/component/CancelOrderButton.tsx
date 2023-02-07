@@ -1,8 +1,8 @@
 import {RollbackOutlined} from "@ant-design/icons";
 import {Button, ButtonProps, Tooltip} from "antd";
 import {FC} from "react";
-import {useTranslation} from "react-i18next";
-import {useOptionalOrderByContext} from "../source/OrderByContext";
+import {useTranslation} from "../i18n";
+import {useOptionalOrderByContext} from "../source";
 
 export interface ICancelOrderButtonProps extends Partial<ButtonProps> {
 }

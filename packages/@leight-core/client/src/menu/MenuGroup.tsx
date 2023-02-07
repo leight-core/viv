@@ -1,6 +1,6 @@
 import {Menu} from "antd";
 import React, {ComponentProps, FC} from "react";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from "../i18n";
 
 export interface IMenuGroupProps extends Partial<ComponentProps<typeof Menu.ItemGroup>> {
 	id: string;

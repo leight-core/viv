@@ -1,8 +1,9 @@
 import {PageHeader as CoolPageHeader, PageHeaderProps as CoolPageHeaderProps} from "@ant-design/pro-layout";
 import {Col, Row, Space} from "antd";
 import {ComponentProps, FC, ReactNode} from "react";
-import {Trans, useTranslation} from "react-i18next";
+import {Trans} from "react-i18next";
 import {isString} from "@leight/utils";
+import {useI18NextContext} from "../../i18n";
 
 export interface IBrowserPageHeaderProps extends Partial<CoolPageHeaderProps> {
 	icon?: ReactNode;
@@ -20,11 +21,11 @@ export const BrowserPageHeader: FC<IBrowserPageHeaderProps> = (
 		components,
 		...props
 	}) => {
-	const {t} = useTranslation();
+	const {i18next} = useI18NextContext();
 	const $title = isString(title) ? <span>
 		<Trans
-			t={t}
-			i18nKey={title + ".title"}
+			i18n={i18next}
+			i18nKey={`${title}.title`}
 			components={components}
 			values={values}
 		/>

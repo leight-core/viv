@@ -1,7 +1,7 @@
 import {Button, ButtonProps} from "antd";
 import {useRouter} from "next/router";
 import {FC} from "react";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from "../i18n";
 import {BackIcon} from "../icon";
 
 export interface IBackLinkProps extends Partial<ButtonProps> {

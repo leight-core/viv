@@ -1,6 +1,6 @@
 import {Space} from "antd";
 import {FC, ReactNode} from "react";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from "../i18n";
 import {isString} from "@leight/utils";
 
 export interface ITabInlineProps {

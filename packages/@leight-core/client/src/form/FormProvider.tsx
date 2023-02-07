@@ -1,7 +1,7 @@
 import {IFormErrors, IFormFields} from "@leight-core/api";
 import {Form as CoolForm, message} from "antd";
 import React, {FC, PropsWithChildren, useState} from "react";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from "../i18n";
 import {FormBlockProvider} from "./FormBlockProvider";
 import {FormContext} from "./FormContext";
 import {FormUtils} from "./FormUtils";

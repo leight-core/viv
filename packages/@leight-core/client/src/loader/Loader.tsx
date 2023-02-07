@@ -1,6 +1,6 @@
 import {Result} from "antd";
 import {FC, PropsWithChildren, ReactNode} from "react";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from "../i18n";
 import {LoaderIcon} from "../icon";
 
 export type ILoaderProps = PropsWithChildren<{

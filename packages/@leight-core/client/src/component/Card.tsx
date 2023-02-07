@@ -1,7 +1,7 @@
 import {Card as CoolCard, CardProps as CoolCardProps} from "antd";
 import {FC} from "react";
-import {useTranslation} from "react-i18next";
 import {isString} from "@leight/utils";
+import {useTranslation} from "../i18n";
 import {useMobile} from "../responsive";
 
 export interface ICardProps extends Partial<CoolCardProps> {

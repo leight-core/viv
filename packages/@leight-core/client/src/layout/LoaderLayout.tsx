@@ -1,7 +1,7 @@
 import {AntDesignOutlined} from "@ant-design/icons";
 import {Card, Col, Divider, Layout, LayoutProps, Result, Row, Typography} from "antd";
 import {ReactNode} from "react";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from "../i18n";
 import {Centered} from "./Centered";
 import {LoaderIcon} from "../icon";
 import {isCallable} from "@leight/utils";

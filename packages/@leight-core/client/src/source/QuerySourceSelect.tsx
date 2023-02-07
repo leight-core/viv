@@ -1,7 +1,7 @@
 import {IBaseSelectOption, IToOptionMapper} from "@leight-core/api";
 import {Empty, Select, SelectProps} from "antd";
 import React, {PropsWithChildren, useEffect, useRef} from "react";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from "../i18n";
 import {useSourceContext} from "./SourceContext";
 import {useOptionalFilterContext} from "./FilterContext";
 import {useOptionalFormContext, useOptionalFormItemContext} from "../form";

@@ -2,7 +2,8 @@ import {ReloadOutlined} from "@ant-design/icons";
 import {IQueryHook} from "@leight-core/api";
 import {Button, Modal} from "antd";
 import {FC, PropsWithChildren, useEffect, useState} from "react";
-import {Trans, useTranslation} from "react-i18next";
+import {Trans} from "react-i18next";
+import {useTranslation} from "../i18n";
 
 export type IDeployRefreshManagerProps = PropsWithChildren<{
 	useVersionQuery: IQueryHook<void, string>;

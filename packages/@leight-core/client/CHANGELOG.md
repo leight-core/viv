@@ -1,5 +1,11 @@
 # @leight-core/client
 
+## 0.8.15
+
+### Patch Changes
+
+- Changed usage of useTranslation to internal i18n package
+
 ## 0.8.14
 
 ### Patch Changes

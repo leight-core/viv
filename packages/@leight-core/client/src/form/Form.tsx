@@ -15,7 +15,7 @@ import {
 import {isCallable} from "@leight/utils";
 import {Form as CoolForm, message, Spin} from "antd";
 import React, {ComponentProps} from "react";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from "../i18n";
 import {WithToken} from "../user";
 import {usePassThroughMutation} from "./FormUtils";
 import {useFormContext} from "./FormContext";

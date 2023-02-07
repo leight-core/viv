@@ -1,8 +1,9 @@
 import {IQueryParams} from "@leight-core/api";
 import {ItemType} from "antd/lib/menu/hooks/useItems";
 import {FC, ReactNode} from "react";
-import {Trans, useTranslation} from "react-i18next";
+import {Trans} from "react-i18next";
 import {LinkTo} from "../link";
+import {useTranslation} from "../i18n";
 
 export interface IMenuItemProps {
 	/**

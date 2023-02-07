@@ -1,7 +1,7 @@
 import {CloseCircleOutlined, SearchOutlined} from "@ant-design/icons";
 import {Button, Divider, Space, SpaceProps} from "antd";
 import {FC, PropsWithChildren} from "react";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from "../i18n";
 import {useFormContext} from "./FormContext";
 import {useFilterContext} from "../source/FilterContext";
 import {useOptionalCursorContext} from "../source/CursorContext";

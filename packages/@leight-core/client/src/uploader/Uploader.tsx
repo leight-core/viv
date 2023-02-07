@@ -3,7 +3,7 @@ import {toHumanBytes} from "@leight-core/utils";
 import {message, Progress, Typography, Upload} from "antd";
 import {RcFile, UploadChangeParam} from "antd/lib/upload";
 import {ComponentProps, FC, useState} from "react";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from "../i18n";
 import {Centered} from "../layout";
 import {toLink} from "../link";
 

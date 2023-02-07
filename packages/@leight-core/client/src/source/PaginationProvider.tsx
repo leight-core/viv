@@ -1,6 +1,6 @@
 import {IPaginationContext} from "@leight-core/api";
 import {FC, ReactNode} from "react";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from "../i18n";
 import {useSourceContext} from "./SourceContext";
 import {useCursorContext} from "./CursorContext";
 import {PaginationContext} from "./PaginationContext";

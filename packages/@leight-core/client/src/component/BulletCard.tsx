@@ -2,7 +2,7 @@ import {RightCircleOutlined} from "@ant-design/icons";
 import {numbersOf} from "@leight-core/utils";
 import {Result, ResultProps, Typography} from "antd";
 import {FC, ReactNode} from "react";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from "../i18n";
 
 export interface IBulletCardProps extends ResultProps {
 	/**

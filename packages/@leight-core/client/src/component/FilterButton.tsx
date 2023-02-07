@@ -1,5 +1,5 @@
 import {Button, ButtonProps, Tooltip} from "antd";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from "../i18n";
 import {useCursorContext, useFilterContext} from "../source";
 
 export interface IFilterButtonProps<TFilter> extends Partial<ButtonProps> {

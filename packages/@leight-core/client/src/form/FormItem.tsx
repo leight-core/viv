@@ -2,7 +2,7 @@ import {IFormItemContext, INamePath} from "@leight-core/api";
 import {Form, FormItemProps, Input} from "antd";
 import {Rule} from "rc-field-form/lib/interface";
 import {FC, ReactNode} from "react";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from "../i18n";
 import {useFormContext} from "./FormContext";
 import {useOptionalItemGroupContext} from "./group";
 import {ShowToken} from "../user/ShowToken";

@@ -1,6 +1,6 @@
 import {Button, ButtonProps, Modal, ModalProps} from "antd";
 import {ComponentProps, FC, useState} from "react";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from "../i18n";
 import {UseToken} from "../user";
 import {isString} from "@leight/utils";
 

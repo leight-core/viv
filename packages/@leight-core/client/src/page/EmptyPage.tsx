@@ -1,7 +1,7 @@
 import {Spin} from "antd";
 import Head from "next/head";
 import {FC, PropsWithChildren, useEffect} from "react";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from "../i18n";
 import {BlockProvider, useBlockContext} from "../block";
 import {useOptionalSiderCollapseContext} from "../layout/SiderCollapseContext";
 import {useLayoutBlockContext} from "../layout/LayoutBlockContext";

@@ -1,6 +1,6 @@
 import {Button, Form} from "antd";
 import React, {ComponentProps, FC} from "react";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from "../i18n";
 import {UseToken} from "../user";
 import {useFormContext} from "./FormContext";
 

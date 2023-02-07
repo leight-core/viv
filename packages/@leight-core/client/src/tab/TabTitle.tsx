@@ -1,6 +1,6 @@
 import {Space, Typography} from "antd";
 import {FC} from "react";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from "../i18n";
 
 export interface ITabTitleProps {
 	label: string;

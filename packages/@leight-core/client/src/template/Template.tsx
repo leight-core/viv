@@ -1,6 +1,6 @@
 import {Result} from "antd";
 import {ComponentProps, FC, ReactNode} from "react";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from "../i18n";
 import {useIsBrowser, useIsMobile} from "../responsive";
 import {Centered} from "../layout";
 

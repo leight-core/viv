@@ -1,6 +1,6 @@
 import {Space, SpaceProps, Tooltip} from "antd";
 import {FC, ReactNode} from "react";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from "../i18n";
 
 export interface IIconTextProps extends Partial<SpaceProps> {
 	icon: ReactNode;

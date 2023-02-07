@@ -1,6 +1,6 @@
 import {Typography} from "antd";
 import {FC, PropsWithChildren} from "react";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from "../i18n";
 
 export type ICopyTextProps = PropsWithChildren<{
 	copy: string;

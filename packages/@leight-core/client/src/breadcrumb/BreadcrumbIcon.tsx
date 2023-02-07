@@ -1,7 +1,7 @@
 import {Space, SpaceProps} from "antd";
 import {FC, ReactNode} from "react";
-import {useTranslation} from "react-i18next";
 import {isString} from "@leight/utils";
+import {useTranslation} from "../i18n";
 
 export interface IBreadcrumbIconProps extends Partial<SpaceProps> {
 	icon?: ReactNode;
