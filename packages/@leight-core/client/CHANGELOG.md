@@ -1,5 +1,11 @@
 # @leight-core/client
 
+## 0.8.22
+
+### Patch Changes
+
+- A bit improved toUtcDate
+
 ## 0.8.21
 
 ### Patch Changes

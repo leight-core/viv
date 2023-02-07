@@ -1,5 +1,8 @@
 import dayjs, {ConfigType} from "dayjs";
-import {Duration, DurationUnitType} from "dayjs/plugin/duration";
+import {
+	Duration,
+	DurationUnitType
+}                          from "dayjs/plugin/duration";
 
 export const toLocalDate = (input?: ConfigType | null, fallback = "-"): string => {
 	return input ? dayjs(input).format("L") : fallback;
@@ -9,9 +12,15 @@ export const toLocalDateTime = (input?: ConfigType | null, fallback = "-"): stri
 	return input ? dayjs(input).format("L LTS") : fallback;
 };
 
-export const toUtcDateTime = (input ?: ConfigType | null, fallback: string | null = null): string | null => {
+export interface IToUtcDateTimeProps {
+	input?: ConfigType | null;
+	fallback?: string | null;
+	format?: string;
+}
+
+export const toUtcDateTime = ({input, format, fallback = null}: IToUtcDateTimeProps): string | null => {
 	try {
-		return input ? (dayjs(input) as any).utc().format() : fallback;
+		return input ? (dayjs(input) as any).utc().format(format) : fallback;
 	} catch (e) {
 		console.error("Dayjs does not have registered utc() plugin!", "https://day.org/docs/en/plugin/utc", e);
 		return fallback;
