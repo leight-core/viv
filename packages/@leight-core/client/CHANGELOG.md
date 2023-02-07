@@ -1,5 +1,11 @@
 # @leight-core/client
 
+## 0.8.12
+
+### Patch Changes
+
+- Fixed useTranslations once again
+
 ## 0.8.11
 
 ### Patch Changes
