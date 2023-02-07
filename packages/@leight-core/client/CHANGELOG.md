@@ -1,5 +1,11 @@
 # @leight-core/client
 
+## 0.8.20
+
+### Patch Changes
+
+- Filter marks defaultFilter as not empty
+
 ## 0.8.19
 
 ### Patch Changes
