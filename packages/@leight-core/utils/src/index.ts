@@ -1,7 +1,4 @@
-export * from "./cleanOf";
-export * from "./diffOf";
 export * from "./humanizer";
-export * from "./intersectOf";
 export * from "./isEmpty";
 export * from "./isEqual";
 export * from "./lengthOf";
@@ -12,7 +9,6 @@ export * from "./PromiseMapper";
 export * from "./randomOf";
 export * from "./singletonOf";
 export * from "./templateOf";
-export * from "./toHumanBytes";
-export * from "./toHumanNumber";
-export * from "./toPercent";
 export * from "./uniqueOf";
+
+export * from '@leight/utils';

@@ -1,5 +1,5 @@
 {
-	"version": "0.8.4",
+	"version": "0.8.5",
 	"name": "@leight-core/client",
 	"description": "All that shiny client stuff.",
 	"license": "MIT",
@@ -28,8 +28,8 @@
 		"@ant-design/icons": "^5.0.1",
 		"@ant-design/pro-layout": "^7.6.1",
 		"@fingerprintjs/fingerprintjs": "^3.4.0",
-		"@leight-core/api": "workspace:^0.8.4",
-		"@leight-core/utils": "workspace:^0.6.4",
+		"@leight-core/api": "workspace:^0.8.5",
+		"@leight-core/utils": "workspace:^0.8.1",
 		"@leight/utils": "workspace:^0.5.15",
 		"@tanstack/query-sync-storage-persister": "^4.24.4",
 		"@tanstack/react-query": "^4.24.4",
@@ -57,7 +57,7 @@
 	"devDependencies": {
 		"@leight/eslint-config-eslint": "workspace:^0.0.8",
 		"@leight/tsconfig": "workspace:^0.5.13",
-		"@types/node": "^18.11.19",
+		"@types/node": "^18.13.0",
 		"@types/nprogress": "^0.2.0",
 		"@types/react": "^18.0.27",
 		"@types/react-dom": "^18.0.10",
