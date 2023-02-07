@@ -1,5 +1,5 @@
 {
-	"version": "0.8.6",
+	"version": "0.8.7",
 	"name": "@leight-core/api",
 	"description": "Package with all interfaces used in the whole @leight-core.",
 	"license": "MIT",
@@ -15,7 +15,8 @@
 	"module": "lib/index.js",
 	"types": "lib/index.d.ts",
 	"files": [
-		"lib"
+		"lib",
+		"src"
 	],
 	"scripts": {
 		"build": "tsc -p tsconfig.json --outDir lib",

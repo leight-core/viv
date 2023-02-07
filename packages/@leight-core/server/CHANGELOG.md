@@ -1,5 +1,14 @@
 # @leight-core/server
 
+## 0.8.7
+
+### Patch Changes
+
+- Added sources
+- Updated dependencies
+	- @leight-core/utils@0.8.2
+	- @leight-core/api@0.8.7
+
 ## 0.8.6
 
 ### Patch Changes

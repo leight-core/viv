@@ -1,5 +1,5 @@
 {
-	"version": "0.8.6",
+	"version": "0.8.7",
 	"name": "@leight-core/server",
 	"description": "Server-side helper stuff.",
 	"license": "MIT",
@@ -15,7 +15,8 @@
 	"module": "lib/index.js",
 	"types": "lib/index.d.ts",
 	"files": [
-		"lib"
+		"lib",
+		"src"
 	],
 	"scripts": {
 		"build": "tsc -p tsconfig.json --outDir lib",
@@ -25,8 +26,8 @@
 		"cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
 	},
 	"dependencies": {
-		"@leight-core/api": "workspace:^0.8.5",
-		"@leight-core/utils": "workspace:^0.8.1",
+		"@leight-core/api": "workspace:^0.8.7",
+		"@leight-core/utils": "workspace:^0.8.2",
 		"@leight/prisma": "workspace:^0.5.13",
 		"dayjs": "^1.11.7",
 		"filesize": "^10.0.6",
