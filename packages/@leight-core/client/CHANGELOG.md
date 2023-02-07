@@ -1,5 +1,11 @@
 # @leight-core/client
 
+## 0.8.17
+
+### Patch Changes
+
+- Fixed column translations
+
 ## 0.8.16
 
 ### Patch Changes

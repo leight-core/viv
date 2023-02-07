@@ -7,9 +7,7 @@ export const useTranslation = () => {
 	 */
 	return {
 		t: (text: string | string[], valuesOrDefault?: Record<string, any> | string, values?: Record<string, any> | string) => {
-			const $t = t(text, valuesOrDefault as any, values) as unknown as string
-			console.log('Translating', text, 'to', $t);
-			return $t;
+			return t(text, valuesOrDefault as any, values) as unknown as string
 		}
 	};
 }

@@ -40,9 +40,9 @@ export const Table = <TResponse, >(
 	const createColumn = (props: any) => {
 		const columnProps = {...props};
 		if (columnProps.title === undefined) {
-			columnProps.title = `table.${translation}.${props.key}.column`;
+			columnProps.title = `table.${translation}.${columnProps.key}.column`;
 		}
-		if (isString(props.title)) {
+		if (isString(columnProps.title)) {
 			columnProps.title = t(columnProps.title);
 		}
 		if (columnProps.dataIndex === undefined) {
