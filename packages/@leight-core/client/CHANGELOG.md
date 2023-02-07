@@ -1,5 +1,11 @@
 # @leight-core/client
 
+## 0.8.16
+
+### Patch Changes
+
+- Debugging useTranslation
+
 ## 0.8.15
 
 ### Patch Changes

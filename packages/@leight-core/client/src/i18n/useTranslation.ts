@@ -5,5 +5,11 @@ export const useTranslation = () => {
 	/**
 	 * Returns 't' just for compatibility reasons + right typings.
 	 */
-	return {t: (text: string | string[], valuesOrDefault?: Record<string, any> | string, values?: Record<string, any> | string) => t(text, valuesOrDefault as any, values) as unknown as string};
+	return {
+		t: (text: string | string[], valuesOrDefault?: Record<string, any> | string, values?: Record<string, any> | string) => {
+			const $t = t(text, valuesOrDefault as any, values) as unknown as string
+			console.log('Translating', text, 'to', $t);
+			return $t;
+		}
+	};
 }
