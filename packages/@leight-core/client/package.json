@@ -1,5 +1,5 @@
 {
-	"version": "0.8.6",
+	"version": "0.8.7",
 	"name": "@leight-core/client",
 	"description": "All that shiny client stuff.",
 	"license": "MIT",
@@ -63,6 +63,7 @@
 		"@types/react-dom": "^18.0.10",
 		"del-cli": "^5.0.0",
 		"eslint": "^8.33.0",
+		"eslint-plugin-unicorn": "^45.0.2",
 		"typescript": "^4.9.5"
 	}
 }

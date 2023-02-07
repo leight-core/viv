@@ -1,5 +1,11 @@
 # @leight-core/client
 
+## 0.8.7
+
+### Patch Changes
+
+- Added translation hook
+
 ## 0.8.6
 
 ### Patch Changes

@@ -72,8 +72,8 @@ importers:
       '@ant-design/icons': ^5.0.1
       '@ant-design/pro-layout': ^7.6.1
       '@fingerprintjs/fingerprintjs': ^3.4.0
-      '@leight-core/api': workspace:^0.8.4
-      '@leight-core/utils': workspace:^0.8.0
+      '@leight-core/api': workspace:^0.8.6
+      '@leight-core/utils': workspace:^0.8.1
       '@leight/eslint-config-eslint': workspace:^0.0.8
       '@leight/tsconfig': workspace:^0.5.13
       '@leight/utils': workspace:^0.5.15
@@ -91,6 +91,7 @@ importers:
       dayjs: ^1.11.7
       del-cli: ^5.0.0
       eslint: ^8.33.0
+      eslint-plugin-unicorn: ^45.0.2
       i18next: ^22.4.9
       i18next-browser-languagedetector: ^7.0.1
       next: ^13.1.6
@@ -144,12 +145,13 @@ importers:
       '@types/react-dom': 18.0.10
       del-cli: 5.0.0
       eslint: 8.33.0
+      eslint-plugin-unicorn: 45.0.2_eslint@8.33.0
       typescript: 4.9.5
 
   packages/@leight-core/server:
     specifiers:
-      '@leight-core/api': workspace:^0.8.4
-      '@leight-core/utils': workspace:^0.8.0
+      '@leight-core/api': workspace:^0.8.5
+      '@leight-core/utils': workspace:^0.8.1
       '@leight/eslint-config-eslint': workspace:^0.0.8
       '@leight/prisma': workspace:^0.5.13
       '@leight/tsconfig': workspace:^0.5.13
@@ -229,7 +231,7 @@ importers:
 
   packages/@leight-core/utils:
     specifiers:
-      '@leight-core/api': workspace:^0.8.4
+      '@leight-core/api': workspace:^0.8.5
       '@leight/eslint-config-eslint': workspace:^0.0.8
       '@leight/tsconfig': workspace:^0.5.13
       '@leight/utils': workspace:^0.5.15
