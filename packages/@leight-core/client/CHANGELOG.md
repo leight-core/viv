@@ -1,5 +1,11 @@
 # @leight-core/client
 
+## 0.8.23
+
+### Patch Changes
+
+- Fixed dayjs using require()
+
 ## 0.8.22
 
 ### Patch Changes
