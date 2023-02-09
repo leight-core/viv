@@ -1,5 +1,8 @@
+import {
+    type IHrefProps,
+    type IHrefQuery
+}                from "@leight/utils";
 import {compile} from "path-to-regexp";
-import {type IHrefProps, type IHrefQuery} from "@leight/utils";
 
 export const toHref = <TQuery extends IHrefQuery = IHrefQuery>({
                                                                    href,

@@ -1,7 +1,16 @@
+import {
+    $Container,
+    type IContainer
+} from "@leight/container";
+import {
+    type IImportHandler,
+    type IImportHandlerService
+} from "@leight/import";
 import "reflect-metadata";
-import {inject, injectable} from "tsyringe";
-import {$Container, type IContainer} from "@leight/container";
-import {type IImportHandler, type IImportHandlerService} from "@leight/import";
+import {
+    inject,
+    injectable
+} from "tsyringe";
 
 @injectable()
 export class ImportHandlerService implements IImportHandlerService {
@@ -11,7 +20,7 @@ export class ImportHandlerService implements IImportHandlerService {
     }
 
     resolve<TItem>(service: string): IImportHandler<TItem> {
-        if (!service.toLowerCase().includes('import')) {
+        if (!service.toLowerCase().includes("import")) {
             throw new Error(`Cannot use requested service [${service}]. Probably not an import service.`);
         }
         /**

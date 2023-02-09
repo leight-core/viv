@@ -1,7 +1,7 @@
 import {z} from "zod";
 
 export const TabSchema = z.object({
-    tab: z.string(),
+    tab:      z.string(),
     services: z.array(z.string()),
 });
 

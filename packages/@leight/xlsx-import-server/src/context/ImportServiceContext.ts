@@ -1,5 +1,11 @@
-import {$ImportService, type IImportService} from "@leight/xlsx-import";
-import {type IContainer, ServiceContext} from "@leight/container";
+import {
+    type IContainer,
+    ServiceContext
+} from "@leight/container";
+import {
+    $ImportService,
+    type IImportService
+} from "@leight/xlsx-import";
 
 /**
  * Wrapper for accessing typed ImportService from any container.

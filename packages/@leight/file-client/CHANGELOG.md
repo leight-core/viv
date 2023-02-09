@@ -6,9 +6,9 @@
 
 - Re-release with fixed typings
 - Updated dependencies
-  - @leight/file@0.5.12
-  - @leight/utils@0.5.15
-  - @leight/utils-client@0.5.14
+    - @leight/file@0.5.12
+    - @leight/utils@0.5.15
+    - @leight/utils-client@0.5.14
 
 ## 0.5.13
 
@@ -16,9 +16,9 @@
 
 - Re-release
 - Updated dependencies
-  - @leight/file@0.5.11
-  - @leight/utils@0.5.14
-  - @leight/utils-client@0.5.13
+    - @leight/file@0.5.11
+    - @leight/utils@0.5.14
+    - @leight/utils-client@0.5.13
 
 ## 0.5.12
 
@@ -26,9 +26,9 @@
 
 - Re-release with updated package.json
 - Updated dependencies
-  - @leight/utils-client@0.5.12
-  - @leight/utils@0.5.13
-  - @leight/file@0.5.10
+    - @leight/utils-client@0.5.12
+    - @leight/utils@0.5.13
+    - @leight/file@0.5.10
 
 ## 0.5.11
 
@@ -36,9 +36,9 @@
 
 - Added support for IRepository, added some sources; re-release of all the other packages
 - Updated dependencies
-  - @leight/file@0.5.9
-  - @leight/utils@0.5.12
-  - @leight/utils-client@0.5.11
+    - @leight/file@0.5.9
+    - @leight/utils@0.5.12
+    - @leight/utils-client@0.5.11
 
 ## 0.5.10
 
@@ -46,9 +46,9 @@
 
 - Improved container stuff
 - Updated dependencies
-  - @leight/file@0.5.8
-  - @leight/utils@0.5.10
-  - @leight/utils-client@0.5.10
+    - @leight/file@0.5.8
+    - @leight/utils@0.5.10
+    - @leight/utils-client@0.5.10
 
 ## 0.5.9
 
@@ -56,9 +56,9 @@
 
 - Version bump
 - Updated dependencies
-  - @leight/utils@0.5.9
-  - @leight/file@0.5.7
-  - @leight/utils-client@0.5.9
+    - @leight/utils@0.5.9
+    - @leight/file@0.5.7
+    - @leight/utils-client@0.5.9
 
 ## 0.5.8
 
@@ -72,9 +72,9 @@
 
 - Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
 - Updated dependencies
-  - @leight/utils-client@0.5.8
-  - @leight/utils@0.5.7
-  - @leight/file@0.5.6
+    - @leight/utils-client@0.5.8
+    - @leight/utils@0.5.7
+    - @leight/file@0.5.6
 
 ## 0.5.6
 
@@ -82,9 +82,9 @@
 
 - Changed whole build to just ESM, optimized build speed
 - Updated dependencies
-  - @leight/utils-client@0.5.7
-  - @leight/utils@0.5.6
-  - @leight/file@0.5.5
+    - @leight/utils-client@0.5.7
+    - @leight/utils@0.5.6
+    - @leight/file@0.5.5
 
 ## 0.5.5
 
@@ -92,9 +92,9 @@
 
 - Experiment with only ESM exports
 - Updated dependencies
-  - @leight/utils-client@0.5.6
-  - @leight/utils@0.5.5
-  - @leight/file@0.5.4
+    - @leight/utils-client@0.5.6
+    - @leight/utils@0.5.5
+    - @leight/file@0.5.4
 
 ## 0.5.4
 
@@ -102,9 +102,9 @@
 
 - Changed package type to "module"
 - Updated dependencies
-  - @leight/file@0.5.3
-  - @leight/utils@0.5.4
-  - @leight/utils-client@0.5.5
+    - @leight/file@0.5.3
+    - @leight/utils@0.5.4
+    - @leight/utils-client@0.5.5
 
 ## 0.5.3
 
@@ -112,9 +112,9 @@
 
 - Updatred all packages
 - Updated dependencies
-  - @leight/file@0.5.2
-  - @leight/utils@0.5.3
-  - @leight/utils-client@0.5.4
+    - @leight/file@0.5.2
+    - @leight/utils@0.5.3
+    - @leight/utils-client@0.5.4
 
 ## 0.5.2
 
@@ -122,7 +122,7 @@
 
 - Changed build to react-jsx
 - Updated dependencies
-  - @leight/utils-client@0.5.2
+    - @leight/utils-client@0.5.2
 
 ## 0.5.1
 
@@ -130,6 +130,6 @@
 
 - e4af2419: Experimental publish of the new @leight packages
 - Updated dependencies [e4af2419]
-  - @leight/utils-client@0.5.1
-  - @leight/utils@0.5.1
-  - @leight/file@0.5.1
+    - @leight/utils-client@0.5.1
+    - @leight/utils@0.5.1
+    - @leight/file@0.5.1

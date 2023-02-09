@@ -1,6 +1,13 @@
+import {
+    $UserId,
+    IUserService,
+    UserError
+} from "@leight/user";
 import "reflect-metadata";
-import {$UserId, IUserService, UserError} from "@leight/user";
-import {inject, injectable} from "tsyringe";
+import {
+    inject,
+    injectable
+} from "tsyringe";
 
 @injectable()
 export class UserService implements IUserService {

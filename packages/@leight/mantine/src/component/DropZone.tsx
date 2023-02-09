@@ -1,15 +1,31 @@
-import {type IWithTranslation} from "@leight/i18n";
-import {Translation} from "@leight/i18n-client";
-import {Divider, Group, Table, Text, useMantineTheme} from "@mantine/core";
+import {
+    type IFileSourceConfig,
+    type IFileWithPath
+}                                 from "@leight/file";
+import {type IWithTranslation}    from "@leight/i18n";
+import {Translation}              from "@leight/i18n-client";
+import {LoopProvider}             from "@leight/utils-client";
+import {
+    Divider,
+    Group,
+    Table,
+    Text,
+    useMantineTheme
+}                                 from "@mantine/core";
 import {Dropzone as CoolDropzone} from "@mantine/dropzone";
-import {LoopProvider} from "@leight/utils-client";
-import {IconUpload, IconX} from "@tabler/icons-react";
-import {type IFileSourceConfig, type IFileWithPath} from "@leight/file";
-import {type ComponentProps, type FC, useState} from "react";
-import {switchScheme} from "../utils";
-import {Paper} from "./Paper";
-import {Upload} from "./Upload";
-import {UploadControls} from "./UploadControls";
+import {
+    IconUpload,
+    IconX
+}                                 from "@tabler/icons-react";
+import {
+    type ComponentProps,
+    type FC,
+    useState
+}                                 from "react";
+import {switchScheme}             from "../utils";
+import {Paper}                    from "./Paper";
+import {Upload}                   from "./Upload";
+import {UploadControls}           from "./UploadControls";
 
 export interface IDropZoneProps
     extends Partial<
@@ -23,7 +39,7 @@ export interface IDropZoneProps
 
     onDrop?(files: IFileWithPath[], commit: () => void): void;
 
-    onUpload?(file: IFileSourceConfig['Entity']): void;
+    onUpload?(file: IFileSourceConfig["Entity"]): void;
 }
 
 /**
@@ -39,7 +55,7 @@ export const DropZone: FC<IDropZoneProps> = (
         onUpload,
         ...props
     }) => {
-    const theme = useMantineTheme();
+    const theme             = useMantineTheme();
     const [files, setFiles] = useState<IFileWithPath[]>([]);
     return (
         <>
@@ -119,51 +135,51 @@ export const DropZone: FC<IDropZoneProps> = (
                     <Paper>
                         <Table fontSize={"xs"} highlightOnHover>
                             <thead>
-                            <tr>
-                                <th style={{width: "420px"}}>
-                                    <Translation
-                                        {...withTranslation}
-                                        label={`${withTranslation.label}.file`}
-                                    />
-                                </th>
-                                <th>
-                                    <Translation
-                                        {...withTranslation}
-                                        label={`${withTranslation.label}.progress`}
-                                    />
-                                </th>
-                                <th style={{width: "140px"}}>
-                                    <Translation
-                                        {...withTranslation}
-                                        label={`${withTranslation.label}.actions`}
-                                    />
-                                </th>
-                            </tr>
+                                <tr>
+                                    <th style={{width: "420px"}}>
+                                        <Translation
+                                            {...withTranslation}
+                                            label={`${withTranslation.label}.file`}
+                                        />
+                                    </th>
+                                    <th>
+                                        <Translation
+                                            {...withTranslation}
+                                            label={`${withTranslation.label}.progress`}
+                                        />
+                                    </th>
+                                    <th style={{width: "140px"}}>
+                                        <Translation
+                                            {...withTranslation}
+                                            label={`${withTranslation.label}.actions`}
+                                        />
+                                    </th>
+                                </tr>
                             </thead>
                             <tbody>
-                            {files.map((file) => (
-                                <LoopProvider key={file.path}>
-                                    <tr>
-                                        <td>{file.path}</td>
-                                        <td>
-                                            <Upload
-                                                upload={{
-                                                    file,
-                                                    path,
-                                                    async onFinish({
-                                                                       file,
-                                                                   }) {
-                                                        onUpload?.(file);
-                                                    },
-                                                }}
-                                            />
-                                        </td>
-                                        <td>
-                                            <UploadControls/>
-                                        </td>
-                                    </tr>
-                                </LoopProvider>
-                            ))}
+                                {files.map((file) => (
+                                    <LoopProvider key={file.path}>
+                                        <tr>
+                                            <td>{file.path}</td>
+                                            <td>
+                                                <Upload
+                                                    upload={{
+                                                        file,
+                                                        path,
+                                                        async onFinish({
+                                                                           file,
+                                                                       }) {
+                                                            onUpload?.(file);
+                                                        },
+                                                    }}
+                                                />
+                                            </td>
+                                            <td>
+                                                <UploadControls/>
+                                            </td>
+                                        </tr>
+                                    </LoopProvider>
+                                ))}
                             </tbody>
                         </Table>
                     </Paper>

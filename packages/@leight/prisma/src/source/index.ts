@@ -1,1 +1,1 @@
-export * from './AbstractPrismaSource';
+export * from "./AbstractPrismaSource";

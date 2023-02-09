@@ -1,5 +1,11 @@
-import {createStyles, Paper as CoolPaper} from "@mantine/core";
-import {type ComponentProps, type FC} from "react";
+import {
+    createStyles,
+    Paper as CoolPaper
+} from "@mantine/core";
+import {
+    type ComponentProps,
+    type FC
+} from "react";
 
 const useStyles = createStyles((theme) => ({
     paper: {

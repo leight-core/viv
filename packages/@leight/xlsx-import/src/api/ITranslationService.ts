@@ -1,4 +1,4 @@
-import {type WorkBook} from "xlsx";
+import {type WorkBook}           from "xlsx";
 import {type ITranslationSchema} from "../schema";
 
 /**

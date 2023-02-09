@@ -1,6 +1,9 @@
 import {type IFilter} from "@leight/filter";
-import {type ISort} from "@leight/sort";
-import {type IParams, type IQuery} from "@leight/query";
+import {
+    type IParams,
+    type IQuery
+}                     from "@leight/query";
+import {type ISort}   from "@leight/sort";
 
 export interface ISourceConfig<
     TEntity = any,

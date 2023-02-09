@@ -1,8 +1,18 @@
-import {createStore, type StateCreator} from "zustand";
 import {type IStoreApi} from "@leight/zustand";
-import {createContext} from "./createContext";
-import {createProvider, type IStoreProviderFactory} from "./createProvider";
-import {hookOptionalStore, hookStore, type IHookStoreFactory,} from "./hookStore";
+import {
+    createStore,
+    type StateCreator
+}                       from "zustand";
+import {createContext}  from "./createContext";
+import {
+    createProvider,
+    type IStoreProviderFactory
+}                       from "./createProvider";
+import {
+    hookOptionalStore,
+    hookStore,
+    type IHookStoreFactory,
+}                       from "./hookStore";
 
 export interface ICrateStoreContext<TProps> {
     Provider: IStoreProviderFactory<TProps>;
@@ -20,13 +30,13 @@ export const createStoreContext = <TProps>(
 ): ICrateStoreContext<TProps> => {
     const Context = createContext<IStoreApi<TProps>>();
     return {
-        Provider: createProvider({
+        Provider:         createProvider({
             createStore: () => {
                 return createStore<TProps>(store);
             },
             Context,
         }),
-        useStore: hookStore(Context, name, hint),
+        useStore:         hookStore(Context, name, hint),
         useOptionalStore: hookOptionalStore(Context),
     };
 };

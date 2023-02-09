@@ -1,7 +1,7 @@
-import winston from "winston";
-import {createConsole} from "./createConsole";
+import winston             from "winston";
+import {createConsole}     from "./createConsole";
 import {createDefaultMeta} from "./createDefaultMeta";
-import {ILogLevel} from "./interface";
+import {ILogLevel}         from "./interface";
 
 export const createDefaultLogger = (
     service: string,
@@ -9,7 +9,7 @@ export const createDefaultLogger = (
     level: ILogLevel
 ) => ({
     level,
-    format: winston.format.json(),
+    format:      winston.format.json(),
     defaultMeta: createDefaultMeta(version),
-    transports: [createConsole()],
+    transports:  [createConsole()],
 });

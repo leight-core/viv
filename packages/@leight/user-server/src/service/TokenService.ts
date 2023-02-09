@@ -1,5 +1,11 @@
-import {diffOf, intersectOf} from "@leight/utils";
-import {ITokenService, TokenError} from "@leight/user";
+import {
+    ITokenService,
+    TokenError
+} from "@leight/user";
+import {
+    diffOf,
+    intersectOf
+} from "@leight/utils";
 
 export class TokenService implements ITokenService {
     constructor(public tokens: string[]) {

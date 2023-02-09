@@ -1,12 +1,15 @@
 import {type IImportJob} from "@leight/import";
-import {type IJobExecutor, type IJobSourceConfig} from "@leight/job";
+import {
+    type IJobExecutor,
+    type IJobSourceConfig
+}                        from "@leight/job";
 
 /**
  * Main service used for importing Excel files (the final handler, should be used inside
  * a job).
  */
 export interface IImportService {
-    async(props: IImportService.IAsyncProps): Promise<IJobSourceConfig['Entity']>;
+    async(props: IImportService.IAsyncProps): Promise<IJobSourceConfig["Entity"]>;
 
     job(props: IJobExecutor.HandlerRequest<IImportJob>): Promise<IImportService.ImportResult>;
 }

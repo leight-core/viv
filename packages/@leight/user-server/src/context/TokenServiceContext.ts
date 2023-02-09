@@ -1,5 +1,11 @@
-import {$TokenService, type ITokenService} from "@leight/user";
-import {type IContainer, ServiceContext} from "@leight/container";
+import {
+    type IContainer,
+    ServiceContext
+}                     from "@leight/container";
+import {
+    $TokenService,
+    type ITokenService
+}                     from "@leight/user";
 import {TokenService} from "../service";
 
 export class $TokenServiceContext extends ServiceContext<ITokenService> {

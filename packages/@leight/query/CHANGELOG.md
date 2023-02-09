@@ -6,9 +6,9 @@
 
 - Re-release with fixed typings
 - Updated dependencies
-  - @leight/cursor@0.5.7
-  - @leight/filter@0.5.7
-  - @leight/sort@0.5.7
+    - @leight/cursor@0.5.7
+    - @leight/filter@0.5.7
+    - @leight/sort@0.5.7
 
 ## 0.5.6
 
@@ -16,9 +16,9 @@
 
 - Re-release
 - Updated dependencies
-  - @leight/cursor@0.5.6
-  - @leight/filter@0.5.6
-  - @leight/sort@0.5.6
+    - @leight/cursor@0.5.6
+    - @leight/filter@0.5.6
+    - @leight/sort@0.5.6
 
 ## 0.5.5
 
@@ -26,9 +26,9 @@
 
 - Re-release with updated package.json
 - Updated dependencies
-  - @leight/cursor@0.5.5
-  - @leight/filter@0.5.5
-  - @leight/sort@0.5.5
+    - @leight/cursor@0.5.5
+    - @leight/filter@0.5.5
+    - @leight/sort@0.5.5
 
 ## 0.5.4
 
@@ -36,9 +36,9 @@
 
 - Added support for IRepository, added some sources; re-release of all the other packages
 - Updated dependencies
-  - @leight/cursor@0.5.4
-  - @leight/filter@0.5.4
-  - @leight/sort@0.5.4
+    - @leight/cursor@0.5.4
+    - @leight/filter@0.5.4
+    - @leight/sort@0.5.4
 
 ## 0.5.3
 
@@ -46,9 +46,9 @@
 
 - Improved container stuff
 - Updated dependencies
-  - @leight/cursor@0.5.3
-  - @leight/filter@0.5.3
-  - @leight/sort@0.5.3
+    - @leight/cursor@0.5.3
+    - @leight/filter@0.5.3
+    - @leight/sort@0.5.3
 
 ## 0.5.2
 
@@ -56,9 +56,9 @@
 
 - Version bump
 - Updated dependencies
-  - @leight/cursor@0.5.2
-  - @leight/filter@0.5.2
-  - @leight/sort@0.5.2
+    - @leight/cursor@0.5.2
+    - @leight/filter@0.5.2
+    - @leight/sort@0.5.2
 
 ## 0.5.1
 
@@ -66,6 +66,6 @@
 
 - Added new packages related to Source (Repository)
 - Updated dependencies
-  - @leight/cursor@0.5.1
-  - @leight/filter@0.5.1
-  - @leight/sort@0.5.1
+    - @leight/cursor@0.5.1
+    - @leight/filter@0.5.1
+    - @leight/sort@0.5.1

@@ -15,9 +15,9 @@ export interface IFileService {
      */
     pathOf(fileId: string): string;
 
-    fetch(fileId: string): Promise<IFileSourceConfig['Entity']>;
+    fetch(fileId: string): Promise<IFileSourceConfig["Entity"]>;
 
-    store(props: IFileServiceStoreProps): Promise<IFileSourceConfig['Entity']>;
+    store(props: IFileServiceStoreProps): Promise<IFileSourceConfig["Entity"]>;
 }
 
 export const $FileService = Symbol.for("@leight/file-server/FileService");

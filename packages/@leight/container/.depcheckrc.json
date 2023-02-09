@@ -8,7 +8,6 @@
         "autoprefixer",
         "postcss",
         "tailwindcss",
-        "@monye.one/tsconfig",
         "@emotion/*",
         "@babel/core",
         "reflect-metadata",

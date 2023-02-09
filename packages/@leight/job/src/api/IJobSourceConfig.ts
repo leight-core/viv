@@ -1,4 +1,7 @@
-import {type IPrisma, type Job} from "@leight/prisma";
+import {
+    type IPrisma,
+    type Job
+}                           from "@leight/prisma";
 import {type ISourceConfig} from "@leight/source";
 
 export interface IJobEntity extends Job {

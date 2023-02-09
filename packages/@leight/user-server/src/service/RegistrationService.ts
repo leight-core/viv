@@ -1,6 +1,15 @@
-import {$PrismaClient, type IPrismaClient} from "@leight/prisma";
-import {inject, injectable} from "tsyringe";
-import {type IRegistrationService, type IToken} from "@leight/user";
+import {
+    $PrismaClient,
+    type IPrismaClient
+} from "@leight/prisma";
+import {
+    type IRegistrationService,
+    type IToken
+} from "@leight/user";
+import {
+    inject,
+    injectable
+} from "tsyringe";
 
 /**
  * Service used to register new users with en eventual case where the

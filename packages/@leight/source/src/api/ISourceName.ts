@@ -1,3 +1,5 @@
 import {type IToString} from "@leight/utils";
 
-export type ISourceName = string | IToString;
+export type ISourceName =
+    string
+    | IToString;

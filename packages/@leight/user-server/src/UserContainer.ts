@@ -1,4 +1,4 @@
-import "reflect-metadata";
+import {type IContainer} from "@leight/container";
 import {
     $RegistrationService,
     $UserJwtService,
@@ -6,9 +6,13 @@ import {
     type IRegistrationService,
     type IUserJwtService,
     type IUserService,
-} from "@leight/user";
-import {type IContainer} from "@leight/container";
-import {RegistrationService, UserJwtService, UserService} from "./service";
+}                        from "@leight/user";
+import "reflect-metadata";
+import {
+    RegistrationService,
+    UserJwtService,
+    UserService
+}                        from "./service";
 
 export interface IUserContainer {
     RegistrationService: IRegistrationService;

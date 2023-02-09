@@ -1,10 +1,18 @@
-import "reflect-metadata";
-import {streamOf} from "@leight/utils-server";
-import {measureTime} from "measure-time";
-import {$JobExecutor, type IJobExecutor} from "@leight/job";
-import {type Readable} from "node:stream";
-import {inject, injectable} from "tsyringe";
-import {readFile, stream} from "xlsx";
+import {
+    $FileService,
+    type IFileService
+}                      from "@leight/file";
+import {
+    $ImportHandlerService,
+    type IImportHandlerService,
+    type IImportJob
+}                      from "@leight/import";
+import {
+    $JobExecutor,
+    type IJobExecutor
+}                      from "@leight/job";
+import {cleanOf}       from "@leight/utils";
+import {streamOf}      from "@leight/utils-server";
 import {
     $ImportService,
     $MetaService,
@@ -12,10 +20,18 @@ import {
     type IImportService,
     type IMetaService,
     type ITranslationService
-} from "@leight/xlsx-import";
-import {$FileService, type IFileService} from "@leight/file";
-import {$ImportHandlerService, type IImportHandlerService, type IImportJob} from "@leight/import";
-import {cleanOf} from "@leight/utils";
+}                      from "@leight/xlsx-import";
+import {measureTime}   from "measure-time";
+import {type Readable} from "node:stream";
+import "reflect-metadata";
+import {
+    inject,
+    injectable
+}                      from "tsyringe";
+import {
+    readFile,
+    stream
+}                      from "xlsx";
 
 @injectable()
 export class ImportService implements IImportService {
@@ -30,8 +46,8 @@ export class ImportService implements IImportService {
 
     async async({fileId}: IImportService.IAsyncProps): Promise<IImportJob> {
         return this.jobExecutor.execute({
-            name: $ImportService.toString(),
-            params: {
+            name:    $ImportService.toString(),
+            params:  {
                 fileId,
             },
             handler: async props => this.job(props),
@@ -42,18 +58,18 @@ export class ImportService implements IImportService {
                   jobProgress,
                   params: {fileId}
               }: IJobExecutor.HandlerRequest<IImportJob>): Promise<IImportService.ImportResult> {
-        const file = await this.fileService.fetch(fileId);
-        const workbook = readFile(file.location, {
-            type: 'binary',
+        const file                 = await this.fileService.fetch(fileId);
+        const workbook             = readFile(file.location, {
+            type:      "binary",
             cellDates: true,
-            cellNF: false,
+            cellNF:    false,
         });
         const {tabs, translations} = await this.metaService.toMeta({workbook, file: file.location, name: file.name});
 
-        let total = 0;
+        let total   = 0;
         let success = 0;
         let failure = 0;
-        let skip = 0;
+        let skip    = 0;
         let runtime = 0;
 
         await Promise.all(
@@ -84,7 +100,7 @@ export class ImportService implements IImportService {
                     defval: null,
                 });
                 try {
-                    const handler = this.importHandlerService.resolve(service);
+                    const handler   = this.importHandlerService.resolve(service);
                     const validator = handler.validator();
                     await handler.begin?.({});
                     const getElapsed = measureTime();

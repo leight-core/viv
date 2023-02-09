@@ -5,4 +5,4 @@ export * from "./createDefaultMeta";
 export * from "./interface";
 export * from "./Logger";
 
-export {Logger as ILogger} from 'winston';
+export {Logger as ILogger} from "winston";

@@ -1,5 +1,8 @@
-import {type ITokenService, type IUserService} from "@leight/user";
 import {type IContainer} from "@leight/container";
+import {
+    type ITokenService,
+    type IUserService
+}                        from "@leight/user";
 
 export interface IContext {
     container: IContainer;

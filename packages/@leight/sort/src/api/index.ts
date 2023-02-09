@@ -1,1 +1,1 @@
-export * from './ISort';
+export * from "./ISort";

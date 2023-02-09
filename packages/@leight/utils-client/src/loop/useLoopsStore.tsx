@@ -10,17 +10,17 @@ export interface ILoopsStoreProps {
 }
 
 export const {
-    Provider: LoopsProvider,
-    useStore: useLoopsStore,
-    useOptionalStore: useOptionalLoopsStore,
-} = createStoreContext<ILoopsStoreProps>(
+                 Provider:         LoopsProvider,
+                 useStore:         useLoopsStore,
+                 useOptionalStore: useOptionalLoopsStore,
+             } = createStoreContext<ILoopsStoreProps>(
     (set, get) => ({
         get isRunning() {
             return get().current > 0;
         },
         current: 0,
-        inc: () => set(({current}) => ({current: current + 1})),
-        dec: () => set(({current}) => ({current: current - 1})),
+        inc:     () => set(({current}) => ({current: current + 1})),
+        dec:     () => set(({current}) => ({current: current - 1})),
     }),
     "LoopsContext",
     "Add LoopsProvider."

@@ -1,6 +1,6 @@
-import {type IHrefQuery} from "@leight/utils";
-import {type IContainer} from "@leight/container";
-import {type IError} from "./IError";
+import {type IContainer}    from "@leight/container";
+import {type IHrefQuery}    from "@leight/utils";
+import {type IError}        from "./IError";
 import {type IHandlerProps} from "./IHandlerProps";
 
 export interface IHandler<

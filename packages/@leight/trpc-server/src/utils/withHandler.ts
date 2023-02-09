@@ -1,6 +1,6 @@
-import {IContext} from "@leight/trpc";
-import {TRPCError} from "@trpc/server";
+import {IContext}   from "@leight/trpc";
 import {TokenError} from "@leight/user";
+import {TRPCError}  from "@trpc/server";
 
 export interface IHandlerRequest<TRequest> {
     ctx: IContext;
@@ -50,12 +50,12 @@ export const withHandler = <TRequest, TResponse>(
             if (e instanceof TokenError) {
                 throw new TRPCError({
                     message: "Token: Unauthorized :(",
-                    code: "UNAUTHORIZED",
+                    code:    "UNAUTHORIZED",
                 });
             }
             throw new TRPCError({
                 message: "Token: General kaboom :'(",
-                code: "INTERNAL_SERVER_ERROR",
+                code:    "INTERNAL_SERVER_ERROR",
             });
         }
         try {
@@ -69,7 +69,7 @@ export const withHandler = <TRequest, TResponse>(
             }
             throw new TRPCError({
                 message: defaultErrorMessage,
-                code: defaultErrorCode,
+                code:    defaultErrorCode,
             });
         }
     };

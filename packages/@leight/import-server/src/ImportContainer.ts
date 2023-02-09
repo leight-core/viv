@@ -1,5 +1,8 @@
-import {IContainer} from "@leight/container";
-import {$ImportHandlerService, type IImportHandlerService} from "@leight/import";
+import {IContainer}           from "@leight/container";
+import {
+    $ImportHandlerService,
+    type IImportHandlerService
+}                             from "@leight/import";
 import {ImportHandlerService} from "./service/ImportHandlerService";
 
 export interface IImportContainer {
@@ -15,5 +18,5 @@ export const ImportContainer = (container: IContainer): IImportContainer => {
         get ImportHandlerService() {
             return container.resolve<IImportHandlerService>($ImportHandlerService);
         }
-    }
-}
+    };
+};

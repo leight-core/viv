@@ -1,6 +1,9 @@
-import {type FC} from "react";
+import {
+    type IUseUploadProps,
+    useUpload
+}                 from "@leight/file-client";
 import {Progress} from "@mantine/core";
-import {type IUseUploadProps, useUpload} from "@leight/file-client";
+import {type FC}  from "react";
 
 export interface IUploadProps {
     /**

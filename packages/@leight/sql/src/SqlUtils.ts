@@ -1,6 +1,12 @@
+import {
+    $PrismaClient,
+    type IPrismaClient
+} from "@leight/prisma";
 import "reflect-metadata";
-import {$PrismaClient, type IPrismaClient} from "@leight/prisma";
-import {inject, injectable} from "tsyringe";
+import {
+    inject,
+    injectable
+} from "tsyringe";
 
 @injectable()
 export class SqlUtils {
@@ -30,7 +36,7 @@ export class SqlUtils {
         file: string,
         executor: (query: string) => Promise<T>
     ): Promise<T[]> {
-        const queries = await this.read(file);
+        const queries      = await this.read(file);
         const results: T[] = [];
         for (const query of queries) {
             results.push(await executor(query));
@@ -42,7 +48,7 @@ export class SqlUtils {
         source: string,
         executor: (query: string) => Promise<T>
     ): Promise<T[]> {
-        const queries = this.parse(source);
+        const queries      = this.parse(source);
         const results: T[] = [];
         for (const query of queries) {
             results.push(await executor(query));

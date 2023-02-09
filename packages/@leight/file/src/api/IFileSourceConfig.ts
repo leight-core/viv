@@ -1,4 +1,7 @@
-import {type File, type IPrisma} from "@leight/prisma";
+import {
+    type File,
+    type IPrisma
+}                           from "@leight/prisma";
 import {type ISourceConfig} from "@leight/source";
 
 export interface IFileSourceConfig extends ISourceConfig<

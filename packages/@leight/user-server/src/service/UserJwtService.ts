@@ -1,6 +1,15 @@
-import {$PrismaClient, type IPrismaClient} from "@leight/prisma";
-import {inject, injectable} from "tsyringe";
-import {type IToken, type IUserJwtService} from "@leight/user";
+import {
+    $PrismaClient,
+    type IPrismaClient
+} from "@leight/prisma";
+import {
+    type IToken,
+    type IUserJwtService
+} from "@leight/user";
+import {
+    inject,
+    injectable
+} from "tsyringe";
 
 /**
  * Service used to prepare user's JWT token.

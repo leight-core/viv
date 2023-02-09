@@ -1,5 +1,5 @@
-import {type FC} from "react";
 import {useLoopStore} from "@leight/utils-client";
+import {type FC}      from "react";
 
 export interface IUploadControlsProps {
 }

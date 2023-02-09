@@ -1,4 +1,4 @@
-import {type IContainer} from "@leight/container";
+import {type IContainer}   from "@leight/container";
 import {type INextHandler} from "./INextHandler";
 
 export type IEndpointFactory<TResponse> = (

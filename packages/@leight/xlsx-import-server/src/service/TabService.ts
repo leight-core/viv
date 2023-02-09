@@ -1,7 +1,14 @@
+import type {
+    ITabSchema,
+    ITabService,
+    IXlsxTab
+}                   from "@leight/xlsx-import";
 import "reflect-metadata";
 import {injectable} from "tsyringe";
-import {utils, type WorkBook} from "xlsx";
-import type {ITabSchema, ITabService, IXlsxTab} from "@leight/xlsx-import";
+import {
+    utils,
+    type WorkBook
+}                   from "xlsx";
 
 @injectable()
 export class TabService implements ITabService {

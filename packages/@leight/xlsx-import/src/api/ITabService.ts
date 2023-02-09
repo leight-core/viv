@@ -1,4 +1,4 @@
-import {type WorkBook} from "xlsx";
+import {type WorkBook}   from "xlsx";
 import {type ITabSchema} from "../schema";
 
 /**

@@ -1,4 +1,7 @@
-import {Context as CoolContext, useContext as useCoolContext} from "react";
+import {
+    Context as CoolContext,
+    useContext as useCoolContext
+} from "react";
 
 export function useContext<TContext>(
     context: CoolContext<TContext | null>,

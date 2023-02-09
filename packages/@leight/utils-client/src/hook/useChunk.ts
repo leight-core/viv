@@ -1,4 +1,8 @@
-import {type IOnTickProps, type IUseLoopProps, useLoop} from "../loop";
+import {
+    type IOnTickProps,
+    type IUseLoopProps,
+    useLoop
+} from "../loop";
 
 export interface IUseChunkTickProps {
     current: number;
@@ -42,7 +46,7 @@ export const useChunk = ({
         async onTick({total, current, percent}: IOnTickProps): Promise<void> {
             return onTick({
                 start: current * chunk,
-                end: Math.min(current * chunk + chunk, size),
+                end:   Math.min(current * chunk + chunk, size),
                 total,
                 current,
                 size,

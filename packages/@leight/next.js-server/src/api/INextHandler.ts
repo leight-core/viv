@@ -1,4 +1,7 @@
-import {type NextApiRequest, type NextApiResponse} from "next";
+import {
+    type NextApiRequest,
+    type NextApiResponse
+}                    from "next";
 import {type IError} from "./IError";
 
 export type INextHandler<TResponse> = (

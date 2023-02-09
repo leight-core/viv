@@ -6,8 +6,8 @@
 
 - Re-release with fixed typings
 - Updated dependencies
-  - @leight/mantine@0.5.13
-  - @leight/tsconfig@0.5.13
+    - @leight/mantine@0.5.13
+    - @leight/tsconfig@0.5.13
 
 ## 0.5.13
 
@@ -15,8 +15,8 @@
 
 - Re-release
 - Updated dependencies
-  - @leight/mantine@0.5.12
-  - @leight/tsconfig@0.5.12
+    - @leight/mantine@0.5.12
+    - @leight/tsconfig@0.5.12
 
 ## 0.5.12
 
@@ -24,7 +24,7 @@
 
 - Re-release with updated package.json
 - Updated dependencies
-  - @leight/mantine@0.5.11
+    - @leight/mantine@0.5.11
 
 ## 0.5.11
 
@@ -32,8 +32,8 @@
 
 - Added support for IRepository, added some sources; re-release of all the other packages
 - Updated dependencies
-  - @leight/mantine@0.5.10
-  - @leight/tsconfig@0.5.11
+    - @leight/mantine@0.5.10
+    - @leight/tsconfig@0.5.11
 
 ## 0.5.10
 
@@ -41,8 +41,8 @@
 
 - Improved container stuff
 - Updated dependencies
-  - @leight/mantine@0.5.9
-  - @leight/tsconfig@0.5.10
+    - @leight/mantine@0.5.9
+    - @leight/tsconfig@0.5.10
 
 ## 0.5.9
 
@@ -50,8 +50,8 @@
 
 - Version bump
 - Updated dependencies
-  - @leight/mantine@0.5.8
-  - @leight/tsconfig@0.5.9
+    - @leight/mantine@0.5.8
+    - @leight/tsconfig@0.5.9
 
 ## 0.5.8
 
@@ -59,7 +59,7 @@
 
 - Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
 - Updated dependencies
-  - @leight/mantine@0.5.7
+    - @leight/mantine@0.5.7
 
 ## 0.5.7
 
@@ -67,8 +67,8 @@
 
 - Changed whole build to just ESM, optimized build speed
 - Updated dependencies
-  - @leight/tsconfig@0.5.8
-  - @leight/mantine@0.5.6
+    - @leight/tsconfig@0.5.8
+    - @leight/mantine@0.5.6
 
 ## 0.5.6
 
@@ -76,7 +76,7 @@
 
 - Experiment with only ESM exports
 - Updated dependencies
-  - @leight/mantine@0.5.5
+    - @leight/mantine@0.5.5
 
 ## 0.5.5
 
@@ -84,8 +84,8 @@
 
 - Changed package type to "module"
 - Updated dependencies
-  - @leight/mantine@0.5.4
-  - @leight/tsconfig@0.5.7
+    - @leight/mantine@0.5.4
+    - @leight/tsconfig@0.5.7
 
 ## 0.5.4
 
@@ -93,8 +93,8 @@
 
 - Updatred all packages
 - Updated dependencies
-  - @leight/mantine@0.5.3
-  - @leight/tsconfig@0.5.6
+    - @leight/mantine@0.5.3
+    - @leight/tsconfig@0.5.6
 
 ## 0.5.3
 
@@ -102,14 +102,14 @@
 
 - Changed build to react-jsx
 - Updated dependencies
-  - @leight/tsconfig@0.5.4
+    - @leight/tsconfig@0.5.4
 
 ## 0.5.2
 
 ### Patch Changes
 
 - Updated dependencies
-  - @leight/tsconfig@0.5.2
+    - @leight/tsconfig@0.5.2
 
 ## 0.5.1
 
@@ -117,5 +117,5 @@
 
 - e4af2419: Experimental publish of the new @leight packages
 - Updated dependencies [e4af2419]
-  - @leight/tsconfig@0.0.1
-  - @leight/mantine@0.5.1
+    - @leight/tsconfig@0.0.1
+    - @leight/mantine@0.5.1

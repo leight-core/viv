@@ -1,19 +1,25 @@
-import "reflect-metadata";
-import {$PrismaClient, type IPrismaClient} from "@leight/prisma";
 import {
     $FileServiceConfig,
     type IFileService,
     type IFileServiceConfig,
     type IFileServiceStoreProps,
     type IFileSourceConfig,
-} from "@leight/file";
-import {inject, injectable} from "tsyringe";
-import {v4} from "uuid";
-import fs from "node:fs";
-import {copySync} from "fs-extra";
-import touch from "touch";
-import coolPath from "node:path";
+}                       from "@leight/file";
+import {
+    $PrismaClient,
+    type IPrismaClient
+}                       from "@leight/prisma";
+import {copySync}       from "fs-extra";
 import {detectFileMime} from "mime-detect";
+import fs               from "node:fs";
+import coolPath         from "node:path";
+import "reflect-metadata";
+import touch            from "touch";
+import {
+    inject,
+    injectable
+}                       from "tsyringe";
+import {v4}             from "uuid";
 
 @injectable()
 export class FileService implements IFileService {
@@ -32,7 +38,7 @@ export class FileService implements IFileService {
         );
     }
 
-    public fetch(fileId: string): Promise<IFileSourceConfig['Entity']> {
+    public fetch(fileId: string): Promise<IFileSourceConfig["Entity"]> {
         return this.prismaClient.file.findUniqueOrThrow({where: {id: fileId}});
     }
 
@@ -44,8 +50,8 @@ export class FileService implements IFileService {
             userId,
             mime,
             replace = false,
-        }: IFileServiceStoreProps): Promise<IFileSourceConfig['Entity']> {
-        const id = v4();
+        }: IFileServiceStoreProps): Promise<IFileSourceConfig["Entity"]> {
+        const id       = v4();
         const location = this.pathOf(id);
         fs.mkdirSync(coolPath.dirname(location), {recursive: true});
         file
@@ -56,10 +62,10 @@ export class FileService implements IFileService {
             location,
             name,
             path,
-            mime: mime || (await this.mimeOf(location)),
-            size: this.sizeOf(location),
+            mime:    mime || (await this.mimeOf(location)),
+            size:    this.sizeOf(location),
             created: new Date().toISOString(),
-            ttl: undefined,
+            ttl:     undefined,
             userId,
         };
 

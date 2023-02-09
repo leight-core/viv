@@ -1,7 +1,14 @@
+import type {
+    ITranslationSchema,
+    ITranslationService,
+    IXlsxTranslation
+}                   from "@leight/xlsx-import";
 import "reflect-metadata";
 import {injectable} from "tsyringe";
-import {utils, type WorkBook} from "xlsx";
-import type {ITranslationSchema, ITranslationService, IXlsxTranslation} from "@leight/xlsx-import";
+import {
+    utils,
+    type WorkBook
+}                   from "xlsx";
 
 @injectable()
 export class TranslationService implements ITranslationService {
@@ -14,12 +21,15 @@ export class TranslationService implements ITranslationService {
             .sheet_to_json<IXlsxTranslation>(translations)
             .reduce<ITranslationSchema[]>(
                 (result, current) => {
-                    return [...result, {
-                        from: {
-                            source: [current.from],
-                        },
-                        to: current.to,
-                    }];
+                    return [
+                        ...result,
+                        {
+                            from: {
+                                source: [current.from],
+                            },
+                            to:   current.to,
+                        }
+                    ];
                 },
                 []
             );
@@ -28,7 +38,7 @@ export class TranslationService implements ITranslationService {
     translate(item: Record<string, string>, translations: ITranslationSchema[]): Record<string, string> {
         const output: Record<string, string> = {...item};
         translations.forEach(({to, from: {source, concat}}) => {
-            output[to] = source.map(key => item[key] ?? '').filter(Boolean).join(concat);
+            output[to] = source.map(key => item[key] ?? "").filter(Boolean).join(concat);
         });
         return output;
     }

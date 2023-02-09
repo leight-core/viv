@@ -4,7 +4,7 @@ export interface IToHumanNumberProps {
     max?: number;
 }
 
-export function toHumanNumber({number, empty = '-', max = 2}: IToHumanNumberProps): string {
+export function toHumanNumber({number, empty = "-", max = 2}: IToHumanNumberProps): string {
     if (number === null || number === undefined) {
         return empty;
     }

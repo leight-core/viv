@@ -1,3 +1,4 @@
+import {type IContainer} from "@leight/container";
 import {
     $JobExecutor,
     $JobProgressService,
@@ -5,10 +6,12 @@ import {
     type IJobExecutor,
     type IJobProgressService,
     type IJobSource
-} from "@leight/job";
-import {type IContainer} from "@leight/container";
-import {JobExecutor, JobProgressService} from "./service";
-import {JobSource} from "./source";
+}                        from "@leight/job";
+import {
+    JobExecutor,
+    JobProgressService
+}                        from "./service";
+import {JobSource}       from "./source";
 
 export interface IJobContainer {
     JobProgressService: IJobProgressService;
@@ -37,5 +40,5 @@ export const JobContainer = (container: IContainer): IJobContainer => {
         get JobSource() {
             return container.resolve<IJobSource>($JobSource);
         },
-    }
-}
+    };
+};

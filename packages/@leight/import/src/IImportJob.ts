@@ -4,4 +4,4 @@ export interface IImportJobParams {
     fileId: string;
 }
 
-export type IImportJob = IJobSourceConfig['Entity'];
+export type IImportJob = IJobSourceConfig["Entity"];

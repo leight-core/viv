@@ -1,7 +1,10 @@
+import {
+    DropZone,
+    type IDropZoneProps
+}                           from "@leight/mantine";
 import {type IWithMutation} from "@leight/xlsx-import";
-import {DropZone, type IDropZoneProps} from "@leight/mantine";
-import {MIME_TYPES} from "@mantine/dropzone";
-import {type FC} from "react";
+import {MIME_TYPES}         from "@mantine/dropzone";
+import {type FC}            from "react";
 
 export interface IImportZoneProps extends Omit<IDropZoneProps, "path"> {
     mutation: IWithMutation;
@@ -10,7 +13,7 @@ export interface IImportZoneProps extends Omit<IDropZoneProps, "path"> {
 
 export const ImportZone: FC<IImportZoneProps> = ({
                                                      mutation: {useMutation},
-                                                     ...props
+                                                     ...       props
                                                  }) => {
     const mutation = useMutation();
     return (
@@ -31,7 +34,10 @@ export const ImportZone: FC<IImportZoneProps> = ({
                     }
                 );
             }}
-            accept={[MIME_TYPES.xls, MIME_TYPES.xlsx]}
+            accept={[
+                MIME_TYPES.xls,
+                MIME_TYPES.xlsx
+            ]}
             {...props}
         />
     );

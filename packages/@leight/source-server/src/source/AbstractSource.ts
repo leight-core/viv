@@ -1,4 +1,9 @@
-import {type ISource, type ISourceConfig, type ISourceName, SourceError} from '@leight/source';
+import {
+    type ISource,
+    type ISourceConfig,
+    type ISourceName,
+    SourceError
+} from "@leight/source";
 
 /**
  * Some base stuff of the source.
@@ -12,21 +17,21 @@ export abstract class AbstractSource<TSourceConfig extends ISourceConfig> implem
         this.name = name.toString();
     }
 
-    async count(query?: TSourceConfig['Query']): Promise<number> {
+    async count(query?: TSourceConfig["Query"]): Promise<number> {
         return this.runCount(query);
     }
 
-    async query(query?: TSourceConfig['Query']): Promise<TSourceConfig['Entity'][]> {
+    async query(query?: TSourceConfig["Query"]): Promise<TSourceConfig["Entity"][]> {
         return this.runQuery(query);
     }
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    async runCount(query?: TSourceConfig['Query']): Promise<number> {
+    async runCount(query?: TSourceConfig["Query"]): Promise<number> {
         throw new SourceError(`Source [${this.name}] does not support counting items by a query.`);
     }
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    async runQuery(query?: TSourceConfig['Query']): Promise<TSourceConfig['Entity'][]> {
+    async runQuery(query?: TSourceConfig["Query"]): Promise<TSourceConfig["Entity"][]> {
         throw new SourceError(`Source [${this.name}] does not support querying items.`);
     }
 }

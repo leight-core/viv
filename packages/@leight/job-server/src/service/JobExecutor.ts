@@ -1,11 +1,25 @@
-import "reflect-metadata";
-import {$JobProgressService, type IJobExecutor, type IJobProgressService, type IJobSourceConfig} from "@leight/job";
-import {inject, injectable} from "tsyringe";
-import {$UserService, type IUserService} from "@leight/user";
-import {$PrismaClient, type IPrismaClient} from "@leight/prisma";
-import delay from "delay";
+import {
+    $JobProgressService,
+    type IJobExecutor,
+    type IJobProgressService,
+    type IJobSourceConfig
+}               from "@leight/job";
+import {
+    $PrismaClient,
+    type IPrismaClient
+}               from "@leight/prisma";
+import {
+    $UserService,
+    type IUserService
+}               from "@leight/user";
+import {Pack}   from "@leight/utils";
 import {Logger} from "@leight/winston";
-import {Pack} from "@leight/utils";
+import delay    from "delay";
+import "reflect-metadata";
+import {
+    inject,
+    injectable
+}               from "tsyringe";
 
 @injectable()
 export class JobExecutor implements IJobExecutor {
@@ -16,23 +30,23 @@ export class JobExecutor implements IJobExecutor {
     ) {
     }
 
-    async execute<TJob extends IJobSourceConfig['Entity']>(
+    async execute<TJob extends IJobSourceConfig["Entity"]>(
         {
             name,
             handler,
             params
         }: IJobExecutor.ExecuteProps<TJob>): Promise<TJob> {
-        let logger = Logger(name);
-        const job = await this.prismaClient.job.create({
+        let logger        = Logger(name);
+        const job         = await this.prismaClient.job.create({
             data: {
                 created: new Date(),
                 name,
-                userId: this.userService.required(),
-                params: await Pack.pack(params),
+                userId:  this.userService.required(),
+                params:  await Pack.pack(params),
             }
         }) as TJob;
-        const labels = {name, jobId: job.id};
-        logger = logger.child({labels, jobId: labels.jobId, name});
+        const labels      = {name, jobId: job.id};
+        logger            = logger.child({labels, jobId: labels.jobId, name});
         const jobProgress = this.jobProgressService.create(job.id);
         setTimeout(() => {
             (async () => {
@@ -43,7 +57,7 @@ export class JobExecutor implements IJobExecutor {
                         name,
                         job,
                         params,
-                        userId: this.userService.required(),
+                        userId:   this.userService.required(),
                         jobProgress,
                         logger,
                         progress: async (callback, $sleep = 0) => {

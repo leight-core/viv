@@ -6,7 +6,7 @@
 
 - Re-release with fixed typings
 - Updated dependencies
-  - @leight/job@0.5.12
+    - @leight/job@0.5.12
 
 ## 0.5.11
 
@@ -14,7 +14,7 @@
 
 - Re-release
 - Updated dependencies
-  - @leight/job@0.5.11
+    - @leight/job@0.5.11
 
 ## 0.5.10
 
@@ -22,7 +22,7 @@
 
 - Re-release with updated package.json
 - Updated dependencies
-  - @leight/job@0.5.10
+    - @leight/job@0.5.10
 
 ## 0.5.9
 
@@ -30,7 +30,7 @@
 
 - Added support for IRepository, added some sources; re-release of all the other packages
 - Updated dependencies
-  - @leight/job@0.5.9
+    - @leight/job@0.5.9
 
 ## 0.5.8
 
@@ -38,7 +38,7 @@
 
 - Improved container stuff
 - Updated dependencies
-  - @leight/job@0.5.8
+    - @leight/job@0.5.8
 
 ## 0.5.7
 
@@ -46,7 +46,7 @@
 
 - Version bump
 - Updated dependencies
-  - @leight/job@0.5.7
+    - @leight/job@0.5.7
 
 ## 0.5.6
 
@@ -54,7 +54,7 @@
 
 - Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
 - Updated dependencies
-  - @leight/job@0.5.6
+    - @leight/job@0.5.6
 
 ## 0.5.5
 
@@ -62,7 +62,7 @@
 
 - Changed whole build to just ESM, optimized build speed
 - Updated dependencies
-  - @leight/job@0.5.5
+    - @leight/job@0.5.5
 
 ## 0.5.4
 
@@ -70,7 +70,7 @@
 
 - Experiment with only ESM exports
 - Updated dependencies
-  - @leight/job@0.5.4
+    - @leight/job@0.5.4
 
 ## 0.5.3
 
@@ -78,7 +78,7 @@
 
 - Changed package type to "module"
 - Updated dependencies
-  - @leight/job@0.5.3
+    - @leight/job@0.5.3
 
 ## 0.5.2
 
@@ -86,7 +86,7 @@
 
 - Updatred all packages
 - Updated dependencies
-  - @leight/job@0.5.2
+    - @leight/job@0.5.2
 
 ## 0.5.1
 
@@ -94,4 +94,4 @@
 
 - e4af2419: Experimental publish of the new @leight packages
 - Updated dependencies [e4af2419]
-  - @leight/job@0.5.1
+    - @leight/job@0.5.1

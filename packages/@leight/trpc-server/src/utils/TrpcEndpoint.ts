@@ -1,16 +1,23 @@
-import {getToken} from "next-auth/jwt";
-import {TokenServiceContext, UserIdContext, UserServiceContext} from "@leight/user-server";
-import {childContainer, type IContainer} from "@leight/container";
+import {
+    childContainer,
+    type IContainer
+}                       from "@leight/container";
+import {
+    TokenServiceContext,
+    UserIdContext,
+    UserServiceContext
+}                       from "@leight/user-server";
 import {type AnyRouter} from "@trpc/server";
-import {createHandler} from "./createHandler";
+import {getToken}       from "next-auth/jwt";
+import {createHandler}  from "./createHandler";
 
 export const TrpcEndpoint = <TRouter extends AnyRouter>(
     router: TRouter,
     coolContainer: IContainer
 ) =>
     createHandler(router, async ({req}) => {
-        const container = childContainer(coolContainer);
-        const token = await getToken({req});
+        const container    = childContainer(coolContainer);
+        const token        = await getToken({req});
         const tokenService = TokenServiceContext(container)
             .register((token?.tokens || []) as [])
             .resolve();
@@ -19,6 +26,6 @@ export const TrpcEndpoint = <TRouter extends AnyRouter>(
             container,
             userService: UserServiceContext(container).resolve(),
             tokenService,
-            checkAny: (tokens) => tokenService.checkAny(tokens),
+            checkAny:    (tokens) => tokenService.checkAny(tokens),
         };
     });

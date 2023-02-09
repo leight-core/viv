@@ -1,9 +1,9 @@
-import {z} from "zod";
-import {TabSchema} from "./TabSchema";
+import {z}                 from "zod";
+import {TabSchema}         from "./TabSchema";
 import {TranslationSchema} from "./TranslationSchema";
 
 export const MetaSchema = z.object({
-    tabs: z.array(TabSchema),
+    tabs:         z.array(TabSchema),
     translations: z.array(TranslationSchema),
 });
 

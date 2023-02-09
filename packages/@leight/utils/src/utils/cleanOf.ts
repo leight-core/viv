@@ -7,4 +7,4 @@ export const cleanOf = <T>(obj: T, options?: ICleanerOptions): T => cleaner.clea
     nullCleaner: false,
     ...options,
 });
-1
+1;

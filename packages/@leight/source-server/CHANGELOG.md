@@ -22,7 +22,7 @@
 
 - Re-release with updated package.json
 - Updated dependencies
-  - @leight/source@0.5.6
+    - @leight/source@0.5.6
 
 ## 0.5.7
 
@@ -30,9 +30,9 @@
 
 - Added support for IRepository, added some sources; re-release of all the other packages
 - Updated dependencies
-  - @leight/query@0.5.4
-  - @leight/source@0.5.5
-  - @leight/utils@0.5.12
+    - @leight/query@0.5.4
+    - @leight/source@0.5.5
+    - @leight/utils@0.5.12
 
 ## 0.5.6
 
@@ -40,7 +40,7 @@
 
 - Updated query method, query is optional now
 - Updated dependencies
-  - @leight/source@0.5.4
+    - @leight/source@0.5.4
 
 ## 0.5.5
 
@@ -48,9 +48,9 @@
 
 - Improved container stuff
 - Updated dependencies
-  - @leight/query@0.5.3
-  - @leight/source@0.5.3
-  - @leight/utils@0.5.10
+    - @leight/query@0.5.3
+    - @leight/source@0.5.3
+    - @leight/utils@0.5.10
 
 ## 0.5.4
 
@@ -58,9 +58,9 @@
 
 - Version bump
 - Updated dependencies
-  - @leight/utils@0.5.9
-  - @leight/query@0.5.2
-  - @leight/source@0.5.2
+    - @leight/utils@0.5.9
+    - @leight/query@0.5.2
+    - @leight/source@0.5.2
 
 ## 0.5.3
 
@@ -68,7 +68,7 @@
 
 - Fixed AbstractSource
 - Updated dependencies
-  - @leight/utils@0.5.8
+    - @leight/utils@0.5.8
 
 ## 0.5.2
 
@@ -82,5 +82,5 @@
 
 - Added new packages related to Source (Repository)
 - Updated dependencies
-  - @leight/source@0.5.1
-  - @leight/query@0.5.1
+    - @leight/source@0.5.1
+    - @leight/query@0.5.1

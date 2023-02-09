@@ -1,6 +1,12 @@
+import {
+    $ChunkService,
+    type IChunkService
+}                  from "@leight/file";
+import {
+    Endpoint,
+    type IEndpointFactory
+}                  from "@leight/next.js-server";
 import "reflect-metadata";
-import {$ChunkService, type IChunkService} from "@leight/file";
-import {Endpoint, type IEndpointFactory} from "@leight/next.js-server";
 import {container} from "tsyringe";
 
 /**
@@ -11,7 +17,7 @@ export const ChunkUploadEndpoint: IEndpointFactory<void> = (
     withTokens
 ) => {
     return Endpoint<unknown, void, { chunkId: string }>({
-        container: target,
+        container:  target,
         withTokens: withTokens || ["user"],
         async handler({toBody, query: {chunkId}, end}) {
             await container

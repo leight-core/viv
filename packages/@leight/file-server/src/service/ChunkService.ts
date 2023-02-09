@@ -1,6 +1,3 @@
-import "reflect-metadata";
-import {outputFileSync, removeSync} from "fs-extra";
-import {inject, injectable} from "tsyringe";
 import {
     $ChunkServiceConfig,
     $FileService,
@@ -9,6 +6,15 @@ import {
     type IFileService,
     type IFileSourceConfig,
 } from "@leight/file";
+import {
+    outputFileSync,
+    removeSync
+} from "fs-extra";
+import "reflect-metadata";
+import {
+    inject,
+    injectable
+} from "tsyringe";
 
 @injectable()
 export class ChunkService implements IChunkService {
@@ -31,9 +37,9 @@ export class ChunkService implements IChunkService {
                             mime,
                             userId,
                             replace,
-                        }: IChunkService.CommitProps): Promise<IFileSourceConfig['Entity']> {
+                        }: IChunkService.CommitProps): Promise<IFileSourceConfig["Entity"]> {
         const $file = this.pathOf(chunkId);
-        const file = await this.fileService.store({
+        const file  = await this.fileService.store({
             file: $file,
             path,
             name,

@@ -1,7 +1,10 @@
 import {IWithTranslation} from "@leight/i18n";
-import {isString} from "@leight/utils";
-import {useTranslation} from "next-i18next";
-import {type FC, type ReactNode} from "react";
+import {isString}         from "@leight/utils";
+import {useTranslation}   from "next-i18next";
+import {
+    type FC,
+    type ReactNode
+}                         from "react";
 
 export interface ITranslationProps extends Omit<IWithTranslation, "label"> {
     label?: ReactNode;

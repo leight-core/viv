@@ -3,7 +3,7 @@ import {type IFileSourceConfig} from "./IFileSourceConfig";
 export interface IChunkService {
     chunk(chunkId: string, chunk: Promise<Buffer>): Promise<void>;
 
-    commit(props: IChunkService.CommitProps): Promise<IFileSourceConfig['Entity']>;
+    commit(props: IChunkService.CommitProps): Promise<IFileSourceConfig["Entity"]>;
 }
 
 export namespace IChunkService {

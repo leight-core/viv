@@ -24,8 +24,8 @@
 
 - Re-release with updated package.json
 - Updated dependencies
-  - @leight/source-server@0.5.8
-  - @leight/source@0.5.6
+    - @leight/source-server@0.5.8
+    - @leight/source@0.5.6
 
 ## 0.5.10
 
@@ -33,8 +33,8 @@
 
 - Added support for IRepository, added some sources; re-release of all the other packages
 - Updated dependencies
-  - @leight/source@0.5.5
-  - @leight/source-server@0.5.7
+    - @leight/source@0.5.5
+    - @leight/source-server@0.5.7
 
 ## 0.5.9
 

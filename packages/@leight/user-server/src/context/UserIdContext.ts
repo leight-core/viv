@@ -1,5 +1,8 @@
+import {
+    type IContainer,
+    ServiceContext
+}                from "@leight/container";
 import {$UserId} from "@leight/user";
-import {type IContainer, ServiceContext} from "@leight/container";
 
 export class $UserIdContext extends ServiceContext<string | undefined> {
     constructor(container: IContainer) {

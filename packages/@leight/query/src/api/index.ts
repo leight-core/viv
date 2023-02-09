@@ -1,2 +1,2 @@
-export * from './IParams';
-export * from './IQuery';
+export * from "./IParams";
+export * from "./IQuery";

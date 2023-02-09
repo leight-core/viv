@@ -1,6 +1,6 @@
 import {type ICursor} from "@leight/cursor";
 import {type IFilter} from "@leight/filter";
-import {type ISort} from "@leight/sort";
+import {type ISort}   from "@leight/sort";
 import {type IParams} from "./IParams";
 
 /**

@@ -1,7 +1,7 @@
-import {type IStoreApi} from "@leight/zustand";
-import {useStore} from "zustand";
-import {type Context} from "react";
-import {useContext} from "./useContext";
+import {type IStoreApi}     from "@leight/zustand";
+import {type Context}       from "react";
+import {useStore}           from "zustand";
+import {useContext}         from "./useContext";
 import {useOptionalContext} from "./useOptionalContext";
 
 export type IHookStoreFactory<TProps> = () => TProps;

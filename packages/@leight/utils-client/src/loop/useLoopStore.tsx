@@ -20,28 +20,28 @@ export interface ILoopStoreProps {
 }
 
 export const {
-    Provider: LoopProvider,
-    useStore: useLoopStore,
-    useOptionalStore: useOptionalLoopStore,
-} = createStoreContext<ILoopStoreProps>(
+                 Provider:         LoopProvider,
+                 useStore:         useLoopStore,
+                 useOptionalStore: useOptionalLoopStore,
+             } = createStoreContext<ILoopStoreProps>(
     (set, get) => ({
-        total: 0,
+        total:     0,
         isRunning: false,
-        isDone: false,
-        isError: false,
+        isDone:    false,
+        isError:   false,
         isSuccess: false,
-        current: 0,
-        progress: () => set(({current}) => ({current: current + 1})),
-        start: (total) => set({isRunning: true, total}),
-        finish: (withError = false) =>
-            set({
-                isDone: true,
-                isRunning: false,
-                isError: withError,
-                isSuccess: !withError,
-            }),
-        error: (isError = true) => set({isError, isSuccess: !isError}),
-        percent: () => {
+        current:   0,
+        progress:  () => set(({current}) => ({current: current + 1})),
+        start:     (total) => set({isRunning: true, total}),
+        finish:    (withError = false) =>
+                       set({
+                           isDone:    true,
+                           isRunning: false,
+                           isError:   withError,
+                           isSuccess: !withError,
+                       }),
+        error:     (isError = true) => set({isError, isSuccess: !isError}),
+        percent:   () => {
             const {current, total} = get();
             return (100 * current) / total;
         },
