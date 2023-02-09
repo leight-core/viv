@@ -1,5 +1,19 @@
 # @leight/job-server
 
+## 0.5.14
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/container@0.5.13
+    - @leight/job@0.5.14
+    - @leight/prisma@0.5.14
+    - @leight/source-server@0.5.11
+    - @leight/user@0.5.14
+    - @leight/utils@0.5.16
+    - @leight/winston@0.5.13
+
 ## 0.5.13
 
 ### Patch Changes

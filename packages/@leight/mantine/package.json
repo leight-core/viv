@@ -1,5 +1,5 @@
 {
-    "version": "0.5.13",
+    "version": "0.5.14",
     "name": "@leight/mantine",
     "description": "Tools and some wrappers for Mantine UI library.",
     "license": "MIT",
@@ -32,12 +32,12 @@
     "dependencies": {
         "@babel/core": "^7.20.12",
         "@emotion/react": "^11.10.5",
-        "@leight/file": "workspace:^0.5.12",
-        "@leight/file-client": "workspace:^0.5.14",
-        "@leight/i18n": "workspace:^0.5.12",
-        "@leight/i18n-client": "workspace:^0.5.14",
-        "@leight/utils": "workspace:^0.5.15",
-        "@leight/utils-client": "workspace:^0.5.14",
+        "@leight/file": "workspace:^0.5.13",
+        "@leight/file-client": "workspace:^0.5.15",
+        "@leight/i18n": "workspace:^0.5.13",
+        "@leight/i18n-client": "workspace:^0.5.15",
+        "@leight/utils": "workspace:^0.5.16",
+        "@leight/utils-client": "workspace:^0.5.15",
         "@mantine/core": "^5.10.3",
         "@mantine/dropzone": "^5.10.3",
         "@mantine/hooks": "^5.10.3",
@@ -49,8 +49,8 @@
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.0.8",
-        "@leight/tsconfig": "workspace:^0.5.13",
+        "@leight/eslint-config-eslint": "workspace:^0.0.9",
+        "@leight/tsconfig": "workspace:^0.5.14",
         "@types/node": "^18.13.0",
         "@types/react": "^18.0.27",
         "@types/react-dom": "^18.0.10",
