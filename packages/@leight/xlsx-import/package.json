@@ -35,7 +35,7 @@
         "@leight/trpc": "workspace:^0.5.12",
         "reflect-metadata": "^0.1.13",
         "xlsx": "^0.18.5",
-        "zod": "^3.20.2"
+        "zod": "^3.20.6"
     },
     "devDependencies": {
         "@leight/eslint-config-eslint": "workspace:^0.0.8",
