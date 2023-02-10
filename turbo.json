@@ -6,9 +6,6 @@
     "pipeline": {
         "prisma:format": {
             "outputMode": "new-only",
-            "dependsOn": [
-                "^prisma:format"
-            ],
             "outputs": [],
             "inputs": [
                 "prisma/schema.prisma"
@@ -17,18 +14,25 @@
         "prisma:generate": {
             "outputMode": "new-only",
             "dependsOn": [
-                "prisma:format",
-                "^prisma:generate"
+                "prisma:format"
             ],
             "outputs": [],
             "inputs": [
                 "prisma/schema.prisma"
             ]
         },
+        "depcheck": {
+            "outputMode": "new-only",
+            "inputs": [
+                ".depcheckrc.json",
+                "package.json"
+            ],
+            "outputs": []
+        },
         "lint": {
             "outputMode": "new-only",
             "dependsOn": [
-                "^depcheck"
+                "depcheck"
             ],
             "outputs": [],
             "inputs": [
@@ -38,9 +42,9 @@
         "build": {
             "outputMode": "new-only",
             "dependsOn": [
-                "^prisma:generate",
-                "^lint",
-                "^build"
+                "^build",
+                "prisma:generate",
+                "lint"
             ],
             "outputs": [
                 "lib/**"
@@ -57,14 +61,6 @@
                 "NEXT_PUBLIC_VERSION",
                 "BUILD_ID"
             ]
-        },
-        "depcheck": {
-            "outputMode": "new-only",
-            "inputs": [
-                ".depcheckrc.json",
-                "package.json"
-            ],
-            "outputs": []
         },
         "cleanup": {
             "cache": false

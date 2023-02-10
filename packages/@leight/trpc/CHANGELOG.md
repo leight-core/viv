@@ -1,5 +1,16 @@
 # @leight/trpc
 
+## 0.5.14
+
+### Patch Changes
+
+- Version bump WITH actual build
+- Experimentally enabled Zod schema generator
+- Updated dependencies
+- Updated dependencies
+    - @leight/container@0.5.14
+    - @leight/user@0.5.15
+
 ## 0.5.13
 
 ### Patch Changes

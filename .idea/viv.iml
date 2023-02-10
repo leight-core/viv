@@ -88,6 +88,7 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/xlsx-import/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/zustand/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/prisma-source/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/prisma-zod/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.github" />
       <excludeFolder url="file://$MODULE_DIR$/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/sql/.turbo" />
@@ -246,6 +247,8 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight-core/client/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/prisma-source/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/prisma-source/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/prisma-zod/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/prisma-zod/lib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

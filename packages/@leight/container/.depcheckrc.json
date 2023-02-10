@@ -17,6 +17,7 @@
         "concurrently",
         "typescript",
         "eslint",
+        "depcheck",
         "eslint-plugin-unicorn"
     ],
     "specials": [

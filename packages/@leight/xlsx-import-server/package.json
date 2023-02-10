@@ -1,5 +1,5 @@
 {
-    "version": "0.5.13",
+    "version": "0.5.14",
     "name": "@leight/xlsx-import-server",
     "description": "Support for XLSX import (server-side) using @leight/job stuff.",
     "license": "MIT",
@@ -25,19 +25,19 @@
     "scripts": {
         "build": "tsc -p tsconfig.json --outDir lib",
         "dev:watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
-        "depcheck": "npx depcheck",
+        "depcheck": "depcheck",
         "lint": "eslint src",
-        "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
+        "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "workspace:^0.5.13",
-        "@leight/file": "workspace:^0.5.13",
-        "@leight/import": "workspace:^0.5.13",
-        "@leight/job": "workspace:^0.5.14",
-        "@leight/trpc-server": "workspace:^0.5.14",
-        "@leight/utils": "workspace:^0.5.16",
-        "@leight/utils-server": "workspace:^0.5.13",
-        "@leight/xlsx-import": "workspace:^0.5.14",
+        "@leight/container": "workspace:^0.5.14",
+        "@leight/file": "workspace:^0.5.14",
+        "@leight/import": "workspace:^0.5.14",
+        "@leight/job": "workspace:^0.5.15",
+        "@leight/trpc-server": "workspace:^0.5.15",
+        "@leight/utils": "workspace:^0.5.17",
+        "@leight/utils-server": "workspace:^0.5.14",
+        "@leight/xlsx-import": "workspace:^0.5.15",
         "measure-time": "^5.0.8",
         "reflect-metadata": "^0.1.13",
         "tsyringe": "^4.7.0",
@@ -45,13 +45,14 @@
         "zod": "^3.20.6"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.0.9",
-        "@leight/tsconfig": "workspace:^0.5.14",
+        "@leight/eslint-config-eslint": "*",
+        "@leight/tsconfig": "workspace:^0.5.15",
         "@types/node": "^18.13.0",
         "@typescript-eslint/eslint-plugin": "^5.51.0",
         "@typescript-eslint/parser": "^5.51.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
+        "depcheck": "^1.4.3",
         "eslint": "^8.33.0",
         "eslint-plugin-unicorn": "^45.0.2",
         "typescript": "^4.9.5"

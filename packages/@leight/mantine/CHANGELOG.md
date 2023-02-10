@@ -1,5 +1,20 @@
 # @leight/mantine
 
+## 0.5.15
+
+### Patch Changes
+
+- Version bump WITH actual build
+- Experimentally enabled Zod schema generator
+- Updated dependencies
+- Updated dependencies
+    - @leight/file@0.5.14
+    - @leight/file-client@0.5.16
+    - @leight/i18n@0.5.14
+    - @leight/i18n-client@0.5.16
+    - @leight/utils@0.5.17
+    - @leight/utils-client@0.5.16
+
 ## 0.5.14
 
 ### Patch Changes

@@ -1,5 +1,5 @@
 {
-    "version": "0.5.9",
+    "version": "0.5.10",
     "name": "@leight/source",
     "description": "Common Source stuff; source is definition of Data Source (usually on the backend).",
     "license": "MIT",
@@ -25,25 +25,26 @@
     "scripts": {
         "build": "tsc -p tsconfig.json --outDir lib",
         "dev:watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
-        "depcheck": "npx depcheck",
+        "depcheck": "depcheck",
         "lint": "eslint src",
-        "cleanup": "pnpm del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
+        "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/filter": "workspace:^0.5.8",
-        "@leight/query": "workspace:^0.5.8",
-        "@leight/sort": "workspace:^0.5.8",
-        "@leight/utils": "workspace:^0.5.16",
+        "@leight/filter": "workspace:^0.5.9",
+        "@leight/query": "workspace:^0.5.9",
+        "@leight/sort": "workspace:^0.5.9",
+        "@leight/utils": "workspace:^0.5.17",
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.0.9",
-        "@leight/tsconfig": "workspace:^0.5.14",
+        "@leight/eslint-config-eslint": "*",
+        "@leight/tsconfig": "workspace:^0.5.15",
         "@types/node": "^18.13.0",
         "@typescript-eslint/eslint-plugin": "^5.51.0",
         "@typescript-eslint/parser": "^5.51.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
+        "depcheck": "^1.4.3",
         "dotenv-cli": "^7.0.0",
         "eslint": "^8.33.0",
         "eslint-plugin-unicorn": "^45.0.2",

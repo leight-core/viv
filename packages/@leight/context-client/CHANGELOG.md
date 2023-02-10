@@ -1,5 +1,16 @@
 # @leight/context-client
 
+## 0.5.15
+
+### Patch Changes
+
+- Version bump WITH actual build
+- Experimentally enabled Zod schema generator
+- Updated dependencies
+- Updated dependencies
+    - @leight/utils@0.5.17
+    - @leight/zustand@0.5.14
+
 ## 0.5.14
 
 ### Patch Changes

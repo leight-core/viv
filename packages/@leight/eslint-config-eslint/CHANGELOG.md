@@ -1,5 +1,12 @@
 # @leight/eslint-config-eslint
 
+## 0.5.1
+
+### Patch Changes
+
+- Version bump WITH actual build
+- Experimentally enabled Zod schema generator
+
 ## 0.0.9
 
 ### Patch Changes

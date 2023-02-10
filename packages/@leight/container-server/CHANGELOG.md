@@ -1,5 +1,20 @@
 # @leight/container-server
 
+## 0.5.14
+
+### Patch Changes
+
+- Version bump WITH actual build
+- Experimentally enabled Zod schema generator
+- Updated dependencies
+- Updated dependencies
+    - @leight/container@0.5.14
+    - @leight/file-server@0.5.14
+    - @leight/import-server@0.5.14
+    - @leight/job-server@0.5.15
+    - @leight/user-server@0.5.14
+    - @leight/xlsx-import-server@0.5.14
+
 ## 0.5.13
 
 ### Patch Changes

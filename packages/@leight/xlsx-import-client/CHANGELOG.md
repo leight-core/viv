@@ -1,5 +1,16 @@
 # @leight/xlsx-import-client
 
+## 0.5.16
+
+### Patch Changes
+
+- Version bump WITH actual build
+- Experimentally enabled Zod schema generator
+- Updated dependencies
+- Updated dependencies
+    - @leight/mantine@0.5.15
+    - @leight/tsconfig@0.5.15
+
 ## 0.5.15
 
 ### Patch Changes

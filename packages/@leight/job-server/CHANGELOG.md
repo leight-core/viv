@@ -1,5 +1,20 @@
 # @leight/job-server
 
+## 0.5.15
+
+### Patch Changes
+
+- Version bump WITH actual build
+- Experimentally enabled Zod schema generator
+- Updated dependencies
+- Updated dependencies
+    - @leight/container@0.5.14
+    - @leight/job@0.5.15
+    - @leight/prisma@0.5.15
+    - @leight/user@0.5.15
+    - @leight/utils@0.5.17
+    - @leight/winston@0.5.14
+
 ## 0.5.14
 
 ### Patch Changes

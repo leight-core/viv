@@ -15,5 +15,11 @@
                 ]
             }
         }
-    ]
+    ],
+    "rules": {
+        "import/no-cycle": "off",
+        "import/no-useless-path-segments": "off",
+        "@typescript-eslint/no-use-before-define": "off",
+        "spaced-comment": "off"
+    }
 }

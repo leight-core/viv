@@ -1,5 +1,12 @@
 # @leight/user
 
+## 0.5.15
+
+### Patch Changes
+
+- Version bump WITH actual build
+- Experimentally enabled Zod schema generator
+
 ## 0.5.14
 
 ### Patch Changes

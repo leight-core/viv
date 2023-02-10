@@ -1,5 +1,18 @@
 # @leight/user-server
 
+## 0.5.14
+
+### Patch Changes
+
+- Version bump WITH actual build
+- Experimentally enabled Zod schema generator
+- Updated dependencies
+- Updated dependencies
+    - @leight/container@0.5.14
+    - @leight/prisma@0.5.15
+    - @leight/user@0.5.15
+    - @leight/utils@0.5.17
+
 ## 0.5.13
 
 ### Patch Changes

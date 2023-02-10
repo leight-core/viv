@@ -1,5 +1,15 @@
 # @leight/source-server
 
+## 0.5.12
+
+### Patch Changes
+
+- Version bump WITH actual build
+- Experimentally enabled Zod schema generator
+- Updated dependencies
+- Updated dependencies
+    - @leight/source@0.5.10
+
 ## 0.5.11
 
 ### Patch Changes

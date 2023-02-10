@@ -1,5 +1,12 @@
 # @leight/utils-server
 
+## 0.5.14
+
+### Patch Changes
+
+- Version bump WITH actual build
+- Experimentally enabled Zod schema generator
+
 ## 0.5.13
 
 ### Patch Changes

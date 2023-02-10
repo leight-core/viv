@@ -1,5 +1,17 @@
 # @leight/xlsx-import
 
+## 0.5.15
+
+### Patch Changes
+
+- Version bump WITH actual build
+- Experimentally enabled Zod schema generator
+- Updated dependencies
+- Updated dependencies
+    - @leight/import@0.5.14
+    - @leight/job@0.5.15
+    - @leight/trpc@0.5.14
+
 ## 0.5.14
 
 ### Patch Changes

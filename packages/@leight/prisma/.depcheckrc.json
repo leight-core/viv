@@ -19,6 +19,8 @@
         "eslint",
         "eslint-plugin-unicorn",
         "prisma",
+        "zod-prisma-types",
+        "depcheck",
         "react-dom"
     ],
     "specials": [

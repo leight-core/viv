@@ -1,5 +1,18 @@
 # @leight/source
 
+## 0.5.10
+
+### Patch Changes
+
+- Version bump WITH actual build
+- Experimentally enabled Zod schema generator
+- Updated dependencies
+- Updated dependencies
+    - @leight/filter@0.5.9
+    - @leight/query@0.5.9
+    - @leight/sort@0.5.9
+    - @leight/utils@0.5.17
+
 ## 0.5.9
 
 ### Patch Changes

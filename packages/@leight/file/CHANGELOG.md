@@ -1,5 +1,17 @@
 # @leight/file
 
+## 0.5.14
+
+### Patch Changes
+
+- Version bump WITH actual build
+- Experimentally enabled Zod schema generator
+- Updated dependencies
+- Updated dependencies
+    - @leight/prisma@0.5.15
+    - @leight/query@0.5.9
+    - @leight/source@0.5.10
+
 ## 0.5.13
 
 ### Patch Changes

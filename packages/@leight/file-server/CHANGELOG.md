@@ -1,5 +1,18 @@
 # @leight/file-server
 
+## 0.5.14
+
+### Patch Changes
+
+- Version bump WITH actual build
+- Experimentally enabled Zod schema generator
+- Updated dependencies
+- Updated dependencies
+    - @leight/container@0.5.14
+    - @leight/file@0.5.14
+    - @leight/next.js-server@0.5.15
+    - @leight/prisma@0.5.15
+
 ## 0.5.13
 
 ### Patch Changes
