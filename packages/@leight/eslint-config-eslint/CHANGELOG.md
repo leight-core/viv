@@ -1,5 +1,11 @@
 # @leight/eslint-config-eslint
 
+## 0.5.3
+
+### Patch Changes
+
+- Fixed dependencies of eslint
+
 ## 0.5.2
 
 ### Patch Changes
