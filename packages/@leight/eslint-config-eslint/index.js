@@ -2,8 +2,6 @@ module.exports = {
     extends:       [
         "eslint:recommended",
         "next",
-        "airbnb",
-        "airbnb-typescript",
         "prettier",
         "turbo",
         "plugin:@typescript-eslint/eslint-recommended",
