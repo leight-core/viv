@@ -1,5 +1,13 @@
 # @leight/job
 
+## 0.5.17
+
+### Patch Changes
+
+- Version bump, fixes and other cool stuff
+- Updated dependencies
+    - @leight/prisma@0.5.17
+
 ## 0.5.16
 
 ### Patch Changes

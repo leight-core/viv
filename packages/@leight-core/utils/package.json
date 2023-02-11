@@ -1,5 +1,5 @@
 {
-	"version": "0.8.3",
+	"version": "0.8.4",
 	"name": "@leight-core/utils",
 	"description": "Just a simple set of some utilities used by both client and server.",
 	"license": "MIT",
@@ -25,7 +25,7 @@
 		"cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
 	},
 	"dependencies": {
-		"@leight-core/api": "workspace:^0.8.8",
+		"@leight-core/api": "workspace:^0.8.9",
 		"@leight/utils": "workspace:^0.5.18",
 		"deepmerge": "^4.3.0",
 		"fast-clean": "^1.2.1",
@@ -33,18 +33,14 @@
 		"filesize": "^10.0.6",
 		"humanize-duration": "^3.28.0",
 		"i18next": "^22.4.9",
-		"is-callable": "^1.2.7",
 		"is-empty": "^1.2.0",
-		"is-string": "^1.0.7",
 		"reflect-metadata": "^0.1.13"
 	},
 	"devDependencies": {
-		"@leight/eslint-config-eslint": "^0.5.4",
-		"@leight/tsconfig": "^0.5.16",
+		"@leight/eslint-config-eslint": "*",
+		"@leight/tsconfig": "*",
 		"@types/humanize-duration": "^3.27.1",
-		"@types/is-callable": "^1.1.0",
 		"@types/is-empty": "^1.2.1",
-		"@types/is-string": "^1.0.0",
 		"@types/node": "^18.13.0",
 		"del-cli": "^5.0.0",
 		"depcheck": "^1.4.3",

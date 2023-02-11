@@ -1,3 +1,3 @@
-import {type JobStatus} from "@leight/prisma";
+import {type $Prisma} from "@leight/prisma";
 
-export type IJobStatus = JobStatus;
+export type IJobStatus = $Prisma.JobStatus;

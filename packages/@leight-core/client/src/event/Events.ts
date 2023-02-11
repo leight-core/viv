@@ -25,6 +25,7 @@ class EventsClass<TEventTypes extends IBaseEventTypes, TEventHandlers extends IE
 		if (this.dismissed) {
 			console.debug(`Calling event [${event}] on dismissed Events.`);
 			return (() => {
+				// nope
 			}) as any;
 		}
 		const handlers = [this].concat(this.chains as any).concat(Object.values(this.binds as any))

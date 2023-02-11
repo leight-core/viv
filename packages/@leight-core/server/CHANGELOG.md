@@ -1,5 +1,13 @@
 # @leight-core/server
 
+## 0.8.9
+
+### Patch Changes
+
+- Version bump, fixes and other cool stuff
+- Updated dependencies
+	- @leight-core/api@0.8.9
+
 ## 0.8.8
 
 ### Patch Changes

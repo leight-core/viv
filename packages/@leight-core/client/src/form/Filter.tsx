@@ -142,7 +142,6 @@ export function Filter<TFilter = any>(
 		children,
 		...props
 	}: IFilterProps<TFilter>): JSX.Element {
-	const {t}           = useTranslation();
 	const filterContext = useFilterContext<TFilter>();
 	const cursorContext = useOptionalCursorContext();
 	return inline ?

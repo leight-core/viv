@@ -1,5 +1,5 @@
 {
-    "version": "0.5.16",
+    "version": "0.5.17",
     "name": "@leight/context-client",
     "description": "Context helper stuff on client-side, including support for Zustand.",
     "license": "MIT",
@@ -38,7 +38,7 @@
         "zustand": "^4.3.3"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "^0.5.4",
+        "@leight/eslint-config-eslint": "^0.5.5",
         "@leight/tsconfig": "workspace:^0.5.16",
         "@types/node": "^18.13.0",
         "@types/react": "^18.0.28",

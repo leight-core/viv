@@ -37,7 +37,10 @@ export const DeployRefreshManager: FC<IDeployRefreshManagerProps> = ({useVersion
 				type={"primary"}
 				size={"large"}
 				icon={<ReloadOutlined/>}
-				onClick={() => (window.location.href = window.location.href)}
+				onClick={() => {
+					/* eslint-disable no-self-assign */
+					window.location.href = window.location.href;
+				}}
 			>
 				{t("common.new.version.reload")}
 			</Button>}

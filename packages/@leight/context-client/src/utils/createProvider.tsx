@@ -19,11 +19,12 @@ export interface ICreateProviderProps<TStoreProps> {
     Context: IStoreContext<TStoreProps>;
 }
 
-export const createProvider = <TStoreProps, >({
-                                                  createStore,
-                                                  Context,
-                                              }: ICreateProviderProps<TStoreProps>): IStoreProviderFactory<TStoreProps> => {
-    return ({children}) => {
+export const createProvider = <TStoreProps, >(
+    {
+        createStore,
+        Context,
+    }: ICreateProviderProps<TStoreProps>): IStoreProviderFactory<TStoreProps> => {
+    return function StoreProvider({children}) {
         const store = createStore();
         const memo  = useMemo(() => ({state: store.getState(), store}), []);
         return (

@@ -1,5 +1,5 @@
 {
-    "version": "0.5.16",
+    "version": "0.5.17",
     "name": "@leight/job",
     "description": "Common job stuff.",
     "license": "MIT",
@@ -30,7 +30,7 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/prisma": "workspace:^0.5.16",
+        "@leight/prisma": "workspace:^0.5.17",
         "@leight/query": "^0.5.10",
         "@leight/source": "workspace:^0.5.11",
         "@leight/winston": "workspace:^0.5.15",
@@ -38,7 +38,7 @@
         "zod": "^3.20.6"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "^0.5.4",
+        "@leight/eslint-config-eslint": "^0.5.5",
         "@leight/tsconfig": "workspace:^0.5.16",
         "@types/node": "^18.13.0",
         "@typescript-eslint/eslint-plugin": "^5.51.0",

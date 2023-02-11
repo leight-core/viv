@@ -1,12 +1,9 @@
-import {type IBackupSource}       from "../backup";
 import {
 	type IContainer,
 	type IWithContainer
 }                                 from "../container";
-import {type IImportSource}       from "../import";
 import {type UndefinableOptional} from "../interface";
 import {type IPromiseMapper}      from "../mapper";
-import {type IRestoreSource}      from "../restore";
 import {type IMutationSource}     from "./IMutationSource";
 import {type IWithIdentity}       from "./interface";
 import {type IQuery}              from "./IQuery";
@@ -14,18 +11,14 @@ import {type IQuerySource}        from "./IQuerySource";
 import {type IResolveSource}      from "./IResolveSource";
 
 export interface ISource<
-	TContainer extends IContainer<any>,
+	TContainer extends IContainer,
 	TEntity extends Record<string, any>,
 	TItem extends Record<string, any>,
 	TQuery extends IQuery = IQuery,
 	TCreate extends Record<string, any> = any,
-	TBackup extends Record<string, any> = TEntity,
 > extends IWithContainer<TContainer>,
 	IMutationSource<TCreate, TEntity>,
-	IImportSource<TCreate, TEntity>,
 	IQuerySource<TEntity, TQuery>,
-	IBackupSource<TEntity, TBackup>,
-	IRestoreSource<TEntity, TBackup>,
 	IResolveSource<TCreate> {
 	/**
 	 * Name of the source.
@@ -53,5 +46,4 @@ export namespace InferSource {
 	export type Query<T> = T extends ISource<any, any, any, infer U> ? U : T;
 	export type Create<T> = T extends ISource<any, any, any, any, infer U> ? U : T;
 	export type Patch<T> = T extends ISource<any, any, any, any, infer U> ? UndefinableOptional<U> & IWithIdentity : T;
-	export type Backup<T> = T extends ISource<any, any, any, any, any, infer U> ? U : T;
 }

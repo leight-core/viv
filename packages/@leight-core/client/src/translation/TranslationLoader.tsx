@@ -24,18 +24,21 @@ export const TranslationLoader: FC<ITranslationLoaderProps> = ({useQuery, logo, 
 	const result                    = useQuery?.();
 	const {i18next}                 = useI18NextContext();
 	const [isLoading, setIsLoading] = useState(true);
-	if (!result) {
-		return <>{props.children}</>;
-	}
 	useEffect(() => {
+		if (!result) {
+			return;
+		}
 		if (result.isSuccess) {
 			result.data.bundles.forEach(bundle => bundle.translations.forEach(translation => i18next.addResource(bundle.language, bundle.namespace || "translation", translation.key, translation.value)));
 			setIsLoading(false);
 		}
 	}, [
-		result.isSuccess,
-		result.data
+		result?.isSuccess,
+		JSON.stringify(result?.data),
 	]);
+	if (!result) {
+		return <>{props.children}</>;
+	}
 	return <LoaderLayout
 		logo={logo}
 		icon={<TranslationOutlined/>}

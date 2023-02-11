@@ -11,4 +11,4 @@ export {
     Prisma as IPrisma
 }        from "@prisma/client";
 
-export * from "@prisma/client";
+export * as $Prisma from "@prisma/client";

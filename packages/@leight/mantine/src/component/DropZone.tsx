@@ -67,6 +67,7 @@ export const DropZone: FC<IDropZoneProps> = (
                             console.log("files", files);
                             setFiles(files.slice(0, limit));
                             onDrop?.(files, () => {
+                                // nope
                             });
                         }}
                         {...props}

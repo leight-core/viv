@@ -1,5 +1,11 @@
 # @leight-core/api
 
+## 0.8.9
+
+### Patch Changes
+
+- Version bump, fixes and other cool stuff
+
 ## 0.8.8
 
 ### Patch Changes

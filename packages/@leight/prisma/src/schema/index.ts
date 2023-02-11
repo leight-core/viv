@@ -159,6 +159,8 @@ export const AccountSchema = z.object({
     session_state:     z.string().nullable(),
 });
 
+export type Account = z.infer<typeof AccountSchema>
+
 export const AccountOptionalDefaultsSchema = AccountSchema.merge(z.object({
     id: z.string().cuid().optional(),
 }));
@@ -173,7 +175,7 @@ export type AccountWithRelations =
 
 export const AccountWithRelationsSchema: z.ZodType<AccountWithRelations> = AccountSchema.merge(z.object({
     user: z.lazy(() => UserWithRelationsSchema),
-}));
+}))
 
 export type AccountOptionalDefaultsWithRelations =
     z.infer<typeof AccountOptionalDefaultsSchema>
@@ -194,6 +196,8 @@ export const SessionSchema = z.object({
     expires:      z.coerce.date(),
 });
 
+export type Session = z.infer<typeof SessionSchema>
+
 export const SessionOptionalDefaultsSchema = SessionSchema.merge(z.object({
     id: z.string().cuid().optional(),
 }));
@@ -208,7 +212,7 @@ export type SessionWithRelations =
 
 export const SessionWithRelationsSchema: z.ZodType<SessionWithRelations> = SessionSchema.merge(z.object({
     user: z.lazy(() => UserWithRelationsSchema),
-}));
+}))
 
 export type SessionOptionalDefaultsWithRelations =
     z.infer<typeof SessionOptionalDefaultsSchema>
@@ -229,6 +233,8 @@ export const UserSchema = z.object({
     emailVerified: z.coerce.date().nullable(),
     image:         z.string().nullable(),
 });
+
+export type User = z.infer<typeof UserSchema>
 
 export const UserOptionalDefaultsSchema = UserSchema.merge(z.object({
     id: z.string().cuid().optional(),
@@ -252,7 +258,7 @@ export const UserWithRelationsSchema: z.ZodType<UserWithRelations> = UserSchema.
     UserToken: z.lazy(() => UserTokenWithRelationsSchema).array(),
     File:      z.lazy(() => FileWithRelationsSchema).array(),
     Job:       z.lazy(() => JobWithRelationsSchema).array(),
-}));
+}))
 
 export type UserOptionalDefaultsWithRelations =
     z.infer<typeof UserOptionalDefaultsSchema>
@@ -264,7 +270,7 @@ export const UserOptionalDefaultsWithRelationsSchema: z.ZodType<UserOptionalDefa
     UserToken: z.lazy(() => UserTokenWithRelationsSchema).array(),
     File:      z.lazy(() => FileWithRelationsSchema).array(),
     Job:       z.lazy(() => JobWithRelationsSchema).array(),
-}));
+}))
 
 // VERIFICATION TOKEN
 //------------------------------------------------------
@@ -276,6 +282,8 @@ export const VerificationTokenSchema = z.object({
     expires:    z.coerce.date(),
 });
 
+export type VerificationToken = z.infer<typeof VerificationTokenSchema>
+
 // TOKEN
 //------------------------------------------------------
 
@@ -284,6 +292,8 @@ export const TokenSchema = z.object({
     id:   z.string().cuid(),
     name: z.string(),
 });
+
+export type Token = z.infer<typeof TokenSchema>
 
 export const TokenOptionalDefaultsSchema = TokenSchema.merge(z.object({
     id: z.string().cuid().optional(),
@@ -299,7 +309,7 @@ export type TokenWithRelations =
 
 export const TokenWithRelationsSchema: z.ZodType<TokenWithRelations> = TokenSchema.merge(z.object({
     UserToken: z.lazy(() => UserTokenWithRelationsSchema).array(),
-}));
+}))
 
 export type TokenOptionalDefaultsWithRelations =
     z.infer<typeof TokenOptionalDefaultsSchema>
@@ -319,6 +329,8 @@ export const UserTokenSchema = z.object({
     tokenId: z.string(),
 });
 
+export type UserToken = z.infer<typeof UserTokenSchema>
+
 export const UserTokenOptionalDefaultsSchema = UserTokenSchema.merge(z.object({
     id: z.string().cuid().optional(),
 }));
@@ -335,7 +347,7 @@ export type UserTokenWithRelations =
 export const UserTokenWithRelationsSchema: z.ZodType<UserTokenWithRelations> = UserTokenSchema.merge(z.object({
     user:  z.lazy(() => UserWithRelationsSchema),
     token: z.lazy(() => TokenWithRelationsSchema),
-}));
+}))
 
 export type UserTokenOptionalDefaultsWithRelations =
     z.infer<typeof UserTokenOptionalDefaultsSchema>
@@ -363,6 +375,8 @@ export const FileSchema = z.object({
     userId:   z.string().nullable(),
 });
 
+export type File = z.infer<typeof FileSchema>
+
 export const FileOptionalDefaultsSchema = FileSchema.merge(z.object({
     id: z.string().cuid().optional(),
 }));
@@ -377,7 +391,7 @@ export type FileWithRelations =
 
 export const FileWithRelationsSchema: z.ZodType<FileWithRelations> = FileSchema.merge(z.object({
     user: z.lazy(() => UserWithRelationsSchema).nullable(),
-}));
+}))
 
 export type FileOptionalDefaultsWithRelations =
     z.infer<typeof FileOptionalDefaultsSchema>
@@ -398,6 +412,8 @@ export const TranslationSchema = z.object({
     text:   z.string(),
     hash:   z.string(),
 });
+
+export type Translation = z.infer<typeof TranslationSchema>
 
 export const TranslationOptionalDefaultsSchema = TranslationSchema.merge(z.object({
     id: z.string().cuid().optional(),
@@ -426,6 +442,8 @@ export const JobSchema = z.object({
     params:       z.string().nullable(),
 });
 
+export type Job = z.infer<typeof JobSchema>
+
 export const JobOptionalDefaultsSchema = JobSchema.merge(z.object({
     status:   JobStatusSchema.optional(),
     id:       z.string().cuid().optional(),
@@ -445,7 +463,7 @@ export type JobWithRelations =
 export const JobWithRelationsSchema: z.ZodType<JobWithRelations> = JobSchema.merge(z.object({
     user: z.lazy(() => UserWithRelationsSchema).nullable(),
     logs: z.lazy(() => JobLogWithRelationsSchema).array(),
-}));
+}))
 
 export type JobOptionalDefaultsWithRelations =
     z.infer<typeof JobOptionalDefaultsSchema>
@@ -466,6 +484,8 @@ export const JobLogSchema = z.object({
     message: z.string(),
 });
 
+export type JobLog = z.infer<typeof JobLogSchema>
+
 export const JobLogOptionalDefaultsSchema = JobLogSchema.merge(z.object({
     id: z.string().cuid().optional(),
 }));
@@ -480,7 +500,7 @@ export type JobLogWithRelations =
 
 export const JobLogWithRelationsSchema: z.ZodType<JobLogWithRelations> = JobLogSchema.merge(z.object({
     job: z.lazy(() => JobWithRelationsSchema),
-}));
+}))
 
 export type JobLogOptionalDefaultsWithRelations =
     z.infer<typeof JobLogOptionalDefaultsSchema>
@@ -499,6 +519,8 @@ export const KeywordSchema = z.object({
     text: z.string(),
 });
 
+export type Keyword = z.infer<typeof KeywordSchema>
+
 export const KeywordOptionalDefaultsSchema = KeywordSchema.merge(z.object({
     id: z.string().cuid().optional(),
 }));
@@ -516,7 +538,7 @@ export const AccountIncludeSchema: z.ZodType<Prisma.AccountInclude> = z.object({
         z.boolean(),
         z.lazy(() => UserArgsSchema)
     ]).optional(),
-}).strict();
+}).strict()
 
 export const AccountArgsSchema: z.ZodType<Prisma.AccountArgs> = z.object({
     select:  z.lazy(() => AccountSelectSchema).optional(),
@@ -540,7 +562,7 @@ export const AccountSelectSchema: z.ZodType<Prisma.AccountSelect> = z.object({
         z.boolean(),
         z.lazy(() => UserArgsSchema)
     ]).optional(),
-}).strict();
+}).strict()
 
 // SESSION
 //------------------------------------------------------
@@ -550,7 +572,7 @@ export const SessionIncludeSchema: z.ZodType<Prisma.SessionInclude> = z.object({
         z.boolean(),
         z.lazy(() => UserArgsSchema)
     ]).optional(),
-}).strict();
+}).strict()
 
 export const SessionArgsSchema: z.ZodType<Prisma.SessionArgs> = z.object({
     select:  z.lazy(() => SessionSelectSchema).optional(),
@@ -566,7 +588,7 @@ export const SessionSelectSchema: z.ZodType<Prisma.SessionSelect> = z.object({
         z.boolean(),
         z.lazy(() => UserArgsSchema)
     ]).optional(),
-}).strict();
+}).strict()
 
 // USER
 //------------------------------------------------------
@@ -596,7 +618,7 @@ export const UserIncludeSchema: z.ZodType<Prisma.UserInclude> = z.object({
         z.boolean(),
         z.lazy(() => UserCountOutputTypeArgsSchema)
     ]).optional(),
-}).strict();
+}).strict()
 
 export const UserArgsSchema: z.ZodType<Prisma.UserArgs> = z.object({
     select:  z.lazy(() => UserSelectSchema).optional(),
@@ -645,7 +667,7 @@ export const UserSelectSchema: z.ZodType<Prisma.UserSelect> = z.object({
         z.boolean(),
         z.lazy(() => UserCountOutputTypeArgsSchema)
     ]).optional(),
-}).strict();
+}).strict()
 
 // VERIFICATION TOKEN
 //------------------------------------------------------
@@ -654,7 +676,7 @@ export const VerificationTokenSelectSchema: z.ZodType<Prisma.VerificationTokenSe
     identifier: z.boolean().optional(),
     token:      z.boolean().optional(),
     expires:    z.boolean().optional(),
-}).strict();
+}).strict()
 
 // TOKEN
 //------------------------------------------------------
@@ -668,7 +690,7 @@ export const TokenIncludeSchema: z.ZodType<Prisma.TokenInclude> = z.object({
         z.boolean(),
         z.lazy(() => TokenCountOutputTypeArgsSchema)
     ]).optional(),
-}).strict();
+}).strict()
 
 export const TokenArgsSchema: z.ZodType<Prisma.TokenArgs> = z.object({
     select:  z.lazy(() => TokenSelectSchema).optional(),
@@ -694,7 +716,7 @@ export const TokenSelectSchema: z.ZodType<Prisma.TokenSelect> = z.object({
         z.boolean(),
         z.lazy(() => TokenCountOutputTypeArgsSchema)
     ]).optional(),
-}).strict();
+}).strict()
 
 // USER TOKEN
 //------------------------------------------------------
@@ -708,7 +730,7 @@ export const UserTokenIncludeSchema: z.ZodType<Prisma.UserTokenInclude> = z.obje
         z.boolean(),
         z.lazy(() => TokenArgsSchema)
     ]).optional(),
-}).strict();
+}).strict()
 
 export const UserTokenArgsSchema: z.ZodType<Prisma.UserTokenArgs> = z.object({
     select:  z.lazy(() => UserTokenSelectSchema).optional(),
@@ -727,7 +749,7 @@ export const UserTokenSelectSchema: z.ZodType<Prisma.UserTokenSelect> = z.object
         z.boolean(),
         z.lazy(() => TokenArgsSchema)
     ]).optional(),
-}).strict();
+}).strict()
 
 // FILE
 //------------------------------------------------------
@@ -737,7 +759,7 @@ export const FileIncludeSchema: z.ZodType<Prisma.FileInclude> = z.object({
         z.boolean(),
         z.lazy(() => UserArgsSchema)
     ]).optional(),
-}).strict();
+}).strict()
 
 export const FileArgsSchema: z.ZodType<Prisma.FileArgs> = z.object({
     select:  z.lazy(() => FileSelectSchema).optional(),
@@ -759,7 +781,7 @@ export const FileSelectSchema: z.ZodType<Prisma.FileSelect> = z.object({
         z.boolean(),
         z.lazy(() => UserArgsSchema)
     ]).optional(),
-}).strict();
+}).strict()
 
 // TRANSLATION
 //------------------------------------------------------
@@ -770,7 +792,7 @@ export const TranslationSelectSchema: z.ZodType<Prisma.TranslationSelect> = z.ob
     label:  z.boolean().optional(),
     text:   z.boolean().optional(),
     hash:   z.boolean().optional(),
-}).strict();
+}).strict()
 
 // JOB
 //------------------------------------------------------
@@ -788,7 +810,7 @@ export const JobIncludeSchema: z.ZodType<Prisma.JobInclude> = z.object({
         z.boolean(),
         z.lazy(() => JobCountOutputTypeArgsSchema)
     ]).optional(),
-}).strict();
+}).strict()
 
 export const JobArgsSchema: z.ZodType<Prisma.JobArgs> = z.object({
     select:  z.lazy(() => JobSelectSchema).optional(),
@@ -832,7 +854,7 @@ export const JobSelectSchema: z.ZodType<Prisma.JobSelect> = z.object({
         z.boolean(),
         z.lazy(() => JobCountOutputTypeArgsSchema)
     ]).optional(),
-}).strict();
+}).strict()
 
 // JOB LOG
 //------------------------------------------------------
@@ -842,7 +864,7 @@ export const JobLogIncludeSchema: z.ZodType<Prisma.JobLogInclude> = z.object({
         z.boolean(),
         z.lazy(() => JobArgsSchema)
     ]).optional(),
-}).strict();
+}).strict()
 
 export const JobLogArgsSchema: z.ZodType<Prisma.JobLogArgs> = z.object({
     select:  z.lazy(() => JobLogSelectSchema).optional(),
@@ -857,7 +879,7 @@ export const JobLogSelectSchema: z.ZodType<Prisma.JobLogSelect> = z.object({
         z.lazy(() => JobArgsSchema)
     ]).optional(),
     message: z.boolean().optional(),
-}).strict();
+}).strict()
 
 // KEYWORD
 //------------------------------------------------------
@@ -865,7 +887,7 @@ export const JobLogSelectSchema: z.ZodType<Prisma.JobLogSelect> = z.object({
 export const KeywordSelectSchema: z.ZodType<Prisma.KeywordSelect> = z.object({
     id:   z.boolean().optional(),
     text: z.boolean().optional(),
-}).strict();
+}).strict()
 
 /////////////////////////////////////////
 // INPUT TYPES
@@ -952,9 +974,9 @@ export const AccountOrderByWithRelationInputSchema: z.ZodType<Prisma.AccountOrde
 }).strict();
 
 export const AccountWhereUniqueInputSchema: z.ZodType<Prisma.AccountWhereUniqueInput> = z.object({
-    id:                         z.string().optional(),
+    id:                         z.string().cuid().optional(),
     provider_providerAccountId: z.lazy(() => AccountProviderProviderAccountIdCompoundUniqueInputSchema).optional(),
-}).strict().refine((data) => !!data.id || !!data.provider_providerAccountId, {message: "At least one field must be provided @ AccountWhereUniqueInput"});
+}).strict();
 
 export const AccountOrderByWithAggregationInputSchema: z.ZodType<Prisma.AccountOrderByWithAggregationInput> = z.object({
     id:                z.lazy(() => SortOrderSchema).optional(),
@@ -1077,9 +1099,9 @@ export const SessionOrderByWithRelationInputSchema: z.ZodType<Prisma.SessionOrde
 }).strict();
 
 export const SessionWhereUniqueInputSchema: z.ZodType<Prisma.SessionWhereUniqueInput> = z.object({
-    id:           z.string().optional(),
+    id:           z.string().cuid().optional(),
     sessionToken: z.string().optional(),
-}).strict().refine((data) => !!data.id || !!data.sessionToken, {message: "At least one field must be provided @ SessionWhereUniqueInput"});
+}).strict();
 
 export const SessionOrderByWithAggregationInputSchema: z.ZodType<Prisma.SessionOrderByWithAggregationInput> = z.object({
     id:           z.lazy(() => SortOrderSchema).optional(),
@@ -1170,9 +1192,9 @@ export const UserOrderByWithRelationInputSchema: z.ZodType<Prisma.UserOrderByWit
 }).strict();
 
 export const UserWhereUniqueInputSchema: z.ZodType<Prisma.UserWhereUniqueInput> = z.object({
-    id:    z.string().optional(),
+    id:    z.string().cuid().optional(),
     email: z.string().optional(),
-}).strict().refine((data) => !!data.id || !!data.email, {message: "At least one field must be provided @ UserWhereUniqueInput"});
+}).strict();
 
 export const UserOrderByWithAggregationInputSchema: z.ZodType<Prisma.UserOrderByWithAggregationInput> = z.object({
     id:            z.lazy(() => SortOrderSchema).optional(),
@@ -1250,7 +1272,7 @@ export const VerificationTokenOrderByWithRelationInputSchema: z.ZodType<Prisma.V
 export const VerificationTokenWhereUniqueInputSchema: z.ZodType<Prisma.VerificationTokenWhereUniqueInput> = z.object({
     token:            z.string().optional(),
     identifier_token: z.lazy(() => VerificationTokenIdentifierTokenCompoundUniqueInputSchema).optional(),
-}).strict().refine((data) => !!data.token || !!data.identifier_token, {message: "At least one field must be provided @ VerificationTokenWhereUniqueInput"});
+}).strict();
 
 export const VerificationTokenOrderByWithAggregationInputSchema: z.ZodType<Prisma.VerificationTokenOrderByWithAggregationInput> = z.object({
     identifier: z.lazy(() => SortOrderSchema).optional(),
@@ -1313,9 +1335,9 @@ export const TokenOrderByWithRelationInputSchema: z.ZodType<Prisma.TokenOrderByW
 }).strict();
 
 export const TokenWhereUniqueInputSchema: z.ZodType<Prisma.TokenWhereUniqueInput> = z.object({
-    id:   z.string().optional(),
+    id:   z.string().cuid().optional(),
     name: z.string().optional(),
-}).strict().refine((data) => !!data.id || !!data.name, {message: "At least one field must be provided @ TokenWhereUniqueInput"});
+}).strict();
 
 export const TokenOrderByWithAggregationInputSchema: z.ZodType<Prisma.TokenOrderByWithAggregationInput> = z.object({
     id:     z.lazy(() => SortOrderSchema).optional(),
@@ -1386,9 +1408,9 @@ export const UserTokenOrderByWithRelationInputSchema: z.ZodType<Prisma.UserToken
 }).strict();
 
 export const UserTokenWhereUniqueInputSchema: z.ZodType<Prisma.UserTokenWhereUniqueInput> = z.object({
-    id:             z.string().optional(),
+    id:             z.string().cuid().optional(),
     userId_tokenId: z.lazy(() => UserTokenUserIdTokenIdCompoundUniqueInputSchema).optional(),
-}).strict().refine((data) => !!data.id || !!data.userId_tokenId, {message: "At least one field must be provided @ UserTokenWhereUniqueInput"});
+}).strict();
 
 export const UserTokenOrderByWithAggregationInputSchema: z.ZodType<Prisma.UserTokenOrderByWithAggregationInput> = z.object({
     id:      z.lazy(() => SortOrderSchema).optional(),
@@ -1494,9 +1516,9 @@ export const FileOrderByWithRelationInputSchema: z.ZodType<Prisma.FileOrderByWit
 }).strict();
 
 export const FileWhereUniqueInputSchema: z.ZodType<Prisma.FileWhereUniqueInput> = z.object({
-    id:               z.string().optional(),
+    id:               z.string().cuid().optional(),
     userId_path_name: z.lazy(() => FileUserIdPathNameCompoundUniqueInputSchema).optional(),
-}).strict().refine((data) => !!data.id || !!data.userId_path_name, {message: "At least one field must be provided @ FileWhereUniqueInput"});
+}).strict();
 
 export const FileOrderByWithAggregationInputSchema: z.ZodType<Prisma.FileOrderByWithAggregationInput> = z.object({
     id:       z.lazy(() => SortOrderSchema).optional(),
@@ -1609,9 +1631,9 @@ export const TranslationOrderByWithRelationInputSchema: z.ZodType<Prisma.Transla
 }).strict();
 
 export const TranslationWhereUniqueInputSchema: z.ZodType<Prisma.TranslationWhereUniqueInput> = z.object({
-    id:          z.string().optional(),
+    id:          z.string().cuid().optional(),
     locale_hash: z.lazy(() => TranslationLocaleHashCompoundUniqueInputSchema).optional(),
-}).strict().refine((data) => !!data.id || !!data.locale_hash, {message: "At least one field must be provided @ TranslationWhereUniqueInput"});
+}).strict();
 
 export const TranslationOrderByWithAggregationInputSchema: z.ZodType<Prisma.TranslationOrderByWithAggregationInput> = z.object({
     id:     z.lazy(() => SortOrderSchema).optional(),
@@ -1759,7 +1781,7 @@ export const JobOrderByWithRelationInputSchema: z.ZodType<Prisma.JobOrderByWithR
 }).strict();
 
 export const JobWhereUniqueInputSchema: z.ZodType<Prisma.JobWhereUniqueInput> = z.object({
-    id: z.string().optional(),
+    id: z.string().cuid().optional(),
 }).strict();
 
 export const JobOrderByWithAggregationInputSchema: z.ZodType<Prisma.JobOrderByWithAggregationInput> = z.object({
@@ -1898,7 +1920,7 @@ export const JobLogOrderByWithRelationInputSchema: z.ZodType<Prisma.JobLogOrderB
 }).strict();
 
 export const JobLogWhereUniqueInputSchema: z.ZodType<Prisma.JobLogWhereUniqueInput> = z.object({
-    id: z.string().optional(),
+    id: z.string().cuid().optional(),
 }).strict();
 
 export const JobLogOrderByWithAggregationInputSchema: z.ZodType<Prisma.JobLogOrderByWithAggregationInput> = z.object({
@@ -1960,9 +1982,9 @@ export const KeywordOrderByWithRelationInputSchema: z.ZodType<Prisma.KeywordOrde
 }).strict();
 
 export const KeywordWhereUniqueInputSchema: z.ZodType<Prisma.KeywordWhereUniqueInput> = z.object({
-    id:   z.string().optional(),
+    id:   z.string().cuid().optional(),
     text: z.string().optional(),
-}).strict().refine((data) => !!data.id || !!data.text, {message: "At least one field must be provided @ KeywordWhereUniqueInput"});
+}).strict();
 
 export const KeywordOrderByWithAggregationInputSchema: z.ZodType<Prisma.KeywordOrderByWithAggregationInput> = z.object({
     id:     z.lazy(() => SortOrderSchema).optional(),
@@ -7635,7 +7657,7 @@ export const AccountFindFirstArgsSchema: z.ZodType<Prisma.AccountFindFirstArgs> 
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: AccountScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const AccountFindFirstOrThrowArgsSchema: z.ZodType<Prisma.AccountFindFirstOrThrowArgs> = z.object({
     select:   AccountSelectSchema.optional(),
@@ -7649,7 +7671,7 @@ export const AccountFindFirstOrThrowArgsSchema: z.ZodType<Prisma.AccountFindFirs
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: AccountScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const AccountFindManyArgsSchema: z.ZodType<Prisma.AccountFindManyArgs> = z.object({
     select:   AccountSelectSchema.optional(),
@@ -7663,7 +7685,7 @@ export const AccountFindManyArgsSchema: z.ZodType<Prisma.AccountFindManyArgs> = 
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: AccountScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const AccountAggregateArgsSchema: z.ZodType<Prisma.AccountAggregateArgs> = z.object({
     select:  AccountSelectSchema.optional(),
@@ -7676,7 +7698,7 @@ export const AccountAggregateArgsSchema: z.ZodType<Prisma.AccountAggregateArgs> 
     cursor:  AccountWhereUniqueInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const AccountGroupByArgsSchema: z.ZodType<Prisma.AccountGroupByArgs> = z.object({
     select:  AccountSelectSchema.optional(),
@@ -7690,19 +7712,19 @@ export const AccountGroupByArgsSchema: z.ZodType<Prisma.AccountGroupByArgs> = z.
     having:  AccountScalarWhereWithAggregatesInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const AccountFindUniqueArgsSchema: z.ZodType<Prisma.AccountFindUniqueArgs> = z.object({
     select:  AccountSelectSchema.optional(),
     include: AccountIncludeSchema.optional(),
     where:   AccountWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const AccountFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.AccountFindUniqueOrThrowArgs> = z.object({
     select:  AccountSelectSchema.optional(),
     include: AccountIncludeSchema.optional(),
     where:   AccountWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const SessionFindFirstArgsSchema: z.ZodType<Prisma.SessionFindFirstArgs> = z.object({
     select:   SessionSelectSchema.optional(),
@@ -7716,7 +7738,7 @@ export const SessionFindFirstArgsSchema: z.ZodType<Prisma.SessionFindFirstArgs> 
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: SessionScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const SessionFindFirstOrThrowArgsSchema: z.ZodType<Prisma.SessionFindFirstOrThrowArgs> = z.object({
     select:   SessionSelectSchema.optional(),
@@ -7730,7 +7752,7 @@ export const SessionFindFirstOrThrowArgsSchema: z.ZodType<Prisma.SessionFindFirs
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: SessionScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const SessionFindManyArgsSchema: z.ZodType<Prisma.SessionFindManyArgs> = z.object({
     select:   SessionSelectSchema.optional(),
@@ -7744,7 +7766,7 @@ export const SessionFindManyArgsSchema: z.ZodType<Prisma.SessionFindManyArgs> = 
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: SessionScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const SessionAggregateArgsSchema: z.ZodType<Prisma.SessionAggregateArgs> = z.object({
     select:  SessionSelectSchema.optional(),
@@ -7757,7 +7779,7 @@ export const SessionAggregateArgsSchema: z.ZodType<Prisma.SessionAggregateArgs> 
     cursor:  SessionWhereUniqueInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const SessionGroupByArgsSchema: z.ZodType<Prisma.SessionGroupByArgs> = z.object({
     select:  SessionSelectSchema.optional(),
@@ -7771,19 +7793,19 @@ export const SessionGroupByArgsSchema: z.ZodType<Prisma.SessionGroupByArgs> = z.
     having:  SessionScalarWhereWithAggregatesInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const SessionFindUniqueArgsSchema: z.ZodType<Prisma.SessionFindUniqueArgs> = z.object({
     select:  SessionSelectSchema.optional(),
     include: SessionIncludeSchema.optional(),
     where:   SessionWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const SessionFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.SessionFindUniqueOrThrowArgs> = z.object({
     select:  SessionSelectSchema.optional(),
     include: SessionIncludeSchema.optional(),
     where:   SessionWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const UserFindFirstArgsSchema: z.ZodType<Prisma.UserFindFirstArgs> = z.object({
     select:   UserSelectSchema.optional(),
@@ -7797,7 +7819,7 @@ export const UserFindFirstArgsSchema: z.ZodType<Prisma.UserFindFirstArgs> = z.ob
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: UserScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const UserFindFirstOrThrowArgsSchema: z.ZodType<Prisma.UserFindFirstOrThrowArgs> = z.object({
     select:   UserSelectSchema.optional(),
@@ -7811,7 +7833,7 @@ export const UserFindFirstOrThrowArgsSchema: z.ZodType<Prisma.UserFindFirstOrThr
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: UserScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const UserFindManyArgsSchema: z.ZodType<Prisma.UserFindManyArgs> = z.object({
     select:   UserSelectSchema.optional(),
@@ -7825,7 +7847,7 @@ export const UserFindManyArgsSchema: z.ZodType<Prisma.UserFindManyArgs> = z.obje
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: UserScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const UserAggregateArgsSchema: z.ZodType<Prisma.UserAggregateArgs> = z.object({
     select:  UserSelectSchema.optional(),
@@ -7838,7 +7860,7 @@ export const UserAggregateArgsSchema: z.ZodType<Prisma.UserAggregateArgs> = z.ob
     cursor:  UserWhereUniqueInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const UserGroupByArgsSchema: z.ZodType<Prisma.UserGroupByArgs> = z.object({
     select:  UserSelectSchema.optional(),
@@ -7852,19 +7874,19 @@ export const UserGroupByArgsSchema: z.ZodType<Prisma.UserGroupByArgs> = z.object
     having:  UserScalarWhereWithAggregatesInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const UserFindUniqueArgsSchema: z.ZodType<Prisma.UserFindUniqueArgs> = z.object({
     select:  UserSelectSchema.optional(),
     include: UserIncludeSchema.optional(),
     where:   UserWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const UserFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.UserFindUniqueOrThrowArgs> = z.object({
     select:  UserSelectSchema.optional(),
     include: UserIncludeSchema.optional(),
     where:   UserWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const VerificationTokenFindFirstArgsSchema: z.ZodType<Prisma.VerificationTokenFindFirstArgs> = z.object({
     select:   VerificationTokenSelectSchema.optional(),
@@ -7877,7 +7899,7 @@ export const VerificationTokenFindFirstArgsSchema: z.ZodType<Prisma.Verification
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: VerificationTokenScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const VerificationTokenFindFirstOrThrowArgsSchema: z.ZodType<Prisma.VerificationTokenFindFirstOrThrowArgs> = z.object({
     select:   VerificationTokenSelectSchema.optional(),
@@ -7890,7 +7912,7 @@ export const VerificationTokenFindFirstOrThrowArgsSchema: z.ZodType<Prisma.Verif
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: VerificationTokenScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const VerificationTokenFindManyArgsSchema: z.ZodType<Prisma.VerificationTokenFindManyArgs> = z.object({
     select:   VerificationTokenSelectSchema.optional(),
@@ -7903,7 +7925,7 @@ export const VerificationTokenFindManyArgsSchema: z.ZodType<Prisma.VerificationT
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: VerificationTokenScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const VerificationTokenAggregateArgsSchema: z.ZodType<Prisma.VerificationTokenAggregateArgs> = z.object({
     select:  VerificationTokenSelectSchema.optional(),
@@ -7915,7 +7937,7 @@ export const VerificationTokenAggregateArgsSchema: z.ZodType<Prisma.Verification
     cursor:  VerificationTokenWhereUniqueInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const VerificationTokenGroupByArgsSchema: z.ZodType<Prisma.VerificationTokenGroupByArgs> = z.object({
     select:  VerificationTokenSelectSchema.optional(),
@@ -7928,17 +7950,17 @@ export const VerificationTokenGroupByArgsSchema: z.ZodType<Prisma.VerificationTo
     having:  VerificationTokenScalarWhereWithAggregatesInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const VerificationTokenFindUniqueArgsSchema: z.ZodType<Prisma.VerificationTokenFindUniqueArgs> = z.object({
     select: VerificationTokenSelectSchema.optional(),
     where:  VerificationTokenWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const VerificationTokenFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.VerificationTokenFindUniqueOrThrowArgs> = z.object({
     select: VerificationTokenSelectSchema.optional(),
     where:  VerificationTokenWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const TokenFindFirstArgsSchema: z.ZodType<Prisma.TokenFindFirstArgs> = z.object({
     select:   TokenSelectSchema.optional(),
@@ -7952,7 +7974,7 @@ export const TokenFindFirstArgsSchema: z.ZodType<Prisma.TokenFindFirstArgs> = z.
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: TokenScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const TokenFindFirstOrThrowArgsSchema: z.ZodType<Prisma.TokenFindFirstOrThrowArgs> = z.object({
     select:   TokenSelectSchema.optional(),
@@ -7966,7 +7988,7 @@ export const TokenFindFirstOrThrowArgsSchema: z.ZodType<Prisma.TokenFindFirstOrT
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: TokenScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const TokenFindManyArgsSchema: z.ZodType<Prisma.TokenFindManyArgs> = z.object({
     select:   TokenSelectSchema.optional(),
@@ -7980,7 +8002,7 @@ export const TokenFindManyArgsSchema: z.ZodType<Prisma.TokenFindManyArgs> = z.ob
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: TokenScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const TokenAggregateArgsSchema: z.ZodType<Prisma.TokenAggregateArgs> = z.object({
     select:  TokenSelectSchema.optional(),
@@ -7993,7 +8015,7 @@ export const TokenAggregateArgsSchema: z.ZodType<Prisma.TokenAggregateArgs> = z.
     cursor:  TokenWhereUniqueInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const TokenGroupByArgsSchema: z.ZodType<Prisma.TokenGroupByArgs> = z.object({
     select:  TokenSelectSchema.optional(),
@@ -8007,19 +8029,19 @@ export const TokenGroupByArgsSchema: z.ZodType<Prisma.TokenGroupByArgs> = z.obje
     having:  TokenScalarWhereWithAggregatesInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const TokenFindUniqueArgsSchema: z.ZodType<Prisma.TokenFindUniqueArgs> = z.object({
     select:  TokenSelectSchema.optional(),
     include: TokenIncludeSchema.optional(),
     where:   TokenWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const TokenFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.TokenFindUniqueOrThrowArgs> = z.object({
     select:  TokenSelectSchema.optional(),
     include: TokenIncludeSchema.optional(),
     where:   TokenWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const UserTokenFindFirstArgsSchema: z.ZodType<Prisma.UserTokenFindFirstArgs> = z.object({
     select:   UserTokenSelectSchema.optional(),
@@ -8033,7 +8055,7 @@ export const UserTokenFindFirstArgsSchema: z.ZodType<Prisma.UserTokenFindFirstAr
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: UserTokenScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const UserTokenFindFirstOrThrowArgsSchema: z.ZodType<Prisma.UserTokenFindFirstOrThrowArgs> = z.object({
     select:   UserTokenSelectSchema.optional(),
@@ -8047,7 +8069,7 @@ export const UserTokenFindFirstOrThrowArgsSchema: z.ZodType<Prisma.UserTokenFind
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: UserTokenScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const UserTokenFindManyArgsSchema: z.ZodType<Prisma.UserTokenFindManyArgs> = z.object({
     select:   UserTokenSelectSchema.optional(),
@@ -8061,7 +8083,7 @@ export const UserTokenFindManyArgsSchema: z.ZodType<Prisma.UserTokenFindManyArgs
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: UserTokenScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const UserTokenAggregateArgsSchema: z.ZodType<Prisma.UserTokenAggregateArgs> = z.object({
     select:  UserTokenSelectSchema.optional(),
@@ -8074,7 +8096,7 @@ export const UserTokenAggregateArgsSchema: z.ZodType<Prisma.UserTokenAggregateAr
     cursor:  UserTokenWhereUniqueInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const UserTokenGroupByArgsSchema: z.ZodType<Prisma.UserTokenGroupByArgs> = z.object({
     select:  UserTokenSelectSchema.optional(),
@@ -8088,19 +8110,19 @@ export const UserTokenGroupByArgsSchema: z.ZodType<Prisma.UserTokenGroupByArgs> 
     having:  UserTokenScalarWhereWithAggregatesInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const UserTokenFindUniqueArgsSchema: z.ZodType<Prisma.UserTokenFindUniqueArgs> = z.object({
     select:  UserTokenSelectSchema.optional(),
     include: UserTokenIncludeSchema.optional(),
     where:   UserTokenWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const UserTokenFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.UserTokenFindUniqueOrThrowArgs> = z.object({
     select:  UserTokenSelectSchema.optional(),
     include: UserTokenIncludeSchema.optional(),
     where:   UserTokenWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const FileFindFirstArgsSchema: z.ZodType<Prisma.FileFindFirstArgs> = z.object({
     select:   FileSelectSchema.optional(),
@@ -8114,7 +8136,7 @@ export const FileFindFirstArgsSchema: z.ZodType<Prisma.FileFindFirstArgs> = z.ob
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: FileScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const FileFindFirstOrThrowArgsSchema: z.ZodType<Prisma.FileFindFirstOrThrowArgs> = z.object({
     select:   FileSelectSchema.optional(),
@@ -8128,7 +8150,7 @@ export const FileFindFirstOrThrowArgsSchema: z.ZodType<Prisma.FileFindFirstOrThr
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: FileScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const FileFindManyArgsSchema: z.ZodType<Prisma.FileFindManyArgs> = z.object({
     select:   FileSelectSchema.optional(),
@@ -8142,7 +8164,7 @@ export const FileFindManyArgsSchema: z.ZodType<Prisma.FileFindManyArgs> = z.obje
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: FileScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const FileAggregateArgsSchema: z.ZodType<Prisma.FileAggregateArgs> = z.object({
     select:  FileSelectSchema.optional(),
@@ -8155,7 +8177,7 @@ export const FileAggregateArgsSchema: z.ZodType<Prisma.FileAggregateArgs> = z.ob
     cursor:  FileWhereUniqueInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const FileGroupByArgsSchema: z.ZodType<Prisma.FileGroupByArgs> = z.object({
     select:  FileSelectSchema.optional(),
@@ -8169,19 +8191,19 @@ export const FileGroupByArgsSchema: z.ZodType<Prisma.FileGroupByArgs> = z.object
     having:  FileScalarWhereWithAggregatesInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const FileFindUniqueArgsSchema: z.ZodType<Prisma.FileFindUniqueArgs> = z.object({
     select:  FileSelectSchema.optional(),
     include: FileIncludeSchema.optional(),
     where:   FileWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const FileFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.FileFindUniqueOrThrowArgs> = z.object({
     select:  FileSelectSchema.optional(),
     include: FileIncludeSchema.optional(),
     where:   FileWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const TranslationFindFirstArgsSchema: z.ZodType<Prisma.TranslationFindFirstArgs> = z.object({
     select:   TranslationSelectSchema.optional(),
@@ -8194,7 +8216,7 @@ export const TranslationFindFirstArgsSchema: z.ZodType<Prisma.TranslationFindFir
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: TranslationScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const TranslationFindFirstOrThrowArgsSchema: z.ZodType<Prisma.TranslationFindFirstOrThrowArgs> = z.object({
     select:   TranslationSelectSchema.optional(),
@@ -8207,7 +8229,7 @@ export const TranslationFindFirstOrThrowArgsSchema: z.ZodType<Prisma.Translation
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: TranslationScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const TranslationFindManyArgsSchema: z.ZodType<Prisma.TranslationFindManyArgs> = z.object({
     select:   TranslationSelectSchema.optional(),
@@ -8220,7 +8242,7 @@ export const TranslationFindManyArgsSchema: z.ZodType<Prisma.TranslationFindMany
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: TranslationScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const TranslationAggregateArgsSchema: z.ZodType<Prisma.TranslationAggregateArgs> = z.object({
     select:  TranslationSelectSchema.optional(),
@@ -8232,7 +8254,7 @@ export const TranslationAggregateArgsSchema: z.ZodType<Prisma.TranslationAggrega
     cursor:  TranslationWhereUniqueInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const TranslationGroupByArgsSchema: z.ZodType<Prisma.TranslationGroupByArgs> = z.object({
     select:  TranslationSelectSchema.optional(),
@@ -8245,17 +8267,17 @@ export const TranslationGroupByArgsSchema: z.ZodType<Prisma.TranslationGroupByAr
     having:  TranslationScalarWhereWithAggregatesInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const TranslationFindUniqueArgsSchema: z.ZodType<Prisma.TranslationFindUniqueArgs> = z.object({
     select: TranslationSelectSchema.optional(),
     where:  TranslationWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const TranslationFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.TranslationFindUniqueOrThrowArgs> = z.object({
     select: TranslationSelectSchema.optional(),
     where:  TranslationWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const JobFindFirstArgsSchema: z.ZodType<Prisma.JobFindFirstArgs> = z.object({
     select:   JobSelectSchema.optional(),
@@ -8269,7 +8291,7 @@ export const JobFindFirstArgsSchema: z.ZodType<Prisma.JobFindFirstArgs> = z.obje
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: JobScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const JobFindFirstOrThrowArgsSchema: z.ZodType<Prisma.JobFindFirstOrThrowArgs> = z.object({
     select:   JobSelectSchema.optional(),
@@ -8283,7 +8305,7 @@ export const JobFindFirstOrThrowArgsSchema: z.ZodType<Prisma.JobFindFirstOrThrow
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: JobScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const JobFindManyArgsSchema: z.ZodType<Prisma.JobFindManyArgs> = z.object({
     select:   JobSelectSchema.optional(),
@@ -8297,7 +8319,7 @@ export const JobFindManyArgsSchema: z.ZodType<Prisma.JobFindManyArgs> = z.object
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: JobScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const JobAggregateArgsSchema: z.ZodType<Prisma.JobAggregateArgs> = z.object({
     select:  JobSelectSchema.optional(),
@@ -8310,7 +8332,7 @@ export const JobAggregateArgsSchema: z.ZodType<Prisma.JobAggregateArgs> = z.obje
     cursor:  JobWhereUniqueInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const JobGroupByArgsSchema: z.ZodType<Prisma.JobGroupByArgs> = z.object({
     select:  JobSelectSchema.optional(),
@@ -8324,19 +8346,19 @@ export const JobGroupByArgsSchema: z.ZodType<Prisma.JobGroupByArgs> = z.object({
     having:  JobScalarWhereWithAggregatesInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const JobFindUniqueArgsSchema: z.ZodType<Prisma.JobFindUniqueArgs> = z.object({
     select:  JobSelectSchema.optional(),
     include: JobIncludeSchema.optional(),
     where:   JobWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const JobFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.JobFindUniqueOrThrowArgs> = z.object({
     select:  JobSelectSchema.optional(),
     include: JobIncludeSchema.optional(),
     where:   JobWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const JobLogFindFirstArgsSchema: z.ZodType<Prisma.JobLogFindFirstArgs> = z.object({
     select:   JobLogSelectSchema.optional(),
@@ -8350,7 +8372,7 @@ export const JobLogFindFirstArgsSchema: z.ZodType<Prisma.JobLogFindFirstArgs> = 
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: JobLogScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const JobLogFindFirstOrThrowArgsSchema: z.ZodType<Prisma.JobLogFindFirstOrThrowArgs> = z.object({
     select:   JobLogSelectSchema.optional(),
@@ -8364,7 +8386,7 @@ export const JobLogFindFirstOrThrowArgsSchema: z.ZodType<Prisma.JobLogFindFirstO
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: JobLogScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const JobLogFindManyArgsSchema: z.ZodType<Prisma.JobLogFindManyArgs> = z.object({
     select:   JobLogSelectSchema.optional(),
@@ -8378,7 +8400,7 @@ export const JobLogFindManyArgsSchema: z.ZodType<Prisma.JobLogFindManyArgs> = z.
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: JobLogScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const JobLogAggregateArgsSchema: z.ZodType<Prisma.JobLogAggregateArgs> = z.object({
     select:  JobLogSelectSchema.optional(),
@@ -8391,7 +8413,7 @@ export const JobLogAggregateArgsSchema: z.ZodType<Prisma.JobLogAggregateArgs> = 
     cursor:  JobLogWhereUniqueInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const JobLogGroupByArgsSchema: z.ZodType<Prisma.JobLogGroupByArgs> = z.object({
     select:  JobLogSelectSchema.optional(),
@@ -8405,19 +8427,19 @@ export const JobLogGroupByArgsSchema: z.ZodType<Prisma.JobLogGroupByArgs> = z.ob
     having:  JobLogScalarWhereWithAggregatesInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const JobLogFindUniqueArgsSchema: z.ZodType<Prisma.JobLogFindUniqueArgs> = z.object({
     select:  JobLogSelectSchema.optional(),
     include: JobLogIncludeSchema.optional(),
     where:   JobLogWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const JobLogFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.JobLogFindUniqueOrThrowArgs> = z.object({
     select:  JobLogSelectSchema.optional(),
     include: JobLogIncludeSchema.optional(),
     where:   JobLogWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const KeywordFindFirstArgsSchema: z.ZodType<Prisma.KeywordFindFirstArgs> = z.object({
     select:   KeywordSelectSchema.optional(),
@@ -8430,7 +8452,7 @@ export const KeywordFindFirstArgsSchema: z.ZodType<Prisma.KeywordFindFirstArgs> 
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: KeywordScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const KeywordFindFirstOrThrowArgsSchema: z.ZodType<Prisma.KeywordFindFirstOrThrowArgs> = z.object({
     select:   KeywordSelectSchema.optional(),
@@ -8443,7 +8465,7 @@ export const KeywordFindFirstOrThrowArgsSchema: z.ZodType<Prisma.KeywordFindFirs
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: KeywordScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const KeywordFindManyArgsSchema: z.ZodType<Prisma.KeywordFindManyArgs> = z.object({
     select:   KeywordSelectSchema.optional(),
@@ -8456,7 +8478,7 @@ export const KeywordFindManyArgsSchema: z.ZodType<Prisma.KeywordFindManyArgs> = 
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: KeywordScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export const KeywordAggregateArgsSchema: z.ZodType<Prisma.KeywordAggregateArgs> = z.object({
     select:  KeywordSelectSchema.optional(),
@@ -8468,7 +8490,7 @@ export const KeywordAggregateArgsSchema: z.ZodType<Prisma.KeywordAggregateArgs> 
     cursor:  KeywordWhereUniqueInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const KeywordGroupByArgsSchema: z.ZodType<Prisma.KeywordGroupByArgs> = z.object({
     select:  KeywordSelectSchema.optional(),
@@ -8481,17 +8503,17 @@ export const KeywordGroupByArgsSchema: z.ZodType<Prisma.KeywordGroupByArgs> = z.
     having:  KeywordScalarWhereWithAggregatesInputSchema.optional(),
     take:    z.number().optional(),
     skip:    z.number().optional(),
-}).strict();
+}).strict()
 
 export const KeywordFindUniqueArgsSchema: z.ZodType<Prisma.KeywordFindUniqueArgs> = z.object({
     select: KeywordSelectSchema.optional(),
     where:  KeywordWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const KeywordFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.KeywordFindUniqueOrThrowArgs> = z.object({
     select: KeywordSelectSchema.optional(),
     where:  KeywordWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const AccountCreateArgsSchema: z.ZodType<Prisma.AccountCreateArgs> = z.object({
     select:  AccountSelectSchema.optional(),
@@ -8500,7 +8522,7 @@ export const AccountCreateArgsSchema: z.ZodType<Prisma.AccountCreateArgs> = z.ob
         AccountCreateInputSchema,
         AccountUncheckedCreateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const AccountUpsertArgsSchema: z.ZodType<Prisma.AccountUpsertArgs> = z.object({
     select:  AccountSelectSchema.optional(),
@@ -8514,18 +8536,18 @@ export const AccountUpsertArgsSchema: z.ZodType<Prisma.AccountUpsertArgs> = z.ob
         AccountUpdateInputSchema,
         AccountUncheckedUpdateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const AccountCreateManyArgsSchema: z.ZodType<Prisma.AccountCreateManyArgs> = z.object({
     data:           AccountCreateManyInputSchema.array(),
     skipDuplicates: z.boolean().optional(),
-}).strict();
+}).strict()
 
 export const AccountDeleteArgsSchema: z.ZodType<Prisma.AccountDeleteArgs> = z.object({
     select:  AccountSelectSchema.optional(),
     include: AccountIncludeSchema.optional(),
     where:   AccountWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const AccountUpdateArgsSchema: z.ZodType<Prisma.AccountUpdateArgs> = z.object({
     select:  AccountSelectSchema.optional(),
@@ -8535,7 +8557,7 @@ export const AccountUpdateArgsSchema: z.ZodType<Prisma.AccountUpdateArgs> = z.ob
         AccountUncheckedUpdateInputSchema
     ]),
     where:   AccountWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const AccountUpdateManyArgsSchema: z.ZodType<Prisma.AccountUpdateManyArgs> = z.object({
     data:  z.union([
@@ -8543,11 +8565,11 @@ export const AccountUpdateManyArgsSchema: z.ZodType<Prisma.AccountUpdateManyArgs
         AccountUncheckedUpdateManyInputSchema
     ]),
     where: AccountWhereInputSchema.optional(),
-}).strict();
+}).strict()
 
 export const AccountDeleteManyArgsSchema: z.ZodType<Prisma.AccountDeleteManyArgs> = z.object({
     where: AccountWhereInputSchema.optional(),
-}).strict();
+}).strict()
 
 export const SessionCreateArgsSchema: z.ZodType<Prisma.SessionCreateArgs> = z.object({
     select:  SessionSelectSchema.optional(),
@@ -8556,7 +8578,7 @@ export const SessionCreateArgsSchema: z.ZodType<Prisma.SessionCreateArgs> = z.ob
         SessionCreateInputSchema,
         SessionUncheckedCreateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const SessionUpsertArgsSchema: z.ZodType<Prisma.SessionUpsertArgs> = z.object({
     select:  SessionSelectSchema.optional(),
@@ -8570,18 +8592,18 @@ export const SessionUpsertArgsSchema: z.ZodType<Prisma.SessionUpsertArgs> = z.ob
         SessionUpdateInputSchema,
         SessionUncheckedUpdateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const SessionCreateManyArgsSchema: z.ZodType<Prisma.SessionCreateManyArgs> = z.object({
     data:           SessionCreateManyInputSchema.array(),
     skipDuplicates: z.boolean().optional(),
-}).strict();
+}).strict()
 
 export const SessionDeleteArgsSchema: z.ZodType<Prisma.SessionDeleteArgs> = z.object({
     select:  SessionSelectSchema.optional(),
     include: SessionIncludeSchema.optional(),
     where:   SessionWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const SessionUpdateArgsSchema: z.ZodType<Prisma.SessionUpdateArgs> = z.object({
     select:  SessionSelectSchema.optional(),
@@ -8591,7 +8613,7 @@ export const SessionUpdateArgsSchema: z.ZodType<Prisma.SessionUpdateArgs> = z.ob
         SessionUncheckedUpdateInputSchema
     ]),
     where:   SessionWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const SessionUpdateManyArgsSchema: z.ZodType<Prisma.SessionUpdateManyArgs> = z.object({
     data:  z.union([
@@ -8599,11 +8621,11 @@ export const SessionUpdateManyArgsSchema: z.ZodType<Prisma.SessionUpdateManyArgs
         SessionUncheckedUpdateManyInputSchema
     ]),
     where: SessionWhereInputSchema.optional(),
-}).strict();
+}).strict()
 
 export const SessionDeleteManyArgsSchema: z.ZodType<Prisma.SessionDeleteManyArgs> = z.object({
     where: SessionWhereInputSchema.optional(),
-}).strict();
+}).strict()
 
 export const UserCreateArgsSchema: z.ZodType<Prisma.UserCreateArgs> = z.object({
     select:  UserSelectSchema.optional(),
@@ -8612,7 +8634,7 @@ export const UserCreateArgsSchema: z.ZodType<Prisma.UserCreateArgs> = z.object({
         UserCreateInputSchema,
         UserUncheckedCreateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const UserUpsertArgsSchema: z.ZodType<Prisma.UserUpsertArgs> = z.object({
     select:  UserSelectSchema.optional(),
@@ -8626,18 +8648,18 @@ export const UserUpsertArgsSchema: z.ZodType<Prisma.UserUpsertArgs> = z.object({
         UserUpdateInputSchema,
         UserUncheckedUpdateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const UserCreateManyArgsSchema: z.ZodType<Prisma.UserCreateManyArgs> = z.object({
     data:           UserCreateManyInputSchema.array(),
     skipDuplicates: z.boolean().optional(),
-}).strict();
+}).strict()
 
 export const UserDeleteArgsSchema: z.ZodType<Prisma.UserDeleteArgs> = z.object({
     select:  UserSelectSchema.optional(),
     include: UserIncludeSchema.optional(),
     where:   UserWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const UserUpdateArgsSchema: z.ZodType<Prisma.UserUpdateArgs> = z.object({
     select:  UserSelectSchema.optional(),
@@ -8647,7 +8669,7 @@ export const UserUpdateArgsSchema: z.ZodType<Prisma.UserUpdateArgs> = z.object({
         UserUncheckedUpdateInputSchema
     ]),
     where:   UserWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const UserUpdateManyArgsSchema: z.ZodType<Prisma.UserUpdateManyArgs> = z.object({
     data:  z.union([
@@ -8655,11 +8677,11 @@ export const UserUpdateManyArgsSchema: z.ZodType<Prisma.UserUpdateManyArgs> = z.
         UserUncheckedUpdateManyInputSchema
     ]),
     where: UserWhereInputSchema.optional(),
-}).strict();
+}).strict()
 
 export const UserDeleteManyArgsSchema: z.ZodType<Prisma.UserDeleteManyArgs> = z.object({
     where: UserWhereInputSchema.optional(),
-}).strict();
+}).strict()
 
 export const VerificationTokenCreateArgsSchema: z.ZodType<Prisma.VerificationTokenCreateArgs> = z.object({
     select: VerificationTokenSelectSchema.optional(),
@@ -8667,7 +8689,7 @@ export const VerificationTokenCreateArgsSchema: z.ZodType<Prisma.VerificationTok
         VerificationTokenCreateInputSchema,
         VerificationTokenUncheckedCreateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const VerificationTokenUpsertArgsSchema: z.ZodType<Prisma.VerificationTokenUpsertArgs> = z.object({
     select: VerificationTokenSelectSchema.optional(),
@@ -8680,17 +8702,17 @@ export const VerificationTokenUpsertArgsSchema: z.ZodType<Prisma.VerificationTok
         VerificationTokenUpdateInputSchema,
         VerificationTokenUncheckedUpdateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const VerificationTokenCreateManyArgsSchema: z.ZodType<Prisma.VerificationTokenCreateManyArgs> = z.object({
     data:           VerificationTokenCreateManyInputSchema.array(),
     skipDuplicates: z.boolean().optional(),
-}).strict();
+}).strict()
 
 export const VerificationTokenDeleteArgsSchema: z.ZodType<Prisma.VerificationTokenDeleteArgs> = z.object({
     select: VerificationTokenSelectSchema.optional(),
     where:  VerificationTokenWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const VerificationTokenUpdateArgsSchema: z.ZodType<Prisma.VerificationTokenUpdateArgs> = z.object({
     select: VerificationTokenSelectSchema.optional(),
@@ -8699,7 +8721,7 @@ export const VerificationTokenUpdateArgsSchema: z.ZodType<Prisma.VerificationTok
         VerificationTokenUncheckedUpdateInputSchema
     ]),
     where:  VerificationTokenWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const VerificationTokenUpdateManyArgsSchema: z.ZodType<Prisma.VerificationTokenUpdateManyArgs> = z.object({
     data:  z.union([
@@ -8707,11 +8729,11 @@ export const VerificationTokenUpdateManyArgsSchema: z.ZodType<Prisma.Verificatio
         VerificationTokenUncheckedUpdateManyInputSchema
     ]),
     where: VerificationTokenWhereInputSchema.optional(),
-}).strict();
+}).strict()
 
 export const VerificationTokenDeleteManyArgsSchema: z.ZodType<Prisma.VerificationTokenDeleteManyArgs> = z.object({
     where: VerificationTokenWhereInputSchema.optional(),
-}).strict();
+}).strict()
 
 export const TokenCreateArgsSchema: z.ZodType<Prisma.TokenCreateArgs> = z.object({
     select:  TokenSelectSchema.optional(),
@@ -8720,7 +8742,7 @@ export const TokenCreateArgsSchema: z.ZodType<Prisma.TokenCreateArgs> = z.object
         TokenCreateInputSchema,
         TokenUncheckedCreateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const TokenUpsertArgsSchema: z.ZodType<Prisma.TokenUpsertArgs> = z.object({
     select:  TokenSelectSchema.optional(),
@@ -8734,18 +8756,18 @@ export const TokenUpsertArgsSchema: z.ZodType<Prisma.TokenUpsertArgs> = z.object
         TokenUpdateInputSchema,
         TokenUncheckedUpdateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const TokenCreateManyArgsSchema: z.ZodType<Prisma.TokenCreateManyArgs> = z.object({
     data:           TokenCreateManyInputSchema.array(),
     skipDuplicates: z.boolean().optional(),
-}).strict();
+}).strict()
 
 export const TokenDeleteArgsSchema: z.ZodType<Prisma.TokenDeleteArgs> = z.object({
     select:  TokenSelectSchema.optional(),
     include: TokenIncludeSchema.optional(),
     where:   TokenWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const TokenUpdateArgsSchema: z.ZodType<Prisma.TokenUpdateArgs> = z.object({
     select:  TokenSelectSchema.optional(),
@@ -8755,7 +8777,7 @@ export const TokenUpdateArgsSchema: z.ZodType<Prisma.TokenUpdateArgs> = z.object
         TokenUncheckedUpdateInputSchema
     ]),
     where:   TokenWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const TokenUpdateManyArgsSchema: z.ZodType<Prisma.TokenUpdateManyArgs> = z.object({
     data:  z.union([
@@ -8763,11 +8785,11 @@ export const TokenUpdateManyArgsSchema: z.ZodType<Prisma.TokenUpdateManyArgs> = 
         TokenUncheckedUpdateManyInputSchema
     ]),
     where: TokenWhereInputSchema.optional(),
-}).strict();
+}).strict()
 
 export const TokenDeleteManyArgsSchema: z.ZodType<Prisma.TokenDeleteManyArgs> = z.object({
     where: TokenWhereInputSchema.optional(),
-}).strict();
+}).strict()
 
 export const UserTokenCreateArgsSchema: z.ZodType<Prisma.UserTokenCreateArgs> = z.object({
     select:  UserTokenSelectSchema.optional(),
@@ -8776,7 +8798,7 @@ export const UserTokenCreateArgsSchema: z.ZodType<Prisma.UserTokenCreateArgs> = 
         UserTokenCreateInputSchema,
         UserTokenUncheckedCreateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const UserTokenUpsertArgsSchema: z.ZodType<Prisma.UserTokenUpsertArgs> = z.object({
     select:  UserTokenSelectSchema.optional(),
@@ -8790,18 +8812,18 @@ export const UserTokenUpsertArgsSchema: z.ZodType<Prisma.UserTokenUpsertArgs> = 
         UserTokenUpdateInputSchema,
         UserTokenUncheckedUpdateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const UserTokenCreateManyArgsSchema: z.ZodType<Prisma.UserTokenCreateManyArgs> = z.object({
     data:           UserTokenCreateManyInputSchema.array(),
     skipDuplicates: z.boolean().optional(),
-}).strict();
+}).strict()
 
 export const UserTokenDeleteArgsSchema: z.ZodType<Prisma.UserTokenDeleteArgs> = z.object({
     select:  UserTokenSelectSchema.optional(),
     include: UserTokenIncludeSchema.optional(),
     where:   UserTokenWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const UserTokenUpdateArgsSchema: z.ZodType<Prisma.UserTokenUpdateArgs> = z.object({
     select:  UserTokenSelectSchema.optional(),
@@ -8811,7 +8833,7 @@ export const UserTokenUpdateArgsSchema: z.ZodType<Prisma.UserTokenUpdateArgs> = 
         UserTokenUncheckedUpdateInputSchema
     ]),
     where:   UserTokenWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const UserTokenUpdateManyArgsSchema: z.ZodType<Prisma.UserTokenUpdateManyArgs> = z.object({
     data:  z.union([
@@ -8819,11 +8841,11 @@ export const UserTokenUpdateManyArgsSchema: z.ZodType<Prisma.UserTokenUpdateMany
         UserTokenUncheckedUpdateManyInputSchema
     ]),
     where: UserTokenWhereInputSchema.optional(),
-}).strict();
+}).strict()
 
 export const UserTokenDeleteManyArgsSchema: z.ZodType<Prisma.UserTokenDeleteManyArgs> = z.object({
     where: UserTokenWhereInputSchema.optional(),
-}).strict();
+}).strict()
 
 export const FileCreateArgsSchema: z.ZodType<Prisma.FileCreateArgs> = z.object({
     select:  FileSelectSchema.optional(),
@@ -8832,7 +8854,7 @@ export const FileCreateArgsSchema: z.ZodType<Prisma.FileCreateArgs> = z.object({
         FileCreateInputSchema,
         FileUncheckedCreateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const FileUpsertArgsSchema: z.ZodType<Prisma.FileUpsertArgs> = z.object({
     select:  FileSelectSchema.optional(),
@@ -8846,18 +8868,18 @@ export const FileUpsertArgsSchema: z.ZodType<Prisma.FileUpsertArgs> = z.object({
         FileUpdateInputSchema,
         FileUncheckedUpdateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const FileCreateManyArgsSchema: z.ZodType<Prisma.FileCreateManyArgs> = z.object({
     data:           FileCreateManyInputSchema.array(),
     skipDuplicates: z.boolean().optional(),
-}).strict();
+}).strict()
 
 export const FileDeleteArgsSchema: z.ZodType<Prisma.FileDeleteArgs> = z.object({
     select:  FileSelectSchema.optional(),
     include: FileIncludeSchema.optional(),
     where:   FileWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const FileUpdateArgsSchema: z.ZodType<Prisma.FileUpdateArgs> = z.object({
     select:  FileSelectSchema.optional(),
@@ -8867,7 +8889,7 @@ export const FileUpdateArgsSchema: z.ZodType<Prisma.FileUpdateArgs> = z.object({
         FileUncheckedUpdateInputSchema
     ]),
     where:   FileWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const FileUpdateManyArgsSchema: z.ZodType<Prisma.FileUpdateManyArgs> = z.object({
     data:  z.union([
@@ -8875,11 +8897,11 @@ export const FileUpdateManyArgsSchema: z.ZodType<Prisma.FileUpdateManyArgs> = z.
         FileUncheckedUpdateManyInputSchema
     ]),
     where: FileWhereInputSchema.optional(),
-}).strict();
+}).strict()
 
 export const FileDeleteManyArgsSchema: z.ZodType<Prisma.FileDeleteManyArgs> = z.object({
     where: FileWhereInputSchema.optional(),
-}).strict();
+}).strict()
 
 export const TranslationCreateArgsSchema: z.ZodType<Prisma.TranslationCreateArgs> = z.object({
     select: TranslationSelectSchema.optional(),
@@ -8887,7 +8909,7 @@ export const TranslationCreateArgsSchema: z.ZodType<Prisma.TranslationCreateArgs
         TranslationCreateInputSchema,
         TranslationUncheckedCreateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const TranslationUpsertArgsSchema: z.ZodType<Prisma.TranslationUpsertArgs> = z.object({
     select: TranslationSelectSchema.optional(),
@@ -8900,17 +8922,17 @@ export const TranslationUpsertArgsSchema: z.ZodType<Prisma.TranslationUpsertArgs
         TranslationUpdateInputSchema,
         TranslationUncheckedUpdateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const TranslationCreateManyArgsSchema: z.ZodType<Prisma.TranslationCreateManyArgs> = z.object({
     data:           TranslationCreateManyInputSchema.array(),
     skipDuplicates: z.boolean().optional(),
-}).strict();
+}).strict()
 
 export const TranslationDeleteArgsSchema: z.ZodType<Prisma.TranslationDeleteArgs> = z.object({
     select: TranslationSelectSchema.optional(),
     where:  TranslationWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const TranslationUpdateArgsSchema: z.ZodType<Prisma.TranslationUpdateArgs> = z.object({
     select: TranslationSelectSchema.optional(),
@@ -8919,7 +8941,7 @@ export const TranslationUpdateArgsSchema: z.ZodType<Prisma.TranslationUpdateArgs
         TranslationUncheckedUpdateInputSchema
     ]),
     where:  TranslationWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const TranslationUpdateManyArgsSchema: z.ZodType<Prisma.TranslationUpdateManyArgs> = z.object({
     data:  z.union([
@@ -8927,11 +8949,11 @@ export const TranslationUpdateManyArgsSchema: z.ZodType<Prisma.TranslationUpdate
         TranslationUncheckedUpdateManyInputSchema
     ]),
     where: TranslationWhereInputSchema.optional(),
-}).strict();
+}).strict()
 
 export const TranslationDeleteManyArgsSchema: z.ZodType<Prisma.TranslationDeleteManyArgs> = z.object({
     where: TranslationWhereInputSchema.optional(),
-}).strict();
+}).strict()
 
 export const JobCreateArgsSchema: z.ZodType<Prisma.JobCreateArgs> = z.object({
     select:  JobSelectSchema.optional(),
@@ -8940,7 +8962,7 @@ export const JobCreateArgsSchema: z.ZodType<Prisma.JobCreateArgs> = z.object({
         JobCreateInputSchema,
         JobUncheckedCreateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const JobUpsertArgsSchema: z.ZodType<Prisma.JobUpsertArgs> = z.object({
     select:  JobSelectSchema.optional(),
@@ -8954,18 +8976,18 @@ export const JobUpsertArgsSchema: z.ZodType<Prisma.JobUpsertArgs> = z.object({
         JobUpdateInputSchema,
         JobUncheckedUpdateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const JobCreateManyArgsSchema: z.ZodType<Prisma.JobCreateManyArgs> = z.object({
     data:           JobCreateManyInputSchema.array(),
     skipDuplicates: z.boolean().optional(),
-}).strict();
+}).strict()
 
 export const JobDeleteArgsSchema: z.ZodType<Prisma.JobDeleteArgs> = z.object({
     select:  JobSelectSchema.optional(),
     include: JobIncludeSchema.optional(),
     where:   JobWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const JobUpdateArgsSchema: z.ZodType<Prisma.JobUpdateArgs> = z.object({
     select:  JobSelectSchema.optional(),
@@ -8975,7 +8997,7 @@ export const JobUpdateArgsSchema: z.ZodType<Prisma.JobUpdateArgs> = z.object({
         JobUncheckedUpdateInputSchema
     ]),
     where:   JobWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const JobUpdateManyArgsSchema: z.ZodType<Prisma.JobUpdateManyArgs> = z.object({
     data:  z.union([
@@ -8983,11 +9005,11 @@ export const JobUpdateManyArgsSchema: z.ZodType<Prisma.JobUpdateManyArgs> = z.ob
         JobUncheckedUpdateManyInputSchema
     ]),
     where: JobWhereInputSchema.optional(),
-}).strict();
+}).strict()
 
 export const JobDeleteManyArgsSchema: z.ZodType<Prisma.JobDeleteManyArgs> = z.object({
     where: JobWhereInputSchema.optional(),
-}).strict();
+}).strict()
 
 export const JobLogCreateArgsSchema: z.ZodType<Prisma.JobLogCreateArgs> = z.object({
     select:  JobLogSelectSchema.optional(),
@@ -8996,7 +9018,7 @@ export const JobLogCreateArgsSchema: z.ZodType<Prisma.JobLogCreateArgs> = z.obje
         JobLogCreateInputSchema,
         JobLogUncheckedCreateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const JobLogUpsertArgsSchema: z.ZodType<Prisma.JobLogUpsertArgs> = z.object({
     select:  JobLogSelectSchema.optional(),
@@ -9010,18 +9032,18 @@ export const JobLogUpsertArgsSchema: z.ZodType<Prisma.JobLogUpsertArgs> = z.obje
         JobLogUpdateInputSchema,
         JobLogUncheckedUpdateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const JobLogCreateManyArgsSchema: z.ZodType<Prisma.JobLogCreateManyArgs> = z.object({
     data:           JobLogCreateManyInputSchema.array(),
     skipDuplicates: z.boolean().optional(),
-}).strict();
+}).strict()
 
 export const JobLogDeleteArgsSchema: z.ZodType<Prisma.JobLogDeleteArgs> = z.object({
     select:  JobLogSelectSchema.optional(),
     include: JobLogIncludeSchema.optional(),
     where:   JobLogWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const JobLogUpdateArgsSchema: z.ZodType<Prisma.JobLogUpdateArgs> = z.object({
     select:  JobLogSelectSchema.optional(),
@@ -9031,7 +9053,7 @@ export const JobLogUpdateArgsSchema: z.ZodType<Prisma.JobLogUpdateArgs> = z.obje
         JobLogUncheckedUpdateInputSchema
     ]),
     where:   JobLogWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const JobLogUpdateManyArgsSchema: z.ZodType<Prisma.JobLogUpdateManyArgs> = z.object({
     data:  z.union([
@@ -9039,11 +9061,11 @@ export const JobLogUpdateManyArgsSchema: z.ZodType<Prisma.JobLogUpdateManyArgs> 
         JobLogUncheckedUpdateManyInputSchema
     ]),
     where: JobLogWhereInputSchema.optional(),
-}).strict();
+}).strict()
 
 export const JobLogDeleteManyArgsSchema: z.ZodType<Prisma.JobLogDeleteManyArgs> = z.object({
     where: JobLogWhereInputSchema.optional(),
-}).strict();
+}).strict()
 
 export const KeywordCreateArgsSchema: z.ZodType<Prisma.KeywordCreateArgs> = z.object({
     select: KeywordSelectSchema.optional(),
@@ -9051,7 +9073,7 @@ export const KeywordCreateArgsSchema: z.ZodType<Prisma.KeywordCreateArgs> = z.ob
         KeywordCreateInputSchema,
         KeywordUncheckedCreateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const KeywordUpsertArgsSchema: z.ZodType<Prisma.KeywordUpsertArgs> = z.object({
     select: KeywordSelectSchema.optional(),
@@ -9064,17 +9086,17 @@ export const KeywordUpsertArgsSchema: z.ZodType<Prisma.KeywordUpsertArgs> = z.ob
         KeywordUpdateInputSchema,
         KeywordUncheckedUpdateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export const KeywordCreateManyArgsSchema: z.ZodType<Prisma.KeywordCreateManyArgs> = z.object({
     data:           KeywordCreateManyInputSchema.array(),
     skipDuplicates: z.boolean().optional(),
-}).strict();
+}).strict()
 
 export const KeywordDeleteArgsSchema: z.ZodType<Prisma.KeywordDeleteArgs> = z.object({
     select: KeywordSelectSchema.optional(),
     where:  KeywordWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const KeywordUpdateArgsSchema: z.ZodType<Prisma.KeywordUpdateArgs> = z.object({
     select: KeywordSelectSchema.optional(),
@@ -9083,7 +9105,7 @@ export const KeywordUpdateArgsSchema: z.ZodType<Prisma.KeywordUpdateArgs> = z.ob
         KeywordUncheckedUpdateInputSchema
     ]),
     where:  KeywordWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export const KeywordUpdateManyArgsSchema: z.ZodType<Prisma.KeywordUpdateManyArgs> = z.object({
     data:  z.union([
@@ -9091,8 +9113,8 @@ export const KeywordUpdateManyArgsSchema: z.ZodType<Prisma.KeywordUpdateManyArgs
         KeywordUncheckedUpdateManyInputSchema
     ]),
     where: KeywordWhereInputSchema.optional(),
-}).strict();
+}).strict()
 
 export const KeywordDeleteManyArgsSchema: z.ZodType<Prisma.KeywordDeleteManyArgs> = z.object({
     where: KeywordWhereInputSchema.optional(),
-}).strict();
+}).strict()

@@ -2,10 +2,8 @@ import {
 	type NextApiRequest,
 	type NextApiResponse
 }                          from "next";
-import {type IContainer}   from "../container";
 import {type IQueryParams} from "../link";
 import {type IQuery}       from "../source";
-import {type IUser}        from "../user";
 
 export interface INextApiRequest<
 	TQuery extends IQueryParams = any,
@@ -19,16 +17,11 @@ export interface IEndpointParams<//
 	TRequest,
 	TResponse,
 	TQueryParams extends IQueryParams = any,
-	TContainer extends IContainer = IContainer,
 > {
 	readonly req: INextApiRequest<TQueryParams, TRequest>;
 	readonly res: NextApiResponse<TResponse>;
 	readonly request: TRequest;
 	readonly query: TQueryParams;
-	readonly user: IUser;
-	readonly container: TContainer;
-
-	toBody(): Promise<Buffer>;
 
 	end(chunk?: any): void;
 }
@@ -41,16 +34,8 @@ export interface IEndpoint<// eslint-disable-next-line @typescript-eslint/no-unu
 	TRequest,
 	TResponse,
 	TQueryParams extends IQueryParams = any,
-	TContainer extends IContainer = IContainer,
 > {
-	/**
-	 * Optional ACLs an endpoint would require on an user.
-	 */
-	acl?: string[];
-
-	container(): Promise<TContainer>;
-
-	handler(params: IEndpointParams<TRequest, TResponse, TQueryParams, TContainer>): Promise<TResponse | void>;
+	handler(params: IEndpointParams<TRequest, TResponse, TQueryParams>): Promise<TResponse | void>;
 }
 
 export type IEndpointCallback<// eslint-disable-next-line @typescript-eslint/no-unused-vars

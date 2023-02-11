@@ -166,10 +166,10 @@ export function toSource(sdk: ISdk, generators: IGenerators): string {
 	return source.join("\n");
 }
 
-export async function generateSdkFor(path: string, generators?: IGenerators): Promise<string[]> {
+export async function generateSdkFor(path: string, output: string, generators?: IGenerators): Promise<string[]> {
 	const $generators        = generators || defaultGenerators;
 	const exported: string[] = [];
-	await remove("src/sdk");
+	await remove(output);
 	toSdks(path, $generators).forEach(sdk => {
 		console.log(`Exporting [${sdk.file}]`, sdk);
 		outputFile(sdk.file, toSource(sdk, $generators));
