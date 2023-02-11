@@ -1,5 +1,16 @@
 # @leight/source
 
+## 0.5.11
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/filter@0.5.10
+    - @leight/query@0.5.10
+    - @leight/utils@0.5.18
+    - @leight/sort@0.5.10
+
 ## 0.5.10
 
 ### Patch Changes

@@ -1,0 +1,55 @@
+import {
+	AclError,
+	IUser,
+	IUserRequest,
+	UndefinedUserError
+}                           from "@leight-core/api";
+import {
+	diffOf,
+	intersectOf
+}                           from "@leight-core/utils";
+import {GetServerSideProps} from "next";
+import {getToken}           from "next-auth/jwt";
+
+export const User = ({userId, tokens = []}: IUserRequest | undefined = {}): IUser => {
+	const $user: IUser = ({
+		userId,
+		tokens,
+		required:    () => {
+			if (!userId) {
+				throw new UndefinedUserError("User not available");
+			}
+			return userId;
+		},
+		optional:    () => userId || undefined,
+		hasAny:      $tokens => $tokens && $tokens.length > 0 ? intersectOf(tokens, $tokens).length > 0 : true,
+		checkAny:    $tokens => {
+			if (!$user.hasAny($tokens)) {
+				throw new AclError("User does not have required tokens.", tokens, $tokens);
+			}
+		},
+		hasTokens:   $tokens => $tokens && $tokens.length > 0 ? diffOf($tokens, tokens).length === $tokens.length : true,
+		checkTokens: $tokens => {
+			if (!$user.hasTokens($tokens)) {
+				throw new AclError("User does not have required tokens.", tokens, $tokens);
+			}
+		}
+	});
+
+	return $user;
+};
+
+export const fetchUser: () => GetServerSideProps<{ user: { userId?: string, tokens?: string[] } }, any> = () => async context => {
+	const token: any = await getToken(context);
+	if (!token) {
+		throw new Error("Token not available");
+	}
+	return {
+		props: {
+			user: {
+				userId: token?.sub,
+				tokens: token?.tokens,
+			},
+		}
+	};
+};

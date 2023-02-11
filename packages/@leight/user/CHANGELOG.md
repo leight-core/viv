@@ -1,5 +1,11 @@
 # @leight/user
 
+## 0.5.16
+
+### Patch Changes
+
+- Version bump
+
 ## 0.5.15
 
 ### Patch Changes

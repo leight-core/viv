@@ -1,5 +1,16 @@
 # @leight/file-server
 
+## 0.5.15
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/next.js-server@0.5.16
+    - @leight/container@0.5.15
+    - @leight/prisma@0.5.16
+    - @leight/file@0.5.15
+
 ## 0.5.14
 
 ### Patch Changes

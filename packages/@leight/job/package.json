@@ -1,5 +1,5 @@
 {
-    "version": "0.5.15",
+    "version": "0.5.16",
     "name": "@leight/job",
     "description": "Common job stuff.",
     "license": "MIT",
@@ -30,23 +30,23 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/prisma": "workspace:^0.5.15",
-        "@leight/query": "*",
-        "@leight/source": "workspace:^0.5.10",
-        "@leight/winston": "workspace:^0.5.14",
+        "@leight/prisma": "workspace:^0.5.16",
+        "@leight/query": "^0.5.10",
+        "@leight/source": "workspace:^0.5.11",
+        "@leight/winston": "workspace:^0.5.15",
         "reflect-metadata": "^0.1.13",
         "zod": "^3.20.6"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "*",
-        "@leight/tsconfig": "workspace:^0.5.15",
+        "@leight/eslint-config-eslint": "^0.5.4",
+        "@leight/tsconfig": "workspace:^0.5.16",
         "@types/node": "^18.13.0",
         "@typescript-eslint/eslint-plugin": "^5.51.0",
         "@typescript-eslint/parser": "^5.51.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
         "depcheck": "^1.4.3",
-        "eslint": "^8.33.0",
+        "eslint": "^8.34.0",
         "eslint-plugin-unicorn": "^45.0.2",
         "typescript": "^4.9.5"
     },

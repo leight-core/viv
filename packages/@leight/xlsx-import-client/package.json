@@ -1,5 +1,5 @@
 {
-    "version": "0.5.16",
+    "version": "0.5.17",
     "name": "@leight/xlsx-import-client",
     "description": "Client-side tools for imports.",
     "license": "MIT",
@@ -32,8 +32,8 @@
     "dependencies": {
         "@babel/core": "^7.20.12",
         "@emotion/react": "^11.10.5",
-        "@leight/mantine": "workspace:^0.5.15",
-        "@leight/tsconfig": "workspace:^0.5.15",
+        "@leight/mantine": "workspace:^0.5.16",
+        "@leight/tsconfig": "workspace:^0.5.16",
         "@mantine/core": "^5.10.3",
         "@mantine/dropzone": "^5.10.3",
         "@mantine/hooks": "^5.10.3",
@@ -42,18 +42,18 @@
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "*",
+        "@leight/eslint-config-eslint": "^0.5.4",
         "@leight/tsconfig": "*",
-        "@leight/xlsx-import": "workspace:^0.5.15",
+        "@leight/xlsx-import": "workspace:^0.5.16",
         "@types/node": "^18.13.0",
-        "@types/react": "^18.0.27",
+        "@types/react": "^18.0.28",
         "@types/react-dom": "^18.0.10",
         "@typescript-eslint/eslint-plugin": "^5.51.0",
         "@typescript-eslint/parser": "^5.51.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
         "depcheck": "^1.4.3",
-        "eslint": "^8.33.0",
+        "eslint": "^8.34.0",
         "eslint-plugin-unicorn": "^45.0.2",
         "typescript": "^4.9.5"
     },
