@@ -20,7 +20,7 @@ importers:
 
   packages/@leight-core/api:
     specifiers:
-      '@leight/eslint-config-eslint': ^0.5.4
+      '@leight/eslint-config-eslint': ^0.5.5
       '@leight/tsconfig': ^0.5.16
       '@tanstack/react-query': ^4.24.4
       '@types/async-lock': ^1.4.0
@@ -72,8 +72,8 @@ importers:
       '@ant-design/icons': ^5.0.1
       '@ant-design/pro-layout': ^7.7.1
       '@fingerprintjs/fingerprintjs': ^3.4.0
-      '@leight-core/api': workspace:^0.8.8
-      '@leight-core/utils': workspace:^0.8.3
+      '@leight-core/api': workspace:^0.8.9
+      '@leight-core/utils': workspace:^0.8.4
       '@leight/eslint-config-eslint': '*'
       '@leight/tsconfig': '*'
       '@leight/utils': workspace:^0.5.18
@@ -150,8 +150,8 @@ importers:
 
   packages/@leight-core/server:
     specifiers:
-      '@leight-core/api': workspace:^0.8.8
-      '@leight/eslint-config-eslint': ^0.5.4
+      '@leight-core/api': workspace:^0.8.9
+      '@leight/eslint-config-eslint': ^0.5.5
       '@leight/tsconfig': ^0.5.16
       '@types/fs-extra': ^11.0.1
       '@types/glob': ^8.0.1
@@ -185,7 +185,7 @@ importers:
 
   packages/@leight-core/utils:
     specifiers:
-      '@leight-core/api': workspace:^0.8.8
+      '@leight-core/api': workspace:^0.8.9
       '@leight/eslint-config-eslint': '*'
       '@leight/tsconfig': '*'
       '@leight/utils': workspace:^0.5.18
@@ -304,7 +304,7 @@ importers:
 
   packages/@leight/context-client:
     specifiers:
-      '@leight/eslint-config-eslint': ^0.5.4
+      '@leight/eslint-config-eslint': ^0.5.5
       '@leight/tsconfig': workspace:^0.5.16
       '@leight/utils': workspace:^0.5.18
       '@leight/zustand': workspace:^0.5.15
@@ -395,6 +395,8 @@ importers:
       lint-staged: ^13.1.1
       typescript: ^4.9.5
     dependencies:
+      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
+      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
       eslint-config-next: 13.1.6_7kw3g6rralp5ps6mg3uyzz6azm
       eslint-config-prettier: 8.6.0_eslint@8.34.0
       eslint-config-turbo: 0.0.7_eslint@8.34.0
@@ -405,8 +407,6 @@ importers:
       eslint-plugin-react-hooks: 4.6.0_eslint@8.34.0
       eslint-plugin-unicorn: 45.0.2_eslint@8.34.0
     devDependencies:
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
       eslint: 8.34.0
       lint-staged: 13.1.1
       typescript: 4.9.5
@@ -778,8 +778,8 @@ importers:
 
   packages/@leight/job:
     specifiers:
-      '@leight/eslint-config-eslint': ^0.5.4
-      '@leight/prisma': workspace:^0.5.16
+      '@leight/eslint-config-eslint': ^0.5.5
+      '@leight/prisma': workspace:^0.5.17
       '@leight/query': ^0.5.10
       '@leight/source': workspace:^0.5.11
       '@leight/tsconfig': workspace:^0.5.16
@@ -903,7 +903,7 @@ importers:
     specifiers:
       '@babel/core': ^7.20.12
       '@emotion/react': ^11.10.5
-      '@leight/eslint-config-eslint': ^0.5.4
+      '@leight/eslint-config-eslint': ^0.5.5
       '@leight/file': workspace:^0.5.15
       '@leight/file-client': workspace:^0.5.17
       '@leight/i18n': workspace:^0.5.15
@@ -1019,7 +1019,7 @@ importers:
 
   packages/@leight/prisma:
     specifiers:
-      '@leight/eslint-config-eslint': ^0.5.4
+      '@leight/eslint-config-eslint': ^0.5.5
       '@leight/source': workspace:^0.5.11
       '@leight/source-server': workspace:^0.5.13
       '@leight/tsconfig': workspace:^0.5.16
@@ -3203,7 +3203,6 @@ packages:
 
   /@types/json-schema/7.0.11:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
-    dev: true
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
@@ -3279,7 +3278,6 @@ packages:
 
   /@types/semver/7.3.13:
     resolution: {integrity: sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==}
-    dev: true
 
   /@types/touch/3.1.2:
     resolution: {integrity: sha512-6YYYfTc90glAZBvyjpmz6JFLtBRyLWXckmlNgK4R2czsWg63cRCI9Rb3aKJ6LPbw8jpHf7nZdVvMd6gUg4hVsw==}
@@ -3321,7 +3319,6 @@ packages:
       typescript: 4.9.5
     transitivePeerDependencies:
       - supports-color
-    dev: true
 
   /@typescript-eslint/parser/5.51.0_7kw3g6rralp5ps6mg3uyzz6azm:
     resolution: {integrity: sha512-fEV0R9gGmfpDeRzJXn+fGQKcl0inIeYobmmUWijZh9zA7bxJ8clPhV9up2ZQzATxAiFAECqPQyMDB4o4B81AaA==}
@@ -3367,7 +3364,6 @@ packages:
       typescript: 4.9.5
     transitivePeerDependencies:
       - supports-color
-    dev: true
 
   /@typescript-eslint/types/5.51.0:
     resolution: {integrity: sha512-SqOn0ANn/v6hFn0kjvLwiDi4AzR++CBZz0NV5AnusT2/3y32jdc0G4woXPWHCumWtUXZKPAS27/9vziSsC9jnw==}
@@ -3411,7 +3407,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - typescript
-    dev: true
 
   /@typescript-eslint/visitor-keys/5.51.0:
     resolution: {integrity: sha512-Oh2+eTdjHjOFjKA27sxESlA87YPSOJafGCR0md5oeMdh1ZcCfAGCIOL216uTBAkAIptvLIfKQhl7lHxMJet4GQ==}
@@ -4927,7 +4922,6 @@ packages:
     dependencies:
       esrecurse: 4.3.0
       estraverse: 4.3.0
-    dev: true
 
   /eslint-scope/7.1.1:
     resolution: {integrity: sha512-QKQM/UXpIiHcLqJ5AOyIW7XZmzjkzQXYE54n1++wb0u9V/abW3l9uQnxX8Z5Xd18xyKIMTUAyQ0k1e8pz6LUrw==}
@@ -5028,7 +5022,6 @@ packages:
   /estraverse/4.3.0:
     resolution: {integrity: sha512-39nnKffWz8xN1BU/2c79n9nB9HDzo0niYUqx6xyqUnyoAnQyyWpOTdZEeiCch8BBu515t4wp9ZmgVfVhn9EBpw==}
     engines: {node: '>=4.0'}
-    dev: true
 
   /estraverse/5.3.0:
     resolution: {integrity: sha512-MMdARuVEQziNTeJD8DgMqmhwR11BRQ/cBP+pLtYdSTnf3MIO8fFeiINEbX36ZdNlfU/7A9f3gUw49B3oQsvwBA==}
@@ -6205,7 +6198,6 @@ packages:
 
   /natural-compare-lite/1.4.0:
     resolution: {integrity: sha512-Tj+HTDSJJKaZnfiuw+iaF9skdPpTo2GtEly5JHnWV/hfv2Qj/9RKsGISQtLh2ox3l5EAGw487hnBee0sIJ6v2g==}
-    dev: true
 
   /natural-compare/1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
