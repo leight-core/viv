@@ -4,14 +4,9 @@ import {
 	IEndpoint,
 	IEndpointCallback,
 	IEndpointParams,
-	IEntityEndpoint,
-	IGetEndpoint,
-	IListEndpoint,
-	IMutationEndpoint,
 	InferSource,
 	IQuery,
 	IQueryParams,
-	IRequestEndpoint,
 	ISource,
 	IWithIdentityQuery
 } from "@leight-core/api";
@@ -58,17 +53,11 @@ export const Endpoint = <TName extends string, TRequest, TResponse, TQueryParams
 	};
 };
 
-export const ListEndpoint = <TName extends string, TResponse, TQueryParams extends IQueryParams = any>(
-	handler: IListEndpoint<TName, TResponse, TQueryParams>,
-): IEndpointCallback<TName, undefined, TResponse, TQueryParams> => Endpoint(handler);
+export const ListEndpoint = <TName extends string, TResponse, TQueryParams extends IQueryParams = any>(): IEndpointCallback<TName, undefined, TResponse, TQueryParams> => Endpoint(null as any);
 
-export const MutationEndpoint = <TName extends string, TRequest, TResponse, TQueryParams extends IQueryParams = any>(
-	handler: IMutationEndpoint<TName, TRequest, TResponse, TQueryParams>,
-): IEndpointCallback<TName, TRequest, TResponse, TQueryParams> => Endpoint(handler);
+export const MutationEndpoint = <TName extends string, TRequest, TResponse, TQueryParams extends IQueryParams = any>(): IEndpointCallback<TName, TRequest, TResponse, TQueryParams> => Endpoint(null as any);
 
-export const GetEndpoint = <TName extends string, TResponse, TQueryParams extends IQueryParams = any>(
-	handler: IGetEndpoint<TName, TResponse, TQueryParams>,
-): IEndpointCallback<TName, undefined, TResponse, TQueryParams> => Endpoint(handler);
+export const GetEndpoint = <TName extends string, TResponse, TQueryParams extends IQueryParams = any>(): IEndpointCallback<TName, undefined, TResponse, TQueryParams> => Endpoint(null as any);
 
 export const FetchEndpoint = <TName extends string, TSource extends ISource<any, any, any>>(): IEndpointCallback<TName, undefined, InferSource.Item<TSource>, IWithIdentityQuery> => {
 	return Endpoint({
@@ -100,9 +89,7 @@ export const QueryEndpoint = <TName extends string, TSource extends ISource<any,
 	});
 };
 
-export const EntityEndpoint = <TName extends string, TRequest extends IQuery, TResponse, TQueryParams extends IQueryParams = any>(
-	handler: IEntityEndpoint<TName, TRequest, TResponse, TQueryParams>,
-): IEndpointCallback<TName, TRequest, TResponse, TQueryParams> => Endpoint(handler);
+export const EntityEndpoint = <TName extends string, TRequest extends IQuery, TResponse, TQueryParams extends IQueryParams = any>(): IEndpointCallback<TName, TRequest, TResponse, TQueryParams> => Endpoint(null as any);
 
 export const DeleteEndpoint = <TName extends string, TSource extends ISource<any, any, any>, TQueryParams extends IQueryParams = any>(): IEndpointCallback<TName, string[], InferSource.Item<TSource>[], TQueryParams> => {
 	return Endpoint({
@@ -110,6 +97,4 @@ export const DeleteEndpoint = <TName extends string, TSource extends ISource<any
 	});
 };
 
-export const RequestEndpoint = <TName extends string, TRequest, TResponse, TQueryParams extends IQueryParams = any>(
-	handler: IRequestEndpoint<TName, TRequest, TResponse, TQueryParams>,
-): IEndpointCallback<TName, TRequest, TResponse, TQueryParams> => Endpoint(handler);
+export const RequestEndpoint = <TName extends string, TRequest, TResponse, TQueryParams extends IQueryParams = any>(): IEndpointCallback<TName, TRequest, TResponse, TQueryParams> => Endpoint(null as any);

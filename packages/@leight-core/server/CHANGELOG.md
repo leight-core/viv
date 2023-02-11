@@ -1,5 +1,11 @@
 # @leight-core/server
 
+## 0.8.10
+
+### Patch Changes
+
+- Removed stuff no longer needed
+
 ## 0.8.9
 
 ### Patch Changes
