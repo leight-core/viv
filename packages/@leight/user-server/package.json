@@ -1,5 +1,5 @@
 {
-    "version": "0.5.15",
+    "version": "0.5.16",
     "name": "@leight/user-server",
     "description": "User stuff used server-side.",
     "license": "MIT",
@@ -30,15 +30,15 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "workspace:^0.5.15",
-        "@leight/prisma": "workspace:^0.5.16",
-        "@leight/user": "workspace:^0.5.16",
-        "@leight/utils": "workspace:^0.5.18",
+        "@leight/container": "workspace:^0.5.16",
+        "@leight/prisma": "workspace:^0.5.18",
+        "@leight/user": "workspace:^0.5.17",
+        "@leight/utils": "workspace:^0.5.19",
         "reflect-metadata": "^0.1.13",
         "tsyringe": "^4.7.0"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "^0.5.4",
+        "@leight/eslint-config-eslint": "workspace:^0.5.6",
         "@leight/tsconfig": "workspace:^0.5.16",
         "@types/node": "^18.13.0",
         "@typescript-eslint/eslint-plugin": "^5.51.0",
