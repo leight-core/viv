@@ -16,16 +16,18 @@ export type IStoreProviderFactory<TProps> = FC<{
 }>;
 
 export interface ICreateProviderProps<TStoreProps> {
+    name: string;
     createStore: ICreateStore<TStoreProps>;
     Context: IStoreContext<TStoreProps>;
 }
 
 export const createProvider = <TStoreProps, >(
     {
+        name,
         createStore,
         Context,
     }: ICreateProviderProps<TStoreProps>): IStoreProviderFactory<TStoreProps> => {
-    return function StoreProvider({children, defaults}) {
+    const provider: IStoreProviderFactory<TStoreProps> = function Provider({children, defaults}) {
         const store = createStore(defaults);
         const memo  = useMemo(() => ({state: store.getState(), store}), []);
         return (
@@ -34,4 +36,6 @@ export const createProvider = <TStoreProps, >(
             </Context.Provider>
         );
     };
+    provider.displayName                               = name;
+    return provider;
 };
