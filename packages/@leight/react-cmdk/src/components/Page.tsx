@@ -1,31 +1,32 @@
 import React, {
     useContext,
     useEffect
-}                               from "react";
-import {useCommandPaletteState} from "../store";
-import {JsonStructure}          from "../types";
+} from "react";
+import {
+    useCommandPaletteState,
+    useJsonStructureState
+} from "../store";
 import {
     filterItems,
     PageContext,
     renderJsonStructure,
-}                               from "../utils";
+} from "../utils";
 
 interface PageProps {
     searchPrefix?: string[];
     onEscape?: () => void;
     id: string;
-    items: JsonStructure;
     backTo?: string;
 }
 
 export default function Page(
     {
         searchPrefix,
-        items,
         onEscape,
         backTo,
         id,
     }: PageProps) {
+    const items                              = useJsonStructureState(({items}) => items);
     const {page, search, setPage, setIsOpen} = useCommandPaletteState(({search, page, setPage, setIsOpen}) => ({search, page, setPage, setIsOpen}));
     const {setSearchPrefix}                  = useContext(PageContext);
     onEscape                                 = onEscape || (() => {
