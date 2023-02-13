@@ -1,5 +1,11 @@
 # @leight/react-cmdk
 
+## 0.5.18
+
+### Patch Changes
+
+- Page can render children, usable for invisible controller components
+
 ## 0.5.17
 
 ### Patch Changes

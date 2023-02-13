@@ -1,4 +1,5 @@
 import React, {
+    PropsWithChildren,
     useContext,
     useEffect
 } from "react";
@@ -12,18 +13,19 @@ import {
     renderJsonStructure,
 } from "../utils";
 
-interface PageProps {
+export type PageProps = PropsWithChildren<{
     searchPrefix?: string[];
     onEscape?: () => void;
     id: string;
     backTo?: string;
-}
+}>;
 
 export default function Page(
     {
         searchPrefix,
         onEscape,
         backTo,
+        children,
         id,
     }: PageProps) {
     const items                              = useJsonStructureState(({items}) => items);
@@ -66,8 +68,11 @@ export default function Page(
     }, [
         searchPrefix,
         isActive,
-        setSearchPrefix
+        setSearchPrefix,
     ]);
 
-    return isActive ? <>{renderJsonStructure(filterItems(items, search))}</> : null;
+    return isActive ? <>
+        {renderJsonStructure(filterItems(items, search))}
+        {children}
+    </> : null;
 }
