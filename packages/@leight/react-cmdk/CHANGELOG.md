@@ -1,5 +1,14 @@
 # @leight/react-cmdk
 
+## 0.5.11
+
+### Patch Changes
+
+- Improved Store API and CMDK
+- Updated dependencies
+    - @leight/context-client@0.5.23
+    - @leight/utils-client@0.5.21
+
 ## 0.5.10
 
 ### Patch Changes

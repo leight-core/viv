@@ -1,5 +1,13 @@
 # @leight/utils-client
 
+## 0.5.21
+
+### Patch Changes
+
+- Improved Store API and CMDK
+- Updated dependencies
+    - @leight/context-client@0.5.23
+
 ## 0.5.20
 
 ### Patch Changes

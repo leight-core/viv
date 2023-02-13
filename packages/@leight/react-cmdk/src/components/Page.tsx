@@ -4,7 +4,7 @@ import React, {
 }                               from "react";
 import {useCommandPaletteState} from "../store";
 import {JsonStructure}          from "../types";
-import {PageContext,}           from "../utils/context";
+import {PageContext,}           from "../utils";
 import {
     filterItems,
     renderJsonStructure

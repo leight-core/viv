@@ -4,7 +4,11 @@ import {useStore}           from "zustand";
 import {useContext}         from "./useContext";
 import {useOptionalContext} from "./useOptionalContext";
 
-export type IHookStateFactory<TProps> = <U>(selector?: (state: TProps) => U) => TProps;
+export interface IHookStateFactory<TProps> {
+    <U>(selector: (state: TProps) => U): U;
+
+    (): TProps;
+}
 
 export const hookState = <TProps>(
     Context: Context<IStoreApi<TProps> | null>,

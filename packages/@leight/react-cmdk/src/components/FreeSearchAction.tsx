@@ -13,7 +13,7 @@ export default function FreeSearchAction(
         label = "Search for",
         ...props
     }: FreeSearchActionProps) {
-    const {search} = useCommandPaletteState(({search}) => search);
+    const search = useCommandPaletteState(({search}) => search);
 
     return (
         <ListItem index={0} icon={Search} showType={false} {...props}>

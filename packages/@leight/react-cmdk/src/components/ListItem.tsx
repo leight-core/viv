@@ -1,3 +1,6 @@
+import {IHrefProps}             from "@leight/utils";
+import {toHref}                 from "@leight/utils-client";
+import {useRouter}              from "next/router";
 import React, {
     ButtonHTMLAttributes,
     DetailedHTMLProps,
@@ -49,6 +52,10 @@ export interface ButtonProps
      * If set, move to the selected page; internally uses onClick()
      */
     page?: string;
+    /**
+     * If set, item do a redirect (using next.js router)
+     */
+    href?: IHrefProps;
 }
 
 export function Button(
@@ -62,14 +69,19 @@ export function Button(
         icon,
         itemType,
         page,
+        href,
         ...rest
     }: ButtonProps) {
     const {selected}     = useContext(SelectContext);
     const {onChangeOpen} = useContext(OpenContext);
-    const {setPage}      = useCommandPaletteState(({setPage}) => setPage);
+    const setPage        = useCommandPaletteState(({setPage}) => setPage);
+    const router         = useRouter();
 
     onClick = onClick || (() => {
         page && setPage(page);
+    });
+    onClick = onClick || (() => {
+        href && router.push(toHref(href));
     });
 
     function clickAndClose(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
