@@ -1,5 +1,11 @@
 # @leight/prisma
 
+## 0.5.19
+
+### Patch Changes
+
+- Update
+
 ## 0.5.18
 
 ### Patch Changes

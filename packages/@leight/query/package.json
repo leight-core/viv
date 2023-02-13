@@ -1,5 +1,5 @@
 {
-    "version": "0.5.11",
+    "version": "0.5.12",
     "name": "@leight/query",
     "description": "Common query stuff (for querying data).",
     "license": "MIT",
@@ -23,8 +23,7 @@
         "src"
     ],
     "scripts": {
-        "build": "tsc -p tsconfig.json --outDir lib",
-        "dev:watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
+        "build": "tsc --outDir lib",
         "depcheck": "depcheck",
         "lint": "eslint src",
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
