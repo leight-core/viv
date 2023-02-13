@@ -35,14 +35,15 @@ export interface IUseLoopProps {
  * Cool hook used to execute loop in renders to do something (for example file upload in chunks), so
  * the component stays responsive but one can still do the job.
  */
-export const useLoop = ({
-                            total,
-                            throttle = 0,
-                            onStart = () => Promise.resolve(),
-                            onTick,
-                            onError = () => Promise.resolve(),
-                            onFinish = () => Promise.resolve(),
-                        }: IUseLoopProps) => {
+export const useLoop = (
+    {
+        total,
+        throttle = 0,
+        onStart = () => Promise.resolve(),
+        onTick,
+        onError = () => Promise.resolve(),
+        onFinish = () => Promise.resolve(),
+    }: IUseLoopProps) => {
     const loopStore  = useLoopStore();
     const loopsStore = useOptionalLoopsStore();
 

@@ -1,5 +1,11 @@
 # @leight/react-cmdk
 
+## 0.5.5
+
+### Patch Changes
+
+- Improved internal stuff, connected to Zustand Store, created context
+
 ## 0.5.4
 
 ### Patch Changes

@@ -1,37 +1,37 @@
 import {
     Dialog,
     Transition
-}                       from "@headlessui/react";
+}                                    from "@headlessui/react";
 import React, {
     Fragment,
     ReactNode,
     useEffect,
     useRef,
     useState
-}                       from "react";
+}                                    from "react";
+import {useCmdkStore}                from "../store";
 import {
     OpenContext,
     PageContext,
     SearchContext,
     SelectContext,
-}                       from "../utils/context";
-import FreeSearchAction from "./FreeSearchAction";
-import List             from "./List";
-import ListItem         from "./ListItem";
-import Page             from "./Page";
-import Search           from "./Search";
+}                                    from "../utils/context";
+import {useHandleOpenCommandPalette} from "../utils/utils";
+import FreeSearchAction              from "./FreeSearchAction";
+import List                          from "./List";
+import ListItem                      from "./ListItem";
+import Page                          from "./Page";
+import Search                        from "./Search";
 
 interface CommandPaletteProps {
     onChangeSelected?: (value: number) => void;
-    onChangeSearch: (search: string) => void;
-    onChangeOpen: (isOpen: boolean) => void;
+    onChangeSearch?: (search: string) => void;
+    onChangeOpen?: (isOpen: boolean) => void;
     placeholder?: string;
     children: ReactNode;
     footer?: ReactNode;
     selected?: number;
-    isOpen: boolean;
-    search: string;
-    page?: string;
+    hotkey?: string;
 }
 
 function CommandPalette(
@@ -39,14 +39,23 @@ function CommandPalette(
         selected: selectedParent,
         placeholder = "Search",
         onChangeSelected,
-        onChangeSearch,
-        onChangeOpen,
+        onChangeSearch: $onChangeSearch,
+        onChangeOpen:   $onChangeOpen,
         children,
-        isOpen,
         footer,
-        search,
-        page,
+        hotkey = "mod+k",
     }: CommandPaletteProps) {
+    const {search, page, isOpen, setIsOpen, setSearch} = useCmdkStore();
+    useHandleOpenCommandPalette(hotkey);
+    const onChangeOpen   = (isOpen: boolean) => {
+        setIsOpen(isOpen);
+        $onChangeOpen?.(isOpen);
+    };
+    const onChangeSearch = (search: string) => {
+        setSearch(search);
+        $onChangeSearch?.(search);
+    };
+
     const inputRef = useRef<HTMLInputElement>(null);
 
     const [selected, setSelected] =

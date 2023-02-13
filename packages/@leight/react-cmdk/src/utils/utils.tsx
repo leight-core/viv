@@ -1,11 +1,10 @@
+import {useHotkeys}    from "@mantine/hooks";
 import React, {
     Children,
-    Dispatch,
-    ReactNode,
-    SetStateAction,
-    useEffect
+    ReactNode
 }                      from "react";
 import CommandPalette  from "../components/CommandPalette";
+import {useCmdkStore}  from "../store";
 import {JsonStructure} from "../types";
 
 export function getItemIndex(
@@ -111,30 +110,12 @@ export function renderJsonStructure(jsonStructure: JsonStructure) {
     ));
 }
 
-export function useHandleOpenCommandPalette(
-    setIsOpen: Dispatch<SetStateAction<boolean>>
-) {
-    useEffect(() => {
-        function handleKeyDown(e: KeyboardEvent) {
-            if (
-                (navigator?.platform?.toLowerCase().includes("mac")
-                    ? e.metaKey
-                    : e.ctrlKey) &&
-                e.key === "k"
-            ) {
-                e.preventDefault();
-                e.stopPropagation();
-
-                setIsOpen((currentValue) => {
-                    return !currentValue;
-                });
-            }
-        }
-
-        document.addEventListener("keydown", handleKeyDown);
-
-        return () => {
-            document.removeEventListener("keydown", handleKeyDown);
-        };
-    }, []);
+export function useHandleOpenCommandPalette(hotkey: string = "mod+k") {
+    const {isOpen, setIsOpen} = useCmdkStore();
+    useHotkeys([
+        [
+            hotkey,
+            () => setIsOpen(!isOpen)
+        ],
+    ]);
 }

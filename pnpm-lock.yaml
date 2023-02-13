@@ -893,10 +893,12 @@ importers:
       '@babel/preset-react': ^7.17.12
       '@babel/preset-typescript': ^7.17.12
       '@headlessui/react': ^1.6.4
+      '@leight/context-client': '*'
       '@leight/eslint-config-eslint': workspace:^0.5.6
       '@leight/i18n': '*'
       '@leight/tsconfig': workspace:^0.5.16
       '@leight/utils': '*'
+      '@mantine/hooks': ^5.10.3
       '@types/node': ^18.13.0
       '@types/react': ^18.0.11
       '@types/react-dom': ^18.0.5
@@ -921,8 +923,10 @@ importers:
       webpack: ^5.73.0
     dependencies:
       '@headlessui/react': 1.7.10_biqbaboplfbrettd7655fr4n2y
+      '@leight/context-client': link:../context-client
       '@leight/i18n': link:../i18n
       '@leight/utils': link:../utils
+      '@mantine/hooks': 5.10.3_react@18.2.0
       html-webpack-plugin: 5.5.0_webpack@5.75.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0

@@ -1,3 +1,4 @@
+export * from "./store";
 export * from "./components/CommandPalette";
 export * from "./utils/utils";
 export * from "./utils/withItem";

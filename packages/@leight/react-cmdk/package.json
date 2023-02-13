@@ -1,5 +1,5 @@
 {
-    "version": "0.5.4",
+    "version": "0.5.5",
     "name": "@leight/react-cmdk",
     "description": "Quite cool command pallete for react.",
     "license": "MIT",
@@ -30,8 +30,10 @@
     },
     "dependencies": {
         "@headlessui/react": "^1.6.4",
+        "@leight/context-client": "*",
         "@leight/i18n": "*",
         "@leight/utils": "*",
+        "@mantine/hooks": "^5.10.3",
         "html-webpack-plugin": "^5.5.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
