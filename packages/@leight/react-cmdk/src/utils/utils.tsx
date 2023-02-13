@@ -120,7 +120,7 @@ export function useCommandPaletteHotkey(hotkey: string = "mod+k") {
     ]);
     useHotkeys([
         [
-            "esc",
+            "escape",
             () => setIsOpen(false),
         ],
     ]);

@@ -1,5 +1,11 @@
 # @leight/react-cmdk
 
+## 0.5.14
+
+### Patch Changes
+
+- Escape spotlight by escape
+
 ## 0.5.13
 
 ### Patch Changes
