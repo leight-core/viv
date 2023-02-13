@@ -4,11 +4,11 @@ import React, {
 }                               from "react";
 import {useCommandPaletteState} from "../store";
 import {JsonStructure}          from "../types";
-import {PageContext,}           from "../utils";
 import {
     filterItems,
-    renderJsonStructure
-}                               from "../utils/utils";
+    PageContext,
+    renderJsonStructure,
+}                               from "../utils";
 
 interface PageProps {
     searchPrefix?: string[];
