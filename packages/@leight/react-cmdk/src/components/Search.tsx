@@ -1,10 +1,12 @@
-import {MagnifyingGlassIcon} from "@heroicons/react/24/outline";
-import {XCircleIcon}         from "@heroicons/react/24/solid";
 import React, {
     forwardRef,
     Fragment,
     Ref
-}                            from "react";
+} from "react";
+import {
+    CircleX,
+    Search as SearchIcon
+} from "tabler-icons-react";
 
 interface SearchProps {
     onChange: (value: string) => void;
@@ -19,7 +21,7 @@ function Search(
 ) {
     return (
         <div className="flex items-center space-x-1.5 pl-3">
-            <MagnifyingGlassIcon className="w-4 pointer-events-none text-gray-400 dark:text-gray-600"/>
+            <SearchIcon className="w-4 pointer-events-none text-gray-400 dark:text-gray-600"/>
 
             {prefix?.length
                 ? prefix.map((p) => {
@@ -37,7 +39,7 @@ function Search(
                     ref={ref}
                     autoComplete={"off"}
                     spellCheck={false}
-                    className="py-4 px-0 border-none w-full focus:outline-none focus:border-none focus:ring-0 bg-transparent placeholder-gray-500 dark:text-white"
+                    className={"py-4 px-0 border-none w-full focus:outline-none focus:border-none focus:ring-0 bg-transparent placeholder-gray-500 dark:text-white"}
                     onChange={(e) => {
                         onChange(e.currentTarget.value);
                     }}
@@ -51,28 +53,23 @@ function Search(
                             onChange("");
                         }
                     }}
-                    id="command-palette-search-input"
+                    id={"command-palette-search-input"}
                     placeholder={placeholder}
                     value={value}
-                    type="text"
+                    type={"text"}
                     autoFocus
                 />
 
                 {value && (
                     <button
                         tabIndex={-1}
-                        type="button"
+                        type={"button"}
                         onClick={() => {
                             onChange("");
-                            const inputElement = document.getElementById(
-                                "command-palette-search-input"
-                            );
-                            if (inputElement) {
-                                inputElement.focus();
-                            }
+                            document.getElementById("command-palette-search-input")?.focus();
                         }}
                     >
-                        <XCircleIcon className="w-5 text-gray-300 dark:text-gray-600 hover:text-gray-500 dark:hover:text-gray-300 transition absolute right-3 top-1/2 transform -translate-y-1/2"/>
+                        <CircleX className={"w-5 text-gray-300 dark:text-gray-600 hover:text-gray-500 dark:hover:text-gray-300 transition absolute right-3 top-1/2 transform -translate-y-1/2"}/>
                     </button>
                 )}
             </div>

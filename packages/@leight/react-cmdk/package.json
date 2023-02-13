@@ -1,5 +1,5 @@
 {
-    "version": "0.5.1",
+    "version": "0.5.3",
     "name": "@leight/react-cmdk",
     "description": "Quite cool command pallete for react.",
     "license": "MIT",
@@ -30,11 +30,11 @@
     },
     "dependencies": {
         "@headlessui/react": "^1.6.4",
-        "@heroicons/react": "^2.0.13",
         "html-webpack-plugin": "^5.5.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "reflect-metadata": "^0.1.13"
+        "reflect-metadata": "^0.1.13",
+        "tabler-icons-react": "^1.56.0"
     },
     "peerDependencies": {
         "react": "^16.x || ^17.x || ^18.x",

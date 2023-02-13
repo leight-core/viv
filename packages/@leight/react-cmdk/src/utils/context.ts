@@ -2,8 +2,7 @@ import {
     createContext,
     Dispatch,
     SetStateAction
-}                   from "react";
-import {RenderLink} from "../types";
+} from "react";
 
 export const SelectContext = createContext<{ selected: number }>({
     selected: 0,
@@ -20,12 +19,6 @@ export const PageContext = createContext<{
 
 export const SearchContext = createContext<{ search: string }>({
     search: "",
-});
-
-export const RenderLinkContext = createContext<{
-    renderLink?: RenderLink;
-}>({
-    renderLink: undefined,
 });
 
 export const OpenContext = createContext<{

@@ -15,12 +15,13 @@ interface PageProps {
     id: string;
 }
 
-export default function Page({
-                                 searchPrefix,
-                                 children,
-                                 onEscape,
-                                 id,
-                             }: PageProps) {
+export default function Page(
+    {
+        searchPrefix,
+        children,
+        onEscape,
+        id,
+    }: PageProps) {
     const {page, setSearchPrefix} = useContext(PageContext);
     const {search}                = useContext(SearchContext);
 

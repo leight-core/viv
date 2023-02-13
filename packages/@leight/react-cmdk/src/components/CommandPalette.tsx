@@ -9,16 +9,13 @@ import React, {
     useRef,
     useState
 }                       from "react";
-import {RenderLink}     from "../types";
 import {
     OpenContext,
     PageContext,
-    RenderLinkContext,
     SearchContext,
     SelectContext,
 }                       from "../utils/context";
 import FreeSearchAction from "./FreeSearchAction";
-import Icon             from "./Icon";
 import List             from "./List";
 import ListItem         from "./ListItem";
 import Page             from "./Page";
@@ -28,7 +25,6 @@ interface CommandPaletteProps {
     onChangeSelected?: (value: number) => void;
     onChangeSearch: (search: string) => void;
     onChangeOpen: (isOpen: boolean) => void;
-    renderLink?: RenderLink;
     placeholder?: string;
     children: ReactNode;
     footer?: ReactNode;
@@ -38,19 +34,19 @@ interface CommandPaletteProps {
     page?: string;
 }
 
-function CommandPalette({
-                            selected: selectedParent,
-                            placeholder = "Search",
-                            onChangeSelected,
-                            onChangeSearch,
-                            onChangeOpen,
-                            renderLink,
-                            children,
-                            isOpen,
-                            footer,
-                            search,
-                            page,
-                        }: CommandPaletteProps) {
+function CommandPalette(
+    {
+        selected: selectedParent,
+        placeholder = "Search",
+        onChangeSelected,
+        onChangeSearch,
+        onChangeOpen,
+        children,
+        isOpen,
+        footer,
+        search,
+        page,
+    }: CommandPaletteProps) {
     const inputRef = useRef<HTMLInputElement>(null);
 
     const [selected, setSelected] =
@@ -220,11 +216,7 @@ function CommandPalette({
                                                 >
                                                     <SearchContext.Provider value={{search}}>
                                                         <SelectContext.Provider value={{selected}}>
-                                                            <RenderLinkContext.Provider
-                                                                value={{renderLink}}
-                                                            >
-                                                                {children}
-                                                            </RenderLinkContext.Provider>
+                                                            {children}
                                                         </SelectContext.Provider>
                                                     </SearchContext.Provider>
                                                 </PageContext.Provider>
@@ -246,7 +238,6 @@ function CommandPalette({
 CommandPalette.Page             = Page;
 CommandPalette.List             = List;
 CommandPalette.ListItem         = ListItem;
-CommandPalette.Icon             = Icon;
 CommandPalette.FreeSearchAction = FreeSearchAction;
 
 export default CommandPalette;
