@@ -118,10 +118,4 @@ export function useCommandPaletteHotkey(hotkey: string = "mod+k") {
             () => setIsOpen(!isOpen),
         ],
     ]);
-    useHotkeys([
-        [
-            "escape",
-            () => setIsOpen(false),
-        ],
-    ]);
 }
