@@ -115,7 +115,13 @@ export function useCommandPaletteHotkey(hotkey: string = "mod+k") {
     useHotkeys([
         [
             hotkey,
-            () => setIsOpen(!isOpen)
+            () => setIsOpen(!isOpen),
+        ],
+    ]);
+    useHotkeys([
+        [
+            "esc",
+            () => setIsOpen(false),
         ],
     ]);
 }

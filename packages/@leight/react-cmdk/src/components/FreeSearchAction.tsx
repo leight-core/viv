@@ -16,7 +16,12 @@ export default function FreeSearchAction(
     const search = useCommandPaletteState(({search}) => search);
 
     return (
-        <ListItem index={0} icon={Search} showType={false} {...props}>
+        <ListItem
+            index={0}
+            icon={Search}
+            showType={false}
+            {...props}
+        >
             <span className="max-w-md truncate dark:text-white">
             {label} <span className="font-semibold">"{search}"</span>
             </span>

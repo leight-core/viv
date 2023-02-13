@@ -10,10 +10,10 @@ import React, {
 }                               from "react";
 import {useCommandPaletteState} from "../store";
 import {
+    classNames,
     OpenContext,
     SelectContext
-}                               from "../utils/context";
-import {classNames}             from "../utils/utils";
+}                               from "../utils";
 
 export type ListItemType = string;
 
@@ -72,19 +72,18 @@ export function Button(
         closeOnSelect = !page,
         ...rest
     }: ButtonProps) {
+    const {setPage, setSearch} = useCommandPaletteState(({setPage, setSearch}) => ({setPage, setSearch}));
     const {selected}           = useContext(SelectContext);
     const {onChangeOpen}       = useContext(OpenContext);
-    const {setPage, setSearch} = useCommandPaletteState(({setPage, setSearch}) => ({setPage, setSearch}));
     const router               = useRouter();
 
-    onClick = onClick || (() => {
+    onClick = page ? (() => {
         page && setPage(page);
         page && setSearch("");
-    });
-    onClick = onClick || (() => {
-        console.log("Routing to", href, href && toHref(href), "router", router);
+    }) : onClick;
+    onClick = href ? (() => {
         href && router.push(toHref(href));
-    });
+    }) : onClick;
 
     function clickAndClose(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         if (onClick) {

@@ -1,5 +1,11 @@
 # @leight/react-cmdk
 
+## 0.5.13
+
+### Patch Changes
+
+- Fixed navigation II
+
 ## 0.5.12
 
 ### Patch Changes
