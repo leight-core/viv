@@ -12,21 +12,20 @@ import {withConsumer}           from "./withConsumer";
 
 export type IStoreProviderFactory<TProps> = FC<{
     children: IProviderChildren<IStoreApi<TProps>>;
+    defaults?: Partial<TProps>;
 }>;
 
 export interface ICreateProviderProps<TStoreProps> {
     createStore: ICreateStore<TStoreProps>;
-    defaults?: Partial<TStoreProps>;
     Context: IStoreContext<TStoreProps>;
 }
 
 export const createProvider = <TStoreProps, >(
     {
         createStore,
-        defaults,
         Context,
     }: ICreateProviderProps<TStoreProps>): IStoreProviderFactory<TStoreProps> => {
-    return function StoreProvider({children}) {
+    return function StoreProvider({children, defaults}) {
         const store = createStore(defaults);
         const memo  = useMemo(() => ({state: store.getState(), store}), []);
         return (
