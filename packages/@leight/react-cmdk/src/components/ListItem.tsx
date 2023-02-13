@@ -60,7 +60,6 @@ export interface ButtonProps
 
 export function Button(
     {
-        closeOnSelect = true,
         showType = true,
         className,
         children,
@@ -70,17 +69,20 @@ export function Button(
         itemType,
         page,
         href,
+        closeOnSelect = !page,
         ...rest
     }: ButtonProps) {
-    const {selected}     = useContext(SelectContext);
-    const {onChangeOpen} = useContext(OpenContext);
-    const setPage        = useCommandPaletteState(({setPage}) => setPage);
-    const router         = useRouter();
+    const {selected}           = useContext(SelectContext);
+    const {onChangeOpen}       = useContext(OpenContext);
+    const {setPage, setSearch} = useCommandPaletteState(({setPage, setSearch}) => ({setPage, setSearch}));
+    const router               = useRouter();
 
     onClick = onClick || (() => {
         page && setPage(page);
+        page && setSearch("");
     });
     onClick = onClick || (() => {
+        console.log("Routing to", href, href && toHref(href), "router", router);
         href && router.push(toHref(href));
     });
 

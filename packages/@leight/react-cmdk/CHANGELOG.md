@@ -1,5 +1,11 @@
 # @leight/react-cmdk
 
+## 0.5.12
+
+### Patch Changes
+
+- Fixed routing, improved DX
+
 ## 0.5.11
 
 ### Patch Changes
