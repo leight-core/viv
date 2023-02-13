@@ -1,5 +1,5 @@
 {
-    "version": "0.5.19",
+    "version": "0.5.21",
     "name": "@leight/user",
     "description": "Common user stuff.",
     "license": "MIT",
@@ -37,8 +37,8 @@
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.5.8",
-        "@leight/tsconfig": "workspace:^0.5.18",
+        "@leight/eslint-config-eslint": "workspace:^0.5.10",
+        "@leight/tsconfig": "workspace:^0.5.20",
         "@types/node": "^18.13.0",
         "@typescript-eslint/eslint-plugin": "^5.52.0",
         "@typescript-eslint/parser": "^5.52.0",

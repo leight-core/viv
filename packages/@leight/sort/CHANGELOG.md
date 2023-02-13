@@ -1,5 +1,17 @@
 # @leight/sort
 
+## 0.5.15
+
+### Patch Changes
+
+- Build
+
+## 0.5.14
+
+### Patch Changes
+
+- Version bump
+
 ## 0.5.13
 
 ### Patch Changes

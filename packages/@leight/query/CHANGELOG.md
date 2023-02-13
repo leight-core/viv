@@ -1,5 +1,25 @@
 # @leight/query
 
+## 0.5.16
+
+### Patch Changes
+
+- Build
+- Updated dependencies
+    - @leight/cursor@0.5.15
+    - @leight/filter@0.5.15
+    - @leight/sort@0.5.15
+
+## 0.5.15
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/cursor@0.5.14
+    - @leight/filter@0.5.14
+    - @leight/sort@0.5.14
+
 ## 0.5.14
 
 ### Patch Changes

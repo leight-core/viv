@@ -36,7 +36,6 @@ export const createStoreContext = <TProps>(
     const Context = createContext<IStoreApi<TProps>>();
     return {
         Provider:         createProvider({
-            name,
             Context,
             createStore: (defaults) => {
                 const $store = createStore<TProps>(store);

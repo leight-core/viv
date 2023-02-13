@@ -1,5 +1,23 @@
 # @leight/prisma
 
+## 0.5.23
+
+### Patch Changes
+
+- Build
+- Updated dependencies
+    - @leight/source-server@0.5.18
+    - @leight/source@0.5.16
+
+## 0.5.22
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/source@0.5.15
+    - @leight/source-server@0.5.17
+
 ## 0.5.21
 
 ### Patch Changes

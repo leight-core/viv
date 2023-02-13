@@ -1,5 +1,5 @@
 {
-    "version": "0.5.19",
+    "version": "0.5.21",
     "name": "@leight/trpc-server",
     "description": "Set of utils for tRPC server-side.",
     "license": "MIT",
@@ -30,11 +30,11 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "workspace:^0.5.18",
-        "@leight/trpc": "workspace:^0.5.18",
-        "@leight/user": "workspace:^0.5.19",
-        "@leight/user-server": "workspace:^0.5.18",
-        "@trpc/server": "^10.11.0",
+        "@leight/container": "workspace:^0.5.20",
+        "@leight/trpc": "workspace:^0.5.20",
+        "@leight/user": "workspace:^0.5.21",
+        "@leight/user-server": "workspace:^0.5.20",
+        "@trpc/server": "^10.11.1",
         "next": "^13.1.6",
         "next-auth": "^4.19.2",
         "react": "^18.2.0",
@@ -43,8 +43,8 @@
         "zod": "^3.20.6"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.5.8",
-        "@leight/tsconfig": "workspace:^0.5.18",
+        "@leight/eslint-config-eslint": "workspace:^0.5.10",
+        "@leight/tsconfig": "workspace:^0.5.20",
         "@types/node": "^18.13.0",
         "@typescript-eslint/eslint-plugin": "^5.52.0",
         "@typescript-eslint/parser": "^5.52.0",
