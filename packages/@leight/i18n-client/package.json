@@ -1,5 +1,5 @@
 {
-    "version": "0.5.19",
+    "version": "0.5.20",
     "name": "@leight/i18n-client",
     "description": "Some i18n client-side helper stuff.",
     "license": "MIT",
@@ -24,30 +24,28 @@
     ],
     "scripts": {
         "build": "tsc -p tsconfig.json --outDir lib",
-        "dev:watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
         "depcheck": "depcheck",
         "lint": "eslint src",
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/i18n": "workspace:^0.5.18",
-        "@leight/utils": "workspace:^0.5.20",
+        "@leight/context-client": "^0.5.24",
+        "@leight/i18n": "workspace:^0.5.19",
+        "@leight/utils": "workspace:^0.5.21",
         "i18next": "^22.4.9",
-        "next": "^13.1.6",
-        "next-i18next": "^13.1.5",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "react-i18next": "^12.1.5",
-        "reflect-metadata": "^0.1.13"
+        "reflect-metadata": "^0.1.13",
+        "zustand": "^4.3.3"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.5.7",
-        "@leight/tsconfig": "workspace:^0.5.17",
+        "@leight/eslint-config-eslint": "workspace:^0.5.8",
+        "@leight/tsconfig": "workspace:^0.5.18",
         "@types/node": "^18.13.0",
         "@types/react": "^18.0.28",
         "@types/react-dom": "^18.0.10",
-        "@typescript-eslint/eslint-plugin": "^5.51.0",
-        "@typescript-eslint/parser": "^5.51.0",
+        "@typescript-eslint/eslint-plugin": "^5.52.0",
+        "@typescript-eslint/parser": "^5.52.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
         "depcheck": "^1.4.3",

@@ -1,5 +1,5 @@
 {
-    "version": "0.5.12",
+    "version": "0.5.13",
     "name": "@leight/cursor",
     "description": "Common cursor stuff (paging).",
     "license": "MIT",
@@ -34,11 +34,11 @@
         "zod": "^3.20.6"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.5.7",
-        "@leight/tsconfig": "workspace:^0.5.17",
+        "@leight/eslint-config-eslint": "workspace:^0.5.8",
+        "@leight/tsconfig": "workspace:^0.5.18",
         "@types/node": "^18.13.0",
-        "@typescript-eslint/eslint-plugin": "^5.51.0",
-        "@typescript-eslint/parser": "^5.51.0",
+        "@typescript-eslint/eslint-plugin": "^5.52.0",
+        "@typescript-eslint/parser": "^5.52.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
         "depcheck": "^1.4.3",

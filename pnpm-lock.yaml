@@ -21,8 +21,8 @@ importers:
       '@leight/eslint-config-eslint': workspace:^0.5.7
       '@leight/tsconfig': workspace:^0.5.17
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -39,8 +39,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -60,8 +60,8 @@ importers:
       '@leight/user-server': workspace:^0.5.17
       '@leight/xlsx-import-server': workspace:^0.5.17
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -81,8 +81,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -99,8 +99,8 @@ importers:
       '@types/node': ^18.13.0
       '@types/react': ^18.0.28
       '@types/react-dom': ^18.0.10
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -124,8 +124,8 @@ importers:
       '@types/node': 18.13.0
       '@types/react': 18.0.28
       '@types/react-dom': 18.0.10
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -138,8 +138,8 @@ importers:
       '@leight/eslint-config-eslint': workspace:^0.5.7
       '@leight/tsconfig': workspace:^0.5.17
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -156,8 +156,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -168,8 +168,8 @@ importers:
 
   packages/@leight/eslint-config-eslint:
     specifiers:
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       eslint: ^8.34.0
       eslint-config-next: ^13.1.6
       eslint-config-prettier: ^8.6.0
@@ -180,23 +180,23 @@ importers:
       eslint-plugin-react: ^7.32.2
       eslint-plugin-react-hooks: ^4.6.0
       eslint-plugin-unicorn: ^45.0.2
-      lint-staged: ^13.1.1
+      lint-staged: ^13.1.2
       typescript: ^4.9.5
     dependencies:
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       eslint-config-next: 13.1.6_7kw3g6rralp5ps6mg3uyzz6azm
       eslint-config-prettier: 8.6.0_eslint@8.34.0
       eslint-config-turbo: 0.0.7_eslint@8.34.0
       eslint-plugin-disable: 2.0.3_eslint@8.34.0
-      eslint-plugin-import: 2.27.5_62tsymtiqxebhmxuag4hg3gx2m
+      eslint-plugin-import: 2.27.5_mcvs2y73sfmcxqzpjj5lr7a2m4
       eslint-plugin-jsx-a11y: 6.7.1_eslint@8.34.0
       eslint-plugin-react: 7.32.2_eslint@8.34.0
       eslint-plugin-react-hooks: 4.6.0_eslint@8.34.0
       eslint-plugin-unicorn: 45.0.2_eslint@8.34.0
     devDependencies:
       eslint: 8.34.0
-      lint-staged: 13.1.1
+      lint-staged: 13.1.2
       typescript: 4.9.5
 
   packages/@leight/file:
@@ -207,8 +207,8 @@ importers:
       '@leight/source': workspace:^0.5.13
       '@leight/tsconfig': workspace:^0.5.17
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -227,8 +227,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -247,8 +247,8 @@ importers:
       '@types/react': ^18.0.28
       '@types/react-dom': ^18.0.10
       '@types/uuid': ^9.0.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       axios: ^1.3.2
       concurrently: ^7.6.0
       del-cli: ^5.0.0
@@ -276,8 +276,8 @@ importers:
       '@types/react': 18.0.28
       '@types/react-dom': 18.0.10
       '@types/uuid': 9.0.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -298,8 +298,8 @@ importers:
       '@types/node': ^18.13.0
       '@types/touch': ^3.1.2
       '@types/uuid': ^9.0.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -332,8 +332,8 @@ importers:
       '@types/node': 18.13.0
       '@types/touch': 3.1.2
       '@types/uuid': 9.0.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       eslint: 8.34.0
@@ -345,8 +345,8 @@ importers:
       '@leight/eslint-config-eslint': workspace:^0.5.7
       '@leight/tsconfig': workspace:^0.5.17
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -361,8 +361,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -376,8 +376,8 @@ importers:
       '@leight/eslint-config-eslint': workspace:^0.5.7
       '@leight/tsconfig': workspace:^0.5.17
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -391,8 +391,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -402,6 +402,7 @@ importers:
 
   packages/@leight/i18n-client:
     specifiers:
+      '@leight/context-client': ^0.5.23
       '@leight/eslint-config-eslint': workspace:^0.5.7
       '@leight/i18n': workspace:^0.5.18
       '@leight/tsconfig': workspace:^0.5.17
@@ -409,39 +410,36 @@ importers:
       '@types/node': ^18.13.0
       '@types/react': ^18.0.28
       '@types/react-dom': ^18.0.10
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
       eslint: ^8.34.0
       eslint-plugin-unicorn: ^45.0.2
       i18next: ^22.4.9
-      next: ^13.1.6
-      next-i18next: ^13.1.5
       react: ^18.2.0
       react-dom: ^18.2.0
-      react-i18next: ^12.1.5
       reflect-metadata: ^0.1.13
       typescript: ^4.9.5
+      zustand: ^4.3.3
     dependencies:
+      '@leight/context-client': link:../context-client
       '@leight/i18n': link:../i18n
       '@leight/utils': link:../utils
       i18next: 22.4.9
-      next: 13.1.6_biqbaboplfbrettd7655fr4n2y
-      next-i18next: 13.1.5_ofn3rluqlytmjlkhptt5cftfxy
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      react-i18next: 12.1.5_iakk3dtjhjpukdoa4oua5khgci
       reflect-metadata: 0.1.13
+      zustand: 4.3.3_react@18.2.0
     devDependencies:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
       '@types/react': 18.0.28
       '@types/react-dom': 18.0.10
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -457,8 +455,8 @@ importers:
       '@types/node': ^18.13.0
       '@types/react': ^18.0.28
       '@types/react-dom': ^18.0.10
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -487,8 +485,8 @@ importers:
       '@types/node': 18.13.0
       '@types/react': 18.0.28
       '@types/react-dom': 18.0.10
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -502,8 +500,8 @@ importers:
       '@leight/job': workspace:^0.5.19
       '@leight/tsconfig': workspace:^0.5.17
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -520,8 +518,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -536,8 +534,8 @@ importers:
       '@leight/import': workspace:^0.5.17
       '@leight/tsconfig': workspace:^0.5.17
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -555,8 +553,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -573,8 +571,8 @@ importers:
       '@leight/tsconfig': workspace:^0.5.17
       '@leight/winston': workspace:^0.5.17
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -594,8 +592,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -614,8 +612,8 @@ importers:
       '@leight/utils': workspace:^0.5.20
       '@leight/winston': workspace:^0.5.17
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       delay: ^5.0.0
@@ -640,8 +638,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -657,8 +655,8 @@ importers:
       '@types/node': ^18.13.0
       '@types/react': ^18.0.28
       '@types/react-dom': ^18.0.10
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -678,8 +676,8 @@ importers:
       '@types/node': 18.13.0
       '@types/react': 18.0.28
       '@types/react-dom': 18.0.10
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -707,8 +705,8 @@ importers:
       '@types/node': ^18.13.0
       '@types/react': ^18.0.28
       '@types/react-dom': ^18.0.10
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -743,8 +741,8 @@ importers:
       '@types/node': 18.13.0
       '@types/react': 18.0.28
       '@types/react-dom': 18.0.10
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -764,8 +762,8 @@ importers:
       '@types/node': ^18.13.0
       '@types/react': ^18.0.28
       '@types/react-dom': ^18.0.10
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -796,8 +794,8 @@ importers:
       '@types/node': 18.13.0
       '@types/react': 18.0.28
       '@types/react-dom': 18.0.10
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -813,8 +811,8 @@ importers:
       '@leight/tsconfig': workspace:^0.5.17
       '@prisma/client': ^4.10.1
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -835,8 +833,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -854,8 +852,8 @@ importers:
       '@leight/sort': workspace:^0.5.12
       '@leight/tsconfig': workspace:^0.5.17
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -875,8 +873,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -887,43 +885,43 @@ importers:
 
   packages/@leight/react-cmdk:
     specifiers:
-      '@babel/cli': ^7.17.10
-      '@babel/core': ^7.18.2
-      '@babel/preset-env': ^7.18.2
-      '@babel/preset-react': ^7.17.12
-      '@babel/preset-typescript': ^7.17.12
-      '@headlessui/react': ^1.6.4
-      '@leight/context-client': '*'
+      '@babel/cli': ^7.20.7
+      '@babel/core': ^7.20.12
+      '@babel/preset-env': ^7.20.2
+      '@babel/preset-react': ^7.18.6
+      '@babel/preset-typescript': ^7.18.6
+      '@headlessui/react': ^1.7.10
+      '@leight/context-client': workspace:^0.5.23
       '@leight/eslint-config-eslint': workspace:^0.5.7
-      '@leight/i18n': '*'
+      '@leight/i18n': workspace:^0.5.18
       '@leight/tsconfig': workspace:^0.5.17
-      '@leight/utils': '*'
-      '@leight/utils-client': '*'
+      '@leight/utils': workspace:^0.5.20
+      '@leight/utils-client': workspace:^0.5.21
       '@mantine/hooks': ^5.10.3
       '@types/node': ^18.13.0
-      '@types/react': ^18.0.11
-      '@types/react-dom': ^18.0.5
+      '@types/react': ^18.0.28
+      '@types/react-dom': ^18.0.10
       '@types/react-outside-click-handler': ^1.3.1
       '@types/webpack': ^5.28.0
-      autoprefixer: ^10.4.7
-      babel-loader: ^8.2.5
+      autoprefixer: ^10.4.13
+      babel-loader: ^9.1.2
       del-cli: ^5.0.0
       depcheck: ^1.4.3
       dotenv-cli: ^7.0.0
       eslint: ^8.34.0
-      fork-ts-checker-webpack-plugin: ^7.2.11
+      fork-ts-checker-webpack-plugin: ^7.3.0
       html-webpack-plugin: ^5.5.0
-      next: ^12.1.6
-      postcss: ^8.4.14
-      postcss-prefix-selector: ^1.15.0
+      next: ^13.1.6
+      postcss: ^8.4.21
+      postcss-prefix-selector: ^1.16.0
       react: ^18.2.0
       react-dom: ^18.2.0
       reflect-metadata: ^0.1.13
       tabler-icons-react: ^1.56.0
-      tailwindcss: ^3.0.24
-      ts-loader: ^9.3.0
-      typescript: ^4.7.3
-      webpack: ^5.73.0
+      tailwindcss: ^3.2.6
+      ts-loader: ^9.4.2
+      typescript: ^4.9.5
+      webpack: ^5.75.0
       zustand: ^4.3.3
     dependencies:
       '@headlessui/react': 1.7.10_biqbaboplfbrettd7655fr4n2y
@@ -933,7 +931,7 @@ importers:
       '@leight/utils-client': link:../utils-client
       '@mantine/hooks': 5.10.3_react@18.2.0
       html-webpack-plugin: 5.5.0_webpack@5.75.0
-      next: 12.3.4_pjwopsidmaokadturxaafygjp4
+      next: 13.1.6_pjwopsidmaokadturxaafygjp4
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       reflect-metadata: 0.1.13
@@ -953,7 +951,7 @@ importers:
       '@types/react-outside-click-handler': 1.3.1
       '@types/webpack': 5.28.0
       autoprefixer: 10.4.13_postcss@8.4.21
-      babel-loader: 8.3.0_la66t7xldg4uecmyawueag5wkm
+      babel-loader: 9.1.2_la66t7xldg4uecmyawueag5wkm
       del-cli: 5.0.0
       depcheck: 1.4.3
       dotenv-cli: 7.0.0
@@ -971,8 +969,8 @@ importers:
       '@leight/eslint-config-eslint': workspace:^0.5.7
       '@leight/tsconfig': workspace:^0.5.17
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -987,8 +985,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -1006,8 +1004,8 @@ importers:
       '@leight/tsconfig': workspace:^0.5.17
       '@leight/utils': workspace:^0.5.20
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -1026,8 +1024,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -1042,8 +1040,8 @@ importers:
       '@leight/source': workspace:^0.5.13
       '@leight/tsconfig': workspace:^0.5.17
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -1059,8 +1057,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -1075,8 +1073,8 @@ importers:
       '@leight/prisma': workspace:^0.5.20
       '@leight/tsconfig': workspace:^0.5.17
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -1094,8 +1092,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -1113,8 +1111,8 @@ importers:
       '@tanstack/react-query': ^4.24.6
       '@trpc/server': ^10.11.0
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -1138,8 +1136,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -1157,8 +1155,8 @@ importers:
       '@leight/user-server': workspace:^0.5.17
       '@trpc/server': ^10.11.0
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -1187,8 +1185,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -1204,8 +1202,8 @@ importers:
       '@leight/eslint-config-eslint': workspace:^0.5.7
       '@leight/tsconfig': workspace:^0.5.17
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -1228,8 +1226,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -1247,8 +1245,8 @@ importers:
       '@leight/user': workspace:^0.5.18
       '@leight/utils': workspace:^0.5.20
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -1269,8 +1267,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -1286,8 +1284,8 @@ importers:
       '@types/is-callable': ^1.1.0
       '@types/is-string': ^1.0.0
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -1313,8 +1311,8 @@ importers:
       '@types/is-callable': 1.1.0
       '@types/is-string': 1.0.0
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -1331,8 +1329,8 @@ importers:
       '@types/node': ^18.13.0
       '@types/react': ^18.0.28
       '@types/react-dom': ^18.0.10
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -1358,8 +1356,8 @@ importers:
       '@types/node': 18.13.0
       '@types/react': 18.0.28
       '@types/react-dom': 18.0.10
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -1372,8 +1370,8 @@ importers:
       '@leight/eslint-config-eslint': workspace:^0.5.7
       '@leight/tsconfig': workspace:^0.5.17
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -1387,8 +1385,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -1401,8 +1399,8 @@ importers:
       '@leight/eslint-config-eslint': workspace:^0.5.7
       '@leight/tsconfig': workspace:^0.5.17
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -1418,8 +1416,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -1435,8 +1433,8 @@ importers:
       '@leight/trpc': workspace:^0.5.17
       '@leight/tsconfig': workspace:^0.5.17
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -1457,8 +1455,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -1480,8 +1478,8 @@ importers:
       '@types/node': ^18.13.0
       '@types/react': ^18.0.28
       '@types/react-dom': ^18.0.10
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -1508,8 +1506,8 @@ importers:
       '@types/node': 18.13.0
       '@types/react': 18.0.28
       '@types/react-dom': 18.0.10
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -1530,8 +1528,8 @@ importers:
       '@leight/utils-server': workspace:^0.5.17
       '@leight/xlsx-import': workspace:^0.5.18
       '@types/node': ^18.13.0
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -1561,8 +1559,8 @@ importers:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig
       '@types/node': 18.13.0
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -1577,8 +1575,8 @@ importers:
       '@types/node': ^18.13.0
       '@types/react': ^18.0.28
       '@types/react-dom': ^18.0.10
-      '@typescript-eslint/eslint-plugin': ^5.51.0
-      '@typescript-eslint/parser': ^5.51.0
+      '@typescript-eslint/eslint-plugin': ^5.52.0
+      '@typescript-eslint/parser': ^5.52.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
       depcheck: ^1.4.3
@@ -1600,8 +1598,8 @@ importers:
       '@types/node': 18.13.0
       '@types/react': 18.0.28
       '@types/react-dom': 18.0.10
-      '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       concurrently: 7.6.0
       del-cli: 5.0.0
       depcheck: 1.4.3
@@ -3397,10 +3395,6 @@ packages:
       read-yaml-file: 1.1.0
     dev: true
 
-  /@next/env/12.3.4:
-    resolution: {integrity: sha512-H/69Lc5Q02dq3o+dxxy5O/oNxFsZpdL6WREtOOtOM1B/weonIwDXkekr1KV5DPVPr12IHFPrMrcJQ6bgPMfn7A==}
-    dev: false
-
   /@next/env/13.1.6:
     resolution: {integrity: sha512-s+W9Fdqh5MFk6ECrbnVmmAOwxKQuhGMT7xXHrkYIBMBcTiOqNWhv5KbJIboKR5STXxNXl32hllnvKaffzFaWQg==}
     dev: false
@@ -3411,28 +3405,10 @@ packages:
       glob: 7.1.7
     dev: false
 
-  /@next/swc-android-arm-eabi/12.3.4:
-    resolution: {integrity: sha512-cM42Cw6V4Bz/2+j/xIzO8nK/Q3Ly+VSlZJTa1vHzsocJRYz8KT6MrreXaci2++SIZCF1rVRCDgAg5PpqRibdIA==}
-    engines: {node: '>= 10'}
-    cpu: [arm]
-    os: [android]
-    requiresBuild: true
-    dev: false
-    optional: true
-
   /@next/swc-android-arm-eabi/13.1.6:
     resolution: {integrity: sha512-F3/6Z8LH/pGlPzR1AcjPFxx35mPqjE5xZcf+IL+KgbW9tMkp7CYi1y7qKrEWU7W4AumxX/8OINnDQWLiwLasLQ==}
     engines: {node: '>= 10'}
     cpu: [arm]
-    os: [android]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@next/swc-android-arm64/12.3.4:
-    resolution: {integrity: sha512-5jf0dTBjL+rabWjGj3eghpLUxCukRhBcEJgwLedewEA/LJk2HyqCvGIwj5rH+iwmq1llCWbOky2dO3pVljrapg==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
     os: [android]
     requiresBuild: true
     dev: false
@@ -3447,28 +3423,10 @@ packages:
     dev: false
     optional: true
 
-  /@next/swc-darwin-arm64/12.3.4:
-    resolution: {integrity: sha512-DqsSTd3FRjQUR6ao0E1e2OlOcrF5br+uegcEGPVonKYJpcr0MJrtYmPxd4v5T6UCJZ+XzydF7eQo5wdGvSZAyA==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [darwin]
-    requiresBuild: true
-    dev: false
-    optional: true
-
   /@next/swc-darwin-arm64/13.1.6:
     resolution: {integrity: sha512-KKRQH4DDE4kONXCvFMNBZGDb499Hs+xcFAwvj+rfSUssIDrZOlyfJNy55rH5t2Qxed1e4K80KEJgsxKQN1/fyw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
-    os: [darwin]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@next/swc-darwin-x64/12.3.4:
-    resolution: {integrity: sha512-PPF7tbWD4k0dJ2EcUSnOsaOJ5rhT3rlEt/3LhZUGiYNL8KvoqczFrETlUx0cUYaXe11dRA3F80Hpt727QIwByQ==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: false
@@ -3483,29 +3441,11 @@ packages:
     dev: false
     optional: true
 
-  /@next/swc-freebsd-x64/12.3.4:
-    resolution: {integrity: sha512-KM9JXRXi/U2PUM928z7l4tnfQ9u8bTco/jb939pdFUHqc28V43Ohd31MmZD1QzEK4aFlMRaIBQOWQZh4D/E5lQ==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [freebsd]
-    requiresBuild: true
-    dev: false
-    optional: true
-
   /@next/swc-freebsd-x64/13.1.6:
     resolution: {integrity: sha512-qaEALZeV7to6weSXk3Br80wtFQ7cFTpos/q+m9XVRFggu+8Ib895XhMWdJBzew6aaOcMvYR6KQ6JmHA2/eMzWw==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [freebsd]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@next/swc-linux-arm-gnueabihf/12.3.4:
-    resolution: {integrity: sha512-3zqD3pO+z5CZyxtKDTnOJ2XgFFRUBciOox6EWkoZvJfc9zcidNAQxuwonUeNts6Xbm8Wtm5YGIRC0x+12YH7kw==}
-    engines: {node: '>= 10'}
-    cpu: [arm]
-    os: [linux]
     requiresBuild: true
     dev: false
     optional: true
@@ -3519,26 +3459,8 @@ packages:
     dev: false
     optional: true
 
-  /@next/swc-linux-arm64-gnu/12.3.4:
-    resolution: {integrity: sha512-kiX0vgJGMZVv+oo1QuObaYulXNvdH/IINmvdZnVzMO/jic/B8EEIGlZ8Bgvw8LCjH3zNVPO3mGrdMvnEEPEhKA==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [linux]
-    requiresBuild: true
-    dev: false
-    optional: true
-
   /@next/swc-linux-arm64-gnu/13.1.6:
     resolution: {integrity: sha512-yCH+yDr7/4FDuWv6+GiYrPI9kcTAO3y48UmaIbrKy8ZJpi7RehJe3vIBRUmLrLaNDH3rY1rwoHi471NvR5J5NQ==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [linux]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@next/swc-linux-arm64-musl/12.3.4:
-    resolution: {integrity: sha512-EETZPa1juczrKLWk5okoW2hv7D7WvonU+Cf2CgsSoxgsYbUCZ1voOpL4JZTOb6IbKMDo6ja+SbY0vzXZBUMvkQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
@@ -3555,26 +3477,8 @@ packages:
     dev: false
     optional: true
 
-  /@next/swc-linux-x64-gnu/12.3.4:
-    resolution: {integrity: sha512-4csPbRbfZbuWOk3ATyWcvVFdD9/Rsdq5YHKvRuEni68OCLkfy4f+4I9OBpyK1SKJ00Cih16NJbHE+k+ljPPpag==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [linux]
-    requiresBuild: true
-    dev: false
-    optional: true
-
   /@next/swc-linux-x64-gnu/13.1.6:
     resolution: {integrity: sha512-GT5w2mruk90V/I5g6ScuueE7fqj/d8Bui2qxdw6lFxmuTgMeol5rnzAv4uAoVQgClOUO/MULilzlODg9Ib3Y4Q==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [linux]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@next/swc-linux-x64-musl/12.3.4:
-    resolution: {integrity: sha512-YeBmI+63Ro75SUiL/QXEVXQ19T++58aI/IINOyhpsRL1LKdyfK/35iilraZEFz9bLQrwy1LYAR5lK200A9Gjbg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
@@ -3591,15 +3495,6 @@ packages:
     dev: false
     optional: true
 
-  /@next/swc-win32-arm64-msvc/12.3.4:
-    resolution: {integrity: sha512-Sd0qFUJv8Tj0PukAYbCCDbmXcMkbIuhnTeHm9m4ZGjCf6kt7E/RMs55Pd3R5ePjOkN7dJEuxYBehawTR/aPDSQ==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [win32]
-    requiresBuild: true
-    dev: false
-    optional: true
-
   /@next/swc-win32-arm64-msvc/13.1.6:
     resolution: {integrity: sha512-OwertslIiGQluFvHyRDzBCIB07qJjqabAmINlXUYt7/sY7Q7QPE8xVi5beBxX/rxTGPIbtyIe3faBE6Z2KywhQ==}
     engines: {node: '>= 10'}
@@ -3609,28 +3504,10 @@ packages:
     dev: false
     optional: true
 
-  /@next/swc-win32-ia32-msvc/12.3.4:
-    resolution: {integrity: sha512-rt/vv/vg/ZGGkrkKcuJ0LyliRdbskQU+91bje+PgoYmxTZf/tYs6IfbmgudBJk6gH3QnjHWbkphDdRQrseRefQ==}
-    engines: {node: '>= 10'}
-    cpu: [ia32]
-    os: [win32]
-    requiresBuild: true
-    dev: false
-    optional: true
-
   /@next/swc-win32-ia32-msvc/13.1.6:
     resolution: {integrity: sha512-g8zowiuP8FxUR9zslPmlju7qYbs2XBtTLVSxVikPtUDQedhcls39uKYLvOOd1JZg0ehyhopobRoH1q+MHlIN/w==}
     engines: {node: '>= 10'}
     cpu: [ia32]
-    os: [win32]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /@next/swc-win32-x64-msvc/12.3.4:
-    resolution: {integrity: sha512-DQ20JEfTBZAgF8QCjYfJhv2/279M6onxFjdG/+5B0Cyj00/EdBxiWb2eGGFgQhrBbNv/lsvzFbbi0Ptf8Vw/bg==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
     os: [win32]
     requiresBuild: true
     dev: false
@@ -3842,12 +3719,6 @@ packages:
 
   /@rushstack/eslint-patch/1.2.0:
     resolution: {integrity: sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==}
-    dev: false
-
-  /@swc/helpers/0.4.11:
-    resolution: {integrity: sha512-rEUrBSGIoSFuYxwBYtlUFMlE2CwGhmW+w9355/5oduSw8e5h2+Tj4UrAGNNgP9915++wj5vkQo0UuOBqOAq4nw==}
-    dependencies:
-      tslib: 2.5.0
     dev: false
 
   /@swc/helpers/0.4.14:
@@ -4062,8 +3933,8 @@ packages:
       - webpack-cli
     dev: true
 
-  /@typescript-eslint/eslint-plugin/5.51.0_z4swst3wuuqk4hlme4ajzslgh4:
-    resolution: {integrity: sha512-wcAwhEWm1RgNd7dxD/o+nnLW8oH+6RK1OGnmbmkj/GGoDPV1WWMVP0FXYQBivKHdwM1pwii3bt//RC62EriIUQ==}
+  /@typescript-eslint/eslint-plugin/5.52.0_6cfvjsbua5ptj65675bqcn6oza:
+    resolution: {integrity: sha512-lHazYdvYVsBokwCdKOppvYJKaJ4S41CgKBcPvyd0xjZNbvQdhn/pnJlGtQksQ/NhInzdaeaSarlBjDXHuclEbg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       '@typescript-eslint/parser': ^5.0.0
@@ -4073,10 +3944,10 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
-      '@typescript-eslint/scope-manager': 5.51.0
-      '@typescript-eslint/type-utils': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
-      '@typescript-eslint/utils': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/scope-manager': 5.52.0
+      '@typescript-eslint/type-utils': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/utils': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       debug: 4.3.4
       eslint: 8.34.0
       grapheme-splitter: 1.0.4
@@ -4089,8 +3960,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@typescript-eslint/parser/5.51.0_7kw3g6rralp5ps6mg3uyzz6azm:
-    resolution: {integrity: sha512-fEV0R9gGmfpDeRzJXn+fGQKcl0inIeYobmmUWijZh9zA7bxJ8clPhV9up2ZQzATxAiFAECqPQyMDB4o4B81AaA==}
+  /@typescript-eslint/parser/5.52.0_7kw3g6rralp5ps6mg3uyzz6azm:
+    resolution: {integrity: sha512-e2KiLQOZRo4Y0D/b+3y08i3jsekoSkOYStROYmPUnGMEoA0h+k2qOH5H6tcjIc68WDvGwH+PaOrP1XRzLJ6QlA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
@@ -4099,24 +3970,24 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/scope-manager': 5.51.0
-      '@typescript-eslint/types': 5.51.0
-      '@typescript-eslint/typescript-estree': 5.51.0_typescript@4.9.5
+      '@typescript-eslint/scope-manager': 5.52.0
+      '@typescript-eslint/types': 5.52.0
+      '@typescript-eslint/typescript-estree': 5.52.0_typescript@4.9.5
       debug: 4.3.4
       eslint: 8.34.0
       typescript: 4.9.5
     transitivePeerDependencies:
       - supports-color
 
-  /@typescript-eslint/scope-manager/5.51.0:
-    resolution: {integrity: sha512-gNpxRdlx5qw3yaHA0SFuTjW4rxeYhpHxt491PEcKF8Z6zpq0kMhe0Tolxt0qjlojS+/wArSDlj/LtE69xUJphQ==}
+  /@typescript-eslint/scope-manager/5.52.0:
+    resolution: {integrity: sha512-AR7sxxfBKiNV0FWBSARxM8DmNxrwgnYMPwmpkC1Pl1n+eT8/I2NAUPuwDy/FmDcC6F8pBfmOcaxcxRHspgOBMw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      '@typescript-eslint/types': 5.51.0
-      '@typescript-eslint/visitor-keys': 5.51.0
+      '@typescript-eslint/types': 5.52.0
+      '@typescript-eslint/visitor-keys': 5.52.0
 
-  /@typescript-eslint/type-utils/5.51.0_7kw3g6rralp5ps6mg3uyzz6azm:
-    resolution: {integrity: sha512-QHC5KKyfV8sNSyHqfNa0UbTbJ6caB8uhcx2hYcWVvJAZYJRBo5HyyZfzMdRx8nvS+GyMg56fugMzzWnojREuQQ==}
+  /@typescript-eslint/type-utils/5.52.0_7kw3g6rralp5ps6mg3uyzz6azm:
+    resolution: {integrity: sha512-tEKuUHfDOv852QGlpPtB3lHOoig5pyFQN/cUiZtpw99D93nEBjexRLre5sQZlkMoHry/lZr8qDAt2oAHLKA6Jw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '*'
@@ -4125,8 +3996,8 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/typescript-estree': 5.51.0_typescript@4.9.5
-      '@typescript-eslint/utils': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/typescript-estree': 5.52.0_typescript@4.9.5
+      '@typescript-eslint/utils': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       debug: 4.3.4
       eslint: 8.34.0
       tsutils: 3.21.0_typescript@4.9.5
@@ -4134,12 +4005,12 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@typescript-eslint/types/5.51.0:
-    resolution: {integrity: sha512-SqOn0ANn/v6hFn0kjvLwiDi4AzR++CBZz0NV5AnusT2/3y32jdc0G4woXPWHCumWtUXZKPAS27/9vziSsC9jnw==}
+  /@typescript-eslint/types/5.52.0:
+    resolution: {integrity: sha512-oV7XU4CHYfBhk78fS7tkum+/Dpgsfi91IIDy7fjCyq2k6KB63M6gMC0YIvy+iABzmXThCRI6xpCEyVObBdWSDQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  /@typescript-eslint/typescript-estree/5.51.0_typescript@4.9.5:
-    resolution: {integrity: sha512-TSkNupHvNRkoH9FMA3w7TazVFcBPveAAmb7Sz+kArY6sLT86PA5Vx80cKlYmd8m3Ha2SwofM1KwraF24lM9FvA==}
+  /@typescript-eslint/typescript-estree/5.52.0_typescript@4.9.5:
+    resolution: {integrity: sha512-WeWnjanyEwt6+fVrSR0MYgEpUAuROxuAH516WPjUblIrClzYJj0kBbjdnbQXLpgAN8qbEuGywiQsXUVDiAoEuQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       typescript: '*'
@@ -4147,8 +4018,8 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/types': 5.51.0
-      '@typescript-eslint/visitor-keys': 5.51.0
+      '@typescript-eslint/types': 5.52.0
+      '@typescript-eslint/visitor-keys': 5.52.0
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
@@ -4158,17 +4029,17 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@typescript-eslint/utils/5.51.0_7kw3g6rralp5ps6mg3uyzz6azm:
-    resolution: {integrity: sha512-76qs+5KWcaatmwtwsDJvBk4H76RJQBFe+Gext0EfJdC3Vd2kpY2Pf//OHHzHp84Ciw0/rYoGTDnIAr3uWhhJYw==}
+  /@typescript-eslint/utils/5.52.0_7kw3g6rralp5ps6mg3uyzz6azm:
+    resolution: {integrity: sha512-As3lChhrbwWQLNk2HC8Ree96hldKIqk98EYvypd3It8Q1f8d5zWyIoaZEp2va5667M4ZyE7X8UUR+azXrFl+NA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
       '@types/json-schema': 7.0.11
       '@types/semver': 7.3.13
-      '@typescript-eslint/scope-manager': 5.51.0
-      '@typescript-eslint/types': 5.51.0
-      '@typescript-eslint/typescript-estree': 5.51.0_typescript@4.9.5
+      '@typescript-eslint/scope-manager': 5.52.0
+      '@typescript-eslint/types': 5.52.0
+      '@typescript-eslint/typescript-estree': 5.52.0_typescript@4.9.5
       eslint: 8.34.0
       eslint-scope: 5.1.1
       eslint-utils: 3.0.0_eslint@8.34.0
@@ -4177,11 +4048,11 @@ packages:
       - supports-color
       - typescript
 
-  /@typescript-eslint/visitor-keys/5.51.0:
-    resolution: {integrity: sha512-Oh2+eTdjHjOFjKA27sxESlA87YPSOJafGCR0md5oeMdh1ZcCfAGCIOL216uTBAkAIptvLIfKQhl7lHxMJet4GQ==}
+  /@typescript-eslint/visitor-keys/5.52.0:
+    resolution: {integrity: sha512-qMwpw6SU5VHCPr99y274xhbm+PRViK/NATY6qzt+Et7+mThGuFSl/ompj2/hrBlRP/kq+BFdgagnOSgw9TB0eA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      '@typescript-eslint/types': 5.51.0
+      '@typescript-eslint/types': 5.52.0
       eslint-visitor-keys: 3.3.0
 
   /@vue/compiler-core/3.2.47:
@@ -4390,12 +4261,30 @@ packages:
       indent-string: 5.0.0
     dev: true
 
+  /ajv-formats/2.1.1:
+    resolution: {integrity: sha512-Wx0Kx52hxE7C18hkMEggYlEifqWZtYaRgouJor+WMdPnQyEK13vgEWyVNup7SoeeoLMsr4kf5h6dOW11I15MUA==}
+    peerDependenciesMeta:
+      ajv:
+        optional: true
+    dependencies:
+      ajv: 8.12.0
+    dev: true
+
   /ajv-keywords/3.5.2_ajv@6.12.6:
     resolution: {integrity: sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ==}
     peerDependencies:
       ajv: ^6.9.1
     dependencies:
       ajv: 6.12.6
+
+  /ajv-keywords/5.1.0_ajv@8.12.0:
+    resolution: {integrity: sha512-YCS/JNFAUyr5vAuhk1DWm1CBxRHW9LbJ2ozWeemrIqpbsqKjHVxYPyi5GC0rjZIT5JxJ3virVTS8wk4i/Z+krw==}
+    peerDependencies:
+      ajv: ^8.8.2
+    dependencies:
+      ajv: 8.12.0
+      fast-deep-equal: 3.1.3
+    dev: true
 
   /ajv/6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
@@ -4404,6 +4293,15 @@ packages:
       fast-json-stable-stringify: 2.1.0
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
+
+  /ajv/8.12.0:
+    resolution: {integrity: sha512-sRu1kpcO9yLtYxBKvqfTeh9KzZEwO3STyX1HT+4CaDzC6HpTGYhIhPIzj9XuKU7KYDwnaeh5hcOwjy1QuJzBPA==}
+    dependencies:
+      fast-deep-equal: 3.1.3
+      json-schema-traverse: 1.0.0
+      require-from-string: 2.0.2
+      uri-js: 4.4.1
+    dev: true
 
   /ansi-colors/4.1.3:
     resolution: {integrity: sha512-/6w/C21Pm1A7aZitlI5Ni/2J6FFQN8i1Cvz3kHABAAbw93v/NlvKdVOqz7CCWz/3iv/JplRSEEZ83XION15ovw==}
@@ -4603,18 +4501,16 @@ packages:
       deep-equal: 2.2.0
     dev: false
 
-  /babel-loader/8.3.0_la66t7xldg4uecmyawueag5wkm:
-    resolution: {integrity: sha512-H8SvsMF+m9t15HNLMipppzkC+Y2Yq+v3SonZyU70RBL/h1gxPkH08Ot8pEE9Z4Kd+czyWJClmFS8qzIP9OZ04Q==}
-    engines: {node: '>= 8.9'}
+  /babel-loader/9.1.2_la66t7xldg4uecmyawueag5wkm:
+    resolution: {integrity: sha512-mN14niXW43tddohGl8HPu5yfQq70iUThvFL/4QzESA7GcZoC0eVOhvWdQ8+3UlSjaDE9MVtsW9mxDY07W7VpVA==}
+    engines: {node: '>= 14.15.0'}
     peerDependencies:
-      '@babel/core': ^7.0.0
-      webpack: '>=2'
+      '@babel/core': ^7.12.0
+      webpack: '>=5'
     dependencies:
       '@babel/core': 7.20.12
       find-cache-dir: 3.3.2
-      loader-utils: 2.0.4
-      make-dir: 3.1.0
-      schema-utils: 2.7.1
+      schema-utils: 4.0.0
       webpack: 5.75.0
     dev: true
 
@@ -4671,10 +4567,6 @@ packages:
     engines: {node: '>=4'}
     dependencies:
       is-windows: 1.0.2
-    dev: true
-
-  /big.js/5.2.2:
-    resolution: {integrity: sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==}
     dev: true
 
   /binary-extensions/2.2.0:
@@ -5405,11 +5297,6 @@ packages:
   /emoji-regex/9.2.2:
     resolution: {integrity: sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==}
 
-  /emojis-list/3.0.0:
-    resolution: {integrity: sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==}
-    engines: {node: '>= 4'}
-    dev: true
-
   /enabled/2.0.0:
     resolution: {integrity: sha512-AKrN98kuwOzMIdAizXGI86UFBoo26CL21UM763y1h/GMSJ4/OHU9k2YlsmBpyScFo/wbLzWQJBMCW4+IO3/+OQ==}
     dev: false
@@ -5541,11 +5428,11 @@ packages:
     dependencies:
       '@next/eslint-plugin-next': 13.1.6
       '@rushstack/eslint-patch': 1.2.0
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       eslint: 8.34.0
       eslint-import-resolver-node: 0.3.7
       eslint-import-resolver-typescript: 3.5.3_mvgyw3chnqkp6sgfmmtihyjpnm
-      eslint-plugin-import: 2.27.5_inmo4nrctlhmfx73hzu6aogupa
+      eslint-plugin-import: 2.27.5_gndiqgw2wrzfeqy4ccfxbmtnsi
       eslint-plugin-jsx-a11y: 6.7.1_eslint@8.34.0
       eslint-plugin-react: 7.32.2_eslint@8.34.0
       eslint-plugin-react-hooks: 4.6.0_eslint@8.34.0
@@ -5593,7 +5480,7 @@ packages:
       debug: 4.3.4
       enhanced-resolve: 5.12.0
       eslint: 8.34.0
-      eslint-plugin-import: 2.27.5_inmo4nrctlhmfx73hzu6aogupa
+      eslint-plugin-import: 2.27.5_gndiqgw2wrzfeqy4ccfxbmtnsi
       get-tsconfig: 4.4.0
       globby: 13.1.3
       is-core-module: 2.11.0
@@ -5603,7 +5490,7 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-module-utils/2.7.4_7d5otxxipfjcaqho6psg7iyp4e:
+  /eslint-module-utils/2.7.4_cvrl34cvgpgac5pvqi7ag6zw7e:
     resolution: {integrity: sha512-j4GT+rqzCoRKHwURX7pddtIPGySnX9Si/cgMI5ztrcqOPtk5dDEeZ34CQVPphnqkJytlc97Vuk05Um2mJ3gEQA==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -5624,7 +5511,7 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       debug: 3.2.7
       eslint: 8.34.0
       eslint-import-resolver-node: 0.3.7
@@ -5633,7 +5520,7 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-module-utils/2.7.4_ithmlgmaospkvl4p7n7pyp3rgq:
+  /eslint-module-utils/2.7.4_npjqex3ey3rgd34fjcuucz7la4:
     resolution: {integrity: sha512-j4GT+rqzCoRKHwURX7pddtIPGySnX9Si/cgMI5ztrcqOPtk5dDEeZ34CQVPphnqkJytlc97Vuk05Um2mJ3gEQA==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -5654,7 +5541,7 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       debug: 3.2.7
       eslint: 8.34.0
       eslint-import-resolver-node: 0.3.7
@@ -5671,7 +5558,7 @@ packages:
       resolve: 1.22.1
     dev: false
 
-  /eslint-plugin-import/2.27.5_62tsymtiqxebhmxuag4hg3gx2m:
+  /eslint-plugin-import/2.27.5_gndiqgw2wrzfeqy4ccfxbmtnsi:
     resolution: {integrity: sha512-LmEt3GVofgiGuiE+ORpnvP+kAm3h6MLZJ4Q5HCyHADofsb4VzXFsRiWj3c0OFiV+3DWFh0qg3v9gcPlfc3zRow==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -5681,7 +5568,7 @@ packages:
       '@typescript-eslint/parser':
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       array-includes: 3.1.6
       array.prototype.flat: 1.3.1
       array.prototype.flatmap: 1.3.1
@@ -5689,7 +5576,7 @@ packages:
       doctrine: 2.1.0
       eslint: 8.34.0
       eslint-import-resolver-node: 0.3.7
-      eslint-module-utils: 2.7.4_ithmlgmaospkvl4p7n7pyp3rgq
+      eslint-module-utils: 2.7.4_cvrl34cvgpgac5pvqi7ag6zw7e
       has: 1.0.3
       is-core-module: 2.11.0
       is-glob: 4.0.3
@@ -5704,7 +5591,7 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-import/2.27.5_inmo4nrctlhmfx73hzu6aogupa:
+  /eslint-plugin-import/2.27.5_mcvs2y73sfmcxqzpjj5lr7a2m4:
     resolution: {integrity: sha512-LmEt3GVofgiGuiE+ORpnvP+kAm3h6MLZJ4Q5HCyHADofsb4VzXFsRiWj3c0OFiV+3DWFh0qg3v9gcPlfc3zRow==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -5714,7 +5601,7 @@ packages:
       '@typescript-eslint/parser':
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+      '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
       array-includes: 3.1.6
       array.prototype.flat: 1.3.1
       array.prototype.flatmap: 1.3.1
@@ -5722,7 +5609,7 @@ packages:
       doctrine: 2.1.0
       eslint: 8.34.0
       eslint-import-resolver-node: 0.3.7
-      eslint-module-utils: 2.7.4_7d5otxxipfjcaqho6psg7iyp4e
+      eslint-module-utils: 2.7.4_npjqex3ey3rgd34fjcuucz7la4
       has: 1.0.3
       is-core-module: 2.11.0
       is-glob: 4.0.3
@@ -6798,6 +6685,10 @@ packages:
   /json-schema-traverse/0.4.1:
     resolution: {integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==}
 
+  /json-schema-traverse/1.0.0:
+    resolution: {integrity: sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug==}
+    dev: true
+
   /json-stable-stringify-without-jsonify/1.0.1:
     resolution: {integrity: sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==}
 
@@ -6873,8 +6764,8 @@ packages:
   /lines-and-columns/1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  /lint-staged/13.1.1:
-    resolution: {integrity: sha512-LLJLO0Kdbcv2a+CvSF4p1M7jBZOajKSMpBUvyR8+bXccsqPER0/NxTFQSpNHjqwV9kM3tkHczYerTB5wI+bksQ==}
+  /lint-staged/13.1.2:
+    resolution: {integrity: sha512-K9b4FPbWkpnupvK3WXZLbgu9pchUJ6N7TtVZjbaPsoizkqFUDkUReUL25xdrCljJs7uLUF3tZ7nVPeo/6lp+6w==}
     engines: {node: ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -6928,15 +6819,6 @@ packages:
   /loader-runner/4.3.0:
     resolution: {integrity: sha512-3R/1M+yS3j5ou80Me59j7F9IMs4PXs3VqRrm0TU3AbKPxlmpoY1TNscJV/oGJXo8qCatFGTfDbY6W6ipGOYXfg==}
     engines: {node: '>=6.11.5'}
-
-  /loader-utils/2.0.4:
-    resolution: {integrity: sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw==}
-    engines: {node: '>=8.9.0'}
-    dependencies:
-      big.js: 5.2.2
-      emojis-list: 3.0.0
-      json5: 2.2.3
-    dev: true
 
   /locate-path/5.0.0:
     resolution: {integrity: sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==}
@@ -7241,51 +7123,6 @@ packages:
       next: 13.1.6_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-i18next: 12.1.5_iakk3dtjhjpukdoa4oua5khgci
-    dev: false
-
-  /next/12.3.4_pjwopsidmaokadturxaafygjp4:
-    resolution: {integrity: sha512-VcyMJUtLZBGzLKo3oMxrEF0stxh8HwuW976pAzlHhI3t8qJ4SROjCrSh1T24bhrbjw55wfZXAbXPGwPt5FLRfQ==}
-    engines: {node: '>=12.22.0'}
-    hasBin: true
-    peerDependencies:
-      fibers: '>= 3.1.0'
-      node-sass: ^6.0.0 || ^7.0.0
-      react: ^17.0.2 || ^18.0.0-0
-      react-dom: ^17.0.2 || ^18.0.0-0
-      sass: ^1.3.0
-    peerDependenciesMeta:
-      fibers:
-        optional: true
-      node-sass:
-        optional: true
-      sass:
-        optional: true
-    dependencies:
-      '@next/env': 12.3.4
-      '@swc/helpers': 0.4.11
-      caniuse-lite: 1.0.30001451
-      postcss: 8.4.14
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      styled-jsx: 5.0.7_2exiyaescjxorpwwmy4ejghgte
-      use-sync-external-store: 1.2.0_react@18.2.0
-    optionalDependencies:
-      '@next/swc-android-arm-eabi': 12.3.4
-      '@next/swc-android-arm64': 12.3.4
-      '@next/swc-darwin-arm64': 12.3.4
-      '@next/swc-darwin-x64': 12.3.4
-      '@next/swc-freebsd-x64': 12.3.4
-      '@next/swc-linux-arm-gnueabihf': 12.3.4
-      '@next/swc-linux-arm64-gnu': 12.3.4
-      '@next/swc-linux-arm64-musl': 12.3.4
-      '@next/swc-linux-x64-gnu': 12.3.4
-      '@next/swc-linux-x64-musl': 12.3.4
-      '@next/swc-win32-arm64-msvc': 12.3.4
-      '@next/swc-win32-ia32-msvc': 12.3.4
-      '@next/swc-win32-x64-msvc': 12.3.4
-    transitivePeerDependencies:
-      - '@babel/core'
-      - babel-plugin-macros
     dev: false
 
   /next/13.1.6_biqbaboplfbrettd7655fr4n2y:
@@ -8211,6 +8048,11 @@ packages:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
 
+  /require-from-string/2.0.2:
+    resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
   /require-main-filename/2.0.0:
     resolution: {integrity: sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==}
     dev: true
@@ -8315,15 +8157,6 @@ packages:
       loose-envify: 1.4.0
     dev: false
 
-  /schema-utils/2.7.1:
-    resolution: {integrity: sha512-SHiNtMOUGWBQJwzISiVYKu82GiV4QYGePp3odlY1tuKO7gPtphAT5R/py0fA6xtbgLL/RvtJZnU9b8s0F1q0Xg==}
-    engines: {node: '>= 8.9.0'}
-    dependencies:
-      '@types/json-schema': 7.0.11
-      ajv: 6.12.6
-      ajv-keywords: 3.5.2_ajv@6.12.6
-    dev: true
-
   /schema-utils/3.1.1:
     resolution: {integrity: sha512-Y5PQxS4ITlC+EahLuXaY86TXfR7Dc5lw294alXOq86JAHCihAIZfqv8nNCWvaEJvaC51uN9hbLGeV0cFBdH+Fw==}
     engines: {node: '>= 10.13.0'}
@@ -8331,6 +8164,16 @@ packages:
       '@types/json-schema': 7.0.11
       ajv: 6.12.6
       ajv-keywords: 3.5.2_ajv@6.12.6
+
+  /schema-utils/4.0.0:
+    resolution: {integrity: sha512-1edyXKgh6XnJsJSQ8mKWXnN/BVaIbFMLpouRUrXgVq7WYne5kw3MW7UPhO44uRXQSIpTSXoJbmrR2X0w9kUTyg==}
+    engines: {node: '>= 12.13.0'}
+    dependencies:
+      '@types/json-schema': 7.0.11
+      ajv: 8.12.0
+      ajv-formats: 2.1.1
+      ajv-keywords: 5.1.0_ajv@8.12.0
+    dev: true
 
   /scss-parser/1.0.6:
     resolution: {integrity: sha512-SH3TaoaJFzfAtqs3eG1j5IuHJkeEW5rKUPIjIN+ZorLAyJLHItQGnsgwHk76v25GtLtpT9IqfAcqK4vFWdiw+w==}
@@ -8642,23 +8485,6 @@ packages:
   /strip-json-comments/3.1.1:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
-
-  /styled-jsx/5.0.7_2exiyaescjxorpwwmy4ejghgte:
-    resolution: {integrity: sha512-b3sUzamS086YLRuvnaDigdAewz1/EFYlHpYBP5mZovKEdQQOIIYq8lApylub3HHZ6xFjV051kkGU7cudJmrXEA==}
-    engines: {node: '>= 12.0.0'}
-    peerDependencies:
-      '@babel/core': '*'
-      babel-plugin-macros: '*'
-      react: '>= 16.8.0 || 17.x.x || ^18.0.0-0'
-    peerDependenciesMeta:
-      '@babel/core':
-        optional: true
-      babel-plugin-macros:
-        optional: true
-    dependencies:
-      '@babel/core': 7.20.12
-      react: 18.2.0
-    dev: false
 
   /styled-jsx/5.1.1_2exiyaescjxorpwwmy4ejghgte:
     resolution: {integrity: sha512-pW7uC1l4mBZ8ugbiZrcIsiIvVx1UmTfw7UkC3Um2tmfUq9Bhk8IiyEIPl6F8agHgjzku6j0xQEZbfA5uSgSaCw==}

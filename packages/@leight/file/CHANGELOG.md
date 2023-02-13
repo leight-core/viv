@@ -1,5 +1,15 @@
 # @leight/file
 
+## 0.5.18
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/prisma@0.5.21
+    - @leight/source@0.5.14
+    - @leight/query@0.5.14
+
 ## 0.5.17
 
 ### Patch Changes

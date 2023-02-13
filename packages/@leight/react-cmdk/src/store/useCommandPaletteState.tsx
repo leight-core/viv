@@ -32,6 +32,6 @@ export const {
             set({search});
         },
     }),
-    "CommandPalette",
-    "Add CommandPalette."
+    "CommandPaletteProvider",
+    "Add CommandPaletteProvider."
 );

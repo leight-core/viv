@@ -1,5 +1,5 @@
 {
-    "version": "0.5.17",
+    "version": "0.5.18",
     "name": "@leight/container-server",
     "description": "All @leight services exposed on server-side.",
     "license": "MIT",
@@ -30,20 +30,20 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "workspace:^0.5.17",
-        "@leight/file-server": "workspace:^0.5.17",
-        "@leight/import-server": "workspace:^0.5.17",
-        "@leight/job-server": "workspace:^0.5.18",
-        "@leight/user-server": "workspace:^0.5.17",
-        "@leight/xlsx-import-server": "workspace:^0.5.17",
+        "@leight/container": "workspace:^0.5.18",
+        "@leight/file-server": "workspace:^0.5.18",
+        "@leight/import-server": "workspace:^0.5.18",
+        "@leight/job-server": "workspace:^0.5.19",
+        "@leight/user-server": "workspace:^0.5.18",
+        "@leight/xlsx-import-server": "workspace:^0.5.18",
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.5.7",
-        "@leight/tsconfig": "workspace:^0.5.17",
+        "@leight/eslint-config-eslint": "workspace:^0.5.8",
+        "@leight/tsconfig": "workspace:^0.5.18",
         "@types/node": "^18.13.0",
-        "@typescript-eslint/eslint-plugin": "^5.51.0",
-        "@typescript-eslint/parser": "^5.51.0",
+        "@typescript-eslint/eslint-plugin": "^5.52.0",
+        "@typescript-eslint/parser": "^5.52.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
         "depcheck": "^1.4.3",

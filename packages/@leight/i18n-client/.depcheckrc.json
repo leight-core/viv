@@ -19,6 +19,7 @@
         "eslint",
         "eslint-plugin-unicorn",
         "prisma",
+        "zustand",
         "depcheck",
         "react-dom"
     ],
