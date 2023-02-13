@@ -1,29 +1,38 @@
 import React, {
-    ReactNode,
     useContext,
     useEffect
-} from "react";
+}                      from "react";
+import {useCmdkStore}  from "../store";
+import {JsonStructure} from "../types";
 import {
     PageContext,
     SearchContext
-} from "../utils/context";
+}                      from "../utils/context";
+import {
+    filterItems,
+    renderJsonStructure
+}                      from "../utils/utils";
 
 interface PageProps {
     searchPrefix?: string[];
     onEscape?: () => void;
-    children: ReactNode;
     id: string;
+    items: JsonStructure;
+    backTo?: string;
 }
 
 export default function Page(
     {
         searchPrefix,
-        children,
+        items,
         onEscape,
+        backTo,
         id,
     }: PageProps) {
+    const {setPage}               = useCmdkStore();
     const {page, setSearchPrefix} = useContext(PageContext);
     const {search}                = useContext(SearchContext);
+    onEscape                      = onEscape || (() => backTo && setPage(backTo));
 
     const isActive = page === id;
 
@@ -33,11 +42,11 @@ export default function Page(
                 if (e.key === "Escape") {
                     e.preventDefault();
                     e.stopPropagation();
-                    onEscape!();
+                    onEscape?.();
                 } else if (e.key === "Backspace" && !search) {
                     e.preventDefault();
                     e.stopPropagation();
-                    onEscape!();
+                    onEscape?.();
                 }
             }
 
@@ -62,5 +71,5 @@ export default function Page(
         setSearchPrefix
     ]);
 
-    return isActive ? <>{children}</> : null;
+    return isActive ? <>{renderJsonStructure(filterItems(items, search))}</> : null;
 }

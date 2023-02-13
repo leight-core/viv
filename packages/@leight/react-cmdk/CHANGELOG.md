@@ -1,5 +1,11 @@
 # @leight/react-cmdk
 
+## 0.5.6
+
+### Patch Changes
+
+- Improved and simplified API of Page stuff
+
 ## 0.5.5
 
 ### Patch Changes
