@@ -1,1 +1,1 @@
-export * from "./useCmdkStore";
+export * from "./useCommandPaletteStore";

@@ -13,9 +13,9 @@ export interface ICmdkStoreProps {
 }
 
 export const {
-                 Provider:         CmdkProvider,
-                 useStore:         useCmdkStore,
-                 useOptionalStore: useOptionalCmdkStore,
+                 Provider:         CommandPaletteProvider,
+                 useStore:         useCommandPaletteStore,
+                 useOptionalStore: useOptionalCommandPaletteStore,
              } = createStoreContext<ICmdkStoreProps>(
     (set) => ({
         isOpen: false,
@@ -30,6 +30,6 @@ export const {
             set({search});
         },
     }),
-    "CmdkContext",
-    "Add CmdkProvider."
+    "CommandPalette",
+    "Add CommandPalette."
 );

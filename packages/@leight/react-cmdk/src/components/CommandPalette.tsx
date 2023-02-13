@@ -1,27 +1,27 @@
 import {
     Dialog,
     Transition
-}                                    from "@headlessui/react";
+}                                from "@headlessui/react";
 import React, {
     Fragment,
     ReactNode,
     useEffect,
     useRef,
     useState
-}                                    from "react";
-import {useCmdkStore}                from "../store";
+}                                from "react";
+import {useCommandPaletteStore}  from "../store";
 import {
     OpenContext,
     PageContext,
     SearchContext,
     SelectContext,
-}                                    from "../utils/context";
-import {useHandleOpenCommandPalette} from "../utils/utils";
-import FreeSearchAction              from "./FreeSearchAction";
-import List                          from "./List";
-import ListItem                      from "./ListItem";
-import Page                          from "./Page";
-import Search                        from "./Search";
+}                                from "../utils/context";
+import {useCommandPaletteHotkey} from "../utils/utils";
+import FreeSearchAction          from "./FreeSearchAction";
+import List                      from "./List";
+import ListItem                  from "./ListItem";
+import Page                      from "./Page";
+import Search                    from "./Search";
 
 interface CommandPaletteProps {
     onChangeSelected?: (value: number) => void;
@@ -45,8 +45,8 @@ function CommandPalette(
         footer,
         hotkey = "mod+k",
     }: CommandPaletteProps) {
-    const {search, page, isOpen, setIsOpen, setSearch} = useCmdkStore();
-    useHandleOpenCommandPalette(hotkey);
+    const {search, page, isOpen, setIsOpen, setSearch} = useCommandPaletteStore();
+    useCommandPaletteHotkey(hotkey);
     const onChangeOpen   = (isOpen: boolean) => {
         setIsOpen(isOpen);
         $onChangeOpen?.(isOpen);

@@ -1,11 +1,11 @@
-import {useHotkeys}    from "@mantine/hooks";
+import {useHotkeys}             from "@mantine/hooks";
 import React, {
     Children,
     ReactNode
-}                      from "react";
-import CommandPalette  from "../components/CommandPalette";
-import {useCmdkStore}  from "../store";
-import {JsonStructure} from "../types";
+}                               from "react";
+import CommandPalette           from "../components/CommandPalette";
+import {useCommandPaletteStore} from "../store";
+import {JsonStructure}          from "../types";
 
 export function getItemIndex(
     items: JsonStructure,
@@ -110,8 +110,8 @@ export function renderJsonStructure(jsonStructure: JsonStructure) {
     ));
 }
 
-export function useHandleOpenCommandPalette(hotkey: string = "mod+k") {
-    const {isOpen, setIsOpen} = useCmdkStore();
+export function useCommandPaletteHotkey(hotkey: string = "mod+k") {
+    const {isOpen, setIsOpen} = useCommandPaletteStore();
     useHotkeys([
         [
             hotkey,

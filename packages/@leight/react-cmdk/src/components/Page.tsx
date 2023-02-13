@@ -1,17 +1,17 @@
 import React, {
     useContext,
     useEffect
-}                      from "react";
-import {useCmdkStore}  from "../store";
-import {JsonStructure} from "../types";
+}                               from "react";
+import {useCommandPaletteStore} from "../store";
+import {JsonStructure}          from "../types";
 import {
     PageContext,
     SearchContext
-}                      from "../utils/context";
+}                               from "../utils/context";
 import {
     filterItems,
     renderJsonStructure
-}                      from "../utils/utils";
+}                               from "../utils/utils";
 
 interface PageProps {
     searchPrefix?: string[];
@@ -29,7 +29,7 @@ export default function Page(
         backTo,
         id,
     }: PageProps) {
-    const {setPage}               = useCmdkStore();
+    const {setPage}               = useCommandPaletteStore();
     const {page, setSearchPrefix} = useContext(PageContext);
     const {search}                = useContext(SearchContext);
     onEscape                      = onEscape || (() => backTo && setPage(backTo));
