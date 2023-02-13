@@ -96,7 +96,7 @@ function CommandPalette(
 
         newItem = items[newIndex]!;
 
-        if (newItem && typeof newIndex === "number") {
+        if (newItem) {
             setSelected(newIndex);
             newItem.scrollIntoView({
                 behavior: "smooth",
@@ -111,7 +111,7 @@ function CommandPalette(
         ) as NodeListOf<HTMLButtonElement | HTMLAnchorElement>;
 
         let index = 0;
-        let item: HTMLAnchorElement | HTMLButtonElement;
+        let item: HTMLAnchorElement | HTMLButtonElement | undefined;
 
         items.forEach((_, i) => {
             if (i === selected) {
@@ -119,7 +119,7 @@ function CommandPalette(
             }
         });
 
-        item = items[index]!;
+        item = items[index];
 
         if (item) {
             item.click();

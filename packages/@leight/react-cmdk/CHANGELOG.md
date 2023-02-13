@@ -1,5 +1,11 @@
 # @leight/react-cmdk
 
+## 0.5.15
+
+### Patch Changes
+
+- FINALLY fixed esc
+
 ## 0.5.14
 
 ### Patch Changes

@@ -910,6 +910,7 @@ importers:
       del-cli: ^5.0.0
       depcheck: ^1.4.3
       dotenv-cli: ^7.0.0
+      eslint: ^8.34.0
       fork-ts-checker-webpack-plugin: ^7.2.11
       html-webpack-plugin: ^5.5.0
       next: ^12.1.6
@@ -956,6 +957,7 @@ importers:
       del-cli: 5.0.0
       depcheck: 1.4.3
       dotenv-cli: 7.0.0
+      eslint: 8.34.0
       fork-ts-checker-webpack-plugin: 7.3.0_hhrrucqyg4eysmfpujvov2ym5u
       postcss: 8.4.21
       postcss-prefix-selector: 1.16.0_postcss@8.4.21
@@ -1322,7 +1324,7 @@ importers:
 
   packages/@leight/utils-client:
     specifiers:
-      '@leight/context-client': workspace:^0.5.22
+      '@leight/context-client': workspace:^0.5.23
       '@leight/eslint-config-eslint': workspace:^0.5.7
       '@leight/tsconfig': workspace:^0.5.17
       '@leight/utils': workspace:^0.5.20

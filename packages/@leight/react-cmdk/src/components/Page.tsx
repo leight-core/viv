@@ -26,9 +26,12 @@ export default function Page(
         backTo,
         id,
     }: PageProps) {
-    const {page, search, setPage} = useCommandPaletteState(({search, page, setPage}) => ({search, page, setPage}));
-    const {setSearchPrefix}       = useContext(PageContext);
-    onEscape                      = onEscape || (() => backTo && setPage(backTo));
+    const {page, search, setPage, setIsOpen} = useCommandPaletteState(({search, page, setPage, setIsOpen}) => ({search, page, setPage, setIsOpen}));
+    const {setSearchPrefix}                  = useContext(PageContext);
+    onEscape                                 = onEscape || (() => {
+        backTo && setPage(backTo);
+        !backTo && setIsOpen(false);
+    });
 
     const isActive = page === id;
 
@@ -58,9 +61,7 @@ export default function Page(
     ]);
 
     useEffect(() => {
-        if (isActive && setSearchPrefix) {
-            setSearchPrefix(searchPrefix);
-        }
+        isActive && setSearchPrefix?.(searchPrefix);
     }, [
         searchPrefix,
         isActive,
