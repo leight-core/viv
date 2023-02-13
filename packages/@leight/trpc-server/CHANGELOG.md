@@ -1,5 +1,16 @@
 # @leight/trpc-server
 
+## 0.5.18
+
+### Patch Changes
+
+- Sync re-release
+- Updated dependencies
+    - @leight/container@0.5.17
+    - @leight/trpc@0.5.17
+    - @leight/user@0.5.18
+    - @leight/user-server@0.5.17
+
 ## 0.5.17
 
 ### Patch Changes

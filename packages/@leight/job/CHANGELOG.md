@@ -1,5 +1,16 @@
 # @leight/job
 
+## 0.5.19
+
+### Patch Changes
+
+- Sync re-release
+- Updated dependencies
+    - @leight/prisma@0.5.20
+    - @leight/query@0.5.13
+    - @leight/source@0.5.13
+    - @leight/winston@0.5.17
+
 ## 0.5.18
 
 ### Patch Changes

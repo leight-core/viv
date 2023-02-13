@@ -1,5 +1,11 @@
 # @leight/cursor
 
+## 0.5.12
+
+### Patch Changes
+
+- Sync re-release
+
 ## 0.5.11
 
 ### Patch Changes

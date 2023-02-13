@@ -1,5 +1,11 @@
 # @leight/container
 
+## 0.5.17
+
+### Patch Changes
+
+- Sync re-release
+
 ## 0.5.16
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @leight/i18n
 
+## 0.5.18
+
+### Patch Changes
+
+- Sync re-release
+
 ## 0.5.17
 
 ### Patch Changes

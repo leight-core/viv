@@ -1,5 +1,11 @@
 # @leight/utils
 
+## 0.5.20
+
+### Patch Changes
+
+- Sync re-release
+
 ## 0.5.19
 
 ### Patch Changes

@@ -4,12 +4,13 @@ import React, {
     FC,
     ReactNode,
     useContext,
-}                   from "react";
+}                               from "react";
+import {useCommandPaletteState} from "../store";
 import {
     OpenContext,
     SelectContext
-}                   from "../utils/context";
-import {classNames} from "../utils/utils";
+}                               from "../utils/context";
+import {classNames}             from "../utils/utils";
 
 export type ListItemType = string;
 
@@ -40,7 +41,14 @@ export interface ButtonProps
             ButtonHTMLAttributes<HTMLButtonElement>,
             HTMLButtonElement
         > {
+    /**
+     * Render item type on the right side of list
+     */
     itemType?: string;
+    /**
+     * If set, move to the selected page; internally uses onClick()
+     */
+    page?: string;
 }
 
 export function Button(
@@ -53,10 +61,16 @@ export function Button(
         index,
         icon,
         itemType,
+        page,
         ...rest
     }: ButtonProps) {
     const {selected}     = useContext(SelectContext);
     const {onChangeOpen} = useContext(OpenContext);
+    const {setPage}      = useCommandPaletteState(({setPage}) => setPage);
+
+    onClick = onClick || (() => {
+        page && setPage(page);
+    });
 
     function clickAndClose(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         if (onClick) {

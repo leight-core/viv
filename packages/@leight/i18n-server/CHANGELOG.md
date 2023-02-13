@@ -1,5 +1,13 @@
 # @leight/i18n-server
 
+## 0.5.18
+
+### Patch Changes
+
+- Sync re-release
+- Updated dependencies
+    - @leight/i18n@0.5.18
+
 ## 0.5.17
 
 ### Patch Changes

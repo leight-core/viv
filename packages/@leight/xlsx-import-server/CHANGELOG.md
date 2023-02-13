@@ -1,5 +1,20 @@
 # @leight/xlsx-import-server
 
+## 0.5.17
+
+### Patch Changes
+
+- Sync re-release
+- Updated dependencies
+    - @leight/container@0.5.17
+    - @leight/file@0.5.17
+    - @leight/import@0.5.17
+    - @leight/job@0.5.19
+    - @leight/trpc-server@0.5.18
+    - @leight/utils@0.5.20
+    - @leight/utils-server@0.5.17
+    - @leight/xlsx-import@0.5.18
+
 ## 0.5.16
 
 ### Patch Changes

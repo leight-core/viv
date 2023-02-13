@@ -1,5 +1,16 @@
 # @leight/user-server
 
+## 0.5.17
+
+### Patch Changes
+
+- Sync re-release
+- Updated dependencies
+    - @leight/container@0.5.17
+    - @leight/prisma@0.5.20
+    - @leight/user@0.5.18
+    - @leight/utils@0.5.20
+
 ## 0.5.16
 
 ### Patch Changes

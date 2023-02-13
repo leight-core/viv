@@ -1,5 +1,14 @@
 # @leight/i18n-client
 
+## 0.5.19
+
+### Patch Changes
+
+- Sync re-release
+- Updated dependencies
+    - @leight/i18n@0.5.18
+    - @leight/utils@0.5.20
+
 ## 0.5.18
 
 ### Patch Changes

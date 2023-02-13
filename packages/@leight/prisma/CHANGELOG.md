@@ -1,5 +1,14 @@
 # @leight/prisma
 
+## 0.5.20
+
+### Patch Changes
+
+- Sync re-release
+- Updated dependencies
+    - @leight/source@0.5.13
+    - @leight/source-server@0.5.15
+
 ## 0.5.19
 
 ### Patch Changes

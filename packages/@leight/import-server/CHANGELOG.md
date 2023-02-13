@@ -1,5 +1,14 @@
 # @leight/import-server
 
+## 0.5.17
+
+### Patch Changes
+
+- Sync re-release
+- Updated dependencies
+    - @leight/container@0.5.17
+    - @leight/import@0.5.17
+
 ## 0.5.16
 
 ### Patch Changes
