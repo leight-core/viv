@@ -1,3 +1,3 @@
 export * from "./useLoop";
-export * from "./useLoopsStore";
-export * from "./useLoopStore";
+export * from "./useLoopsState";
+export * from "./useLoopState";

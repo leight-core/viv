@@ -61,10 +61,7 @@ export function Button(
     function clickAndClose(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         if (onClick) {
             onClick(e);
-
-            if (closeOnSelect) {
-                onChangeOpen(false);
-            }
+            closeOnSelect && onChangeOpen(false);
         }
     }
 

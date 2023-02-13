@@ -1,5 +1,21 @@
 # @leight/react-cmdk
 
+## 0.5.9
+
+### Patch Changes
+
+- Fixed some internal stuff
+- Updated dependencies
+    - @leight/context-client@0.5.20
+
+## 0.5.8
+
+### Patch Changes
+
+- Improved store stuff
+- Updated dependencies
+    - @leight/context-client@0.5.19
+
 ## 0.5.7
 
 ### Patch Changes

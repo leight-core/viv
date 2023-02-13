@@ -8,7 +8,7 @@ export interface IStore<TStore extends StoreApi<unknown>> {
 
 export type IStoreApi<TProps> = IStore<StoreApi<TProps>>;
 
-export type ICreateStore<TProps> = () => StoreApi<TProps>;
+export type ICreateStore<TProps> = (defaults?: Partial<TProps>) => StoreApi<TProps>;
 
 export type IStoreContext<TProps> = Context<IStoreApi<TProps> | null>;
 

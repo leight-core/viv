@@ -1,27 +1,26 @@
 import {
     Dialog,
     Transition
-}                                from "@headlessui/react";
+}                               from "@headlessui/react";
 import React, {
     Fragment,
     ReactNode,
     useEffect,
     useRef,
     useState
-}                                from "react";
-import {useCommandPaletteStore}  from "../store";
+}                               from "react";
+import {useCommandPaletteState} from "../store";
 import {
     OpenContext,
     PageContext,
-    SearchContext,
     SelectContext,
-}                                from "../utils/context";
-import {useCommandPaletteHotkey} from "../utils/utils";
-import FreeSearchAction          from "./FreeSearchAction";
-import List                      from "./List";
-import ListItem                  from "./ListItem";
-import Page                      from "./Page";
-import Search                    from "./Search";
+    useCommandPaletteHotkey,
+}                               from "../utils";
+import FreeSearchAction         from "./FreeSearchAction";
+import List                     from "./List";
+import ListItem                 from "./ListItem";
+import Page                     from "./Page";
+import Search                   from "./Search";
 
 interface CommandPaletteProps {
     onChangeSelected?: (value: number) => void;
@@ -45,7 +44,7 @@ function CommandPalette(
         footer,
         hotkey = "mod+k",
     }: CommandPaletteProps) {
-    const {search, page, isOpen, setIsOpen, setSearch} = useCommandPaletteStore();
+    const {search, page, isOpen, setIsOpen, setSearch} = useCommandPaletteState();
     useCommandPaletteHotkey(hotkey);
     const onChangeOpen   = (isOpen: boolean) => {
         setIsOpen(isOpen);
@@ -203,7 +202,6 @@ function CommandPalette(
                                             value={{
                                                 setSearchPrefix,
                                                 searchPrefix,
-                                                page,
                                             }}
                                         >
                                             <Search
@@ -219,15 +217,13 @@ function CommandPalette(
                                             className="flex-1 overflow-y-auto focus:outline-none p-2 space-y-4"
                                             tabIndex={-1}
                                         >
-                                            <OpenContext.Provider value={{isOpen, onChangeOpen}}>
+                                            <OpenContext.Provider value={{onChangeOpen}}>
                                                 <PageContext.Provider
-                                                    value={{page, searchPrefix, setSearchPrefix}}
+                                                    value={{searchPrefix, setSearchPrefix}}
                                                 >
-                                                    <SearchContext.Provider value={{search}}>
-                                                        <SelectContext.Provider value={{selected}}>
-                                                            {children}
-                                                        </SelectContext.Provider>
-                                                    </SearchContext.Provider>
+                                                    <SelectContext.Provider value={{selected}}>
+                                                        {children}
+                                                    </SelectContext.Provider>
                                                 </PageContext.Provider>
                                             </OpenContext.Provider>
                                         </div>

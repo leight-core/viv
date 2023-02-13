@@ -4,26 +4,26 @@ import {useStore}           from "zustand";
 import {useContext}         from "./useContext";
 import {useOptionalContext} from "./useOptionalContext";
 
-export type IHookStoreFactory<TProps> = () => TProps;
+export type IHookStateFactory<TProps> = <U>(selector?: (state: TProps) => U) => TProps;
 
-export const hookStore = <TProps>(
+export const hookState = <TProps>(
     Context: Context<IStoreApi<TProps> | null>,
     name: string,
     hint?: string
-): IHookStoreFactory<TProps> => {
-    return () => {
+): IHookStateFactory<TProps> => {
+    return (selector?: (state: TProps) => any) => {
         const {store} = useContext(Context, name, hint);
-        return useStore(store);
+        return selector ? useStore(store, selector) : useStore(store);
     };
 };
 
-export const hookOptionalStore = <TProps>(
+export const hookOptionalState = <TProps>(
     Context: Context<IStoreApi<TProps> | null>
-): IHookStoreFactory<TProps | null> => {
-    return () => {
+): IHookStateFactory<TProps | null> => {
+    return (selector?: (state: TProps | null) => any) => {
         const {store} = useOptionalContext(Context) || {};
         if (store) {
-            return useStore(store);
+            return selector ? useStore(store, selector) : useStore(store);
         }
         return null;
     };

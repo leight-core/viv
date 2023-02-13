@@ -2,12 +2,9 @@ import React, {
     useContext,
     useEffect
 }                               from "react";
-import {useCommandPaletteStore} from "../store";
+import {useCommandPaletteState} from "../store";
 import {JsonStructure}          from "../types";
-import {
-    PageContext,
-    SearchContext
-}                               from "../utils/context";
+import {PageContext,}           from "../utils/context";
 import {
     filterItems,
     renderJsonStructure
@@ -29,9 +26,8 @@ export default function Page(
         backTo,
         id,
     }: PageProps) {
-    const {setPage}               = useCommandPaletteStore();
-    const {page, setSearchPrefix} = useContext(PageContext);
-    const {search}                = useContext(SearchContext);
+    const {page, search, setPage} = useCommandPaletteState(({search, page, setPage}) => ({search, page, setPage}));
+    const {setSearchPrefix}       = useContext(PageContext);
     onEscape                      = onEscape || (() => backTo && setPage(backTo));
 
     const isActive = page === id;

@@ -4,7 +4,7 @@ import React, {
     ReactNode
 }                               from "react";
 import CommandPalette           from "../components/CommandPalette";
-import {useCommandPaletteStore} from "../store";
+import {useCommandPaletteState} from "../store";
 import {JsonStructure}          from "../types";
 
 export function getItemIndex(
@@ -111,7 +111,7 @@ export function renderJsonStructure(jsonStructure: JsonStructure) {
 }
 
 export function useCommandPaletteHotkey(hotkey: string = "mod+k") {
-    const {isOpen, setIsOpen} = useCommandPaletteStore();
+    const {isOpen, setIsOpen} = useCommandPaletteState(({isOpen, setIsOpen}) => ({isOpen, setIsOpen}));
     useHotkeys([
         [
             hotkey,

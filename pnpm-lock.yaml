@@ -921,6 +921,7 @@ importers:
       ts-loader: ^9.3.0
       typescript: ^4.7.3
       webpack: ^5.73.0
+      zustand: ^4.3.3
     dependencies:
       '@headlessui/react': 1.7.10_biqbaboplfbrettd7655fr4n2y
       '@leight/context-client': link:../context-client
@@ -932,6 +933,7 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       reflect-metadata: 0.1.13
       tabler-icons-react: 1.56.0_react@18.2.0
+      zustand: 4.3.3_react@18.2.0
     devDependencies:
       '@babel/cli': 7.20.7_@babel+core@7.20.12
       '@babel/core': 7.20.12
@@ -1335,6 +1337,7 @@ importers:
       react-dom: ^18.2.0
       reflect-metadata: ^0.1.13
       typescript: ^4.9.5
+      zustand: ^4.3.3
     dependencies:
       '@leight/context-client': link:../context-client
       '@leight/utils': link:../utils
@@ -1342,6 +1345,7 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       reflect-metadata: 0.1.13
+      zustand: 4.3.3_react@18.2.0
     devDependencies:
       '@leight/eslint-config-eslint': link:../eslint-config-eslint
       '@leight/tsconfig': link:../tsconfig

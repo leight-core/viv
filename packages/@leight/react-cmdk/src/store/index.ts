@@ -1,1 +1,1 @@
-export * from "./useCommandPaletteStore";
+export * from "./useCommandPaletteState";

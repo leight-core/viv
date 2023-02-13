@@ -1,5 +1,11 @@
 # @leight/zustand
 
+## 0.5.17
+
+### Patch Changes
+
+- Improved zustand store stuff
+
 ## 0.5.16
 
 ### Patch Changes

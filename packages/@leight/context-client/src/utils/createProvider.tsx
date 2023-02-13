@@ -16,16 +16,18 @@ export type IStoreProviderFactory<TProps> = FC<{
 
 export interface ICreateProviderProps<TStoreProps> {
     createStore: ICreateStore<TStoreProps>;
+    defaults?: Partial<TStoreProps>;
     Context: IStoreContext<TStoreProps>;
 }
 
 export const createProvider = <TStoreProps, >(
     {
         createStore,
+        defaults,
         Context,
     }: ICreateProviderProps<TStoreProps>): IStoreProviderFactory<TStoreProps> => {
     return function StoreProvider({children}) {
-        const store = createStore();
+        const store = createStore(defaults);
         const memo  = useMemo(() => ({state: store.getState(), store}), []);
         return (
             <Context.Provider value={memo}>

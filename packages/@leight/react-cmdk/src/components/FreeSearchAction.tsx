@@ -1,7 +1,7 @@
-import React, {useContext}     from "react";
-import {Search}                from "tabler-icons-react";
-import {SearchContext}         from "../utils/context";
-import ListItem, {ButtonProps} from "./ListItem";
+import React                    from "react";
+import {Search}                 from "tabler-icons-react";
+import {useCommandPaletteState} from "../store";
+import ListItem, {ButtonProps}  from "./ListItem";
 
 interface FreeSearchActionProps extends Omit<ButtonProps, "index"> {
     index?: number;
@@ -13,7 +13,7 @@ export default function FreeSearchAction(
         label = "Search for",
         ...props
     }: FreeSearchActionProps) {
-    const {search} = useContext(SearchContext);
+    const {search} = useCommandPaletteState(({search}) => search);
 
     return (
         <ListItem index={0} icon={Search} showType={false} {...props}>

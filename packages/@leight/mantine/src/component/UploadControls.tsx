@@ -1,10 +1,10 @@
-import {useLoopStore} from "@leight/utils-client";
+import {useLoopState} from "@leight/utils-client";
 import {type FC}      from "react";
 
 export interface IUploadControlsProps {
 }
 
 export const UploadControls: FC<IUploadControlsProps> = () => {
-    const {isRunning} = useLoopStore();
+    const {isRunning} = useLoopState();
     return <>{isRunning ? "actions" : "done"}</>;
 };

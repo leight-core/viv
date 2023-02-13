@@ -1,23 +1,28 @@
-import {type IStoreApi} from "@leight/zustand";
+import {type IStoreApi}     from "@leight/zustand";
 import {
     createStore,
-    type StateCreator
-}                       from "zustand";
-import {createContext}  from "./createContext";
+    type StateCreator,
+    StoreApi
+}                           from "zustand";
+import {createContext}      from "./createContext";
 import {
     createProvider,
     type IStoreProviderFactory
-}                       from "./createProvider";
+}                           from "./createProvider";
 import {
-    hookOptionalStore,
-    hookStore,
-    type IHookStoreFactory,
-}                       from "./hookStore";
+    hookOptionalState,
+    hookState,
+    type IHookStateFactory,
+}                           from "./hookState";
+import {useContext}         from "./useContext";
+import {useOptionalContext} from "./useOptionalContext";
 
 export interface ICrateStoreContext<TProps> {
     Provider: IStoreProviderFactory<TProps>;
-    useStore: IHookStoreFactory<TProps>;
-    useOptionalStore: IHookStoreFactory<TProps | null>;
+    useState: IHookStateFactory<TProps>;
+    useOptionalState: IHookStateFactory<TProps | null>;
+    useStore: () => StoreApi<TProps>;
+    useOptionalStore: () => StoreApi<TProps> | null;
 }
 
 /**
@@ -31,12 +36,16 @@ export const createStoreContext = <TProps>(
     const Context = createContext<IStoreApi<TProps>>();
     return {
         Provider:         createProvider({
-            createStore: () => {
-                return createStore<TProps>(store);
+            createStore: (defaults) => {
+                const $store = createStore<TProps>(store);
+                defaults && $store.setState(defaults);
+                return $store;
             },
             Context,
         }),
-        useStore:         hookStore(Context, name, hint),
-        useOptionalStore: hookOptionalStore(Context),
+        useState:         hookState(Context, name, hint),
+        useOptionalState: hookOptionalState(Context),
+        useStore:         () => useContext(Context, name, hint).store,
+        useOptionalStore: () => useOptionalContext(Context)?.store || null,
     };
 };

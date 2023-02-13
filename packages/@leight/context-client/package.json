@@ -1,5 +1,5 @@
 {
-    "version": "0.5.18",
+    "version": "0.5.20",
     "name": "@leight/context-client",
     "description": "Context helper stuff on client-side, including support for Zustand.",
     "license": "MIT",
@@ -31,7 +31,7 @@
     },
     "dependencies": {
         "@leight/utils": "workspace:^0.5.19",
-        "@leight/zustand": "workspace:^0.5.16",
+        "@leight/zustand": "workspace:^0.5.17",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "reflect-metadata": "^0.1.13",

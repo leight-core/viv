@@ -1,5 +1,19 @@
 # @leight/context-client
 
+## 0.5.20
+
+### Patch Changes
+
+- Improved zustand store stuff
+- Updated dependencies
+    - @leight/zustand@0.5.17
+
+## 0.5.19
+
+### Patch Changes
+
+- Improved store stuff
+
 ## 0.5.18
 
 ### Patch Changes

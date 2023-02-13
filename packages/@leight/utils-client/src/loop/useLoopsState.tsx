@@ -11,6 +11,8 @@ export interface ILoopsStoreProps {
 
 export const {
                  Provider:         LoopsProvider,
+                 useState:         useLoopsState,
+                 useOptionalState: useOptionalLoopsState,
                  useStore:         useLoopsStore,
                  useOptionalStore: useOptionalLoopsStore,
              } = createStoreContext<ILoopsStoreProps>(

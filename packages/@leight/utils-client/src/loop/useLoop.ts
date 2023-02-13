@@ -1,6 +1,6 @@
 import {useEffect}             from "react";
-import {useOptionalLoopsStore} from "./useLoopsStore";
-import {useLoopStore}          from "./useLoopStore";
+import {useOptionalLoopsState} from "./useLoopsState";
+import {useLoopState}          from "./useLoopState";
 
 export interface IOnStartProps {
     total: number;
@@ -44,8 +44,8 @@ export const useLoop = (
         onError = () => Promise.resolve(),
         onFinish = () => Promise.resolve(),
     }: IUseLoopProps) => {
-    const loopStore  = useLoopStore();
-    const loopsStore = useOptionalLoopsStore();
+    const loopStore  = useLoopState();
+    const loopsStore = useOptionalLoopsState();
 
     useEffect(() => {
         if (loopStore.isRunning) {

@@ -1,6 +1,6 @@
 import {createStoreContext} from "@leight/context-client";
 
-export interface ICmdkStoreProps {
+export interface ICommandPaletteStoreProps {
     readonly page?: string;
     readonly isOpen: boolean;
     readonly search: string;
@@ -14,9 +14,11 @@ export interface ICmdkStoreProps {
 
 export const {
                  Provider:         CommandPaletteProvider,
+                 useState:         useCommandPaletteState,
+                 useOptionalState: useOptionalCommandPaletteState,
                  useStore:         useCommandPaletteStore,
                  useOptionalStore: useOptionalCommandPaletteStore,
-             } = createStoreContext<ICmdkStoreProps>(
+             } = createStoreContext<ICommandPaletteStoreProps>(
     (set) => ({
         isOpen: false,
         search: "",
