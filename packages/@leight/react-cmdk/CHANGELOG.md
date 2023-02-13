@@ -1,5 +1,13 @@
 # @leight/react-cmdk
 
+## 0.5.4
+
+### Patch Changes
+
+- Added some utility stuff
+- Updated dependencies
+    - @leight/i18n@0.5.17
+
 ## 0.5.3
 
 ### Patch Changes

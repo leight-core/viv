@@ -1,5 +1,11 @@
 # @leight/i18n
 
+## 0.5.17
+
+### Patch Changes
+
+- Added some utility stuff
+
 ## 0.5.16
 
 ### Patch Changes
