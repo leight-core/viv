@@ -34,7 +34,7 @@ interface ListItemBaseProps {
     icon?: FC;
     showType?: boolean;
     disabled?: boolean;
-    keywords?: string[];
+    keywords?: (string | undefined | null)[];
     index: number;
 }
 

@@ -1,3 +1,4 @@
+import {isString}               from "@leight/utils";
 import {useHotkeys}             from "@mantine/hooks";
 import React, {
     Children,
@@ -36,7 +37,7 @@ export function filterItems(
             const listHasMatchingItem = list.items.some(
                 (item) =>
                     doesChildMatchSearch(search, item.children) ||
-                    doesKeywordsMatchSearch(search, item.keywords ?? [])
+                    doesKeywordsMatchSearch(search, item.keywords?.filter(isString) ?? [])
             );
 
             return filterOnListHeading
@@ -48,7 +49,7 @@ export function filterItems(
             const matchingItems = list.items.filter(
                 (item) =>
                     doesChildMatchSearch(search, item.children) ||
-                    doesKeywordsMatchSearch(search, item.keywords ?? [])
+                    doesKeywordsMatchSearch(search, item.keywords?.filter(isString) ?? [])
             );
 
             return {

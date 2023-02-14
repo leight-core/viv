@@ -1,5 +1,11 @@
 # @leight/filter
 
+## 0.5.16
+
+### Patch Changes
+
+- A little improvement, yaay!
+
 ## 0.5.15
 
 ### Patch Changes

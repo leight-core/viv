@@ -10,7 +10,7 @@ export const withItem = ({t, children, itemType, keywords, ...props}: IWithItemP
     return {
         children: isString(children) ? t(children) : children,
         itemType: isString(itemType) ? t(itemType) : itemType,
-        keywords: keywords?.map(keyword => t(keyword)),
+        keywords: keywords?.filter(isString).map(keyword => t(keyword)),
         ...props,
     };
 };
