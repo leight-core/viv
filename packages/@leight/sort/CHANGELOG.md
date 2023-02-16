@@ -1,5 +1,23 @@
 # @leight/sort
 
+## 0.5.18
+
+### Patch Changes
+
+- Just a record here
+
+## 0.5.17
+
+### Patch Changes
+
+- Version bump II
+
+## 0.5.16
+
+### Patch Changes
+
+- Version bump
+
 ## 0.5.15
 
 ### Patch Changes

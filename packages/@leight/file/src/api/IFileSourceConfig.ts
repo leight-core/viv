@@ -1,11 +1,11 @@
 import {
-    type File,
-    type IPrisma
+    type IPrisma,
+    type Prisma
 }                           from "@leight/prisma";
 import {type ISourceConfig} from "@leight/source";
 
 export interface IFileSourceConfig extends ISourceConfig<
-    File,
+    Prisma.File,
     IPrisma.FileCreateInput,
     IPrisma.FileUpdateInput,
     IPrisma.FileWhereInput,

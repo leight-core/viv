@@ -1,10 +1,7 @@
-import {
-    FileOrderByWithRelationInputSchema,
-    FileWhereInputSchema
-}                          from "@leight/prisma";
+import {Schema,}           from "@leight/prisma";
 import {createQuerySchema} from "@leight/query";
 
 export const FileQuerySchema = createQuerySchema({
-    filter: FileWhereInputSchema,
-    sort:   FileOrderByWithRelationInputSchema,
+    filter: Schema.FileWhereInputSchema,
+    sort:   Schema.FileOrderByWithRelationInputSchema,
 });

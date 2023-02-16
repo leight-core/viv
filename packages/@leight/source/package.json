@@ -1,5 +1,5 @@
 {
-    "version": "0.5.16",
+    "version": "0.5.19",
     "name": "@leight/source",
     "description": "Common Source stuff; source is definition of Data Source (usually on the backend).",
     "license": "MIT",
@@ -30,15 +30,15 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/filter": "workspace:^0.5.15",
-        "@leight/query": "workspace:^0.5.16",
-        "@leight/sort": "workspace:^0.5.15",
-        "@leight/utils": "workspace:^0.5.23",
+        "@leight/filter": "workspace:^0.5.19",
+        "@leight/query": "workspace:^0.5.19",
+        "@leight/sort": "workspace:^0.5.18",
+        "@leight/utils": "workspace:^0.5.26",
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.5.10",
-        "@leight/tsconfig": "workspace:^0.5.20",
+        "@leight/eslint-config-eslint": "workspace:^0.5.13",
+        "@leight/tsconfig": "workspace:^0.5.23",
         "@types/node": "^18.13.0",
         "@typescript-eslint/eslint-plugin": "^5.52.0",
         "@typescript-eslint/parser": "^5.52.0",

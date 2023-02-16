@@ -1,5 +1,4 @@
 export * from "./api";
-export * from "./schema";
 export * from "./source";
 
 /**
@@ -11,4 +10,5 @@ export {
     Prisma as IPrisma
 }        from "@prisma/client";
 
-export * as $Prisma from "@prisma/client";
+export * as Prisma from "@prisma/client";
+export * as Schema from "./schema";

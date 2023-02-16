@@ -1,14 +1,11 @@
 import {
     type IPrisma,
-    type Job
+    Schema
 }                           from "@leight/prisma";
 import {type ISourceConfig} from "@leight/source";
 
-export interface IJobEntity extends Job {
-}
-
 export interface IJobSourceConfig extends ISourceConfig<
-    IJobEntity,
+    Schema.Job,
     IPrisma.JobCreateInput,
     IPrisma.JobUpdateInput,
     IPrisma.JobWhereInput,

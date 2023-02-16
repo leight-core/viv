@@ -1,5 +1,5 @@
 {
-    "version": "0.5.20",
+    "version": "0.5.23",
     "name": "@leight/import-server",
     "description": "Server-side import stuff.",
     "license": "MIT",
@@ -30,14 +30,14 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "workspace:^0.5.20",
-        "@leight/import": "workspace:^0.5.20",
+        "@leight/container": "workspace:^0.5.23",
+        "@leight/import": "workspace:^0.5.23",
         "reflect-metadata": "^0.1.13",
         "tsyringe": "^4.7.0"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.5.10",
-        "@leight/tsconfig": "workspace:^0.5.20",
+        "@leight/eslint-config-eslint": "workspace:^0.5.13",
+        "@leight/tsconfig": "workspace:^0.5.23",
         "@types/node": "^18.13.0",
         "@typescript-eslint/eslint-plugin": "^5.52.0",
         "@typescript-eslint/parser": "^5.52.0",

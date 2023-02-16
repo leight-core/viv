@@ -1,5 +1,5 @@
 {
-    "version": "0.5.21",
+    "version": "0.5.24",
     "name": "@leight/next.js-server",
     "description": "Next.js related server-side helper stuff.",
     "license": "MIT",
@@ -30,11 +30,11 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "workspace:^0.5.20",
-        "@leight/user": "workspace:^0.5.21",
-        "@leight/user-server": "workspace:^0.5.20",
-        "@leight/utils": "workspace:^0.5.23",
-        "@leight/winston": "workspace:^0.5.20",
+        "@leight/container": "workspace:^0.5.23",
+        "@leight/user": "workspace:^0.5.24",
+        "@leight/user-server": "workspace:^0.5.23",
+        "@leight/utils": "workspace:^0.5.26",
+        "@leight/winston": "workspace:^0.5.23",
         "next": "^13.1.6",
         "next-auth": "^4.19.2",
         "raw-body": "^2.5.1",
@@ -43,11 +43,11 @@
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.5.10",
-        "@leight/tsconfig": "workspace:^0.5.20",
+        "@leight/eslint-config-eslint": "workspace:^0.5.13",
+        "@leight/tsconfig": "workspace:^0.5.23",
         "@types/node": "^18.13.0",
         "@types/react": "^18.0.28",
-        "@types/react-dom": "^18.0.10",
+        "@types/react-dom": "^18.0.11",
         "@typescript-eslint/eslint-plugin": "^5.52.0",
         "@typescript-eslint/parser": "^5.52.0",
         "concurrently": "^7.6.0",

@@ -1,5 +1,23 @@
 # @leight/zustand
 
+## 0.5.24
+
+### Patch Changes
+
+- Just a record here
+
+## 0.5.23
+
+### Patch Changes
+
+- Version bump II
+
+## 0.5.22
+
+### Patch Changes
+
+- Version bump
+
 ## 0.5.21
 
 ### Patch Changes

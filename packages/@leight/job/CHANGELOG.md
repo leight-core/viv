@@ -1,5 +1,38 @@
 # @leight/job
 
+## 0.5.25
+
+### Patch Changes
+
+- Just a record here
+- Updated dependencies
+    - @leight/winston@0.5.23
+    - @leight/prisma@0.5.26
+    - @leight/source@0.5.19
+    - @leight/query@0.5.19
+
+## 0.5.24
+
+### Patch Changes
+
+- Version bump II
+- Updated dependencies
+    - @leight/winston@0.5.22
+    - @leight/prisma@0.5.25
+    - @leight/source@0.5.18
+    - @leight/query@0.5.18
+
+## 0.5.23
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/prisma@0.5.24
+    - @leight/query@0.5.17
+    - @leight/source@0.5.17
+    - @leight/winston@0.5.21
+
 ## 0.5.22
 
 ### Patch Changes

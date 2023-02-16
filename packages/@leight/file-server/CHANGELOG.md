@@ -1,5 +1,38 @@
 # @leight/file-server
 
+## 0.5.23
+
+### Patch Changes
+
+- Just a record here
+- Updated dependencies
+    - @leight/next.js-server@0.5.24
+    - @leight/container@0.5.23
+    - @leight/prisma@0.5.26
+    - @leight/file@0.5.23
+
+## 0.5.22
+
+### Patch Changes
+
+- Version bump II
+- Updated dependencies
+    - @leight/next.js-server@0.5.23
+    - @leight/container@0.5.22
+    - @leight/prisma@0.5.25
+    - @leight/file@0.5.22
+
+## 0.5.21
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/next.js-server@0.5.22
+    - @leight/container@0.5.21
+    - @leight/file@0.5.21
+    - @leight/prisma@0.5.24
+
 ## 0.5.20
 
 ### Patch Changes
