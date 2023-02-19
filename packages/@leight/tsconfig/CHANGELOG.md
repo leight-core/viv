@@ -1,5 +1,12 @@
 # @leight/tsconfig
 
+## 0.5.25
+
+### Patch Changes
+
+- 1ad54697: Removed reflect-metadata from esbuild config
+- Added forgotten file to package
+
 ## 0.5.24
 
 ### Patch Changes
