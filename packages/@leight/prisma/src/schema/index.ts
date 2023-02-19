@@ -74,7 +74,7 @@ export const AccountSchema = z.object({
     scope:             z.string().nullable(),
     id_token:          z.string().nullable(),
     session_state:     z.string().nullable(),
-});
+})
 
 export type Account = z.infer<typeof AccountSchema>
 
@@ -83,7 +83,7 @@ export type Account = z.infer<typeof AccountSchema>
 
 export const AccountOptionalDefaultsSchema = AccountSchema.merge(z.object({
     id: z.string().cuid().optional(),
-}));
+}))
 
 export type AccountOptionalDefaults = z.infer<typeof AccountOptionalDefaultsSchema>
 
@@ -100,7 +100,7 @@ export type AccountWithRelations =
 
 export const AccountWithRelationsSchema: z.ZodType<AccountWithRelations> = AccountSchema.merge(z.object({
     user: z.lazy(() => UserWithRelationsSchema),
-}));
+}))
 
 // ACCOUNT OPTIONAL DEFAULTS RELATION SCHEMA
 //------------------------------------------------------
@@ -111,7 +111,7 @@ export type AccountOptionalDefaultsWithRelations =
 
 export const AccountOptionalDefaultsWithRelationsSchema: z.ZodType<AccountOptionalDefaultsWithRelations> = AccountOptionalDefaultsSchema.merge(z.object({
     user: z.lazy(() => UserWithRelationsSchema),
-}));
+}))
 
 /////////////////////////////////////////
 // SESSION SCHEMA
@@ -122,7 +122,7 @@ export const SessionSchema = z.object({
     sessionToken: z.string(),
     userId:       z.string(),
     expires:      z.coerce.date(),
-});
+})
 
 export type Session = z.infer<typeof SessionSchema>
 
@@ -131,7 +131,7 @@ export type Session = z.infer<typeof SessionSchema>
 
 export const SessionOptionalDefaultsSchema = SessionSchema.merge(z.object({
     id: z.string().cuid().optional(),
-}));
+}))
 
 export type SessionOptionalDefaults = z.infer<typeof SessionOptionalDefaultsSchema>
 
@@ -148,7 +148,7 @@ export type SessionWithRelations =
 
 export const SessionWithRelationsSchema: z.ZodType<SessionWithRelations> = SessionSchema.merge(z.object({
     user: z.lazy(() => UserWithRelationsSchema),
-}));
+}))
 
 // SESSION OPTIONAL DEFAULTS RELATION SCHEMA
 //------------------------------------------------------
@@ -159,7 +159,7 @@ export type SessionOptionalDefaultsWithRelations =
 
 export const SessionOptionalDefaultsWithRelationsSchema: z.ZodType<SessionOptionalDefaultsWithRelations> = SessionOptionalDefaultsSchema.merge(z.object({
     user: z.lazy(() => UserWithRelationsSchema),
-}));
+}))
 
 /////////////////////////////////////////
 // USER SCHEMA
@@ -171,7 +171,7 @@ export const UserSchema = z.object({
     email:         z.string().nullable(),
     emailVerified: z.coerce.date().nullable(),
     image:         z.string().nullable(),
-});
+})
 
 export type User = z.infer<typeof UserSchema>
 
@@ -180,7 +180,7 @@ export type User = z.infer<typeof UserSchema>
 
 export const UserOptionalDefaultsSchema = UserSchema.merge(z.object({
     id: z.string().cuid().optional(),
-}));
+}))
 
 export type UserOptionalDefaults = z.infer<typeof UserOptionalDefaultsSchema>
 
@@ -205,7 +205,7 @@ export const UserWithRelationsSchema: z.ZodType<UserWithRelations> = UserSchema.
     UserToken: z.lazy(() => UserTokenWithRelationsSchema).array(),
     File:      z.lazy(() => FileWithRelationsSchema).array(),
     Job:       z.lazy(() => JobWithRelationsSchema).array(),
-}));
+}))
 
 // USER OPTIONAL DEFAULTS RELATION SCHEMA
 //------------------------------------------------------
@@ -220,7 +220,7 @@ export const UserOptionalDefaultsWithRelationsSchema: z.ZodType<UserOptionalDefa
     UserToken: z.lazy(() => UserTokenWithRelationsSchema).array(),
     File:      z.lazy(() => FileWithRelationsSchema).array(),
     Job:       z.lazy(() => JobWithRelationsSchema).array(),
-}));
+}))
 
 /////////////////////////////////////////
 // VERIFICATION TOKEN SCHEMA
@@ -230,7 +230,7 @@ export const VerificationTokenSchema = z.object({
     identifier: z.string(),
     token:      z.string(),
     expires:    z.coerce.date(),
-});
+})
 
 export type VerificationToken = z.infer<typeof VerificationTokenSchema>
 
@@ -241,7 +241,7 @@ export type VerificationToken = z.infer<typeof VerificationTokenSchema>
 export const TokenSchema = z.object({
     id:   z.string().cuid(),
     name: z.string(),
-});
+})
 
 export type Token = z.infer<typeof TokenSchema>
 
@@ -250,7 +250,7 @@ export type Token = z.infer<typeof TokenSchema>
 
 export const TokenOptionalDefaultsSchema = TokenSchema.merge(z.object({
     id: z.string().cuid().optional(),
-}));
+}))
 
 export type TokenOptionalDefaults = z.infer<typeof TokenOptionalDefaultsSchema>
 
@@ -267,7 +267,7 @@ export type TokenWithRelations =
 
 export const TokenWithRelationsSchema: z.ZodType<TokenWithRelations> = TokenSchema.merge(z.object({
     UserToken: z.lazy(() => UserTokenWithRelationsSchema).array(),
-}));
+}))
 
 // TOKEN OPTIONAL DEFAULTS RELATION SCHEMA
 //------------------------------------------------------
@@ -278,7 +278,7 @@ export type TokenOptionalDefaultsWithRelations =
 
 export const TokenOptionalDefaultsWithRelationsSchema: z.ZodType<TokenOptionalDefaultsWithRelations> = TokenOptionalDefaultsSchema.merge(z.object({
     UserToken: z.lazy(() => UserTokenWithRelationsSchema).array(),
-}));
+}))
 
 /////////////////////////////////////////
 // USER TOKEN SCHEMA
@@ -288,7 +288,7 @@ export const UserTokenSchema = z.object({
     id:      z.string().cuid(),
     userId:  z.string(),
     tokenId: z.string(),
-});
+})
 
 export type UserToken = z.infer<typeof UserTokenSchema>
 
@@ -297,7 +297,7 @@ export type UserToken = z.infer<typeof UserTokenSchema>
 
 export const UserTokenOptionalDefaultsSchema = UserTokenSchema.merge(z.object({
     id: z.string().cuid().optional(),
-}));
+}))
 
 export type UserTokenOptionalDefaults = z.infer<typeof UserTokenOptionalDefaultsSchema>
 
@@ -316,7 +316,7 @@ export type UserTokenWithRelations =
 export const UserTokenWithRelationsSchema: z.ZodType<UserTokenWithRelations> = UserTokenSchema.merge(z.object({
     user:  z.lazy(() => UserWithRelationsSchema),
     token: z.lazy(() => TokenWithRelationsSchema),
-}));
+}))
 
 // USER TOKEN OPTIONAL DEFAULTS RELATION SCHEMA
 //------------------------------------------------------
@@ -328,7 +328,7 @@ export type UserTokenOptionalDefaultsWithRelations =
 export const UserTokenOptionalDefaultsWithRelationsSchema: z.ZodType<UserTokenOptionalDefaultsWithRelations> = UserTokenOptionalDefaultsSchema.merge(z.object({
     user:  z.lazy(() => UserWithRelationsSchema),
     token: z.lazy(() => TokenWithRelationsSchema),
-}));
+}))
 
 /////////////////////////////////////////
 // FILE SCHEMA
@@ -345,7 +345,7 @@ export const FileSchema = z.object({
     created:  z.coerce.date(),
     updated:  z.coerce.date().nullable(),
     userId:   z.string().nullable(),
-});
+})
 
 export type File = z.infer<typeof FileSchema>
 
@@ -354,7 +354,7 @@ export type File = z.infer<typeof FileSchema>
 
 export const FileOptionalDefaultsSchema = FileSchema.merge(z.object({
     id: z.string().cuid().optional(),
-}));
+}))
 
 export type FileOptionalDefaults = z.infer<typeof FileOptionalDefaultsSchema>
 
@@ -371,7 +371,7 @@ export type FileWithRelations =
 
 export const FileWithRelationsSchema: z.ZodType<FileWithRelations> = FileSchema.merge(z.object({
     user: z.lazy(() => UserWithRelationsSchema).nullable(),
-}));
+}))
 
 // FILE OPTIONAL DEFAULTS RELATION SCHEMA
 //------------------------------------------------------
@@ -382,7 +382,7 @@ export type FileOptionalDefaultsWithRelations =
 
 export const FileOptionalDefaultsWithRelationsSchema: z.ZodType<FileOptionalDefaultsWithRelations> = FileOptionalDefaultsSchema.merge(z.object({
     user: z.lazy(() => UserWithRelationsSchema).nullable(),
-}));
+}))
 
 /////////////////////////////////////////
 // TRANSLATION SCHEMA
@@ -394,7 +394,7 @@ export const TranslationSchema = z.object({
     label:  z.string(),
     text:   z.string(),
     hash:   z.string(),
-});
+})
 
 export type Translation = z.infer<typeof TranslationSchema>
 
@@ -403,7 +403,7 @@ export type Translation = z.infer<typeof TranslationSchema>
 
 export const TranslationOptionalDefaultsSchema = TranslationSchema.merge(z.object({
     id: z.string().cuid().optional(),
-}));
+}))
 
 export type TranslationOptionalDefaults = z.infer<typeof TranslationOptionalDefaultsSchema>
 
@@ -420,8 +420,8 @@ export const JobSchema = z.object({
     success:      z.number().int().nullable(),
     successRatio: z.number().nullable(),
     failure:      z.number().int().nullable(),
-  failureRatio:   z.number().nullable(),
-  skip:           z.number().int().nullable(),
+    failureRatio: z.number().nullable(),
+    skip:         z.number().int().nullable(),
     skipRatio:    z.number().nullable(),
     created:      z.coerce.date(),
     started:      z.coerce.date().nullable(),
@@ -440,7 +440,7 @@ export const JobOptionalDefaultsSchema = JobSchema.merge(z.object({
     id:       z.string().cuid().optional(),
     total:    z.number().int().optional(),
     progress: z.number().optional(),
-}));
+}))
 
 export type JobOptionalDefaults = z.infer<typeof JobOptionalDefaultsSchema>
 
@@ -459,7 +459,7 @@ export type JobWithRelations =
 export const JobWithRelationsSchema: z.ZodType<JobWithRelations> = JobSchema.merge(z.object({
     user: z.lazy(() => UserWithRelationsSchema).nullable(),
     logs: z.lazy(() => JobLogWithRelationsSchema).array(),
-}));
+}))
 
 // JOB OPTIONAL DEFAULTS RELATION SCHEMA
 //------------------------------------------------------
@@ -471,7 +471,7 @@ export type JobOptionalDefaultsWithRelations =
 export const JobOptionalDefaultsWithRelationsSchema: z.ZodType<JobOptionalDefaultsWithRelations> = JobOptionalDefaultsSchema.merge(z.object({
     user: z.lazy(() => UserWithRelationsSchema).nullable(),
     logs: z.lazy(() => JobLogWithRelationsSchema).array(),
-}));
+}))
 
 /////////////////////////////////////////
 // JOB LOG SCHEMA
@@ -481,7 +481,7 @@ export const JobLogSchema = z.object({
     id:      z.string().cuid(),
     jobId:   z.string(),
     message: z.string(),
-});
+})
 
 export type JobLog = z.infer<typeof JobLogSchema>
 
@@ -490,7 +490,7 @@ export type JobLog = z.infer<typeof JobLogSchema>
 
 export const JobLogOptionalDefaultsSchema = JobLogSchema.merge(z.object({
     id: z.string().cuid().optional(),
-}));
+}))
 
 export type JobLogOptionalDefaults = z.infer<typeof JobLogOptionalDefaultsSchema>
 
@@ -507,7 +507,7 @@ export type JobLogWithRelations =
 
 export const JobLogWithRelationsSchema: z.ZodType<JobLogWithRelations> = JobLogSchema.merge(z.object({
     job: z.lazy(() => JobWithRelationsSchema),
-}));
+}))
 
 // JOB LOG OPTIONAL DEFAULTS RELATION SCHEMA
 //------------------------------------------------------
@@ -518,7 +518,7 @@ export type JobLogOptionalDefaultsWithRelations =
 
 export const JobLogOptionalDefaultsWithRelationsSchema: z.ZodType<JobLogOptionalDefaultsWithRelations> = JobLogOptionalDefaultsSchema.merge(z.object({
     job: z.lazy(() => JobWithRelationsSchema),
-}));
+}))
 
 /////////////////////////////////////////
 // KEYWORD SCHEMA
@@ -527,7 +527,7 @@ export const JobLogOptionalDefaultsWithRelationsSchema: z.ZodType<JobLogOptional
 export const KeywordSchema = z.object({
     id:   z.string().cuid(),
     text: z.string(),
-});
+})
 
 export type Keyword = z.infer<typeof KeywordSchema>
 
@@ -536,7 +536,7 @@ export type Keyword = z.infer<typeof KeywordSchema>
 
 export const KeywordOptionalDefaultsSchema = KeywordSchema.merge(z.object({
     id: z.string().cuid().optional(),
-}));
+}))
 
 export type KeywordOptionalDefaults = z.infer<typeof KeywordOptionalDefaultsSchema>
 
