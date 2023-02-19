@@ -1,5 +1,11 @@
 # @leight/tsconfig
 
+## 0.5.24
+
+### Patch Changes
+
+- Added esbuild config
+
 ## 0.5.23
 
 ### Patch Changes
