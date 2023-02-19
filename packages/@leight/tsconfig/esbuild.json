@@ -30,7 +30,6 @@
         "strict": true,
         "strictPropertyInitialization": true,
         "types": [
-            "reflect-metadata",
             "node"
         ],
         "useDefineForClassFields": true
