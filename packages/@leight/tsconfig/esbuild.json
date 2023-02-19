@@ -5,7 +5,7 @@
         "isolatedModules": false,
         "emitDeclarationOnly": true,
         "disableSolutionSearching": true,
-        "emitDecoratorMetadata": true,
+        "emitDecoratorMetadata": false,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "incremental": false,

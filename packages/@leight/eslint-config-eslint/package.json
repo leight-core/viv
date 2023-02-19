@@ -1,6 +1,6 @@
 {
     "name": "@leight/eslint-config-eslint",
-    "version": "0.5.13",
+    "version": "0.5.14",
     "main": "index.js",
     "license": "MIT",
     "dependencies": {
@@ -8,7 +8,7 @@
         "@typescript-eslint/parser": "^5.52.0",
         "eslint-config-next": "^13.1.6",
         "eslint-config-prettier": "^8.6.0",
-        "eslint-config-turbo": "^0.0.7",
+        "eslint-config-turbo": "^0.0.8",
         "eslint-plugin-disable": "^2.0.3",
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-jsx-a11y": "^6.7.1",

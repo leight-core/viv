@@ -1,5 +1,5 @@
 {
-    "version": "0.5.25",
+    "version": "0.5.26",
     "name": "@leight/job",
     "description": "Common job stuff.",
     "license": "MIT",
@@ -23,24 +23,23 @@
         "src"
     ],
     "scripts": {
-        "build": "tsc -p tsconfig.json --outDir lib",
-        "dev:watch": "tsc -w -p tsconfig.json --outDir lib --preserveWatchOutput",
+        "build": "tsc --outDir lib",
         "depcheck": "depcheck",
         "lint": "eslint src",
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/prisma": "workspace:^0.5.26",
-        "@leight/query": "workspace:^0.5.19",
-        "@leight/source": "workspace:^0.5.19",
-        "@leight/winston": "workspace:^0.5.23",
+        "@leight/prisma": "workspace:^0.5.27",
+        "@leight/query": "workspace:^0.5.20",
+        "@leight/source": "workspace:^0.5.20",
+        "@leight/winston": "workspace:^0.5.24",
         "reflect-metadata": "^0.1.13",
         "zod": "^3.20.6"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.5.13",
-        "@leight/tsconfig": "workspace:^0.5.23",
-        "@types/node": "^18.13.0",
+        "@leight/eslint-config-eslint": "workspace:^0.5.14",
+        "@leight/tsconfig": "workspace:^0.5.26",
+        "@types/node": "^18.14.0",
         "@typescript-eslint/eslint-plugin": "^5.52.0",
         "@typescript-eslint/parser": "^5.52.0",
         "concurrently": "^7.6.0",

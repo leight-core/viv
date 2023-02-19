@@ -1,9 +1,10 @@
-import { z } from 'zod';
-import { type Prisma } from '@prisma/client';
+import {type Prisma} from "@prisma/client";
+import {z}           from "zod";
 
 /////////////////////////////////////////
 // HELPER FUNCTIONS
 /////////////////////////////////////////
+
 
 /////////////////////////////////////////
 // ENUMS
@@ -35,380 +36,522 @@ export const UserScalarFieldEnumSchema = z.enum(['id','name','email','emailVerif
 
 export const UserTokenScalarFieldEnumSchema = z.enum(['id','userId','tokenId']);
 
-export const VerificationTokenScalarFieldEnumSchema = z.enum(['identifier','token','expires']);
+export const VerificationTokenScalarFieldEnumSchema = z.enum([
+    "identifier",
+    "token",
+    "expires"
+]);
 
-export const JobStatusSchema = z.enum(['NEW','RUNNING','SUCCESS','FAILURE','REVIEW','DONE']);
+export const JobStatusSchema = z.enum([
+    "NEW",
+    "RUNNING",
+    "SUCCESS",
+    "FAILURE",
+    "REVIEW",
+    "DONE"
+]);
 
 export type JobStatusType = `${z.infer<typeof JobStatusSchema>}`
-
 
 /////////////////////////////////////////
 // MODELS
 /////////////////////////////////////////
 
-// ACCOUNT
-//------------------------------------------------------
-
+/////////////////////////////////////////
+// ACCOUNT SCHEMA
+/////////////////////////////////////////
 
 export const AccountSchema = z.object({
-  id: z.string().cuid(),
-  userId: z.string(),
-  type: z.string(),
-  provider: z.string(),
-  providerAccountId: z.string(),
-  refresh_token: z.string().nullable(),
-  access_token: z.string().nullable(),
-  expires_at: z.number().int().nullable(),
-  token_type: z.string().nullable(),
-  scope: z.string().nullable(),
-  id_token: z.string().nullable(),
-  session_state: z.string().nullable(),
-})
+    id:                z.string().cuid(),
+    userId:            z.string(),
+    type:              z.string(),
+    provider:          z.string(),
+    providerAccountId: z.string(),
+    refresh_token:     z.string().nullable(),
+    access_token:      z.string().nullable(),
+    expires_at:        z.number().int().nullable(),
+    token_type:        z.string().nullable(),
+    scope:             z.string().nullable(),
+    id_token:          z.string().nullable(),
+    session_state:     z.string().nullable(),
+});
 
 export type Account = z.infer<typeof AccountSchema>
 
-export const AccountOptionalDefaultsSchema = AccountSchema.merge(z.object({
-  id: z.string().cuid().optional(),
-}))
-
-export type AccountRelations = {
-  user: UserWithRelations;
-};
-
-export type AccountWithRelations = z.infer<typeof AccountSchema> & AccountRelations
-
-export const AccountWithRelationsSchema: z.ZodType<AccountWithRelations> = AccountSchema.merge(z.object({
-  user: z.lazy(() => UserWithRelationsSchema),
-}))
-
-export type AccountOptionalDefaultsWithRelations = z.infer<typeof AccountOptionalDefaultsSchema> & AccountRelations
-
-export const AccountOptionalDefaultsWithRelationsSchema: z.ZodType<AccountOptionalDefaultsWithRelations> = AccountOptionalDefaultsSchema.merge(z.object({
-  user: z.lazy(() => UserWithRelationsSchema),
-}))
-
-// SESSION
+// ACCOUNT OPTIONAL DEFAULTS SCHEMA
 //------------------------------------------------------
 
+export const AccountOptionalDefaultsSchema = AccountSchema.merge(z.object({
+    id: z.string().cuid().optional(),
+}));
+
+export type AccountOptionalDefaults = z.infer<typeof AccountOptionalDefaultsSchema>
+
+// ACCOUNT RELATION SCHEMA
+//------------------------------------------------------
+
+export type AccountRelations = {
+    user: UserWithRelations;
+};
+
+export type AccountWithRelations =
+    z.infer<typeof AccountSchema>
+    & AccountRelations
+
+export const AccountWithRelationsSchema: z.ZodType<AccountWithRelations> = AccountSchema.merge(z.object({
+    user: z.lazy(() => UserWithRelationsSchema),
+}));
+
+// ACCOUNT OPTIONAL DEFAULTS RELATION SCHEMA
+//------------------------------------------------------
+
+export type AccountOptionalDefaultsWithRelations =
+    z.infer<typeof AccountOptionalDefaultsSchema>
+    & AccountRelations
+
+export const AccountOptionalDefaultsWithRelationsSchema: z.ZodType<AccountOptionalDefaultsWithRelations> = AccountOptionalDefaultsSchema.merge(z.object({
+    user: z.lazy(() => UserWithRelationsSchema),
+}));
+
+/////////////////////////////////////////
+// SESSION SCHEMA
+/////////////////////////////////////////
 
 export const SessionSchema = z.object({
-  id: z.string().cuid(),
-  sessionToken: z.string(),
-  userId: z.string(),
-  expires: z.coerce.date(),
-})
+    id:           z.string().cuid(),
+    sessionToken: z.string(),
+    userId:       z.string(),
+    expires:      z.coerce.date(),
+});
 
 export type Session = z.infer<typeof SessionSchema>
 
-export const SessionOptionalDefaultsSchema = SessionSchema.merge(z.object({
-  id: z.string().cuid().optional(),
-}))
-
-export type SessionRelations = {
-  user: UserWithRelations;
-};
-
-export type SessionWithRelations = z.infer<typeof SessionSchema> & SessionRelations
-
-export const SessionWithRelationsSchema: z.ZodType<SessionWithRelations> = SessionSchema.merge(z.object({
-  user: z.lazy(() => UserWithRelationsSchema),
-}))
-
-export type SessionOptionalDefaultsWithRelations = z.infer<typeof SessionOptionalDefaultsSchema> & SessionRelations
-
-export const SessionOptionalDefaultsWithRelationsSchema: z.ZodType<SessionOptionalDefaultsWithRelations> = SessionOptionalDefaultsSchema.merge(z.object({
-  user: z.lazy(() => UserWithRelationsSchema),
-}))
-
-// USER
+// SESSION OPTIONAL DEFAULTS SCHEMA
 //------------------------------------------------------
 
+export const SessionOptionalDefaultsSchema = SessionSchema.merge(z.object({
+    id: z.string().cuid().optional(),
+}));
+
+export type SessionOptionalDefaults = z.infer<typeof SessionOptionalDefaultsSchema>
+
+// SESSION RELATION SCHEMA
+//------------------------------------------------------
+
+export type SessionRelations = {
+    user: UserWithRelations;
+};
+
+export type SessionWithRelations =
+    z.infer<typeof SessionSchema>
+    & SessionRelations
+
+export const SessionWithRelationsSchema: z.ZodType<SessionWithRelations> = SessionSchema.merge(z.object({
+    user: z.lazy(() => UserWithRelationsSchema),
+}));
+
+// SESSION OPTIONAL DEFAULTS RELATION SCHEMA
+//------------------------------------------------------
+
+export type SessionOptionalDefaultsWithRelations =
+    z.infer<typeof SessionOptionalDefaultsSchema>
+    & SessionRelations
+
+export const SessionOptionalDefaultsWithRelationsSchema: z.ZodType<SessionOptionalDefaultsWithRelations> = SessionOptionalDefaultsSchema.merge(z.object({
+    user: z.lazy(() => UserWithRelationsSchema),
+}));
+
+/////////////////////////////////////////
+// USER SCHEMA
+/////////////////////////////////////////
 
 export const UserSchema = z.object({
-  id: z.string().cuid(),
-  name: z.string().nullable(),
-  email: z.string().nullable(),
-  emailVerified: z.coerce.date().nullable(),
-  image: z.string().nullable(),
-})
+    id:            z.string().cuid(),
+    name:          z.string().nullable(),
+    email:         z.string().nullable(),
+    emailVerified: z.coerce.date().nullable(),
+    image:         z.string().nullable(),
+});
 
 export type User = z.infer<typeof UserSchema>
 
-export const UserOptionalDefaultsSchema = UserSchema.merge(z.object({
-  id: z.string().cuid().optional(),
-}))
-
-export type UserRelations = {
-  accounts: AccountWithRelations[];
-  sessions: SessionWithRelations[];
-  UserToken: UserTokenWithRelations[];
-  File: FileWithRelations[];
-  Job: JobWithRelations[];
-};
-
-export type UserWithRelations = z.infer<typeof UserSchema> & UserRelations
-
-export const UserWithRelationsSchema: z.ZodType<UserWithRelations> = UserSchema.merge(z.object({
-  accounts: z.lazy(() => AccountWithRelationsSchema).array(),
-  sessions: z.lazy(() => SessionWithRelationsSchema).array(),
-  UserToken: z.lazy(() => UserTokenWithRelationsSchema).array(),
-  File: z.lazy(() => FileWithRelationsSchema).array(),
-  Job: z.lazy(() => JobWithRelationsSchema).array(),
-}))
-
-export type UserOptionalDefaultsWithRelations = z.infer<typeof UserOptionalDefaultsSchema> & UserRelations
-
-export const UserOptionalDefaultsWithRelationsSchema: z.ZodType<UserOptionalDefaultsWithRelations> = UserOptionalDefaultsSchema.merge(z.object({
-  accounts: z.lazy(() => AccountWithRelationsSchema).array(),
-  sessions: z.lazy(() => SessionWithRelationsSchema).array(),
-  UserToken: z.lazy(() => UserTokenWithRelationsSchema).array(),
-  File: z.lazy(() => FileWithRelationsSchema).array(),
-  Job: z.lazy(() => JobWithRelationsSchema).array(),
-}))
-
-// VERIFICATION TOKEN
+// USER OPTIONAL DEFAULTS SCHEMA
 //------------------------------------------------------
 
+export const UserOptionalDefaultsSchema = UserSchema.merge(z.object({
+    id: z.string().cuid().optional(),
+}));
+
+export type UserOptionalDefaults = z.infer<typeof UserOptionalDefaultsSchema>
+
+// USER RELATION SCHEMA
+//------------------------------------------------------
+
+export type UserRelations = {
+    accounts: AccountWithRelations[];
+    sessions: SessionWithRelations[];
+    UserToken: UserTokenWithRelations[];
+    File: FileWithRelations[];
+    Job: JobWithRelations[];
+};
+
+export type UserWithRelations =
+    z.infer<typeof UserSchema>
+    & UserRelations
+
+export const UserWithRelationsSchema: z.ZodType<UserWithRelations> = UserSchema.merge(z.object({
+    accounts:  z.lazy(() => AccountWithRelationsSchema).array(),
+    sessions:  z.lazy(() => SessionWithRelationsSchema).array(),
+    UserToken: z.lazy(() => UserTokenWithRelationsSchema).array(),
+    File:      z.lazy(() => FileWithRelationsSchema).array(),
+    Job:       z.lazy(() => JobWithRelationsSchema).array(),
+}));
+
+// USER OPTIONAL DEFAULTS RELATION SCHEMA
+//------------------------------------------------------
+
+export type UserOptionalDefaultsWithRelations =
+    z.infer<typeof UserOptionalDefaultsSchema>
+    & UserRelations
+
+export const UserOptionalDefaultsWithRelationsSchema: z.ZodType<UserOptionalDefaultsWithRelations> = UserOptionalDefaultsSchema.merge(z.object({
+    accounts:  z.lazy(() => AccountWithRelationsSchema).array(),
+    sessions:  z.lazy(() => SessionWithRelationsSchema).array(),
+    UserToken: z.lazy(() => UserTokenWithRelationsSchema).array(),
+    File:      z.lazy(() => FileWithRelationsSchema).array(),
+    Job:       z.lazy(() => JobWithRelationsSchema).array(),
+}));
+
+/////////////////////////////////////////
+// VERIFICATION TOKEN SCHEMA
+/////////////////////////////////////////
 
 export const VerificationTokenSchema = z.object({
-  identifier: z.string(),
-  token: z.string(),
-  expires: z.coerce.date(),
-})
+    identifier: z.string(),
+    token:      z.string(),
+    expires:    z.coerce.date(),
+});
 
 export type VerificationToken = z.infer<typeof VerificationTokenSchema>
 
-// TOKEN
-//------------------------------------------------------
-
+/////////////////////////////////////////
+// TOKEN SCHEMA
+/////////////////////////////////////////
 
 export const TokenSchema = z.object({
-  id: z.string().cuid(),
-  name: z.string(),
-})
+    id:   z.string().cuid(),
+    name: z.string(),
+});
 
 export type Token = z.infer<typeof TokenSchema>
 
-export const TokenOptionalDefaultsSchema = TokenSchema.merge(z.object({
-  id: z.string().cuid().optional(),
-}))
-
-export type TokenRelations = {
-  UserToken: UserTokenWithRelations[];
-};
-
-export type TokenWithRelations = z.infer<typeof TokenSchema> & TokenRelations
-
-export const TokenWithRelationsSchema: z.ZodType<TokenWithRelations> = TokenSchema.merge(z.object({
-  UserToken: z.lazy(() => UserTokenWithRelationsSchema).array(),
-}))
-
-export type TokenOptionalDefaultsWithRelations = z.infer<typeof TokenOptionalDefaultsSchema> & TokenRelations
-
-export const TokenOptionalDefaultsWithRelationsSchema: z.ZodType<TokenOptionalDefaultsWithRelations> = TokenOptionalDefaultsSchema.merge(z.object({
-  UserToken: z.lazy(() => UserTokenWithRelationsSchema).array(),
-}))
-
-// USER TOKEN
+// TOKEN OPTIONAL DEFAULTS SCHEMA
 //------------------------------------------------------
 
+export const TokenOptionalDefaultsSchema = TokenSchema.merge(z.object({
+    id: z.string().cuid().optional(),
+}));
+
+export type TokenOptionalDefaults = z.infer<typeof TokenOptionalDefaultsSchema>
+
+// TOKEN RELATION SCHEMA
+//------------------------------------------------------
+
+export type TokenRelations = {
+    UserToken: UserTokenWithRelations[];
+};
+
+export type TokenWithRelations =
+    z.infer<typeof TokenSchema>
+    & TokenRelations
+
+export const TokenWithRelationsSchema: z.ZodType<TokenWithRelations> = TokenSchema.merge(z.object({
+    UserToken: z.lazy(() => UserTokenWithRelationsSchema).array(),
+}));
+
+// TOKEN OPTIONAL DEFAULTS RELATION SCHEMA
+//------------------------------------------------------
+
+export type TokenOptionalDefaultsWithRelations =
+    z.infer<typeof TokenOptionalDefaultsSchema>
+    & TokenRelations
+
+export const TokenOptionalDefaultsWithRelationsSchema: z.ZodType<TokenOptionalDefaultsWithRelations> = TokenOptionalDefaultsSchema.merge(z.object({
+    UserToken: z.lazy(() => UserTokenWithRelationsSchema).array(),
+}));
+
+/////////////////////////////////////////
+// USER TOKEN SCHEMA
+/////////////////////////////////////////
 
 export const UserTokenSchema = z.object({
-  id: z.string().cuid(),
-  userId: z.string(),
-  tokenId: z.string(),
-})
+    id:      z.string().cuid(),
+    userId:  z.string(),
+    tokenId: z.string(),
+});
 
 export type UserToken = z.infer<typeof UserTokenSchema>
 
-export const UserTokenOptionalDefaultsSchema = UserTokenSchema.merge(z.object({
-  id: z.string().cuid().optional(),
-}))
-
-export type UserTokenRelations = {
-  user: UserWithRelations;
-  token: TokenWithRelations;
-};
-
-export type UserTokenWithRelations = z.infer<typeof UserTokenSchema> & UserTokenRelations
-
-export const UserTokenWithRelationsSchema: z.ZodType<UserTokenWithRelations> = UserTokenSchema.merge(z.object({
-  user: z.lazy(() => UserWithRelationsSchema),
-  token: z.lazy(() => TokenWithRelationsSchema),
-}))
-
-export type UserTokenOptionalDefaultsWithRelations = z.infer<typeof UserTokenOptionalDefaultsSchema> & UserTokenRelations
-
-export const UserTokenOptionalDefaultsWithRelationsSchema: z.ZodType<UserTokenOptionalDefaultsWithRelations> = UserTokenOptionalDefaultsSchema.merge(z.object({
-  user: z.lazy(() => UserWithRelationsSchema),
-  token: z.lazy(() => TokenWithRelationsSchema),
-}))
-
-// FILE
+// USER TOKEN OPTIONAL DEFAULTS SCHEMA
 //------------------------------------------------------
 
+export const UserTokenOptionalDefaultsSchema = UserTokenSchema.merge(z.object({
+    id: z.string().cuid().optional(),
+}));
+
+export type UserTokenOptionalDefaults = z.infer<typeof UserTokenOptionalDefaultsSchema>
+
+// USER TOKEN RELATION SCHEMA
+//------------------------------------------------------
+
+export type UserTokenRelations = {
+    user: UserWithRelations;
+    token: TokenWithRelations;
+};
+
+export type UserTokenWithRelations =
+    z.infer<typeof UserTokenSchema>
+    & UserTokenRelations
+
+export const UserTokenWithRelationsSchema: z.ZodType<UserTokenWithRelations> = UserTokenSchema.merge(z.object({
+    user:  z.lazy(() => UserWithRelationsSchema),
+    token: z.lazy(() => TokenWithRelationsSchema),
+}));
+
+// USER TOKEN OPTIONAL DEFAULTS RELATION SCHEMA
+//------------------------------------------------------
+
+export type UserTokenOptionalDefaultsWithRelations =
+    z.infer<typeof UserTokenOptionalDefaultsSchema>
+    & UserTokenRelations
+
+export const UserTokenOptionalDefaultsWithRelationsSchema: z.ZodType<UserTokenOptionalDefaultsWithRelations> = UserTokenOptionalDefaultsSchema.merge(z.object({
+    user:  z.lazy(() => UserWithRelationsSchema),
+    token: z.lazy(() => TokenWithRelationsSchema),
+}));
+
+/////////////////////////////////////////
+// FILE SCHEMA
+/////////////////////////////////////////
 
 export const FileSchema = z.object({
-  id: z.string().cuid(),
-  path: z.string(),
-  name: z.string(),
-  mime: z.string(),
-  size: z.number().int(),
-  location: z.string(),
-  ttl: z.number().int().nullable(),
-  created: z.coerce.date(),
-  updated: z.coerce.date().nullable(),
-  userId: z.string().nullable(),
-})
+    id:       z.string().cuid(),
+    path:     z.string(),
+    name:     z.string(),
+    mime:     z.string(),
+    size:     z.number().int(),
+    location: z.string(),
+    ttl:      z.number().int().nullable(),
+    created:  z.coerce.date(),
+    updated:  z.coerce.date().nullable(),
+    userId:   z.string().nullable(),
+});
 
 export type File = z.infer<typeof FileSchema>
 
-export const FileOptionalDefaultsSchema = FileSchema.merge(z.object({
-  id: z.string().cuid().optional(),
-}))
-
-export type FileRelations = {
-  user?: UserWithRelations | null;
-};
-
-export type FileWithRelations = z.infer<typeof FileSchema> & FileRelations
-
-export const FileWithRelationsSchema: z.ZodType<FileWithRelations> = FileSchema.merge(z.object({
-  user: z.lazy(() => UserWithRelationsSchema).nullable(),
-}))
-
-export type FileOptionalDefaultsWithRelations = z.infer<typeof FileOptionalDefaultsSchema> & FileRelations
-
-export const FileOptionalDefaultsWithRelationsSchema: z.ZodType<FileOptionalDefaultsWithRelations> = FileOptionalDefaultsSchema.merge(z.object({
-  user: z.lazy(() => UserWithRelationsSchema).nullable(),
-}))
-
-// TRANSLATION
+// FILE OPTIONAL DEFAULTS SCHEMA
 //------------------------------------------------------
 
+export const FileOptionalDefaultsSchema = FileSchema.merge(z.object({
+    id: z.string().cuid().optional(),
+}));
+
+export type FileOptionalDefaults = z.infer<typeof FileOptionalDefaultsSchema>
+
+// FILE RELATION SCHEMA
+//------------------------------------------------------
+
+export type FileRelations = {
+    user?: UserWithRelations | null;
+};
+
+export type FileWithRelations =
+    z.infer<typeof FileSchema>
+    & FileRelations
+
+export const FileWithRelationsSchema: z.ZodType<FileWithRelations> = FileSchema.merge(z.object({
+    user: z.lazy(() => UserWithRelationsSchema).nullable(),
+}));
+
+// FILE OPTIONAL DEFAULTS RELATION SCHEMA
+//------------------------------------------------------
+
+export type FileOptionalDefaultsWithRelations =
+    z.infer<typeof FileOptionalDefaultsSchema>
+    & FileRelations
+
+export const FileOptionalDefaultsWithRelationsSchema: z.ZodType<FileOptionalDefaultsWithRelations> = FileOptionalDefaultsSchema.merge(z.object({
+    user: z.lazy(() => UserWithRelationsSchema).nullable(),
+}));
+
+/////////////////////////////////////////
+// TRANSLATION SCHEMA
+/////////////////////////////////////////
 
 export const TranslationSchema = z.object({
-  id: z.string().cuid(),
-  locale: z.string(),
-  label: z.string(),
-  text: z.string(),
-  hash: z.string(),
-})
+    id:     z.string().cuid(),
+    locale: z.string(),
+    label:  z.string(),
+    text:   z.string(),
+    hash:   z.string(),
+});
 
 export type Translation = z.infer<typeof TranslationSchema>
 
-export const TranslationOptionalDefaultsSchema = TranslationSchema.merge(z.object({
-  id: z.string().cuid().optional(),
-}))
-
-// JOB
+// TRANSLATION OPTIONAL DEFAULTS SCHEMA
 //------------------------------------------------------
 
+export const TranslationOptionalDefaultsSchema = TranslationSchema.merge(z.object({
+    id: z.string().cuid().optional(),
+}));
+
+export type TranslationOptionalDefaults = z.infer<typeof TranslationOptionalDefaultsSchema>
+
+/////////////////////////////////////////
+// JOB SCHEMA
+/////////////////////////////////////////
 
 export const JobSchema = z.object({
-  status: JobStatusSchema,
-  id: z.string().cuid(),
-  name: z.string(),
-  total: z.number().int(),
-  progress: z.number(),
-  success: z.number().int().nullable(),
-  successRatio: z.number().nullable(),
-  failure: z.number().int().nullable(),
-  failureRatio: z.number().nullable(),
-  skip: z.number().int().nullable(),
-  skipRatio: z.number().nullable(),
-  created: z.coerce.date(),
-  started: z.coerce.date().nullable(),
-  finished: z.coerce.date().nullable(),
-  userId: z.string().nullable(),
-  params: z.string().nullable(),
+    status:       JobStatusSchema,
+    id:           z.string().cuid(),
+    name:         z.string(),
+    total:        z.number().int(),
+    progress:     z.number(),
+    success:      z.number().int().nullable(),
+    successRatio: z.number().nullable(),
+    failure:      z.number().int().nullable(),
+  failureRatio:   z.number().nullable(),
+  skip:           z.number().int().nullable(),
+    skipRatio:    z.number().nullable(),
+    created:      z.coerce.date(),
+    started:      z.coerce.date().nullable(),
+    finished:     z.coerce.date().nullable(),
+    userId:       z.string().nullable(),
+    params:       z.string().nullable(),
 })
 
 export type Job = z.infer<typeof JobSchema>
 
-export const JobOptionalDefaultsSchema = JobSchema.merge(z.object({
-  status: JobStatusSchema.optional(),
-  id: z.string().cuid().optional(),
-  total: z.number().int().optional(),
-  progress: z.number().optional(),
-}))
-
-export type JobRelations = {
-  user?: UserWithRelations | null;
-  logs: JobLogWithRelations[];
-};
-
-export type JobWithRelations = z.infer<typeof JobSchema> & JobRelations
-
-export const JobWithRelationsSchema: z.ZodType<JobWithRelations> = JobSchema.merge(z.object({
-  user: z.lazy(() => UserWithRelationsSchema).nullable(),
-  logs: z.lazy(() => JobLogWithRelationsSchema).array(),
-}))
-
-export type JobOptionalDefaultsWithRelations = z.infer<typeof JobOptionalDefaultsSchema> & JobRelations
-
-export const JobOptionalDefaultsWithRelationsSchema: z.ZodType<JobOptionalDefaultsWithRelations> = JobOptionalDefaultsSchema.merge(z.object({
-  user: z.lazy(() => UserWithRelationsSchema).nullable(),
-  logs: z.lazy(() => JobLogWithRelationsSchema).array(),
-}))
-
-// JOB LOG
+// JOB OPTIONAL DEFAULTS SCHEMA
 //------------------------------------------------------
 
+export const JobOptionalDefaultsSchema = JobSchema.merge(z.object({
+    status:   JobStatusSchema.optional(),
+    id:       z.string().cuid().optional(),
+    total:    z.number().int().optional(),
+    progress: z.number().optional(),
+}));
+
+export type JobOptionalDefaults = z.infer<typeof JobOptionalDefaultsSchema>
+
+// JOB RELATION SCHEMA
+//------------------------------------------------------
+
+export type JobRelations = {
+    user?: UserWithRelations | null;
+    logs: JobLogWithRelations[];
+};
+
+export type JobWithRelations =
+    z.infer<typeof JobSchema>
+    & JobRelations
+
+export const JobWithRelationsSchema: z.ZodType<JobWithRelations> = JobSchema.merge(z.object({
+    user: z.lazy(() => UserWithRelationsSchema).nullable(),
+    logs: z.lazy(() => JobLogWithRelationsSchema).array(),
+}));
+
+// JOB OPTIONAL DEFAULTS RELATION SCHEMA
+//------------------------------------------------------
+
+export type JobOptionalDefaultsWithRelations =
+    z.infer<typeof JobOptionalDefaultsSchema>
+    & JobRelations
+
+export const JobOptionalDefaultsWithRelationsSchema: z.ZodType<JobOptionalDefaultsWithRelations> = JobOptionalDefaultsSchema.merge(z.object({
+    user: z.lazy(() => UserWithRelationsSchema).nullable(),
+    logs: z.lazy(() => JobLogWithRelationsSchema).array(),
+}));
+
+/////////////////////////////////////////
+// JOB LOG SCHEMA
+/////////////////////////////////////////
 
 export const JobLogSchema = z.object({
-  id: z.string().cuid(),
-  jobId: z.string(),
-  message: z.string(),
-})
+    id:      z.string().cuid(),
+    jobId:   z.string(),
+    message: z.string(),
+});
 
 export type JobLog = z.infer<typeof JobLogSchema>
 
-export const JobLogOptionalDefaultsSchema = JobLogSchema.merge(z.object({
-  id: z.string().cuid().optional(),
-}))
-
-export type JobLogRelations = {
-  job: JobWithRelations;
-};
-
-export type JobLogWithRelations = z.infer<typeof JobLogSchema> & JobLogRelations
-
-export const JobLogWithRelationsSchema: z.ZodType<JobLogWithRelations> = JobLogSchema.merge(z.object({
-  job: z.lazy(() => JobWithRelationsSchema),
-}))
-
-export type JobLogOptionalDefaultsWithRelations = z.infer<typeof JobLogOptionalDefaultsSchema> & JobLogRelations
-
-export const JobLogOptionalDefaultsWithRelationsSchema: z.ZodType<JobLogOptionalDefaultsWithRelations> = JobLogOptionalDefaultsSchema.merge(z.object({
-  job: z.lazy(() => JobWithRelationsSchema),
-}))
-
-// KEYWORD
+// JOB LOG OPTIONAL DEFAULTS SCHEMA
 //------------------------------------------------------
 
+export const JobLogOptionalDefaultsSchema = JobLogSchema.merge(z.object({
+    id: z.string().cuid().optional(),
+}));
+
+export type JobLogOptionalDefaults = z.infer<typeof JobLogOptionalDefaultsSchema>
+
+// JOB LOG RELATION SCHEMA
+//------------------------------------------------------
+
+export type JobLogRelations = {
+    job: JobWithRelations;
+};
+
+export type JobLogWithRelations =
+    z.infer<typeof JobLogSchema>
+    & JobLogRelations
+
+export const JobLogWithRelationsSchema: z.ZodType<JobLogWithRelations> = JobLogSchema.merge(z.object({
+    job: z.lazy(() => JobWithRelationsSchema),
+}));
+
+// JOB LOG OPTIONAL DEFAULTS RELATION SCHEMA
+//------------------------------------------------------
+
+export type JobLogOptionalDefaultsWithRelations =
+    z.infer<typeof JobLogOptionalDefaultsSchema>
+    & JobLogRelations
+
+export const JobLogOptionalDefaultsWithRelationsSchema: z.ZodType<JobLogOptionalDefaultsWithRelations> = JobLogOptionalDefaultsSchema.merge(z.object({
+    job: z.lazy(() => JobWithRelationsSchema),
+}));
+
+/////////////////////////////////////////
+// KEYWORD SCHEMA
+/////////////////////////////////////////
 
 export const KeywordSchema = z.object({
-  id: z.string().cuid(),
-  text: z.string(),
-})
+    id:   z.string().cuid(),
+    text: z.string(),
+});
 
 export type Keyword = z.infer<typeof KeywordSchema>
 
+// KEYWORD OPTIONAL DEFAULTS SCHEMA
+//------------------------------------------------------
+
 export const KeywordOptionalDefaultsSchema = KeywordSchema.merge(z.object({
-  id: z.string().cuid().optional(),
-}))
+    id: z.string().cuid().optional(),
+}));
+
+export type KeywordOptionalDefaults = z.infer<typeof KeywordOptionalDefaultsSchema>
 
 /////////////////////////////////////////
 // SELECT & INCLUDE
 /////////////////////////////////////////
 
-
 // ACCOUNT
 //------------------------------------------------------
 
 export const AccountIncludeSchema: z.ZodType<Prisma.AccountInclude> = z.object({
-  user: z.union([z.boolean(),z.lazy(() => UserArgsSchema)]).optional(),
+    user: z.union([
+        z.boolean(),
+        z.lazy(() => UserArgsSchema)
+    ]).optional(),
 }).strict()
 
 export const AccountArgsSchema: z.ZodType<Prisma.AccountArgs> = z.object({
@@ -660,6 +803,7 @@ export const KeywordSelectSchema: z.ZodType<Prisma.KeywordSelect> = z.object({
   id: z.boolean().optional(),
   text: z.boolean().optional(),
 }).strict()
+
 
 /////////////////////////////////////////
 // INPUT TYPES
@@ -4410,8 +4554,6 @@ export const AccountFindManyArgsSchema: z.ZodType<Prisma.AccountFindManyArgs> = 
 }).strict()
 
 export const AccountAggregateArgsSchema: z.ZodType<Prisma.AccountAggregateArgs> = z.object({
-  select: AccountSelectSchema.optional(),
-  include: AccountIncludeSchema.optional(),
   where: AccountWhereInputSchema.optional(),
   orderBy: z.union([ AccountOrderByWithRelationInputSchema.array(),AccountOrderByWithRelationInputSchema ]).optional(),
   cursor: AccountWhereUniqueInputSchema.optional(),
@@ -4420,8 +4562,6 @@ export const AccountAggregateArgsSchema: z.ZodType<Prisma.AccountAggregateArgs> 
 }).strict()
 
 export const AccountGroupByArgsSchema: z.ZodType<Prisma.AccountGroupByArgs> = z.object({
-  select: AccountSelectSchema.optional(),
-  include: AccountIncludeSchema.optional(),
   where: AccountWhereInputSchema.optional(),
   orderBy: z.union([ AccountOrderByWithAggregationInputSchema.array(),AccountOrderByWithAggregationInputSchema ]).optional(),
   by: AccountScalarFieldEnumSchema.array(),
@@ -4476,8 +4616,6 @@ export const SessionFindManyArgsSchema: z.ZodType<Prisma.SessionFindManyArgs> = 
 }).strict()
 
 export const SessionAggregateArgsSchema: z.ZodType<Prisma.SessionAggregateArgs> = z.object({
-  select: SessionSelectSchema.optional(),
-  include: SessionIncludeSchema.optional(),
   where: SessionWhereInputSchema.optional(),
   orderBy: z.union([ SessionOrderByWithRelationInputSchema.array(),SessionOrderByWithRelationInputSchema ]).optional(),
   cursor: SessionWhereUniqueInputSchema.optional(),
@@ -4486,8 +4624,6 @@ export const SessionAggregateArgsSchema: z.ZodType<Prisma.SessionAggregateArgs> 
 }).strict()
 
 export const SessionGroupByArgsSchema: z.ZodType<Prisma.SessionGroupByArgs> = z.object({
-  select: SessionSelectSchema.optional(),
-  include: SessionIncludeSchema.optional(),
   where: SessionWhereInputSchema.optional(),
   orderBy: z.union([ SessionOrderByWithAggregationInputSchema.array(),SessionOrderByWithAggregationInputSchema ]).optional(),
   by: SessionScalarFieldEnumSchema.array(),
@@ -4542,8 +4678,6 @@ export const UserFindManyArgsSchema: z.ZodType<Prisma.UserFindManyArgs> = z.obje
 }).strict()
 
 export const UserAggregateArgsSchema: z.ZodType<Prisma.UserAggregateArgs> = z.object({
-  select: UserSelectSchema.optional(),
-  include: UserIncludeSchema.optional(),
   where: UserWhereInputSchema.optional(),
   orderBy: z.union([ UserOrderByWithRelationInputSchema.array(),UserOrderByWithRelationInputSchema ]).optional(),
   cursor: UserWhereUniqueInputSchema.optional(),
@@ -4552,8 +4686,6 @@ export const UserAggregateArgsSchema: z.ZodType<Prisma.UserAggregateArgs> = z.ob
 }).strict()
 
 export const UserGroupByArgsSchema: z.ZodType<Prisma.UserGroupByArgs> = z.object({
-  select: UserSelectSchema.optional(),
-  include: UserIncludeSchema.optional(),
   where: UserWhereInputSchema.optional(),
   orderBy: z.union([ UserOrderByWithAggregationInputSchema.array(),UserOrderByWithAggregationInputSchema ]).optional(),
   by: UserScalarFieldEnumSchema.array(),
@@ -4605,7 +4737,6 @@ export const VerificationTokenFindManyArgsSchema: z.ZodType<Prisma.VerificationT
 }).strict()
 
 export const VerificationTokenAggregateArgsSchema: z.ZodType<Prisma.VerificationTokenAggregateArgs> = z.object({
-  select: VerificationTokenSelectSchema.optional(),
   where: VerificationTokenWhereInputSchema.optional(),
   orderBy: z.union([ VerificationTokenOrderByWithRelationInputSchema.array(),VerificationTokenOrderByWithRelationInputSchema ]).optional(),
   cursor: VerificationTokenWhereUniqueInputSchema.optional(),
@@ -4614,7 +4745,6 @@ export const VerificationTokenAggregateArgsSchema: z.ZodType<Prisma.Verification
 }).strict()
 
 export const VerificationTokenGroupByArgsSchema: z.ZodType<Prisma.VerificationTokenGroupByArgs> = z.object({
-  select: VerificationTokenSelectSchema.optional(),
   where: VerificationTokenWhereInputSchema.optional(),
   orderBy: z.union([ VerificationTokenOrderByWithAggregationInputSchema.array(),VerificationTokenOrderByWithAggregationInputSchema ]).optional(),
   by: VerificationTokenScalarFieldEnumSchema.array(),
@@ -4667,8 +4797,6 @@ export const TokenFindManyArgsSchema: z.ZodType<Prisma.TokenFindManyArgs> = z.ob
 }).strict()
 
 export const TokenAggregateArgsSchema: z.ZodType<Prisma.TokenAggregateArgs> = z.object({
-  select: TokenSelectSchema.optional(),
-  include: TokenIncludeSchema.optional(),
   where: TokenWhereInputSchema.optional(),
   orderBy: z.union([ TokenOrderByWithRelationInputSchema.array(),TokenOrderByWithRelationInputSchema ]).optional(),
   cursor: TokenWhereUniqueInputSchema.optional(),
@@ -4677,8 +4805,6 @@ export const TokenAggregateArgsSchema: z.ZodType<Prisma.TokenAggregateArgs> = z.
 }).strict()
 
 export const TokenGroupByArgsSchema: z.ZodType<Prisma.TokenGroupByArgs> = z.object({
-  select: TokenSelectSchema.optional(),
-  include: TokenIncludeSchema.optional(),
   where: TokenWhereInputSchema.optional(),
   orderBy: z.union([ TokenOrderByWithAggregationInputSchema.array(),TokenOrderByWithAggregationInputSchema ]).optional(),
   by: TokenScalarFieldEnumSchema.array(),
@@ -4733,8 +4859,6 @@ export const UserTokenFindManyArgsSchema: z.ZodType<Prisma.UserTokenFindManyArgs
 }).strict()
 
 export const UserTokenAggregateArgsSchema: z.ZodType<Prisma.UserTokenAggregateArgs> = z.object({
-  select: UserTokenSelectSchema.optional(),
-  include: UserTokenIncludeSchema.optional(),
   where: UserTokenWhereInputSchema.optional(),
   orderBy: z.union([ UserTokenOrderByWithRelationInputSchema.array(),UserTokenOrderByWithRelationInputSchema ]).optional(),
   cursor: UserTokenWhereUniqueInputSchema.optional(),
@@ -4743,8 +4867,6 @@ export const UserTokenAggregateArgsSchema: z.ZodType<Prisma.UserTokenAggregateAr
 }).strict()
 
 export const UserTokenGroupByArgsSchema: z.ZodType<Prisma.UserTokenGroupByArgs> = z.object({
-  select: UserTokenSelectSchema.optional(),
-  include: UserTokenIncludeSchema.optional(),
   where: UserTokenWhereInputSchema.optional(),
   orderBy: z.union([ UserTokenOrderByWithAggregationInputSchema.array(),UserTokenOrderByWithAggregationInputSchema ]).optional(),
   by: UserTokenScalarFieldEnumSchema.array(),
@@ -4799,8 +4921,6 @@ export const FileFindManyArgsSchema: z.ZodType<Prisma.FileFindManyArgs> = z.obje
 }).strict()
 
 export const FileAggregateArgsSchema: z.ZodType<Prisma.FileAggregateArgs> = z.object({
-  select: FileSelectSchema.optional(),
-  include: FileIncludeSchema.optional(),
   where: FileWhereInputSchema.optional(),
   orderBy: z.union([ FileOrderByWithRelationInputSchema.array(),FileOrderByWithRelationInputSchema ]).optional(),
   cursor: FileWhereUniqueInputSchema.optional(),
@@ -4809,8 +4929,6 @@ export const FileAggregateArgsSchema: z.ZodType<Prisma.FileAggregateArgs> = z.ob
 }).strict()
 
 export const FileGroupByArgsSchema: z.ZodType<Prisma.FileGroupByArgs> = z.object({
-  select: FileSelectSchema.optional(),
-  include: FileIncludeSchema.optional(),
   where: FileWhereInputSchema.optional(),
   orderBy: z.union([ FileOrderByWithAggregationInputSchema.array(),FileOrderByWithAggregationInputSchema ]).optional(),
   by: FileScalarFieldEnumSchema.array(),
@@ -4862,7 +4980,6 @@ export const TranslationFindManyArgsSchema: z.ZodType<Prisma.TranslationFindMany
 }).strict()
 
 export const TranslationAggregateArgsSchema: z.ZodType<Prisma.TranslationAggregateArgs> = z.object({
-  select: TranslationSelectSchema.optional(),
   where: TranslationWhereInputSchema.optional(),
   orderBy: z.union([ TranslationOrderByWithRelationInputSchema.array(),TranslationOrderByWithRelationInputSchema ]).optional(),
   cursor: TranslationWhereUniqueInputSchema.optional(),
@@ -4871,7 +4988,6 @@ export const TranslationAggregateArgsSchema: z.ZodType<Prisma.TranslationAggrega
 }).strict()
 
 export const TranslationGroupByArgsSchema: z.ZodType<Prisma.TranslationGroupByArgs> = z.object({
-  select: TranslationSelectSchema.optional(),
   where: TranslationWhereInputSchema.optional(),
   orderBy: z.union([ TranslationOrderByWithAggregationInputSchema.array(),TranslationOrderByWithAggregationInputSchema ]).optional(),
   by: TranslationScalarFieldEnumSchema.array(),
@@ -4924,8 +5040,6 @@ export const JobFindManyArgsSchema: z.ZodType<Prisma.JobFindManyArgs> = z.object
 }).strict()
 
 export const JobAggregateArgsSchema: z.ZodType<Prisma.JobAggregateArgs> = z.object({
-  select: JobSelectSchema.optional(),
-  include: JobIncludeSchema.optional(),
   where: JobWhereInputSchema.optional(),
   orderBy: z.union([ JobOrderByWithRelationInputSchema.array(),JobOrderByWithRelationInputSchema ]).optional(),
   cursor: JobWhereUniqueInputSchema.optional(),
@@ -4934,8 +5048,6 @@ export const JobAggregateArgsSchema: z.ZodType<Prisma.JobAggregateArgs> = z.obje
 }).strict()
 
 export const JobGroupByArgsSchema: z.ZodType<Prisma.JobGroupByArgs> = z.object({
-  select: JobSelectSchema.optional(),
-  include: JobIncludeSchema.optional(),
   where: JobWhereInputSchema.optional(),
   orderBy: z.union([ JobOrderByWithAggregationInputSchema.array(),JobOrderByWithAggregationInputSchema ]).optional(),
   by: JobScalarFieldEnumSchema.array(),
@@ -4990,8 +5102,6 @@ export const JobLogFindManyArgsSchema: z.ZodType<Prisma.JobLogFindManyArgs> = z.
 }).strict()
 
 export const JobLogAggregateArgsSchema: z.ZodType<Prisma.JobLogAggregateArgs> = z.object({
-  select: JobLogSelectSchema.optional(),
-  include: JobLogIncludeSchema.optional(),
   where: JobLogWhereInputSchema.optional(),
   orderBy: z.union([ JobLogOrderByWithRelationInputSchema.array(),JobLogOrderByWithRelationInputSchema ]).optional(),
   cursor: JobLogWhereUniqueInputSchema.optional(),
@@ -5000,8 +5110,6 @@ export const JobLogAggregateArgsSchema: z.ZodType<Prisma.JobLogAggregateArgs> = 
 }).strict()
 
 export const JobLogGroupByArgsSchema: z.ZodType<Prisma.JobLogGroupByArgs> = z.object({
-  select: JobLogSelectSchema.optional(),
-  include: JobLogIncludeSchema.optional(),
   where: JobLogWhereInputSchema.optional(),
   orderBy: z.union([ JobLogOrderByWithAggregationInputSchema.array(),JobLogOrderByWithAggregationInputSchema ]).optional(),
   by: JobLogScalarFieldEnumSchema.array(),
@@ -5053,7 +5161,6 @@ export const KeywordFindManyArgsSchema: z.ZodType<Prisma.KeywordFindManyArgs> = 
 }).strict()
 
 export const KeywordAggregateArgsSchema: z.ZodType<Prisma.KeywordAggregateArgs> = z.object({
-  select: KeywordSelectSchema.optional(),
   where: KeywordWhereInputSchema.optional(),
   orderBy: z.union([ KeywordOrderByWithRelationInputSchema.array(),KeywordOrderByWithRelationInputSchema ]).optional(),
   cursor: KeywordWhereUniqueInputSchema.optional(),
@@ -5062,7 +5169,6 @@ export const KeywordAggregateArgsSchema: z.ZodType<Prisma.KeywordAggregateArgs> 
 }).strict()
 
 export const KeywordGroupByArgsSchema: z.ZodType<Prisma.KeywordGroupByArgs> = z.object({
-  select: KeywordSelectSchema.optional(),
   where: KeywordWhereInputSchema.optional(),
   orderBy: z.union([ KeywordOrderByWithAggregationInputSchema.array(),KeywordOrderByWithAggregationInputSchema ]).optional(),
   by: KeywordScalarFieldEnumSchema.array(),

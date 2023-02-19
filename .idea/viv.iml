@@ -91,6 +91,7 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/prisma-zod/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/react-cmdk/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/react-query/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/esbuild/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.github" />
       <excludeFolder url="file://$MODULE_DIR$/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/sql/.turbo" />
@@ -253,6 +254,7 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/prisma-zod/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/react-cmdk/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/react-cmdk/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/esbuild/lib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
