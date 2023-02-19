@@ -14,6 +14,7 @@
             "dom.iterable",
             "esnext"
         ],
+        "jsx": "react-jsx",
         "module": "ES2022",
         "target": "ES2022",
         "moduleResolution": "node",

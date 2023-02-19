@@ -1,5 +1,11 @@
 # @leight/tsconfig
 
+## 0.5.27
+
+### Patch Changes
+
+- Updates tsconfig
+
 ## 0.5.26
 
 ### Patch Changes
