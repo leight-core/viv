@@ -27,6 +27,6 @@ export const FileFindUniqueArgsSchema: z.ZodType<Prisma.FileFindUniqueArgs> = z.
     select:  FileSelectSchema.optional(),
     include: FileIncludeSchema.optional(),
     where:   FileWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default FileFindUniqueArgsSchema;

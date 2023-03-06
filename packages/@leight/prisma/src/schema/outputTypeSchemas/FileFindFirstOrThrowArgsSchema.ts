@@ -38,6 +38,6 @@ export const FileFindFirstOrThrowArgsSchema: z.ZodType<Prisma.FileFindFirstOrThr
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: FileScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export default FileFindFirstOrThrowArgsSchema;

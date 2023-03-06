@@ -32,6 +32,6 @@ export const SessionFindFirstArgsSchema: z.ZodType<Prisma.SessionFindFirstArgs> 
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: SessionScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export default SessionFindFirstArgsSchema;

@@ -26,6 +26,6 @@ export const TranslationFindManyArgsSchema: z.ZodType<Prisma.TranslationFindMany
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: TranslationScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export default TranslationFindManyArgsSchema;

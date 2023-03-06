@@ -20,6 +20,6 @@ export const JobLogFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.JobLogFindUniqu
     select:  JobLogSelectSchema.optional(),
     include: JobLogIncludeSchema.optional(),
     where:   JobLogWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default JobLogFindUniqueOrThrowArgsSchema;

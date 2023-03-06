@@ -43,7 +43,8 @@
             "outputMode": "new-only",
             "dependsOn": [
                 "^build",
-                "prisma:generate"
+                "prisma:generate",
+                "lint"
             ],
             "outputs": [
                 "lib/**"

@@ -25,6 +25,6 @@ export const UserTokenDeleteArgsSchema: z.ZodType<Prisma.UserTokenDeleteArgs> = 
     select:  UserTokenSelectSchema.optional(),
     include: UserTokenIncludeSchema.optional(),
     where:   UserTokenWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default UserTokenDeleteArgsSchema;

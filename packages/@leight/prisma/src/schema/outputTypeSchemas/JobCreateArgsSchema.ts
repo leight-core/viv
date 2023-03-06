@@ -47,6 +47,6 @@ export const JobCreateArgsSchema: z.ZodType<Prisma.JobCreateArgs> = z.object({
         JobCreateInputSchema,
         JobUncheckedCreateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export default JobCreateArgsSchema;

@@ -25,6 +25,6 @@ export const SessionCreateArgsSchema: z.ZodType<Prisma.SessionCreateArgs> = z.ob
         SessionCreateInputSchema,
         SessionUncheckedCreateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export default SessionCreateArgsSchema;

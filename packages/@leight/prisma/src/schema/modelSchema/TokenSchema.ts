@@ -37,7 +37,7 @@ export type TokenWithRelations =
 
 export const TokenWithRelationsSchema: z.ZodType<TokenWithRelations> = TokenSchema.merge(z.object({
     UserToken: z.lazy(() => UserTokenWithRelationsSchema).array(),
-}));
+}))
 
 // TOKEN PARTIAL RELATION SCHEMA
 //------------------------------------------------------
@@ -52,6 +52,6 @@ export type TokenPartialWithRelations =
 
 export const TokenPartialWithRelationsSchema: z.ZodType<TokenPartialWithRelations> = TokenPartialSchema.merge(z.object({
     UserToken: z.lazy(() => UserTokenPartialWithRelationsSchema).array(),
-})).partial();
+})).partial()
 
 export default TokenSchema;

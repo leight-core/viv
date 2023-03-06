@@ -29,6 +29,6 @@ export const UserTokenCreateArgsSchema: z.ZodType<Prisma.UserTokenCreateArgs> = 
         UserTokenCreateInputSchema,
         UserTokenUncheckedCreateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export default UserTokenCreateArgsSchema;

@@ -36,6 +36,6 @@ export const UserTokenFindFirstOrThrowArgsSchema: z.ZodType<Prisma.UserTokenFind
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: UserTokenScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export default UserTokenFindFirstOrThrowArgsSchema;

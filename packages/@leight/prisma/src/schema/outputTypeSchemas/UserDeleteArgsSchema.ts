@@ -47,6 +47,6 @@ export const UserDeleteArgsSchema: z.ZodType<Prisma.UserDeleteArgs> = z.object({
     select:  UserSelectSchema.optional(),
     include: UserIncludeSchema.optional(),
     where:   UserWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default UserDeleteArgsSchema;

@@ -20,6 +20,6 @@ export const JobLogDeleteArgsSchema: z.ZodType<Prisma.JobLogDeleteArgs> = z.obje
     select:  JobLogSelectSchema.optional(),
     include: JobLogIncludeSchema.optional(),
     where:   JobLogWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default JobLogDeleteArgsSchema;

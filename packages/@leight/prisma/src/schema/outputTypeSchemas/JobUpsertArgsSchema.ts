@@ -55,6 +55,6 @@ export const JobUpsertArgsSchema: z.ZodType<Prisma.JobUpsertArgs> = z.object({
         JobUpdateInputSchema,
         JobUncheckedUpdateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export default JobUpsertArgsSchema;

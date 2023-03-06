@@ -10,7 +10,7 @@ export const TranslationSchema = z.object({
     label:  z.string(),
     text:   z.string(),
     hash:   z.string(),
-});
+})
 
 export type Translation = z.infer<typeof TranslationSchema>
 

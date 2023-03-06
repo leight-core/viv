@@ -38,6 +38,6 @@ export const FileFindManyArgsSchema: z.ZodType<Prisma.FileFindManyArgs> = z.obje
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: FileScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export default FileFindManyArgsSchema;

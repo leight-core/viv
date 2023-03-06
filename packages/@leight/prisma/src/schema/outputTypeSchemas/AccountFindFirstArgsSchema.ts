@@ -40,6 +40,6 @@ export const AccountFindFirstArgsSchema: z.ZodType<Prisma.AccountFindFirstArgs> 
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: AccountScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export default AccountFindFirstArgsSchema;

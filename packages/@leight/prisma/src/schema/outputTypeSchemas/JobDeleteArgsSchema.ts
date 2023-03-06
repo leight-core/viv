@@ -43,6 +43,6 @@ export const JobDeleteArgsSchema: z.ZodType<Prisma.JobDeleteArgs> = z.object({
     select:  JobSelectSchema.optional(),
     include: JobIncludeSchema.optional(),
     where:   JobWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default JobDeleteArgsSchema;

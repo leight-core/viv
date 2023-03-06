@@ -31,6 +31,6 @@ export const JobLogFindManyArgsSchema: z.ZodType<Prisma.JobLogFindManyArgs> = z.
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: JobLogScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export default JobLogFindManyArgsSchema;

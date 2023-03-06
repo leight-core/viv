@@ -27,6 +27,6 @@ export const SessionUpdateArgsSchema: z.ZodType<Prisma.SessionUpdateArgs> = z.ob
         SessionUncheckedUpdateInputSchema
     ]),
     where:   SessionWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default SessionUpdateArgsSchema;

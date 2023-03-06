@@ -32,6 +32,6 @@ export const JobLogUpsertArgsSchema: z.ZodType<Prisma.JobLogUpsertArgs> = z.obje
         JobLogUpdateInputSchema,
         JobLogUncheckedUpdateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export default JobLogUpsertArgsSchema;

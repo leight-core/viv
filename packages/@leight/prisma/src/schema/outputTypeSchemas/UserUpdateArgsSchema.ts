@@ -53,6 +53,6 @@ export const UserUpdateArgsSchema: z.ZodType<Prisma.UserUpdateArgs> = z.object({
         UserUncheckedUpdateInputSchema
     ]),
     where:   UserWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default UserUpdateArgsSchema;

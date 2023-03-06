@@ -7,7 +7,7 @@ import {z} from "zod";
 export const KeywordSchema = z.object({
     id:   z.string().cuid(),
     text: z.string(),
-});
+})
 
 export type Keyword = z.infer<typeof KeywordSchema>
 

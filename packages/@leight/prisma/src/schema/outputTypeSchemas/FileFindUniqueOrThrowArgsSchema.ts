@@ -27,6 +27,6 @@ export const FileFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.FileFindUniqueOrT
     select:  FileSelectSchema.optional(),
     include: FileIncludeSchema.optional(),
     where:   FileWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default FileFindUniqueOrThrowArgsSchema;

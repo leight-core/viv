@@ -72,7 +72,7 @@ export const UserWithRelationsSchema: z.ZodType<UserWithRelations> = UserSchema.
     UserToken: z.lazy(() => UserTokenWithRelationsSchema).array(),
     File:      z.lazy(() => FileWithRelationsSchema).array(),
     Job:       z.lazy(() => JobWithRelationsSchema).array(),
-}));
+}))
 
 // USER PARTIAL RELATION SCHEMA
 //------------------------------------------------------
@@ -95,6 +95,6 @@ export const UserPartialWithRelationsSchema: z.ZodType<UserPartialWithRelations>
     UserToken: z.lazy(() => UserTokenPartialWithRelationsSchema).array(),
     File:      z.lazy(() => FilePartialWithRelationsSchema).array(),
     Job:       z.lazy(() => JobPartialWithRelationsSchema).array(),
-})).partial();
+})).partial()
 
 export default UserSchema;

@@ -31,6 +31,6 @@ export const JobLogFindFirstOrThrowArgsSchema: z.ZodType<Prisma.JobLogFindFirstO
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: JobLogScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export default JobLogFindFirstOrThrowArgsSchema;

@@ -29,6 +29,6 @@ export const AccountFindUniqueArgsSchema: z.ZodType<Prisma.AccountFindUniqueArgs
     select:  AccountSelectSchema.optional(),
     include: AccountIncludeSchema.optional(),
     where:   AccountWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default AccountFindUniqueArgsSchema;

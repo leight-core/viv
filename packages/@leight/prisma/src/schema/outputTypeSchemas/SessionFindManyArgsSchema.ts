@@ -32,6 +32,6 @@ export const SessionFindManyArgsSchema: z.ZodType<Prisma.SessionFindManyArgs> = 
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: SessionScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export default SessionFindManyArgsSchema;

@@ -27,6 +27,6 @@ export const TranslationUpsertArgsSchema: z.ZodType<Prisma.TranslationUpsertArgs
         TranslationUpdateInputSchema,
         TranslationUncheckedUpdateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export default TranslationUpsertArgsSchema;

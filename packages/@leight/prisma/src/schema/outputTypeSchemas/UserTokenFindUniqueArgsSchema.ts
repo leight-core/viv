@@ -25,6 +25,6 @@ export const UserTokenFindUniqueArgsSchema: z.ZodType<Prisma.UserTokenFindUnique
     select:  UserTokenSelectSchema.optional(),
     include: UserTokenIncludeSchema.optional(),
     where:   UserTokenWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default UserTokenFindUniqueArgsSchema;

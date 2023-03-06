@@ -21,6 +21,6 @@ export const SessionDeleteArgsSchema: z.ZodType<Prisma.SessionDeleteArgs> = z.ob
     select:  SessionSelectSchema.optional(),
     include: SessionIncludeSchema.optional(),
     where:   SessionWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default SessionDeleteArgsSchema;

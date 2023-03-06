@@ -60,7 +60,7 @@ export type JobWithRelations =
 export const JobWithRelationsSchema: z.ZodType<JobWithRelations> = JobSchema.merge(z.object({
     user: z.lazy(() => UserWithRelationsSchema).nullish(),
     logs: z.lazy(() => JobLogWithRelationsSchema).array(),
-}));
+}))
 
 // JOB PARTIAL RELATION SCHEMA
 //------------------------------------------------------
@@ -77,6 +77,6 @@ export type JobPartialWithRelations =
 export const JobPartialWithRelationsSchema: z.ZodType<JobPartialWithRelations> = JobPartialSchema.merge(z.object({
     user: z.lazy(() => UserPartialWithRelationsSchema).nullish(),
     logs: z.lazy(() => JobLogPartialWithRelationsSchema).array(),
-})).partial();
+})).partial()
 
 export default JobSchema;

@@ -33,6 +33,6 @@ export const AccountCreateArgsSchema: z.ZodType<Prisma.AccountCreateArgs> = z.ob
         AccountCreateInputSchema,
         AccountUncheckedCreateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export default AccountCreateArgsSchema;

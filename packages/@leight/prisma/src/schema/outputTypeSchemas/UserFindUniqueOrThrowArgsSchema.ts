@@ -47,6 +47,6 @@ export const UserFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.UserFindUniqueOrT
     select:  UserSelectSchema.optional(),
     include: UserIncludeSchema.optional(),
     where:   UserWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default UserFindUniqueOrThrowArgsSchema;

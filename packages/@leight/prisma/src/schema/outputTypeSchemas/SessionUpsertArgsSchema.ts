@@ -33,6 +33,6 @@ export const SessionUpsertArgsSchema: z.ZodType<Prisma.SessionUpsertArgs> = z.ob
         SessionUpdateInputSchema,
         SessionUncheckedUpdateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export default SessionUpsertArgsSchema;

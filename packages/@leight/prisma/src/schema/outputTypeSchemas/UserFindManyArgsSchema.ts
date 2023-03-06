@@ -58,6 +58,6 @@ export const UserFindManyArgsSchema: z.ZodType<Prisma.UserFindManyArgs> = z.obje
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: UserScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export default UserFindManyArgsSchema;

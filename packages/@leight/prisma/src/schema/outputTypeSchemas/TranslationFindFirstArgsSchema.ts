@@ -26,6 +26,6 @@ export const TranslationFindFirstArgsSchema: z.ZodType<Prisma.TranslationFindFir
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: TranslationScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export default TranslationFindFirstArgsSchema;

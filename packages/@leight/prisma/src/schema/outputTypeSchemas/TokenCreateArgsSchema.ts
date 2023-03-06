@@ -28,6 +28,6 @@ export const TokenCreateArgsSchema: z.ZodType<Prisma.TokenCreateArgs> = z.object
         TokenCreateInputSchema,
         TokenUncheckedCreateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export default TokenCreateArgsSchema;

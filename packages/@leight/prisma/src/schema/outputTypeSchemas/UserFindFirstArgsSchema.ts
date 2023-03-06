@@ -58,6 +58,6 @@ export const UserFindFirstArgsSchema: z.ZodType<Prisma.UserFindFirstArgs> = z.ob
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: UserScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export default UserFindFirstArgsSchema;

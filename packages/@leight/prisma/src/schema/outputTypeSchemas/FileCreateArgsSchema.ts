@@ -31,6 +31,6 @@ export const FileCreateArgsSchema: z.ZodType<Prisma.FileCreateArgs> = z.object({
         FileCreateInputSchema,
         FileUncheckedCreateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export default FileCreateArgsSchema;

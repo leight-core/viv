@@ -45,7 +45,7 @@ export type FileWithRelations =
 
 export const FileWithRelationsSchema: z.ZodType<FileWithRelations> = FileSchema.merge(z.object({
     user: z.lazy(() => UserWithRelationsSchema).nullish(),
-}));
+}))
 
 // FILE PARTIAL RELATION SCHEMA
 //------------------------------------------------------
@@ -60,6 +60,6 @@ export type FilePartialWithRelations =
 
 export const FilePartialWithRelationsSchema: z.ZodType<FilePartialWithRelations> = FilePartialSchema.merge(z.object({
     user: z.lazy(() => UserPartialWithRelationsSchema).nullish(),
-})).partial();
+})).partial()
 
 export default FileSchema;

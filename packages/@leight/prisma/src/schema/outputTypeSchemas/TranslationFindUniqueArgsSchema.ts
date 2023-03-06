@@ -15,6 +15,6 @@ export const TranslationSelectSchema: z.ZodType<Prisma.TranslationSelect> = z.ob
 export const TranslationFindUniqueArgsSchema: z.ZodType<Prisma.TranslationFindUniqueArgs> = z.object({
     select: TranslationSelectSchema.optional(),
     where:  TranslationWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default TranslationFindUniqueArgsSchema;

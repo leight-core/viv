@@ -47,7 +47,7 @@ export type AccountWithRelations =
 
 export const AccountWithRelationsSchema: z.ZodType<AccountWithRelations> = AccountSchema.merge(z.object({
     user: z.lazy(() => UserWithRelationsSchema),
-}));
+}))
 
 // ACCOUNT PARTIAL RELATION SCHEMA
 //------------------------------------------------------
@@ -62,6 +62,6 @@ export type AccountPartialWithRelations =
 
 export const AccountPartialWithRelationsSchema: z.ZodType<AccountPartialWithRelations> = AccountPartialSchema.merge(z.object({
     user: z.lazy(() => UserPartialWithRelationsSchema),
-})).partial();
+})).partial()
 
 export default AccountSchema;

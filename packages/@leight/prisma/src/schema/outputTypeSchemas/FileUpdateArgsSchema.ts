@@ -33,6 +33,6 @@ export const FileUpdateArgsSchema: z.ZodType<Prisma.FileUpdateArgs> = z.object({
         FileUncheckedUpdateInputSchema
     ]),
     where:   FileWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default FileUpdateArgsSchema;

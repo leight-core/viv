@@ -29,6 +29,6 @@ export const AccountDeleteArgsSchema: z.ZodType<Prisma.AccountDeleteArgs> = z.ob
     select:  AccountSelectSchema.optional(),
     include: AccountIncludeSchema.optional(),
     where:   AccountWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default AccountDeleteArgsSchema;

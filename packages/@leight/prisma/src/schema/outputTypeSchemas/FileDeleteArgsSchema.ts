@@ -27,6 +27,6 @@ export const FileDeleteArgsSchema: z.ZodType<Prisma.FileDeleteArgs> = z.object({
     select:  FileSelectSchema.optional(),
     include: FileIncludeSchema.optional(),
     where:   FileWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default FileDeleteArgsSchema;

@@ -49,6 +49,6 @@ export const JobUpdateArgsSchema: z.ZodType<Prisma.JobUpdateArgs> = z.object({
         JobUncheckedUpdateInputSchema
     ]),
     where:   JobWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default JobUpdateArgsSchema;

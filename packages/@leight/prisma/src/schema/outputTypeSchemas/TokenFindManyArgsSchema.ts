@@ -35,6 +35,6 @@ export const TokenFindManyArgsSchema: z.ZodType<Prisma.TokenFindManyArgs> = z.ob
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: TokenScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export default TokenFindManyArgsSchema;

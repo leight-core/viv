@@ -41,6 +41,6 @@ export const AccountUpsertArgsSchema: z.ZodType<Prisma.AccountUpsertArgs> = z.ob
         AccountUpdateInputSchema,
         AccountUncheckedUpdateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export default AccountUpsertArgsSchema;

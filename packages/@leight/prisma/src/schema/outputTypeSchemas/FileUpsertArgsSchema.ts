@@ -39,6 +39,6 @@ export const FileUpsertArgsSchema: z.ZodType<Prisma.FileUpsertArgs> = z.object({
         FileUpdateInputSchema,
         FileUncheckedUpdateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export default FileUpsertArgsSchema;

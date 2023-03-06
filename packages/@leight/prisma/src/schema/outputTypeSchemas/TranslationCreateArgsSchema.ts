@@ -19,6 +19,6 @@ export const TranslationCreateArgsSchema: z.ZodType<Prisma.TranslationCreateArgs
         TranslationCreateInputSchema,
         TranslationUncheckedCreateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export default TranslationCreateArgsSchema;

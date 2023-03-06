@@ -39,7 +39,7 @@ export type SessionWithRelations =
 
 export const SessionWithRelationsSchema: z.ZodType<SessionWithRelations> = SessionSchema.merge(z.object({
     user: z.lazy(() => UserWithRelationsSchema),
-}));
+}))
 
 // SESSION PARTIAL RELATION SCHEMA
 //------------------------------------------------------
@@ -54,6 +54,6 @@ export type SessionPartialWithRelations =
 
 export const SessionPartialWithRelationsSchema: z.ZodType<SessionPartialWithRelations> = SessionPartialSchema.merge(z.object({
     user: z.lazy(() => UserPartialWithRelationsSchema),
-})).partial();
+})).partial()
 
 export default SessionSchema;

@@ -51,6 +51,6 @@ export const UserCreateArgsSchema: z.ZodType<Prisma.UserCreateArgs> = z.object({
         UserCreateInputSchema,
         UserUncheckedCreateInputSchema
     ]),
-}).strict();
+}).strict()
 
 export default UserCreateArgsSchema;

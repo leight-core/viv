@@ -31,6 +31,6 @@ export const UserTokenUpdateArgsSchema: z.ZodType<Prisma.UserTokenUpdateArgs> = 
         UserTokenUncheckedUpdateInputSchema
     ]),
     where:   UserTokenWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default UserTokenUpdateArgsSchema;

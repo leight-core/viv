@@ -21,6 +21,6 @@ export const SessionFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.SessionFindUni
     select:  SessionSelectSchema.optional(),
     include: SessionIncludeSchema.optional(),
     where:   SessionWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default SessionFindUniqueOrThrowArgsSchema;

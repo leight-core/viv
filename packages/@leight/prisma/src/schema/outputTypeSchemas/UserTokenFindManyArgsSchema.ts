@@ -36,6 +36,6 @@ export const UserTokenFindManyArgsSchema: z.ZodType<Prisma.UserTokenFindManyArgs
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: UserTokenScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export default UserTokenFindManyArgsSchema;

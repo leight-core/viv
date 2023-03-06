@@ -21,6 +21,6 @@ export const TranslationUpdateArgsSchema: z.ZodType<Prisma.TranslationUpdateArgs
         TranslationUncheckedUpdateInputSchema
     ]),
     where:  TranslationWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default TranslationUpdateArgsSchema;

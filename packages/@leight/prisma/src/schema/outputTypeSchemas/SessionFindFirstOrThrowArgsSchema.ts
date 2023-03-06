@@ -32,6 +32,6 @@ export const SessionFindFirstOrThrowArgsSchema: z.ZodType<Prisma.SessionFindFirs
     take:     z.number().optional(),
     skip:     z.number().optional(),
     distinct: SessionScalarFieldEnumSchema.array().optional(),
-}).strict();
+}).strict()
 
 export default SessionFindFirstOrThrowArgsSchema;

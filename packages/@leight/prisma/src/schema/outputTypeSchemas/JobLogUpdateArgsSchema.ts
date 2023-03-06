@@ -26,6 +26,6 @@ export const JobLogUpdateArgsSchema: z.ZodType<Prisma.JobLogUpdateArgs> = z.obje
         JobLogUncheckedUpdateInputSchema
     ]),
     where:   JobLogWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default JobLogUpdateArgsSchema;

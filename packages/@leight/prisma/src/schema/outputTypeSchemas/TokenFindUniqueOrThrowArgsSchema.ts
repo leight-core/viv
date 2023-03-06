@@ -24,6 +24,6 @@ export const TokenFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.TokenFindUniqueO
     select:  TokenSelectSchema.optional(),
     include: TokenIncludeSchema.optional(),
     where:   TokenWhereUniqueInputSchema,
-}).strict();
+}).strict()
 
 export default TokenFindUniqueOrThrowArgsSchema;
