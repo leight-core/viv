@@ -1,7 +1,7 @@
 {
     "version": "0.5.26",
     "name": "@leight/xlsx-import",
-    "description": "Common stuff shared between .",
+    "description": "Common stuff shared between.",
     "license": "MIT",
     "repository": {
         "type": "git",
