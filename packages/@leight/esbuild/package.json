@@ -1,5 +1,5 @@
 {
-    "version": "0.5.4",
+    "version": "0.5.5",
     "name": "@leight/esbuild",
     "description": "Esbuild helper stuff.",
     "license": "MIT",
@@ -28,6 +28,7 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
+        "esbuild": "^0.17.11",
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
@@ -38,7 +39,6 @@
         "del-cli": "^5.0.0",
         "depcheck": "^1.4.3",
         "dotenv-cli": "^7.0.0",
-        "esbuild": "^0.17.11",
         "eslint": "^8.35.0",
         "typescript": "^4.9.5"
     },

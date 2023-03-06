@@ -1,5 +1,11 @@
 # @leight/esbuild
 
+## 0.5.5
+
+### Patch Changes
+
+- Fixed esbuild dependency
+
 ## 0.5.4
 
 ### Patch Changes
