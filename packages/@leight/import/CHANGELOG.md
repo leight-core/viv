@@ -1,5 +1,13 @@
 # @leight/import
 
+## 0.5.25
+
+### Patch Changes
+
+- Re-release + updated deps
+- Updated dependencies
+    - @leight/job@0.5.27
+
 ## 0.5.24
 
 ### Patch Changes

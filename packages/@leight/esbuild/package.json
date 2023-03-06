@@ -1,5 +1,5 @@
 {
-    "version": "0.5.3",
+    "version": "0.5.4",
     "name": "@leight/esbuild",
     "description": "Esbuild helper stuff.",
     "license": "MIT",
@@ -12,38 +12,37 @@
     },
     "sideEffects": false,
     "type": "module",
-    "module": "src/index.ts",
-    "types": "src/index.ts",
-    "publishConfig": {
-        "module": "lib/index.js",
-        "types": "lib/index.d.ts"
-    },
+    "main": "lib/index.js",
+    "module": "lib/index.js",
+    "types": "lib/index.d.ts",
     "files": [
         "lib",
         "src"
     ],
     "scripts": {
-        "build": "tsc --outDir lib",
+        "build": "concurrently npm:build:*",
+        "build:esbuild": "node esbuild.mjs",
+        "build:types": "tsc --outDir lib",
         "depcheck": "depcheck",
         "lint": "eslint src",
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "esbuild": "^0.17.9",
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.5.14",
-        "@leight/tsconfig": "workspace:^0.5.26",
-        "@types/node": "^18.14.0",
-        "@typescript-eslint/eslint-plugin": "^5.52.0",
-        "@typescript-eslint/parser": "^5.52.0",
+        "@leight/eslint-config-eslint": "workspace:^0.5.15",
+        "@leight/tsconfig": "workspace:^0.5.28",
+        "@types/node": "^18.14.6",
+        "@typescript-eslint/eslint-plugin": "^5.54.0",
+        "@typescript-eslint/parser": "^5.54.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
         "depcheck": "^1.4.3",
         "dotenv-cli": "^7.0.0",
-        "eslint": "^8.34.0",
-        "eslint-plugin-unicorn": "^45.0.2",
+        "esbuild": "^0.17.11",
+        "eslint": "^8.35.0",
+        "eslint-plugin-unicorn": "^46.0.0",
         "typescript": "^4.9.5"
     },
     "bugs": {

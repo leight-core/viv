@@ -3,13 +3,20 @@ generator client {
 }
 
 generator zod {
-  provider                         = "zod-prisma-types"
-  output                           = "../src/schema"
-  useMultipleFiles                 = false
-  createInputTypes                 = true
-  addInputTypeValidation           = true
-  createOptionalDefaultValuesTypes = true
-  createRelationValuesTypes        = true
+    provider                         = "zod-prisma-types"
+    output                           = "../src/schema"
+    useMultipleFiles                 = true
+    createInputTypes                 = true
+    createModelTypes                 = true
+    addInputTypeValidation           = true
+    addIncludeType                   = true
+    createPartialTypes               = true
+    addSelectType                    = true
+    validateWhereUniqueInput         = true
+    writeNullishInModelTypes         = true
+    createOptionalDefaultValuesTypes = false
+    createRelationValuesTypes        = true
+    useDefaultValidators             = true
 }
 
 datasource db {

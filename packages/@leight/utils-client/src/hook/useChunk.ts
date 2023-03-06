@@ -30,15 +30,16 @@ export interface IUseChunkProps
     onTick(props: IUseChunkTickProps): Promise<void>;
 }
 
-export const useChunk = ({
-                             size,
-                             throttle,
-                             chunk,
-                             onStart,
-                             onTick,
-                             onFinish,
-                             onError,
-                         }: IUseChunkProps) => {
+export const useChunk = (
+    {
+        size,
+        throttle,
+        chunk,
+        onStart,
+        onTick,
+        onFinish,
+        onError,
+    }: IUseChunkProps) => {
     return useLoop({
         total: Math.ceil(size / chunk),
         throttle,

@@ -1,5 +1,5 @@
 {
-    "version": "0.5.24",
+    "version": "0.5.25",
     "name": "@leight/xlsx-import-server",
     "description": "Support for XLSX import (server-side) using @leight/job stuff.",
     "license": "MIT",
@@ -23,37 +23,39 @@
         "src"
     ],
     "scripts": {
-        "build": "tsc --outDir lib",
+        "build": "concurrently npm:build:*",
+        "build:tsc": "tsc --outDir lib",
         "depcheck": "depcheck",
         "lint": "eslint src",
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "workspace:^0.5.24",
-        "@leight/file": "workspace:^0.5.24",
-        "@leight/import": "workspace:^0.5.24",
-        "@leight/job": "workspace:^0.5.26",
-        "@leight/trpc-server": "workspace:^0.5.25",
-        "@leight/utils": "workspace:^0.5.27",
-        "@leight/utils-server": "workspace:^0.5.24",
-        "@leight/xlsx-import": "workspace:^0.5.25",
+        "@leight/container": "workspace:^0.5.25",
+        "@leight/file": "workspace:^0.5.25",
+        "@leight/import": "workspace:^0.5.25",
+        "@leight/job": "workspace:^0.5.27",
+        "@leight/trpc-server": "workspace:^0.5.26",
+        "@leight/utils": "workspace:^0.5.28",
+        "@leight/utils-server": "workspace:^0.5.25",
+        "@leight/xlsx-import": "workspace:^0.5.26",
         "measure-time": "^5.0.8",
         "reflect-metadata": "^0.1.13",
         "tsyringe": "^4.7.0",
         "xlsx": "^0.18.5",
-        "zod": "^3.20.6"
+        "zod": "3.21.1"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.5.14",
-        "@leight/tsconfig": "workspace:^0.5.26",
-        "@types/node": "^18.14.0",
-        "@typescript-eslint/eslint-plugin": "^5.52.0",
-        "@typescript-eslint/parser": "^5.52.0",
+        "@leight/esbuild": "workspace:^0.5.4",
+        "@leight/eslint-config-eslint": "workspace:^0.5.15",
+        "@leight/tsconfig": "workspace:^0.5.28",
+        "@types/node": "^18.14.6",
+        "@typescript-eslint/eslint-plugin": "^5.54.0",
+        "@typescript-eslint/parser": "^5.54.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
         "depcheck": "^1.4.3",
-        "eslint": "^8.34.0",
-        "eslint-plugin-unicorn": "^45.0.2",
+        "eslint": "^8.35.0",
+        "eslint-plugin-unicorn": "^46.0.0",
         "typescript": "^4.9.5"
     },
     "bugs": {

@@ -1,5 +1,5 @@
 {
-    "version": "0.5.27",
+    "version": "0.5.28",
     "name": "@leight/prisma",
     "description": "Some prisma related helpers. This package also contains all @leight exported Prisma models.",
     "license": "MIT",
@@ -23,7 +23,9 @@
         "src"
     ],
     "scripts": {
-        "build": "tsc --outDir lib",
+        "build": "concurrently npm:build:*",
+        "build:esbuild": "node esbuild.mjs",
+        "build:types": "tsc --outDir lib",
         "depcheck": "depcheck",
         "prisma:format": "prisma format",
         "prisma:generate": "prisma generate",
@@ -31,26 +33,27 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/source": "workspace:^0.5.20",
-        "@leight/source-server": "workspace:^0.5.22",
-        "@prisma/client": "^4.10.1",
+        "@leight/source": "workspace:^0.5.21",
+        "@leight/source-server": "workspace:^0.5.23",
+        "@prisma/client": "^4.11.0",
         "reflect-metadata": "^0.1.13",
-        "zod": "^3.20.6"
+        "zod": "3.21.1"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.5.14",
-        "@leight/tsconfig": "workspace:^0.5.26",
-        "@types/node": "^18.14.0",
-        "@typescript-eslint/eslint-plugin": "^5.52.0",
-        "@typescript-eslint/parser": "^5.52.0",
+        "@leight/esbuild": "workspace:^0.5.4",
+        "@leight/eslint-config-eslint": "workspace:^0.5.15",
+        "@leight/tsconfig": "workspace:^0.5.28",
+        "@types/node": "^18.14.6",
+        "@typescript-eslint/eslint-plugin": "^5.54.0",
+        "@typescript-eslint/parser": "^5.54.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
         "depcheck": "^1.4.3",
-        "eslint": "^8.34.0",
-        "eslint-plugin-unicorn": "^45.0.2",
-        "prisma": "^4.10.1",
+        "eslint": "^8.35.0",
+        "eslint-plugin-unicorn": "^46.0.0",
+        "prisma": "^4.11.0",
         "typescript": "^4.9.5",
-        "zod-prisma-types": "^2.2.2"
+        "zod-prisma-types": "^2.3.4"
     },
     "bugs": {
         "url": "https://github.com/leight-core/viv/issues"

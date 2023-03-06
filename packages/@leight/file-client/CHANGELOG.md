@@ -1,5 +1,15 @@
 # @leight/file-client
 
+## 0.5.27
+
+### Patch Changes
+
+- Re-release + updated deps
+- Updated dependencies
+    - @leight/utils-client@0.5.29
+    - @leight/utils@0.5.28
+    - @leight/file@0.5.25
+
 ## 0.5.26
 
 ### Patch Changes

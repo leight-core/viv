@@ -1,5 +1,16 @@
 # @leight/job
 
+## 0.5.27
+
+### Patch Changes
+
+- Re-release + updated deps
+- Updated dependencies
+    - @leight/winston@0.5.25
+    - @leight/prisma@0.5.28
+    - @leight/source@0.5.21
+    - @leight/query@0.5.21
+
 ## 0.5.26
 
 ### Patch Changes

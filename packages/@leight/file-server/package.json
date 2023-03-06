@@ -1,5 +1,5 @@
 {
-    "version": "0.5.24",
+    "version": "0.5.25",
     "name": "@leight/file-server",
     "description": "File stuff on server-side.",
     "license": "MIT",
@@ -23,16 +23,17 @@
         "src"
     ],
     "scripts": {
-        "build": "tsc --outDir lib",
+        "build": "concurrently npm:build:*",
+        "build:tsc": "tsc --outDir lib",
         "depcheck": "depcheck",
         "lint": "eslint src",
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "workspace:^0.5.24",
-        "@leight/file": "workspace:^0.5.24",
-        "@leight/next.js-server": "workspace:^0.5.25",
-        "@leight/prisma": "workspace:^0.5.27",
+        "@leight/container": "workspace:^0.5.25",
+        "@leight/file": "workspace:^0.5.25",
+        "@leight/next.js-server": "workspace:^0.5.26",
+        "@leight/prisma": "workspace:^0.5.28",
         "depcheck": "^1.4.3",
         "fs-extra": "^11.1.0",
         "mime-detect": "^1.1.4",
@@ -42,19 +43,20 @@
         "uuid": "^9.0.0"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "workspace:^0.5.14",
-        "@leight/tsconfig": "workspace:^0.5.26",
+        "@leight/esbuild": "workspace:^0.5.4",
+        "@leight/eslint-config-eslint": "workspace:^0.5.15",
+        "@leight/tsconfig": "workspace:^0.5.28",
         "@types/fs-extra": "^11.0.1",
-        "@types/glob": "^8.0.1",
-        "@types/node": "^18.14.0",
+        "@types/glob": "^8.1.0",
+        "@types/node": "^18.14.6",
         "@types/touch": "^3.1.2",
-        "@types/uuid": "^9.0.0",
-        "@typescript-eslint/eslint-plugin": "^5.52.0",
-        "@typescript-eslint/parser": "^5.52.0",
+        "@types/uuid": "^9.0.1",
+        "@typescript-eslint/eslint-plugin": "^5.54.0",
+        "@typescript-eslint/parser": "^5.54.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
-        "eslint": "^8.34.0",
-        "eslint-plugin-unicorn": "^45.0.2",
+        "eslint": "^8.35.0",
+        "eslint-plugin-unicorn": "^46.0.0",
         "typescript": "^4.9.5"
     },
     "bugs": {

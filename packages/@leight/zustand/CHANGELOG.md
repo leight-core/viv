@@ -1,5 +1,11 @@
 # @leight/zustand
 
+## 0.5.26
+
+### Patch Changes
+
+- Re-release + updated deps
+
 ## 0.5.25
 
 ### Patch Changes

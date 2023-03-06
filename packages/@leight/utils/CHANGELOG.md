@@ -1,5 +1,11 @@
 # @leight/utils
 
+## 0.5.28
+
+### Patch Changes
+
+- Re-release + updated deps
+
 ## 0.5.27
 
 ### Patch Changes

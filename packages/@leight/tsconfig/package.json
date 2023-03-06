@@ -2,7 +2,7 @@
     "name": "@leight/tsconfig",
     "description": "Common tsconfig used withing @leight namespace.",
     "license": "MIT",
-    "version": "0.5.27",
+    "version": "0.5.28",
     "repository": {
         "type": "git",
         "url": "git://github.com/leight-core/viv.git"
@@ -14,5 +14,8 @@
     "bugs": {
         "url": "https://github.com/leight-core/viv/issues"
     },
-    "homepage": "https://github.com/leight-core/viv#readme"
+    "homepage": "https://github.com/leight-core/viv#readme",
+    "devDependencies": {
+        "esbuild": "^0.17.11"
+    }
 }

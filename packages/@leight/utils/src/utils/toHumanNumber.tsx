@@ -2,15 +2,16 @@ export interface IToHumanNumberProps {
     number?: number | null;
     empty?: string;
     max?: number;
+    fraction?: number;
 }
 
-export function toHumanNumber({number, empty = "-", max = 2}: IToHumanNumberProps): string {
+export function toHumanNumber({number, empty = "-", fraction = 2}: IToHumanNumberProps): string {
     if (number === null || number === undefined) {
         return empty;
     }
     try {
         return number.toLocaleString(undefined, {
-            maximumSignificantDigits: max,
+            maximumFractionDigits: fraction,
         });
     } catch (e) {
         console.error("toHumanNumber", number, e);
