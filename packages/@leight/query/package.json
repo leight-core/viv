@@ -35,7 +35,7 @@
         "@leight/filter": "workspace:^0.5.21",
         "@leight/sort": "workspace:^0.5.20",
         "reflect-metadata": "^0.1.13",
-        "zod": "3.21.1"
+        "zod": "3.21.3"
     },
     "devDependencies": {
         "@leight/esbuild": "workspace:^0.5.4",

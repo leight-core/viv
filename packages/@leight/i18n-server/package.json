@@ -32,7 +32,7 @@
     },
     "dependencies": {
         "@leight/i18n": "workspace:^0.5.26",
-        "i18next": "^22.4.10",
+        "i18next": "^22.4.11",
         "next": "^13.2.3",
         "next-i18next": "^13.2.1",
         "react": "^18.2.0",

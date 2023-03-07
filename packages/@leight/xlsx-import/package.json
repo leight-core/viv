@@ -36,7 +36,7 @@
         "@leight/trpc": "workspace:^0.5.25",
         "reflect-metadata": "^0.1.13",
         "xlsx": "^0.18.5",
-        "zod": "3.21.1"
+        "zod": "3.21.3"
     },
     "devDependencies": {
         "@leight/esbuild": "workspace:^0.5.4",

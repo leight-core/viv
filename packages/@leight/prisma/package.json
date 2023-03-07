@@ -35,9 +35,9 @@
     "dependencies": {
         "@leight/source": "workspace:^0.5.21",
         "@leight/source-server": "workspace:^0.5.23",
-        "@prisma/client": "^4.10.0",
+        "@prisma/client": "^4.11.0",
         "reflect-metadata": "^0.1.13",
-        "zod": "3.21.1"
+        "zod": "3.21.3"
     },
     "devDependencies": {
         "@leight/esbuild": "workspace:^0.5.4",
@@ -48,9 +48,9 @@
         "del-cli": "^5.0.0",
         "depcheck": "^1.4.3",
         "eslint": "^8.35.0",
-        "prisma": "^4.10.0",
+        "prisma": "^4.11.0",
         "typescript": "^4.9.5",
-        "zod-prisma-types": "^2.3.4"
+        "zod-prisma-types": "^2.3.5"
     },
     "bugs": {
         "url": "https://github.com/leight-core/viv/issues"

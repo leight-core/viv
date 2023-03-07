@@ -33,7 +33,7 @@
     "dependencies": {
         "@leight/job": "workspace:^0.5.27",
         "reflect-metadata": "^0.1.13",
-        "zod": "3.21.1"
+        "zod": "3.21.3"
     },
     "devDependencies": {
         "@leight/esbuild": "workspace:^0.5.4",
