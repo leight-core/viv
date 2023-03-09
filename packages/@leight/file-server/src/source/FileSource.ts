@@ -3,11 +3,6 @@ import {
     type IFileSource,
     type IFileSourceConfig
 } from "@leight/file";
-import {
-    $PrismaClient,
-    AbstractPrismaSource,
-    type IPrismaClient
-} from "@leight/prisma";
 import "reflect-metadata";
 import {
     inject,

@@ -42,7 +42,7 @@
         "reflect-metadata": "^0.1.13",
         "tsyringe": "^4.7.0",
         "xlsx": "^0.18.5",
-        "zod": "3.21.3"
+        "zod": "^3.21.4"
     },
     "devDependencies": {
         "@leight/esbuild": "workspace:^0.5.4",

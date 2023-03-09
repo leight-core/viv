@@ -1,7 +1,9 @@
-import {Schema,}           from "@leight/prisma";
 import {createQuerySchema} from "@leight/query";
+import {z}                 from "zod";
 
 export const FileQuerySchema = createQuerySchema({
-    filter: Schema.FileWhereInputSchema,
-    sort:   Schema.FileOrderByWithRelationInputSchema,
+    filter: z.object({
+        fulltext: z.string().nullish(),
+    }),
+    sort:   z.object({}),
 });

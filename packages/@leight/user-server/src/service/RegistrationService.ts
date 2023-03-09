@@ -1,7 +1,7 @@
 import {
-    $PrismaClient,
-    type IPrismaClient
-} from "@leight/prisma";
+    $Drizzle,
+    type IDrizzle
+} from "@leight/drizzle";
 import {
     type IRegistrationService,
     type IToken
@@ -10,6 +10,10 @@ import {
     inject,
     injectable
 } from "tsyringe";
+import {
+    $UserSource,
+    UserSource
+} from "../source";
 
 /**
  * Service used to register new users with en eventual case where the
@@ -18,7 +22,8 @@ import {
 @injectable()
 export class RegistrationService implements IRegistrationService {
     constructor(
-        @inject($PrismaClient) protected prisma: IPrismaClient,
+        @inject($Drizzle) protected drizzle: IDrizzle,
+        @inject($UserSource) protected userSource: UserSource,
     ) {
     }
 

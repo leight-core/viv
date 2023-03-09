@@ -31,12 +31,11 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/prisma": "workspace:^0.5.28",
         "@leight/query": "workspace:^0.5.21",
         "@leight/source": "workspace:^0.5.21",
         "@leight/winston": "workspace:^0.5.25",
         "reflect-metadata": "^0.1.13",
-        "zod": "3.21.3"
+        "zod": "^3.21.4"
     },
     "devDependencies": {
         "@leight/esbuild": "workspace:^0.5.4",

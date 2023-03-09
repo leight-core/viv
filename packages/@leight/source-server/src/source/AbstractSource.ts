@@ -1,20 +1,19 @@
+import {type IDrizzle} from "@leight/drizzle";
 import {
-    type ISource,
+    type Interface,
     type ISourceConfig,
-    type ISourceName,
     SourceError
-} from "@leight/source";
+}                      from "@leight/source";
 
 /**
  * Some base stuff of the source.
  */
-export abstract class AbstractSource<TSourceConfig extends ISourceConfig> implements ISource<TSourceConfig> {
-    protected name: string;
-
+export abstract class AbstractSource<TSourceConfig extends ISourceConfig<any, any>> implements Interface<TSourceConfig> {
     protected constructor(
-        name: ISourceName,
+        protected drizzle: IDrizzle,
+        protected config: TSourceConfig,
+        protected name = config.Schema.$name,
     ) {
-        this.name = name.toString();
     }
 
     async count(query?: TSourceConfig["Query"]): Promise<number> {
@@ -27,6 +26,7 @@ export abstract class AbstractSource<TSourceConfig extends ISourceConfig> implem
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     async runCount(query?: TSourceConfig["Query"]): Promise<number> {
+        // return this.drizzle.select({count: sql<number>`count(${this.config.Schema.id})`}).from(this.config.Schema)
         throw new SourceError(`Source [${this.name}] does not support counting items by a query.`);
     }
 

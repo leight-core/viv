@@ -13,11 +13,16 @@ import {
     UserJwtService,
     UserService
 }                        from "./service";
+import {
+    $UserSource,
+    UserSource
+}                        from "./source";
 
 export interface IUserContainer {
     RegistrationService: IRegistrationService;
     UserJwtService: IUserJwtService;
     UserService: IUserService;
+    UserSource: UserSource;
 }
 
 export const UserContainer = (container: IContainer): IUserContainer => {
@@ -30,6 +35,9 @@ export const UserContainer = (container: IContainer): IUserContainer => {
     container.register<IUserService>($UserService, {
         useClass: UserService,
     });
+    container.register<UserSource>($UserSource, {
+        useClass: UserSource,
+    });
 
     return {
         get RegistrationService() {
@@ -40,6 +48,9 @@ export const UserContainer = (container: IContainer): IUserContainer => {
         },
         get UserService() {
             return container.resolve<IUserService>($UserService);
+        },
+        get UserSource() {
+            return container.resolve<UserSource>($UserSource);
         },
     };
 };

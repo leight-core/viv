@@ -32,7 +32,6 @@
     "dependencies": {
         "@leight/container": "workspace:^0.5.25",
         "@leight/job": "workspace:^0.5.27",
-        "@leight/prisma": "workspace:^0.5.28",
         "@leight/user": "workspace:^0.5.26",
         "@leight/utils": "workspace:^0.5.28",
         "@leight/winston": "workspace:^0.5.25",

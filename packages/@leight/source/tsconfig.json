@@ -2,7 +2,11 @@
     "extends": "@leight/tsconfig/esbuild.json",
     "compilerOptions": {
         "rootDir": "src",
-        "baseUrl": "src"
+        "baseUrl": "src",
+        "types": [
+            "drizzle-zod/pg",
+            "zod"
+        ]
     },
     "include": [
         "src/**/*",
