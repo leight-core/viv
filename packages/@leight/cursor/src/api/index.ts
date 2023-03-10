@@ -5,4 +5,6 @@ export const CursorSchema = z.object({
     size: z.number().min(1),
 });
 
-export type ICursor = z.infer<typeof CursorSchema>;
+export type ICursorSchema = typeof CursorSchema;
+
+export type ICursor = z.infer<ICursorSchema>;

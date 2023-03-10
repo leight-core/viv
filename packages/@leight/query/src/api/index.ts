@@ -1,41 +1,21 @@
-import {
-    CursorSchema,
-    type ICursor
-}          from "@leight/cursor";
-import {
-    FilterSchema,
-    IFilterSchema
-}          from "@leight/filter";
-import {
-    ISortSchema,
-    SortSchema
-}          from "@leight/sort";
-import {z} from "zod";
+import {CursorSchema} from "@leight/cursor";
+import {FilterSchema} from "@leight/filter";
+import {SortSchema}   from "@leight/sort";
+import {z}            from "zod";
 
-export const ParamsSchema = z.never();
+export const ParamsSchema = z.object({});
 
 export type IParamsSchema = typeof ParamsSchema;
 
-export type IParams = z.infer<typeof ParamsSchema>;
+export type IParams = z.infer<IParamsSchema>;
 
-/**
- * Common interface for making a query to something; it doesn't matter if there is a Repository or
- * whatever source you wish to use. Main purpose is an ability to send this structure over the wire.
- */
-export interface IQuery<
-    TFilter extends IFilterSchema = IFilterSchema,
-    TSort extends ISortSchema = ISortSchema,
-    TParams extends IParamsSchema = IParamsSchema,
-> {
-    readonly cursor?: ICursor;
-    readonly filter?: TFilter;
-    readonly sort?: TSort;
-    readonly params?: TParams;
-}
-
-export const QuerySchema = <TFilter extends IFilterSchema, TSort extends ISortSchema, TParams extends IParamsSchema>({filter, sort, params}: Pick<IQuery, "filter" | "sort" | "params">) => z.object({
-    filter: (filter || FilterSchema).optional(),
-    sort:   (sort || SortSchema).optional(),
-    params: (params || ParamsSchema).optional(),
+export const QuerySchema = z.object({
+    filter: FilterSchema.optional(),
+    sort:   SortSchema.optional(),
     cursor: CursorSchema.optional(),
+    params: ParamsSchema.optional(),
 });
+
+export type IQuerySchema = typeof QuerySchema;
+
+export type IQuery = z.infer<IQuerySchema>;

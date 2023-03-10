@@ -1,14 +1,14 @@
 import {type IDrizzle} from "@leight/drizzle";
 import {
     type Interface,
-    type ISourceConfig,
+    type ISourceSchema,
     SourceError
 }                      from "@leight/source";
 
 /**
  * Some base stuff of the source.
  */
-export abstract class AbstractSource<TSourceConfig extends ISourceConfig<any, any>> implements Interface<TSourceConfig> {
+export abstract class AbstractSource<TSourceConfig extends ISourceSchema<any, any>> implements Interface<TSourceConfig> {
     protected constructor(
         protected drizzle: IDrizzle,
         protected config: TSourceConfig,

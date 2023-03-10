@@ -1,11 +1,11 @@
 import {
-    type ISourceConfig,
-    type ISourceName
+    type ISourceName,
+    type ISourceSchema
 }                         from "@leight/source";
 import {AbstractSource}   from "@leight/source-server";
 import {type IRepository} from "../api";
 
-export abstract class AbstractPrismaSource<TSourceConfig extends ISourceConfig, TRepository extends IRepository<TSourceConfig>> extends AbstractSource<TSourceConfig> {
+export abstract class AbstractPrismaSource<TSourceConfig extends ISourceSchema, TRepository extends IRepository<TSourceConfig>> extends AbstractSource<TSourceConfig> {
     protected constructor(
         name: ISourceName,
         protected repository: TRepository,

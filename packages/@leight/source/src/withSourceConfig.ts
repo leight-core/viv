@@ -1,6 +1,6 @@
 import {type ITable}        from "@leight/drizzle";
 import {z}                  from "zod";
-import {type ISourceConfig} from "./api";
+import {type ISourceSchema} from "./api";
 
 export interface IWithSourceConfigProps<
     TSchema extends ITable<any>,
@@ -13,7 +13,7 @@ export interface IWithSourceConfigProps<
 export const withSourceConfig = <
     TSchema extends ITable<any>,
     TQuery extends z.ZodObject<any>,
->({Schema, Query}: IWithSourceConfigProps<TSchema, TQuery>): ISourceConfig<
+>({Schema, Query}: IWithSourceConfigProps<TSchema, TQuery>): ISourceSchema<
     TSchema,
     TQuery
 > => {

@@ -1,6 +1,5 @@
-import {InferModel} from "@leight/drizzle";
-import {IToString}  from "@leight/utils";
-import {z}          from "zod";
+import {IQuerySchema} from "@leight/query";
+import {IToString}    from "@leight/utils";
 
 export type ISourceName =
     string
@@ -13,16 +12,14 @@ export interface IEntity {
     readonly id: string;
 }
 
-export interface ISourceConfig<
-    TQuery extends z.ZodObject<any>,
+export interface ISourceSchema<
+    TQuerySchema extends IQuerySchema,
     // TUpdate = any,
     // TFilter extends IFilter = IFilter,
     // TSort extends ISort = ISort,
     // TParams extends IParams = IParams,
 > {
-    Schema: TSchema;
-    Query: TQuery;
-    Entity: InferModel<TSchema>;
+    Query: TQuerySchema;
     // Create: z.ZodObject<BuildInsertSchema<TSchema, undefined, {}>>;
     // DTO: TEntity;
     // Create: TCreate;
@@ -35,7 +32,7 @@ export interface ISourceConfig<
 /**
  * Implementation of data source (general, not just a database one).
  */
-export interface ISource<TSourceConfig extends ISourceConfig<any, any>> {
+export interface ISource<TSourceConfig extends ISourceSchema<any, any>> {
     /**
      * Count items based on an optional query.
      */
