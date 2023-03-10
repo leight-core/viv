@@ -1,6 +1,6 @@
 import {
     type IChunkService,
-    type IFileSourceConfig,
+    type IFileSourceSchema,
     type IFileWithPath
 }                        from "@leight/file";
 import {type IHrefProps} from "@leight/utils";
@@ -24,7 +24,7 @@ export interface IUseUploadProps
     path: string;
     replace?: boolean;
 
-    onFinish?(props: IOnFinishProps & { file: IFileSourceConfig["Entity"] }): Promise<void>;
+    onFinish?(props: IOnFinishProps & { file: IFileSourceSchema["Entity"] }): Promise<void>;
 }
 
 export const useUpload = (
@@ -57,7 +57,7 @@ export const useUpload = (
         onStart,
         onFinish: async (props) => {
             return axios
-                .post<unknown, { data: IFileSourceConfig["Entity"] }, IChunkService.CommitProps>(
+                .post<unknown, { data: IFileSourceSchema["Entity"] }, IChunkService.CommitProps>(
                     toHref({...commitHref, query: {chunkId: uuid.current}}),
                     {
                         name:    file.name,

@@ -1,25 +1,17 @@
-import {
-    cuid2,
-    id,
-    integer,
-    string,
-    text,
-    timestamp,
-    uniqueIndex,
-    withTable
-}                   from "@leight/drizzle";
-import {UserSchema} from "@leight/user";
+import {EntitySchema} from "@leight/source";
+import {z}            from "zod";
 
-export const FileSchema = withTable("File", {
-    id:       id(),
-    path:     text("path").notNull(),
-    name:     text("name").notNull(),
-    mime:     string("mime").notNull(),
-    location: text("location").notNull(),
-    size:     integer("size").notNull(),
-    ttl:      integer("size"),
-    created:  timestamp("created").notNull(),
-    userId:   cuid2("userId").references(() => UserSchema.id),
-}, table => ({
-    File_userId_path_name_key: uniqueIndex("File_userId_path_name_key").on(table.userId, table.path, table.name),
-}));
+export const FileSchema = z.object({
+    path:     z.string(),
+    name:     z.string(),
+    mime:     z.string(),
+    location: z.string(),
+    size:     z.number().min(0),
+    ttl:      z.number().min(0).optional(),
+    created:  z.date(),
+    userId:   z.string(),
+}).merge(EntitySchema);
+
+export type IFileSchema = typeof FileSchema;
+
+export type IFile = z.infer<IFileSchema>;

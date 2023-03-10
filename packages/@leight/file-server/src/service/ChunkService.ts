@@ -4,7 +4,7 @@ import {
     type IChunkService,
     type IChunkServiceConfig,
     type IFileService,
-    type IFileSourceConfig,
+    type IFileSourceSchema,
 } from "@leight/file";
 import {
     outputFileSync,
@@ -37,7 +37,7 @@ export class ChunkService implements IChunkService {
                             mime,
                             userId,
                             replace,
-                        }: IChunkService.CommitProps): Promise<IFileSourceConfig["Entity"]> {
+                        }: IChunkService.CommitProps): Promise<IFileSourceSchema["Entity"]> {
         const $file = this.pathOf(chunkId);
         const file  = await this.fileService.store({
             file: $file,

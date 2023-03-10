@@ -33,6 +33,8 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
+        "@leight/source": "*",
+        "@leight/source-server": "*",
         "drizzle-orm": "^0.21.1",
         "drizzle-zod": "^0.1.3",
         "pg": "^8.10.0",

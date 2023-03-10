@@ -3,5 +3,5 @@ export * from "./IChunkServiceConfig";
 export * from "./IFileService";
 export * from "./IFileServiceConfig";
 export * from "./IFileSource";
-export * from "./IFileSourceConfig";
+export * from "./IFileSourceSchema";
 export * from "./IFileWithPath";

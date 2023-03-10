@@ -1,5 +1,5 @@
 import {
-    type IFileSourceConfig,
+    type IFileSourceSchema,
     type IFileWithPath
 }                                 from "@leight/file";
 import {type IWithTranslation}    from "@leight/i18n";
@@ -39,7 +39,7 @@ export interface IDropZoneProps
 
     onDrop?(files: IFileWithPath[], commit: () => void): void;
 
-    onUpload?(file: IFileSourceConfig["Entity"]): void;
+    onUpload?(file: IFileSourceSchema["Entity"]): void;
 }
 
 /**

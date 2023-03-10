@@ -25,7 +25,7 @@ export type IEntity = z.infer<IEntitySchema>;
  * Source schema definition. Contains all the types used in the Source.
  */
 export interface ISourceSchema<
-    TEntitySchema extends IEntitySchema,
+    TEntitySchema extends IEntitySchema = IEntitySchema,
     TFilterSchema extends IFilterSchema = IFilterSchema,
     TSortSchema extends ISortSchema = ISortSchema,
     TParamsSchema extends IParamsSchema = IParamsSchema,
@@ -57,4 +57,6 @@ export interface ISource<TSourceSchema extends ISourceSchema<any>> {
      * Query items.
      */
     query(query?: TSourceSchema["Query"]): Promise<TSourceSchema["Entity"][]>;
+
+    find(id: string): Promise<TSourceSchema["Entity"]>;
 }

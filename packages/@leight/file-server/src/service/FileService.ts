@@ -1,14 +1,12 @@
 import {
     $FileServiceConfig,
+    $FileSource,
+    type IFile,
     type IFileService,
     type IFileServiceConfig,
     type IFileServiceStoreProps,
-    type IFileSourceConfig,
+    type IFileSource,
 }                       from "@leight/file";
-import {
-    $PrismaClient,
-    type IPrismaClient
-}                       from "@leight/prisma";
 import {copySync}       from "fs-extra";
 import {detectFileMime} from "mime-detect";
 import fs               from "node:fs";
@@ -26,8 +24,8 @@ export class FileService implements IFileService {
     constructor(
         @inject($FileServiceConfig)
         private fileServiceConfig: IFileServiceConfig,
-        @inject($PrismaClient)
-        private prismaClient: IPrismaClient,
+        @inject($FileSource)
+        private fileSource: IFileSource,
     ) {
     }
 
@@ -38,7 +36,7 @@ export class FileService implements IFileService {
         );
     }
 
-    public fetch(fileId: string): Promise<IFileSourceConfig["Entity"]> {
+    public fetch(fileId: string): Promise<IFile> {
         return this.prismaClient.file.findUniqueOrThrow({where: {id: fileId}});
     }
 
@@ -50,7 +48,7 @@ export class FileService implements IFileService {
             userId,
             mime,
             replace = false,
-        }: IFileServiceStoreProps): Promise<IFileSourceConfig["Entity"]> {
+        }: IFileServiceStoreProps): Promise<IFile> {
         const id       = v4();
         const location = this.pathOf(id);
         fs.mkdirSync(coolPath.dirname(location), {recursive: true});

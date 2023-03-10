@@ -36,8 +36,6 @@
         "@leight/query": "workspace:^0.5.21",
         "@leight/sort": "workspace:^0.5.20",
         "@leight/utils": "workspace:^0.5.28",
-        "drizzle-orm": "^0.21.1",
-        "drizzle-zod": "^0.1.3",
         "reflect-metadata": "^0.1.13",
         "zod": "^3.21.4"
     },

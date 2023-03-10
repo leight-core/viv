@@ -1,7 +1,7 @@
 import {
     $ChunkService,
     type IChunkService,
-    type IFileSourceConfig
+    type IFileSourceSchema
 }                  from "@leight/file";
 import {
     Endpoint,
@@ -13,11 +13,11 @@ import {container} from "tsyringe";
 /**
  * Export default this to handle chunk commits.
  */
-export const ChunkCommitEndpoint: IEndpointFactory<IFileSourceConfig["Entity"]> = (
+export const ChunkCommitEndpoint: IEndpointFactory<IFileSourceSchema["Entity"]> = (
     target,
     withTokens
 ) => {
-    return Endpoint<IChunkService.CommitProps, IFileSourceConfig["Entity"]>({
+    return Endpoint<IChunkService.CommitProps, IFileSourceSchema["Entity"]>({
         container:  target,
         withTokens: withTokens || ["user"],
         async handler({body, userService}) {

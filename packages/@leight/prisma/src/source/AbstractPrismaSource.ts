@@ -5,7 +5,7 @@ import {
 import {AbstractSource}   from "@leight/source-server";
 import {type IRepository} from "../api";
 
-export abstract class AbstractPrismaSource<TSourceConfig extends ISourceSchema, TRepository extends IRepository<TSourceConfig>> extends AbstractSource<TSourceConfig> {
+export abstract class AbstractPrismaSource<TSourceSchema extends ISourceSchema, TRepository extends IRepository<TSourceSchema>> extends AbstractSource<TSourceSchema> {
     protected constructor(
         name: ISourceName,
         protected repository: TRepository,
@@ -18,7 +18,7 @@ export abstract class AbstractPrismaSource<TSourceConfig extends ISourceSchema, 
             cursor: {page, size: take} = {page: 0, size: 50},
             filter: where,
             sort:   orderBy,
-        }: TSourceConfig["Query"] = {}): Promise<TSourceConfig["Entity"][]> {
+        }: TSourceSchema["Query"] = {}): Promise<TSourceSchema["Entity"][]> {
         return this.repository.findMany({
             where,
             orderBy,

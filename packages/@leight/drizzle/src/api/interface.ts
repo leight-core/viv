@@ -1,7 +1,13 @@
-import {type NodePgDatabase}     from "drizzle-orm/node-postgres";
-import {type PgTableWithColumns} from "drizzle-orm/pg-core";
-import {type TableConfig}        from "drizzle-orm/pg-core/table";
+import {type NodePgDatabase} from "drizzle-orm/node-postgres";
+import {id}                  from "../column";
+import {withTable}           from "../withTable";
 
 export type IDrizzle = NodePgDatabase;
 
-export type ITable<T extends TableConfig> = PgTableWithColumns<T>;
+const Table = withTable("table", {
+    id: id(),
+});
+
+export type ITable = typeof Table;
+
+// export type ITable<T extends TableConfig> = PgTableWithColumns<T>;

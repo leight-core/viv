@@ -4,6 +4,23 @@
         "tsconfig.json"
     ],
     "pipeline": {
+        "prisma:format": {
+            "outputMode": "new-only",
+            "outputs": [],
+            "inputs": [
+                "prisma/schema.prisma"
+            ]
+        },
+        "prisma:generate": {
+            "outputMode": "new-only",
+            "dependsOn": [
+                "prisma:format"
+            ],
+            "outputs": [],
+            "inputs": [
+                "prisma/schema.prisma"
+            ]
+        },
         "depcheck": {
             "outputMode": "new-only",
             "inputs": [
@@ -26,12 +43,14 @@
             "outputMode": "new-only",
             "dependsOn": [
                 "^build",
+                "prisma:generate",
                 "lint"
             ],
             "outputs": [
                 "lib/**"
             ],
             "inputs": [
+                "prisma/schema.prisma",
                 "src/**",
                 "package.json",
                 "tsconfig.json"

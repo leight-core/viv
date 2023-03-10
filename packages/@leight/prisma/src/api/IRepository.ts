@@ -1,7 +1,7 @@
 import {type ISourceSchema} from "@leight/source";
 
-export interface IRepository<TSourceConfig extends ISourceSchema> {
-    findMany(props: IRepository.FindMany<TSourceConfig>): Promise<TSourceConfig["Entity"][]>;
+export interface IRepository<TSourceSchema extends ISourceSchema> {
+    findMany(props: IRepository.FindMany<TSourceSchema>): Promise<TSourceSchema["Entity"][]>;
 }
 
 export namespace IRepository {

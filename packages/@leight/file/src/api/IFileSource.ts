@@ -1,7 +1,7 @@
-import {type Interface}    from "@leight/source";
-import {IFileSourceConfig} from "./IFileSourceConfig";
+import {type ISource}           from "@leight/source";
+import {type IFileSourceSchema} from "./IFileSourceSchema";
 
-export interface IFileSource extends Interface<IFileSourceConfig> {
+export interface IFileSource extends ISource<IFileSourceSchema> {
 }
 
 export const $FileSource = Symbol.for("@leight/file/FileSource");
