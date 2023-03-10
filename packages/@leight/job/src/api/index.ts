@@ -1,25 +1,12 @@
+import {Schema}       from "@leight/prisma";
 import {
-    EntitySchema,
     type ISource,
     type ISourceSchema
 }                     from "@leight/source";
 import {type ILogger} from "@leight/winston";
 import {z}            from "zod";
 
-export const JobStatusSchema = z.enum([
-    // Just created, nobody cares about the job yet
-    "NEW",
-    // Job has been picked up and is in progress.
-    "RUNNING",
-    // Job has been successfully done; waiting for "commit".
-    "SUCCESS",
-    // Job has failed hard (usually outside boundaries of the job handler)
-    "FAILURE",
-    //  Job has been processed, but there are some failed items
-    "REVIEW",
-    //  When everything is OK, it's done: goes from review->done and failure->done
-    "DONE"
-] as const);
+export const JobStatusSchema = Schema.JobStatusSchema;
 
 export type IJobStatusSchema = typeof JobStatusSchema;
 
@@ -63,14 +50,19 @@ export const $JobExecutor = Symbol.for(
     "@leight/job-server/JobExecutor"
 );
 
-export const JobSchema = z.object({}).merge(EntitySchema);
+export const JobSchema = Schema.JobSchema;
 
 export type IJobSchema = typeof JobSchema;
 
 export type IJob = z.infer<IJobSchema>;
 
 export interface IJobSourceSchema extends ISourceSchema<
-    IJobSchema
+    IJobSchema,
+    typeof Schema.JobOptionalDefaultsSchema,
+    typeof Schema.JobPartialSchema,
+    z.infer<typeof Schema.JobWhereInputSchema>,
+    z.infer<typeof Schema.JobWhereUniqueInputSchema>,
+    z.infer<typeof Schema.JobOrderByWithRelationInputSchema>
 > {
 }
 
@@ -93,7 +85,7 @@ export namespace IJobExecutor {
     export interface HandlerRequest<TJob extends IJob> {
         name: string;
         job: TJob;
-        params: any;
+        params: TJob["params"];
         userId?: string | null;
         jobProgress: IJobProgress;
         logger: ILogger;

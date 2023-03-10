@@ -34,9 +34,9 @@
         "@leight/i18n": "workspace:^0.5.26",
         "@leight/utils": "workspace:^0.5.28",
         "@leight/utils-client": "workspace:^0.5.29",
-        "@mantine/hooks": "^6.0.0",
+        "@mantine/hooks": "^6.0.1",
         "html-webpack-plugin": "^5.5.0",
-        "next": "^13.2.3",
+        "next": "^13.2.4",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "reflect-metadata": "^0.1.13",
@@ -56,12 +56,12 @@
         "@leight/esbuild": "workspace:^0.5.4",
         "@leight/eslint-config-eslint": "workspace:^0.5.15",
         "@leight/tsconfig": "workspace:^0.5.28",
-        "@types/node": "^18.14.6",
+        "@types/node": "^18.15.0",
         "@types/react": "^18.0.28",
         "@types/react-dom": "^18.0.11",
         "@types/react-outside-click-handler": "^1.3.1",
         "@types/webpack": "^5.28.0",
-        "autoprefixer": "^10.4.13",
+        "autoprefixer": "^10.4.14",
         "babel-loader": "^9.1.2",
         "del-cli": "^5.0.0",
         "depcheck": "^1.4.3",
@@ -73,7 +73,7 @@
         "tailwindcss": "^3.2.7",
         "ts-loader": "^9.4.2",
         "typescript": "^4.9.5",
-        "webpack": "^5.75.0"
+        "webpack": "^5.76.0"
     },
     "babel": {
         "presets": [

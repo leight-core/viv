@@ -1,13 +1,11 @@
 import {
     $JobProgressService,
+    $JobSource,
+    type IJob,
     type IJobExecutor,
     type IJobProgressService,
-    type IJobSourceConfig
+    type IJobSource,
 }               from "@leight/job";
-import {
-    $PrismaClient,
-    type IPrismaClient
-}               from "@leight/prisma";
 import {
     $UserService,
     type IUserService
@@ -26,24 +24,22 @@ export class JobExecutor implements IJobExecutor {
     constructor(
         @inject($JobProgressService) protected jobProgressService: IJobProgressService,
         @inject($UserService) protected userService: IUserService,
-        @inject($PrismaClient) protected prismaClient: IPrismaClient,
+        @inject($JobSource) protected jobSource: IJobSource,
     ) {
     }
 
-    async execute<TJob extends IJobSourceConfig["Entity"]>(
+    async execute<TJob extends IJob>(
         {
             name,
             handler,
             params
         }: IJobExecutor.ExecuteProps<TJob>): Promise<TJob> {
         let logger        = Logger(name);
-        const job         = await this.prismaClient.job.create({
-            data: {
-                created: new Date(),
-                name,
-                userId:  this.userService.required(),
-                params:  await Pack.pack(params),
-            }
+        const job         = await this.jobSource.create({
+            created: new Date(),
+            name,
+            userId:  this.userService.required(),
+            params:  await Pack.pack(params),
         }) as TJob;
         const labels      = {name, jobId: job.id};
         logger            = logger.child({labels, jobId: labels.jobId, name});
@@ -51,7 +47,7 @@ export class JobExecutor implements IJobExecutor {
         setTimeout(() => {
             (async () => {
                 try {
-                    await this.prismaClient.job.findUniqueOrThrow({where: {id: job.id}});
+                    await this.jobSource.find(job.id);
                     await jobProgress.setStatus("RUNNING");
                     await handler({
                         name,

@@ -1,7 +1,7 @@
 import {
     $JobSource,
     type IJobSource,
-    type IJobSourceConfig
+    type IJobSourceSchema,
 } from "@leight/job";
 import {
     $PrismaClient,
@@ -15,7 +15,7 @@ import {
 } from "tsyringe";
 
 @injectable()
-export class JobSource extends AbstractPrismaSource<IJobSourceConfig, IPrismaClient["job"]> implements IJobSource {
+export class JobSource extends AbstractPrismaSource<IJobSourceSchema, IPrismaClient["job"]> implements IJobSource {
     constructor(
         @inject($PrismaClient) protected prismaClient: IPrismaClient,
     ) {

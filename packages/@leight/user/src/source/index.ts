@@ -1,2 +1,2 @@
 export * from "./IUserSource";
-export * from "./UserSourceConfig";
+export * from "./IUserSourceSchema";

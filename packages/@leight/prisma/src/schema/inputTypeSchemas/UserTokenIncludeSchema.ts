@@ -1,4 +1,4 @@
-import {type Prisma}     from "@prisma/client";
+import type {Prisma}     from "@prisma/client";
 import {z}               from "zod";
 import {TokenArgsSchema} from "../outputTypeSchemas/TokenArgsSchema";
 import {UserArgsSchema}  from "../outputTypeSchemas/UserArgsSchema";

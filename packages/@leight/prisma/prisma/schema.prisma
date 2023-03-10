@@ -1,23 +1,23 @@
 generator client {
-    provider = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
-// generator zod {
-//   provider                         = "zod-prisma-types"
-//   output                           = "../src/schema"
-//   useMultipleFiles                 = true
-//   createInputTypes                 = true
-//   createModelTypes                 = true
-//   addInputTypeValidation           = true
-//   addIncludeType                   = true
-//   createPartialTypes               = true
-//   addSelectType                    = true
-//   validateWhereUniqueInput         = true
-//   writeNullishInModelTypes         = true
-//   createOptionalDefaultValuesTypes = false
-//   createRelationValuesTypes        = true
-//   useDefaultValidators             = true
-// }
+generator zod {
+    provider                         = "zod-prisma-types"
+    output                           = "../src/schema"
+    useMultipleFiles                 = true
+    createInputTypes                 = true
+    createModelTypes                 = true
+    addInputTypeValidation           = true
+    addIncludeType                   = true
+    createPartialTypes               = true
+    addSelectType                    = true
+    validateWhereUniqueInput         = true
+    writeNullishInModelTypes         = true
+    createOptionalDefaultValuesTypes = true
+    createRelationValuesTypes        = true
+    useDefaultValidators             = true
+}
 
 datasource db {
     provider = "postgresql"

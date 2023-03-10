@@ -1,7 +1,7 @@
-import {type Interface}          from "@leight/source";
-import {type IUserSourcedConfig} from "./UserSourceConfig";
+import {type ISource}           from "@leight/source";
+import {type IUserSourceSchema} from "./IUserSourceSchema";
 
-export interface IUserSource extends Interface<IUserSourcedConfig> {
+export interface IUserSource extends ISource<IUserSourceSchema> {
 }
 
 export const $UserSource = Symbol.for("@leight/user/IUserSource");

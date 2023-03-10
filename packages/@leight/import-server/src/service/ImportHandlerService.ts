@@ -23,9 +23,6 @@ export class ImportHandlerService implements IImportHandlerService {
         if (!service.toLowerCase().includes("import")) {
             throw new Error(`Cannot use requested service [${service}]. Probably not an import service.`);
         }
-        /**
-         * @TODO add validation for service to prevent resolving arbitrary services by the user.
-         */
         return this.container.resolve(Symbol.for(service));
     }
 }

@@ -1,4 +1,4 @@
-import {type Prisma}                   from "@prisma/client";
+import type {Prisma}                   from "@prisma/client";
 import {z}                             from "zod";
 import {AccountFindManyArgsSchema}     from "../outputTypeSchemas/AccountFindManyArgsSchema";
 import {FileFindManyArgsSchema}        from "../outputTypeSchemas/FileFindManyArgsSchema";

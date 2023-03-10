@@ -3,9 +3,11 @@ import {
     $RegistrationService,
     $UserJwtService,
     $UserService,
+    $UserSource,
     type IRegistrationService,
     type IUserJwtService,
     type IUserService,
+    type IUserSource,
 }                        from "@leight/user";
 import "reflect-metadata";
 import {
@@ -13,16 +15,13 @@ import {
     UserJwtService,
     UserService
 }                        from "./service";
-import {
-    $UserSource,
-    UserSource
-}                        from "./source";
+import {UserSource}      from "./source";
 
 export interface IUserContainer {
     RegistrationService: IRegistrationService;
     UserJwtService: IUserJwtService;
     UserService: IUserService;
-    UserSource: UserSource;
+    UserSource: IUserSource;
 }
 
 export const UserContainer = (container: IContainer): IUserContainer => {
@@ -50,7 +49,7 @@ export const UserContainer = (container: IContainer): IUserContainer => {
             return container.resolve<IUserService>($UserService);
         },
         get UserSource() {
-            return container.resolve<UserSource>($UserSource);
+            return container.resolve<IUserSource>($UserSource);
         },
     };
 };

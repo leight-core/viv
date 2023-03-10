@@ -1,24 +1,23 @@
 import {
-    $Drizzle,
-    type IDrizzle
-}                       from "@leight/drizzle";
-import {AbstractSource} from "@leight/source-server";
+    $PrismaClient,
+    AbstractPrismaSource,
+    type IPrismaClient
+} from "@leight/prisma";
 import {
+    $UserSource,
     type IUserSource,
-    type IUserSourcedConfig,
-    UserSourcedConfig
-}                       from "@leight/user";
+    type IUserSourceSchema,
+} from "@leight/user";
 import {
     inject,
     injectable
-}                       from "tsyringe";
+} from "tsyringe";
 
 @injectable()
-export class UserSource extends AbstractSource<IUserSourcedConfig> implements IUserSource {
+export class UserSource extends AbstractPrismaSource<IUserSourceSchema, IPrismaClient["user"]> implements IUserSource {
     constructor(
-        @inject($Drizzle) drizzle: IDrizzle,
+        @inject($PrismaClient) prismaClient: IPrismaClient,
     ) {
-        super(drizzle, UserSourcedConfig);
+        super($UserSource, prismaClient.user);
     }
 }
-

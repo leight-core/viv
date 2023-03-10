@@ -1,4 +1,4 @@
-import {type Prisma}            from "@prisma/client";
+import type {Prisma}            from "@prisma/client";
 import {z}                      from "zod";
 import {UserTokenIncludeSchema} from "../inputTypeSchemas/UserTokenIncludeSchema";
 import {UserTokenSelectSchema}  from "../inputTypeSchemas/UserTokenSelectSchema";

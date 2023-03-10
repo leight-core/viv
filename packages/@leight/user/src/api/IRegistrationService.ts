@@ -1,4 +1,4 @@
-import {IToken} from "./IToken";
+import {type IToken} from "./IToken";
 
 export interface IRegistrationService {
     handle<T extends IToken>(

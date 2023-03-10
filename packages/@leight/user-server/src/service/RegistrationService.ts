@@ -1,19 +1,13 @@
 import {
-    $Drizzle,
-    type IDrizzle
-} from "@leight/drizzle";
-import {
+    $UserSource,
     type IRegistrationService,
-    type IToken
+    type IToken,
+    type IUserSource
 } from "@leight/user";
 import {
     inject,
     injectable
 } from "tsyringe";
-import {
-    $UserSource,
-    UserSource
-} from "../source";
 
 /**
  * Service used to register new users with en eventual case where the
@@ -22,8 +16,7 @@ import {
 @injectable()
 export class RegistrationService implements IRegistrationService {
     constructor(
-        @inject($Drizzle) protected drizzle: IDrizzle,
-        @inject($UserSource) protected userSource: UserSource,
+        @inject($UserSource) protected userSource: IUserSource,
     ) {
     }
 
@@ -35,7 +28,7 @@ export class RegistrationService implements IRegistrationService {
         if (!isNewUser || !token.sub) {
             return;
         }
-        if ((await this.prisma.user.count()) === 1) {
+        if ((await this.userSource.count()) === 1) {
             await this.registerRootUser({token, isNewUser});
             return;
         }
@@ -49,9 +42,10 @@ export class RegistrationService implements IRegistrationService {
         {
             token: {sub},
         }: IRegistrationService.HandleProps<T>): Promise<void> {
-        const user = await this.prisma.user.findUniqueOrThrow({
-            where: {id: sub},
-        });
+        if (!sub) {
+            return;
+        }
+        const user = await this.userSource.find(sub);
         user.id    = "user.id";
     }
 
@@ -62,9 +56,10 @@ export class RegistrationService implements IRegistrationService {
         {
             token: {sub},
         }: IRegistrationService.HandleProps<T>): Promise<void> {
-        const user = await this.prisma.user.findUniqueOrThrow({
-            where: {id: sub},
-        });
+        if (!sub) {
+            return;
+        }
+        const user = await this.userSource.find(sub);
         user.id    = "user.id";
     }
 }

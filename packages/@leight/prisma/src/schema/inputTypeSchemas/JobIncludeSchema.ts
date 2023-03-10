@@ -1,4 +1,4 @@
-import {type Prisma}                  from "@prisma/client";
+import type {Prisma}                  from "@prisma/client";
 import {z}                            from "zod";
 import {JobCountOutputTypeArgsSchema} from "../outputTypeSchemas/JobCountOutputTypeArgsSchema";
 import {JobLogFindManyArgsSchema}     from "../outputTypeSchemas/JobLogFindManyArgsSchema";

@@ -4,5 +4,5 @@ export interface IFileServiceConfig {
 }
 
 export const $FileServiceConfig = Symbol.for(
-    "@leight/file-server/FileServiceConfig"
+    "@leight/file/IFileServiceConfig"
 );

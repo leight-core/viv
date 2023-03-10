@@ -13,6 +13,10 @@ export abstract class AbstractPrismaSource<TSourceSchema extends ISourceSchema, 
         super(name);
     }
 
+    async runCreate(entity: TSourceSchema["Entity"]): Promise<TSourceSchema["Entity"]> {
+        return this.repository.create({data: entity});
+    }
+
     async runQuery(
         {
             cursor: {page, size: take} = {page: 0, size: 50},
@@ -25,5 +29,9 @@ export abstract class AbstractPrismaSource<TSourceSchema extends ISourceSchema, 
             skip: page * take,
             take,
         });
+    }
+
+    async runFind(id: string): Promise<TSourceSchema["Entity"]> {
+        return this.repository.findUniqueOrThrow({where: {id}});
     }
 }

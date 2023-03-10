@@ -1,4 +1,4 @@
-import {type Prisma}          from "@prisma/client";
+import type {Prisma}          from "@prisma/client";
 import {z}                    from "zod";
 import {AccountIncludeSchema} from "../inputTypeSchemas/AccountIncludeSchema";
 import {AccountSelectSchema}  from "../inputTypeSchemas/AccountSelectSchema";

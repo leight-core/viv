@@ -1,5 +1,3 @@
-import {z}             from "zod";
-import {RequestSchema} from "../schema";
+import {IImportJob} from "@leight/import";
 
-export interface IRequestType extends z.infer<typeof RequestSchema> {
-}
+export type IRequestType = IImportJob["params"];

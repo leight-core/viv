@@ -3,5 +3,5 @@ export interface IChunkServiceConfig {
 }
 
 export const $ChunkServiceConfig = Symbol.for(
-    "@leight/file-server/ChunkServiceConfig"
+    "@leight/file/IChunkServiceConfig"
 );

@@ -1,4 +1,4 @@
-import {type Prisma}      from "@prisma/client";
+import type {Prisma}      from "@prisma/client";
 import {z}                from "zod";
 import {JobIncludeSchema} from "../inputTypeSchemas/JobIncludeSchema";
 import {JobSelectSchema}  from "../inputTypeSchemas/JobSelectSchema";

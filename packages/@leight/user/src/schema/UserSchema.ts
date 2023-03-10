@@ -1,17 +1,8 @@
-import {
-    id,
-    text,
-    timestamp,
-    uniqueIndex,
-    withTable
-} from "@leight/drizzle";
+import {Schema} from "@leight/prisma";
+import {type z} from "zod";
 
-export const UserSchema = withTable("User", {
-    id:            id(),
-    name:          text("name"),
-    email:         text("email"),
-    emailVerified: timestamp("emailVerified"),
-    image:         text("image"),
-}, table => ({
-    User_email_key: uniqueIndex("User_email_key").on(table.email),
-}));
+export const UserSchema = Schema.UserSchema;
+
+export type IUserSchema = typeof UserSchema;
+
+export type IUser = z.infer<IUserSchema>;

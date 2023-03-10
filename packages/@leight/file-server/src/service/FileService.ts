@@ -37,7 +37,7 @@ export class FileService implements IFileService {
     }
 
     public fetch(fileId: string): Promise<IFile> {
-        return this.prismaClient.file.findUniqueOrThrow({where: {id: fileId}});
+        return this.fileSource.find(fileId);
     }
 
     public async store(

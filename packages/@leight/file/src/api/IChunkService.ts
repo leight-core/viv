@@ -1,9 +1,9 @@
-import {type IFileSourceSchema} from "./IFileSourceSchema";
+import {type IFile} from "../schema";
 
 export interface IChunkService {
     chunk(chunkId: string, chunk: Promise<Buffer>): Promise<void>;
 
-    commit(props: IChunkService.CommitProps): Promise<IFileSourceSchema["Entity"]>;
+    commit(props: IChunkService.CommitProps): Promise<IFile>;
 }
 
 export namespace IChunkService {
@@ -17,4 +17,4 @@ export namespace IChunkService {
     }
 }
 
-export const $ChunkService = Symbol.for("@leight/file-server/ChunkService");
+export const $ChunkService = Symbol.for("@leight/file/IChunkService");

@@ -17,7 +17,7 @@
         "concurrently",
         "typescript",
         "eslint",
-        "@leight/esbuild",
+        "@leight/*",
         "eslint-plugin-unicorn",
         "prisma",
         "depcheck",

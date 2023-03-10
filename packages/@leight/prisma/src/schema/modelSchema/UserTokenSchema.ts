@@ -31,6 +31,15 @@ export const UserTokenPartialSchema = UserTokenSchema.partial();
 
 export type UserTokenPartial = z.infer<typeof UserTokenPartialSchema>
 
+// USER TOKEN OPTIONAL DEFAULTS SCHEMA
+//------------------------------------------------------
+
+export const UserTokenOptionalDefaultsSchema = UserTokenSchema.merge(z.object({
+    id: z.string().cuid().optional(),
+}));
+
+export type UserTokenOptionalDefaults = z.infer<typeof UserTokenOptionalDefaultsSchema>
+
 // USER TOKEN RELATION SCHEMA
 //------------------------------------------------------
 
@@ -46,7 +55,19 @@ export type UserTokenWithRelations =
 export const UserTokenWithRelationsSchema: z.ZodType<UserTokenWithRelations> = UserTokenSchema.merge(z.object({
     user:  z.lazy(() => UserWithRelationsSchema),
     token: z.lazy(() => TokenWithRelationsSchema),
-}))
+}));
+
+// USER TOKEN OPTIONAL DEFAULTS RELATION SCHEMA
+//------------------------------------------------------
+
+export type UserTokenOptionalDefaultsWithRelations =
+    z.infer<typeof UserTokenOptionalDefaultsSchema>
+    & UserTokenRelations
+
+export const UserTokenOptionalDefaultsWithRelationsSchema: z.ZodType<UserTokenOptionalDefaultsWithRelations> = UserTokenOptionalDefaultsSchema.merge(z.object({
+    user:  z.lazy(() => UserWithRelationsSchema),
+    token: z.lazy(() => TokenWithRelationsSchema),
+}));
 
 // USER TOKEN PARTIAL RELATION SCHEMA
 //------------------------------------------------------

@@ -1,4 +1,4 @@
-import {type Prisma} from "@prisma/client";
+import type {Prisma} from "@prisma/client";
 import {z}           from "zod";
 
 export const VerificationTokenSelectSchema: z.ZodType<Prisma.VerificationTokenSelect> = z.object({
