@@ -1,7 +1,7 @@
-import {createQuerySchema} from "@leight/query";
-import {z}                 from "zod";
+import {QuerySchema} from "@leight/query";
+import {z}           from "zod";
 
-export const FileQuerySchema = createQuerySchema({
+export const FileQuerySchema = QuerySchema({
     filter: z.object({
         fulltext: z.string().nullish(),
     }),

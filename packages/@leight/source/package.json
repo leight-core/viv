@@ -31,7 +31,7 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/drizzle": "workspace:^0.5.0",
+        "@leight/cursor": "workspace:^0.5.0",
         "@leight/filter": "workspace:^0.5.21",
         "@leight/query": "workspace:^0.5.21",
         "@leight/sort": "workspace:^0.5.20",
