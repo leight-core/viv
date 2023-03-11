@@ -5,8 +5,6 @@ import {
     ISourceSchema,
     WithIdentitySchema
 }                     from "@leight/source";
-// noinspection ES6UnusedImports
-import * as _         from "@prisma/client";
 import {z}            from "zod";
 
 export const FileSchema = PrismaSchema.FileSchema;

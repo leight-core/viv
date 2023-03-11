@@ -3,9 +3,6 @@ import {
     type ISourceSchema,
     WithIdentitySchema
 }                     from "@leight/source";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-// noinspection ES6UnusedImports
-import * as _         from "@prisma/client";
 import {z}            from "zod";
 
 export const JobStatusSchema = PrismaSchema.JobStatusSchema;
