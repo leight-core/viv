@@ -31,9 +31,6 @@
         },
         "lint": {
             "outputMode": "new-only",
-            "dependsOn": [
-                "depcheck"
-            ],
             "outputs": [],
             "inputs": [
                 "src/**"
@@ -44,6 +41,7 @@
             "dependsOn": [
                 "^build",
                 "prisma:generate",
+                "depcheck",
                 "lint"
             ],
             "outputs": [
