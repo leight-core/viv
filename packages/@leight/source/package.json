@@ -37,7 +37,7 @@
         "@leight/sort": "workspace:^0.5.20",
         "@leight/utils": "workspace:^0.5.28",
         "reflect-metadata": "^0.1.13",
-"zod": "3.21.1"
+        "zod": "3.21.1"
     },
     "devDependencies": {
         "@leight/esbuild": "workspace:^0.5.4",
@@ -47,8 +47,8 @@
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
         "depcheck": "^1.4.3",
-        "dotenv-cli": "^7.0.0",
-        "eslint": "^8.35.0",
+        "dotenv-cli": "^7.1.0",
+        "eslint": "^8.36.0",
         "typescript": "^4.9.5"
     },
     "bugs": {

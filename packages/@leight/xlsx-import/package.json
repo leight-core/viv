@@ -36,7 +36,7 @@
         "@leight/trpc": "workspace:^0.5.25",
         "reflect-metadata": "^0.1.13",
         "xlsx": "^0.18.5",
-"zod": "3.21.1"
+        "zod": "3.21.1"
     },
     "devDependencies": {
         "@leight/esbuild": "workspace:^0.5.4",
@@ -46,7 +46,7 @@
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
         "depcheck": "^1.4.3",
-        "eslint": "^8.35.0",
+        "eslint": "^8.36.0",
         "typescript": "^4.9.5"
     },
     "bugs": {

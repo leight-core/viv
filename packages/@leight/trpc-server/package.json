@@ -34,7 +34,7 @@
         "@leight/trpc": "workspace:^0.5.25",
         "@leight/user": "workspace:^0.5.26",
         "@leight/user-server": "workspace:^0.5.25",
-        "@trpc/server": "^10.14.1",
+        "@trpc/server": "^10.15.0",
         "next": "^13.2.4",
         "next-auth": "^4.20.1",
         "react": "^18.2.0",
@@ -50,7 +50,7 @@
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
         "depcheck": "^1.4.3",
-        "eslint": "^8.35.0",
+        "eslint": "^8.36.0",
         "typescript": "^4.9.5"
     },
     "bugs": {

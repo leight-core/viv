@@ -43,7 +43,7 @@
         "@mantine/dropzone": "^6.0.1",
         "@mantine/hooks": "^6.0.1",
         "@mantine/nprogress": "^6.0.1",
-        "@tabler/icons-react": "^2.9.0",
+        "@tabler/icons-react": "^2.10.0",
         "next": "^13.2.4",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
@@ -59,7 +59,7 @@
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
         "depcheck": "^1.4.3",
-        "eslint": "^8.35.0",
+        "eslint": "^8.36.0",
         "typescript": "^4.9.5"
     },
     "bugs": {
