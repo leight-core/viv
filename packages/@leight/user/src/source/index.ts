@@ -16,6 +16,7 @@ export interface IUserSourceSchema extends ISourceSchema<
 }
 
 export interface IUserSource extends ISource<IUserSourceSchema> {
+    findByEmail(email: string): Promise<IUserSourceSchema["Entity"]>;
 }
 
 export const $UserSource = Symbol.for("@leight/user/IUserSource");

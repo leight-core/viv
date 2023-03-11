@@ -1,5 +1,13 @@
 # @leight/user
 
+## 0.5.29
+
+### Patch Changes
+
+- Some cool tuning
+- Updated dependencies
+    - @leight/prisma@0.5.33
+
 ## 0.5.28
 
 ### Patch Changes

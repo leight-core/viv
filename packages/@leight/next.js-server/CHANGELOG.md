@@ -1,5 +1,14 @@
 # @leight/next.js-server
 
+## 0.5.29
+
+### Patch Changes
+
+- Some cool tuning
+- Updated dependencies
+    - @leight/user-server@0.5.28
+    - @leight/user@0.5.29
+
 ## 0.5.28
 
 ### Patch Changes

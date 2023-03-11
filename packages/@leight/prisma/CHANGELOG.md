@@ -1,5 +1,11 @@
 # @leight/prisma
 
+## 0.5.33
+
+### Patch Changes
+
+- Some cool tuning
+
 ## 0.5.32
 
 ### Patch Changes
