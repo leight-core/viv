@@ -1,5 +1,11 @@
 # @leight/prisma
 
+## 0.5.35
+
+### Patch Changes
+
+- Trying to fix Prisma client shit
+
 ## 0.5.34
 
 ### Patch Changes

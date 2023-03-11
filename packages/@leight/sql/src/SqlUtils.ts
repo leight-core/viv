@@ -1,6 +1,6 @@
 import {
     $PrismaClient,
-    type IPrismaClient
+    type PrismaClient
 } from "@leight/prisma";
 
 export class SqlUtils {
@@ -9,7 +9,7 @@ export class SqlUtils {
     ];
 
     constructor(
-        protected prismaClient: IPrismaClient,
+        protected prismaClient: PrismaClient,
     ) {
     }
 

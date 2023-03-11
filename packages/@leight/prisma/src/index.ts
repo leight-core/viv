@@ -3,8 +3,7 @@
  */
 export const $PrismaClient = Symbol.for("@leight/prisma/PrismaClient");
 export {
-    PrismaClient as IPrismaClient,
-    Prisma as IPrisma
+    PrismaClient,
 } from "@prisma/client";
 
 export * as PrismaSchema from "./schema";

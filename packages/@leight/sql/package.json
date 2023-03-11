@@ -1,5 +1,5 @@
 {
-    "version": "0.5.27",
+    "version": "0.5.28",
     "name": "@leight/sql",
     "description": "Some SQL related helper tools.",
     "license": "MIT",
@@ -31,7 +31,7 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/prisma": "workspace:^0.5.32"
+        "@leight/prisma": "workspace:^0.5.35"
     },
     "devDependencies": {
         "@leight/esbuild": "workspace:^0.5.7",

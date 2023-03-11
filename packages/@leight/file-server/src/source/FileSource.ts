@@ -5,7 +5,7 @@ import {
 }                       from "@leight/file";
 import {
     $PrismaClient,
-    type IPrismaClient
+    type PrismaClient
 }                       from "@leight/prisma";
 import {AbstractSource} from "@leight/source-server";
 
@@ -15,7 +15,7 @@ export class FileSource extends AbstractSource<IFileSourceSchema> implements IFi
     ];
 
     constructor(
-        protected prismaClient: IPrismaClient,
+        protected prismaClient: PrismaClient,
     ) {
         super($FileSource);
     }

@@ -1,5 +1,13 @@
 # @leight/file
 
+## 0.5.28
+
+### Patch Changes
+
+- Trying to fix Prisma client shit
+- Updated dependencies
+    - @leight/prisma@0.5.35
+
 ## 0.5.27
 
 ### Patch Changes

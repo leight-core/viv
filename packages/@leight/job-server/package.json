@@ -1,5 +1,5 @@
 {
-    "version": "0.5.28",
+    "version": "0.5.29",
     "name": "@leight/job-server",
     "description": "Job (async execution) stuff on server-side.",
     "license": "MIT",
@@ -32,8 +32,8 @@
     },
     "dependencies": {
         "@leight/container": "workspace:^0.5.27",
-        "@leight/job": "workspace:^0.5.29",
-        "@leight/prisma": "workspace:^0.5.32",
+        "@leight/job": "workspace:^0.5.30",
+        "@leight/prisma": "workspace:^0.5.35",
         "@leight/source-server": "workspace:^0.5.26",
         "@leight/user": "workspace:^0.5.28",
         "@leight/utils": "workspace:^0.5.30",

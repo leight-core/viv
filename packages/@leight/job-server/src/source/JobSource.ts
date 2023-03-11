@@ -5,7 +5,7 @@ import {
 }                       from "@leight/job";
 import {
     $PrismaClient,
-    type IPrismaClient
+    type PrismaClient
 }                       from "@leight/prisma";
 import {AbstractSource} from "@leight/source-server";
 
@@ -15,7 +15,7 @@ export class JobSource extends AbstractSource<IJobSourceSchema> implements IJobS
     ];
 
     constructor(
-        protected prismaClient: IPrismaClient,
+        protected prismaClient: PrismaClient,
     ) {
         super($JobSource);
     }

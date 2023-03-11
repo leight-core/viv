@@ -208,6 +208,7 @@ importers:
       '@leight/prisma': workspace:^0.5.32
       '@leight/source': workspace:^0.5.24
       '@leight/tsconfig': workspace:^0.5.30
+      '@prisma/client': ^4.11.0
       '@types/node': ^18.15.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
@@ -219,6 +220,7 @@ importers:
       '@leight/filter': link:../filter
       '@leight/prisma': link:../prisma
       '@leight/source': link:../source
+      '@prisma/client': 4.11.0
       zod: 3.21.1
     devDependencies:
       '@leight/esbuild': link:../esbuild
@@ -516,6 +518,7 @@ importers:
       '@leight/source': workspace:^0.5.24
       '@leight/tsconfig': workspace:^0.5.30
       '@leight/winston': workspace:^0.5.27
+      '@prisma/client': ^4.11.0
       '@types/node': ^18.15.0
       concurrently: ^7.6.0
       del-cli: ^5.0.0
@@ -527,6 +530,7 @@ importers:
       '@leight/prisma': link:../prisma
       '@leight/source': link:../source
       '@leight/winston': link:../winston
+      '@prisma/client': 4.11.0
       zod: 3.21.1
     devDependencies:
       '@leight/esbuild': link:../esbuild
@@ -676,8 +680,8 @@ importers:
       '@leight/esbuild': workspace:^0.5.7
       '@leight/eslint-config-eslint': workspace:^0.5.16
       '@leight/tsconfig': workspace:^0.5.30
-      '@leight/user': workspace:^0.5.28
-      '@leight/user-server': workspace:^0.5.27
+      '@leight/user': workspace:^0.5.29
+      '@leight/user-server': workspace:^0.5.28
       '@leight/utils': workspace:^0.5.30
       '@leight/winston': workspace:^0.5.27
       '@next-auth/prisma-adapter': ^1.0.5
@@ -1070,7 +1074,7 @@ importers:
     specifiers:
       '@leight/esbuild': workspace:^0.5.7
       '@leight/eslint-config-eslint': workspace:^0.5.16
-      '@leight/prisma': workspace:^0.5.32
+      '@leight/prisma': workspace:^0.5.33
       '@leight/source': workspace:^0.5.24
       '@leight/tsconfig': workspace:^0.5.30
       '@types/node': ^18.15.0
@@ -1110,10 +1114,10 @@ importers:
       '@leight/container': workspace:^0.5.27
       '@leight/esbuild': workspace:^0.5.7
       '@leight/eslint-config-eslint': workspace:^0.5.16
-      '@leight/prisma': workspace:^0.5.32
+      '@leight/prisma': workspace:^0.5.33
       '@leight/source-server': workspace:^0.5.26
       '@leight/tsconfig': workspace:^0.5.30
-      '@leight/user': workspace:^0.5.28
+      '@leight/user': workspace:^0.5.29
       '@leight/utils': workspace:^0.5.30
       '@types/node': ^18.15.0
       concurrently: ^7.6.0

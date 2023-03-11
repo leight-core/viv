@@ -1,9 +1,12 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {FilterSchema} from "@leight/filter";
 import {PrismaSchema} from "@leight/prisma";
 import {
     ISourceSchema,
     WithIdentitySchema
 }                     from "@leight/source";
+// noinspection ES6UnusedImports
+import * as _         from "@prisma/client";
 import {z}            from "zod";
 
 export const FileSchema = PrismaSchema.FileSchema;

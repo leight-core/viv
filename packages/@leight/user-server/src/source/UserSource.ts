@@ -1,6 +1,6 @@
 import {
     $PrismaClient,
-    type IPrismaClient
+    type PrismaClient
 }                       from "@leight/prisma";
 import {AbstractSource} from "@leight/source-server";
 import {
@@ -15,7 +15,7 @@ export class UserSource extends AbstractSource<IUserSourceSchema> implements IUs
     ];
 
     constructor(
-        protected prismaClient: IPrismaClient,
+        protected prismaClient: PrismaClient,
     ) {
         super($UserSource);
     }
