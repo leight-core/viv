@@ -1,5 +1,11 @@
 # @leight/prisma
 
+## 0.5.34
+
+### Patch Changes
+
+- Removed postinstall step
+
 ## 0.5.33
 
 ### Patch Changes
