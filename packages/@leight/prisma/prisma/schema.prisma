@@ -133,7 +133,7 @@ model Job {
     finished     DateTime?
     userId       String?
     user         User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
-    params       String?
+    params       Json
 
     logs JobLog[]
 }

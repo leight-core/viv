@@ -30,7 +30,7 @@ export type JobLogPartial = z.infer<typeof JobLogPartialSchema>
 
 export const JobLogOptionalDefaultsSchema = JobLogSchema.merge(z.object({
     id: z.string().cuid().optional(),
-}));
+}))
 
 export type JobLogOptionalDefaults = z.infer<typeof JobLogOptionalDefaultsSchema>
 
@@ -47,7 +47,7 @@ export type JobLogWithRelations =
 
 export const JobLogWithRelationsSchema: z.ZodType<JobLogWithRelations> = JobLogSchema.merge(z.object({
     job: z.lazy(() => JobWithRelationsSchema),
-}));
+}))
 
 // JOB LOG OPTIONAL DEFAULTS RELATION SCHEMA
 //------------------------------------------------------
@@ -58,7 +58,7 @@ export type JobLogOptionalDefaultsWithRelations =
 
 export const JobLogOptionalDefaultsWithRelationsSchema: z.ZodType<JobLogOptionalDefaultsWithRelations> = JobLogOptionalDefaultsSchema.merge(z.object({
     job: z.lazy(() => JobWithRelationsSchema),
-}));
+}))
 
 // JOB LOG PARTIAL RELATION SCHEMA
 //------------------------------------------------------

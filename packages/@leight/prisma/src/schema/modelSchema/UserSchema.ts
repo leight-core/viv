@@ -56,7 +56,7 @@ export type UserPartial = z.infer<typeof UserPartialSchema>
 
 export const UserOptionalDefaultsSchema = UserSchema.merge(z.object({
     id: z.string().cuid().optional(),
-}));
+}))
 
 export type UserOptionalDefaults = z.infer<typeof UserOptionalDefaultsSchema>
 
@@ -81,7 +81,7 @@ export const UserWithRelationsSchema: z.ZodType<UserWithRelations> = UserSchema.
     UserToken: z.lazy(() => UserTokenWithRelationsSchema).array(),
     File:      z.lazy(() => FileWithRelationsSchema).array(),
     Job:       z.lazy(() => JobWithRelationsSchema).array(),
-}));
+}))
 
 // USER OPTIONAL DEFAULTS RELATION SCHEMA
 //------------------------------------------------------
@@ -96,7 +96,7 @@ export const UserOptionalDefaultsWithRelationsSchema: z.ZodType<UserOptionalDefa
     UserToken: z.lazy(() => UserTokenWithRelationsSchema).array(),
     File:      z.lazy(() => FileWithRelationsSchema).array(),
     Job:       z.lazy(() => JobWithRelationsSchema).array(),
-}));
+}))
 
 // USER PARTIAL RELATION SCHEMA
 //------------------------------------------------------

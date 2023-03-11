@@ -39,7 +39,7 @@ export type AccountPartial = z.infer<typeof AccountPartialSchema>
 
 export const AccountOptionalDefaultsSchema = AccountSchema.merge(z.object({
     id: z.string().cuid().optional(),
-}));
+}))
 
 export type AccountOptionalDefaults = z.infer<typeof AccountOptionalDefaultsSchema>
 
@@ -56,7 +56,7 @@ export type AccountWithRelations =
 
 export const AccountWithRelationsSchema: z.ZodType<AccountWithRelations> = AccountSchema.merge(z.object({
     user: z.lazy(() => UserWithRelationsSchema),
-}));
+}))
 
 // ACCOUNT OPTIONAL DEFAULTS RELATION SCHEMA
 //------------------------------------------------------
@@ -67,7 +67,7 @@ export type AccountOptionalDefaultsWithRelations =
 
 export const AccountOptionalDefaultsWithRelationsSchema: z.ZodType<AccountOptionalDefaultsWithRelations> = AccountOptionalDefaultsSchema.merge(z.object({
     user: z.lazy(() => UserWithRelationsSchema),
-}));
+}))
 
 // ACCOUNT PARTIAL RELATION SCHEMA
 //------------------------------------------------------

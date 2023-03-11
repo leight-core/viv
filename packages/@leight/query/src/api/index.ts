@@ -10,15 +10,13 @@ import {
 import {z}            from "zod";
 
 export const ParamsSchema = z.object({});
-
 export type IParamsSchema = typeof ParamsSchema;
-
 export type IParams = z.infer<IParamsSchema>;
 
 export const QuerySchema = <
-    TFilterSchema extends IFilterSchema = IFilterSchema,
-    TSortSchema extends ISortSchema = ISortSchema,
-    TParamsSchema extends IParamsSchema = IParamsSchema,
+    TFilterSchema extends z.ZodSchema = IFilterSchema,
+    TSortSchema extends z.ZodSchema = ISortSchema,
+    TParamsSchema extends z.ZodSchema = IParamsSchema,
 >({
       filterSchema,
       sortSchema,
@@ -31,15 +29,15 @@ export const QuerySchema = <
 });
 
 export type IQuerySchema<
-    TFilterSchema extends IFilterSchema = IFilterSchema,
-    TSortSchema extends ISortSchema = ISortSchema,
-    TParamsSchema extends IParamsSchema = IParamsSchema,
+    TFilterSchema extends z.ZodSchema = IFilterSchema,
+    TSortSchema extends z.ZodSchema = ISortSchema,
+    TParamsSchema extends z.ZodSchema = IParamsSchema,
 > = ReturnType<typeof QuerySchema<TFilterSchema, TSortSchema, TParamsSchema>>;
 
 export type IQuery<
-    TFilterSchema extends IFilterSchema = IFilterSchema,
-    TSortSchema extends ISortSchema = ISortSchema,
-    TParamsSchema extends IParamsSchema = IParamsSchema,
+    TFilterSchema extends z.ZodSchema = IFilterSchema,
+    TSortSchema extends z.ZodSchema = ISortSchema,
+    TParamsSchema extends z.ZodSchema = IParamsSchema,
 > = z.infer<IQuerySchema<
     TFilterSchema,
     TSortSchema,
@@ -47,9 +45,9 @@ export type IQuery<
 >>;
 
 export interface IQuerySchemaProps<
-    TFilterSchema extends IFilterSchema = IFilterSchema,
-    TSortSchema extends ISortSchema = ISortSchema,
-    TParamsSchema extends IParamsSchema = IParamsSchema,
+    TFilterSchema extends z.ZodSchema = IFilterSchema,
+    TSortSchema extends z.ZodSchema = ISortSchema,
+    TParamsSchema extends z.ZodSchema = IParamsSchema,
 > {
     filterSchema?: TFilterSchema;
     sortSchema?: TSortSchema;

@@ -18,7 +18,6 @@ export const JobMaxOrderByAggregateInputSchema: z.ZodType<Prisma.JobMaxOrderByAg
     started:      z.lazy(() => SortOrderSchema).optional(),
     finished:     z.lazy(() => SortOrderSchema).optional(),
     userId:       z.lazy(() => SortOrderSchema).optional(),
-    params:       z.lazy(() => SortOrderSchema).optional(),
 }).strict();
 
 export default JobMaxOrderByAggregateInputSchema;

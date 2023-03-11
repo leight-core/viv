@@ -1,6 +1,3 @@
-export * from "./api";
-export * from "./source";
-
 /**
  * Symbol for container usage of Prisma.
  */
@@ -8,7 +5,6 @@ export const $PrismaClient = Symbol.for("@leight/prisma/PrismaClient");
 export {
     PrismaClient as IPrismaClient,
     Prisma as IPrisma
-}        from "@prisma/client";
+} from "@prisma/client";
 
-export * as Prisma from "@prisma/client";
-export * as Schema from "./schema";
+export * as PrismaSchema from "./schema";

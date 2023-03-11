@@ -3,8 +3,10 @@ import {z}                                                from "zod";
 import {DateTimeFieldUpdateOperationsInputSchema}         from "./DateTimeFieldUpdateOperationsInputSchema";
 import {EnumJobStatusFieldUpdateOperationsInputSchema}    from "./EnumJobStatusFieldUpdateOperationsInputSchema";
 import {FloatFieldUpdateOperationsInputSchema}            from "./FloatFieldUpdateOperationsInputSchema";
+import {InputJsonValue}                                   from "./InputJsonValue";
 import {IntFieldUpdateOperationsInputSchema}              from "./IntFieldUpdateOperationsInputSchema";
 import {JobStatusSchema}                                  from "./JobStatusSchema";
+import {JsonNullValueInputSchema}                         from "./JsonNullValueInputSchema";
 import {NullableDateTimeFieldUpdateOperationsInputSchema} from "./NullableDateTimeFieldUpdateOperationsInputSchema";
 import {NullableFloatFieldUpdateOperationsInputSchema}    from "./NullableFloatFieldUpdateOperationsInputSchema";
 import {NullableIntFieldUpdateOperationsInputSchema}      from "./NullableIntFieldUpdateOperationsInputSchema";
@@ -73,9 +75,9 @@ export const JobUncheckedUpdateManyInputSchema: z.ZodType<Prisma.JobUncheckedUpd
         z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)
     ]).optional().nullable(),
     params:       z.union([
-        z.string(),
-        z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)
-    ]).optional().nullable(),
+        z.lazy(() => JsonNullValueInputSchema),
+        InputJsonValue
+    ]).optional(),
 }).strict();
 
 export default JobUncheckedUpdateManyInputSchema;

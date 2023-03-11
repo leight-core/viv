@@ -7,11 +7,3 @@ export const FilterSchema = z.object({
 export type IFilterSchema = typeof FilterSchema;
 
 export type IFilter = z.infer<IFilterSchema>;
-
-export const WithIdentitySchema = z.object({
-    id: z.string().cuid2(),
-});
-
-export type IWithIdentitySchema = typeof WithIdentitySchema;
-
-export type IWithIdentity = z.infer<IWithIdentitySchema>;

@@ -1,23 +1,23 @@
 import {
     $PrismaClient,
-    AbstractPrismaSource,
     type IPrismaClient
-} from "@leight/prisma";
+}                       from "@leight/prisma";
+import {AbstractSource} from "@leight/source-server";
 import {
     $UserSource,
     type IUserSource,
     type IUserSourceSchema,
-} from "@leight/user";
+}                       from "@leight/user";
 import {
     inject,
     injectable
-} from "tsyringe";
+}                       from "tsyringe";
 
 @injectable()
-export class UserSource extends AbstractPrismaSource<IUserSourceSchema, IPrismaClient["user"]> implements IUserSource {
+export class UserSource extends AbstractSource<IUserSourceSchema> implements IUserSource {
     constructor(
-        @inject($PrismaClient) prismaClient: IPrismaClient,
+        @inject($PrismaClient) protected prismaClient: IPrismaClient,
     ) {
-        super($UserSource, prismaClient.user);
+        super($UserSource);
     }
 }

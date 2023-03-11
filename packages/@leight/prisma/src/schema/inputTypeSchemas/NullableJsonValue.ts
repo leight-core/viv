@@ -1,0 +1,16 @@
+import {z}               from "zod";
+import JsonValue         from "./JsonValue";
+import transformJsonNull from "./transformJsonNull";
+
+export const NullableJsonValue = z
+    .union([
+        JsonValue,
+        z.literal("DbNull"),
+        z.literal("JsonNull")
+    ])
+    .nullable()
+    .transform((v) => transformJsonNull(v));
+
+export type NullableJsonValueType = z.infer<typeof NullableJsonValue>;
+
+export default NullableJsonValue;

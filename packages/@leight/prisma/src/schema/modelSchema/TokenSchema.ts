@@ -29,7 +29,7 @@ export type TokenPartial = z.infer<typeof TokenPartialSchema>
 
 export const TokenOptionalDefaultsSchema = TokenSchema.merge(z.object({
     id: z.string().cuid().optional(),
-}));
+}))
 
 export type TokenOptionalDefaults = z.infer<typeof TokenOptionalDefaultsSchema>
 
@@ -46,7 +46,7 @@ export type TokenWithRelations =
 
 export const TokenWithRelationsSchema: z.ZodType<TokenWithRelations> = TokenSchema.merge(z.object({
     UserToken: z.lazy(() => UserTokenWithRelationsSchema).array(),
-}));
+}))
 
 // TOKEN OPTIONAL DEFAULTS RELATION SCHEMA
 //------------------------------------------------------
@@ -57,7 +57,7 @@ export type TokenOptionalDefaultsWithRelations =
 
 export const TokenOptionalDefaultsWithRelationsSchema: z.ZodType<TokenOptionalDefaultsWithRelations> = TokenOptionalDefaultsSchema.merge(z.object({
     UserToken: z.lazy(() => UserTokenWithRelationsSchema).array(),
-}));
+}))
 
 // TOKEN PARTIAL RELATION SCHEMA
 //------------------------------------------------------

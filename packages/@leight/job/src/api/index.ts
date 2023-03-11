@@ -1,16 +1,10 @@
-import {Schema}       from "@leight/prisma";
-import {
-    type ISource,
-    type ISourceSchema
-}                     from "@leight/source";
+import {type ISource} from "@leight/source";
 import {type ILogger} from "@leight/winston";
-import {z}            from "zod";
-
-export const JobStatusSchema = Schema.JobStatusSchema;
-
-export type IJobStatusSchema = typeof JobStatusSchema;
-
-export type IJobStatus = z.infer<IJobStatusSchema>;
+import {
+    type IJob,
+    type IJobSourceSchema,
+    type IJobStatus
+}                     from "../schema";
 
 export interface IJobProgress {
     readonly jobId: string;
@@ -43,28 +37,8 @@ export interface IJobProgressService {
 }
 
 export const $JobProgressService = Symbol.for(
-    "@leight/job-server/JobProgressService"
+    "@leight/job/IJobProgressService"
 );
-
-export const $JobExecutor = Symbol.for(
-    "@leight/job-server/JobExecutor"
-);
-
-export const JobSchema = Schema.JobSchema;
-
-export type IJobSchema = typeof JobSchema;
-
-export type IJob = z.infer<IJobSchema>;
-
-export interface IJobSourceSchema extends ISourceSchema<
-    IJobSchema,
-    typeof Schema.JobOptionalDefaultsSchema,
-    typeof Schema.JobPartialSchema,
-    z.infer<typeof Schema.JobWhereInputSchema>,
-    z.infer<typeof Schema.JobWhereUniqueInputSchema>,
-    z.infer<typeof Schema.JobOrderByWithRelationInputSchema>
-> {
-}
 
 export interface IJobSource extends ISource<IJobSourceSchema> {
 }
@@ -93,3 +67,7 @@ export namespace IJobExecutor {
         progress<TResult>(callback: () => Promise<TResult>, sleep?: number): Promise<TResult | void>;
     }
 }
+
+export const $JobExecutor = Symbol.for(
+    "@leight/job/IJobExecutor"
+);

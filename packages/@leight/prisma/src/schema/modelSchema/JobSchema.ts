@@ -1,4 +1,5 @@
 import {z}               from "zod";
+import {InputJsonValue}  from "../inputTypeSchemas/InputJsonValue";
 import {JobStatusSchema} from "../inputTypeSchemas/JobStatusSchema";
 import {
     type JobLogPartialWithRelations,
@@ -33,7 +34,7 @@ export const JobSchema = z.object({
     started:      z.coerce.date().nullish(),
     finished:     z.coerce.date().nullish(),
     userId:       z.string().nullish(),
-    params:       z.string().nullish(),
+    params:       InputJsonValue,
 });
 
 export type Job = z.infer<typeof JobSchema>
@@ -53,7 +54,7 @@ export const JobOptionalDefaultsSchema = JobSchema.merge(z.object({
     id:       z.string().cuid().optional(),
     total:    z.number().int().optional(),
     progress: z.number().optional(),
-}));
+}))
 
 export type JobOptionalDefaults = z.infer<typeof JobOptionalDefaultsSchema>
 
@@ -72,7 +73,7 @@ export type JobWithRelations =
 export const JobWithRelationsSchema: z.ZodType<JobWithRelations> = JobSchema.merge(z.object({
     user: z.lazy(() => UserWithRelationsSchema).nullish(),
     logs: z.lazy(() => JobLogWithRelationsSchema).array(),
-}));
+}))
 
 // JOB OPTIONAL DEFAULTS RELATION SCHEMA
 //------------------------------------------------------
@@ -84,7 +85,7 @@ export type JobOptionalDefaultsWithRelations =
 export const JobOptionalDefaultsWithRelationsSchema: z.ZodType<JobOptionalDefaultsWithRelations> = JobOptionalDefaultsSchema.merge(z.object({
     user: z.lazy(() => UserWithRelationsSchema).nullish(),
     logs: z.lazy(() => JobLogWithRelationsSchema).array(),
-}));
+}))
 
 // JOB PARTIAL RELATION SCHEMA
 //------------------------------------------------------

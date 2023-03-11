@@ -1,11 +1,8 @@
 import {type ICursorSchema} from "@leight/cursor";
-import {type IFilterSchema} from "@leight/filter";
 import {
-    type IParamsSchema,
     type IQuery,
     type IQuerySchema
 }                           from "@leight/query";
-import {type ISortSchema}   from "@leight/sort";
 import {type IToString}     from "@leight/utils";
 import {z}                  from "zod";
 
@@ -13,12 +10,14 @@ export type ISourceName =
     string
     | IToString;
 
-export const EntitySchema = z.object({
-    id: z.string(),
+export const WithIdentitySchema = z.object({
+    id: z.string().cuid(),
 });
+export type IWithIdentitySchema = typeof WithIdentitySchema;
+export type IWithIdentity = z.infer<IWithIdentitySchema>;
 
+export const EntitySchema = z.object({}).merge(WithIdentitySchema);
 export type IEntitySchema = typeof EntitySchema;
-
 export type IEntity = z.infer<IEntitySchema>;
 
 export const CreateSchema = z.object({});
@@ -26,7 +25,7 @@ export type ICreateSchema = typeof CreateSchema;
 export type ICreate = z.infer<ICreateSchema>;
 
 export const PatchSchema = z.object({
-    // id: z.string(),
+    id: z.string(),
 });
 export type IPatchSchema = typeof PatchSchema;
 export type IPatch = z.infer<IPatchSchema>;
@@ -35,15 +34,12 @@ export type IPatch = z.infer<IPatchSchema>;
  * Source schema definition. Contains all the types used in the Source.
  */
 export interface ISourceSchema<
-    TEntitySchema extends IEntitySchema = IEntitySchema,
-    TCreateSchema extends ICreateSchema = ICreateSchema,
-    TPatchSchema extends IPatchSchema = IPatchSchema,
-    TWhere extends Record<string, any> = Record<string, any>,
-    TWhereUnique extends Record<string, any> = Record<string, any>,
-    TOrderBy extends Record<string, any> = Record<string, any>,
-    TFilterSchema extends IFilterSchema = IFilterSchema,
-    TSortSchema extends ISortSchema = ISortSchema,
-    TParamsSchema extends IParamsSchema = IParamsSchema,
+    TEntitySchema extends z.ZodSchema = z.ZodSchema,
+    TCreateSchema extends z.ZodSchema = z.ZodSchema,
+    TPatchSchema extends z.ZodSchema = z.ZodSchema,
+    TFilterSchema extends z.ZodSchema = z.ZodSchema,
+    TSortSchema extends z.ZodSchema = z.ZodSchema,
+    TParamsSchema extends z.ZodSchema = z.ZodSchema,
 > {
     EntitySchema: TEntitySchema;
     Entity: z.infer<TEntitySchema>;
@@ -55,9 +51,6 @@ export interface ISourceSchema<
     Filter: z.infer<TFilterSchema>;
     SortSchema: TSortSchema;
     Sort: z.infer<TSortSchema>;
-    Where: TWhere;
-    WhereUnique: TWhereUnique;
-    OrderBy: TOrderBy;
     ParamsSchema: TParamsSchema;
     Params: z.infer<TParamsSchema>;
     CursorSchema: ICursorSchema;
@@ -72,6 +65,8 @@ export interface ISourceSchema<
 export interface ISource<TSourceSchema extends ISourceSchema> {
     create(entity: TSourceSchema["Create"]): Promise<TSourceSchema["Entity"]>;
 
+    upsert(props: ISource.IUpsert<TSourceSchema>): Promise<TSourceSchema["Entity"]>;
+
     /**
      * Count items based on an optional query.
      */
@@ -83,4 +78,12 @@ export interface ISource<TSourceSchema extends ISourceSchema> {
     query(query?: TSourceSchema["Query"]): Promise<TSourceSchema["Entity"][]>;
 
     find(id: string): Promise<TSourceSchema["Entity"]>;
+}
+
+export namespace ISource {
+    export interface IUpsert<TSourceSchema extends ISourceSchema> {
+        create: TSourceSchema["Create"];
+        patch: TSourceSchema["Patch"];
+        filter: TSourceSchema["Filter"];
+    }
 }

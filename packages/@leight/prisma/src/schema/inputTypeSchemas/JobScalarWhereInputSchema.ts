@@ -8,6 +8,7 @@ import {FloatNullableFilterSchema}    from "./FloatNullableFilterSchema";
 import {IntFilterSchema}              from "./IntFilterSchema";
 import {IntNullableFilterSchema}      from "./IntNullableFilterSchema";
 import {JobStatusSchema}              from "./JobStatusSchema";
+import {JsonFilterSchema}             from "./JsonFilterSchema";
 import {StringFilterSchema}           from "./StringFilterSchema";
 import {StringNullableFilterSchema}   from "./StringNullableFilterSchema";
 
@@ -81,10 +82,7 @@ export const JobScalarWhereInputSchema: z.ZodType<Prisma.JobScalarWhereInput> = 
         z.lazy(() => StringNullableFilterSchema),
         z.string()
     ]).optional().nullable(),
-    params:       z.union([
-        z.lazy(() => StringNullableFilterSchema),
-        z.string()
-    ]).optional().nullable(),
+    params:       z.lazy(() => JsonFilterSchema).optional(),
 }).strict();
 
 export default JobScalarWhereInputSchema;

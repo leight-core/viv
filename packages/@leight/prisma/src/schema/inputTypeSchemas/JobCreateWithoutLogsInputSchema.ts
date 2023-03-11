@@ -1,6 +1,8 @@
 import type {Prisma}                              from "@prisma/client";
 import {z}                                        from "zod";
+import {InputJsonValue}                           from "./InputJsonValue";
 import {JobStatusSchema}                          from "./JobStatusSchema";
+import {JsonNullValueInputSchema}                 from "./JsonNullValueInputSchema";
 import {UserCreateNestedOneWithoutJobInputSchema} from "./UserCreateNestedOneWithoutJobInputSchema";
 
 export const JobCreateWithoutLogsInputSchema: z.ZodType<Prisma.JobCreateWithoutLogsInput> = z.object({
@@ -18,7 +20,10 @@ export const JobCreateWithoutLogsInputSchema: z.ZodType<Prisma.JobCreateWithoutL
     created:      z.coerce.date(),
     started:      z.coerce.date().optional().nullable(),
     finished:     z.coerce.date().optional().nullable(),
-    params:       z.string().optional().nullable(),
+    params:       z.union([
+        z.lazy(() => JsonNullValueInputSchema),
+        InputJsonValue
+    ]),
     user:         z.lazy(() => UserCreateNestedOneWithoutJobInputSchema).optional(),
 }).strict();
 

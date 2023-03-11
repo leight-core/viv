@@ -26,7 +26,7 @@ export type TranslationPartial = z.infer<typeof TranslationPartialSchema>
 
 export const TranslationOptionalDefaultsSchema = TranslationSchema.merge(z.object({
     id: z.string().cuid().optional(),
-}));
+}))
 
 export type TranslationOptionalDefaults = z.infer<typeof TranslationOptionalDefaultsSchema>
 

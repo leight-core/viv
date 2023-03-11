@@ -2,23 +2,23 @@ import {
     $JobSource,
     type IJobSource,
     type IJobSourceSchema,
-} from "@leight/job";
+}                       from "@leight/job";
 import {
     $PrismaClient,
-    AbstractPrismaSource,
     type IPrismaClient
-} from "@leight/prisma";
+}                       from "@leight/prisma";
+import {AbstractSource} from "@leight/source-server";
 import "reflect-metadata";
 import {
     inject,
     injectable
-} from "tsyringe";
+}                       from "tsyringe";
 
 @injectable()
-export class JobSource extends AbstractPrismaSource<IJobSourceSchema, IPrismaClient["job"]> implements IJobSource {
+export class JobSource extends AbstractSource<IJobSourceSchema> implements IJobSource {
     constructor(
         @inject($PrismaClient) protected prismaClient: IPrismaClient,
     ) {
-        super($JobSource, prismaClient.job);
+        super($JobSource);
     }
 }

@@ -2,23 +2,23 @@ import {
     $FileSource,
     type IFileSource,
     type IFileSourceSchema
-} from "@leight/file";
+}                       from "@leight/file";
 import {
     $PrismaClient,
-    AbstractPrismaSource,
     type IPrismaClient
-} from "@leight/prisma";
+}                       from "@leight/prisma";
+import {AbstractSource} from "@leight/source-server";
 import "reflect-metadata";
 import {
     inject,
     injectable
-} from "tsyringe";
+}                       from "tsyringe";
 
 @injectable()
-export class FileSource extends AbstractPrismaSource<IFileSourceSchema, IPrismaClient["file"]> implements IFileSource {
+export class FileSource extends AbstractSource<IFileSourceSchema> implements IFileSource {
     constructor(
-        @inject($PrismaClient) prismaClient: IPrismaClient,
+        @inject($PrismaClient) protected prismaClient: IPrismaClient,
     ) {
-        super($FileSource, prismaClient.file);
+        super($FileSource);
     }
 }

@@ -37,7 +37,7 @@
         "@leight/source-server": "workspace:^0.5.23",
         "@prisma/client": "^4.11.0",
         "reflect-metadata": "^0.1.13",
-"zod": "3.21.1"
+        "zod": "3.21.1"
     },
     "devDependencies": {
         "@leight/esbuild": "workspace:^0.5.4",

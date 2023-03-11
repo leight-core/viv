@@ -8,27 +8,36 @@ import {
 /**
  * Some base stuff of the source.
  */
-export abstract class AbstractSource<TSourceSchema extends ISourceSchema<any>> implements ISource<TSourceSchema> {
+export abstract class AbstractSource<TSourceSchema extends ISourceSchema> implements ISource<TSourceSchema> {
     protected constructor(
         protected name: ISourceName,
     ) {
     }
 
-    async create(entity: TSourceSchema["Entity"]): Promise<TSourceSchema["Entity"]> {
+    async create(entity: TSourceSchema["Create"]): Promise<TSourceSchema["Entity"]> {
         return this.runCreate(entity);
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    async runCreate(entity: TSourceSchema["Entity"]): Promise<TSourceSchema["Entity"]> {
+    async runCreate(entity: TSourceSchema["Create"]): Promise<TSourceSchema["Entity"]> {
+        console.error(`Source [${this.name}] does not support creating items.`, entity);
         throw new SourceError(`Source [${this.name}] does not support creating items.`);
+    }
+
+    async upsert(props: ISource.IUpsert<TSourceSchema>): Promise<TSourceSchema["Entity"]> {
+        return this.runUpsert(props);
+    }
+
+    async runUpsert(props: ISource.IUpsert<TSourceSchema>): Promise<TSourceSchema["Entity"]> {
+        console.error(`Source [${this.name}] does not support upserting items.`, props);
+        throw new SourceError(`Source [${this.name}] does not support upserting items.`);
     }
 
     async count(query?: TSourceSchema["Query"]): Promise<number> {
         return this.runCount(query);
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     async runCount(query?: TSourceSchema["Query"]): Promise<number> {
+        console.error(`Source [${this.name}] does not support counting items by a query.`, query);
         throw new SourceError(`Source [${this.name}] does not support counting items by a query.`);
     }
 
@@ -36,8 +45,8 @@ export abstract class AbstractSource<TSourceSchema extends ISourceSchema<any>> i
         return this.runQuery(query);
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     async runQuery(query?: TSourceSchema["Query"]): Promise<TSourceSchema["Entity"][]> {
+        console.error(`Source [${this.name}] does not support querying items.`, query);
         throw new SourceError(`Source [${this.name}] does not support querying items.`);
     }
 
@@ -45,8 +54,8 @@ export abstract class AbstractSource<TSourceSchema extends ISourceSchema<any>> i
         return this.runFind(id);
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     async runFind(id: string): Promise<TSourceSchema["Entity"]> {
+        console.error(`Source [${this.name}] does not support querying item by an ID.`, id);
         throw new SourceError(`Source [${this.name}] does not support querying item by an ID.`);
     }
 }

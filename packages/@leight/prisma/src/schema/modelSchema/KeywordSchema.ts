@@ -23,7 +23,7 @@ export type KeywordPartial = z.infer<typeof KeywordPartialSchema>
 
 export const KeywordOptionalDefaultsSchema = KeywordSchema.merge(z.object({
     id: z.string().cuid().optional(),
-}));
+}))
 
 export type KeywordOptionalDefaults = z.infer<typeof KeywordOptionalDefaultsSchema>
 

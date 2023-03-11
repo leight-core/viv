@@ -3,13 +3,14 @@ import {z}                                                    from "zod";
 import {DateTimeFieldUpdateOperationsInputSchema}             from "./DateTimeFieldUpdateOperationsInputSchema";
 import {EnumJobStatusFieldUpdateOperationsInputSchema}        from "./EnumJobStatusFieldUpdateOperationsInputSchema";
 import {FloatFieldUpdateOperationsInputSchema}                from "./FloatFieldUpdateOperationsInputSchema";
+import {InputJsonValue}                                       from "./InputJsonValue";
 import {IntFieldUpdateOperationsInputSchema}                  from "./IntFieldUpdateOperationsInputSchema";
 import {JobLogUncheckedUpdateManyWithoutJobNestedInputSchema} from "./JobLogUncheckedUpdateManyWithoutJobNestedInputSchema";
 import {JobStatusSchema}                                      from "./JobStatusSchema";
+import {JsonNullValueInputSchema}                             from "./JsonNullValueInputSchema";
 import {NullableDateTimeFieldUpdateOperationsInputSchema}     from "./NullableDateTimeFieldUpdateOperationsInputSchema";
 import {NullableFloatFieldUpdateOperationsInputSchema}        from "./NullableFloatFieldUpdateOperationsInputSchema";
 import {NullableIntFieldUpdateOperationsInputSchema}          from "./NullableIntFieldUpdateOperationsInputSchema";
-import {NullableStringFieldUpdateOperationsInputSchema}       from "./NullableStringFieldUpdateOperationsInputSchema";
 import {StringFieldUpdateOperationsInputSchema}               from "./StringFieldUpdateOperationsInputSchema";
 
 export const JobUncheckedUpdateWithoutUserInputSchema: z.ZodType<Prisma.JobUncheckedUpdateWithoutUserInput> = z.object({
@@ -70,9 +71,9 @@ export const JobUncheckedUpdateWithoutUserInputSchema: z.ZodType<Prisma.JobUnche
         z.lazy(() => NullableDateTimeFieldUpdateOperationsInputSchema)
     ]).optional().nullable(),
     params:       z.union([
-        z.string(),
-        z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)
-    ]).optional().nullable(),
+        z.lazy(() => JsonNullValueInputSchema),
+        InputJsonValue
+    ]).optional(),
     logs:         z.lazy(() => JobLogUncheckedUpdateManyWithoutJobNestedInputSchema).optional(),
 }).strict();
 

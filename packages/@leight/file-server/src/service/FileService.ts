@@ -62,14 +62,14 @@ export class FileService implements IFileService {
             path,
             mime:    mime || (await this.mimeOf(location)),
             size:    this.sizeOf(location),
-            created: new Date().toISOString(),
+            created: new Date(),
             ttl:     undefined,
             userId,
         };
 
         return replace && userId
-            ? this.prismaClient.file.upsert({
-                where: {
+            ? this.fileSource.upsert({
+                where:  {
                     userId_path_name: {
                         name,
                         path,
@@ -77,11 +77,9 @@ export class FileService implements IFileService {
                     },
                 },
                 create: data,
-                update: data,
+                patch:  data,
             })
-            : this.prismaClient.file.create({
-                data,
-            });
+            : this.fileSource.create(data);
     }
 
     protected async mimeOf(file?: string): Promise<string> {

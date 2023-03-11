@@ -9,6 +9,7 @@ import {IntFilterSchema}                from "./IntFilterSchema";
 import {IntNullableFilterSchema}        from "./IntNullableFilterSchema";
 import {JobLogListRelationFilterSchema} from "./JobLogListRelationFilterSchema";
 import {JobStatusSchema}                from "./JobStatusSchema";
+import {JsonFilterSchema}               from "./JsonFilterSchema";
 import {StringFilterSchema}             from "./StringFilterSchema";
 import {StringNullableFilterSchema}     from "./StringNullableFilterSchema";
 import {UserRelationFilterSchema}       from "./UserRelationFilterSchema";
@@ -84,10 +85,7 @@ export const JobWhereInputSchema: z.ZodType<Prisma.JobWhereInput> = z.object({
         z.lazy(() => StringNullableFilterSchema),
         z.string()
     ]).optional().nullable(),
-    params:       z.union([
-        z.lazy(() => StringNullableFilterSchema),
-        z.string()
-    ]).optional().nullable(),
+    params:       z.lazy(() => JsonFilterSchema).optional(),
     user:         z.union([
         z.lazy(() => UserRelationFilterSchema),
         z.lazy(() => UserWhereInputSchema)
