@@ -1,5 +1,5 @@
 {
-    "version": "0.5.29",
+    "version": "0.5.30",
     "name": "@leight/zustand",
     "description": "Zustand helper stuff.",
     "license": "MIT",
@@ -12,12 +12,8 @@
     },
     "sideEffects": false,
     "type": "module",
-    "module": "src/index.ts",
-    "types": "src/index.ts",
-    "publishConfig": {
-        "module": "lib/index.js",
-        "types": "lib/index.d.ts"
-    },
+    "module": "lib/index.js",
+    "types": "lib/index.d.ts",
     "files": [
         "lib",
         "src"
@@ -36,9 +32,9 @@
         "zustand": "^4.3.6"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.8",
-        "@leight/eslint-config-eslint": "^0.5.17",
-        "@leight/tsconfig": "^0.5.31",
+        "@leight/esbuild": "^0.5.9",
+        "@leight/eslint-config-eslint": "^0.5.18",
+        "@leight/tsconfig": "^0.5.32",
         "@types/node": "^18.15.0",
         "@types/react": "^18.0.28",
         "@types/react-dom": "^18.0.11",

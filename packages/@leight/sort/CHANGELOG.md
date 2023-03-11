@@ -1,5 +1,11 @@
 # @leight/sort
 
+## 0.5.24
+
+### Patch Changes
+
+- Fixed package.json
+
 ## 0.5.23
 
 ### Patch Changes

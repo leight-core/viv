@@ -1,5 +1,11 @@
 # @leight/winston
 
+## 0.5.29
+
+### Patch Changes
+
+- Fixed package.json
+
 ## 0.5.28
 
 ### Patch Changes

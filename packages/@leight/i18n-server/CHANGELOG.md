@@ -1,5 +1,13 @@
 # @leight/i18n-server
 
+## 0.5.30
+
+### Patch Changes
+
+- Fixed package.json
+- Updated dependencies
+    - @leight/i18n@0.5.30
+
 ## 0.5.29
 
 ### Patch Changes

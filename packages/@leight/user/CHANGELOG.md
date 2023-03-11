@@ -1,5 +1,14 @@
 # @leight/user
 
+## 0.5.31
+
+### Patch Changes
+
+- Fixed package.json
+- Updated dependencies
+    - @leight/prisma@0.5.37
+    - @leight/source@0.5.26
+
 ## 0.5.30
 
 ### Patch Changes

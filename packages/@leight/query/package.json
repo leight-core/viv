@@ -1,5 +1,5 @@
 {
-    "version": "0.5.24",
+    "version": "0.5.25",
     "name": "@leight/query",
     "description": "Common query stuff (for querying data).",
     "license": "MIT",
@@ -12,12 +12,8 @@
     },
     "sideEffects": false,
     "type": "module",
-    "module": "src/index.ts",
-    "types": "src/index.ts",
-    "publishConfig": {
-        "module": "lib/index.js",
-        "types": "lib/index.d.ts"
-    },
+    "module": "lib/index.js",
+    "types": "lib/index.d.ts",
     "files": [
         "lib",
         "src"
@@ -31,15 +27,15 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/cursor": "^0.5.23",
-        "@leight/filter": "^0.5.24",
-        "@leight/sort": "^0.5.23",
+        "@leight/cursor": "^0.5.24",
+        "@leight/filter": "^0.5.25",
+        "@leight/sort": "^0.5.24",
         "zod": "3.21.1"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.8",
-        "@leight/eslint-config-eslint": "^0.5.17",
-        "@leight/tsconfig": "^0.5.31",
+        "@leight/esbuild": "^0.5.9",
+        "@leight/eslint-config-eslint": "^0.5.18",
+        "@leight/tsconfig": "^0.5.32",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

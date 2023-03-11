@@ -1,5 +1,14 @@
 # @leight/trpc
 
+## 0.5.29
+
+### Patch Changes
+
+- Fixed package.json
+- Updated dependencies
+    - @leight/container@0.5.29
+    - @leight/user@0.5.31
+
 ## 0.5.28
 
 ### Patch Changes

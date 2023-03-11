@@ -1,5 +1,5 @@
 {
-    "version": "0.5.28",
+    "version": "0.5.29",
     "name": "@leight/xlsx-import-server",
     "description": "Support for XLSX import (server-side) using @leight/job stuff.",
     "license": "MIT",
@@ -12,12 +12,8 @@
     },
     "sideEffects": false,
     "type": "module",
-    "module": "src/index.ts",
-    "types": "src/index.ts",
-    "publishConfig": {
-        "module": "lib/index.js",
-        "types": "lib/index.d.ts"
-    },
+    "module": "lib/index.js",
+    "types": "lib/index.d.ts",
     "files": [
         "lib",
         "src"
@@ -31,22 +27,22 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "^0.5.28",
-        "@leight/file": "^0.5.29",
-        "@leight/import": "^0.5.28",
-        "@leight/job": "^0.5.31",
-        "@leight/trpc-server": "^0.5.29",
-        "@leight/utils": "^0.5.31",
-        "@leight/utils-server": "^0.5.28",
-        "@leight/xlsx-import": "^0.5.29",
+        "@leight/container": "^0.5.29",
+        "@leight/file": "^0.5.30",
+        "@leight/import": "^0.5.29",
+        "@leight/job": "^0.5.32",
+        "@leight/trpc-server": "^0.5.30",
+        "@leight/utils": "^0.5.32",
+        "@leight/utils-server": "^0.5.29",
+        "@leight/xlsx-import": "^0.5.30",
         "measure-time": "^5.0.8",
         "xlsx": "^0.18.5",
         "zod": "3.21.1"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.8",
-        "@leight/eslint-config-eslint": "^0.5.17",
-        "@leight/tsconfig": "^0.5.31",
+        "@leight/esbuild": "^0.5.9",
+        "@leight/eslint-config-eslint": "^0.5.18",
+        "@leight/tsconfig": "^0.5.32",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

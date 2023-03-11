@@ -1,5 +1,11 @@
 # @leight/zustand
 
+## 0.5.30
+
+### Patch Changes
+
+- Fixed package.json
+
 ## 0.5.29
 
 ### Patch Changes

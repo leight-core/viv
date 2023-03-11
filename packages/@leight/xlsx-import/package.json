@@ -1,5 +1,5 @@
 {
-    "version": "0.5.29",
+    "version": "0.5.30",
     "name": "@leight/xlsx-import",
     "description": "Common stuff shared between.",
     "license": "MIT",
@@ -12,12 +12,8 @@
     },
     "sideEffects": false,
     "type": "module",
-    "module": "src/index.ts",
-    "types": "src/index.ts",
-    "publishConfig": {
-        "module": "lib/index.js",
-        "types": "lib/index.d.ts"
-    },
+    "module": "lib/index.js",
+    "types": "lib/index.d.ts",
     "files": [
         "lib",
         "src"
@@ -31,16 +27,16 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/import": "^0.5.28",
-        "@leight/job": "^0.5.31",
-        "@leight/trpc": "^0.5.28",
+        "@leight/import": "^0.5.29",
+        "@leight/job": "^0.5.32",
+        "@leight/trpc": "^0.5.29",
         "xlsx": "^0.18.5",
         "zod": "3.21.1"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.8",
-        "@leight/eslint-config-eslint": "^0.5.17",
-        "@leight/tsconfig": "^0.5.31",
+        "@leight/esbuild": "^0.5.9",
+        "@leight/eslint-config-eslint": "^0.5.18",
+        "@leight/tsconfig": "^0.5.32",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
