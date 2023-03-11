@@ -1,5 +1,5 @@
 {
-    "version": "0.5.27",
+    "version": "0.5.28",
     "name": "@leight/xlsx-import-client",
     "description": "Client-side tools for imports.",
     "license": "MIT",
@@ -33,8 +33,8 @@
     "dependencies": {
         "@babel/core": "^7.21.0",
         "@emotion/react": "^11.10.6",
-        "@leight/mantine": "workspace:^0.5.27",
-        "@leight/tsconfig": "workspace:^0.5.28",
+        "@leight/mantine": "workspace:^0.5.28",
+        "@leight/tsconfig": "workspace:^0.5.29",
         "@mantine/core": "^6.0.1",
         "@mantine/dropzone": "^6.0.1",
         "@mantine/hooks": "^6.0.1",
@@ -43,10 +43,10 @@
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
-        "@leight/esbuild": "workspace:^0.5.4",
-        "@leight/eslint-config-eslint": "workspace:^0.5.15",
+        "@leight/esbuild": "workspace:^0.5.6",
+        "@leight/eslint-config-eslint": "workspace:^0.5.16",
         "@leight/tsconfig": "*",
-        "@leight/xlsx-import": "workspace:^0.5.26",
+        "@leight/xlsx-import": "workspace:^0.5.27",
         "@types/node": "^18.15.0",
         "@types/react": "^18.0.28",
         "@types/react-dom": "^18.0.11",
