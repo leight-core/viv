@@ -1,5 +1,11 @@
 # @leight/cursor
 
+## 0.5.23
+
+### Patch Changes
+
+- Moved to npm
+
 ## 0.5.22
 
 ### Patch Changes

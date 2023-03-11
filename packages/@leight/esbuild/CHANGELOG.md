@@ -1,5 +1,11 @@
 # @leight/esbuild
 
+## 0.5.8
+
+### Patch Changes
+
+- Moved to npm
+
 ## 0.5.7
 
 ### Patch Changes

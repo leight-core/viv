@@ -1,5 +1,11 @@
 # @leight/i18n
 
+## 0.5.29
+
+### Patch Changes
+
+- Moved to npm
+
 ## 0.5.28
 
 ### Patch Changes

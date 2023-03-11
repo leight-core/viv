@@ -1,5 +1,15 @@
 # @leight/job
 
+## 0.5.31
+
+### Patch Changes
+
+- Moved to npm
+- Updated dependencies
+    - @leight/prisma@0.5.36
+    - @leight/source@0.5.25
+    - @leight/winston@0.5.28
+
 ## 0.5.30
 
 ### Patch Changes

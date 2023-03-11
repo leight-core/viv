@@ -1,5 +1,13 @@
 # @leight/import
 
+## 0.5.28
+
+### Patch Changes
+
+- Moved to npm
+- Updated dependencies
+    - @leight/job@0.5.31
+
 ## 0.5.27
 
 ### Patch Changes

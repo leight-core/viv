@@ -1,5 +1,5 @@
 {
-    "version": "0.5.29",
+    "version": "0.5.30",
     "name": "@leight/job-server",
     "description": "Job (async execution) stuff on server-side.",
     "license": "MIT",
@@ -31,19 +31,19 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "^0.5.27",
-        "@leight/job": "^0.5.30",
-        "@leight/prisma": "^0.5.35",
-        "@leight/source-server": "^0.5.26",
-        "@leight/user": "^0.5.28",
-        "@leight/utils": "^0.5.30",
-        "@leight/winston": "^0.5.27",
+        "@leight/container": "^0.5.28",
+        "@leight/job": "^0.5.31",
+        "@leight/prisma": "^0.5.36",
+        "@leight/source-server": "^0.5.27",
+        "@leight/user": "^0.5.30",
+        "@leight/utils": "^0.5.31",
+        "@leight/winston": "^0.5.28",
         "delay": "^5.0.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.7",
-        "@leight/eslint-config-eslint": "^0.5.16",
-        "@leight/tsconfig": "^0.5.30",
+        "@leight/esbuild": "^0.5.8",
+        "@leight/eslint-config-eslint": "^0.5.17",
+        "@leight/tsconfig": "^0.5.31",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

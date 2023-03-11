@@ -1,5 +1,18 @@
 # @leight/container-server
 
+## 0.5.28
+
+### Patch Changes
+
+- Moved to npm
+- Updated dependencies
+    - @leight/container@0.5.28
+    - @leight/file-server@0.5.29
+    - @leight/import-server@0.5.28
+    - @leight/job-server@0.5.30
+    - @leight/user-server@0.5.30
+    - @leight/xlsx-import-server@0.5.28
+
 ## 0.5.27
 
 ### Patch Changes

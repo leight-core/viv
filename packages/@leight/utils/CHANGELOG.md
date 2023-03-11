@@ -1,5 +1,11 @@
 # @leight/utils
 
+## 0.5.31
+
+### Patch Changes
+
+- Moved to npm
+
 ## 0.5.30
 
 ### Patch Changes

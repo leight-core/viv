@@ -1,5 +1,17 @@
 # @leight/next.js-server
 
+## 0.5.30
+
+### Patch Changes
+
+- Moved to npm
+- Updated dependencies
+    - @leight/container@0.5.28
+    - @leight/user@0.5.30
+    - @leight/user-server@0.5.30
+    - @leight/utils@0.5.31
+    - @leight/winston@0.5.28
+
 ## 0.5.29
 
 ### Patch Changes

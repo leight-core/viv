@@ -1,5 +1,18 @@
 # @leight/mantine
 
+## 0.5.30
+
+### Patch Changes
+
+- Moved to npm
+- Updated dependencies
+    - @leight/file@0.5.29
+    - @leight/file-client@0.5.30
+    - @leight/i18n@0.5.29
+    - @leight/i18n-client@0.5.30
+    - @leight/utils@0.5.31
+    - @leight/utils-client@0.5.32
+
 ## 0.5.29
 
 ### Patch Changes

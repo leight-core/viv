@@ -1,5 +1,14 @@
 # @leight/xlsx-import-client
 
+## 0.5.30
+
+### Patch Changes
+
+- Moved to npm
+- Updated dependencies
+    - @leight/mantine@0.5.30
+    - @leight/tsconfig@0.5.31
+
 ## 0.5.29
 
 ### Patch Changes

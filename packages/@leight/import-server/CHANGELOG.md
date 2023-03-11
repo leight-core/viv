@@ -1,5 +1,14 @@
 # @leight/import-server
 
+## 0.5.28
+
+### Patch Changes
+
+- Moved to npm
+- Updated dependencies
+    - @leight/container@0.5.28
+    - @leight/import@0.5.28
+
 ## 0.5.27
 
 ### Patch Changes

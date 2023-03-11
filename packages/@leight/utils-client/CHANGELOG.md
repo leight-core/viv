@@ -1,5 +1,14 @@
 # @leight/utils-client
 
+## 0.5.32
+
+### Patch Changes
+
+- Moved to npm
+- Updated dependencies
+    - @leight/context-client@0.5.35
+    - @leight/utils@0.5.31
+
 ## 0.5.31
 
 ### Patch Changes

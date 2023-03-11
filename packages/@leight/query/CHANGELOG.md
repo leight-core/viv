@@ -1,5 +1,15 @@
 # @leight/query
 
+## 0.5.24
+
+### Patch Changes
+
+- Moved to npm
+- Updated dependencies
+    - @leight/cursor@0.5.23
+    - @leight/filter@0.5.24
+    - @leight/sort@0.5.23
+
 ## 0.5.23
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @leight/i18n-client
 
+## 0.5.30
+
+### Patch Changes
+
+- Moved to npm
+- Updated dependencies
+    - @leight/context-client@0.5.35
+    - @leight/i18n@0.5.29
+    - @leight/utils@0.5.31
+
 ## 0.5.29
 
 ### Patch Changes

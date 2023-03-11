@@ -1,5 +1,14 @@
 # @leight/trpc
 
+## 0.5.28
+
+### Patch Changes
+
+- Moved to npm
+- Updated dependencies
+    - @leight/container@0.5.28
+    - @leight/user@0.5.30
+
 ## 0.5.27
 
 ### Patch Changes

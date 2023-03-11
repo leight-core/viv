@@ -1,5 +1,15 @@
 # @leight/file-client
 
+## 0.5.30
+
+### Patch Changes
+
+- Moved to npm
+- Updated dependencies
+    - @leight/file@0.5.29
+    - @leight/utils@0.5.31
+    - @leight/utils-client@0.5.32
+
 ## 0.5.29
 
 ### Patch Changes

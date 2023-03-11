@@ -1,5 +1,14 @@
 # @leight/user
 
+## 0.5.30
+
+### Patch Changes
+
+- Moved to npm
+- Updated dependencies
+    - @leight/prisma@0.5.36
+    - @leight/source@0.5.25
+
 ## 0.5.29
 
 ### Patch Changes

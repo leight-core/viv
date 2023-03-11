@@ -1,5 +1,11 @@
 # @leight/filter
 
+## 0.5.24
+
+### Patch Changes
+
+- Moved to npm
+
 ## 0.5.23
 
 ### Patch Changes

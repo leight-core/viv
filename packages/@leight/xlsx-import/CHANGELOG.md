@@ -1,5 +1,15 @@
 # @leight/xlsx-import
 
+## 0.5.29
+
+### Patch Changes
+
+- Moved to npm
+- Updated dependencies
+    - @leight/import@0.5.28
+    - @leight/job@0.5.31
+    - @leight/trpc@0.5.28
+
 ## 0.5.28
 
 ### Patch Changes

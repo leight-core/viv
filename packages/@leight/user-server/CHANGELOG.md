@@ -1,5 +1,17 @@
 # @leight/user-server
 
+## 0.5.30
+
+### Patch Changes
+
+- Moved to npm
+- Updated dependencies
+    - @leight/prisma@0.5.36
+    - @leight/container@0.5.28
+    - @leight/source-server@0.5.27
+    - @leight/user@0.5.30
+    - @leight/utils@0.5.31
+
 ## 0.5.29
 
 ### Patch Changes

@@ -1,5 +1,5 @@
 {
-    "version": "0.5.28",
+    "version": "0.5.29",
     "name": "@leight/file-server",
     "description": "File stuff on server-side.",
     "license": "MIT",
@@ -31,11 +31,11 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "^0.5.27",
-        "@leight/file": "^0.5.28",
-        "@leight/next.js-server": "^0.5.28",
-        "@leight/prisma": "^0.5.35",
-        "@leight/source-server": "^0.5.26",
+        "@leight/container": "^0.5.28",
+        "@leight/file": "^0.5.29",
+        "@leight/next.js-server": "^0.5.30",
+        "@leight/prisma": "^0.5.36",
+        "@leight/source-server": "^0.5.27",
         "depcheck": "^1.4.3",
         "fs-extra": "^11.1.0",
         "mime-detect": "^1.1.4",
@@ -43,9 +43,9 @@
         "uuid": "^9.0.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.7",
-        "@leight/eslint-config-eslint": "^0.5.16",
-        "@leight/tsconfig": "^0.5.30",
+        "@leight/esbuild": "^0.5.8",
+        "@leight/eslint-config-eslint": "^0.5.17",
+        "@leight/tsconfig": "^0.5.31",
         "@types/fs-extra": "^11.0.1",
         "@types/glob": "^8.1.0",
         "@types/node": "^18.15.0",

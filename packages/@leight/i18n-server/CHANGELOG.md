@@ -1,5 +1,13 @@
 # @leight/i18n-server
 
+## 0.5.29
+
+### Patch Changes
+
+- Moved to npm
+- Updated dependencies
+    - @leight/i18n@0.5.29
+
 ## 0.5.28
 
 ### Patch Changes

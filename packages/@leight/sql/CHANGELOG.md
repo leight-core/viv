@@ -1,5 +1,13 @@
 # @leight/sql
 
+## 0.5.29
+
+### Patch Changes
+
+- Moved to npm
+- Updated dependencies
+    - @leight/prisma@0.5.36
+
 ## 0.5.28
 
 ### Patch Changes

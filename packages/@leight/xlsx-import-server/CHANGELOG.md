@@ -1,5 +1,20 @@
 # @leight/xlsx-import-server
 
+## 0.5.28
+
+### Patch Changes
+
+- Moved to npm
+- Updated dependencies
+    - @leight/container@0.5.28
+    - @leight/file@0.5.29
+    - @leight/import@0.5.28
+    - @leight/job@0.5.31
+    - @leight/trpc-server@0.5.29
+    - @leight/utils@0.5.31
+    - @leight/utils-server@0.5.28
+    - @leight/xlsx-import@0.5.29
+
 ## 0.5.27
 
 ### Patch Changes

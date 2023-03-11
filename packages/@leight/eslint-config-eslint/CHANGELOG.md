@@ -1,5 +1,11 @@
 # @leight/eslint-config-eslint
 
+## 0.5.17
+
+### Patch Changes
+
+- Moved to npm
+
 ## 0.5.16
 
 ### Patch Changes

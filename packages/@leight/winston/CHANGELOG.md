@@ -1,5 +1,11 @@
 # @leight/winston
 
+## 0.5.28
+
+### Patch Changes
+
+- Moved to npm
+
 ## 0.5.27
 
 ### Patch Changes
