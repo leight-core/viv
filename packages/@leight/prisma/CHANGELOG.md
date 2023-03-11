@@ -1,5 +1,13 @@
 # @leight/prisma
 
+## 0.5.31
+
+### Patch Changes
+
+- Improved source stuff
+- Updated dependencies
+    - @leight/source@0.5.23
+
 ## 0.5.30
 
 ### Patch Changes

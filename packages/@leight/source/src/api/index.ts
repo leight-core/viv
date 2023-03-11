@@ -67,6 +67,8 @@ export interface ISource<TSourceSchema extends ISourceSchema> {
 
     upsert(props: ISource.IUpsert<TSourceSchema>): Promise<TSourceSchema["Entity"]>;
 
+    patch(props: ISource.IPatch<TSourceSchema>): Promise<TSourceSchema["Entity"]>;
+
     /**
      * Count items based on an optional query.
      */
@@ -83,7 +85,11 @@ export interface ISource<TSourceSchema extends ISourceSchema> {
 export namespace ISource {
     export interface IUpsert<TSourceSchema extends ISourceSchema> {
         create: TSourceSchema["Create"];
-        patch: TSourceSchema["Patch"];
+        patch: Omit<TSourceSchema["Patch"], "id">;
         filter: TSourceSchema["Filter"];
+    }
+
+    export interface IPatch<TSourceSchema extends ISourceSchema> {
+        patch: TSourceSchema["Patch"];
     }
 }

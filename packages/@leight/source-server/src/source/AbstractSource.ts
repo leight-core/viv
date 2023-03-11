@@ -32,6 +32,15 @@ export abstract class AbstractSource<TSourceSchema extends ISourceSchema> implem
         throw new SourceError(`Source [${this.name}] does not support upserting items.`);
     }
 
+    async patch(props: ISource.IPatch<TSourceSchema>): Promise<TSourceSchema["Entity"]> {
+        return this.runPatch(props);
+    }
+
+    async runPatch(props: ISource.IPatch<TSourceSchema>): Promise<TSourceSchema["Entity"]> {
+        console.error(`Source [${this.name}] does not support patching.`, props);
+        throw new SourceError(`Source [${this.name}] does not support patching.`);
+    }
+
     async count(query?: TSourceSchema["Query"]): Promise<number> {
         return this.runCount(query);
     }
