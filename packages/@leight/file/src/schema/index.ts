@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {FilterSchema} from "@leight/filter";
 import {PrismaSchema} from "@leight/prisma";
 import {
