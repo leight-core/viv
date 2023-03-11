@@ -69,7 +69,7 @@ export class FileService implements IFileService {
 
         return replace && userId
             ? this.fileSource.upsert({
-                where:  {
+                filter: {
                     userId_path_name: {
                         name,
                         path,
