@@ -38,9 +38,9 @@
         "is-string": "^1.0.7"
     },
     "devDependencies": {
-        "@leight/esbuild": "workspace:^0.5.7",
-        "@leight/eslint-config-eslint": "workspace:^0.5.16",
-        "@leight/tsconfig": "workspace:^0.5.30",
+        "@leight/esbuild": "^0.5.7",
+        "@leight/eslint-config-eslint": "^0.5.16",
+        "@leight/tsconfig": "^0.5.30",
         "@types/is-callable": "^1.1.0",
         "@types/is-string": "^1.0.0",
         "@types/node": "^18.15.0",

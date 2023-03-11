@@ -31,11 +31,11 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "workspace:^0.5.27",
-        "@leight/file": "workspace:^0.5.28",
-        "@leight/next.js-server": "workspace:^0.5.28",
-        "@leight/prisma": "workspace:^0.5.35",
-        "@leight/source-server": "workspace:^0.5.26",
+        "@leight/container": "^0.5.27",
+        "@leight/file": "^0.5.28",
+        "@leight/next.js-server": "^0.5.28",
+        "@leight/prisma": "^0.5.35",
+        "@leight/source-server": "^0.5.26",
         "depcheck": "^1.4.3",
         "fs-extra": "^11.1.0",
         "mime-detect": "^1.1.4",
@@ -43,9 +43,9 @@
         "uuid": "^9.0.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "workspace:^0.5.7",
-        "@leight/eslint-config-eslint": "workspace:^0.5.16",
-        "@leight/tsconfig": "workspace:^0.5.30",
+        "@leight/esbuild": "^0.5.7",
+        "@leight/eslint-config-eslint": "^0.5.16",
+        "@leight/tsconfig": "^0.5.30",
         "@types/fs-extra": "^11.0.1",
         "@types/glob": "^8.1.0",
         "@types/node": "^18.15.0",

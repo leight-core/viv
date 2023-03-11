@@ -31,8 +31,8 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/prisma": "workspace:^0.5.33",
-        "@leight/source": "workspace:^0.5.24",
+        "@leight/prisma": "^0.5.33",
+        "@leight/source": "^0.5.24",
         "next": "^13.2.4",
         "next-auth": "^4.20.1",
         "react": "^18.2.0",
@@ -40,9 +40,9 @@
         "zod": "3.21.1"
     },
     "devDependencies": {
-        "@leight/esbuild": "workspace:^0.5.7",
-        "@leight/eslint-config-eslint": "workspace:^0.5.16",
-        "@leight/tsconfig": "workspace:^0.5.30",
+        "@leight/esbuild": "^0.5.7",
+        "@leight/eslint-config-eslint": "^0.5.16",
+        "@leight/tsconfig": "^0.5.30",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

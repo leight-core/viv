@@ -21,6 +21,10 @@
         "changeset:publish": "changeset publish",
         "npkill": "npx npkill"
     },
+    "workspaces": [
+        "apps/*",
+        "packages/**/*"
+    ],
     "devDependencies": {
         "@changesets/cli": "^2.26.0",
         "prettier": "^2.8.4",

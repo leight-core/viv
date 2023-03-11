@@ -31,15 +31,15 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/cursor": "workspace:^0.5.22",
-        "@leight/filter": "workspace:^0.5.23",
-        "@leight/sort": "workspace:^0.5.22",
+        "@leight/cursor": "^0.5.22",
+        "@leight/filter": "^0.5.23",
+        "@leight/sort": "^0.5.22",
         "zod": "3.21.1"
     },
     "devDependencies": {
-        "@leight/esbuild": "workspace:^0.5.7",
-        "@leight/eslint-config-eslint": "workspace:^0.5.16",
-        "@leight/tsconfig": "workspace:^0.5.30",
+        "@leight/esbuild": "^0.5.7",
+        "@leight/eslint-config-eslint": "^0.5.16",
+        "@leight/tsconfig": "^0.5.30",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

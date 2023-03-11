@@ -4,7 +4,6 @@
     <command value="update" />
     <arguments value="--latest -r" />
     <node-interpreter value="project" />
-    <package-manager value="pnpm" />
     <envs />
     <method v="2" />
   </configuration>
