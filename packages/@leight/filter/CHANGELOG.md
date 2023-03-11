@@ -1,5 +1,11 @@
 # @leight/filter
 
+## 0.5.23
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+
 ## 0.5.22
 
 ### Patch Changes

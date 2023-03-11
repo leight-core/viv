@@ -1,5 +1,11 @@
 # @leight/zustand
 
+## 0.5.28
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+
 ## 0.5.27
 
 ### Patch Changes

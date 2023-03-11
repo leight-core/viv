@@ -1,23 +1,19 @@
 import {
+    $JobSource,
     type IJobProgress,
     type IJobProgressService,
+    IJobSource,
     type IJobStatus
 }                  from "@leight/job";
-import {
-    $PrismaClient,
-    type IPrismaClient
-}                  from "@leight/prisma";
 import {toPercent} from "@leight/utils";
-import "reflect-metadata";
-import {
-    inject,
-    injectable
-}                  from "tsyringe";
 
-@injectable()
 export class JobProgressService implements IJobProgressService {
+    static inject = [
+        $JobSource,
+    ];
+
     constructor(
-        @inject($PrismaClient) protected prismaClient: IPrismaClient,
+        protected jobSource: IJobSource,
     ) {
     }
 
@@ -35,57 +31,37 @@ export class JobProgressService implements IJobProgressService {
             success:   () => $success,
             failure:   () => $failure,
             skip:      () => $skip,
-            setTotal:  total => this.prismaClient.job.update({
-                data:  {
-                    total: ($total = total),
-                },
-                where: {
-                    id: jobId,
-                }
+            setTotal:  total => this.jobSource.patch({
+                id:    jobId,
+                total: ($total = total),
             }),
-            setStatus: status => this.prismaClient.job.update({
-                data:  {
-                    status,
-                    started:  ["RUNNING"].includes(status) ? new Date() : undefined,
-                    finished: [
-                                  "REVIEW",
-                                  "SUCCESS",
-                                  "FAILURE"
-                              ].includes(status) ? new Date() : (["RUNNING"].includes(status) ? null : undefined),
-                },
-                where: {
-                    id: jobId,
-                },
+            setStatus: status => this.jobSource.patch({
+                id:       jobId,
+                status,
+                started:  ["RUNNING"].includes(status) ? new Date() : undefined,
+                finished: [
+                              "REVIEW",
+                              "SUCCESS",
+                              "FAILURE"
+                          ].includes(status) ? new Date() : (["RUNNING"].includes(status) ? null : undefined),
             }),
-            onSuccess: () => this.prismaClient.job.update({
-                data:  {
-                    success:      ++$success,
-                    successRatio: toPercent($success, $total),
-                    progress:     toPercent(++$processed, $total),
-                },
-                where: {
-                    id: jobId,
-                }
+            onSuccess: () => this.jobSource.patch({
+                id:           jobId,
+                success:      ++$success,
+                successRatio: toPercent($success, $total),
+                progress:     toPercent(++$processed, $total),
             }),
-            onFailure: () => this.prismaClient.job.update({
-                data:  {
-                    failure:      ++$failure,
-                    failureRatio: toPercent($failure, $total),
-                    progress:     toPercent(++$processed, $total),
-                },
-                where: {
-                    id: jobId,
-                }
+            onFailure: () => this.jobSource.patch({
+                id:           jobId,
+                failure:      ++$failure,
+                failureRatio: toPercent($failure, $total),
+                progress:     toPercent(++$processed, $total),
             }),
-            onSkip:    () => this.prismaClient.job.update({
-                data:  {
-                    skip:      ++$skip,
-                    skipRatio: toPercent($skip, $total),
-                    progress:  toPercent(++$processed, $total),
-                },
-                where: {
-                    id: jobId,
-                }
+            onSkip:    () => this.jobSource.patch({
+                id:        jobId,
+                skip:      ++$skip,
+                skipRatio: toPercent($skip, $total),
+                progress:  toPercent(++$processed, $total),
             }),
             setResult: result => {
                 $result = result;

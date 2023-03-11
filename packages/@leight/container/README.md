@@ -1,3 +1,3 @@
 # Container
 
-This package provides some little tools for `tsyringe` package.
+This package provides some little tools for DI support.

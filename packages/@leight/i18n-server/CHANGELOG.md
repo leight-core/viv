@@ -1,5 +1,13 @@
 # @leight/i18n-server
 
+## 0.5.28
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+- Updated dependencies
+    - @leight/i18n@0.5.28
+
 ## 0.5.27
 
 ### Patch Changes

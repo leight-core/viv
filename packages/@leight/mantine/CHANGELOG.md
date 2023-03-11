@@ -1,5 +1,18 @@
 # @leight/mantine
 
+## 0.5.29
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+- Updated dependencies
+    - @leight/utils-client@0.5.31
+    - @leight/file-client@0.5.29
+    - @leight/i18n-client@0.5.29
+    - @leight/utils@0.5.30
+    - @leight/file@0.5.27
+    - @leight/i18n@0.5.28
+
 ## 0.5.28
 
 ### Patch Changes

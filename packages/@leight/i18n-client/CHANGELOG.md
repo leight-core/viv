@@ -1,5 +1,15 @@
 # @leight/i18n-client
 
+## 0.5.29
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+- Updated dependencies
+    - @leight/context-client@0.5.34
+    - @leight/utils@0.5.30
+    - @leight/i18n@0.5.28
+
 ## 0.5.28
 
 ### Patch Changes

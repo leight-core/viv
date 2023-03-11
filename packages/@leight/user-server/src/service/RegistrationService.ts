@@ -4,19 +4,18 @@ import {
     type IToken,
     type IUserSource
 } from "@leight/user";
-import {
-    inject,
-    injectable
-} from "tsyringe";
 
 /**
  * Service used to register new users with en eventual case where the
  * very first user gets a "root" role (token).
  */
-@injectable()
 export class RegistrationService implements IRegistrationService {
+    static inject = [
+        $UserSource,
+    ];
+
     constructor(
-        @inject($UserSource) protected userSource: IUserSource,
+        protected userSource: IUserSource,
     ) {
     }
 

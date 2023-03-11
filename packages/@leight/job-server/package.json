@@ -1,5 +1,5 @@
 {
-    "version": "0.5.27",
+    "version": "0.5.28",
     "name": "@leight/job-server",
     "description": "Job (async execution) stuff on server-side.",
     "license": "MIT",
@@ -24,27 +24,26 @@
     ],
     "scripts": {
         "build": "concurrently npm:build:*",
-        "build:tsc": "tsc --outDir lib",
+        "build:esbuild": "node esbuild.mjs",
+        "build:types": "tsc --outDir lib",
         "depcheck": "depcheck",
         "lint": "eslint src",
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "workspace:^0.5.26",
-        "@leight/job": "workspace:^0.5.28",
-        "@leight/prisma": "workspace:^0.5.30",
-        "@leight/source-server": "workspace:^0.5.24",
-        "@leight/user": "workspace:^0.5.27",
-        "@leight/utils": "workspace:^0.5.29",
-        "@leight/winston": "workspace:^0.5.26",
-        "delay": "^5.0.0",
-        "reflect-metadata": "^0.1.13",
-        "tsyringe": "^4.7.0"
+        "@leight/container": "workspace:^0.5.27",
+        "@leight/job": "workspace:^0.5.29",
+        "@leight/prisma": "workspace:^0.5.32",
+        "@leight/source-server": "workspace:^0.5.26",
+        "@leight/user": "workspace:^0.5.28",
+        "@leight/utils": "workspace:^0.5.30",
+        "@leight/winston": "workspace:^0.5.27",
+        "delay": "^5.0.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "workspace:^0.5.6",
+        "@leight/esbuild": "workspace:^0.5.7",
         "@leight/eslint-config-eslint": "workspace:^0.5.16",
-        "@leight/tsconfig": "workspace:^0.5.29",
+        "@leight/tsconfig": "workspace:^0.5.30",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

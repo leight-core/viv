@@ -1,5 +1,11 @@
 # @leight/utils
 
+## 0.5.30
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+
 ## 0.5.29
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @leight/trpc-server
 
+## 0.5.28
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+- Updated dependencies
+    - @leight/user-server@0.5.27
+    - @leight/container@0.5.27
+    - @leight/trpc@0.5.27
+    - @leight/user@0.5.28
+
 ## 0.5.27
 
 ### Patch Changes

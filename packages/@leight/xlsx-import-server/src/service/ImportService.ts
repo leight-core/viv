@@ -23,24 +23,26 @@ import {
 }                      from "@leight/xlsx-import";
 import {measureTime}   from "measure-time";
 import {type Readable} from "node:stream";
-import "reflect-metadata";
-import {
-    inject,
-    injectable
-}                      from "tsyringe";
 import {
     readFile,
     stream
 }                      from "xlsx";
 
-@injectable()
 export class ImportService implements IImportService {
+    static inject = [
+        $MetaService,
+        $FileService,
+        $JobExecutor,
+        $TranslationService,
+        $ImportHandlerService,
+    ];
+
     constructor(
-        @inject($MetaService) protected metaService: IMetaService,
-        @inject($FileService) protected fileService: IFileService,
-        @inject($JobExecutor) protected jobExecutor: IJobExecutor,
-        @inject($TranslationService) protected translationService: ITranslationService,
-        @inject($ImportHandlerService) protected importHandlerService: IImportHandlerService,
+        protected metaService: IMetaService,
+        protected fileService: IFileService,
+        protected jobExecutor: IJobExecutor,
+        protected translationService: ITranslationService,
+        protected importHandlerService: IImportHandlerService,
     ) {
     }
 
@@ -54,10 +56,11 @@ export class ImportService implements IImportService {
         });
     }
 
-    async job({
-                  jobProgress,
-                  params: {fileId}
-              }: IJobExecutor.HandlerRequest<IImportJob>): Promise<IImportService.ImportResult> {
+    async job(
+        {
+            jobProgress,
+            params: {fileId}
+        }: IJobExecutor.HandlerRequest<IImportJob>): Promise<IImportService.ImportResult> {
         const file                 = await this.fileService.fetch(fileId);
         const workbook             = readFile(file.location, {
             type:      "binary",

@@ -1,5 +1,16 @@
 # @leight/react-cmdk
 
+## 0.5.28
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+- Updated dependencies
+    - @leight/context-client@0.5.34
+    - @leight/utils-client@0.5.31
+    - @leight/utils@0.5.30
+    - @leight/i18n@0.5.28
+
 ## 0.5.27
 
 ### Patch Changes

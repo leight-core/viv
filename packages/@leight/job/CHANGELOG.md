@@ -1,5 +1,15 @@
 # @leight/job
 
+## 0.5.29
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+- Updated dependencies
+    - @leight/winston@0.5.27
+    - @leight/prisma@0.5.32
+    - @leight/source@0.5.24
+
 ## 0.5.28
 
 ### Patch Changes

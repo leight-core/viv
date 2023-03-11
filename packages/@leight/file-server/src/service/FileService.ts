@@ -11,20 +11,18 @@ import {copySync}       from "fs-extra";
 import {detectFileMime} from "mime-detect";
 import fs               from "node:fs";
 import coolPath         from "node:path";
-import "reflect-metadata";
-import touch            from "touch";
-import {
-    inject,
-    injectable
-}                       from "tsyringe";
-import {v4}             from "uuid";
 
-@injectable()
+import touch from "touch";
+import {v4}  from "uuid";
+
 export class FileService implements IFileService {
+    static inject = [
+        $FileServiceConfig,
+        $FileSource,
+    ];
+
     constructor(
-        @inject($FileServiceConfig)
         private fileServiceConfig: IFileServiceConfig,
-        @inject($FileSource)
         private fileSource: IFileSource,
     ) {
     }

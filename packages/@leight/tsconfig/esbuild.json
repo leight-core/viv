@@ -6,6 +6,7 @@
         "emitDeclarationOnly": true,
         "disableSolutionSearching": true,
         "emitDecoratorMetadata": false,
+        "experimentalDecorators": false,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "incremental": false,

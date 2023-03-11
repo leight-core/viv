@@ -1,3 +1,3 @@
-import {container} from "tsyringe";
+import {PumpIt} from "pumpit";
 
-export type IContainer = typeof container;
+export type IContainer = PumpIt;

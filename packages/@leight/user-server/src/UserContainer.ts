@@ -9,13 +9,13 @@ import {
     type IUserService,
     type IUserSource,
 }                        from "@leight/user";
-import "reflect-metadata";
+
 import {
     RegistrationService,
     UserJwtService,
     UserService
-}                        from "./service";
-import {UserSource}      from "./source";
+}                   from "./service";
+import {UserSource} from "./source";
 
 export interface IUserContainer {
     RegistrationService: IRegistrationService;
@@ -25,18 +25,11 @@ export interface IUserContainer {
 }
 
 export const UserContainer = (container: IContainer): IUserContainer => {
-    container.register<IRegistrationService>($RegistrationService, {
-        useClass: RegistrationService,
-    });
-    container.register<IUserJwtService>($UserJwtService, {
-        useClass: UserJwtService,
-    });
-    container.register<IUserService>($UserService, {
-        useClass: UserService,
-    });
-    container.register<UserSource>($UserSource, {
-        useClass: UserSource,
-    });
+    container
+        .bindClass($RegistrationService, RegistrationService)
+        .bindClass($UserJwtService, UserJwtService)
+        .bindClass($UserService, UserService)
+        .bindClass($UserSource, UserSource);
 
     return {
         get RegistrationService() {

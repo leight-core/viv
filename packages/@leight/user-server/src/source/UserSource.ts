@@ -8,15 +8,14 @@ import {
     type IUserSource,
     type IUserSourceSchema,
 }                       from "@leight/user";
-import {
-    inject,
-    injectable
-}                       from "tsyringe";
 
-@injectable()
 export class UserSource extends AbstractSource<IUserSourceSchema> implements IUserSource {
+    static inject = [
+        $PrismaClient,
+    ];
+
     constructor(
-        @inject($PrismaClient) protected prismaClient: IPrismaClient,
+        protected prismaClient: IPrismaClient,
     ) {
         super($UserSource);
     }

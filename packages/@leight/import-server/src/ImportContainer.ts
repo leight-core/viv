@@ -3,16 +3,14 @@ import {
     $ImportHandlerService,
     type IImportHandlerService
 }                             from "@leight/import";
-import {ImportHandlerService} from "./service/ImportHandlerService";
+import {ImportHandlerService} from "./service";
 
 export interface IImportContainer {
     ImportHandlerService: IImportHandlerService;
 }
 
 export const ImportContainer = (container: IContainer): IImportContainer => {
-    container.register<IImportHandlerService>($ImportHandlerService, {
-        useClass: ImportHandlerService,
-    });
+    container.bindClass($ImportHandlerService, ImportHandlerService);
 
     return {
         get ImportHandlerService() {

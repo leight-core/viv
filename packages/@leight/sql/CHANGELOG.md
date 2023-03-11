@@ -1,5 +1,13 @@
 # @leight/sql
 
+## 0.5.27
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+- Updated dependencies
+    - @leight/prisma@0.5.32
+
 ## 0.5.26
 
 ### Patch Changes

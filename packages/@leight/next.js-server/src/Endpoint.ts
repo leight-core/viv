@@ -38,7 +38,7 @@ export const Endpoint =
                          response: NextApiResponse<TResponse | IError>
                      ) => {
                          try {
-                             const $container   = container.createChildContainer();
+                             const $container   = container.child();
                              const token        = await getToken({req: request});
                              const tokenService = TokenServiceContext($container)
                                  .register((token?.tokens || []) as [])

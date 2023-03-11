@@ -1,5 +1,14 @@
 # @leight/context-client
 
+## 0.5.34
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+- Updated dependencies
+    - @leight/zustand@0.5.28
+    - @leight/utils@0.5.30
+
 ## 0.5.33
 
 ### Patch Changes

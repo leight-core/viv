@@ -1,5 +1,17 @@
 # @leight/user-server
 
+## 0.5.27
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+- Updated dependencies
+    - @leight/source-server@0.5.26
+    - @leight/container@0.5.27
+    - @leight/prisma@0.5.32
+    - @leight/utils@0.5.30
+    - @leight/user@0.5.28
+
 ## 0.5.26
 
 ### Patch Changes

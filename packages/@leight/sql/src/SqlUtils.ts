@@ -2,16 +2,14 @@ import {
     $PrismaClient,
     type IPrismaClient
 } from "@leight/prisma";
-import "reflect-metadata";
-import {
-    inject,
-    injectable
-} from "tsyringe";
 
-@injectable()
 export class SqlUtils {
+    static inject = [
+        $PrismaClient,
+    ];
+
     constructor(
-        @inject($PrismaClient) protected prisma: IPrismaClient,
+        protected prismaClient: IPrismaClient,
     ) {
     }
 
@@ -57,7 +55,7 @@ export class SqlUtils {
     }
 
     async run(file: string, timeout: number = 1000 * 60) {
-        return this.prisma.$transaction(
+        return this.prismaClient.$transaction(
             async (prisma) =>
                 this.file(file, (sql) => {
                     console.log(`Executing: ${sql}`);
@@ -70,7 +68,7 @@ export class SqlUtils {
     }
 
     async execute(source: string, timeout: number = 1000 * 60) {
-        return this.prisma.$transaction(
+        return this.prismaClient.$transaction(
             async (prisma) =>
                 this.source(source, (sql) => {
                     console.log(`Executing: ${sql}`);

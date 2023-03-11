@@ -12,18 +12,18 @@ import {
     MetaSchema
 }         from "@leight/xlsx-import";
 import fs from "fs";
-import "reflect-metadata";
-import {
-    inject,
-    injectable
-}         from "tsyringe";
 
-@injectable()
 export class MetaService implements IMetaService {
+    static inject = [
+        $TabService,
+        $TranslationService,
+        $MetaServiceConfig,
+    ];
+
     constructor(
-        @inject($TabService) protected tabService: ITabService,
-        @inject($TranslationService) protected translationService: ITranslationService,
-        @inject($MetaServiceConfig) protected metaServiceConfig: IMetaServiceConfig,
+        protected tabService: ITabService,
+        protected translationService: ITranslationService,
+        protected metaServiceConfig: IMetaServiceConfig,
     ) {
     }
 

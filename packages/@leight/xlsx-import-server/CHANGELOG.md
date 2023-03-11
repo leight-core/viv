@@ -1,5 +1,20 @@
 # @leight/xlsx-import-server
 
+## 0.5.27
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+- Updated dependencies
+    - @leight/utils-server@0.5.27
+    - @leight/trpc-server@0.5.28
+    - @leight/xlsx-import@0.5.28
+    - @leight/container@0.5.27
+    - @leight/import@0.5.27
+    - @leight/utils@0.5.30
+    - @leight/file@0.5.27
+    - @leight/job@0.5.29
+
 ## 0.5.26
 
 ### Patch Changes

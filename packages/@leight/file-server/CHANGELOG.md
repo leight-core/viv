@@ -1,5 +1,17 @@
 # @leight/file-server
 
+## 0.5.27
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+- Updated dependencies
+    - @leight/next.js-server@0.5.28
+    - @leight/source-server@0.5.26
+    - @leight/container@0.5.27
+    - @leight/prisma@0.5.32
+    - @leight/file@0.5.27
+
 ## 0.5.26
 
 ### Patch Changes

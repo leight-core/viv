@@ -20,15 +20,10 @@ export interface IJobContainer {
 }
 
 export const JobContainer = (container: IContainer): IJobContainer => {
-    container.register<IJobProgressService>($JobProgressService, {
-        useClass: JobProgressService,
-    });
-    container.register<IJobExecutor>($JobExecutor, {
-        useClass: JobExecutor,
-    });
-    container.register<IJobSource>($JobSource, {
-        useClass: JobSource,
-    });
+    container
+        .bindClass($JobProgressService, JobProgressService)
+        .bindClass($JobExecutor, JobExecutor)
+        .bindClass($JobSource, JobSource);
 
     return {
         get JobProgressService() {

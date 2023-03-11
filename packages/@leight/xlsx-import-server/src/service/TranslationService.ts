@@ -2,15 +2,12 @@ import type {
     ITranslationSchema,
     ITranslationService,
     IXlsxTranslation
-}                   from "@leight/xlsx-import";
-import "reflect-metadata";
-import {injectable} from "tsyringe";
+} from "@leight/xlsx-import";
 import {
     utils,
     type WorkBook
-}                   from "xlsx";
+} from "xlsx";
 
-@injectable()
 export class TranslationService implements ITranslationService {
     async toTranslations(workbook: WorkBook): Promise<ITranslationSchema[]> {
         const {translations} = workbook.Sheets;

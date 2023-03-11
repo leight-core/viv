@@ -14,9 +14,7 @@ export class $TokenServiceContext extends ServiceContext<ITokenService> {
     }
 
     register(tokens: string[]): this {
-        this.container.register<ITokenService>($TokenService, {
-            useValue: new TokenService(tokens),
-        });
+        this.container.bindValue($TokenService, new TokenService(tokens));
         return this;
     }
 }

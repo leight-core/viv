@@ -11,12 +11,12 @@ import {
     type IFileServiceConfig,
     type IFileSource,
 }                        from "@leight/file";
-import "reflect-metadata";
+
 import {
     ChunkService,
     FileService
-}                        from "./service";
-import {FileSource}      from "./source";
+}                   from "./service";
+import {FileSource} from "./source";
 
 export interface IFileContainer {
     ChunkService: IChunkService;
@@ -31,26 +31,17 @@ export interface IFileContainer {
  * public services.
  */
 export const FileContainer = (container: IContainer): IFileContainer => {
-    container.register<IChunkService>($ChunkService, {
-        useClass: ChunkService,
-    });
-    container.register<IChunkServiceConfig>($ChunkServiceConfig, {
-        useValue: {
+    container
+        .bindClass($ChunkService, ChunkService)
+        .bindValue($ChunkServiceConfig, {
             path: ".data/chunk/{chunkId}",
-        },
-    });
-    container.register<IFileService>($FileService, {
-        useClass: FileService,
-    });
-    container.register<IFileServiceConfig>($FileServiceConfig, {
-        useValue: {
+        })
+        .bindClass($FileService, FileService)
+        .bindValue($FileServiceConfig, {
             path:            ".data/file/{fileId}",
             defaultMimeType: "application/octet-stream",
-        },
-    });
-    container.register<IFileSource>($FileSource, {
-        useClass: FileSource,
-    });
+        })
+        .bindClass($FileSource, FileSource);
 
     return {
         get ChunkService() {

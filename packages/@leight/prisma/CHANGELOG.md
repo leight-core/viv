@@ -1,5 +1,11 @@
 # @leight/prisma
 
+## 0.5.32
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+
 ## 0.5.31
 
 ### Patch Changes

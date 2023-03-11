@@ -1,13 +1,11 @@
 import {
     type IToken,
     type IUserJwtService
-}                   from "@leight/user";
-import {injectable} from "tsyringe";
+} from "@leight/user";
 
 /**
  * Service used to prepare user's JWT token.
  */
-@injectable()
 export class UserJwtService implements IUserJwtService {
     public async token<T extends IToken>(props: T): Promise<T> {
         return {

@@ -1,5 +1,13 @@
 # @leight/source-server
 
+## 0.5.26
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+- Updated dependencies
+    - @leight/source@0.5.24
+
 ## 0.5.25
 
 ### Patch Changes

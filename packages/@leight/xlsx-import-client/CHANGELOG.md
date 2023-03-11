@@ -1,5 +1,14 @@
 # @leight/xlsx-import-client
 
+## 0.5.29
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+- Updated dependencies
+    - @leight/tsconfig@0.5.30
+    - @leight/mantine@0.5.29
+
 ## 0.5.28
 
 ### Patch Changes

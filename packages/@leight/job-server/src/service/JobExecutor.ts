@@ -13,18 +13,18 @@ import {
 import {Pack}   from "@leight/utils";
 import {Logger} from "@leight/winston";
 import delay    from "delay";
-import "reflect-metadata";
-import {
-    inject,
-    injectable
-}               from "tsyringe";
 
-@injectable()
 export class JobExecutor implements IJobExecutor {
+    static inject = [
+        $JobProgressService,
+        $UserService,
+        $JobSource,
+    ];
+
     constructor(
-        @inject($JobProgressService) protected jobProgressService: IJobProgressService,
-        @inject($UserService) protected userService: IUserService,
-        @inject($JobSource) protected jobSource: IJobSource,
+        protected jobProgressService: IJobProgressService,
+        protected userService: IUserService,
+        protected jobSource: IJobSource,
     ) {
     }
 

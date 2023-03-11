@@ -67,7 +67,7 @@ export interface ISource<TSourceSchema extends ISourceSchema> {
 
     upsert(props: ISource.IUpsert<TSourceSchema>): Promise<TSourceSchema["Entity"]>;
 
-    patch(props: ISource.IPatch<TSourceSchema>): Promise<TSourceSchema["Entity"]>;
+    patch(patch: TSourceSchema["Patch"]): Promise<TSourceSchema["Entity"]>;
 
     /**
      * Count items based on an optional query.
@@ -87,9 +87,5 @@ export namespace ISource {
         create: TSourceSchema["Create"];
         patch: Omit<TSourceSchema["Patch"], "id">;
         filter: TSourceSchema["Filter"];
-    }
-
-    export interface IPatch<TSourceSchema extends ISourceSchema> {
-        patch: TSourceSchema["Patch"];
     }
 }

@@ -10,7 +10,6 @@
         "tailwindcss",
         "@emotion/*",
         "@babel/core",
-        "reflect-metadata",
         "@leight/tsconfig",
         "@leight/eslint-config-eslint",
         "@typescript-eslint/*",

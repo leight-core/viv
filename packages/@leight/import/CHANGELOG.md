@@ -1,5 +1,13 @@
 # @leight/import
 
+## 0.5.27
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+- Updated dependencies
+    - @leight/job@0.5.29
+
 ## 0.5.26
 
 ### Patch Changes

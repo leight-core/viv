@@ -1,5 +1,11 @@
 # @leight/cursor
 
+## 0.5.22
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+
 ## 0.5.21
 
 ### Patch Changes

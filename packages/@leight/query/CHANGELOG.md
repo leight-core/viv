@@ -1,5 +1,15 @@
 # @leight/query
 
+## 0.5.23
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+- Updated dependencies
+    - @leight/cursor@0.5.22
+    - @leight/filter@0.5.23
+    - @leight/sort@0.5.22
+
 ## 0.5.22
 
 ### Patch Changes

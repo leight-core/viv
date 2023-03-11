@@ -1,5 +1,14 @@
 # @leight/import-server
 
+## 0.5.27
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+- Updated dependencies
+    - @leight/container@0.5.27
+    - @leight/import@0.5.27
+
 ## 0.5.26
 
 ### Patch Changes

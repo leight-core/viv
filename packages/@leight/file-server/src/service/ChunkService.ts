@@ -10,18 +10,15 @@ import {
     outputFileSync,
     removeSync
 } from "fs-extra";
-import "reflect-metadata";
-import {
-    inject,
-    injectable
-} from "tsyringe";
 
-@injectable()
 export class ChunkService implements IChunkService {
+    static inject = [
+        $ChunkServiceConfig,
+        $FileService,
+    ];
+
     constructor(
-        @inject($ChunkServiceConfig)
         protected chunkServiceConfig: IChunkServiceConfig,
-        @inject($FileService)
         protected fileService: IFileService
     ) {
     }
@@ -30,14 +27,15 @@ export class ChunkService implements IChunkService {
         outputFileSync(this.pathOf(chunkId), await chunk, {flag: "a"});
     }
 
-    public async commit({
-                            chunkId,
-                            name,
-                            path,
-                            mime,
-                            userId,
-                            replace,
-                        }: IChunkService.CommitProps): Promise<IFileSourceSchema["Entity"]> {
+    public async commit(
+        {
+            chunkId,
+            name,
+            path,
+            mime,
+            userId,
+            replace,
+        }: IChunkService.CommitProps): Promise<IFileSourceSchema["Entity"]> {
         const $file = this.pathOf(chunkId);
         const file  = await this.fileService.store({
             file: $file,

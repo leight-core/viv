@@ -19,7 +19,7 @@ import {
     type IXlsxImportContainer,
     XlsxImportContainer as $XlsxImportContainer
 }                        from "@leight/xlsx-import-server";
-import "reflect-metadata";
+
 
 export interface IServerContainer {
     FileContainer: IFileContainer;

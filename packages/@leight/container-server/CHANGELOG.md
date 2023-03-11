@@ -1,5 +1,18 @@
 # @leight/container-server
 
+## 0.5.27
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+- Updated dependencies
+    - @leight/xlsx-import-server@0.5.27
+    - @leight/import-server@0.5.27
+    - @leight/file-server@0.5.27
+    - @leight/user-server@0.5.27
+    - @leight/job-server@0.5.28
+    - @leight/container@0.5.27
+
 ## 0.5.26
 
 ### Patch Changes

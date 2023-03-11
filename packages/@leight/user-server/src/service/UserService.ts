@@ -3,15 +3,13 @@ import {
     IUserService,
     UserError
 } from "@leight/user";
-import "reflect-metadata";
-import {
-    inject,
-    injectable
-} from "tsyringe";
 
-@injectable()
 export class UserService implements IUserService {
-    constructor(@inject($UserId) public $userId?: string) {
+    static inject = [
+        $UserId,
+    ];
+
+    constructor(public $userId?: string) {
     }
 
     optional(): string | undefined {

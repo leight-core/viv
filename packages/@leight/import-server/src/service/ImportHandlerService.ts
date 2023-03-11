@@ -6,16 +6,14 @@ import {
     type IImportHandler,
     type IImportHandlerService
 } from "@leight/import";
-import "reflect-metadata";
-import {
-    inject,
-    injectable
-} from "tsyringe";
 
-@injectable()
 export class ImportHandlerService implements IImportHandlerService {
+    static inject = [
+        $Container,
+    ];
+
     constructor(
-        @inject($Container) protected container: IContainer,
+        protected container: IContainer,
     ) {
     }
 

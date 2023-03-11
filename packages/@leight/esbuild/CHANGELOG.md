@@ -1,5 +1,11 @@
 # @leight/esbuild
 
+## 0.5.7
+
+### Patch Changes
+
+- Removed TSyringe, moved everything to esbuild
+
 ## 0.5.6
 
 ### Patch Changes
