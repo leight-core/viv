@@ -2,10 +2,7 @@
     "extends": "@leight/tsconfig/esbuild.json",
     "compilerOptions": {
         "rootDir": "src",
-        "baseUrl": "src",
-        "types": [
-            "zod"
-        ]
+        "baseUrl": "src"
     },
     "include": [
         "src/**/*",
