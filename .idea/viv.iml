@@ -260,6 +260,7 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/drizzle/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/env/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/env/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/esbuild/.turbo" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

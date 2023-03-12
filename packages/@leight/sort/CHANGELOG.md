@@ -1,5 +1,11 @@
 # @leight/sort
 
+## 0.5.27
+
+### Patch Changes
+
+- Reverted some changes
+
 ## 0.5.26
 
 ### Patch Changes

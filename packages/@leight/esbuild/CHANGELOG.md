@@ -1,5 +1,11 @@
 # @leight/esbuild
 
+## 0.5.12
+
+### Patch Changes
+
+- Reverted some changes
+
 ## 0.5.11
 
 ### Patch Changes

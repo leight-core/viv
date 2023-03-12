@@ -1,5 +1,5 @@
 {
-    "version": "0.5.38",
+    "version": "0.5.39",
     "name": "@leight/context-client",
     "description": "Context helper stuff on client-side, including support for Zustand.",
     "license": "MIT",
@@ -12,7 +12,6 @@
     },
     "sideEffects": false,
     "type": "module",
-    "main": "lib/index.js",
     "module": "lib/index.js",
     "types": "lib/index.d.ts",
     "files": [
@@ -28,15 +27,15 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/utils": "^0.5.34",
-        "@leight/zustand": "^0.5.32",
+        "@leight/utils": "^0.5.35",
+        "@leight/zustand": "^0.5.33",
         "react": "^18.2.0",
         "zustand": "^4.3.6"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.11",
-        "@leight/eslint-config-eslint": "^0.5.20",
-        "@leight/tsconfig": "^0.5.34",
+        "@leight/esbuild": "^0.5.12",
+        "@leight/eslint-config-eslint": "^0.5.21",
+        "@leight/tsconfig": "^0.5.35",
         "@types/node": "^18.15.0",
         "@types/react": "^18.0.28",
         "concurrently": "^7.6.0",

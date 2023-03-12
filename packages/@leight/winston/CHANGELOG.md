@@ -1,5 +1,11 @@
 # @leight/winston
 
+## 0.5.32
+
+### Patch Changes
+
+- Reverted some changes
+
 ## 0.5.31
 
 ### Patch Changes

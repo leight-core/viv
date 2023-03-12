@@ -1,5 +1,11 @@
 # @leight/container
 
+## 0.5.33
+
+### Patch Changes
+
+- Reverted some changes
+
 ## 0.5.32
 
 ### Patch Changes

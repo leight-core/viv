@@ -1,5 +1,15 @@
 # @leight/source
 
+## 0.5.29
+
+### Patch Changes
+
+- Reverted some changes
+- Updated dependencies
+    - @leight/cursor@0.5.27
+    - @leight/query@0.5.28
+    - @leight/utils@0.5.35
+
 ## 0.5.28
 
 ### Patch Changes

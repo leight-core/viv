@@ -1,5 +1,11 @@
 # @leight/utils
 
+## 0.5.35
+
+### Patch Changes
+
+- Reverted some changes
+
 ## 0.5.34
 
 ### Patch Changes

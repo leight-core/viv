@@ -1,5 +1,11 @@
 # @leight/env
 
+## 0.5.3
+
+### Patch Changes
+
+- Reverted some changes
+
 ## 0.5.2
 
 ### Patch Changes

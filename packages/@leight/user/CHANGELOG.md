@@ -1,5 +1,15 @@
 # @leight/user
 
+## 0.5.36
+
+### Patch Changes
+
+- Reverted some changes
+- Updated dependencies
+    - @leight/container@0.5.33
+    - @leight/prisma@0.5.42
+    - @leight/source@0.5.29
+
 ## 0.5.35
 
 ### Patch Changes
