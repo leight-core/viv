@@ -13,10 +13,9 @@
         },
         "prisma:generate": {
             "outputMode": "new-only",
-            "dependsOn": [
-                "prisma:format"
+            "outputs": [
+                "src/schema"
             ],
-            "outputs": [],
             "inputs": [
                 "prisma/schema.prisma"
             ]
