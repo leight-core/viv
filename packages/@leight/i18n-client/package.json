@@ -1,5 +1,5 @@
 {
-    "version": "0.5.32",
+    "version": "0.5.33",
     "name": "@leight/i18n-client",
     "description": "Some i18n client-side helper stuff.",
     "license": "MIT",
@@ -27,10 +27,10 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/context-client": "^0.5.37",
         "@leight/i18n": "^0.5.31",
         "@leight/utils": "^0.5.33",
         "i18next": "^22.4.11",
+        "next-i18next": "^13.2.2",
         "react": "^18.2.0"
     },
     "devDependencies": {

@@ -1,9 +1,11 @@
-import type {Prisma}               from "@prisma/client";
-import {z}                         from "zod";
-import {InputJsonValue}            from "./InputJsonValue";
-import {JsonNullValueFilterSchema} from "./JsonNullValueFilterSchema";
+import type {Prisma}                    from "@prisma/client";
+import {z}                              from "zod";
+import {InputJsonValue}                 from "./InputJsonValue";
+import {JsonNullValueFilterSchema}      from "./JsonNullValueFilterSchema";
+import {NestedIntNullableFilterSchema}  from "./NestedIntNullableFilterSchema";
+import {NestedJsonNullableFilterSchema} from "./NestedJsonNullableFilterSchema";
 
-export const JsonFilterSchema: z.ZodType<Prisma.JsonFilter> = z.object({
+export const JsonNullableWithAggregatesFilterSchema: z.ZodType<Prisma.JsonNullableWithAggregatesFilter> = z.object({
     equals:             z.union([
         InputJsonValue,
         z.lazy(() => JsonNullValueFilterSchema)
@@ -23,6 +25,9 @@ export const JsonFilterSchema: z.ZodType<Prisma.JsonFilter> = z.object({
         InputJsonValue,
         z.lazy(() => JsonNullValueFilterSchema)
     ]).optional(),
+    _count:             z.lazy(() => NestedIntNullableFilterSchema).optional(),
+    _min:               z.lazy(() => NestedJsonNullableFilterSchema).optional(),
+    _max:               z.lazy(() => NestedJsonNullableFilterSchema).optional(),
 }).strict();
 
-export default JsonFilterSchema;
+export default JsonNullableWithAggregatesFilterSchema;

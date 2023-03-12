@@ -90,18 +90,17 @@ model UserToken {
 }
 
 model File {
-    id       String @id @default(cuid())
+    id       String    @id @default(cuid())
     path     String
     name     String
     mime     String
     size     Int
     location String
-
-    ttl     Int?
-    created DateTime
-    updated DateTime?
-    userId  String?
-    user    User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
+    ttl      Int?
+    created  DateTime
+    updated  DateTime?
+    userId   String?
+    user     User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
     @@unique([userId, path, name])
 }
@@ -133,7 +132,7 @@ model Job {
     finished     DateTime?
     userId       String?
     user         User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
-    params       Json
+    params       Json?
 
     logs JobLog[]
 }

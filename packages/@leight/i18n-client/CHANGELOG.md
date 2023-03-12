@@ -1,5 +1,11 @@
 # @leight/i18n-client
 
+## 0.5.33
+
+### Patch Changes
+
+- Fixed i18next
+
 ## 0.5.32
 
 ### Patch Changes

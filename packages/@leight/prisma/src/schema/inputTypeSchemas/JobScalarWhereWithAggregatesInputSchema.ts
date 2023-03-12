@@ -8,7 +8,7 @@ import {FloatWithAggregatesFilterSchema}            from "./FloatWithAggregatesF
 import {IntNullableWithAggregatesFilterSchema}      from "./IntNullableWithAggregatesFilterSchema";
 import {IntWithAggregatesFilterSchema}              from "./IntWithAggregatesFilterSchema";
 import {JobStatusSchema}                            from "./JobStatusSchema";
-import {JsonWithAggregatesFilterSchema}             from "./JsonWithAggregatesFilterSchema";
+import {JsonNullableWithAggregatesFilterSchema}     from "./JsonNullableWithAggregatesFilterSchema";
 import {StringNullableWithAggregatesFilterSchema}   from "./StringNullableWithAggregatesFilterSchema";
 import {StringWithAggregatesFilterSchema}           from "./StringWithAggregatesFilterSchema";
 
@@ -82,7 +82,7 @@ export const JobScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.JobScalar
         z.lazy(() => StringNullableWithAggregatesFilterSchema),
         z.string()
     ]).optional().nullable(),
-    params:       z.lazy(() => JsonWithAggregatesFilterSchema).optional(),
+    params:       z.lazy(() => JsonNullableWithAggregatesFilterSchema).optional(),
 }).strict();
 
 export default JobScalarWhereWithAggregatesInputSchema;

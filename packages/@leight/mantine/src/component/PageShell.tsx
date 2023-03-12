@@ -1,8 +1,6 @@
-import {I18NextProvider}      from "@leight/i18n-client";
 import {type IPageWithLayout} from "@leight/layout";
 import {MantineProvider}      from "@mantine/core";
 import {Notifications}        from "@mantine/notifications";
-import {type i18n}            from "i18next";
 import {SessionProvider}      from "next-auth/react";
 import {type AppProps}        from "next/app";
 import Head                   from "next/head";
@@ -12,18 +10,30 @@ import {
 }                             from "react";
 import {RouterTransition}     from "../RouterTransition";
 
-export interface IAppProps {
+export interface IPageShellProps {
+    /**
+     * Default page title
+     */
     title: string;
-    i18next: i18n;
+    colorScheme?: "dark" | "light";
+    /**
+     * Incoming component name from Next.js _app
+     */
     Component: AppProps["Component"];
+    /**
+     * Incoming component page props from Next.js _app
+     */
     pageProps?: AppProps["pageProps"];
-    emotionCache: ComponentProps<typeof MantineProvider>["emotionCache"];
+    emotionCache?: ComponentProps<typeof MantineProvider>["emotionCache"];
 }
 
-export const App: FC<IAppProps> = (
+/**
+ * This is a wrapper for the _app as it contains basic setup (mantine stuff, ...) for the application.
+ */
+export const PageShell: FC<IPageShellProps> = (
     {
         title,
-        i18next,
+        colorScheme = "light",
         emotionCache,
         Component,
         pageProps,
@@ -40,7 +50,7 @@ export const App: FC<IAppProps> = (
             <link rel={"shortcut icon"} href={"/favicon.ico"}/>
         </Head>
         <MantineProvider
-            theme={{colorScheme: "light"}}
+            theme={{colorScheme}}
             withGlobalStyles
             withNormalizeCSS
             emotionCache={emotionCache}
@@ -51,14 +61,10 @@ export const App: FC<IAppProps> = (
                 refetchInterval={30}
                 refetchOnWindowFocus
             >
-                <I18NextProvider
-                    defaults={{i18next}}
-                >
-                    {(
-                        (Component as unknown as IPageWithLayout)
-                            .layout || ((page) => page)
-                    )(<Component {...pageProps}/>)}
-                </I18NextProvider>
+                {(
+                    (Component as unknown as IPageWithLayout)
+                        .layout || ((page) => page)
+                )(<Component {...pageProps}/>)}
             </SessionProvider>
         </MantineProvider>
     </>;

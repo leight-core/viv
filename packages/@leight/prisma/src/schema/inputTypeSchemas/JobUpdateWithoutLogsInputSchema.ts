@@ -6,10 +6,10 @@ import {FloatFieldUpdateOperationsInputSchema}            from "./FloatFieldUpda
 import {InputJsonValue}                                   from "./InputJsonValue";
 import {IntFieldUpdateOperationsInputSchema}              from "./IntFieldUpdateOperationsInputSchema";
 import {JobStatusSchema}                                  from "./JobStatusSchema";
-import {JsonNullValueInputSchema}                         from "./JsonNullValueInputSchema";
 import {NullableDateTimeFieldUpdateOperationsInputSchema} from "./NullableDateTimeFieldUpdateOperationsInputSchema";
 import {NullableFloatFieldUpdateOperationsInputSchema}    from "./NullableFloatFieldUpdateOperationsInputSchema";
 import {NullableIntFieldUpdateOperationsInputSchema}      from "./NullableIntFieldUpdateOperationsInputSchema";
+import {NullableJsonNullValueInputSchema}                 from "./NullableJsonNullValueInputSchema";
 import {StringFieldUpdateOperationsInputSchema}           from "./StringFieldUpdateOperationsInputSchema";
 import {UserUpdateOneWithoutJobNestedInputSchema}         from "./UserUpdateOneWithoutJobNestedInputSchema";
 
@@ -71,7 +71,7 @@ export const JobUpdateWithoutLogsInputSchema: z.ZodType<Prisma.JobUpdateWithoutL
         z.lazy(() => NullableDateTimeFieldUpdateOperationsInputSchema)
     ]).optional().nullable(),
     params:       z.union([
-        z.lazy(() => JsonNullValueInputSchema),
+        z.lazy(() => NullableJsonNullValueInputSchema),
         InputJsonValue
     ]).optional(),
     user:         z.lazy(() => UserUpdateOneWithoutJobNestedInputSchema).optional(),

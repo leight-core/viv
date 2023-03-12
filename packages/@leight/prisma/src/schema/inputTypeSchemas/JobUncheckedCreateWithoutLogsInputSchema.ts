@@ -1,8 +1,8 @@
-import type {Prisma}              from "@prisma/client";
-import {z}                        from "zod";
-import {InputJsonValue}           from "./InputJsonValue";
-import {JobStatusSchema}          from "./JobStatusSchema";
-import {JsonNullValueInputSchema} from "./JsonNullValueInputSchema";
+import type {Prisma}                      from "@prisma/client";
+import {z}                                from "zod";
+import {InputJsonValue}                   from "./InputJsonValue";
+import {JobStatusSchema}                  from "./JobStatusSchema";
+import {NullableJsonNullValueInputSchema} from "./NullableJsonNullValueInputSchema";
 
 export const JobUncheckedCreateWithoutLogsInputSchema: z.ZodType<Prisma.JobUncheckedCreateWithoutLogsInput> = z.object({
     id:           z.string().optional(),
@@ -21,9 +21,9 @@ export const JobUncheckedCreateWithoutLogsInputSchema: z.ZodType<Prisma.JobUnche
     finished:     z.coerce.date().optional().nullable(),
     userId:       z.string().optional().nullable(),
     params:       z.union([
-        z.lazy(() => JsonNullValueInputSchema),
+        z.lazy(() => NullableJsonNullValueInputSchema),
         InputJsonValue
-    ]),
+    ]).optional(),
 }).strict();
 
 export default JobUncheckedCreateWithoutLogsInputSchema;

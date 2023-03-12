@@ -3,7 +3,7 @@ import {z}                         from "zod";
 import {InputJsonValue}            from "./InputJsonValue";
 import {JsonNullValueFilterSchema} from "./JsonNullValueFilterSchema";
 
-export const NestedJsonFilterSchema: z.ZodType<Prisma.NestedJsonFilter> = z.object({
+export const JsonNullableFilterSchema: z.ZodType<Prisma.JsonNullableFilter> = z.object({
     equals:             z.union([
         InputJsonValue,
         z.lazy(() => JsonNullValueFilterSchema)
@@ -25,4 +25,4 @@ export const NestedJsonFilterSchema: z.ZodType<Prisma.NestedJsonFilter> = z.obje
     ]).optional(),
 }).strict();
 
-export default NestedJsonFilterSchema;
+export default JsonNullableFilterSchema;

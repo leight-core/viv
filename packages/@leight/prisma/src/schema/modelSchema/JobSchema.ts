@@ -1,18 +1,19 @@
-import {z}               from "zod";
-import {InputJsonValue}  from "../inputTypeSchemas/InputJsonValue";
-import {JobStatusSchema} from "../inputTypeSchemas/JobStatusSchema";
+import {z}                      from "zod";
+import {JobStatusSchema}        from "../inputTypeSchemas/JobStatusSchema";
+import {NullableJsonValue}      from "../inputTypeSchemas/NullableJsonValue";
+import {type NullableJsonInput} from "../inputTypeSchemas/transformJsonNull";
 import {
     type JobLogPartialWithRelations,
     JobLogPartialWithRelationsSchema,
     type JobLogWithRelations,
     JobLogWithRelationsSchema
-}                        from "./JobLogSchema";
+}                               from "./JobLogSchema";
 import {
     type UserPartialWithRelations,
     UserPartialWithRelationsSchema,
     type UserWithRelations,
     UserWithRelationsSchema
-}                        from "./UserSchema";
+}                               from "./UserSchema";
 
 /////////////////////////////////////////
 // JOB SCHEMA
@@ -34,7 +35,7 @@ export const JobSchema = z.object({
     started:      z.coerce.date().nullish(),
     finished:     z.coerce.date().nullish(),
     userId:       z.string().nullish(),
-    params:       InputJsonValue,
+    params:       NullableJsonValue.optional(),
 });
 
 export type Job = z.infer<typeof JobSchema>
@@ -67,7 +68,10 @@ export type JobRelations = {
 };
 
 export type JobWithRelations =
-    z.infer<typeof JobSchema>
+    Omit<z.infer<typeof JobSchema>, "params">
+    & {
+        params?: NullableJsonInput;
+    }
     & JobRelations
 
 export const JobWithRelationsSchema: z.ZodType<JobWithRelations> = JobSchema.merge(z.object({
@@ -79,7 +83,10 @@ export const JobWithRelationsSchema: z.ZodType<JobWithRelations> = JobSchema.mer
 //------------------------------------------------------
 
 export type JobOptionalDefaultsWithRelations =
-    z.infer<typeof JobOptionalDefaultsSchema>
+    Omit<z.infer<typeof JobOptionalDefaultsSchema>, "params">
+    & {
+        params?: NullableJsonInput;
+    }
     & JobRelations
 
 export const JobOptionalDefaultsWithRelationsSchema: z.ZodType<JobOptionalDefaultsWithRelations> = JobOptionalDefaultsSchema.merge(z.object({
@@ -96,7 +103,10 @@ export type JobPartialRelations = {
 };
 
 export type JobPartialWithRelations =
-    z.infer<typeof JobPartialSchema>
+    Omit<z.infer<typeof JobPartialSchema>, "params">
+    & {
+        params?: NullableJsonInput;
+    }
     & JobPartialRelations
 
 export const JobPartialWithRelationsSchema: z.ZodType<JobPartialWithRelations> = JobPartialSchema.merge(z.object({
