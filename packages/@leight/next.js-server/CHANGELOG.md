@@ -1,5 +1,11 @@
 # @leight/next.js-server
 
+## 0.5.33
+
+### Patch Changes
+
+- Created a new env package
+
 ## 0.5.32
 
 ### Patch Changes
