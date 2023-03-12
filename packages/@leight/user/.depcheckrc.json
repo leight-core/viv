@@ -1,29 +1,7 @@
 {
     "ignores": [
-        "zod",
-        "@tailwindcss/*",
-        "@types/*",
-        "del-cli",
-        "dotenv-cli",
-        "autoprefixer",
-        "postcss",
-        "tailwindcss",
-        "@emotion/*",
-        "@babel/core",
-        "@leight/tsconfig",
-        "@leight/eslint-config-eslint",
-        "@typescript-eslint/*",
-        "concurrently",
-        "typescript",
-        "eslint",
         "@leight/esbuild",
-        "eslint-plugin-unicorn",
-        "next",
-        "react",
-        "depcheck",
-        "react-dom"
-    ],
-    "specials": [
-        "prettier"
+        "@leight/tsconfig",
+        "@types/node"
     ]
 }

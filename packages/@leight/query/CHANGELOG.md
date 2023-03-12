@@ -1,5 +1,15 @@
 # @leight/query
 
+## 0.5.26
+
+### Patch Changes
+
+- Experimentally lowered number of dependencies
+- Updated dependencies
+    - @leight/cursor@0.5.25
+    - @leight/filter@0.5.26
+    - @leight/sort@0.5.25
+
 ## 0.5.25
 
 ### Patch Changes

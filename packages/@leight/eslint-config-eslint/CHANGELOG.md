@@ -1,5 +1,11 @@
 # @leight/eslint-config-eslint
 
+## 0.5.19
+
+### Patch Changes
+
+- Experimentally lowered number of dependencies
+
 ## 0.5.18
 
 ### Patch Changes

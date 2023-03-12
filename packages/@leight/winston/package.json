@@ -1,5 +1,5 @@
 {
-    "version": "0.5.29",
+    "version": "0.5.30",
     "name": "@leight/winston",
     "description": "Winston utils.",
     "license": "MIT",
@@ -30,9 +30,9 @@
         "winston": "^3.8.2"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.9",
-        "@leight/eslint-config-eslint": "^0.5.18",
-        "@leight/tsconfig": "^0.5.32",
+        "@leight/esbuild": "^0.5.10",
+        "@leight/eslint-config-eslint": "^0.5.19",
+        "@leight/tsconfig": "^0.5.33",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

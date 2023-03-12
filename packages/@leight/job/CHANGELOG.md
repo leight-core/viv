@@ -1,5 +1,15 @@
 # @leight/job
 
+## 0.5.33
+
+### Patch Changes
+
+- Experimentally lowered number of dependencies
+- Updated dependencies
+    - @leight/prisma@0.5.38
+    - @leight/source@0.5.27
+    - @leight/winston@0.5.30
+
 ## 0.5.32
 
 ### Patch Changes

@@ -1,5 +1,5 @@
 {
-    "version": "0.5.30",
+    "version": "0.5.31",
     "name": "@leight/file",
     "description": "Common file stuff.",
     "license": "MIT",
@@ -27,15 +27,15 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/filter": "^0.5.25",
-        "@leight/prisma": "^0.5.37",
-        "@leight/source": "^0.5.26",
+        "@leight/filter": "^0.5.26",
+        "@leight/prisma": "^0.5.38",
+        "@leight/source": "^0.5.27",
         "zod": "3.21.1"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.9",
-        "@leight/eslint-config-eslint": "^0.5.18",
-        "@leight/tsconfig": "^0.5.32",
+        "@leight/esbuild": "^0.5.10",
+        "@leight/eslint-config-eslint": "^0.5.19",
+        "@leight/tsconfig": "^0.5.33",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

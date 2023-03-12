@@ -1,5 +1,11 @@
 # @leight/prisma
 
+## 0.5.38
+
+### Patch Changes
+
+- Experimentally lowered number of dependencies
+
 ## 0.5.37
 
 ### Patch Changes

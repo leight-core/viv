@@ -1,5 +1,18 @@
 # @leight/mantine
 
+## 0.5.32
+
+### Patch Changes
+
+- Experimentally lowered number of dependencies
+- Updated dependencies
+    - @leight/utils-client@0.5.34
+    - @leight/file-client@0.5.32
+    - @leight/i18n-client@0.5.32
+    - @leight/file@0.5.31
+    - @leight/i18n@0.5.31
+    - @leight/utils@0.5.33
+
 ## 0.5.31
 
 ### Patch Changes

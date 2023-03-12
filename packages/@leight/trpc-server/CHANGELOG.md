@@ -1,5 +1,16 @@
 # @leight/trpc-server
 
+## 0.5.31
+
+### Patch Changes
+
+- Experimentally lowered number of dependencies
+- Updated dependencies
+    - @leight/user-server@0.5.32
+    - @leight/container@0.5.30
+    - @leight/trpc@0.5.30
+    - @leight/user@0.5.32
+
 ## 0.5.30
 
 ### Patch Changes

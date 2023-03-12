@@ -1,5 +1,13 @@
 # @leight/import
 
+## 0.5.30
+
+### Patch Changes
+
+- Experimentally lowered number of dependencies
+- Updated dependencies
+    - @leight/job@0.5.33
+
 ## 0.5.29
 
 ### Patch Changes

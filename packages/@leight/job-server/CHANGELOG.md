@@ -1,5 +1,19 @@
 # @leight/job-server
 
+## 0.5.32
+
+### Patch Changes
+
+- Experimentally lowered number of dependencies
+- Updated dependencies
+    - @leight/source-server@0.5.29
+    - @leight/container@0.5.30
+    - @leight/prisma@0.5.38
+    - @leight/user@0.5.32
+    - @leight/job@0.5.33
+    - @leight/utils@0.5.33
+    - @leight/winston@0.5.30
+
 ## 0.5.31
 
 ### Patch Changes

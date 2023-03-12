@@ -1,5 +1,13 @@
 # @leight/i18n-server
 
+## 0.5.31
+
+### Patch Changes
+
+- Experimentally lowered number of dependencies
+- Updated dependencies
+    - @leight/i18n@0.5.31
+
 ## 0.5.30
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @leight/filter
 
+## 0.5.26
+
+### Patch Changes
+
+- Experimentally lowered number of dependencies
+
 ## 0.5.25
 
 ### Patch Changes

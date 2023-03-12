@@ -1,5 +1,11 @@
 # @leight/utils
 
+## 0.5.33
+
+### Patch Changes
+
+- Experimentally lowered number of dependencies
+
 ## 0.5.32
 
 ### Patch Changes

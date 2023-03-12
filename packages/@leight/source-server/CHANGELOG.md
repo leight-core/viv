@@ -1,5 +1,13 @@
 # @leight/source-server
 
+## 0.5.29
+
+### Patch Changes
+
+- Experimentally lowered number of dependencies
+- Updated dependencies
+    - @leight/source@0.5.27
+
 ## 0.5.28
 
 ### Patch Changes

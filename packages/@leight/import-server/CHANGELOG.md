@@ -1,5 +1,14 @@
 # @leight/import-server
 
+## 0.5.30
+
+### Patch Changes
+
+- Experimentally lowered number of dependencies
+- Updated dependencies
+    - @leight/container@0.5.30
+    - @leight/import@0.5.30
+
 ## 0.5.29
 
 ### Patch Changes

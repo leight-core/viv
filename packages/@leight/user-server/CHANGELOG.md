@@ -1,5 +1,17 @@
 # @leight/user-server
 
+## 0.5.32
+
+### Patch Changes
+
+- Experimentally lowered number of dependencies
+- Updated dependencies
+    - @leight/source-server@0.5.29
+    - @leight/container@0.5.30
+    - @leight/prisma@0.5.38
+    - @leight/user@0.5.32
+    - @leight/utils@0.5.33
+
 ## 0.5.31
 
 ### Patch Changes

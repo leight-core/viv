@@ -1,5 +1,18 @@
 # @leight/container-server
 
+## 0.5.30
+
+### Patch Changes
+
+- Experimentally lowered number of dependencies
+- Updated dependencies
+    - @leight/xlsx-import-server@0.5.30
+    - @leight/file-server@0.5.31
+    - @leight/user-server@0.5.32
+    - @leight/job-server@0.5.32
+    - @leight/container@0.5.30
+    - @leight/import-server@0.5.30
+
 ## 0.5.29
 
 ### Patch Changes

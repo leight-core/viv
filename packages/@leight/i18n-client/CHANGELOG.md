@@ -1,5 +1,15 @@
 # @leight/i18n-client
 
+## 0.5.32
+
+### Patch Changes
+
+- Experimentally lowered number of dependencies
+- Updated dependencies
+    - @leight/context-client@0.5.37
+    - @leight/i18n@0.5.31
+    - @leight/utils@0.5.33
+
 ## 0.5.31
 
 ### Patch Changes
