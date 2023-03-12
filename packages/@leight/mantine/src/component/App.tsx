@@ -4,6 +4,7 @@ import {MantineProvider}      from "@mantine/core";
 import {Notifications}        from "@mantine/notifications";
 import {type i18n}            from "i18next";
 import {SessionProvider}      from "next-auth/react";
+import {type AppProps}        from "next/app";
 import Head                   from "next/head";
 import {
     type ComponentProps,
@@ -14,12 +15,19 @@ import {RouterTransition}     from "../RouterTransition";
 export interface IAppProps {
     title: string;
     i18next: i18n;
-    Page: FC;
-    pageProps?: Record<string, any>;
+    Component: AppProps["Component"];
+    pageProps?: AppProps["pageProps"];
     emotionCache: ComponentProps<typeof MantineProvider>["emotionCache"];
 }
 
-export const App: FC<IAppProps> = ({title, i18next, Page, pageProps, emotionCache}) => {
+export const App: FC<IAppProps> = (
+    {
+        title,
+        i18next,
+        emotionCache,
+        Component,
+        pageProps,
+    }) => {
     return <>
         <Head>
             <title>{title}</title>
@@ -47,9 +55,9 @@ export const App: FC<IAppProps> = ({title, i18next, Page, pageProps, emotionCach
                     defaults={{i18next}}
                 >
                     {(
-                        (Page as unknown as IPageWithLayout)
+                        (Component as unknown as IPageWithLayout)
                             .layout || ((page) => page)
-                    )(<Page {...pageProps} />)}
+                    )(<Component {...pageProps}/>)}
                 </I18NextProvider>
             </SessionProvider>
         </MantineProvider>
