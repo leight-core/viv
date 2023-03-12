@@ -1,5 +1,11 @@
 # @leight/utils
 
+## 0.5.34
+
+### Patch Changes
+
+- Fixed package.json
+
 ## 0.5.33
 
 ### Patch Changes

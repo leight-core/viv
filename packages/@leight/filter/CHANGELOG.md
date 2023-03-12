@@ -1,5 +1,11 @@
 # @leight/filter
 
+## 0.5.27
+
+### Patch Changes
+
+- Fixed package.json
+
 ## 0.5.26
 
 ### Patch Changes

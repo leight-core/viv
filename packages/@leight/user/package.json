@@ -1,5 +1,5 @@
 {
-    "version": "0.5.34",
+    "version": "0.5.35",
     "name": "@leight/user",
     "description": "Common user stuff.",
     "license": "MIT",
@@ -12,6 +12,7 @@
     },
     "sideEffects": false,
     "type": "module",
+    "main": "lib/index.js",
     "module": "lib/index.js",
     "types": "lib/index.d.ts",
     "files": [
@@ -27,17 +28,17 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "^0.5.31",
-        "@leight/prisma": "^0.5.40",
-        "@leight/source": "^0.5.27",
+        "@leight/container": "^0.5.32",
+        "@leight/prisma": "^0.5.41",
+        "@leight/source": "^0.5.28",
         "next-auth": "^4.20.1",
         "react": "^18.2.0",
         "zod": "3.21.1"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.10",
-        "@leight/eslint-config-eslint": "^0.5.19",
-        "@leight/tsconfig": "^0.5.33",
+        "@leight/esbuild": "^0.5.11",
+        "@leight/eslint-config-eslint": "^0.5.20",
+        "@leight/tsconfig": "^0.5.34",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

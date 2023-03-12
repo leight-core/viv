@@ -1,5 +1,14 @@
 # @leight/import-server
 
+## 0.5.31
+
+### Patch Changes
+
+- Fixed package.json
+- Updated dependencies
+    - @leight/container@0.5.32
+    - @leight/import@0.5.31
+
 ## 0.5.30
 
 ### Patch Changes

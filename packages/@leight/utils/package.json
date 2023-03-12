@@ -1,5 +1,5 @@
 {
-    "version": "0.5.33",
+    "version": "0.5.34",
     "name": "@leight/utils",
     "description": "Some simple utils used in @leight libraries.",
     "license": "MIT",
@@ -12,6 +12,7 @@
     },
     "sideEffects": false,
     "type": "module",
+    "main": "lib/index.js",
     "module": "lib/index.js",
     "types": "lib/index.d.ts",
     "files": [
@@ -34,9 +35,9 @@
         "is-string": "^1.0.7"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.10",
-        "@leight/eslint-config-eslint": "^0.5.19",
-        "@leight/tsconfig": "^0.5.33",
+        "@leight/esbuild": "^0.5.11",
+        "@leight/eslint-config-eslint": "^0.5.20",
+        "@leight/tsconfig": "^0.5.34",
         "@types/is-callable": "^1.1.0",
         "@types/is-string": "^1.0.0",
         "@types/node": "^18.15.0",

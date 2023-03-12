@@ -1,5 +1,13 @@
 # @leight/source-server
 
+## 0.5.30
+
+### Patch Changes
+
+- Fixed package.json
+- Updated dependencies
+    - @leight/source@0.5.28
+
 ## 0.5.29
 
 ### Patch Changes

@@ -1,5 +1,5 @@
 {
-    "version": "0.5.32",
+    "version": "0.5.33",
     "name": "@leight/job-server",
     "description": "Job (async execution) stuff on server-side.",
     "license": "MIT",
@@ -12,6 +12,7 @@
     },
     "sideEffects": false,
     "type": "module",
+    "main": "lib/index.js",
     "module": "lib/index.js",
     "types": "lib/index.d.ts",
     "files": [
@@ -27,19 +28,19 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "^0.5.30",
-        "@leight/job": "^0.5.33",
-        "@leight/prisma": "^0.5.38",
-        "@leight/source-server": "^0.5.29",
-        "@leight/user": "^0.5.32",
-        "@leight/utils": "^0.5.33",
-        "@leight/winston": "^0.5.30",
+        "@leight/container": "^0.5.32",
+        "@leight/job": "^0.5.34",
+        "@leight/prisma": "^0.5.41",
+        "@leight/source-server": "^0.5.30",
+        "@leight/user": "^0.5.35",
+        "@leight/utils": "^0.5.34",
+        "@leight/winston": "^0.5.31",
         "delay": "^5.0.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.10",
-        "@leight/eslint-config-eslint": "^0.5.19",
-        "@leight/tsconfig": "^0.5.33",
+        "@leight/esbuild": "^0.5.11",
+        "@leight/eslint-config-eslint": "^0.5.20",
+        "@leight/tsconfig": "^0.5.34",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

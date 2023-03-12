@@ -1,5 +1,15 @@
 # @leight/file-client
 
+## 0.5.33
+
+### Patch Changes
+
+- Fixed package.json
+- Updated dependencies
+    - @leight/utils-client@0.5.35
+    - @leight/utils@0.5.34
+    - @leight/file@0.5.32
+
 ## 0.5.32
 
 ### Patch Changes

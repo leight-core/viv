@@ -1,5 +1,13 @@
 # @leight/import
 
+## 0.5.31
+
+### Patch Changes
+
+- Fixed package.json
+- Updated dependencies
+    - @leight/job@0.5.34
+
 ## 0.5.30
 
 ### Patch Changes

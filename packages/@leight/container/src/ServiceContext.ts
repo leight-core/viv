@@ -11,15 +11,15 @@ export class ServiceContext<T> {
     constructor(protected container: IContainer, private symbol: BindKey) {
     }
 
+    resolve(): T {
+        return this.container.resolve<T>(this.symbol);
+    }
+
     protected bindValue<T>(value: T) {
         this.container.bindValue(this.symbol, value);
     }
 
     protected bindClass<T extends ClassValue>(value: T) {
         this.container.bindClass(this.symbol, value);
-    }
-
-    resolve(): T {
-        return this.container.resolve<T>(this.symbol);
     }
 }

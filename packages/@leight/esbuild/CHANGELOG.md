@@ -1,5 +1,11 @@
 # @leight/esbuild
 
+## 0.5.11
+
+### Patch Changes
+
+- Fixed package.json
+
 ## 0.5.10
 
 ### Patch Changes

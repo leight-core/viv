@@ -1,5 +1,11 @@
 # @leight/container
 
+## 0.5.32
+
+### Patch Changes
+
+- Fixed package.json
+
 ## 0.5.31
 
 ### Patch Changes
