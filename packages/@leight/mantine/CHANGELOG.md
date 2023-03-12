@@ -1,5 +1,11 @@
 # @leight/mantine
 
+## 0.5.33
+
+### Patch Changes
+
+- Improved some mantine stuff
+
 ## 0.5.32
 
 ### Patch Changes

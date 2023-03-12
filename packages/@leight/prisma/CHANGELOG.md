@@ -1,5 +1,11 @@
 # @leight/prisma
 
+## 0.5.39
+
+### Patch Changes
+
+- Improved some mantine stuff
+
 ## 0.5.38
 
 ### Patch Changes
