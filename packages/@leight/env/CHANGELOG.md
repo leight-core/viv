@@ -1,5 +1,11 @@
 # @leight/env
 
+## 0.5.5
+
+### Patch Changes
+
+- Fixed package.json
+
 ## 0.5.4
 
 ### Patch Changes

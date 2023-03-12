@@ -1,5 +1,5 @@
 {
-    "version": "0.5.4",
+    "version": "0.5.5",
     "name": "@leight/env",
     "description": "Next.js env helper stuff.",
     "license": "MIT",
@@ -12,6 +12,7 @@
     },
     "sideEffects": false,
     "type": "module",
+    "main": "lib/index.js",
     "module": "lib/index.js",
     "types": "lib/index.d.ts",
     "files": [
