@@ -90,7 +90,7 @@ export const JobWhereInputSchema: z.ZodType<Prisma.JobWhereInput> = z.object({
         z.lazy(() => UserRelationFilterSchema),
         z.lazy(() => UserWhereInputSchema)
     ]).optional().nullable(),
-    logs:         z.lazy(() => JobLogListRelationFilterSchema).optional(),
+    logs:         z.lazy(() => JobLogListRelationFilterSchema).optional()
 }).strict();
 
 export default JobWhereInputSchema;

@@ -1,5 +1,5 @@
 {
-    "version": "0.5.36",
+    "version": "0.5.37",
     "name": "@leight/user",
     "description": "Common user stuff.",
     "license": "MIT",
@@ -27,17 +27,17 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "^0.5.33",
-        "@leight/prisma": "^0.5.42",
-        "@leight/source": "^0.5.29",
+        "@leight/container": "^0.5.34",
+        "@leight/prisma": "^0.5.43",
+        "@leight/source": "^0.5.30",
         "next-auth": "^4.20.1",
         "react": "^18.2.0",
         "zod": "3.21.1"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.12",
-        "@leight/eslint-config-eslint": "^0.5.21",
-        "@leight/tsconfig": "^0.5.35",
+        "@leight/esbuild": "^0.5.13",
+        "@leight/eslint-config-eslint": "^0.5.22",
+        "@leight/tsconfig": "^0.5.36",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

@@ -11,7 +11,7 @@ export const UserCreateNestedOneWithoutSessionsInputSchema: z.ZodType<Prisma.Use
         z.lazy(() => UserUncheckedCreateWithoutSessionsInputSchema)
     ]).optional(),
     connectOrCreate: z.lazy(() => UserCreateOrConnectWithoutSessionsInputSchema).optional(),
-    connect:         z.lazy(() => UserWhereUniqueInputSchema).optional(),
+    connect:         z.lazy(() => UserWhereUniqueInputSchema).optional()
 }).strict();
 
 export default UserCreateNestedOneWithoutSessionsInputSchema;

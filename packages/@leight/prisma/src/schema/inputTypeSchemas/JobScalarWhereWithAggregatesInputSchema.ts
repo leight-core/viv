@@ -82,7 +82,7 @@ export const JobScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.JobScalar
         z.lazy(() => StringNullableWithAggregatesFilterSchema),
         z.string()
     ]).optional().nullable(),
-    params:       z.lazy(() => JsonNullableWithAggregatesFilterSchema).optional(),
+    params:       z.lazy(() => JsonNullableWithAggregatesFilterSchema).optional()
 }).strict();
 
 export default JobScalarWhereWithAggregatesInputSchema;

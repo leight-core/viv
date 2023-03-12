@@ -11,7 +11,7 @@ export const JobCreateNestedOneWithoutLogsInputSchema: z.ZodType<Prisma.JobCreat
         z.lazy(() => JobUncheckedCreateWithoutLogsInputSchema)
     ]).optional(),
     connectOrCreate: z.lazy(() => JobCreateOrConnectWithoutLogsInputSchema).optional(),
-    connect:         z.lazy(() => JobWhereUniqueInputSchema).optional(),
+    connect:         z.lazy(() => JobWhereUniqueInputSchema).optional()
 }).strict();
 
 export default JobCreateNestedOneWithoutLogsInputSchema;

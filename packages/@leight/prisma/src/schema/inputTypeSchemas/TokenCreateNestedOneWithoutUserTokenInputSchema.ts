@@ -11,7 +11,7 @@ export const TokenCreateNestedOneWithoutUserTokenInputSchema: z.ZodType<Prisma.T
         z.lazy(() => TokenUncheckedCreateWithoutUserTokenInputSchema)
     ]).optional(),
     connectOrCreate: z.lazy(() => TokenCreateOrConnectWithoutUserTokenInputSchema).optional(),
-    connect:         z.lazy(() => TokenWhereUniqueInputSchema).optional(),
+    connect:         z.lazy(() => TokenWhereUniqueInputSchema).optional()
 }).strict();
 
 export default TokenCreateNestedOneWithoutUserTokenInputSchema;

@@ -16,7 +16,7 @@ export const UserCreateInputSchema: z.ZodType<Prisma.UserCreateInput> = z.object
     sessions:      z.lazy(() => SessionCreateNestedManyWithoutUserInputSchema).optional(),
     UserToken:     z.lazy(() => UserTokenCreateNestedManyWithoutUserInputSchema).optional(),
     File:          z.lazy(() => FileCreateNestedManyWithoutUserInputSchema).optional(),
-    Job:           z.lazy(() => JobCreateNestedManyWithoutUserInputSchema).optional(),
+    Job:           z.lazy(() => JobCreateNestedManyWithoutUserInputSchema).optional()
 }).strict();
 
 export default UserCreateInputSchema;

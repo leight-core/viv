@@ -17,7 +17,7 @@ export const SessionUpdateInputSchema: z.ZodType<Prisma.SessionUpdateInput> = z.
         z.coerce.date(),
         z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)
     ]).optional(),
-    user:         z.lazy(() => UserUpdateOneRequiredWithoutSessionsNestedInputSchema).optional(),
+    user:         z.lazy(() => UserUpdateOneRequiredWithoutSessionsNestedInputSchema).optional()
 }).strict();
 
 export default SessionUpdateInputSchema;

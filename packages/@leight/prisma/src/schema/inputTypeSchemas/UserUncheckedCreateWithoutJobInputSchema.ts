@@ -14,7 +14,7 @@ export const UserUncheckedCreateWithoutJobInputSchema: z.ZodType<Prisma.UserUnch
     accounts:      z.lazy(() => AccountUncheckedCreateNestedManyWithoutUserInputSchema).optional(),
     sessions:      z.lazy(() => SessionUncheckedCreateNestedManyWithoutUserInputSchema).optional(),
     UserToken:     z.lazy(() => UserTokenUncheckedCreateNestedManyWithoutUserInputSchema).optional(),
-    File:          z.lazy(() => FileUncheckedCreateNestedManyWithoutUserInputSchema).optional(),
+    File:          z.lazy(() => FileUncheckedCreateNestedManyWithoutUserInputSchema).optional()
 }).strict();
 
 export default UserUncheckedCreateWithoutJobInputSchema;

@@ -44,7 +44,7 @@ export const FileUpdateInputSchema: z.ZodType<Prisma.FileUpdateInput> = z.object
         z.coerce.date(),
         z.lazy(() => NullableDateTimeFieldUpdateOperationsInputSchema)
     ]).optional().nullable(),
-    user:     z.lazy(() => UserUpdateOneWithoutFileNestedInputSchema).optional(),
+    user:     z.lazy(() => UserUpdateOneWithoutFileNestedInputSchema).optional()
 }).strict();
 
 export default FileUpdateInputSchema;

@@ -3,7 +3,7 @@ import {z}           from "zod";
 
 export const TokenUncheckedCreateWithoutUserTokenInputSchema: z.ZodType<Prisma.TokenUncheckedCreateWithoutUserTokenInput> = z.object({
     id:   z.string().optional(),
-    name: z.string(),
+    name: z.string()
 }).strict();
 
 export default TokenUncheckedCreateWithoutUserTokenInputSchema;

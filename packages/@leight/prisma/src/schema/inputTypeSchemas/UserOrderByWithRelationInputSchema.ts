@@ -17,7 +17,7 @@ export const UserOrderByWithRelationInputSchema: z.ZodType<Prisma.UserOrderByWit
     sessions:      z.lazy(() => SessionOrderByRelationAggregateInputSchema).optional(),
     UserToken:     z.lazy(() => UserTokenOrderByRelationAggregateInputSchema).optional(),
     File:          z.lazy(() => FileOrderByRelationAggregateInputSchema).optional(),
-    Job:           z.lazy(() => JobOrderByRelationAggregateInputSchema).optional(),
+    Job:           z.lazy(() => JobOrderByRelationAggregateInputSchema).optional()
 }).strict();
 
 export default UserOrderByWithRelationInputSchema;

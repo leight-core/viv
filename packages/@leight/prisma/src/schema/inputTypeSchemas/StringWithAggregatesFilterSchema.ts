@@ -23,7 +23,7 @@ export const StringWithAggregatesFilterSchema: z.ZodType<Prisma.StringWithAggreg
     ]).optional(),
     _count:     z.lazy(() => NestedIntFilterSchema).optional(),
     _min:       z.lazy(() => NestedStringFilterSchema).optional(),
-    _max:       z.lazy(() => NestedStringFilterSchema).optional(),
+    _max:       z.lazy(() => NestedStringFilterSchema).optional()
 }).strict();
 
 export default StringWithAggregatesFilterSchema;

@@ -1,5 +1,5 @@
 {
-    "version": "0.5.32",
+    "version": "0.5.33",
     "name": "@leight/container-server",
     "description": "All @leight services exposed on server-side.",
     "license": "MIT",
@@ -27,17 +27,17 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "^0.5.33",
-        "@leight/file-server": "^0.5.33",
-        "@leight/import-server": "^0.5.32",
-        "@leight/job-server": "^0.5.34",
-        "@leight/user-server": "^0.5.36",
-        "@leight/xlsx-import-server": "^0.5.32"
+        "@leight/container": "^0.5.34",
+        "@leight/file-server": "^0.5.34",
+        "@leight/import-server": "^0.5.33",
+        "@leight/job-server": "^0.5.35",
+        "@leight/user-server": "^0.5.37",
+        "@leight/xlsx-import-server": "^0.5.33"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.12",
-        "@leight/eslint-config-eslint": "^0.5.21",
-        "@leight/tsconfig": "^0.5.35",
+        "@leight/esbuild": "^0.5.13",
+        "@leight/eslint-config-eslint": "^0.5.22",
+        "@leight/tsconfig": "^0.5.36",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

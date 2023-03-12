@@ -74,7 +74,7 @@ export const JobUpdateWithoutLogsInputSchema: z.ZodType<Prisma.JobUpdateWithoutL
         z.lazy(() => NullableJsonNullValueInputSchema),
         InputJsonValue
     ]).optional(),
-    user:         z.lazy(() => UserUpdateOneWithoutJobNestedInputSchema).optional(),
+    user:         z.lazy(() => UserUpdateOneWithoutJobNestedInputSchema).optional()
 }).strict();
 
 export default JobUpdateWithoutLogsInputSchema;

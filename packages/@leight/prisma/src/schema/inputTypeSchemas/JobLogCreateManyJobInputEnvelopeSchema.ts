@@ -7,7 +7,7 @@ export const JobLogCreateManyJobInputEnvelopeSchema: z.ZodType<Prisma.JobLogCrea
         z.lazy(() => JobLogCreateManyJobInputSchema),
         z.lazy(() => JobLogCreateManyJobInputSchema).array()
     ]),
-    skipDuplicates: z.boolean().optional(),
+    skipDuplicates: z.boolean().optional()
 }).strict();
 
 export default JobLogCreateManyJobInputEnvelopeSchema;

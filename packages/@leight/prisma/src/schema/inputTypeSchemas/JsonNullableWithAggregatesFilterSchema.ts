@@ -27,7 +27,7 @@ export const JsonNullableWithAggregatesFilterSchema: z.ZodType<Prisma.JsonNullab
     ]).optional(),
     _count:             z.lazy(() => NestedIntNullableFilterSchema).optional(),
     _min:               z.lazy(() => NestedJsonNullableFilterSchema).optional(),
-    _max:               z.lazy(() => NestedJsonNullableFilterSchema).optional(),
+    _max:               z.lazy(() => NestedJsonNullableFilterSchema).optional()
 }).strict();
 
 export default JsonNullableWithAggregatesFilterSchema;

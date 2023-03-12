@@ -11,7 +11,7 @@ export const UserCreateNestedOneWithoutFileInputSchema: z.ZodType<Prisma.UserCre
         z.lazy(() => UserUncheckedCreateWithoutFileInputSchema)
     ]).optional(),
     connectOrCreate: z.lazy(() => UserCreateOrConnectWithoutFileInputSchema).optional(),
-    connect:         z.lazy(() => UserWhereUniqueInputSchema).optional(),
+    connect:         z.lazy(() => UserWhereUniqueInputSchema).optional()
 }).strict();
 
 export default UserCreateNestedOneWithoutFileInputSchema;

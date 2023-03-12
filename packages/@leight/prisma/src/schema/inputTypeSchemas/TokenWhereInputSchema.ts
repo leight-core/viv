@@ -21,7 +21,7 @@ export const TokenWhereInputSchema: z.ZodType<Prisma.TokenWhereInput> = z.object
         z.lazy(() => StringFilterSchema),
         z.string()
     ]).optional(),
-    UserToken: z.lazy(() => UserTokenListRelationFilterSchema).optional(),
+    UserToken: z.lazy(() => UserTokenListRelationFilterSchema).optional()
 }).strict();
 
 export default TokenWhereInputSchema;

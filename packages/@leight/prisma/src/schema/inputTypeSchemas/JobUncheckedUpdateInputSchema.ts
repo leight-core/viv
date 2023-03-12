@@ -79,7 +79,7 @@ export const JobUncheckedUpdateInputSchema: z.ZodType<Prisma.JobUncheckedUpdateI
         z.lazy(() => NullableJsonNullValueInputSchema),
         InputJsonValue
     ]).optional(),
-    logs:         z.lazy(() => JobLogUncheckedUpdateManyWithoutJobNestedInputSchema).optional(),
+    logs:         z.lazy(() => JobLogUncheckedUpdateManyWithoutJobNestedInputSchema).optional()
 }).strict();
 
 export default JobUncheckedUpdateInputSchema;

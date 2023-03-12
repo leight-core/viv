@@ -26,7 +26,7 @@ export const JobCreateInputSchema: z.ZodType<Prisma.JobCreateInput> = z.object({
         InputJsonValue
     ]).optional(),
     user:         z.lazy(() => UserCreateNestedOneWithoutJobInputSchema).optional(),
-    logs:         z.lazy(() => JobLogCreateNestedManyWithoutJobInputSchema).optional(),
+    logs:         z.lazy(() => JobLogCreateNestedManyWithoutJobInputSchema).optional()
 }).strict();
 
 export default JobCreateInputSchema;

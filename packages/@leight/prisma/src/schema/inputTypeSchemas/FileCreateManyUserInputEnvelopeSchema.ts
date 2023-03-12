@@ -7,7 +7,7 @@ export const FileCreateManyUserInputEnvelopeSchema: z.ZodType<Prisma.FileCreateM
         z.lazy(() => FileCreateManyUserInputSchema),
         z.lazy(() => FileCreateManyUserInputSchema).array()
     ]),
-    skipDuplicates: z.boolean().optional(),
+    skipDuplicates: z.boolean().optional()
 }).strict();
 
 export default FileCreateManyUserInputEnvelopeSchema;

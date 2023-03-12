@@ -50,7 +50,7 @@ export const AccountUpdateInputSchema: z.ZodType<Prisma.AccountUpdateInput> = z.
         z.string(),
         z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)
     ]).optional().nullable(),
-    user:              z.lazy(() => UserUpdateOneRequiredWithoutAccountsNestedInputSchema).optional(),
+    user:              z.lazy(() => UserUpdateOneRequiredWithoutAccountsNestedInputSchema).optional()
 }).strict();
 
 export default AccountUpdateInputSchema;

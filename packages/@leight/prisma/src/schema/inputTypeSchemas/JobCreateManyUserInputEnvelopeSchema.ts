@@ -7,7 +7,7 @@ export const JobCreateManyUserInputEnvelopeSchema: z.ZodType<Prisma.JobCreateMan
         z.lazy(() => JobCreateManyUserInputSchema),
         z.lazy(() => JobCreateManyUserInputSchema).array()
     ]),
-    skipDuplicates: z.boolean().optional(),
+    skipDuplicates: z.boolean().optional()
 }).strict();
 
 export default JobCreateManyUserInputEnvelopeSchema;

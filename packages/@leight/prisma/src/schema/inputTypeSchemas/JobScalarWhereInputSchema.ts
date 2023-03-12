@@ -82,7 +82,7 @@ export const JobScalarWhereInputSchema: z.ZodType<Prisma.JobScalarWhereInput> = 
         z.lazy(() => StringNullableFilterSchema),
         z.string()
     ]).optional().nullable(),
-    params:       z.lazy(() => JsonNullableFilterSchema).optional(),
+    params:       z.lazy(() => JsonNullableFilterSchema).optional()
 }).strict();
 
 export default JobScalarWhereInputSchema;

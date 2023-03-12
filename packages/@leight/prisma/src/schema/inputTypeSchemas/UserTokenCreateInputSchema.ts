@@ -6,7 +6,7 @@ import {UserCreateNestedOneWithoutUserTokenInputSchema}  from "./UserCreateNeste
 export const UserTokenCreateInputSchema: z.ZodType<Prisma.UserTokenCreateInput> = z.object({
     id:    z.string().cuid().optional(),
     user:  z.lazy(() => UserCreateNestedOneWithoutUserTokenInputSchema),
-    token: z.lazy(() => TokenCreateNestedOneWithoutUserTokenInputSchema),
+    token: z.lazy(() => TokenCreateNestedOneWithoutUserTokenInputSchema)
 }).strict();
 
 export default UserTokenCreateInputSchema;

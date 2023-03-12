@@ -1,5 +1,5 @@
 {
-    "version": "0.5.36",
+    "version": "0.5.37",
     "name": "@leight/utils-client",
     "description": "Some utility stuff usable on client side.",
     "license": "MIT",
@@ -27,15 +27,15 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/context-client": "^0.5.39",
-        "@leight/utils": "^0.5.35",
+        "@leight/context-client": "^0.5.40",
+        "@leight/utils": "^0.5.36",
         "path-to-regexp": "^6.2.1",
         "react": "^18.2.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.12",
-        "@leight/eslint-config-eslint": "^0.5.21",
-        "@leight/tsconfig": "^0.5.35",
+        "@leight/esbuild": "^0.5.13",
+        "@leight/eslint-config-eslint": "^0.5.22",
+        "@leight/tsconfig": "^0.5.36",
         "@types/node": "^18.15.0",
         "@types/react": "^18.0.28",
         "concurrently": "^7.6.0",

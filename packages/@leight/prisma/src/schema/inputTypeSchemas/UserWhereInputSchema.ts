@@ -43,7 +43,7 @@ export const UserWhereInputSchema: z.ZodType<Prisma.UserWhereInput> = z.object({
     sessions:      z.lazy(() => SessionListRelationFilterSchema).optional(),
     UserToken:     z.lazy(() => UserTokenListRelationFilterSchema).optional(),
     File:          z.lazy(() => FileListRelationFilterSchema).optional(),
-    Job:           z.lazy(() => JobListRelationFilterSchema).optional(),
+    Job:           z.lazy(() => JobListRelationFilterSchema).optional()
 }).strict();
 
 export default UserWhereInputSchema;

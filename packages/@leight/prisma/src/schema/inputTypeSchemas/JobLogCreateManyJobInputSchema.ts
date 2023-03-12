@@ -3,7 +3,7 @@ import {z}           from "zod";
 
 export const JobLogCreateManyJobInputSchema: z.ZodType<Prisma.JobLogCreateManyJobInput> = z.object({
     id:      z.string().cuid().optional(),
-    message: z.string(),
+    message: z.string()
 }).strict();
 
 export default JobLogCreateManyJobInputSchema;

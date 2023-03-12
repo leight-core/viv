@@ -25,7 +25,7 @@ export const JobUncheckedCreateInputSchema: z.ZodType<Prisma.JobUncheckedCreateI
         z.lazy(() => NullableJsonNullValueInputSchema),
         InputJsonValue
     ]).optional(),
-    logs:         z.lazy(() => JobLogUncheckedCreateNestedManyWithoutJobInputSchema).optional(),
+    logs:         z.lazy(() => JobLogUncheckedCreateNestedManyWithoutJobInputSchema).optional()
 }).strict();
 
 export default JobUncheckedCreateInputSchema;

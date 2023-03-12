@@ -7,7 +7,7 @@ export const AccountCreateManyUserInputEnvelopeSchema: z.ZodType<Prisma.AccountC
         z.lazy(() => AccountCreateManyUserInputSchema),
         z.lazy(() => AccountCreateManyUserInputSchema).array()
     ]),
-    skipDuplicates: z.boolean().optional(),
+    skipDuplicates: z.boolean().optional()
 }).strict();
 
 export default AccountCreateManyUserInputEnvelopeSchema;

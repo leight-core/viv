@@ -7,7 +7,7 @@ export const SessionCreateManyUserInputEnvelopeSchema: z.ZodType<Prisma.SessionC
         z.lazy(() => SessionCreateManyUserInputSchema),
         z.lazy(() => SessionCreateManyUserInputSchema).array()
     ]),
-    skipDuplicates: z.boolean().optional(),
+    skipDuplicates: z.boolean().optional()
 }).strict();
 
 export default SessionCreateManyUserInputEnvelopeSchema;

@@ -11,7 +11,7 @@ export const UserCreateNestedOneWithoutUserTokenInputSchema: z.ZodType<Prisma.Us
         z.lazy(() => UserUncheckedCreateWithoutUserTokenInputSchema)
     ]).optional(),
     connectOrCreate: z.lazy(() => UserCreateOrConnectWithoutUserTokenInputSchema).optional(),
-    connect:         z.lazy(() => UserWhereUniqueInputSchema).optional(),
+    connect:         z.lazy(() => UserWhereUniqueInputSchema).optional()
 }).strict();
 
 export default UserCreateNestedOneWithoutUserTokenInputSchema;

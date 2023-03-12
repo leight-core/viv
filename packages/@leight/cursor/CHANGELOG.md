@@ -1,5 +1,11 @@
 # @leight/cursor
 
+## 0.5.28
+
+### Patch Changes
+
+- Version bump
+
 ## 0.5.27
 
 ### Patch Changes

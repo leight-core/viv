@@ -1,5 +1,5 @@
 {
-    "version": "0.5.34",
+    "version": "0.5.35",
     "name": "@leight/xlsx-import-client",
     "description": "Client-side tools for imports.",
     "license": "MIT",
@@ -27,8 +27,8 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/mantine": "^0.5.37",
-        "@leight/tsconfig": "^0.5.35",
+        "@leight/mantine": "^0.5.38",
+        "@leight/tsconfig": "^0.5.36",
         "@mantine/core": "^6.0.1",
         "@mantine/dropzone": "^6.0.1",
         "@mantine/hooks": "^6.0.1",
@@ -36,10 +36,10 @@
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.12",
-        "@leight/eslint-config-eslint": "^0.5.21",
+        "@leight/esbuild": "^0.5.13",
+        "@leight/eslint-config-eslint": "^0.5.22",
         "@leight/tsconfig": "*",
-        "@leight/xlsx-import": "^0.5.33",
+        "@leight/xlsx-import": "^0.5.34",
         "@types/node": "^18.15.0",
         "@types/react": "^18.0.28",
         "concurrently": "^7.6.0",

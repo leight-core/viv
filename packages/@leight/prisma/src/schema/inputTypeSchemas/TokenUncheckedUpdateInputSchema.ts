@@ -12,7 +12,7 @@ export const TokenUncheckedUpdateInputSchema: z.ZodType<Prisma.TokenUncheckedUpd
         z.string(),
         z.lazy(() => StringFieldUpdateOperationsInputSchema)
     ]).optional(),
-    UserToken: z.lazy(() => UserTokenUncheckedUpdateManyWithoutTokenNestedInputSchema).optional(),
+    UserToken: z.lazy(() => UserTokenUncheckedUpdateManyWithoutTokenNestedInputSchema).optional()
 }).strict();
 
 export default TokenUncheckedUpdateInputSchema;

@@ -10,7 +10,7 @@ export const KeywordOrderByWithAggregationInputSchema: z.ZodType<Prisma.KeywordO
     text:   z.lazy(() => SortOrderSchema).optional(),
     _count: z.lazy(() => KeywordCountOrderByAggregateInputSchema).optional(),
     _max:   z.lazy(() => KeywordMaxOrderByAggregateInputSchema).optional(),
-    _min:   z.lazy(() => KeywordMinOrderByAggregateInputSchema).optional(),
+    _min:   z.lazy(() => KeywordMinOrderByAggregateInputSchema).optional()
 }).strict();
 
 export default KeywordOrderByWithAggregationInputSchema;

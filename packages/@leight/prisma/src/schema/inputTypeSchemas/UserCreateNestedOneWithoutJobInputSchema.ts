@@ -11,7 +11,7 @@ export const UserCreateNestedOneWithoutJobInputSchema: z.ZodType<Prisma.UserCrea
         z.lazy(() => UserUncheckedCreateWithoutJobInputSchema)
     ]).optional(),
     connectOrCreate: z.lazy(() => UserCreateOrConnectWithoutJobInputSchema).optional(),
-    connect:         z.lazy(() => UserWhereUniqueInputSchema).optional(),
+    connect:         z.lazy(() => UserWhereUniqueInputSchema).optional()
 }).strict();
 
 export default UserCreateNestedOneWithoutJobInputSchema;

@@ -10,7 +10,7 @@ export const UserTokenUpdateInputSchema: z.ZodType<Prisma.UserTokenUpdateInput> 
         z.lazy(() => StringFieldUpdateOperationsInputSchema)
     ]).optional(),
     user:  z.lazy(() => UserUpdateOneRequiredWithoutUserTokenNestedInputSchema).optional(),
-    token: z.lazy(() => TokenUpdateOneRequiredWithoutUserTokenNestedInputSchema).optional(),
+    token: z.lazy(() => TokenUpdateOneRequiredWithoutUserTokenNestedInputSchema).optional()
 }).strict();
 
 export default UserTokenUpdateInputSchema;

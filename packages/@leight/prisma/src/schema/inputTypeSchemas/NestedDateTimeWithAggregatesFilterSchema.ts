@@ -17,7 +17,7 @@ export const NestedDateTimeWithAggregatesFilterSchema: z.ZodType<Prisma.NestedDa
     ]).optional(),
     _count: z.lazy(() => NestedIntFilterSchema).optional(),
     _min:   z.lazy(() => NestedDateTimeFilterSchema).optional(),
-    _max:   z.lazy(() => NestedDateTimeFilterSchema).optional(),
+    _max:   z.lazy(() => NestedDateTimeFilterSchema).optional()
 }).strict();
 
 export default NestedDateTimeWithAggregatesFilterSchema;
