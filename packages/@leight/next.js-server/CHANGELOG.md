@@ -1,5 +1,11 @@
 # @leight/next.js-server
 
+## 0.5.35
+
+### Patch Changes
+
+- Fixed some stuff in NextEndpoint
+
 ## 0.5.34
 
 ### Patch Changes

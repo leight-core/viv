@@ -11,7 +11,7 @@ import {type Provider}              from "next-auth/providers";
 
 export interface INextAuthEndpointProps {
     options?: AuthOptions;
-    providers: Provider[];
+    providers: (Provider | null | undefined)[];
     container: IContainer;
 }
 
@@ -39,7 +39,7 @@ export const NextAuthEndpoint = ({options, providers, container}: INextAuthEndpo
         session:   {
             strategy: "jwt",
         },
-        providers,
+        providers: providers.filter((provider): provider is Provider => !!provider),
         callbacks: {
             jwt:     async (token) => {
                 try {

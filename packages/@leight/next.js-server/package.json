@@ -1,5 +1,5 @@
 {
-    "version": "0.5.34",
+    "version": "0.5.35",
     "name": "@leight/next.js-server",
     "description": "Next.js related server-side helper stuff.",
     "license": "MIT",
