@@ -1,5 +1,5 @@
 {
-    "version": "0.5.32",
+    "version": "0.5.33",
     "name": "@leight/user",
     "description": "Common user stuff.",
     "license": "MIT",
@@ -27,7 +27,8 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/prisma": "^0.5.38",
+        "@leight/container": "^0.5.0",
+        "@leight/prisma": "^0.5.40",
         "@leight/source": "^0.5.27",
         "next-auth": "^4.20.1",
         "react": "^18.2.0",

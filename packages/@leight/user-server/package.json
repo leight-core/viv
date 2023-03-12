@@ -1,5 +1,5 @@
 {
-    "version": "0.5.32",
+    "version": "0.5.33",
     "name": "@leight/user-server",
     "description": "User stuff used server-side.",
     "license": "MIT",
@@ -28,9 +28,9 @@
     },
     "dependencies": {
         "@leight/container": "^0.5.30",
-        "@leight/prisma": "^0.5.38",
+        "@leight/prisma": "^0.5.40",
         "@leight/source-server": "^0.5.29",
-        "@leight/user": "^0.5.32",
+        "@leight/user": "^0.5.33",
         "@leight/utils": "^0.5.33"
     },
     "devDependencies": {

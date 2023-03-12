@@ -1,5 +1,11 @@
 # @leight/prisma
 
+## 0.5.40
+
+### Patch Changes
+
+- Improved default next.js stuff, improved support for NextAuth, updated some user stuff
+
 ## 0.5.39
 
 ### Patch Changes

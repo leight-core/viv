@@ -1,5 +1,5 @@
 {
-    "version": "0.5.39",
+    "version": "0.5.40",
     "name": "@leight/prisma",
     "description": "Some prisma related helpers. This package also contains all @leight exported Prisma models.",
     "license": "MIT",
@@ -29,6 +29,7 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
+        "@leight/container": "^0.5.0",
         "@prisma/client": "^4.11.0",
         "zod": "3.21.1"
     },

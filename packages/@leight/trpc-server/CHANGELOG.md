@@ -1,5 +1,14 @@
 # @leight/trpc-server
 
+## 0.5.32
+
+### Patch Changes
+
+- Improved default next.js stuff, improved support for NextAuth, updated some user stuff
+- Updated dependencies
+    - @leight/user-server@0.5.33
+    - @leight/user@0.5.33
+
 ## 0.5.31
 
 ### Patch Changes
