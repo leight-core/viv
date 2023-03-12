@@ -9,7 +9,9 @@ export const JobStatusSchema = PrismaSchema.JobStatusSchema;
 export type IJobStatusSchema = typeof JobStatusSchema;
 export type IJobStatus = z.infer<IJobStatusSchema>;
 
-export const JobSchema = PrismaSchema.JobSchema;
+export const JobSchema = PrismaSchema.JobSchema.merge(z.object({
+    params: z.any().optional(),
+}));
 export type IJobSchema = typeof JobSchema;
 export type IJob = z.infer<IJobSchema>;
 

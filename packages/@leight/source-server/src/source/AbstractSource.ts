@@ -10,7 +10,8 @@ import {
  */
 export abstract class AbstractSource<TSourceSchema extends ISourceSchema> implements ISource<TSourceSchema> {
     protected constructor(
-        protected name: ISourceName,
+        $name: ISourceName,
+        protected name = $name.toString(),
     ) {
     }
 

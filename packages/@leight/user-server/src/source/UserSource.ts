@@ -20,6 +20,18 @@ export class UserSource extends AbstractSource<IUserSourceSchema> implements IUs
         super($UserSource);
     }
 
+    runFind(id: string): Promise<IUserSourceSchema["Entity"]> {
+        return this.prismaClient.user.findUniqueOrThrow({
+            where: {id},
+        });
+    }
+
+    runCount(query?: IUserSourceSchema["Query"]): Promise<number> {
+        return this.prismaClient.user.count({
+            where: query?.filter
+        });
+    }
+
     async findByEmail(email: string): Promise<IUserSourceSchema["Entity"]> {
         return this.prismaClient.user.findUniqueOrThrow({
             where: {

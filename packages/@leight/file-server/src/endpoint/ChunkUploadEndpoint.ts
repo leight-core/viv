@@ -1,11 +1,9 @@
 import {
     $ChunkService,
     type IChunkService
-} from "@leight/file";
-import {
-    Endpoint,
-    type IEndpointFactory
-} from "@leight/next.js-server";
+}                              from "@leight/file";
+import {type IEndpointFactory} from "@leight/next.js";
+import {Endpoint}              from "@leight/next.js-server";
 
 /**
  * Export default this to handle chunk uploading.

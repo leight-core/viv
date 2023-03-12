@@ -1,4 +1,9 @@
 import {
+    type IError,
+    type IHandler,
+    type INextHandler
+}                        from "@leight/next.js";
+import {
     $UserService,
     IUserService,
     TokenError,
@@ -16,11 +21,6 @@ import {
 }                        from "next";
 import {getToken}        from "next-auth/jwt";
 import getRawBody        from "raw-body";
-import {
-    type IError,
-    type IHandler,
-    type INextHandler
-}                        from "./api";
 
 const logger = Logger("@leight/next.js-server");
 

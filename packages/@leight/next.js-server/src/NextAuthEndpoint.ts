@@ -1,18 +1,18 @@
-import {type IContainer}            from "@leight/container";
+import {type IContainer}                from "@leight/container";
 import {
     $PrismaClient,
     type PrismaClient
-}                                   from "@leight/prisma";
+}                                       from "@leight/prisma";
 import {
     $RegistrationService,
     $UserJwtService,
     type IRegistrationService,
     type IUserJwtService
-}                                   from "@leight/user";
-import {Logger}                     from "@leight/winston";
-import {PrismaAdapter}              from "@next-auth/prisma-adapter";
-import NextAuth, {type AuthOptions} from "next-auth";
-import {type Provider}              from "next-auth/providers";
+}                                       from "@leight/user";
+import {Logger}                         from "@leight/winston";
+import {PrismaAdapter}                  from "@next-auth/prisma-adapter";
+import NextAuthShit, {type AuthOptions} from "next-auth";
+import {type Provider}                  from "next-auth/providers";
 
 export interface INextAuthEndpointProps {
     options?: Partial<AuthOptions>;
@@ -24,10 +24,14 @@ export const NextAuthEndpoint = ({options, providers, container}: INextAuthEndpo
     const registrationService = container.resolve<IRegistrationService>($RegistrationService);
     const userJwtService      = container.resolve<IUserJwtService>($UserJwtService);
     const logger              = Logger("auth");
+    /**
+     * For whatever reason, types are not what you really get, so the hack must be used.
+     */
+    const NextAuth            = (NextAuthShit as any).default as typeof NextAuthShit;
 
     return NextAuth({
         theme:     {
-            logo:        "/logo.png",
+            logo:        "/assets/logo/logo.svg",
             brandColor:  "#1890ff",
             colorScheme: "light",
         },
@@ -47,12 +51,8 @@ export const NextAuthEndpoint = ({options, providers, container}: INextAuthEndpo
         callbacks: {
             jwt: async (token) => {
                 try {
-                    await registrationService.handle(
-                        token
-                    );
-                    return await userJwtService.token(
-                        token.token
-                    );
+                    await registrationService.handle(token);
+                    return await userJwtService.token(token.token);
                 } catch (e) {
                     if (e instanceof Error) {
                         logger.error(e.message);
