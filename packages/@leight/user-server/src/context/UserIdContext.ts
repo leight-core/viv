@@ -10,7 +10,7 @@ export class $UserIdContext extends ServiceContext<string | undefined> {
     }
 
     register(userId?: string): this {
-        this.container.bindValue($UserId, userId);
+        this.bindValue(userId);
         return this;
     }
 }

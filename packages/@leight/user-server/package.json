@@ -1,5 +1,5 @@
 {
-    "version": "0.5.33",
+    "version": "0.5.34",
     "name": "@leight/user-server",
     "description": "User stuff used server-side.",
     "license": "MIT",
@@ -27,10 +27,10 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "^0.5.30",
+        "@leight/container": "^0.5.31",
         "@leight/prisma": "^0.5.40",
         "@leight/source-server": "^0.5.29",
-        "@leight/user": "^0.5.33",
+        "@leight/user": "^0.5.34",
         "@leight/utils": "^0.5.33"
     },
     "devDependencies": {

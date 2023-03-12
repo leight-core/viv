@@ -1,15 +1,18 @@
 import {
     childContainer,
     type IContainer
-}                           from "@leight/container";
-import {UserServiceContext} from "@leight/user";
+}                       from "@leight/container";
+import {
+    $UserService,
+    type IUserService
+}                       from "@leight/user";
 import {
     TokenServiceContext,
     UserIdContext,
-}                           from "@leight/user-server";
-import {type AnyRouter}     from "@trpc/server";
-import {getToken}           from "next-auth/jwt";
-import {createHandler}      from "./createHandler";
+}                       from "@leight/user-server";
+import {type AnyRouter} from "@trpc/server";
+import {getToken}       from "next-auth/jwt";
+import {createHandler}  from "./createHandler";
 
 export const TrpcEndpoint = <TRouter extends AnyRouter>(
     router: TRouter,
@@ -24,7 +27,7 @@ export const TrpcEndpoint = <TRouter extends AnyRouter>(
         UserIdContext(container).register(token?.sub);
         return {
             container,
-            userService: UserServiceContext(container).resolve(),
+            userService: container.resolve<IUserService>($UserService),
             tokenService,
             checkAny:    (tokens) => tokenService.checkAny(tokens),
         };

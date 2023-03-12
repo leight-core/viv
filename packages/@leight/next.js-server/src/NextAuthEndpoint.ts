@@ -1,8 +1,13 @@
 import {type IContainer}            from "@leight/container";
-import {PrismaServiceContext}       from "@leight/prisma";
 import {
-    RegistrationServiceContext,
-    UserJwtServiceContext
+    $PrismaClient,
+    type PrismaClient
+}                                   from "@leight/prisma";
+import {
+    $RegistrationService,
+    $UserJwtService,
+    type IRegistrationService,
+    type IUserJwtService
 }                                   from "@leight/user";
 import {Logger}                     from "@leight/winston";
 import {PrismaAdapter}              from "@next-auth/prisma-adapter";
@@ -10,16 +15,15 @@ import NextAuth, {type AuthOptions} from "next-auth";
 import {type Provider}              from "next-auth/providers";
 
 export interface INextAuthEndpointProps {
-    options?: AuthOptions;
-    providers: (Provider | null | undefined)[];
+    options?: Partial<AuthOptions>;
+    providers: (Provider | null | false | undefined)[];
     container: IContainer;
 }
 
 export const NextAuthEndpoint = ({options, providers, container}: INextAuthEndpointProps) => {
-    const registrationService = RegistrationServiceContext(container).resolve();
-    const userJwtService      = UserJwtServiceContext(container).resolve();
-
-    const logger = Logger("auth");
+    const registrationService = container.resolve<IRegistrationService>($RegistrationService);
+    const userJwtService      = container.resolve<IUserJwtService>($UserJwtService);
+    const logger              = Logger("auth");
 
     return NextAuth({
         theme:     {
@@ -35,13 +39,13 @@ export const NextAuthEndpoint = ({options, providers, container}: INextAuthEndpo
                 logger.debug("User sign-out", {label: {userId: sub}});
             },
         },
-        adapter:   PrismaAdapter(PrismaServiceContext(container).resolve()),
+        adapter:   PrismaAdapter(container.resolve<PrismaClient>($PrismaClient)),
         session:   {
             strategy: "jwt",
         },
         providers: providers.filter((provider): provider is Provider => !!provider),
         callbacks: {
-            jwt:     async (token) => {
+            jwt: async (token) => {
                 try {
                     await registrationService.handle(
                         token

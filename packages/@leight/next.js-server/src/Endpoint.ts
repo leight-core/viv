@@ -1,7 +1,8 @@
 import {
+    $UserService,
+    IUserService,
     TokenError,
     UserError,
-    UserServiceContext
 }                        from "@leight/user";
 import {
     TokenServiceContext,
@@ -41,7 +42,7 @@ export const Endpoint = <
             const $container   = container.child();
             const token        = await getToken({req: request});
             const tokenService = TokenServiceContext($container)
-                .register((token?.tokens || []) as [])
+                .register(token?.tokens)
                 .resolve();
             UserIdContext($container).register(token?.sub);
 
@@ -50,7 +51,7 @@ export const Endpoint = <
             const result = await handler({
                 container:   $container,
                 tokenService,
-                userService: UserServiceContext($container).resolve(),
+                userService: $container.resolve<IUserService>($UserService),
                 request,
                 body:        request.body,
                 query:       request.query as THrefQuery,

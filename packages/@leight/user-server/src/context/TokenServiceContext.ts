@@ -13,8 +13,8 @@ export class $TokenServiceContext extends ServiceContext<ITokenService> {
         super(container, $TokenService);
     }
 
-    register(tokens: string[]): this {
-        this.container.bindValue($TokenService, new TokenService(tokens));
+    register(tokens?: string[]): this {
+        this.bindValue(new TokenService(tokens || []));
         return this;
     }
 }
