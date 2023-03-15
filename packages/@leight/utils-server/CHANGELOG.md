@@ -1,5 +1,11 @@
 # @leight/utils-server
 
+## 0.5.36
+
+### Patch Changes
+
+- Version bump
+
 ## 0.5.35
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @leight/react-cmdk
 
+## 0.5.37
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/context-client@0.5.43
+    - @leight/i18n@0.5.37
+    - @leight/utils@0.5.39
+    - @leight/utils-client@0.5.40
+
 ## 0.5.36
 
 ### Patch Changes

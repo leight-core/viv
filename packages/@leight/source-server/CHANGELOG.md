@@ -1,5 +1,13 @@
 # @leight/source-server
 
+## 0.5.36
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/source@0.5.34
+
 ## 0.5.35
 
 ### Patch Changes

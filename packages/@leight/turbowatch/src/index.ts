@@ -8,22 +8,17 @@ export const withTurbowatch = ({project}: IWithTurbowatchProps) => watch({
     project,
     triggers: [
         {
+            initialRun: false,
             expression: [
                 "anyof",
                 [
                     "dirname",
                     "src",
-                    [
-                        "depth",
-                        "eq",
-                        0
-                    ],
                 ],
                 [
-                    "suffix",
-                    [
-                        "json",
-                    ]
+                    "match",
+                    "*.json",
+                    "basename",
                 ]
             ],
             name:       "build",

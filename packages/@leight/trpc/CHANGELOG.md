@@ -1,5 +1,14 @@
 # @leight/trpc
 
+## 0.5.36
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/container@0.5.37
+    - @leight/user@0.5.40
+
 ## 0.5.35
 
 ### Patch Changes

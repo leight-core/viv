@@ -1,5 +1,13 @@
 # @leight/i18n-server
 
+## 0.5.37
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/i18n@0.5.37
+
 ## 0.5.36
 
 ### Patch Changes

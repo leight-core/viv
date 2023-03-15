@@ -1,5 +1,13 @@
 # @leight/import
 
+## 0.5.36
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/job@0.5.40
+
 ## 0.5.35
 
 ### Patch Changes
