@@ -1,5 +1,5 @@
 {
-    "version": "0.5.41",
+    "version": "0.5.42",
     "name": "@leight/mantine",
     "description": "Tools and some wrappers for Mantine UI library.",
     "license": "MIT",
@@ -28,13 +28,13 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/file": "^0.5.37",
-        "@leight/file-client": "^0.5.38",
-        "@leight/i18n": "^0.5.37",
-        "@leight/i18n-client": "^0.5.39",
-        "@leight/layout": "^0.5.37",
-        "@leight/utils": "^0.5.39",
-        "@leight/utils-client": "^0.5.40",
+        "@leight/file": "^0.5.38",
+        "@leight/file-client": "^0.5.39",
+        "@leight/i18n": "^0.5.38",
+        "@leight/i18n-client": "^0.5.40",
+        "@leight/layout": "^0.5.38",
+        "@leight/utils": "^0.5.40",
+        "@leight/utils-client": "^0.5.41",
         "@mantine/core": "^6.0.1",
         "@mantine/dropzone": "^6.0.1",
         "@mantine/hooks": "^6.0.1",
@@ -47,10 +47,10 @@
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.16",
-        "@leight/eslint-config-eslint": "^0.5.25",
-        "@leight/tsconfig": "^0.5.39",
-        "@leight/turbowatch": "^0.5.2",
+        "@leight/esbuild": "^0.5.17",
+        "@leight/eslint-config-eslint": "^0.5.26",
+        "@leight/tsconfig": "^0.5.40",
+        "@leight/turbowatch": "^0.5.3",
         "@types/node": "^18.15.0",
         "@types/react": "^18.0.28",
         "concurrently": "^7.6.0",

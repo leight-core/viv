@@ -1,5 +1,19 @@
 # @leight/source-client
 
+## 0.5.3
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/cursor-client@0.5.2
+    - @leight/react-query@0.5.1
+    - @leight/source@0.5.35
+    - @leight/query@0.5.34
+    - @leight/context-client@0.5.44
+    - @leight/utils@0.5.40
+    - @leight/zustand@0.5.38
+
 ## 0.5.2
 
 ### Patch Changes
