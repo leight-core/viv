@@ -1,3 +1,4 @@
+import {Pagination}            from "@leight/cursor-client";
 import {type IWithTranslation} from "@leight/i18n";
 import {Translation}           from "@leight/i18n-client";
 import {Paper}                 from "@leight/mantine";
@@ -10,7 +11,6 @@ import {
     Center,
     Divider,
     LoadingOverlay,
-    Pagination,
     Table as CoolTable
 }                              from "@mantine/core";
 import {
@@ -37,7 +37,7 @@ export interface ITableProps<
      */
     readonly schema: TSchema;
     readonly useSource: IUseSourceStore<TSchema>;
-    readonly useQueryStore: IUseQueryStore<IQuerySchema>;
+    readonly useQuery: IUseQueryStore<IQuerySchema>;
     readonly withTranslation: IWithTranslation;
     readonly withCaption?: boolean;
     readonly columns: Record<TColumns, ITableColumn<TSchema>>;
@@ -60,7 +60,7 @@ export interface ITableProps<
 export type ITableExProps<
     TSchema extends IEntitySchema,
     TColumns extends string,
-> = Omit<ITableProps<TSchema, TColumns>, "schema" | "useSource" | "columns" | "withTranslation">;
+> = Omit<ITableProps<TSchema, TColumns>, "schema" | "useSource" | "useQuery" | "columns" | "withTranslation">;
 
 export const Table = <
     TSchema extends IEntitySchema,
@@ -69,7 +69,7 @@ export const Table = <
     {
         schema,
         useSource,
-        useQueryStore,
+        useQuery,
         withTranslation,
         withCaption = true,
         columns,
@@ -82,7 +82,7 @@ export const Table = <
               entities,
               isFetching,
               isLoading,
-          }         = useSource((
+          } = useSource((
         {
             entities,
             isFetching,
@@ -93,7 +93,6 @@ export const Table = <
             isFetching,
             isLoading,
         }));
-    const {setPage} = useQueryStore(({setPage}) => ({setPage}));
 
     const $columns: [string, ITableColumn<TSchema>][] = order.filter(column => !hidden.includes(column)).map(column => [
         column,
@@ -134,11 +133,9 @@ export const Table = <
         <Divider m={"md"}/>
         <Center>
             <Pagination
-                total={20}
-                siblings={1}
-                defaultValue={0}
-                onChange={setPage}
+                useQuery={useQuery}
             />
         </Center>
     </Paper>;
 };
+``;

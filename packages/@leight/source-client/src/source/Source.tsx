@@ -45,17 +45,24 @@ const SourceInternal = <
       onSuccess,
       children,
   }: ISourceInternalProps<TQuerySchema, TSchema>) => {
-    const getQuery = useQueryStore(({getQuery}) => getQuery);
-    const result   = useQuery(getQuery(), {
+    const {query, id: queryId} = useQueryStore(({query, id}) => ({query, id}));
+    const result               = useQuery(query, {
         onSuccess,
     });
+
     useEffect(() => {
         if (result.isSuccess) {
+            console.log("Source update", result?.data?.[0]?.id, query.cursor);
             const $data = result.data.filter(item => schema.safeParse(item).success);
             onSuccess?.($data);
             sourceContext.state.setEntities($data);
         }
-    }, [result.isSuccess]);
+    }, [
+        queryId,
+        result.isSuccess,
+        result.isLoading,
+        result.isFetching,
+    ]);
     useEffect(() => {
         sourceContext.state.setIsLoading(result.isLoading);
     }, [result.isLoading]);
