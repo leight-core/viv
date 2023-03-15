@@ -8,7 +8,7 @@ import {type PropsWithChildren} from "react";
 export type IQueryProviderInternalProps<TQuerySchema extends IQuerySchema> = PropsWithChildren<{
     useCountQuery: IUseCursorCountQuery<TQuerySchema>;
 }>;
-export type IQueryProviderProps<TQuerySchema extends IQuerySchema> = IQueryProviderInternalProps<TQuerySchema>;
+export type IQueryProviderProps<TQuerySchema extends IQuerySchema> = Omit<IQueryProviderInternalProps<TQuerySchema>, "useCountQuery">;
 
 export const QueryProvider = <TQuerySchema extends IQuerySchema>(
     {
