@@ -1,5 +1,11 @@
 # @leight/filter
 
+## 0.5.31
+
+### Patch Changes
+
+- 2c523860: Version bump
+
 ## 0.5.30
 
 ### Patch Changes

@@ -1,0 +1,14 @@
+# @leight/source-client
+
+## 0.5.1
+
+### Patch Changes
+
+- 2c523860: Version bump
+- Updated dependencies [2c523860]
+    - @leight/context-client@0.5.42
+    - @leight/query-client@0.5.1
+    - @leight/zustand@0.5.36
+    - @leight/source@0.5.33
+    - @leight/query@0.5.32
+    - @leight/utils@0.5.38

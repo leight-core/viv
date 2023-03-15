@@ -1,5 +1,5 @@
 {
-    "version": "0.5.32",
+    "version": "0.5.33",
     "name": "@leight/source",
     "description": "Common Source stuff; source is definition of Data Source (usually on the backend).",
     "license": "MIT",
@@ -28,17 +28,17 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/cursor": "^0.5.29",
-        "@leight/query": "^0.5.31",
-        "@leight/utils": "^0.5.37",
+        "@leight/cursor": "^0.5.30",
+        "@leight/query": "^0.5.32",
+        "@leight/utils": "^0.5.38",
         "@tanstack/react-query": "^4.26.1",
         "zod": "3.21.1"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.14",
-        "@leight/eslint-config-eslint": "^0.5.23",
-        "@leight/tsconfig": "^0.5.37",
-        "@leight/turbowatch": "^0.5.0",
+        "@leight/esbuild": "^0.5.15",
+        "@leight/eslint-config-eslint": "^0.5.24",
+        "@leight/tsconfig": "^0.5.38",
+        "@leight/turbowatch": "^0.5.1",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

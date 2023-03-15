@@ -1,5 +1,15 @@
 # @leight/query
 
+## 0.5.32
+
+### Patch Changes
+
+- 2c523860: Version bump
+- Updated dependencies [2c523860]
+    - @leight/cursor@0.5.30
+    - @leight/filter@0.5.31
+    - @leight/sort@0.5.30
+
 ## 0.5.31
 
 ### Patch Changes

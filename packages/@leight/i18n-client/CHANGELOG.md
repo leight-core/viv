@@ -1,5 +1,14 @@
 # @leight/i18n-client
 
+## 0.5.38
+
+### Patch Changes
+
+- 2c523860: Version bump
+- Updated dependencies [2c523860]
+    - @leight/utils@0.5.38
+    - @leight/i18n@0.5.36
+
 ## 0.5.37
 
 ### Patch Changes

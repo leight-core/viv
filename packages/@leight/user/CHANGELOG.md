@@ -1,5 +1,14 @@
 # @leight/user
 
+## 0.5.39
+
+### Patch Changes
+
+- 2c523860: Version bump
+- Updated dependencies [2c523860]
+    - @leight/prisma@0.5.46
+    - @leight/source@0.5.33
+
 ## 0.5.38
 
 ### Patch Changes
