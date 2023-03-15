@@ -1,5 +1,11 @@
 # @leight/prisma
 
+## 0.5.49
+
+### Patch Changes
+
+- Improved cursor stuff
+
 ## 0.5.48
 
 ### Patch Changes

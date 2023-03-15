@@ -1,14 +1,23 @@
-import {CursorProvider} from "@leight/cursor-client";
+import {CursorControl}          from "@leight/cursor-client";
 import {
-    type FC,
-    type PropsWithChildren
-}                       from "react";
+    type IQuerySchema,
+    type IUseCursorCountQuery
+}                               from "@leight/query";
+import {type PropsWithChildren} from "react";
 
-export type IQueryProviderInternalProps = PropsWithChildren;
-export type IQueryProviderProps = IQueryProviderInternalProps;
+export type IQueryProviderInternalProps<TQuerySchema extends IQuerySchema> = PropsWithChildren<{
+    useCountQuery: IUseCursorCountQuery<TQuerySchema>;
+}>;
+export type IQueryProviderProps<TQuerySchema extends IQuerySchema> = IQueryProviderInternalProps<TQuerySchema>;
 
-export const QueryProvider: FC<IQueryProviderInternalProps> = ({children}) => {
-    return <CursorProvider>
+export const QueryProvider = <TQuerySchema extends IQuerySchema>(
+    {
+        useCountQuery,
+        children,
+    }: IQueryProviderInternalProps<TQuerySchema>) => {
+    return <CursorControl
+        useCountQuery={useCountQuery}
+    >
         {children}
-    </CursorProvider>;
+    </CursorControl>;
 };

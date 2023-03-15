@@ -1,5 +1,5 @@
 {
-    "version": "0.5.48",
+    "version": "0.5.49",
     "name": "@leight/prisma",
     "description": "Some prisma related helpers. This package also contains all @leight exported Prisma models.",
     "license": "MIT",

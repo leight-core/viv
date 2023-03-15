@@ -1,5 +1,5 @@
 {
-    "version": "0.5.2",
+    "version": "0.5.3",
     "name": "@leight/cursor-client",
     "description": "Client-side for Cursor.",
     "license": "MIT",
@@ -29,6 +29,7 @@
     },
     "dependencies": {
         "@leight/context-client": "^0.5.44",
+        "@leight/query": "^0.5.0",
         "@mantine/core": "^6.0.1",
         "@mantine/hooks": "^6.0.1",
         "react": "^18.2.0"
