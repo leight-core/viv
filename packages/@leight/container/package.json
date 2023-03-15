@@ -19,6 +19,7 @@
         "src"
     ],
     "scripts": {
+        "dev": "turbowatch",
         "build": "concurrently npm:build:*",
         "build:esbuild": "node esbuild.mjs",
         "build:types": "tsc --outDir lib",
@@ -33,6 +34,7 @@
         "@leight/esbuild": "^0.5.14",
         "@leight/eslint-config-eslint": "^0.5.23",
         "@leight/tsconfig": "^0.5.37",
+        "@leight/turbowatch": "^0.5.0",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

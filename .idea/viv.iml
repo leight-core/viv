@@ -95,6 +95,8 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/drizzle/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/env/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/next.js/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/source-client/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/table-client/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.github" />
       <excludeFolder url="file://$MODULE_DIR$/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/sql/.turbo" />
@@ -264,6 +266,10 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/esbuild/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/next.js/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/next.js/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/table-client/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/table-client/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/source-client/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/source-client/lib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
