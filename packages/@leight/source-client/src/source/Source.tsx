@@ -51,12 +51,12 @@ const InternalSource = <
     TQuerySchema extends IQuerySchema,
     TSchema extends IEntitySchema,
 >({
-                             sourceContext,
-                             schema,
-                             useSourceQuery,
-                             onSuccess,
-                             children,
-                         }: IInternalSourceProps<TQuerySchema, TSchema>) => {
+      sourceContext,
+      schema,
+      useSourceQuery,
+      onSuccess,
+      children,
+  }: IInternalSourceProps<TQuerySchema, TSchema>) => {
     const {page, size} = useCursorState(({page, size}) => ({page, size}));
     const result       = useSourceQuery({
         cursor: {
