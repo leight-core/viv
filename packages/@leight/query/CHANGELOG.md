@@ -1,5 +1,15 @@
 # @leight/query
 
+## 0.5.36
+
+### Patch Changes
+
+- a7029792: Improved overall Source API
+- Updated dependencies [98c0d1f0]
+- Updated dependencies [a7029792]
+    - @leight/sort@0.5.33
+    - @leight/filter@0.5.34
+
 ## 0.5.35
 
 ### Patch Changes

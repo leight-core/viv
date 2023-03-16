@@ -1,5 +1,20 @@
 # @leight/query-client
 
+## 0.5.5
+
+### Patch Changes
+
+- Added store defaults
+- Updated dependencies [312fbc60]
+- Updated dependencies
+- Updated dependencies [98c0d1f0]
+- Updated dependencies [a7029792]
+- Updated dependencies [312fbc60]
+    - @leight/cursor-client@0.5.7
+    - @leight/sort@0.5.33
+    - @leight/source@0.5.37
+    - @leight/context@0.5.1
+
 ## 0.5.4
 
 ### Patch Changes

@@ -1,5 +1,21 @@
 # @leight/table-client
 
+## 0.5.5
+
+### Patch Changes
+
+- a7029792: Improved overall Source API
+- 312fbc60: Refactored APIs, moved to the common packages
+- Updated dependencies [312fbc60]
+- Updated dependencies [a7029792]
+- Updated dependencies
+- Updated dependencies [98c0d1f0]
+- Updated dependencies [a7029792]
+- Updated dependencies [312fbc60]
+    - @leight/cursor-client@0.5.7
+    - @leight/source-client@0.5.6
+    - @leight/source@0.5.37
+
 ## 0.5.4
 
 ### Patch Changes

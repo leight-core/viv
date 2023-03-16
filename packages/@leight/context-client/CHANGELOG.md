@@ -1,5 +1,13 @@
 # @leight/context-client
 
+## 0.5.45
+
+### Patch Changes
+
+- 312fbc60: Refactored APIs, moved to the common packages
+- Updated dependencies [312fbc60]
+    - @leight/context@0.5.1
+
 ## 0.5.44
 
 ### Patch Changes

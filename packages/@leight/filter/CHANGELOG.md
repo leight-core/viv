@@ -1,5 +1,11 @@
 # @leight/filter
 
+## 0.5.34
+
+### Patch Changes
+
+- a7029792: Improved overall Source API
+
 ## 0.5.33
 
 ### Patch Changes

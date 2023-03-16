@@ -1,5 +1,13 @@
 # @leight/user-server
 
+## 0.5.43
+
+### Patch Changes
+
+- a7029792: Improved overall Source API
+- Updated dependencies [a7029792]
+    - @leight/source-server@0.5.38
+
 ## 0.5.42
 
 ### Patch Changes

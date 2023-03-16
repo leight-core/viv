@@ -1,5 +1,16 @@
 # @leight/cursor-client
 
+## 0.5.7
+
+### Patch Changes
+
+- 312fbc60: Updated boundaries
+- Added store defaults
+- Updated dependencies [a7029792]
+- Updated dependencies [312fbc60]
+    - @leight/query@0.5.36
+    - @leight/context-client@0.5.45
+
 ## 0.5.6
 
 ### Patch Changes
