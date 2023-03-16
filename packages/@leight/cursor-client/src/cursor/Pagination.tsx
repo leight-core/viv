@@ -21,7 +21,8 @@ export const Pagination: FC<IPaginationProps> = ({...props}) => {
         size={"lg"}
         radius={"sm"}
         total={pages}
-        siblings={2}
+        boundaries={3}
+        siblings={3}
         value={page + 1}
         onChange={page => setPage(page - 1)}
         {...props}
