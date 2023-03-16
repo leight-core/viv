@@ -1,5 +1,11 @@
 # @leight/cursor-client
 
+## 0.5.6
+
+### Patch Changes
+
+- More row, more fun
+
 ## 0.5.5
 
 ### Patch Changes

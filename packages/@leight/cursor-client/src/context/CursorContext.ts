@@ -25,7 +25,7 @@ export const {
              } = createStoreContext<ICursorStoreProps>(
     (set) => ({
         page:      0,
-        size:      15,
+        size:      30,
         pages:     0,
         total:     0,
         isLoading: false,
