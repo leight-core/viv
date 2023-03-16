@@ -1,5 +1,5 @@
 {
-    "version": "0.5.6",
+    "version": "0.5.7",
     "name": "@leight/source-client",
     "description": "Client-side Source support.",
     "license": "MIT",
