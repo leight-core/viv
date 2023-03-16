@@ -1,5 +1,5 @@
 {
-    "version": "0.5.40",
+    "version": "0.5.41",
     "name": "@leight/trpc-server",
     "description": "Set of utils for tRPC server-side.",
     "license": "MIT",
@@ -29,6 +29,7 @@
     },
     "dependencies": {
         "@leight/container": "^0.5.38",
+        "@leight/source": "^0.5.0",
         "@leight/trpc": "^0.5.37",
         "@leight/user": "^0.5.41",
         "@leight/user-server": "^0.5.42",
