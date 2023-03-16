@@ -1,5 +1,11 @@
 # @leight/cursor-client
 
+## 0.5.4
+
+### Patch Changes
+
+- Improved source/cursor stuff
+
 ## 0.5.3
 
 ### Patch Changes

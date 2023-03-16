@@ -1,8 +1,10 @@
 import {type IStoreProvider}    from "@leight/context-client";
 import {useCursorState}         from "@leight/cursor-client";
 import {type IQuerySchema}      from "@leight/query";
-import {type IUseQuery}         from "@leight/react-query";
-import {type IEntitySchema,}    from "@leight/source";
+import {
+    type IEntitySchema,
+    type IUseSourceQuery,
+}                               from "@leight/source";
 import {isCallable}             from "@leight/utils";
 import {type IStoreApi}         from "@leight/zustand";
 import {
@@ -17,7 +19,7 @@ export interface ISourceInternalProps<
     TSchema extends IEntitySchema,
 > {
     readonly schema: TSchema;
-    readonly useQuery: IUseQuery<z.infer<TQuerySchema> | undefined, z.infer<TSchema>[]>;
+    readonly useQuery: IUseSourceQuery<TQuerySchema, TSchema>;
     readonly SourceProvider: IStoreProvider<ISourceStoreProps<TSchema>>;
     readonly children?: ((store: IStoreApi<ISourceStoreProps<TSchema>>) => ReactNode) | ReactNode;
 

@@ -3,6 +3,7 @@ import {
     type IQuery,
     type IQuerySchema
 }                           from "@leight/query";
+import {IUseQuery}          from "@leight/react-query";
 import {type IToString}     from "@leight/utils";
 import {z}                  from "zod";
 
@@ -89,3 +90,8 @@ export namespace ISource {
         filter: TSourceSchema["Filter"];
     }
 }
+
+export type IUseSourceQuery<
+    TQuerySchema extends IQuerySchema,
+    TSchema extends IEntitySchema,
+> = IUseQuery<z.infer<TQuerySchema> | undefined, z.infer<TSchema>[]>;

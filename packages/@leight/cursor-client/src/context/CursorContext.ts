@@ -23,7 +23,7 @@ export const {
     (set) => ({
         page:  0,
         size:  15,
-        pages: 64,
+        pages: 0,
         total: 0,
         setSize(size) {
             set(({total}) => ({

@@ -1,5 +1,14 @@
 # @leight/source-client
 
+## 0.5.4
+
+### Patch Changes
+
+- Improved source/cursor stuff
+- Updated dependencies
+    - @leight/cursor-client@0.5.4
+    - @leight/source@0.5.36
+
 ## 0.5.3
 
 ### Patch Changes
