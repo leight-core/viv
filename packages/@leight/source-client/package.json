@@ -31,13 +31,11 @@
         "@leight/context": "^0.5.1",
         "@leight/context-client": "^0.5.45",
         "@leight/cursor-client": "^0.5.7",
-        "@leight/query": "^0.5.36",
         "@leight/sort": "^0.5.33",
         "@leight/source": "^0.5.37",
         "@leight/utils": "^0.5.40",
         "@leight/zustand": "^0.5.38",
-        "react": "^18.2.0",
-        "zod": "3.21.1"
+        "react": "^18.2.0"
     },
     "devDependencies": {
         "@leight/esbuild": "^0.5.17",
