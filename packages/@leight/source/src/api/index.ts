@@ -1,10 +1,13 @@
 import {type IUseState}     from "@leight/context";
 import {type ICursorSchema} from "@leight/cursor";
+import {type IFilterSchema} from "@leight/filter";
 import {
+    type IParamsSchema,
     type IQuery,
     type IQuerySchema
 }                           from "@leight/query";
 import {type IUseQuery}     from "@leight/react-query";
+import {type ISortSchema}   from "@leight/sort";
 import {type IToString}     from "@leight/utils";
 import {z}                  from "zod";
 
@@ -23,7 +26,7 @@ export type IEntitySchema = typeof EntitySchema;
 export type IEntity = z.infer<IEntitySchema>;
 
 export const CreateSchema = z.object({});
-export type ICreateSchema = typeof CreateSchema;
+export type ICreateSchema = z.ZodObject<any>;
 export type ICreate = z.infer<ICreateSchema>;
 
 export const PatchSchema = z.object({
@@ -36,12 +39,12 @@ export type IPatch = z.infer<IPatchSchema>;
  * Source schema definition. Contains all the types used in the Source.
  */
 export interface ISourceSchema<
-    TEntitySchema extends z.ZodSchema = z.ZodSchema,
-    TCreateSchema extends z.ZodSchema = z.ZodSchema,
-    TPatchSchema extends z.ZodSchema = z.ZodSchema,
-    TFilterSchema extends z.ZodSchema = z.ZodSchema,
-    TSortSchema extends z.ZodSchema = z.ZodSchema,
-    TParamsSchema extends z.ZodSchema = z.ZodSchema,
+    TEntitySchema extends IEntitySchema = IEntitySchema,
+    TCreateSchema extends ICreateSchema = ICreateSchema,
+    TPatchSchema extends IPatchSchema = IPatchSchema,
+    TFilterSchema extends IFilterSchema = IFilterSchema,
+    TSortSchema extends ISortSchema = ISortSchema,
+    TParamsSchema extends IParamsSchema = IParamsSchema,
 > {
     EntitySchema: TEntitySchema;
     Entity: z.infer<TEntitySchema>;
@@ -58,7 +61,7 @@ export interface ISourceSchema<
     CursorSchema: ICursorSchema;
     Cursor: z.infer<ICursorSchema>;
     QuerySchema: IQuerySchema<TFilterSchema, TSortSchema, TParamsSchema>;
-    Query: IQuery<TFilterSchema, TSortSchema, TParamsSchema> | undefined;
+    Query: IQuery<TFilterSchema, TSortSchema, TParamsSchema>;
 }
 
 /**
@@ -92,22 +95,19 @@ export namespace ISource {
     }
 }
 
-export interface ISourceStoreProps<TSchema extends IEntitySchema> {
-    readonly schema: TSchema;
-    readonly entities: z.infer<TSchema>[];
+export interface ISourceStoreProps<TSourceSchema extends ISourceSchema> {
+    readonly schema: TSourceSchema["EntitySchema"];
+    readonly entities: TSourceSchema["Entity"][];
     readonly isLoading: boolean;
     readonly isFetching: boolean;
 
-    setEntities(entities?: z.infer<TSchema>[]): void;
+    setEntities(entities?: TSourceSchema["Entity"][]): void;
 
     setIsLoading(isLoading: boolean): void;
 
     setIsFetching(isFetching: boolean): void;
 }
 
-export type IUseSourceStore<TSchema extends IEntitySchema> = IUseState<ISourceStoreProps<TSchema>>;
+export type IUseSourceState<TSourceSchema extends ISourceSchema> = IUseState<ISourceStoreProps<TSourceSchema>>;
 
-export type IUseSourceQuery<
-    TQuerySchema extends IQuerySchema,
-    TSchema extends IEntitySchema,
-> = IUseQuery<z.infer<TQuerySchema> | undefined, z.infer<TSchema>[]>;
+export type IUseSourceQuery<TSourceSchema extends ISourceSchema> = IUseQuery<TSourceSchema["Query"], TSourceSchema["Entity"][]>;

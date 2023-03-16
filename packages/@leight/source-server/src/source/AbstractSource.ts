@@ -43,19 +43,19 @@ export abstract class AbstractSource<TSourceSchema extends ISourceSchema> implem
     }
 
     async count(query?: TSourceSchema["Query"]): Promise<number> {
-        return this.runCount(query);
+        return this.runCount(query || {});
     }
 
-    async runCount(query?: TSourceSchema["Query"]): Promise<number> {
+    async runCount(query: TSourceSchema["Query"]): Promise<number> {
         console.error(`Source [${this.name}] does not support counting items by a query.`, query);
         throw new SourceError(`Source [${this.name}] does not support counting items by a query.`);
     }
 
     async query(query?: TSourceSchema["Query"]): Promise<TSourceSchema["Entity"][]> {
-        return this.runQuery(query);
+        return this.runQuery(query || {});
     }
 
-    async runQuery(query?: TSourceSchema["Query"]): Promise<TSourceSchema["Entity"][]> {
+    async runQuery(query: TSourceSchema["Query"]): Promise<TSourceSchema["Entity"][]> {
         console.error(`Source [${this.name}] does not support querying items.`, query);
         throw new SourceError(`Source [${this.name}] does not support querying items.`);
     }

@@ -1,8 +1,8 @@
 import {type IStoreProvider} from "@leight/context";
 import {useCursorState}      from "@leight/cursor-client";
-import {type IQuerySchema}   from "@leight/query";
+import {type IUseSortState}  from "@leight/sort";
 import {
-    type IEntitySchema,
+    type ISourceSchema,
     type ISourceStoreProps,
     type IUseSourceQuery,
 }                            from "@leight/source";
@@ -12,51 +12,40 @@ import {
     ReactNode,
     useEffect
 }                            from "react";
-import {z}                   from "zod";
 
-export interface ISourceInternalProps<
-    TQuerySchema extends IQuerySchema,
-    TSchema extends IEntitySchema,
-> {
+export interface ISourceInternalProps<TSourceSchema extends ISourceSchema> {
     /**
      * Shape of the data this Source is operating on
      */
-    readonly schema: TSchema;
+    readonly schema: TSourceSchema["EntitySchema"];
     /**
      * React query used to actually query data
      */
-    readonly useSourceQuery: IUseSourceQuery<TQuerySchema, TSchema>;
-    readonly SourceProvider: IStoreProvider<ISourceStoreProps<TSchema>>;
-    readonly children?: ((store: IStoreApi<ISourceStoreProps<TSchema>>) => ReactNode) | ReactNode;
+    readonly useSourceQuery: IUseSourceQuery<TSourceSchema>;
+    readonly useSortState: IUseSortState<TSourceSchema["SortSchema"]>;
+    readonly SourceProvider: IStoreProvider<ISourceStoreProps<TSourceSchema>>;
+    readonly children?: ((store: IStoreApi<ISourceStoreProps<TSourceSchema>>) => ReactNode) | ReactNode;
 
     /**
      * Optional callback when data is fetched
      */
-    onSuccess?(entities: z.infer<TSchema>[]): void;
+    onSuccess?(entities: TSourceSchema["Entity"][]): void;
 }
 
-export type ISourceProps<
-    TQuerySchema extends IQuerySchema,
-    TSchema extends IEntitySchema,
-> = Omit<ISourceInternalProps<TQuerySchema, TSchema>, "schema" | "SourceProvider" | "useSourceQuery">;
+export type ISourceProps<TSourceSchema extends ISourceSchema> = Omit<ISourceInternalProps<TSourceSchema>, "schema" | "SourceProvider" | "useSourceQuery">;
 
-interface IInternalSourceProps<
-    TQuerySchema extends IQuerySchema,
-    TSchema extends IEntitySchema,
-> extends Pick<ISourceInternalProps<TQuerySchema, TSchema>, "schema" | "useSourceQuery" | "onSuccess" | "children"> {
-    readonly sourceContext: IStoreApi<ISourceStoreProps<TSchema>>;
+interface IInternalSourceProps<TSourceSchema extends ISourceSchema> extends Pick<ISourceInternalProps<TSourceSchema>, "schema" | "useSourceQuery" | "onSuccess" | "children"> {
+    readonly sourceContext: IStoreApi<ISourceStoreProps<TSourceSchema>>;
 }
 
-const InternalSource = <
-    TQuerySchema extends IQuerySchema,
-    TSchema extends IEntitySchema,
->({
-      sourceContext,
-      schema,
-      useSourceQuery,
-      onSuccess,
-      children,
-  }: IInternalSourceProps<TQuerySchema, TSchema>) => {
+const InternalSource = <TSourceSchema extends ISourceSchema>(
+    {
+        sourceContext,
+        schema,
+        useSourceQuery,
+        onSuccess,
+        children,
+    }: IInternalSourceProps<TSourceSchema>) => {
     const {page, size} = useCursorState(({page, size}) => ({page, size}));
     const result       = useSourceQuery({
         cursor: {
@@ -90,10 +79,7 @@ const InternalSource = <
     return <>{isCallable(children) ? children(sourceContext) : children}</>;
 };
 
-export const Source = <
-    TQuerySchema extends IQuerySchema,
-    TSchema extends IEntitySchema,
->(
+export const Source = <TSourceSchema extends ISourceSchema>(
     {
         schema,
         useSourceQuery,
@@ -101,7 +87,7 @@ export const Source = <
         SourceProvider,
         children,
         ...props
-    }: ISourceInternalProps<TQuerySchema, TSchema>) => {
+    }: ISourceInternalProps<TSourceSchema>) => {
     return <SourceProvider
         {...props}
     >

@@ -1,30 +1,29 @@
 import {createStoreContext} from "@leight/context-client";
 import {
-    type IEntitySchema,
+    type ISourceSchema,
     type ISourceStoreProps
 }                           from "@leight/source";
-import {z}                  from "zod";
 
 
-export interface ICreateSourceContextProps<TSchema extends IEntitySchema> {
+export interface ICreateSourceContextProps<TSourceSchema extends ISourceSchema> {
     readonly name: string;
-    readonly schema: TSchema;
-    readonly entities?: z.infer<TSchema>[];
+    readonly schema: TSourceSchema["EntitySchema"];
+    readonly entities?: TSourceSchema["Entity"][];
 }
 
-export const createSourceContext = <TSchema extends IEntitySchema>(
+export const createSourceContext = <TSourceSchema extends ISourceSchema>(
     {
         name,
         schema,
         entities = [],
-    }: ICreateSourceContextProps<TSchema>) => {
-    return createStoreContext<ISourceStoreProps<TSchema>>(
+    }: ICreateSourceContextProps<TSourceSchema>) => {
+    return createStoreContext<ISourceStoreProps<TSourceSchema>>(
         (set) => ({
             schema,
             entities,
             isLoading:  false,
             isFetching: false,
-            setEntities(entities?: z.infer<TSchema>[]) {
+            setEntities(entities) {
                 set({entities});
             },
             setIsLoading(isLoading) {

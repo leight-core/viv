@@ -32,6 +32,7 @@
         "@leight/context-client": "^0.5.44",
         "@leight/cursor-client": "^0.5.5",
         "@leight/query": "^0.5.34",
+        "@leight/sort": "^0.5.0",
         "@leight/source": "^0.5.36",
         "@leight/utils": "^0.5.40",
         "@leight/zustand": "^0.5.38",

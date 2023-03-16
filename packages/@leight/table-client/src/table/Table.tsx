@@ -3,8 +3,8 @@ import {type IWithTranslation} from "@leight/i18n";
 import {Translation}           from "@leight/i18n-client";
 import {Paper}                 from "@leight/mantine";
 import {
-    type IEntitySchema,
-    type IUseSourceStore
+    type ISourceSchema,
+    type IUseSourceState
 }                              from "@leight/source";
 import {isCallable}            from "@leight/utils";
 import {
@@ -17,30 +17,29 @@ import {
     type ComponentProps,
     type ReactNode
 }                              from "react";
-import {z}                     from "zod";
 
-export interface ITableColumn<TSchema extends IEntitySchema> {
+export interface ITableColumn<TSourceSchema extends ISourceSchema> {
     /**
      * Explicitly override column title (by default column name is taken from Record<> in Table)
      */
     readonly title?: string;
 
-    render: ((entity: z.infer<TSchema>) => ReactNode) | (keyof (z.infer<TSchema>));
+    render: ((entity: TSourceSchema["Entity"]) => ReactNode) | (keyof TSourceSchema["Entity"]);
 }
 
 export interface ITableInternalProps<
-    TSchema extends IEntitySchema,
+    TSourceSchema extends ISourceSchema,
     TColumns extends string,
 > extends Partial<Omit<ComponentProps<typeof CoolTable>, "hidden">> {
     /**
      * Table schema used to infer all internal types.
      */
-    readonly schema: TSchema;
-    readonly useSource: IUseSourceStore<TSchema>;
+    readonly schema: TSourceSchema["EntitySchema"];
+    readonly useSource: IUseSourceState<TSourceSchema>;
     readonly withTranslation: IWithTranslation;
     readonly withCaption?: boolean;
-    readonly columns: Record<TColumns, ITableColumn<TSchema>>;
-    readonly overrideColumns?: Partial<Record<TColumns, ITableColumn<TSchema>>>;
+    readonly columns: Record<TColumns, ITableColumn<TSourceSchema>>;
+    readonly overrideColumns?: Partial<Record<TColumns, ITableColumn<TSourceSchema>>>;
 
     /**
      * Specify hidden columns.
@@ -57,12 +56,12 @@ export interface ITableInternalProps<
  * Public props which any component could extend from (non-partial).
  */
 export type ITableProps<
-    TSchema extends IEntitySchema,
+    TSourceSchema extends ISourceSchema,
     TColumns extends string,
-> = Omit<ITableInternalProps<TSchema, TColumns>, "schema" | "useSource" | "columns" | "withTranslation">;
+> = Omit<ITableInternalProps<TSourceSchema, TColumns>, "schema" | "useSource" | "columns" | "withTranslation">;
 
 export const Table = <
-    TSchema extends IEntitySchema,
+    TSourceSchema extends ISourceSchema,
     TColumns extends string,
 >(
     {
@@ -75,7 +74,7 @@ export const Table = <
         hidden = [],
         order = Object.keys(columns) as any,
         ...props
-    }: ITableInternalProps<TSchema, TColumns>) => {
+    }: ITableInternalProps<TSourceSchema, TColumns>) => {
     const {
               entities,
               isFetching,
@@ -92,7 +91,7 @@ export const Table = <
             isLoading,
         }));
 
-    const $columns: [string, ITableColumn<TSchema>][] = order.filter(column => !hidden.includes(column)).map(column => [
+    const $columns: [string, ITableColumn<TSourceSchema>][] = order.filter(column => !hidden.includes(column)).map(column => [
         column,
         (overrideColumns as any)[column] || (columns as any)[column],
     ]);

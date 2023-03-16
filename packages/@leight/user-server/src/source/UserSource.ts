@@ -26,9 +26,9 @@ export class UserSource extends AbstractSource<IUserSourceSchema> implements IUs
         });
     }
 
-    runCount(query?: IUserSourceSchema["Query"]): Promise<number> {
+    runCount({filter: {fulltext, ...where} = {}}: IUserSourceSchema["Query"]): Promise<number> {
         return this.prismaClient.user.count({
-            where: query?.filter
+            where,
         });
     }
 

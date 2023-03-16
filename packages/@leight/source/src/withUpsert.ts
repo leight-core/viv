@@ -1,12 +1,13 @@
-import {
-    type ISource,
-    type ISourceSchema
-} from "./api";
+export interface IWithUpsertProps {
+    create: any;
+    filter: any;
+    patch: any;
+}
 
-export const withUpsert = ({create, filter, patch}: ISource.IUpsert<ISourceSchema>) => {
+export const withUpsert = ({create, filter: where, patch: update}: IWithUpsertProps) => {
     return {
-        where:  filter,
+        where,
         create,
-        update: patch,
+        update,
     };
 };
