@@ -1,5 +1,11 @@
 # @leight/trpc-server
 
+## 0.5.42
+
+### Patch Changes
+
+- Improved something, maybe
+
 ## 0.5.41
 
 ### Patch Changes

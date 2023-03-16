@@ -51,7 +51,7 @@ export const withHandler = <TRequest, TResponse>(
             if (e instanceof TokenError) {
                 throw new TRPCError({
                     message: "Token: Unauthorized :(",
-                    code:    "UNAUTHORIZED",
+                    code:    "UNAUTHORIZED", 
                 });
             }
             throw new TRPCError({
@@ -76,5 +76,5 @@ export const withHandler = <TRequest, TResponse>(
     };
 };
 
-export const withSourceHandler      = <TSourceSchema extends ISourceSchema>(props: IWithHandlerProps<TSourceSchema["Query"], TSourceSchema["Entity"][]>) => withHandler<TSourceSchema["Query"], TSourceSchema["Entity"][]>(props);
-export const withSourceCountHandler = <TSourceSchema extends ISourceSchema>(props: IWithHandlerProps<TSourceSchema["Query"], number>) => withHandler<TSourceSchema["Query"], number>(props);
+export const withSourceHandler      = <TSourceSchema extends ISourceSchema>(props: IWithHandlerProps<TSourceSchema["Query"] | undefined, TSourceSchema["Entity"][]>) => withHandler<TSourceSchema["Query"], TSourceSchema["Entity"][]>(props);
+export const withSourceCountHandler = <TSourceSchema extends ISourceSchema>(props: IWithHandlerProps<TSourceSchema["Query"] | undefined, number>) => withHandler<TSourceSchema["Query"], number>(props);
