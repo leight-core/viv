@@ -101,6 +101,10 @@ export const Table = <
             overlayBlur={2}
             transitionDuration={250}
         />
+        <Center>
+            <Pagination/>
+        </Center>
+        <Divider m={"md"}/>
         <CoolTable
             striped
             highlightOnHover
@@ -109,10 +113,6 @@ export const Table = <
             {...props}
         >
             {withCaption && <caption><Translation {...withTranslation} label={"table.caption"}/></caption>}
-            <Center>
-                <Pagination/>
-            </Center>
-            <Divider m={"md"}/>
             <thead>
                 <tr>
                     {$columns?.map(([name, column]) => <th key={name}>
@@ -136,4 +136,3 @@ export const Table = <
         </Center>
     </Paper>;
 };
-``;

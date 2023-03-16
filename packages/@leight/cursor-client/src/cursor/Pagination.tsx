@@ -1,15 +1,21 @@
-import {Pagination as CoolPagination} from "@mantine/core";
+import {
+    Loader,
+    Pagination as CoolPagination
+}                       from "@mantine/core";
 import {
     type ComponentProps,
     type FC
-}                                     from "react";
-import {useCursorState}               from "../context";
+}                       from "react";
+import {useCursorState} from "../context";
 
 export interface IPaginationProps extends Partial<ComponentProps<typeof CoolPagination>> {
 }
 
 export const Pagination: FC<IPaginationProps> = ({...props}) => {
-    const {page, pages, setPage} = useCursorState(({page, pages, setPage}) => ({page, pages, setPage}));
+    const {page, pages, setPage, isLoading} = useCursorState(({page, pages, setPage, isLoading}) => ({page, pages, setPage, isLoading}));
+    if (isLoading) {
+        return <Loader variant="dots"/>;
+    }
     return pages > 0 ? <CoolPagination
         withEdges
         size={"lg"}

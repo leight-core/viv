@@ -18,14 +18,16 @@ export type ICursorControlProps<TQuerySchema extends IQuerySchema> = PropsWithCh
 type IInternalCursor<TQuerySchema extends IQuerySchema> = ICursorControlProps<TQuerySchema>;
 
 const InternalCursor = <TQuerySchema extends IQuerySchema>({useCountQuery, children}: IInternalCursor<TQuerySchema>) => {
-    const {setTotal} = useCursorState(({setTotal}) => ({setTotal}));
-    const result     = useCountQuery({});
+    const {setTotal, setIsLoading} = useCursorState(({setTotal, setIsLoading}) => ({setTotal, setIsLoading}));
+    const result                   = useCountQuery({});
     useEffect(() => {
         if (result.isSuccess) {
             setTotal(result.data);
         }
+        setIsLoading(!result.isSuccess || result.isError);
     }, [
         result.isSuccess,
+        result.isError,
         result.isLoading,
         result.isFetching
     ]);

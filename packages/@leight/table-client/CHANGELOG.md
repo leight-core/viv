@@ -1,5 +1,14 @@
 # @leight/table-client
 
+## 0.5.4
+
+### Patch Changes
+
+- Improved cursor
+- Updated dependencies
+    - @leight/cursor-client@0.5.5
+    - @leight/source-client@0.5.5
+
 ## 0.5.3
 
 ### Patch Changes

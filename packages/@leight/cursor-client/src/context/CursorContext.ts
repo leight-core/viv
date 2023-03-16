@@ -5,12 +5,15 @@ export interface ICursorStoreProps {
     readonly size: number;
     readonly pages: number;
     readonly total: number;
+    readonly isLoading: boolean;
 
     setSize(size: number): void;
 
     setPage(page: number): void;
 
     setTotal(total: number): void;
+
+    setIsLoading(isLoading: boolean): void;
 }
 
 export const {
@@ -21,10 +24,11 @@ export const {
                  useOptionalStore: useOptionalCursorStore,
              } = createStoreContext<ICursorStoreProps>(
     (set) => ({
-        page:  0,
-        size:  15,
-        pages: 0,
-        total: 0,
+        page:      0,
+        size:      15,
+        pages:     0,
+        total:     0,
+        isLoading: false,
         setSize(size) {
             set(({total}) => ({
                 size,
@@ -39,7 +43,10 @@ export const {
                 total,
                 pages: Math.ceil(total / size),
             }));
-        }
+        },
+        setIsLoading(isLoading) {
+            set({isLoading});
+        },
     }),
     "CursorContext",
     "Add CursorProvider."

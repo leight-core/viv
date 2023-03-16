@@ -1,5 +1,5 @@
 {
-    "version": "0.5.4",
+    "version": "0.5.5",
     "name": "@leight/source-client",
     "description": "Client-side Source support.",
     "license": "MIT",
@@ -29,9 +29,8 @@
     },
     "dependencies": {
         "@leight/context-client": "^0.5.44",
-        "@leight/cursor-client": "^0.5.4",
+        "@leight/cursor-client": "^0.5.5",
         "@leight/query": "^0.5.34",
-        "@leight/react-query": "^0.5.1",
         "@leight/source": "^0.5.36",
         "@leight/utils": "^0.5.40",
         "@leight/zustand": "^0.5.38",
