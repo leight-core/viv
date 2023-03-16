@@ -1,18 +1,18 @@
-import {type IStoreProvider}    from "@leight/context-client";
-import {useCursorState}         from "@leight/cursor-client";
-import {type IQuerySchema}      from "@leight/query";
+import {type IStoreProvider} from "@leight/context";
+import {useCursorState}      from "@leight/cursor-client";
+import {type IQuerySchema}   from "@leight/query";
 import {
     type IEntitySchema,
+    type ISourceStoreProps,
     type IUseSourceQuery,
-}                               from "@leight/source";
-import {isCallable}             from "@leight/utils";
-import {type IStoreApi}         from "@leight/zustand";
+}                            from "@leight/source";
+import {isCallable}          from "@leight/utils";
+import {type IStoreApi}      from "@leight/zustand";
 import {
     ReactNode,
     useEffect
-}                               from "react";
-import {z}                      from "zod";
-import {type ISourceStoreProps} from "../hook";
+}                            from "react";
+import {z}                   from "zod";
 
 export interface ISourceInternalProps<
     TQuerySchema extends IQuerySchema,

@@ -1,22 +1,11 @@
+import {type IStoreProvider} from "@leight/context";
 import {
     type ICreateStore,
-    type IStoreApi,
     type IStoreContext,
     type IStoreProps,
-}                               from "@leight/zustand";
-import {
-    type FC,
-    useMemo
-}                               from "react";
-import {type IProviderChildren} from "../api";
-import {withConsumer}           from "./withConsumer";
-
-export interface IStoreProviderProps<TStoreProps extends IStoreProps> {
-    children: IProviderChildren<IStoreApi<TStoreProps>>;
-    defaults?: Partial<TStoreProps>;
-}
-
-export type IStoreProvider<TStoreProps extends IStoreProps> = FC<IStoreProviderProps<TStoreProps>>;
+}                            from "@leight/zustand";
+import {useMemo}             from "react";
+import {withConsumer}        from "./withConsumer";
 
 export interface ICreateProviderProps<TStoreProps> {
     createStore: ICreateStore<TStoreProps>;

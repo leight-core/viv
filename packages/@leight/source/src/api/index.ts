@@ -1,9 +1,10 @@
+import {type IUseState}     from "@leight/context";
 import {type ICursorSchema} from "@leight/cursor";
 import {
     type IQuery,
     type IQuerySchema
 }                           from "@leight/query";
-import {IUseQuery}          from "@leight/react-query";
+import {type IUseQuery}     from "@leight/react-query";
 import {type IToString}     from "@leight/utils";
 import {z}                  from "zod";
 
@@ -90,6 +91,21 @@ export namespace ISource {
         filter: TSourceSchema["Filter"];
     }
 }
+
+export interface ISourceStoreProps<TSchema extends IEntitySchema> {
+    readonly schema: TSchema;
+    readonly entities: z.infer<TSchema>[];
+    readonly isLoading: boolean;
+    readonly isFetching: boolean;
+
+    setEntities(entities?: z.infer<TSchema>[]): void;
+
+    setIsLoading(isLoading: boolean): void;
+
+    setIsFetching(isFetching: boolean): void;
+}
+
+export type IUseSourceStore<TSchema extends IEntitySchema> = IUseState<ISourceStoreProps<TSchema>>;
 
 export type IUseSourceQuery<
     TQuerySchema extends IQuerySchema,

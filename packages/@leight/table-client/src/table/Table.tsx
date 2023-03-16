@@ -2,8 +2,10 @@ import {Pagination}            from "@leight/cursor-client";
 import {type IWithTranslation} from "@leight/i18n";
 import {Translation}           from "@leight/i18n-client";
 import {Paper}                 from "@leight/mantine";
-import {type IEntitySchema}    from "@leight/source";
-import {type IUseSourceStore}  from "@leight/source-client";
+import {
+    type IEntitySchema,
+    type IUseSourceStore
+}                              from "@leight/source";
 import {isCallable}            from "@leight/utils";
 import {
     Center,

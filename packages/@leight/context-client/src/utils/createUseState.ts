@@ -1,3 +1,4 @@
+import {type IUseState}     from "@leight/context";
 import {
     type IStoreApi,
     type IStoreProps
@@ -6,12 +7,6 @@ import {type Context}       from "react";
 import {useStore}           from "zustand";
 import {useContext}         from "./useContext";
 import {useOptionalContext} from "./useOptionalContext";
-
-export interface IUseState<TStoreProps extends IStoreProps | null> {
-    <U>(selector: (state: TStoreProps) => U): U;
-
-    (): TStoreProps;
-}
 
 export const createUseState = <TStoreProps extends IStoreProps>(
     Context: Context<IStoreApi<TStoreProps> | null>,
