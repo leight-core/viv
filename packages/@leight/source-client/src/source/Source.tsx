@@ -18,23 +18,32 @@ export interface ISourceInternalProps<
     TQuerySchema extends IQuerySchema,
     TSchema extends IEntitySchema,
 > {
+    /**
+     * Shape of the data this Source is operating on
+     */
     readonly schema: TSchema;
-    readonly useQuery: IUseSourceQuery<TQuerySchema, TSchema>;
+    /**
+     * React query used to actually query data
+     */
+    readonly useSourceQuery: IUseSourceQuery<TQuerySchema, TSchema>;
     readonly SourceProvider: IStoreProvider<ISourceStoreProps<TSchema>>;
     readonly children?: ((store: IStoreApi<ISourceStoreProps<TSchema>>) => ReactNode) | ReactNode;
 
+    /**
+     * Optional callback when data is fetched
+     */
     onSuccess?(entities: z.infer<TSchema>[]): void;
 }
 
 export type ISourceProps<
     TQuerySchema extends IQuerySchema,
     TSchema extends IEntitySchema,
-> = Omit<ISourceInternalProps<TQuerySchema, TSchema>, "schema" | "SourceProvider" | "useQuery">;
+> = Omit<ISourceInternalProps<TQuerySchema, TSchema>, "schema" | "SourceProvider" | "useSourceQuery">;
 
 interface IInternalSourceProps<
     TQuerySchema extends IQuerySchema,
     TSchema extends IEntitySchema,
-> extends Pick<ISourceInternalProps<TQuerySchema, TSchema>, "schema" | "useQuery" | "onSuccess" | "children"> {
+> extends Pick<ISourceInternalProps<TQuerySchema, TSchema>, "schema" | "useSourceQuery" | "onSuccess" | "children"> {
     readonly sourceContext: IStoreApi<ISourceStoreProps<TSchema>>;
 }
 
@@ -42,14 +51,14 @@ const InternalSource = <
     TQuerySchema extends IQuerySchema,
     TSchema extends IEntitySchema,
 >({
-      sourceContext,
-      schema,
-      useQuery,
-      onSuccess,
-      children,
-  }: IInternalSourceProps<TQuerySchema, TSchema>) => {
+                             sourceContext,
+                             schema,
+                             useSourceQuery,
+                             onSuccess,
+                             children,
+                         }: IInternalSourceProps<TQuerySchema, TSchema>) => {
     const {page, size} = useCursorState(({page, size}) => ({page, size}));
-    const result       = useQuery({
+    const result       = useSourceQuery({
         cursor: {
             page,
             size,
@@ -87,7 +96,7 @@ export const Source = <
 >(
     {
         schema,
-        useQuery,
+        useSourceQuery,
         onSuccess,
         SourceProvider,
         children,
@@ -99,7 +108,7 @@ export const Source = <
         {(sourceContext) => <InternalSource
             sourceContext={sourceContext}
             schema={schema}
-            useQuery={useQuery}
+            useSourceQuery={useSourceQuery}
             onSuccess={onSuccess}
         >
             {children}
