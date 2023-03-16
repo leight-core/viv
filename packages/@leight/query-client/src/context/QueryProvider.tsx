@@ -1,23 +1,34 @@
-import {CursorControl}          from "@leight/cursor-client";
-import {
-    type IQuerySchema,
-    type IUseCursorCountQuery
-}                               from "@leight/query";
-import {type PropsWithChildren} from "react";
+import {type IStoreProvider}       from "@leight/context";
+import {CursorControl}             from "@leight/cursor-client";
+import {type IUseCursorCountQuery} from "@leight/query";
+import {type ISortStoreProps}      from "@leight/sort";
+import {type ISourceSchema}        from "@leight/source";
+import {type PropsWithChildren}    from "react";
 
-export type IQueryProviderInternalProps<TQuerySchema extends IQuerySchema> = PropsWithChildren<{
-    useCountQuery: IUseCursorCountQuery<TQuerySchema>;
+export type IQueryProviderInternalProps<TSourceSchema extends ISourceSchema> = PropsWithChildren<{
+    SortProvider: IStoreProvider<ISortStoreProps<TSourceSchema["SortSchema"]>>;
+    useCountQuery: IUseCursorCountQuery<TSourceSchema["QuerySchema"]>;
+    defaultSort?: TSourceSchema["Sort"];
+    defaultCursor?: TSourceSchema["Cursor"];
 }>;
-export type IQueryProviderProps<TQuerySchema extends IQuerySchema> = Omit<IQueryProviderInternalProps<TQuerySchema>, "useCountQuery">;
+export type IQueryProviderProps<TSourceSchema extends ISourceSchema> = Omit<IQueryProviderInternalProps<TSourceSchema>, "useCountQuery" | "SortProvider">;
 
-export const QueryProvider = <TQuerySchema extends IQuerySchema>(
+export const QueryProvider = <TSourceSchema extends ISourceSchema>(
     {
+        SortProvider,
+        defaultSort,
+        defaultCursor,
         useCountQuery,
         children,
-    }: IQueryProviderInternalProps<TQuerySchema>) => {
-    return <CursorControl
-        useCountQuery={useCountQuery}
+    }: IQueryProviderInternalProps<TSourceSchema>) => {
+    return <SortProvider
+        defaults={defaultSort}
     >
-        {children}
-    </CursorControl>;
+        <CursorControl
+            useCountQuery={useCountQuery}
+            defaultCursor={defaultCursor}
+        >
+            {children}
+        </CursorControl>
+    </SortProvider>;
 };
