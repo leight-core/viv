@@ -1,5 +1,11 @@
 # @leight/trpc-server
 
+## 0.5.43
+
+### Patch Changes
+
+- Fixed types
+
 ## 0.5.42
 
 ### Patch Changes
