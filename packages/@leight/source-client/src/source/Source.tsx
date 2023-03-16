@@ -34,7 +34,7 @@ export interface ISourceInternalProps<TSourceSchema extends ISourceSchema> {
 
 export type ISourceProps<TSourceSchema extends ISourceSchema> = Omit<ISourceInternalProps<TSourceSchema>, "schema" | "SourceProvider" | "useSourceQuery">;
 
-interface IInternalSourceProps<TSourceSchema extends ISourceSchema> extends Pick<ISourceInternalProps<TSourceSchema>, "schema" | "useSourceQuery" | "onSuccess" | "children"> {
+interface IInternalSourceProps<TSourceSchema extends ISourceSchema> extends Pick<ISourceInternalProps<TSourceSchema>, "schema" | "useSourceQuery" | "useSortState" | "onSuccess" | "children"> {
     readonly sourceContext: IStoreApi<ISourceStoreProps<TSourceSchema>>;
 }
 
@@ -43,15 +43,18 @@ const InternalSource = <TSourceSchema extends ISourceSchema>(
         sourceContext,
         schema,
         useSourceQuery,
+        useSortState,
         onSuccess,
         children,
     }: IInternalSourceProps<TSourceSchema>) => {
     const {page, size} = useCursorState(({page, size}) => ({page, size}));
+    const {sort}       = useSortState(({sort}) => ({sort}));
     const result       = useSourceQuery({
         cursor: {
             page,
             size,
-        }
+        },
+        sort,
     }, {
         onSuccess,
     });
@@ -83,6 +86,7 @@ export const Source = <TSourceSchema extends ISourceSchema>(
     {
         schema,
         useSourceQuery,
+        useSortState,
         onSuccess,
         SourceProvider,
         children,
@@ -95,6 +99,7 @@ export const Source = <TSourceSchema extends ISourceSchema>(
             sourceContext={sourceContext}
             schema={schema}
             useSourceQuery={useSourceQuery}
+            useSortState={useSortState}
             onSuccess={onSuccess}
         >
             {children}
