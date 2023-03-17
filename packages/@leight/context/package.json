@@ -1,5 +1,5 @@
 {
-    "version": "0.5.1",
+    "version": "0.5.2",
     "name": "@leight/context",
     "description": "Common context stuff.",
     "license": "MIT",
@@ -28,14 +28,14 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/zustand": "^0.5.38",
+        "@leight/zustand": "^0.5.39",
         "react": "^18.2.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.17",
-        "@leight/eslint-config-eslint": "^0.5.26",
-        "@leight/tsconfig": "^0.5.40",
-        "@leight/turbowatch": "^0.5.3",
+        "@leight/esbuild": "^0.5.18",
+        "@leight/eslint-config-eslint": "^0.5.27",
+        "@leight/tsconfig": "^0.5.41",
+        "@leight/turbowatch": "^0.5.4",
         "@types/node": "^18.15.0",
         "@types/react": "^18.0.28",
         "concurrently": "^7.6.0",

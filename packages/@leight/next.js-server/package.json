@@ -1,5 +1,5 @@
 {
-    "version": "0.5.44",
+    "version": "0.5.45",
     "name": "@leight/next.js-server",
     "description": "Next.js related server-side helper stuff.",
     "license": "MIT",
@@ -28,13 +28,13 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "^0.5.38",
-        "@leight/next.js": "^0.5.4",
-        "@leight/prisma": "^0.5.48",
-        "@leight/user": "^0.5.41",
-        "@leight/user-server": "^0.5.42",
-        "@leight/utils": "^0.5.40",
-        "@leight/winston": "^0.5.37",
+        "@leight/container": "^0.5.39",
+        "@leight/next.js": "^0.5.5",
+        "@leight/prisma": "^0.5.50",
+        "@leight/user": "^0.5.42",
+        "@leight/user-server": "^0.5.44",
+        "@leight/utils": "^0.5.41",
+        "@leight/winston": "^0.5.38",
         "@next-auth/prisma-adapter": "^1.0.5",
         "@prisma/client": "^4.11.0",
         "next": "^13.2.4",
@@ -44,10 +44,10 @@
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.17",
-        "@leight/eslint-config-eslint": "^0.5.26",
-        "@leight/tsconfig": "^0.5.40",
-        "@leight/turbowatch": "^0.5.3",
+        "@leight/esbuild": "^0.5.18",
+        "@leight/eslint-config-eslint": "^0.5.27",
+        "@leight/tsconfig": "^0.5.41",
+        "@leight/turbowatch": "^0.5.4",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
