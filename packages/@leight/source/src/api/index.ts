@@ -110,4 +110,4 @@ export interface ISourceStoreProps<TSourceSchema extends ISourceSchema> {
 
 export type IUseSourceState<TSourceSchema extends ISourceSchema> = IUseState<ISourceStoreProps<TSourceSchema>>;
 
-export type IUseSourceQuery<TSourceSchema extends ISourceSchema> = IUseQuery<TSourceSchema["Query"], TSourceSchema["Entity"][]>;
+export type IUseSourceQuery<TSourceSchema extends ISourceSchema> = IUseQuery<TSourceSchema["Query"] | undefined, TSourceSchema["Entity"][]>;

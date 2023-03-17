@@ -1,5 +1,11 @@
 # @leight/source
 
+## 0.5.39
+
+### Patch Changes
+
+- Updated types
+
 ## 0.5.38
 
 ### Patch Changes
