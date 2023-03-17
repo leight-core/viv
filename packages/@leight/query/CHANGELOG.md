@@ -1,5 +1,11 @@
 # @leight/query
 
+## 0.5.39
+
+### Patch Changes
+
+- Fixed types
+
 ## 0.5.38
 
 ### Patch Changes

@@ -55,4 +55,4 @@ export interface IQuerySchemaProps<
     paramsSchema?: TParamsSchema;
 }
 
-export type IUseCursorCountQuery<TQuerySchema extends IQuerySchema> = IUseQuery<z.infer<TQuerySchema>, number>;
+export type IUseCursorCountQuery<TQuerySchema extends IQuerySchema> = IUseQuery<z.infer<TQuerySchema> | undefined, number>;
