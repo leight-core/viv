@@ -1,5 +1,15 @@
 # @leight/job
 
+## 0.5.43
+
+### Patch Changes
+
+- VErsion bump
+- Updated dependencies
+    - @leight/prisma@0.5.51
+    - @leight/source@0.5.40
+    - @leight/winston@0.5.39
+
 ## 0.5.42
 
 ### Patch Changes

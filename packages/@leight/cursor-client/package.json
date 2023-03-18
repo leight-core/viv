@@ -1,5 +1,5 @@
 {
-    "version": "0.5.8",
+    "version": "0.5.9",
     "name": "@leight/cursor-client",
     "description": "Client-side for Cursor.",
     "license": "MIT",
@@ -28,18 +28,18 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/context-client": "^0.5.46",
-        "@leight/query": "^0.5.38",
+        "@leight/context-client": "^0.5.47",
+        "@leight/query": "^0.5.40",
         "@mantine/core": "^6.0.1",
         "@mantine/hooks": "^6.0.1",
         "react": "^18.2.0",
         "zod": "^3.21.1"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.18",
-        "@leight/eslint-config-eslint": "^0.5.27",
-        "@leight/tsconfig": "^0.5.41",
-        "@leight/turbowatch": "^0.5.4",
+        "@leight/esbuild": "^0.5.19",
+        "@leight/eslint-config-eslint": "^0.5.28",
+        "@leight/tsconfig": "^0.5.42",
+        "@leight/turbowatch": "^0.5.5",
         "@types/node": "^18.15.0",
         "@types/react": "^18.0.28",
         "concurrently": "^7.6.0",

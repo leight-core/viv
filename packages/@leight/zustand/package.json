@@ -1,5 +1,5 @@
 {
-    "version": "0.5.39",
+    "version": "0.5.40",
     "name": "@leight/zustand",
     "description": "Zustand helper stuff.",
     "license": "MIT",
@@ -32,10 +32,10 @@
         "zustand": "^4.3.6"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.18",
-        "@leight/eslint-config-eslint": "^0.5.27",
-        "@leight/tsconfig": "^0.5.41",
-        "@leight/turbowatch": "^0.5.4",
+        "@leight/esbuild": "^0.5.19",
+        "@leight/eslint-config-eslint": "^0.5.28",
+        "@leight/tsconfig": "^0.5.42",
+        "@leight/turbowatch": "^0.5.5",
         "@types/node": "^18.15.0",
         "@types/react": "^18.0.28",
         "concurrently": "^7.6.0",

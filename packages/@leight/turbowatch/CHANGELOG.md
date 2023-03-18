@@ -1,5 +1,11 @@
 # @leight/turbowatch
 
+## 0.5.5
+
+### Patch Changes
+
+- VErsion bump
+
 ## 0.5.4
 
 ### Patch Changes

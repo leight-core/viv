@@ -1,5 +1,11 @@
 # @leight/esbuild
 
+## 0.5.19
+
+### Patch Changes
+
+- VErsion bump
+
 ## 0.5.18
 
 ### Patch Changes

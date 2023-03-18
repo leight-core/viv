@@ -1,5 +1,5 @@
 {
-    "version": "0.5.8",
+    "version": "0.5.9",
     "name": "@leight/source-client",
     "description": "Client-side Source support.",
     "license": "MIT",
@@ -28,20 +28,20 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/context": "^0.5.2",
-        "@leight/context-client": "^0.5.46",
-        "@leight/cursor-client": "^0.5.8",
-        "@leight/sort": "^0.5.34",
-        "@leight/source": "^0.5.38",
-        "@leight/utils": "^0.5.41",
-        "@leight/zustand": "^0.5.39",
+        "@leight/context": "^0.5.3",
+        "@leight/context-client": "^0.5.47",
+        "@leight/cursor-client": "^0.5.9",
+        "@leight/sort": "^0.5.35",
+        "@leight/source": "^0.5.40",
+        "@leight/utils": "^0.5.42",
+        "@leight/zustand": "^0.5.40",
         "react": "^18.2.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.18",
-        "@leight/eslint-config-eslint": "^0.5.27",
-        "@leight/tsconfig": "^0.5.41",
-        "@leight/turbowatch": "^0.5.4",
+        "@leight/esbuild": "^0.5.19",
+        "@leight/eslint-config-eslint": "^0.5.28",
+        "@leight/tsconfig": "^0.5.42",
+        "@leight/turbowatch": "^0.5.5",
         "@types/node": "^18.15.0",
         "@types/react": "^18.0.28",
         "concurrently": "^7.6.0",

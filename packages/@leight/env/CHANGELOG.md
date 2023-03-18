@@ -1,5 +1,11 @@
 # @leight/env
 
+## 0.5.11
+
+### Patch Changes
+
+- VErsion bump
+
 ## 0.5.10
 
 ### Patch Changes
