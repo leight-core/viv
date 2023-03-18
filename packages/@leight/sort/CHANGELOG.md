@@ -1,5 +1,11 @@
 # @leight/sort
 
+## 0.5.36
+
+### Patch Changes
+
+- Improved sort types
+
 ## 0.5.35
 
 ### Patch Changes

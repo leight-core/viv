@@ -1,13 +1,13 @@
 import {type IUseState} from "@leight/context";
 import {z}              from "zod";
 
-export type ISortOrder =
-    "asc"
-    | "desc";
-export const SortSchema = z.record(z.enum([
+export const SortOrderSchema = z.enum([
     "asc",
     "desc"
-]));
+]);
+export type ISortOrderSchema = typeof SortOrderSchema
+export type ISortOrder = z.infer<ISortOrderSchema>;
+export const SortSchema = z.object({});
 export type ISortSchema = typeof SortSchema;
 export type ISort = z.infer<ISortSchema>;
 
