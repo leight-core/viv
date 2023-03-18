@@ -1,5 +1,19 @@
 # @leight/source-client
 
+## 0.5.10
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/context@0.5.4
+    - @leight/context-client@0.5.48
+    - @leight/cursor-client@0.5.10
+    - @leight/sort@0.5.37
+    - @leight/source@0.5.41
+    - @leight/utils@0.5.43
+    - @leight/zustand@0.5.41
+
 ## 0.5.9
 
 ### Patch Changes

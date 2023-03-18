@@ -1,5 +1,11 @@
 # @leight/eslint-config-eslint
 
+## 0.5.29
+
+### Patch Changes
+
+- Version bump
+
 ## 0.5.28
 
 ### Patch Changes
