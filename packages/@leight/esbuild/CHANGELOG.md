@@ -1,5 +1,11 @@
 # @leight/esbuild
 
+## 0.5.23
+
+### Patch Changes
+
+- Version bump, updated packages
+
 ## 0.5.22
 
 ### Patch Changes

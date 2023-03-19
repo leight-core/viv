@@ -1,5 +1,5 @@
 {
-    "version": "0.5.14",
+    "version": "0.5.15",
     "name": "@leight/env",
     "description": "Next.js env helper stuff.",
     "license": "MIT",
@@ -31,9 +31,9 @@
         "zod": "3.21.1"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.22",
-        "@leight/eslint-config-eslint": "^0.5.31",
-        "@leight/tsconfig": "^0.5.45",
+        "@leight/esbuild": "^0.5.23",
+        "@leight/eslint-config-eslint": "^0.5.32",
+        "@leight/tsconfig": "^0.5.46",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

@@ -1,5 +1,11 @@
 # @leight/container
 
+## 0.5.44
+
+### Patch Changes
+
+- Version bump, updated packages
+
 ## 0.5.43
 
 ### Patch Changes
