@@ -1,6 +1,11 @@
-import {useEffect}             from "react";
-import {useOptionalLoopsState} from "./useLoopsState";
-import {useLoopState}          from "./useLoopState";
+import {
+    useEffect,
+    useRef
+} from "react";
+import {
+    useLoopState,
+    useOptionalLoopsState
+} from "../context";
 
 export interface IOnStartProps {
     total: number;
@@ -44,13 +49,15 @@ export const useLoop = (
         onError = () => Promise.resolve(),
         onFinish = () => Promise.resolve(),
     }: IUseLoopProps) => {
-    const loopStore  = useLoopState();
-    const loopsStore = useOptionalLoopsState();
+    const isMountedRef = useRef(false);
+    const loopStore    = useLoopState();
+    const loopsStore   = useOptionalLoopsState();
 
     useEffect(() => {
-        if (loopStore.isRunning) {
+        if (isMountedRef.current || loopStore.isRunning) {
             return;
         }
+        isMountedRef.current = true;
         loopStore.start(total);
         loopsStore?.inc();
         (async () => {

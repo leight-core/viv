@@ -30,6 +30,7 @@
     "dependencies": {
         "@leight/context-client": "^0.5.51",
         "@leight/sort": "^0.5.41",
+        "@tabler/icons-react": "^2.11.0",
         "react": "^18.2.0"
     },
     "devDependencies": {

@@ -28,7 +28,11 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
+        "@leight/filter": "^0.5.0",
         "@leight/prisma": "^0.5.55",
+        "@leight/query": "^0.5.0",
+        "@leight/react-query": "^0.5.0",
+        "@leight/sort": "^0.5.0",
         "@leight/source": "^0.5.44",
         "@leight/winston": "^0.5.43",
         "zod": "3.21.1"
