@@ -1,5 +1,11 @@
 # @leight/table-client
 
+## 0.5.13
+
+### Patch Changes
+
+- Improvement, haha
+
 ## 0.5.12
 
 ### Patch Changes

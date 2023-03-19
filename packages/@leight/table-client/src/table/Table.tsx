@@ -143,7 +143,10 @@ export const Table = <
                         <tr>
                             {$columns?.map(([name, column]) => <th
                                 key={name}
-                                style={column.width ? {width: `${column.width}rem`} : undefined}
+                                style={{
+                                    cursor: column.sort ? "pointer" : undefined,
+                                    width:  column.width ? `${column.width}rem` : undefined,
+                                }}
                                 onClick={() => {
                                     column.sort && setSort(column.sort, chain(sort[column.sort], [
                                         "asc",
