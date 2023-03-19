@@ -12,4 +12,6 @@ export {
 
 export * as PrismaSchema from "./schema";
 
-export const Decimal = Prisma.Decimal;
+export const decimalOf = (value: any): number => {
+    return (new Prisma.Decimal(value)).toNumber();
+};

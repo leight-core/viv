@@ -1,5 +1,11 @@
 # @leight/prisma
 
+## 0.5.57
+
+### Patch Changes
+
+- Added decimal support
+
 ## 0.5.56
 
 ### Patch Changes
