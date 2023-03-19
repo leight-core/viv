@@ -1,5 +1,11 @@
 # @leight/turbowatch
 
+## 0.5.11
+
+### Patch Changes
+
+- Fixed turbowatch
+
 ## 0.5.10
 
 ### Patch Changes

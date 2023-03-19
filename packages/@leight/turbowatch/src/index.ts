@@ -12,8 +12,9 @@ export const withTurbowatch = ({project}: IWithTurbowatchProps) => watch({
             expression: [
                 "anyof",
                 [
-                    "dirname",
-                    "src",
+                    "match",
+                    "**/src/**",
+                    "wholename"
                 ],
                 [
                     "match",
