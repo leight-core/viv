@@ -1,5 +1,5 @@
 {
-    "version": "0.5.38",
+    "version": "0.5.39",
     "name": "@leight/sort",
     "description": "Common sort stuff (for ordering data in general).",
     "license": "MIT",

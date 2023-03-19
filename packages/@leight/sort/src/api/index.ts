@@ -7,7 +7,7 @@ export const SortOrderSchema = z.enum([
 ]);
 export type ISortOrderSchema = typeof SortOrderSchema
 export type ISortOrder = z.infer<ISortOrderSchema>;
-export const SortSchema = z.object({});
+export const SortSchema = z.object({}).optional();
 export type ISortSchema = typeof SortSchema;
 export type ISort = z.infer<ISortSchema>;
 
