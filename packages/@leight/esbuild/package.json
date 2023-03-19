@@ -20,7 +20,6 @@
         "src"
     ],
     "scripts": {
-        "dev": "turbowatch",
         "build": "concurrently npm:build:*",
         "build:esbuild": "node esbuild.mjs",
         "build:types": "tsc --outDir lib",
