@@ -1,5 +1,14 @@
 # @leight/utils-client
 
+## 0.5.45
+
+### Patch Changes
+
+- Release with actual build... again
+- Updated dependencies
+    - @leight/context-client@0.5.49
+    - @leight/utils@0.5.44
+
 ## 0.5.44
 
 ### Patch Changes

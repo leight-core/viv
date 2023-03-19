@@ -1,5 +1,11 @@
 # @leight/env
 
+## 0.5.13
+
+### Patch Changes
+
+- Release with actual build... again
+
 ## 0.5.12
 
 ### Patch Changes

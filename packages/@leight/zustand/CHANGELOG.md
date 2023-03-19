@@ -1,5 +1,11 @@
 # @leight/zustand
 
+## 0.5.42
+
+### Patch Changes
+
+- Release with actual build... again
+
 ## 0.5.41
 
 ### Patch Changes

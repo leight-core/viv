@@ -1,5 +1,11 @@
 # @leight/winston
 
+## 0.5.41
+
+### Patch Changes
+
+- Release with actual build... again
+
 ## 0.5.40
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @leight/user
 
+## 0.5.45
+
+### Patch Changes
+
+- Release with actual build... again
+- Updated dependencies
+    - @leight/prisma@0.5.53
+    - @leight/source@0.5.42
+
 ## 0.5.44
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @leight/filter
 
+## 0.5.38
+
+### Patch Changes
+
+- Release with actual build... again
+
 ## 0.5.37
 
 ### Patch Changes

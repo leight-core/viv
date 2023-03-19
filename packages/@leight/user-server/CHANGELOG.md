@@ -1,5 +1,17 @@
 # @leight/user-server
 
+## 0.5.47
+
+### Patch Changes
+
+- Release with actual build... again
+- Updated dependencies
+    - @leight/container@0.5.42
+    - @leight/prisma@0.5.53
+    - @leight/source-server@0.5.42
+    - @leight/user@0.5.45
+    - @leight/utils@0.5.44
+
 ## 0.5.46
 
 ### Patch Changes

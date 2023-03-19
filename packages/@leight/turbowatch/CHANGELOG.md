@@ -1,5 +1,11 @@
 # @leight/turbowatch
 
+## 0.5.7
+
+### Patch Changes
+
+- Release with actual build... again
+
 ## 0.5.6
 
 ### Patch Changes

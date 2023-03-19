@@ -1,5 +1,11 @@
 # @leight/utils
 
+## 0.5.44
+
+### Patch Changes
+
+- Release with actual build... again
+
 ## 0.5.43
 
 ### Patch Changes

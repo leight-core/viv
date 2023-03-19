@@ -1,5 +1,11 @@
 # @leight/esbuild
 
+## 0.5.21
+
+### Patch Changes
+
+- Release with actual build... again
+
 ## 0.5.20
 
 ### Patch Changes
