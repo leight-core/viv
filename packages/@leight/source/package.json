@@ -1,5 +1,5 @@
 {
-    "version": "0.5.44",
+    "version": "0.5.45",
     "name": "@leight/source",
     "description": "Common Source stuff; source is definition of Data Source (usually on the backend).",
     "license": "MIT",
@@ -28,20 +28,20 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/context": "^0.5.7",
-        "@leight/cursor": "^0.5.38",
-        "@leight/filter": "^0.5.40",
-        "@leight/query": "^0.5.44",
-        "@leight/react-query": "^0.5.7",
-        "@leight/sort": "^0.5.41",
-        "@leight/utils": "^0.5.46",
+        "@leight/context": "^0.5.8",
+        "@leight/cursor": "^0.5.39",
+        "@leight/filter": "^0.5.41",
+        "@leight/query": "^0.5.45",
+        "@leight/react-query": "^0.5.8",
+        "@leight/sort": "^0.5.42",
+        "@leight/utils": "^0.5.47",
         "zod": "3.21.1"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.23",
-        "@leight/eslint-config-eslint": "^0.5.32",
-        "@leight/tsconfig": "^0.5.46",
-        "@leight/turbowatch": "^0.5.10",
+        "@leight/esbuild": "^0.5.24",
+        "@leight/eslint-config-eslint": "^0.5.33",
+        "@leight/tsconfig": "^0.5.47",
+        "@leight/turbowatch": "^0.5.12",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
