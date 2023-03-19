@@ -19,7 +19,7 @@ export const withTurbowatch = ({project}: IWithTurbowatchProps) => watch({
                     "match",
                     "*.json",
                     "basename",
-                ]
+                ],
             ],
             name:       "build",
             onChange:   async ({spawn}) => {

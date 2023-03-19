@@ -1,5 +1,5 @@
 {
-    "version": "0.5.44",
+    "version": "0.5.45",
     "name": "@leight/utils",
     "description": "Some simple utils used in @leight libraries.",
     "license": "MIT",
@@ -35,10 +35,10 @@
         "is-string": "^1.0.7"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.21",
-        "@leight/eslint-config-eslint": "^0.5.30",
-        "@leight/tsconfig": "^0.5.44",
-        "@leight/turbowatch": "^0.5.7",
+        "@leight/esbuild": "^0.5.22",
+        "@leight/eslint-config-eslint": "^0.5.31",
+        "@leight/tsconfig": "^0.5.45",
+        "@leight/turbowatch": "^0.5.9",
         "@types/is-callable": "^1.1.0",
         "@types/is-string": "^1.0.0",
         "@types/node": "^18.15.0",
@@ -46,7 +46,7 @@
         "del-cli": "^5.0.0",
         "depcheck": "^1.4.3",
         "eslint": "^8.36.0",
-        "turbowatch": "^1.9.3",
+        "turbowatch": "^2.3.2",
         "typescript": "^4.9.5"
     },
     "bugs": {

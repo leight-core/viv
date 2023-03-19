@@ -1,5 +1,16 @@
 # @leight/query-client
 
+## 0.5.10
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/cursor-client@0.5.12
+    - @leight/context@0.5.6
+    - @leight/source@0.5.43
+    - @leight/sort@0.5.40
+
 ## 0.5.9
 
 ### Patch Changes

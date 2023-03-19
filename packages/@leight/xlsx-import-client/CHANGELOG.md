@@ -1,5 +1,14 @@
 # @leight/xlsx-import-client
 
+## 0.5.44
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/mantine@0.5.47
+    - @leight/tsconfig@0.5.45
+
 ## 0.5.43
 
 ### Patch Changes
