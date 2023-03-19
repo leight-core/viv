@@ -12,11 +12,11 @@ export const setupDayjs = async (locale: string) => {
     coolDayjs.extend(relativeTime);
     coolDayjs.extend(utc);
 
-    try {
-        coolDayjs.locale(await import(`dayjs/locale/${locale}.js`));
-    } catch (e) {
-        console.error(`Cannot import [dayjs/locale/${locale}.js].`);
-    }
+    const $locale = await import(`dayjs/locale/${locale}.js`);
+    coolDayjs.locale($locale);
 
-    return coolDayjs;
+    return {
+        dayjs:  coolDayjs,
+        locale: $locale,
+    };
 };

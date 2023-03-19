@@ -1,5 +1,13 @@
 # @leight/mantine
 
+## 0.5.50
+
+### Patch Changes
+
+- Setup for mantine dates
+- Updated dependencies
+    - @leight/i18n-client@0.5.48
+
 ## 0.5.49
 
 ### Patch Changes

@@ -4,6 +4,7 @@ import {
     LoadingOverlay,
     MantineProvider
 }                             from "@mantine/core";
+import {DatesProvider}        from "@mantine/dates";
 import {Notifications}        from "@mantine/notifications";
 import {SessionProvider}      from "next-auth/react";
 import {type AppProps}        from "next/app";
@@ -66,22 +67,24 @@ export const PageShell: FC<IPageShellProps> = (
             withNormalizeCSS
             emotionCache={emotionCache}
         >
-            <DayjsProvider
-                defaults={{
-                    dayjs: bootstrap?.dayjs,
-                }}
-            >
-                <Notifications position={"top-right"}/>
-                <RouterTransition/>
-                <SessionProvider
-                    refetchInterval={30}
-                    refetchOnWindowFocus
+            <DatesProvider settings={{locale: bootstrap?.dayjs.locale}}>
+                <DayjsProvider
+                    defaults={{
+                        dayjs: bootstrap?.dayjs.dayjs,
+                    }}
                 >
-                    {(
-                        (Component as unknown as IPageWithLayout).layout || ((page) => page)
-                    )(<Component {...pageProps}/>)}
-                </SessionProvider>
-            </DayjsProvider>
+                    <Notifications position={"top-right"}/>
+                    <RouterTransition/>
+                    <SessionProvider
+                        refetchInterval={30}
+                        refetchOnWindowFocus
+                    >
+                        {(
+                            (Component as unknown as IPageWithLayout).layout || ((page) => page)
+                        )(<Component {...pageProps}/>)}
+                    </SessionProvider>
+                </DayjsProvider>
+            </DatesProvider>
         </MantineProvider>
     </>;
 };

@@ -12,7 +12,7 @@ import {
 }                   from "react";
 
 export interface IBootstrapProps {
-    dayjs: IDayjs;
+    dayjs: { dayjs: IDayjs, locale: any };
 }
 
 const startup = async (locale: string): Promise<IBootstrapProps> => {

@@ -1,5 +1,5 @@
 {
-    "version": "0.5.47",
+    "version": "0.5.48",
     "name": "@leight/i18n-client",
     "description": "Some i18n client-side helper stuff.",
     "license": "MIT",
