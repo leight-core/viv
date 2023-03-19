@@ -63,6 +63,13 @@
                 "BUILD_ID"
             ]
         },
+        "dev": {
+            "cache": false,
+            "persistent": true,
+            "dependsOn": [
+                "^prisma:generate"
+            ]
+        },
         "cleanup": {
             "cache": false
         }

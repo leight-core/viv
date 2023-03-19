@@ -29,7 +29,7 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "turbowatch": "^2.0.1"
+        "turbowatch": "^2.3.2"
     },
     "devDependencies": {
         "@leight/esbuild": "^0.5.21",
