@@ -1,3 +1,5 @@
+import {Prisma} from "@prisma/client";
+
 export * from "./context";
 
 /**
@@ -9,3 +11,5 @@ export {
 }        from "@prisma/client";
 
 export * as PrismaSchema from "./schema";
+
+export const Decimal = Prisma.Decimal;
