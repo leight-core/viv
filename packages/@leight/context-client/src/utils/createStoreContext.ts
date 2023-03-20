@@ -9,7 +9,7 @@ import {
 import {
     createStore,
     type StateCreator,
-    StoreApi
+    type StoreApi
 }                           from "zustand";
 import {createContext}      from "./createContext";
 import {createProvider}     from "./createProvider";
