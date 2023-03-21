@@ -20,6 +20,10 @@ import {
 import {useContext}         from "./useContext";
 import {useOptionalContext} from "./useOptionalContext";
 
+/**
+ * Typed set of generated components used for working with Store; Provider, states and the others otherwise
+ * boilerplate code.
+ */
 export interface ICrateStoreContext<TStoreProps extends IStoreProps> {
     Provider: IStoreProvider<TStoreProps>;
     useState: IUseState<TStoreProps>;
@@ -28,22 +32,32 @@ export interface ICrateStoreContext<TStoreProps extends IStoreProps> {
     useOptionalStore: () => StoreApi<TStoreProps> | null;
 }
 
+export interface ICreateStoreContextProps<TStoreProps extends IStoreProps> {
+    store: StateCreator<TStoreProps>,
+    name: string,
+    defaults?: Partial<TStoreProps>,
+    hint?: string
+}
+
 /**
  * Creates store hook and provider of Zustand.
  */
 export const createStoreContext = <TStoreProps extends IStoreProps>(
-    store: StateCreator<TStoreProps>,
-    name: string,
-    hint?: string
-): ICrateStoreContext<TStoreProps> => {
+    {
+        store,
+        name,
+        defaults,
+        hint,
+    }: ICreateStoreContextProps<TStoreProps>): ICrateStoreContext<TStoreProps> => {
     const Context = createContext<IStoreApi<TStoreProps>>();
     return {
         Provider:         createProvider({
             Context,
-            createStore: (defaults) => {
-                const $store = createStore<TStoreProps>(store);
-                defaults && $store.setState(defaults);
-                return $store;
+            createStore: defaults => {
+                return createStore<TStoreProps>(($set, $get, $store) => ({
+                    ...store($set, $get, $store),
+                    ...defaults,
+                }));
             },
         }),
         useState:         createUseState(Context, name, hint),

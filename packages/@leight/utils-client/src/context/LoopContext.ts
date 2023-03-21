@@ -25,8 +25,8 @@ export const {
                  useOptionalState: useOptionalLoopState,
                  useStore:         useLoopStore,
                  useOptionalStore: useOptionalLoopStore,
-             } = createStoreContext<ILoopStoreProps>(
-    (set, get) => ({
+             } = createStoreContext<ILoopStoreProps>({
+    store: (set, get) => ({
         total:     0,
         isRunning: false,
         isDone:    false,
@@ -48,6 +48,6 @@ export const {
             return (100 * current) / total;
         },
     }),
-    "LoopContext",
-    "Add LoopProvider."
-);
+    name:  "LoopContext",
+    hint:  "Add LoopProvider."
+});

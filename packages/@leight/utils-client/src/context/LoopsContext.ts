@@ -15,8 +15,8 @@ export const {
                  useOptionalState: useOptionalLoopsState,
                  useStore:         useLoopsStore,
                  useOptionalStore: useOptionalLoopsStore,
-             } = createStoreContext<ILoopsStoreProps>(
-    (set, get) => ({
+             } = createStoreContext<ILoopsStoreProps>({
+    store: (set, get) => ({
         get isRunning() {
             return get().current > 0;
         },
@@ -24,6 +24,6 @@ export const {
         inc:     () => set(({current}) => ({current: current + 1})),
         dec:     () => set(({current}) => ({current: current - 1})),
     }),
-    "LoopsContext",
-    "Add LoopsProvider."
-);
+    name:  "LoopsContext",
+    hint:  "Add LoopsProvider."
+});

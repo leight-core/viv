@@ -14,8 +14,8 @@ export const createSortContext = <TSortSchema extends ISortSchema>(
         name,
         schema,
     }: ICreateSortContextProps<TSortSchema>) => {
-    return createStoreContext<ISortStoreProps<TSortSchema>>(
-        (set) => ({
+    return createStoreContext<ISortStoreProps<TSortSchema>>({
+        store: (set) => ({
             schema,
             sort: {},
             setSort(key, order) {
@@ -26,7 +26,7 @@ export const createSortContext = <TSortSchema extends ISortSchema>(
                 });
             }
         }),
-        `[${name}] SortContext`,
-        `Add [${name}] SortProvider`,
-    );
+        name:  `[${name}] SortContext`,
+        hint:  `Add [${name}] SortProvider`,
+    });
 };

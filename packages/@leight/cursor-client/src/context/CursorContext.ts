@@ -22,8 +22,8 @@ export const {
                  useOptionalState: useOptionalCursorState,
                  useStore:         useCursorStore,
                  useOptionalStore: useOptionalCursorStore,
-             } = createStoreContext<ICursorStoreProps>(
-    (set) => ({
+             } = createStoreContext<ICursorStoreProps>({
+    store: (set) => ({
         page:      0,
         size:      30,
         pages:     0,
@@ -48,6 +48,6 @@ export const {
             set({isLoading});
         },
     }),
-    "CursorContext",
-    "Add CursorProvider."
-);
+    name:  "CursorContext",
+    hint:  "Add CursorProvider.",
+});

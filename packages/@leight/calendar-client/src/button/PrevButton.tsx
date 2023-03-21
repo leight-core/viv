@@ -1,16 +1,16 @@
-import {Button}           from "@mantine/core";
+import {Button}                from "@mantine/core";
 import {
     type ComponentProps,
     type FC
-}                         from "react";
-import {useCalendarState} from "../context";
+}                              from "react";
+import {useCalendarStoreState} from "../context";
 
 export interface IPrevButtonProps extends ComponentProps<typeof Button> {
 
 }
 
 export const PrevButton: FC<IPrevButtonProps> = () => {
-    const aaa = useCalendarState();
+    const aaa = useCalendarStoreState();
     return <Button>
         Prev
     </Button>;

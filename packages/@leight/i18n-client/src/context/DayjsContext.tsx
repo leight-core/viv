@@ -34,8 +34,8 @@ export const {
                  useOptionalState: useOptionalDayjsState,
                  useStore:         useDayjsStore,
                  useOptionalStore: useOptionalDayjsStore,
-             } = createStoreContext<IDayjsStoreProps>(
-    (set, get) => ({
+             } = createStoreContext<IDayjsStoreProps>({
+    store: (set, get) => ({
         dayjs,
         wrap(input, fallback = null) {
             const {dayjs} = get();
@@ -59,6 +59,6 @@ export const {
             return input ? dayjs(input).format("L LTS") : fallback;
         },
     }),
-    "DayjsContext",
-    "Add DayjsProvider."
-);
+    name:  "DayjsContext",
+    hint:  "Add DayjsProvider.",
+});

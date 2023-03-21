@@ -10,7 +10,7 @@ import {
 }                           from "react";
 
 export interface ICalendarStoreStoreProps {
-    calendar?: ICalendarProps;
+    calendar: ICalendarProps;
 }
 
 export const {
@@ -19,17 +19,13 @@ export const {
                  useOptionalState: useOptionalCalendarStoreState,
                  useStore:         useCalendarStoreStore,
                  useOptionalStore: useOptionalCalendarStoreStore,
-             } = createStoreContext<ICalendarStoreStoreProps>(
-    (set) => ({
-        /**
-         * @TODO defaults with required store props in the target StoreProvider.
-         */
-
+             } = createStoreContext<ICalendarStoreStoreProps>({
+    store: (set) => ({
         calendar: undefined,
     }),
-    "CalendarStoreContext",
-    "Add CalendarStoreProvider."
-);
+    name:  "CalendarStoreContext",
+    hint:  "Add CalendarStoreProvider.",
+});
 
 export interface ICalendarProviderProps extends Omit<ComponentProps<typeof CalendarStoreProvider>, "defaults"> {
     options?: Partial<IUseCalendarOptions>;
