@@ -1,5 +1,17 @@
 # @leight/file-client
 
+## 0.5.47
+
+### Patch Changes
+
+- Improved a lot of stuff, update to TS 5.0
+- a436d96d: Updated packages
+- Updated dependencies
+- Updated dependencies [a436d96d]
+    - @leight/utils-client@0.5.49
+    - @leight/utils@0.5.48
+    - @leight/file@0.5.46
+
 ## 0.5.46
 
 ### Patch Changes

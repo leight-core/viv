@@ -1,5 +1,17 @@
 # @leight/next.js
 
+## 0.5.12
+
+### Patch Changes
+
+- Improved a lot of stuff, update to TS 5.0
+- a436d96d: Updated packages
+- Updated dependencies
+- Updated dependencies [a436d96d]
+    - @leight/container@0.5.47
+    - @leight/utils@0.5.48
+    - @leight/user@0.5.49
+
 ## 0.5.11
 
 ### Patch Changes

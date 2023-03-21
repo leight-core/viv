@@ -1,5 +1,12 @@
 # @leight/react-query
 
+## 0.5.9
+
+### Patch Changes
+
+- Improved a lot of stuff, update to TS 5.0
+- a436d96d: Updated packages
+
 ## 0.5.8
 
 ### Patch Changes

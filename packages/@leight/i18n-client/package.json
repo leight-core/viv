@@ -1,5 +1,5 @@
 {
-    "version": "0.5.49",
+    "version": "0.5.50",
     "name": "@leight/i18n-client",
     "description": "Some i18n client-side helper stuff.",
     "license": "MIT",
@@ -28,10 +28,10 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/context-client": "^0.5.52",
-        "@leight/i18n": "^0.5.45",
-        "@leight/utils": "^0.5.47",
-        "@leight/zustand": "^0.5.0",
+        "@leight/context-client": "^0.5.53",
+        "@leight/i18n": "^0.5.46",
+        "@leight/utils": "^0.5.48",
+        "@leight/zustand": "^0.5.46",
         "dayjs": "^1.11.7",
         "i18next": "^22.4.11",
         "next-i18next": "^13.2.2",
@@ -39,10 +39,10 @@
         "react-i18next": "^12.2.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.24",
-        "@leight/eslint-config-eslint": "^0.5.33",
-        "@leight/tsconfig": "^0.5.47",
-        "@leight/turbowatch": "^0.5.12",
+        "@leight/esbuild": "^0.5.25",
+        "@leight/eslint-config-eslint": "^0.5.34",
+        "@leight/tsconfig": "^0.5.48",
+        "@leight/turbowatch": "^0.5.13",
         "@types/node": "^18.15.0",
         "@types/react": "^18.0.28",
         "concurrently": "^7.6.0",
@@ -50,7 +50,7 @@
         "depcheck": "^1.4.3",
         "eslint": "^8.36.0",
         "turbowatch": "^2.3.2",
-        "typescript": "^4.9.5"
+        "typescript": "^5.0.2"
     },
     "bugs": {
         "url": "https://github.com/leight-core/viv/issues"

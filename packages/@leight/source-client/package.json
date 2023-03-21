@@ -1,5 +1,5 @@
 {
-    "version": "0.5.14",
+    "version": "0.5.15",
     "name": "@leight/source-client",
     "description": "Client-side Source support.",
     "license": "MIT",
@@ -28,20 +28,20 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/context": "^0.5.8",
-        "@leight/context-client": "^0.5.52",
-        "@leight/cursor-client": "^0.5.14",
-        "@leight/sort": "^0.5.42",
-        "@leight/source": "^0.5.45",
-        "@leight/utils": "^0.5.47",
-        "@leight/zustand": "^0.5.45",
+        "@leight/context": "^0.5.9",
+        "@leight/context-client": "^0.5.53",
+        "@leight/cursor-client": "^0.5.15",
+        "@leight/sort": "^0.5.43",
+        "@leight/source": "^0.5.46",
+        "@leight/utils": "^0.5.48",
+        "@leight/zustand": "^0.5.46",
         "react": "^18.2.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.24",
-        "@leight/eslint-config-eslint": "^0.5.33",
-        "@leight/tsconfig": "^0.5.47",
-        "@leight/turbowatch": "^0.5.12",
+        "@leight/esbuild": "^0.5.25",
+        "@leight/eslint-config-eslint": "^0.5.34",
+        "@leight/tsconfig": "^0.5.48",
+        "@leight/turbowatch": "^0.5.13",
         "@types/node": "^18.15.0",
         "@types/react": "^18.0.28",
         "concurrently": "^7.6.0",
@@ -49,7 +49,7 @@
         "depcheck": "^1.4.3",
         "eslint": "^8.36.0",
         "turbowatch": "^2.3.2",
-        "typescript": "^4.9.5"
+        "typescript": "^5.0.2"
     },
     "bugs": {
         "url": "https://github.com/leight-core/viv/issues"

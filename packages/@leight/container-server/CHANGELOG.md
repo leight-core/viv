@@ -1,5 +1,20 @@
 # @leight/container-server
 
+## 0.5.45
+
+### Patch Changes
+
+- Improved a lot of stuff, update to TS 5.0
+- a436d96d: Updated packages
+- Updated dependencies
+- Updated dependencies [a436d96d]
+    - @leight/xlsx-import-server@0.5.45
+    - @leight/import-server@0.5.45
+    - @leight/file-server@0.5.47
+    - @leight/user-server@0.5.51
+    - @leight/job-server@0.5.48
+    - @leight/container@0.5.47
+
 ## 0.5.44
 
 ### Patch Changes

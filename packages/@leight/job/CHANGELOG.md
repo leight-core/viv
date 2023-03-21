@@ -1,5 +1,21 @@
 # @leight/job
 
+## 0.5.49
+
+### Patch Changes
+
+- Improved a lot of stuff, update to TS 5.0
+- a436d96d: Updated packages
+- Updated dependencies
+- Updated dependencies [a436d96d]
+    - @leight/react-query@0.5.9
+    - @leight/winston@0.5.45
+    - @leight/filter@0.5.42
+    - @leight/prisma@0.5.58
+    - @leight/source@0.5.46
+    - @leight/query@0.5.46
+    - @leight/sort@0.5.43
+
 ## 0.5.48
 
 ### Patch Changes

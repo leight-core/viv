@@ -1,5 +1,20 @@
 # @leight/xlsx-import-client
 
+## 0.5.47
+
+### Patch Changes
+
+- Improved a lot of stuff, update to TS 5.0
+- a436d96d: Updated packages
+- Updated dependencies
+- Updated dependencies [a436d96d]
+    - @leight/utils-client@0.5.49
+    - @leight/i18n-client@0.5.50
+    - @leight/job-client@0.5.2
+    - @leight/mantine@0.5.52
+    - @leight/job@0.5.49
+    - @leight/tsconfig@0.5.48
+
 ## 0.5.46
 
 ### Patch Changes

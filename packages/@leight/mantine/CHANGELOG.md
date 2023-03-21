@@ -1,5 +1,21 @@
 # @leight/mantine
 
+## 0.5.52
+
+### Patch Changes
+
+- Improved a lot of stuff, update to TS 5.0
+- a436d96d: Updated packages
+- Updated dependencies
+- Updated dependencies [a436d96d]
+    - @leight/utils-client@0.5.49
+    - @leight/file-client@0.5.47
+    - @leight/i18n-client@0.5.50
+    - @leight/layout@0.5.46
+    - @leight/utils@0.5.48
+    - @leight/file@0.5.46
+    - @leight/i18n@0.5.46
+
 ## 0.5.51
 
 ### Patch Changes

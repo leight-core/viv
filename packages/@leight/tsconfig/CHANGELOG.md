@@ -1,5 +1,12 @@
 # @leight/tsconfig
 
+## 0.5.48
+
+### Patch Changes
+
+- Improved a lot of stuff, update to TS 5.0
+- a436d96d: Updated packages
+
 ## 0.5.47
 
 ### Patch Changes

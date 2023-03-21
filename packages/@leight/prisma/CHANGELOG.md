@@ -1,5 +1,15 @@
 # @leight/prisma
 
+## 0.5.58
+
+### Patch Changes
+
+- Improved a lot of stuff, update to TS 5.0
+- a436d96d: Updated packages
+- Updated dependencies
+- Updated dependencies [a436d96d]
+    - @leight/container@0.5.47
+
 ## 0.5.57
 
 ### Patch Changes

@@ -1,5 +1,22 @@
 # @leight/table-client
 
+## 0.5.14
+
+### Patch Changes
+
+- Improved a lot of stuff, update to TS 5.0
+- a436d96d: Updated packages
+- Updated dependencies
+- Updated dependencies [a436d96d]
+    - @leight/cursor-client@0.5.15
+    - @leight/i18n-client@0.5.50
+    - @leight/sort-client@0.5.9
+    - @leight/mantine@0.5.52
+    - @leight/source@0.5.46
+    - @leight/utils@0.5.48
+    - @leight/i18n@0.5.46
+    - @leight/sort@0.5.43
+
 ## 0.5.13
 
 ### Patch Changes

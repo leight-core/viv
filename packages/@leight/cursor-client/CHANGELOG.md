@@ -1,5 +1,17 @@
 # @leight/cursor-client
 
+## 0.5.15
+
+### Patch Changes
+
+- Improved a lot of stuff, update to TS 5.0
+- a436d96d: Updated packages
+- Updated dependencies
+- Updated dependencies [a436d96d]
+    - @leight/context-client@0.5.53
+    - @leight/zustand@0.5.46
+    - @leight/query@0.5.46
+
 ## 0.5.14
 
 ### Patch Changes

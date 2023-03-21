@@ -31,7 +31,7 @@ export const {
     hint:  "Add CalendarStoreProvider.",
 });
 
-export interface ICalendarProviderProps extends Omit<ComponentProps<typeof CalendarStoreProvider>, "defaults" | "state"> {
+export interface ICalendarProviderProps extends Omit<ComponentProps<typeof CalendarStoreProvider>, "state"> {
     options?: Partial<IUseCalendarOptions>;
 }
 

@@ -1,5 +1,18 @@
 # @leight/query
 
+## 0.5.46
+
+### Patch Changes
+
+- Improved a lot of stuff, update to TS 5.0
+- a436d96d: Updated packages
+- Updated dependencies
+- Updated dependencies [a436d96d]
+    - @leight/react-query@0.5.9
+    - @leight/cursor@0.5.40
+    - @leight/filter@0.5.42
+    - @leight/sort@0.5.43
+
 ## 0.5.45
 
 ### Patch Changes
