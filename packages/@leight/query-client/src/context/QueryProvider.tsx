@@ -23,7 +23,6 @@ export const QueryProvider = <TSourceSchema extends ISourceSchema>(
     }: IQueryProviderInternalProps<TSourceSchema>) => {
     return <SortProvider
         defaults={{sort: defaultSort}}
-        state={{}}
     >
         <CursorControl
             useCountQuery={useCountQuery}

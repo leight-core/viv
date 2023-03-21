@@ -27,7 +27,7 @@ export type IfExtends<TType, TExtends = void> = TExtends extends void ? TType : 
 export type IfVoid<TType, TDefault = void> = TType extends void ? TDefault : TType;
 export type CheckVoid<TCheck, TType, TElse = void> = TCheck extends void ? TElse : TType;
 export type CheckAny<TCheck, TType, TElse = any> = TCheck extends any ? TElse : TType;
-export type CheckWithDefault<TCheck, TDefault, TIsDefault, TWithoutDefault> = TCheck extends TDefault ? TIsDefault : TWithoutDefault;
+export type CheckIfExtends<TCheck, TExtends, TYes, TNo> = TCheck extends TExtends ? TYes : TNo;
 
 export type Unboxed<T> = T extends (infer U)[] ? U : T;
 

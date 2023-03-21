@@ -39,7 +39,6 @@ export const CursorControl = <TQuerySchema extends IQuerySchema>(
     }: ICursorControlProps<TQuerySchema>) => {
     return <CursorProvider
         defaults={defaultCursor}
-        state={{}}
     >
         <InternalCursor
             {...props}

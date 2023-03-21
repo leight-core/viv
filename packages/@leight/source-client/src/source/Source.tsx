@@ -87,7 +87,6 @@ export const Source = <TSourceSchema extends ISourceSchema>(
         ...props
     }: ISourceInternalProps<TSourceSchema>) => {
     return <SourceProvider
-        state={{}}
         {...props}
     >
         {(sourceContext) => <InternalSource

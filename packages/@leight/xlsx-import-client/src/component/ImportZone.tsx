@@ -1,7 +1,7 @@
 import {useTranslation}        from "@leight/i18n-client";
 import {type IUseJobFindQuery} from "@leight/job";
 import {
-    IJobInlineProps,
+    type IJobInlineProps,
     JobInline
 }                              from "@leight/job-client";
 import {
@@ -31,9 +31,7 @@ export const ImportZone: FC<IImportZoneProps> = (
     }) => {
     const {t}      = useTranslation(withTranslation.namespace);
     const mutation = useMutation();
-    return <LoopsProvider
-        state={{}}
-    >
+    return <LoopsProvider>
         <DropZone
             path={"/import"}
             onUpload={(file) => {

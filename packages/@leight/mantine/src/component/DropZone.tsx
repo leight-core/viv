@@ -177,7 +177,6 @@ export const DropZone: FC<IDropZoneProps> = (
                             {files.map((file) => (
                                 <LoopProvider
                                     key={file.path}
-                                    state={{}}
                                 >
                                     <tr>
                                         <td>{file.path}</td>
