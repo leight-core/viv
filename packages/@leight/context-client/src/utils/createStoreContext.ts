@@ -53,12 +53,10 @@ export const createStoreContext = <TStoreProps extends IStoreProps>(
     return {
         Provider: createProvider<TStoreProps>({
             Context,
-            createStore: defaults => {
-                return createStore<TStoreProps>(($set, $get, $store) => ({
-                    ...store($set, $get, $store),
-                    ...defaults,
-                }));
-            },
+            createStore: defaults => createStore<TStoreProps>(($set, $get, $store) => ({
+                ...store($set, $get, $store),
+                ...defaults,
+            })),
         }),
         useState:         createUseState(Context, name, hint),
         useOptionalState: createOptionalUseState(Context),
