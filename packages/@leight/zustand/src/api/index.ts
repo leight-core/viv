@@ -6,9 +6,6 @@ import {
 }                       from "zustand";
 
 /**
- * @TODO try Record | void
- */
-/**
  * Basic constraint for actual store implementation (Zustand store).
  */
 export type IStorePropsType = Record<string, any>;
@@ -17,7 +14,7 @@ export type IStorePropsType = Record<string, any>;
  * Actual store with separated mandatory fields defining store values (and actions) needed within creation and (required/optional) values provided
  * when store provider component is created.
  */
-export interface IStoreProps<TStoreProps extends IStorePropsType = IStorePropsType, TStoreValueProps extends IStorePropsType = IStorePropsType> {
+export interface IStoreProps<TStoreProps extends IStorePropsType = IStorePropsType, TStoreValueProps extends IStorePropsType | unknown = unknown> {
     Props: TStoreProps;
     OptionalProps: Partial<TStoreProps>;
     State: TStoreValueProps;
@@ -29,13 +26,11 @@ export interface IStoreApi<TStoreProps extends IStoreProps> {
     store: StoreApi<TStoreProps["StoreProps"]>;
 }
 
-export type IStateCreatorProps<TStoreProps extends IStoreProps> = {
-    defaults?: Partial<TStoreProps["OptionalProps"]>;
-    /**
-     * @TODO State should be required only when ValueProps are present
-     */
-    state: TStoreProps["State"];
-};
+export type IStateCreatorProps<TStoreProps extends IStoreProps> =
+    {
+        defaults?: Partial<TStoreProps["OptionalProps"]>;
+        state: TStoreProps["State"];
+    };
 
 export type ICreateStore<TStoreProps extends IStoreProps> = (props: IStateCreatorProps<TStoreProps>) => StoreApi<TStoreProps["StoreProps"]>;
 export type IStateCreator<TStoreProps extends IStoreProps> = (props: IStateCreatorProps<TStoreProps>) => StateCreator<TStoreProps["StoreProps"]>;
