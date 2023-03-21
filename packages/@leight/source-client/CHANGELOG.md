@@ -1,5 +1,11 @@
 # @leight/source-client
 
+## 0.5.16
+
+### Patch Changes
+
+- Fixed default sorting
+
 ## 0.5.15
 
 ### Patch Changes
