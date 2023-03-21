@@ -15,7 +15,7 @@ export const createSortContext = <TSortSchema extends ISortSchema>(
         schema,
     }: ICreateSortContextProps<TSortSchema>) => {
     return createStoreContext<ISortStoreProps<TSortSchema>>({
-        store: (set) => ({
+        state: () => (set) => ({
             schema,
             sort: {},
             setSort(key, order) {

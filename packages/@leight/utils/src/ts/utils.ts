@@ -23,7 +23,11 @@ export interface IndexOf<T> {
     [index: string]: T;
 }
 
-export type IfVoid<TType, TExtends = void> = TExtends extends void ? TType : TType & TExtends;
+export type IfExtends<TType, TExtends = void> = TExtends extends void ? TType : TType & TExtends;
+export type IfVoid<TType, TDefault = void> = TType extends void ? TDefault : TType;
+export type CheckVoid<TCheck, TType, TElse = void> = TCheck extends void ? TElse : TType;
+export type CheckAny<TCheck, TType, TElse = any> = TCheck extends any ? TElse : TType;
+export type CheckWithDefault<TCheck, TDefault, TIsDefault, TWithoutDefault> = TCheck extends TDefault ? TIsDefault : TWithoutDefault;
 
 export type Unboxed<T> = T extends (infer U)[] ? U : T;
 

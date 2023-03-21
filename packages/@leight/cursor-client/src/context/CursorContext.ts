@@ -1,6 +1,7 @@
 import {createStoreContext} from "@leight/context-client";
+import {type IStoreProps}   from "@leight/zustand";
 
-export interface ICursorStoreProps {
+export type ICursorStoreProps = IStoreProps<{
     readonly page: number;
     readonly size: number;
     readonly pages: number;
@@ -14,7 +15,7 @@ export interface ICursorStoreProps {
     setTotal(total: number): void;
 
     setIsLoading(isLoading: boolean): void;
-}
+}>
 
 export const {
                  Provider:         CursorProvider,
@@ -23,7 +24,7 @@ export const {
                  useStore:         useCursorStore,
                  useOptionalStore: useOptionalCursorStore,
              } = createStoreContext<ICursorStoreProps>({
-    store: (set) => ({
+    state: () => (set) => ({
         page:      0,
         size:      30,
         pages:     0,

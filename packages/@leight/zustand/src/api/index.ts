@@ -1,19 +1,43 @@
-import {type Context}  from "react";
-import {type StoreApi} from "zustand";
+import {type IfExtends} from "@leight/utils";
+import {type Context}   from "react";
+import {
+    type StateCreator,
+    type StoreApi
+}                       from "zustand";
 
-export interface IStore<TStore extends StoreApi<unknown>> {
-    state: InferStore.State<TStore>;
-    store: TStore;
+/**
+ * @TODO try Record | void
+ */
+/**
+ * Basic constraint for actual store implementation (Zustand store).
+ */
+export type IStorePropsType = Record<string, any>;
+
+/**
+ * Actual store with separated mandatory fields defining store values (and actions) needed within creation and (required/optional) values provided
+ * when store provider component is created.
+ */
+export interface IStoreProps<TStoreProps extends IStorePropsType = IStorePropsType, TStoreValueProps extends IStorePropsType = IStorePropsType> {
+    Props: TStoreProps;
+    OptionalProps: Partial<TStoreProps>;
+    State: TStoreValueProps;
+    StoreProps: IfExtends<TStoreProps, TStoreValueProps>;
 }
 
-export type IStoreApi<TStoreProps> = IStore<StoreApi<TStoreProps>>;
-
-export type ICreateStore<TStoreProps> = (defaults?: Partial<TStoreProps>) => StoreApi<TStoreProps>;
-
-export type IStoreContext<TStoreProps> = Context<IStoreApi<TStoreProps> | null>;
-
-export namespace InferStore {
-    export type State<T> = T extends StoreApi<infer U> ? U : T;
+export interface IStoreApi<TStoreProps extends IStoreProps> {
+    state: TStoreProps["StoreProps"];
+    store: StoreApi<TStoreProps["StoreProps"]>;
 }
 
-export type IStoreProps = Record<string, any>;
+export type IStateCreatorProps<TStoreProps extends IStoreProps> = {
+    defaults?: Partial<TStoreProps["OptionalProps"]>;
+    /**
+     * @TODO State should be required only when ValueProps are present
+     */
+    state: TStoreProps["State"];
+};
+
+export type ICreateStore<TStoreProps extends IStoreProps> = (props: IStateCreatorProps<TStoreProps>) => StoreApi<TStoreProps["StoreProps"]>;
+export type IStateCreator<TStoreProps extends IStoreProps> = (props: IStateCreatorProps<TStoreProps>) => StateCreator<TStoreProps["StoreProps"]>;
+
+export type IStoreContext<TStoreProps extends IStoreProps> = Context<IStoreApi<TStoreProps> | null>;

@@ -1,16 +1,13 @@
 import {
     type IQuerySchema,
     type IUseCursorCountQuery
-}          from "@leight/query";
-import {
-    PropsWithChildren,
-    useEffect
-}          from "react";
-import {z} from "zod";
+}                          from "@leight/query";
+import {PropsWithChildren} from "react";
+import {z}                 from "zod";
 import {
     CursorProvider,
     useCursorState
-}          from "../context";
+}                          from "../context";
 
 export type ICursorControlProps<TQuerySchema extends IQuerySchema> = PropsWithChildren<{
     useCountQuery: IUseCursorCountQuery<TQuerySchema>;
@@ -20,19 +17,18 @@ export type ICursorControlProps<TQuerySchema extends IQuerySchema> = PropsWithCh
 type IInternalCursor<TQuerySchema extends IQuerySchema> = ICursorControlProps<TQuerySchema>;
 
 const InternalCursor = <TQuerySchema extends IQuerySchema>({useCountQuery, children}: IInternalCursor<TQuerySchema>) => {
+    /**
+     * @TODO connect to FilterProvider/FilterStore
+     */
     const {setTotal, setIsLoading} = useCursorState(({setTotal, setIsLoading}) => ({setTotal, setIsLoading}));
-    const result                   = useCountQuery({});
-    useEffect(() => {
-        if (result.isSuccess) {
-            setTotal(result.data);
-        }
-        setIsLoading(!result.isSuccess || result.isError);
-    }, [
-        result.isSuccess,
-        result.isError,
-        result.isLoading,
-        result.isFetching
-    ]);
+    useCountQuery({}, {
+        onSuccess: data => {
+            setTotal(data);
+        },
+        onSettled: () => {
+            setIsLoading(false);
+        },
+    });
     return <>{children}</>;
 };
 
@@ -43,6 +39,7 @@ export const CursorControl = <TQuerySchema extends IQuerySchema>(
     }: ICursorControlProps<TQuerySchema>) => {
     return <CursorProvider
         defaults={defaultCursor}
+        state={{}}
     >
         <InternalCursor
             {...props}

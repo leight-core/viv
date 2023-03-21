@@ -6,12 +6,11 @@ import {
 import {useCalendarStoreState} from "../context";
 
 export interface IPrevButtonProps extends ComponentProps<typeof Button> {
-
 }
 
 export const PrevButton: FC<IPrevButtonProps> = () => {
-    const aaa = useCalendarStoreState();
-    return <Button>
+    const {calendar: {getBackProps}} = useCalendarStoreState(({calendar}) => ({calendar}));
+    return <Button {...getBackProps()}>
         Prev
     </Button>;
 };

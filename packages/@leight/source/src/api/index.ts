@@ -9,6 +9,7 @@ import {
 import {type IUseQuery}     from "@leight/react-query";
 import {type ISortSchema}   from "@leight/sort";
 import {type IToString}     from "@leight/utils";
+import {type IStoreProps}   from "@leight/zustand";
 import {z}                  from "zod";
 
 export type ISourceName =
@@ -97,7 +98,7 @@ export namespace ISource {
     }
 }
 
-export interface ISourceStoreProps<TSourceSchema extends ISourceSchema> {
+export type ISourceStoreProps<TSourceSchema extends ISourceSchema> = IStoreProps<{
     readonly schema: TSourceSchema["EntitySchema"];
     readonly entities: TSourceSchema["Entity"][];
     readonly isLoading: boolean;
@@ -108,7 +109,7 @@ export interface ISourceStoreProps<TSourceSchema extends ISourceSchema> {
     setIsLoading(isLoading: boolean): void;
 
     setIsFetching(isFetching: boolean): void;
-}
+}>
 
 export type IUseSourceState<TSourceSchema extends ISourceSchema> = IUseState<ISourceStoreProps<TSourceSchema>>;
 

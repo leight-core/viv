@@ -69,8 +69,8 @@ export const PageShell: FC<IPageShellProps> = (
         >
             <DatesProvider settings={{locale: bootstrap?.dayjs.locale}}>
                 <DayjsProvider
-                    defaults={{
-                        dayjs: bootstrap?.dayjs.dayjs,
+                    state={{
+                        dayjs: bootstrap!.dayjs.dayjs,
                     }}
                 >
                     <Notifications position={"top-right"}/>

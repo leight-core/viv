@@ -29,6 +29,7 @@
     },
     "dependencies": {
         "@leight/context": "^0.5.8",
+        "@leight/zustand": "^0.5.8",
         "zod": "3.21.1"
     },
     "devDependencies": {

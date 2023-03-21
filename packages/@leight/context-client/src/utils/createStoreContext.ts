@@ -1,14 +1,15 @@
 import {
     type IStoreProvider,
+    type IUseOptionalState,
     type IUseState
 }                           from "@leight/context";
 import {
+    type IStateCreator,
     type IStoreApi,
     type IStoreProps
 }                           from "@leight/zustand";
 import {
     createStore,
-    type StateCreator,
     type StoreApi
 }                           from "zustand";
 import {createContext}      from "./createContext";
@@ -25,18 +26,17 @@ import {useOptionalContext} from "./useOptionalContext";
  * boilerplate code.
  */
 export interface ICrateStoreContext<TStoreProps extends IStoreProps> {
-    Provider: IStoreProvider<TStoreProps>;
-    useState: IUseState<TStoreProps>;
-    useOptionalState: IUseState<TStoreProps | null>;
-    useStore: () => StoreApi<TStoreProps>;
-    useOptionalStore: () => StoreApi<TStoreProps> | null;
+    readonly Provider: IStoreProvider<TStoreProps>;
+    readonly useState: IUseState<TStoreProps>;
+    readonly useOptionalState: IUseOptionalState<TStoreProps>;
+    readonly useStore: () => StoreApi<TStoreProps["StoreProps"]>;
+    readonly useOptionalStore: () => StoreApi<TStoreProps["StoreProps"]> | null;
 }
 
 export interface ICreateStoreContextProps<TStoreProps extends IStoreProps> {
-    store: StateCreator<TStoreProps>,
-    name: string,
-    defaults?: Partial<TStoreProps>,
-    hint?: string
+    readonly state: IStateCreator<TStoreProps>,
+    readonly name: string,
+    readonly hint?: string
 }
 
 /**
@@ -44,19 +44,15 @@ export interface ICreateStoreContextProps<TStoreProps extends IStoreProps> {
  */
 export const createStoreContext = <TStoreProps extends IStoreProps>(
     {
-        store,
+        state,
         name,
-        defaults,
         hint,
     }: ICreateStoreContextProps<TStoreProps>): ICrateStoreContext<TStoreProps> => {
     const Context = createContext<IStoreApi<TStoreProps>>();
     return {
         Provider: createProvider<TStoreProps>({
             Context,
-            createStore: defaults => createStore<TStoreProps>(($set, $get, $store) => ({
-                ...store($set, $get, $store),
-                ...defaults,
-            })),
+            createStore: props => createStore<TStoreProps["StoreProps"]>(($set, $get, $store) => (state(props)($set, $get, $store))),
         }),
         useState:         createUseState(Context, name, hint),
         useOptionalState: createOptionalUseState(Context),

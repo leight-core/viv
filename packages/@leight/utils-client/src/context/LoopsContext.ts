@@ -1,13 +1,14 @@
 import {createStoreContext} from "@leight/context-client";
+import {IStoreProps}        from "@leight/zustand";
 
-export interface ILoopsStoreProps {
+export type ILoopsStoreProps = IStoreProps<{
     readonly isRunning: boolean;
     readonly current: number;
 
     inc(): void;
 
     dec(): void;
-}
+}>
 
 export const {
                  Provider:         LoopsProvider,
@@ -16,7 +17,7 @@ export const {
                  useStore:         useLoopsStore,
                  useOptionalStore: useOptionalLoopsStore,
              } = createStoreContext<ILoopsStoreProps>({
-    store: (set, get) => ({
+    state: () => (set, get) => ({
         get isRunning() {
             return get().current > 0;
         },

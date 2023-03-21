@@ -3,14 +3,13 @@ import {
     type IDayjs,
     type IDayjsInput
 }                           from "@leight/i18n";
-import dayjs, {
+import {type IStoreProps}   from "@leight/zustand";
+import {
     ConfigType,
     Dayjs
 }                           from "dayjs";
 
-export interface IDayjsStoreProps {
-    dayjs: IDayjs;
-
+export type IDayjsStoreProps = IStoreProps<{
     wrap(input?: IDayjsInput | null, fallback?: IDayjsInput | null): Dayjs | null;
 
     toUtcDateTime({input, format, fallback}: IDayjsStoreProps.IToUtcDateTimeProps): string | null;
@@ -18,7 +17,9 @@ export interface IDayjsStoreProps {
     toLocalDate(input?: IDayjsInput | null, fallback?: string): string;
 
     toLocalDateTime(input?: IDayjsInput | null, fallback?: string): string;
-}
+}, {
+    readonly dayjs: IDayjs;
+}>
 
 export namespace IDayjsStoreProps {
     export interface IToUtcDateTimeProps {
@@ -35,8 +36,7 @@ export const {
                  useStore:         useDayjsStore,
                  useOptionalStore: useOptionalDayjsStore,
              } = createStoreContext<IDayjsStoreProps>({
-    store: (set, get) => ({
-        dayjs,
+    state: ({state}) => (set, get) => ({
         wrap(input, fallback = null) {
             const {dayjs} = get();
             return input ? dayjs(input) : (fallback ? dayjs(fallback) : null);
@@ -58,6 +58,7 @@ export const {
             const {dayjs} = get();
             return input ? dayjs(input).format("L LTS") : fallback;
         },
+        ...state,
     }),
     name:  "DayjsContext",
     hint:  "Add DayjsProvider.",

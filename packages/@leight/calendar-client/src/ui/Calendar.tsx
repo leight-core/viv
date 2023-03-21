@@ -1,6 +1,9 @@
 import {Button}                from "@mantine/core";
 import {type FC}               from "react";
-import {PrevButton}            from "../button";
+import {
+    NextButton,
+    PrevButton
+}                              from "../button";
 import {useCalendarStoreState} from "../context";
 
 export interface ICalendarProps {
@@ -19,11 +22,11 @@ export const Calendar: FC<ICalendarProps> = () => {
                     </header>
                     <nav>
                         <PrevButton/>
-                        <button {...getForwardProps()}>Next</button>
+                        <NextButton/>
                     </nav>
                     {weeks.map((week) => week.map((day) => <>
                             {day
-                                ? <button {...getDayProps({day})}>{day.date.getDate()}</button>
+                                ? <button>{day.date.getDate()}</button>
                                 : <span/>}
                         </>
                     ))}

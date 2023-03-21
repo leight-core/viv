@@ -1,4 +1,7 @@
-import {type IUseState}     from "@leight/context";
+import {
+    type IUseOptionalState,
+    type IUseState
+}                           from "@leight/context";
 import {
     type IStoreApi,
     type IStoreProps
@@ -13,7 +16,7 @@ export const createUseState = <TStoreProps extends IStoreProps>(
     name: string,
     hint?: string
 ): IUseState<TStoreProps> => {
-    return (selector?: (state: TStoreProps) => any) => {
+    return <T>(selector?: (state: TStoreProps["StoreProps"]) => T) => {
         const {store} = useContext(Context, name, hint);
         return selector ? useStore(store, selector) : useStore(store);
     };
@@ -21,8 +24,8 @@ export const createUseState = <TStoreProps extends IStoreProps>(
 
 export const createOptionalUseState = <TStoreProps extends IStoreProps>(
     Context: Context<IStoreApi<TStoreProps> | null>
-): IUseState<TStoreProps | null> => {
-    return (selector?: (state: TStoreProps | null) => any) => {
+): IUseOptionalState<TStoreProps> => {
+    return <T>(selector?: (state: TStoreProps["StoreProps"] | null) => T | null) => {
         const {store} = useOptionalContext(Context) || {};
         if (store) {
             return selector ? useStore(store, selector) : useStore(store);

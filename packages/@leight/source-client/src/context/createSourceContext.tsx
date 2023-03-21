@@ -17,8 +17,8 @@ export const createSourceContext = <TSourceSchema extends ISourceSchema>(
         schema,
         entities = [],
     }: ICreateSourceContextProps<TSourceSchema>) => {
-    return createStoreContext<ISourceStoreProps<TSourceSchema>>(
-        (set) => ({
+    return createStoreContext<ISourceStoreProps<TSourceSchema>>({
+        state: () => (set) => ({
             schema,
             entities,
             isLoading:  false,
@@ -33,7 +33,7 @@ export const createSourceContext = <TSourceSchema extends ISourceSchema>(
                 set({isFetching});
             },
         }),
-        `[${name}] SourceContext`,
-        `Add [${name}] SourceProvider`,
-    );
+        name:  `[${name}] SourceContext`,
+        hint:  `Add [${name}] SourceProvider`,
+    });
 };

@@ -31,7 +31,9 @@ export const ImportZone: FC<IImportZoneProps> = (
     }) => {
     const {t}      = useTranslation(withTranslation.namespace);
     const mutation = useMutation();
-    return <LoopsProvider>
+    return <LoopsProvider
+        state={{}}
+    >
         <DropZone
             path={"/import"}
             onUpload={(file) => {
