@@ -1,5 +1,13 @@
 # @leight/file-client
 
+## 0.5.51
+
+### Patch Changes
+
+- Refactored generator, improved a lot of stuff
+- Updated dependencies
+    - @leight/file@0.5.50
+
 ## 0.5.50
 
 ### Patch Changes

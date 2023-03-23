@@ -19,7 +19,7 @@ export class Interface implements IExportable {
         const $extends = this.code.extends?.map(({type}) => type.trim()).join(", ");
 
         return `
-${this.isExported ? "export" : ""} interface ${this.name}${$extends ? ` extends ${$extends}` : ""} {${body.length > 0 ? `\n${body}` : ""}\n}
+${this.isExported ? "export" : ""} interface ${this.name}${$extends ? ` extends ${$extends}` : ""} {${body.length > 0 ? `\n\t${body}` : ""}\n}
 `;
     }
 }

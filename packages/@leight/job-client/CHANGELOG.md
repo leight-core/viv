@@ -1,5 +1,14 @@
 # @leight/job-client
 
+## 0.5.4
+
+### Patch Changes
+
+- Refactored generator, improved a lot of stuff
+- Updated dependencies
+    - @leight/job@0.5.53
+    - @leight/sdk@0.5.4
+
 ## 0.5.3
 
 ### Patch Changes

@@ -1,11 +1,11 @@
 /**
- Source code containing implementation of Server-side Source for User, TRPC router part (if no disabled) and
- some other cool stuff.
+ Base Source contains default implementation of Source for entity File. This could be used for further extensions,
+ also default export uses this as a parent class.
  */
 import {
-    type IContainer,
-    ServiceContext
-}                       from "@leight/container";
+    $FileSource,
+    type IFileSourceSchema
+}                       from "@leight/file";
 import {
     $PrismaClient,
     type PrismaClient
@@ -16,17 +16,11 @@ import {
     withUpsert
 }                       from "@leight/source";
 import {AbstractSource} from "@leight/source-server";
-import {
-    $UserSource,
-    type IUserSource,
-    type IUserSourceSchema
-}                       from "@leight/user";
-import {UserSourceEx}   from "../source";
 
-type IEntity = IUserSourceSchema["Entity"];
-type IQuery = IUserSourceSchema["Query"];
+type IEntity = IFileSourceSchema["Entity"];
+type IQuery = IFileSourceSchema["Query"];
 
-export class UserBaseSource extends AbstractSource<IUserSourceSchema> {
+export class FileBaseSource extends AbstractSource<IFileSourceSchema> {
     static inject = [
         $PrismaClient,
     ];
@@ -34,10 +28,10 @@ export class UserBaseSource extends AbstractSource<IUserSourceSchema> {
     constructor(
         protected prismaClient: PrismaClient,
     ) {
-        super($UserSource);
+        super($FileSource);
     }
 
-    async runUpsert(props: ISource.IUpsert<IUserSourceSchema>): Promise<IEntity> {
+    async runUpsert(props: ISource.IUpsert<IFileSourceSchema>): Promise<IEntity> {
         return this.prisma().upsert(withUpsert(props));
     }
 
@@ -58,11 +52,6 @@ export class UserBaseSource extends AbstractSource<IUserSourceSchema> {
     }
 
     prisma() {
-        return this.prismaClient.user;
+        return this.prismaClient.file;
     }
 }
-
-export class UserSource extends UserSourceEx implements IUserSource {
-}
-
-export const UserSourceContext = (container: IContainer) => new ServiceContext<IUserSource>(container, $UserSource);

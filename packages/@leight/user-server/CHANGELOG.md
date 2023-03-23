@@ -1,5 +1,13 @@
 # @leight/user-server
 
+## 0.5.55
+
+### Patch Changes
+
+- Refactored generator, improved a lot of stuff
+- Updated dependencies
+    - @leight/user@0.5.53
+
 ## 0.5.54
 
 ### Patch Changes

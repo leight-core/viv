@@ -1,5 +1,5 @@
 {
-    "version": "0.5.3",
+    "version": "0.5.4",
     "name": "@leight/sdk",
     "description": "SDK generator.",
     "license": "MIT",
@@ -29,7 +29,7 @@
     },
     "dependencies": {
         "@leight/generator": "^0.5.2",
-        "@leight/generator-server": "^0.5.2",
+        "@leight/generator-server": "^0.5.3",
         "@leight/utils": "^0.5.49",
         "@leight/utils-server": "^0.5.46",
         "chalk": "^5.2.0"

@@ -1,5 +1,11 @@
 # @leight/file
 
+## 0.5.50
+
+### Patch Changes
+
+- Refactored generator, improved a lot of stuff
+
 ## 0.5.49
 
 ### Patch Changes

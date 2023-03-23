@@ -9,6 +9,7 @@ import {
     ParamsSchema,
     QuerySchema
 }                           from "@leight/query";
+import {SortOrderSchema}    from "@leight/sort";
 import {WithIdentitySchema} from "@leight/source";
 import {z}                  from "zod";
 
@@ -36,7 +37,9 @@ export const FileFilterSchema = z.union([
     FilterSchema,
 ]);
 export const FileParamSchema  = ParamsSchema;
-export const FileSortSchema   = z.object({});
+export const FileSortSchema   = z.object({
+    id: SortOrderSchema
+});
 export const FileQuerySchema  = QuerySchema({
     filterSchema: FileFilterSchema,
     sortSchema:   FileSortSchema,

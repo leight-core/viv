@@ -3,3 +3,8 @@
 
  So, please, DO NOT modify this file as it would get re-generated and you would be f*cked up.
  */
+import {type IUserSource} from "@leight/user";
+import {UserSourceEx}     from "../source";
+
+export class UserSource extends UserSourceEx implements IUserSource {
+}

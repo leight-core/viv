@@ -3,7 +3,6 @@
  */
 import {type IUseQuery} from "@leight/react-query";
 import {
-    type ISource,
     type ISourceSchema,
     type IWithIdentity
 }                       from "@leight/source";
@@ -14,13 +13,12 @@ import {
     type IJobPatchSchema,
     type IJobSchema,
     type IJobSortSchema
-}                       from "./entity-schema";
+}                       from "./Schema";
 
+export type IUseJobQuery = IUseQuery<IJobSourceSchema["Query"] | undefined, IJobSourceSchema["Entity"][]>;
+export type IUseJobCountQuery = IUseQuery<IJobSourceSchema["Query"] | undefined, number>;
 export type IUseJobFetchQuery = IUseQuery<IJobSourceSchema["Query"], IJobSourceSchema["Entity"]>;
 export type IUseJobFindQuery = IUseQuery<IWithIdentity, IJobSourceSchema["Entity"]>;
-
-export interface IJobSource extends ISource<IJobSourceSchema> {
-}
 
 export interface IJobSourceSchema extends ISourceSchema<
     IJobSchema,
@@ -31,5 +29,3 @@ export interface IJobSourceSchema extends ISourceSchema<
     IJobParamSchema
 > {
 }
-
-export const $JobSource = Symbol.for("@leight/job/IJobSource");

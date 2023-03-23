@@ -1,5 +1,11 @@
 # @leight/job
 
+## 0.5.53
+
+### Patch Changes
+
+- Refactored generator, improved a lot of stuff
+
 ## 0.5.52
 
 ### Patch Changes

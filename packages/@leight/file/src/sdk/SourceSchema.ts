@@ -3,7 +3,6 @@
  */
 import {type IUseQuery} from "@leight/react-query";
 import {
-    type ISource,
     type ISourceSchema,
     type IWithIdentity
 }                       from "@leight/source";
@@ -14,13 +13,12 @@ import {
     type IFilePatchSchema,
     type IFileSchema,
     type IFileSortSchema
-}                       from "./entity-schema";
+}                       from "./Schema";
 
+export type IUseFileQuery = IUseQuery<IFileSourceSchema["Query"] | undefined, IFileSourceSchema["Entity"][]>;
+export type IUseFileCountQuery = IUseQuery<IFileSourceSchema["Query"] | undefined, number>;
 export type IUseFileFetchQuery = IUseQuery<IFileSourceSchema["Query"], IFileSourceSchema["Entity"]>;
 export type IUseFileFindQuery = IUseQuery<IWithIdentity, IFileSourceSchema["Entity"]>;
-
-export interface IFileSource extends ISource<IFileSourceSchema> {
-}
 
 export interface IFileSourceSchema extends ISourceSchema<
     IFileSchema,
@@ -31,5 +29,3 @@ export interface IFileSourceSchema extends ISourceSchema<
     IFileParamSchema
 > {
 }
-
-export const $FileSource = Symbol.for("@leight/file/IFileSource");

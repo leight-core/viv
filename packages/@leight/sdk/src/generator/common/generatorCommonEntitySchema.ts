@@ -1,45 +1,16 @@
-import {type IPackageType} from "@leight/generator";
-import {withSourceFile}    from "@leight/generator-server";
-import {normalize}         from "node:path";
-import {type IGenerator}   from "../api";
+import {withSourceFile}              from "@leight/generator-server";
+import {normalize}                   from "node:path";
+import {type IGenerator}             from "../../api";
+import {type IGeneratorCommonParams} from "./generatorCommon";
 
-export interface IGeneratorEntitySchemaParams {
-    /**
-     * Package references (used for generating proper `import` statements
-     */
-    packages: {
-        /**
-         * Source package exporting "PrismaSchema" namespace containing "entity"
-         */
-        prisma: string;
-    };
-    /**
-     * Entity name this generator works with
-     */
-    entity: string;
-    /**
-     * Specify extension of schemas
-     */
-    schemaEx?: {
-        /**
-         * Entity schema extension (target type should be ZodSchema)
-         */
-        entity: IPackageType;
-    },
-    /**
-     * Provide fields generated for SortSchema
-     */
-    sorts?: string[];
-}
-
-export const generatorEntitySchema: IGenerator<IGeneratorEntitySchemaParams> = async (
+export const generatorCommonEntitySchema: IGenerator<IGeneratorCommonParams> = async (
     {
         barrel,
         folder,
         params: {
                     packages,
                     entity,
-                    sorts = [],
+                    sorts = ["id"],
                     schemaEx,
                 },
     }) => {
@@ -125,7 +96,7 @@ QuerySchema({
             },
         })
         .saveTo({
-            file: normalize(`${process.cwd()}/${folder}`),
+            file: normalize(`${process.cwd()}/${folder}/Schema.ts`),
             barrel,
         });
 };

@@ -1,5 +1,14 @@
 # @leight/job-server
 
+## 0.5.52
+
+### Patch Changes
+
+- Refactored generator, improved a lot of stuff
+- Updated dependencies
+    - @leight/user@0.5.53
+    - @leight/job@0.5.53
+
 ## 0.5.51
 
 ### Patch Changes

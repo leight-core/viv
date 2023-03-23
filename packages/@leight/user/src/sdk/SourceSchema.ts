@@ -1,13 +1,11 @@
 /**
  Source code of the common stuff for User which could be shared between server and client side.
  */
-import {type IUseQuery}     from "@leight/react-query";
+import {type IUseQuery} from "@leight/react-query";
 import {
-    type ISource,
     type ISourceSchema,
     type IWithIdentity
-}                           from "@leight/source";
-import {type IUserSourceEx} from "../api";
+}                       from "@leight/source";
 import {
     type IUserCreateSchema,
     type IUserFilterSchema,
@@ -15,13 +13,12 @@ import {
     type IUserPatchSchema,
     type IUserSchema,
     type IUserSortSchema
-}                           from "./entity-schema";
+}                       from "./Schema";
 
+export type IUseUserQuery = IUseQuery<IUserSourceSchema["Query"] | undefined, IUserSourceSchema["Entity"][]>;
+export type IUseUserCountQuery = IUseQuery<IUserSourceSchema["Query"] | undefined, number>;
 export type IUseUserFetchQuery = IUseQuery<IUserSourceSchema["Query"], IUserSourceSchema["Entity"]>;
 export type IUseUserFindQuery = IUseQuery<IWithIdentity, IUserSourceSchema["Entity"]>;
-
-export interface IUserSource extends ISource<IUserSourceSchema>, IUserSourceEx {
-}
 
 export interface IUserSourceSchema extends ISourceSchema<
     IUserSchema,
@@ -32,5 +29,3 @@ export interface IUserSourceSchema extends ISourceSchema<
     IUserParamSchema
 > {
 }
-
-export const $UserSource = Symbol.for("@leight/user/IUserSource");

@@ -1,24 +1,9 @@
-import {withSourceFile}  from "@leight/generator-server";
-import {normalize}       from "node:path";
-import {type IGenerator} from "../api";
+import {withSourceFile}                    from "@leight/generator-server";
+import {normalize}                         from "node:path";
+import {type IGenerator}                   from "../../api";
+import {type IGeneratorClientSourceParams} from "./generatorClientSource";
 
-export interface IGeneratorClientContextParams {
-    /**
-     * Package names used for generating proper `import` statements
-     */
-    packages: {
-        /**
-         * Reference to package with generated Schemas (entity/sort/filter/...)
-         */
-        schema: string;
-    };
-    /**
-     * Entity name this generator works with
-     */
-    entity: string;
-}
-
-export const generatorClientContext: IGenerator<IGeneratorClientContextParams> = async (
+export const generatorClientSourceStore: IGenerator<IGeneratorClientSourceParams> = async (
     {
         folder,
         barrel,
@@ -38,7 +23,7 @@ export const generatorClientContext: IGenerator<IGeneratorClientContextParams> =
                     "type ISourceProps",
                 ],
                 "@leight/sort-client":   [
-                    "createSortContext"
+                    "createSortContext",
                 ],
                 [packages.schema]:       [
                     `type I${entity}SourceSchema`,
@@ -87,7 +72,7 @@ createSortContext<I${entity}SortSchema>({
             }
         })
         .saveTo({
-            file: normalize(`${process.cwd()}/${folder}`),
+            file: normalize(`${process.cwd()}/${folder}/ClientStore.ts`),
             barrel,
         });
 };

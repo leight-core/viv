@@ -1,34 +1,9 @@
-import {withSourceFile}  from "@leight/generator-server";
-import {normalize}       from "node:path";
-import {type IGenerator} from "../api";
+import {withSourceFile}                    from "@leight/generator-server";
+import {normalize}                         from "node:path";
+import {type IGenerator}                   from "../../api";
+import {type IGeneratorClientSourceParams} from "./generatorClientSource";
 
-export interface IGeneratorClientSourceParams {
-    /**
-     * Package names used for generating proper `import` statements
-     */
-    packages: {
-        /**
-         * Reference to package with generated Schemas (entity/sort/filter/...)
-         */
-        schema: string;
-    };
-    trpc?: {
-        /**
-         * Package (import) of client-side TRPC (should export named trpc)
-         */
-        package: string;
-        /**
-         * Part of the trpc call chain (base is `trpc`.${trpcPath}.`...rest of standard trpc router`
-         */
-        path: string;
-    };
-    /**
-     * Entity name this generator works with
-     */
-    entity: string;
-}
-
-export const generatorClientSource: IGenerator<IGeneratorClientSourceParams> = async (
+export const generatorClientSourceProvider: IGenerator<IGeneratorClientSourceParams> = async (
     {
         folder,
         barrel,
@@ -56,12 +31,20 @@ export const generatorClientSource: IGenerator<IGeneratorClientSourceParams> = a
                 "react":                 [
                     "type FC",
                 ],
-                "./client-context":      [
+                "./ClientStore":         [
                     `${entity}Provider`,
                     `${entity}SortProvider`,
                     `use${entity}Sort`,
                 ]
             }
+        })
+        .withImports(trpc ? undefined : {
+            imports: {
+                [packages.schema]: [
+                    `type IUse${entity}Query`,
+                    `type IUse${entity}CountQuery`,
+                ],
+            },
         })
         .withImports(trpc ? {
             imports: {
@@ -70,21 +53,27 @@ export const generatorClientSource: IGenerator<IGeneratorClientSourceParams> = a
                 ],
             },
         } : undefined)
-        .withInterfaces(trpc ? {
+        .withInterfaces({
             exports: {
                 [`I${entity}SourceProps`]:        {
                     extends: [
                         {type: `ISourceProps<I${entity}SourceSchema>`},
                     ],
+                    body:    trpc ? undefined : `
+useSourceQuery: IUse${entity}Query;
+                    `,
                 },
                 [`I${entity}QueryProviderProps`]: {
                     extends: [
                         {type: `IQueryProviderProps<I${entity}SourceSchema>`},
                     ],
+                    body:    trpc ? undefined : `
+useCountQuery: IUse${entity}CountQuery;
+                    `,
                 },
             },
-        } : undefined)
-        .withConsts(trpc ? {
+        })
+        .withConsts({
             exports: {
                 [`${entity}Source`]:        {
                     type: `FC<I${entity}SourceProps>`,
@@ -92,9 +81,8 @@ export const generatorClientSource: IGenerator<IGeneratorClientSourceParams> = a
     return <Source<I${entity}SourceSchema>
         schema={${entity}Schema}
         SourceProvider={${entity}Provider}
-        useSourceQuery={trpc.${trpc.path}.source.query.useQuery}
         useSortState={use${entity}Sort}
-        {...props}
+        ${trpc ? `useSourceQuery={trpc.${trpc.path}.source.query.useQuery}\n` : ""}{...props}
     />;
 }
                     `,
@@ -103,17 +91,16 @@ export const generatorClientSource: IGenerator<IGeneratorClientSourceParams> = a
                     type: `FC<I${entity}QueryProviderProps>`,
                     body: `props => {
     return <QueryProvider<I${entity}SourceSchema>
-        useCountQuery={trpc.${trpc.path}.source.count.useQuery}
         SortProvider={${entity}SortProvider}
-        {...props}
+        ${trpc ? `useCountQuery={trpc.${trpc.path}.source.count.useQuery}\n` : ""}{...props}
     />;
 }
                     `,
                 },
             },
-        } : undefined)
+        })
         .saveTo({
-            file: normalize(`${process.cwd()}/${folder}`),
+            file: normalize(`${process.cwd()}/${folder}/ClientSourceProvider.tsx`),
             barrel,
         });
 };

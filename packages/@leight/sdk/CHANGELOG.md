@@ -1,5 +1,13 @@
 # @leight/sdk
 
+## 0.5.4
+
+### Patch Changes
+
+- Refactored generator, improved a lot of stuff
+- Updated dependencies
+    - @leight/generator-server@0.5.3
+
 ## 0.5.3
 
 ### Patch Changes

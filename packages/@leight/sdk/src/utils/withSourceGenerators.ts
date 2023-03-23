@@ -1,53 +1,31 @@
-import {resolvePackageJson} from "@leight/utils-server";
+import {resolvePackageJson}      from "@leight/utils-server";
+import {type ISdkGeneratorProps} from "../api";
 import {
-    generatorEntitySchema,
-    generatorSourceApi,
-    type IGeneratorEntitySchemaParams,
-    type IGeneratorSourceApiParams
-}                           from "../generator";
+    generatorCommon,
+    type IGeneratorCommonParams
+}                                from "../generator";
 
 export type IWithSourceGeneratorsProps =
-    IGeneratorEntitySchemaParams
-    & IGeneratorSourceApiParams
-    & {
-        packageName?: string;
-        sdk?: string;
-    }
+    IGeneratorCommonParams
+    &
+    ISdkGeneratorProps;
 
 export const withSourceGenerators = (
     {
         packageName = resolvePackageJson().name,
-        sdk = "src/sdk",
-        entity,
-        packages,
-        schemaEx,
-        sorts,
-        sourceEx,
+        folder = "src/sdk",
+        ...params
     }: IWithSourceGeneratorsProps) => {
     if (!packageName) {
         throw new Error("Cannot resolve packageName");
     }
 
     return [
-        async () => generatorEntitySchema({
+        async () => generatorCommon({
             packageName,
-            folder: `${sdk}/entity-schema.ts`,
+            folder,
             barrel: true,
-            params: {
-                packages,
-                entity,
-                sorts,
-                schemaEx,
-            },
-        }),
-        async () => generatorSourceApi({
-            packageName,
-            folder: `${sdk}/source-api.ts`,
-            barrel: true,
-            params: {
-                entity,
-                sourceEx,
-            },
+            params,
         }),
     ];
 };
