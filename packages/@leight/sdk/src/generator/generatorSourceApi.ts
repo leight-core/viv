@@ -5,9 +5,9 @@ import {type IGenerator} from "../api";
 
 export interface IGeneratorSourceApiParams {
     /**
-     * Model name being exported
+     * Entity name this generator works with
      */
-    modelName: string;
+    entity: string;
     /**
      * Package containing (generated) model interfaces (CreateSchema, FilterSchema, ...); maybe be written by hand
      *
@@ -20,6 +20,9 @@ export interface IGeneratorSourceApiParams {
      * IFooSource extends ISource, sourceEx[]
      */
     sourceEx?: {
+        /**
+         * Specify extensions of the ISource interface
+         */
         extends?: IPackageType[];
     };
 }
@@ -27,17 +30,17 @@ export interface IGeneratorSourceApiParams {
 export const generatorSourceApi: IGenerator<IGeneratorSourceApiParams> = async (
     {
         packageName,
-        file,
+        folder,
         barrel,
         params: {
-                    modelName,
+                    entity,
                     entitySchemaPackage = "./entity-schema",
                     sourceEx,
                 }
     }) => {
     withSourceFile()
         .withHeader(`
-    Source code of the common stuff for ${modelName} which could be shared between server and client side.
+    Source code of the common stuff for ${entity} which could be shared between server and client side.
         `)
         .withImports({
             imports: {
@@ -50,12 +53,12 @@ export const generatorSourceApi: IGenerator<IGeneratorSourceApiParams> = async (
                     "type IUseQuery",
                 ],
                 [entitySchemaPackage]: [
-                    `type I${modelName}CreateSchema`,
-                    `type I${modelName}FilterSchema`,
-                    `type I${modelName}ParamSchema`,
-                    `type I${modelName}PatchSchema`,
-                    `type I${modelName}Schema`,
-                    `type I${modelName}SortSchema`,
+                    `type I${entity}CreateSchema`,
+                    `type I${entity}FilterSchema`,
+                    `type I${entity}ParamSchema`,
+                    `type I${entity}PatchSchema`,
+                    `type I${entity}Schema`,
+                    `type I${entity}SortSchema`,
                 ]
             }
         })
@@ -72,28 +75,28 @@ export const generatorSourceApi: IGenerator<IGeneratorSourceApiParams> = async (
         } : undefined)
         .withTypes({
             exports: {
-                [`IUse${modelName}FetchQuery`]: `IUseQuery<I${modelName}SourceSchema["Query"], I${modelName}SourceSchema["Entity"]>`,
-                [`IUse${modelName}FindQuery`]:  `IUseQuery<IWithIdentity, I${modelName}SourceSchema["Entity"]>`,
+                [`IUse${entity}FetchQuery`]: `IUseQuery<I${entity}SourceSchema["Query"], I${entity}SourceSchema["Entity"]>`,
+                [`IUse${entity}FindQuery`]:  `IUseQuery<IWithIdentity, I${entity}SourceSchema["Entity"]>`,
             }
         })
         .withInterfaces({
             exports: {
-                [`I${modelName}Source`]:       {
+                [`I${entity}Source`]:       {
                     extends: [
-                                 {type: `ISource<I${modelName}SourceSchema>`},
+                                 {type: `ISource<I${entity}SourceSchema>`},
                              ].concat(sourceEx?.extends || []),
                 },
-                [`I${modelName}SourceSchema`]: {
+                [`I${entity}SourceSchema`]: {
                     extends: [
                         {
                             type: `
 ISourceSchema<
-    I${modelName}Schema,
-    I${modelName}CreateSchema,
-    I${modelName}PatchSchema,
-    I${modelName}FilterSchema,
-    I${modelName}SortSchema,
-    I${modelName}ParamSchema
+    I${entity}Schema,
+    I${entity}CreateSchema,
+    I${entity}PatchSchema,
+    I${entity}FilterSchema,
+    I${entity}SortSchema,
+    I${entity}ParamSchema
  >
                             `,
                         },
@@ -103,11 +106,11 @@ ISourceSchema<
         })
         .withConsts({
             exports: {
-                [`$${modelName}Source`]: {body: `Symbol.for("${packageName}/I${modelName}Source")`},
+                [`$${entity}Source`]: {body: `Symbol.for("${packageName}/I${entity}Source")`},
             }
         })
         .saveTo({
-            file: normalize(`${process.cwd()}/${file}`),
+            file: normalize(`${process.cwd()}/${folder}`),
             barrel,
         });
 };

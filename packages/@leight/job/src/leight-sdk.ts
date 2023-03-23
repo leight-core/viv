@@ -4,13 +4,15 @@ import {
 } from "@leight/sdk";
 
 void withSdk(withSourceGenerators({
-    modelName:    "Job",
-    PrismaSchema: "@leight/prisma",
-    sorts:        [
+    entity:   "Job",
+    packages: {
+        prisma: "@leight/prisma",
+    },
+    sorts:    [
         "started",
     ],
-    schemaEx:     {
-        model: {
+    schemaEx: {
+        entity: {
             type:    "JobSchemaOverride",
             package: "../schema",
         }

@@ -1,5 +1,5 @@
 /**
- Source code containig improved Zustand store stuff for Source support (client-side).
+ Source code containing improved Zustand store stuff for Source support (client-side).
  */
 import {
     FileSchema,

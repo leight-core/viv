@@ -7,13 +7,9 @@ export type ITemplate<TParams = void> = IfExtends<
          */
         packageName: string;
         /**
-         * Name of the generator, could be basically anything
-         */
-        name: string;
-        /**
          * Where to put generated content
          */
-        file: string;
+        folder: string;
         /**
          * Should also index.ts be generated/updated?
          */

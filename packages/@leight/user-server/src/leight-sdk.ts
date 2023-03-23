@@ -4,12 +4,14 @@ import {
 } from "@leight/sdk";
 
 void withSdk(withServerSourceGenerators({
-    modelName:     "User",
-    schemaPackage: "@leight/user",
-    prismaPackage: "@leight/prisma",
-    prismaModel:   "user",
-    disabled:      ["trpc-procedure"],
-    sourceEx:      {
+    entity:   "User",
+    packages: {
+        schema: "@leight/user",
+        prisma: "@leight/prisma",
+    },
+    prisma:   "user",
+    disabled: ["trpc-procedure"],
+    sourceEx: {
         type:    "UserSourceEx",
         package: "../source",
     },

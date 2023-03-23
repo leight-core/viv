@@ -1,26 +1,27 @@
 import {resolvePackageJson} from "@leight/utils-server";
 import {
     generatorClientContext,
-    generatorClientSource
+    generatorClientSource,
+    type IGeneratorClientContextParams,
+    type IGeneratorClientSourceParams
 }                           from "../generator";
 
-export interface IWithClientSourceGeneratorsProps {
-    packageName?: string;
-    sdk?: string;
-    modelName: string;
-    trpcPackage: string | false;
-    trpcPath: string | false;
-    schemaPackage: string;
-}
+export type IWithClientSourceGeneratorsProps =
+    IGeneratorClientContextParams
+    &
+    IGeneratorClientSourceParams
+    & {
+        packageName?: string;
+        sdk?: string;
+    }
 
 export const withClientSourceGenerators = (
     {
         packageName = resolvePackageJson().name,
         sdk = "src/sdk",
-        modelName,
-        trpcPackage,
-        trpcPath,
-        schemaPackage,
+        packages,
+        trpc,
+        entity,
     }: IWithClientSourceGeneratorsProps) => {
     if (!packageName) {
         throw new Error("Cannot resolve packageName");
@@ -28,24 +29,21 @@ export const withClientSourceGenerators = (
     return [
         async () => generatorClientContext({
             packageName,
-            name:   "client-context",
-            file:   `${sdk}/client-context.ts`,
+            folder: `${sdk}/client-context.ts`,
             barrel: true,
             params: {
-                modelName,
-                schemaPackage,
+                entity,
+                packages,
             },
         }),
         async () => generatorClientSource({
             packageName,
-            name:   "client-source",
             barrel: true,
-            file:   `${sdk}/client-source.tsx`,
+            folder: `${sdk}/client-source.tsx`,
             params: {
-                modelName,
-                trpcPackage,
-                trpcPath,
-                schemaPackage,
+                entity,
+                trpc,
+                packages,
             }
         }),
     ];

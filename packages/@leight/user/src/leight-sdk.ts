@@ -4,9 +4,11 @@ import {
 } from "@leight/sdk";
 
 void withSdk(withSourceGenerators({
-    modelName:    "User",
-    PrismaSchema: "@leight/prisma",
-    sourceEx:     {
+    entity:   "User",
+    packages: {
+        prisma: "@leight/prisma",
+    },
+    sourceEx: {
         extends: [
             {type: "IUserSourceEx", package: "../api"},
         ],

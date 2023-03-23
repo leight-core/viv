@@ -4,8 +4,10 @@ import {
 } from "@leight/sdk";
 
 void withSdk(withServerSourceGenerators({
-    modelName:     "Job",
-    schemaPackage: "@leight/job",
-    prismaPackage: "@leight/prisma",
-    prismaModel:   "job",
+    entity:   "Job",
+    packages: {
+        schema: "@leight/job",
+        prisma: "@leight/prisma",
+    },
+    prisma:   "job",
 }));

@@ -15,10 +15,9 @@ export const withServerSourceGenerators = (
     {
         packageName = resolvePackageJson().name,
         sdk = "src/sdk",
-        modelName,
-        schemaPackage,
-        prismaPackage,
-        prismaModel,
+        entity,
+        packages,
+        prisma,
         disabled,
         sourceEx,
     }: IWithServerSourceGeneratorsProps) => {
@@ -28,14 +27,12 @@ export const withServerSourceGenerators = (
     return [
         async () => generatorServerSource({
             packageName,
-            name:   "server-source",
             barrel: true,
-            file:   `${sdk}/server-source.tsx`,
+            folder: `${sdk}/server-source.tsx`,
             params: {
-                modelName,
-                schemaPackage,
-                prismaPackage,
-                prismaModel,
+                entity,
+                packages,
+                prisma,
                 disabled,
                 sourceEx,
             }

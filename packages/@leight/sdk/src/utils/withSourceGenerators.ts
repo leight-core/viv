@@ -18,8 +18,8 @@ export const withSourceGenerators = (
     {
         packageName = resolvePackageJson().name,
         sdk = "src/sdk",
-        modelName,
-        PrismaSchema,
+        entity,
+        packages,
         schemaEx,
         sorts,
         sourceEx,
@@ -31,23 +31,21 @@ export const withSourceGenerators = (
     return [
         async () => generatorEntitySchema({
             packageName,
-            name:   "entity-schema",
-            file:   `${sdk}/entity-schema.ts`,
+            folder: `${sdk}/entity-schema.ts`,
             barrel: true,
             params: {
-                PrismaSchema,
-                modelName,
+                packages,
+                entity,
                 sorts,
                 schemaEx,
             },
         }),
         async () => generatorSourceApi({
             packageName,
-            name:   "source-api",
-            file:   `${sdk}/source-api.ts`,
+            folder: `${sdk}/source-api.ts`,
             barrel: true,
             params: {
-                modelName,
+                entity,
                 sourceEx,
             },
         }),

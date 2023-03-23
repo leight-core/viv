@@ -4,8 +4,8 @@ import {
 } from "@leight/sdk";
 
 void withSdk(withClientSourceGenerators({
-    entity:   "File",
+    entity:   "Job",
     packages: {
-        schema: "@leight/file",
+        schema: "@leight/job",
     },
 }));

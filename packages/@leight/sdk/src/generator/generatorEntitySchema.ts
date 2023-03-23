@@ -5,26 +5,40 @@ import {type IGenerator}   from "../api";
 
 export interface IGeneratorEntitySchemaParams {
     /**
-     * Source package exporting "PrismaSchema" namespace containing "modelName"
+     * Package references (used for generating proper `import` statements
      */
-    PrismaSchema: string;
+    packages: {
+        /**
+         * Source package exporting "PrismaSchema" namespace containing "entity"
+         */
+        prisma: string;
+    };
     /**
-     * Model name being exported.
+     * Entity name this generator works with
      */
-    modelName: string;
+    entity: string;
+    /**
+     * Specify extension of schemas
+     */
     schemaEx?: {
-        model: IPackageType;
+        /**
+         * Entity schema extension (target type should be ZodSchema)
+         */
+        entity: IPackageType;
     },
+    /**
+     * Provide fields generated for SortSchema
+     */
     sorts?: string[];
 }
 
 export const generatorEntitySchema: IGenerator<IGeneratorEntitySchemaParams> = async (
     {
         barrel,
-        file,
+        folder,
         params: {
-                    PrismaSchema,
-                    modelName,
+                    packages,
+                    entity,
                     sorts = [],
                     schemaEx,
                 },
@@ -32,61 +46,61 @@ export const generatorEntitySchema: IGenerator<IGeneratorEntitySchemaParams> = a
     withSourceFile()
         .withImports({
             imports: {
-                [PrismaSchema]:   [
+                [packages.prisma]: [
                     "PrismaSchema",
                 ],
-                "@leight/filter": [
+                "@leight/filter":  [
                     "FilterSchema",
                 ],
-                "@leight/query":  [
+                "@leight/query":   [
                     "ParamsSchema",
                     "QuerySchema",
                 ],
-                "@leight/sort":   [
+                "@leight/sort":    [
                     "SortOrderSchema",
                 ],
-                "@leight/source": [
+                "@leight/source":  [
                     "WithIdentitySchema",
                 ],
-                "zod":            [
+                "zod":             [
                     "z",
                 ],
             },
         })
-        .withImports(schemaEx?.model?.package ? {
+        .withImports(schemaEx?.entity?.package ? {
             imports: {
-                [schemaEx.model.package]: [
-                    schemaEx.model.type,
+                [schemaEx.entity.package]: [
+                    schemaEx.entity.type,
                 ],
             },
         } : undefined)
         .withConsts({
             exports: {
-                [`${modelName}Schema`]:       {body: schemaEx?.model ? `PrismaSchema.${modelName}Schema.merge(${schemaEx.model.type})` : `PrismaSchema.${modelName}Schema`},
-                [`${modelName}CreateSchema`]: {body: `PrismaSchema.${modelName}OptionalDefaultsSchema`},
-                [`${modelName}PatchSchema`]:  {body: `PrismaSchema.${modelName}PartialSchema.merge(WithIdentitySchema)`},
-                [`${modelName}FilterSchema`]: {
+                [`${entity}Schema`]:       {body: schemaEx?.entity ? `PrismaSchema.${entity}Schema.merge(${schemaEx.entity.type})` : `PrismaSchema.${entity}Schema`},
+                [`${entity}CreateSchema`]: {body: `PrismaSchema.${entity}OptionalDefaultsSchema`},
+                [`${entity}PatchSchema`]:  {body: `PrismaSchema.${entity}PartialSchema.merge(WithIdentitySchema)`},
+                [`${entity}FilterSchema`]: {
                     body: `z.union([
-    PrismaSchema.${modelName}WhereInputSchema,
-    PrismaSchema.${modelName}WhereUniqueInputSchema,
+    PrismaSchema.${entity}WhereInputSchema,
+    PrismaSchema.${entity}WhereUniqueInputSchema,
     FilterSchema,
 ])
                     `,
                 },
-                [`${modelName}ParamSchema`]:  {body: `ParamsSchema`},
-                [`${modelName}SortSchema`]:   {
+                [`${entity}ParamSchema`]:  {body: `ParamsSchema`},
+                [`${entity}SortSchema`]:   {
                     body: `
 z.object({
     ${sorts.map(sort => `${sort}: SortOrderSchema`).join(",\n\t")}
 })
                     `,
                 },
-                [`${modelName}QuerySchema`]:  {
+                [`${entity}QuerySchema`]:  {
                     body: `
 QuerySchema({
-    filterSchema: ${modelName}FilterSchema,
-    sortSchema:   ${modelName}SortSchema,
-    paramsSchema: ${modelName}ParamSchema,
+    filterSchema: ${entity}FilterSchema,
+    sortSchema:   ${entity}SortSchema,
+    paramsSchema: ${entity}ParamSchema,
 })
                     `,
                 },
@@ -94,24 +108,24 @@ QuerySchema({
         })
         .withTypes({
             exports: {
-                [`I${modelName}Schema`]:       `typeof ${modelName}Schema`,
-                [`I${modelName}`]:             `z.infer<I${modelName}Schema>`,
-                [`I${modelName}CreateSchema`]: `typeof ${modelName}CreateSchema`,
-                [`I${modelName}Create`]:       `z.infer<I${modelName}CreateSchema>`,
-                [`I${modelName}PatchSchema`]:  `typeof ${modelName}PatchSchema`,
-                [`I${modelName}Patch`]:        `z.infer<I${modelName}PatchSchema>`,
-                [`I${modelName}FilterSchema`]: `typeof ${modelName}FilterSchema`,
-                [`I${modelName}Filter`]:       `z.infer<I${modelName}FilterSchema>`,
-                [`I${modelName}ParamSchema`]:  `typeof ${modelName}ParamSchema`,
-                [`I${modelName}Param`]:        `z.infer<I${modelName}ParamSchema>`,
-                [`I${modelName}SortSchema`]:   `typeof ${modelName}SortSchema`,
-                [`I${modelName}Sort`]:         `z.infer<I${modelName}SortSchema>`,
-                [`I${modelName}QuerySchema`]:  `typeof ${modelName}QuerySchema`,
-                [`I${modelName}Query`]:        `z.infer<I${modelName}QuerySchema>`,
+                [`I${entity}Schema`]:       `typeof ${entity}Schema`,
+                [`I${entity}`]:             `z.infer<I${entity}Schema>`,
+                [`I${entity}CreateSchema`]: `typeof ${entity}CreateSchema`,
+                [`I${entity}Create`]:       `z.infer<I${entity}CreateSchema>`,
+                [`I${entity}PatchSchema`]:  `typeof ${entity}PatchSchema`,
+                [`I${entity}Patch`]:        `z.infer<I${entity}PatchSchema>`,
+                [`I${entity}FilterSchema`]: `typeof ${entity}FilterSchema`,
+                [`I${entity}Filter`]:       `z.infer<I${entity}FilterSchema>`,
+                [`I${entity}ParamSchema`]:  `typeof ${entity}ParamSchema`,
+                [`I${entity}Param`]:        `z.infer<I${entity}ParamSchema>`,
+                [`I${entity}SortSchema`]:   `typeof ${entity}SortSchema`,
+                [`I${entity}Sort`]:         `z.infer<I${entity}SortSchema>`,
+                [`I${entity}QuerySchema`]:  `typeof ${entity}QuerySchema`,
+                [`I${entity}Query`]:        `z.infer<I${entity}QuerySchema>`,
             },
         })
         .saveTo({
-            file: normalize(`${process.cwd()}/${file}`),
+            file: normalize(`${process.cwd()}/${folder}`),
             barrel,
         });
 };
