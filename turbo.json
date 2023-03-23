@@ -11,6 +11,9 @@
                 "prisma/schema.prisma"
             ]
         },
+        "generate": {
+            "cache": false
+        },
         "depcheck": {
             "outputMode": "new-only",
             "inputs": [
@@ -26,8 +29,11 @@
                 "src/**"
             ]
         },
-        "generate": {
-            "cache": false
+        "init": {
+            "cache": false,
+            "dependsOn": [
+                "^init"
+            ]
         },
         "build": {
             "outputMode": "new-only",
