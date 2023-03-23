@@ -21,6 +21,9 @@ import {
 import {AbstractSource}      from "@leight/source-server";
 import {withSourceProcedure} from "@leight/trpc-source-server";
 
+type IEntity = IFileSourceSchema["Entity"];
+type IQuery = IFileSourceSchema["Query"];
+
 export class FileSource extends AbstractSource<IFileSourceSchema> implements IFileSource {
     static inject = [
         $PrismaClient,
@@ -32,24 +35,28 @@ export class FileSource extends AbstractSource<IFileSourceSchema> implements IFi
         super($FileSource);
     }
 
-    async runUpsert(props: ISource.IUpsert<IFileSourceSchema>): Promise<IFileSourceSchema["Entity"]> {
-        return this.prismaClient.file.upsert(withUpsert(props));
+    async runUpsert(props: ISource.IUpsert<IFileSourceSchema>): Promise<IEntity> {
+        return this.prisma().upsert(withUpsert(props));
     }
 
-    async runCount(query?: IFileSourceSchema["Query"]): Promise<number> {
-        return this.prismaClient.file.count({
+    async runCount(query?: IQuery): Promise<number> {
+        return this.prisma().count({
             where: query?.filter,
         });
     }
 
-    async runQuery(query?: IFileSourceSchema["Query"]): Promise<IFileSourceSchema["Entity"][]> {
-        return this.prismaClient.file.findMany(withCursor({
+    async runQuery(query?: IQuery): Promise<IEntity[]> {
+        return this.prisma().findMany(withCursor({
             query,
             arg: {
                 where:   query?.filter,
                 orderBy: query?.sort,
             }
         }));
+    }
+
+    prisma() {
+        return this.prismaClient.file;
     }
 }
 

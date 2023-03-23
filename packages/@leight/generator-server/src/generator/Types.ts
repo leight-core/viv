@@ -12,7 +12,7 @@ export class Type implements IExportable {
     }
 
     public export() {
-        return `${this.isExported ? "export" : ""} type ${this.name} = ${this.code};`;
+        return `${this.isExported ? "export " : ""}type ${this.name} = ${this.code};`;
     }
 }
 

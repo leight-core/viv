@@ -92,6 +92,12 @@ withSourceProcedure<I${modelName}SourceSchema>({
                 },
             },
         } : undefined)
+        .withTypes({
+            types: {
+                "IEntity": `I${modelName}SourceSchema["Entity"]`,
+                "IQuery":  `I${modelName}SourceSchema["Query"]`,
+            },
+        })
         .withClasses({
             exports: {
                 [`${modelName}Source`]: {
@@ -108,24 +114,28 @@ withSourceProcedure<I${modelName}SourceSchema>({
         super($${modelName}Source);
     }
 
-    async runUpsert(props: ISource.IUpsert<I${modelName}SourceSchema>): Promise<I${modelName}SourceSchema["Entity"]> {
-        return this.prismaClient.${prismaModel}.upsert(withUpsert(props));
+    async runUpsert(props: ISource.IUpsert<I${modelName}SourceSchema>): Promise<IEntity> {
+        return this.prisma().upsert(withUpsert(props));
     }
 
-    async runCount(query?: I${modelName}SourceSchema["Query"]): Promise<number> {
-        return this.prismaClient.${prismaModel}.count({
+    async runCount(query?: IQuery): Promise<number> {
+        return this.prisma().count({
             where: query?.filter,
         });
     }
 
-    async runQuery(query?: I${modelName}SourceSchema["Query"]): Promise<I${modelName}SourceSchema["Entity"][]> {
-        return this.prismaClient.${prismaModel}.findMany(withCursor({
+    async runQuery(query?: IQuery): Promise<IEntity[]> {
+        return this.prisma().findMany(withCursor({
             query,
             arg: {
                 where:   query?.filter,
                 orderBy: query?.sort,
             }
         }));
+    }
+    
+    prisma() {
+        return this.prismaClient.${prismaModel};
     }
                     `,
                 }

@@ -19,6 +19,9 @@ import {
     type IUserSourceSchema
 }                       from "@leight/user";
 
+type IEntity = IUserSourceSchema["Entity"];
+type IQuery = IUserSourceSchema["Query"];
+
 export class UserSource extends AbstractSource<IUserSourceSchema> implements IUserSource {
     static inject = [
         $PrismaClient,
@@ -30,24 +33,28 @@ export class UserSource extends AbstractSource<IUserSourceSchema> implements IUs
         super($UserSource);
     }
 
-    async runUpsert(props: ISource.IUpsert<IUserSourceSchema>): Promise<IUserSourceSchema["Entity"]> {
-        return this.prismaClient.user.upsert(withUpsert(props));
+    async runUpsert(props: ISource.IUpsert<IUserSourceSchema>): Promise<IEntity> {
+        return this.prisma().upsert(withUpsert(props));
     }
 
-    async runCount(query?: IUserSourceSchema["Query"]): Promise<number> {
-        return this.prismaClient.user.count({
+    async runCount(query?: IQuery): Promise<number> {
+        return this.prisma().count({
             where: query?.filter,
         });
     }
 
-    async runQuery(query?: IUserSourceSchema["Query"]): Promise<IUserSourceSchema["Entity"][]> {
-        return this.prismaClient.user.findMany(withCursor({
+    async runQuery(query?: IQuery): Promise<IEntity[]> {
+        return this.prisma().findMany(withCursor({
             query,
             arg: {
                 where:   query?.filter,
                 orderBy: query?.sort,
             }
         }));
+    }
+
+    prisma() {
+        return this.prismaClient.user;
     }
 }
 

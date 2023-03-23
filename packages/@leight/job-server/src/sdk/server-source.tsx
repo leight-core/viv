@@ -21,6 +21,9 @@ import {
 import {AbstractSource}      from "@leight/source-server";
 import {withSourceProcedure} from "@leight/trpc-source-server";
 
+type IEntity = IJobSourceSchema["Entity"];
+type IQuery = IJobSourceSchema["Query"];
+
 export class JobSource extends AbstractSource<IJobSourceSchema> implements IJobSource {
     static inject = [
         $PrismaClient,
@@ -32,24 +35,28 @@ export class JobSource extends AbstractSource<IJobSourceSchema> implements IJobS
         super($JobSource);
     }
 
-    async runUpsert(props: ISource.IUpsert<IJobSourceSchema>): Promise<IJobSourceSchema["Entity"]> {
-        return this.prismaClient.job.upsert(withUpsert(props));
+    async runUpsert(props: ISource.IUpsert<IJobSourceSchema>): Promise<IEntity> {
+        return this.prisma().upsert(withUpsert(props));
     }
 
-    async runCount(query?: IJobSourceSchema["Query"]): Promise<number> {
-        return this.prismaClient.job.count({
+    async runCount(query?: IQuery): Promise<number> {
+        return this.prisma().count({
             where: query?.filter,
         });
     }
 
-    async runQuery(query?: IJobSourceSchema["Query"]): Promise<IJobSourceSchema["Entity"][]> {
-        return this.prismaClient.job.findMany(withCursor({
+    async runQuery(query?: IQuery): Promise<IEntity[]> {
+        return this.prisma().findMany(withCursor({
             query,
             arg: {
                 where:   query?.filter,
                 orderBy: query?.sort,
             }
         }));
+    }
+
+    prisma() {
+        return this.prismaClient.job;
     }
 }
 
