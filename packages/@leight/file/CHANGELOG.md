@@ -1,5 +1,11 @@
 # @leight/file
 
+## 0.5.49
+
+### Patch Changes
+
+- Updated generator, fixed loops
+
 ## 0.5.48
 
 ### Patch Changes

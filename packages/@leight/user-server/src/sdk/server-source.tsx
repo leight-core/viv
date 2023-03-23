@@ -21,7 +21,6 @@ import {
     type IUserSource,
     type IUserSourceSchema
 }                       from "@leight/user";
-import {UserSourceEx}   from "../source";
 
 type IEntity = IUserSourceSchema["Entity"];
 type IQuery = IUserSourceSchema["Query"];
@@ -62,7 +61,7 @@ export class UserBaseSource extends AbstractSource<IUserSourceSchema> {
     }
 }
 
-export class UserSource extends UserSourceEx implements IUserSource {
+export class UserSource extends (await import("../source")).UserSourceEx implements IUserSource {
 }
 
 export const UserSourceContext = (container: IContainer) => new ServiceContext<IUserSource>(container, $UserSource);

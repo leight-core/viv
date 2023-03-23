@@ -1,5 +1,11 @@
 # @leight/sdk
 
+## 0.5.3
+
+### Patch Changes
+
+- Updated generator, fixed loops
+
 ## 0.5.2
 
 ### Patch Changes

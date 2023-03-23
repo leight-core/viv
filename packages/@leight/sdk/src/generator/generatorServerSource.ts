@@ -40,7 +40,7 @@ export const generatorServerSource: IGenerator<IGeneratorServerSourceParams> = a
                 },
     }) => {
     withSourceFile()
-        .withHeader(`
+        .withHeader(header || `
     Source code containing implementation of Server-side Source for ${modelName}, TRPC router part (if no disabled) and
     some other cool stuff.
         `)
@@ -85,11 +85,6 @@ export const generatorServerSource: IGenerator<IGeneratorServerSourceParams> = a
                 ],
             },
         })
-        .withImports(sourceEx?.package ? {
-            imports: {
-                [sourceEx.package]: [sourceEx.type],
-            },
-        } : undefined)
         .withConsts({
             exports: {
                 [`${modelName}SourceContext`]: {
@@ -155,8 +150,8 @@ withSourceProcedure<I${modelName}SourceSchema>({
     }
                     `,
                 },
-                [`${modelName}Source`]:     {
-                    extends:    sourceEx?.type ? sourceEx.type : `${modelName}BaseSource`,
+                [`${modelName}Source`]: {
+                    extends:    sourceEx?.type ? (sourceEx.package ? `(await import("${sourceEx.package}")).${sourceEx.type}` : sourceEx.type) : `${modelName}BaseSource`,
                     implements: `I${modelName}Source`,
                 }
             },

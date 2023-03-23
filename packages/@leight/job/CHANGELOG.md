@@ -1,5 +1,11 @@
 # @leight/job
 
+## 0.5.52
+
+### Patch Changes
+
+- Updated generator, fixed loops
+
 ## 0.5.51
 
 ### Patch Changes
