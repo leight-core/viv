@@ -1,5 +1,16 @@
 # @leight/job-client
 
+## 0.5.3
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/i18n@0.5.47
+    - @leight/i18n-client@0.5.51
+    - @leight/job@0.5.50
+    - @leight/utils@0.5.49
+
 ## 0.5.2
 
 ### Patch Changes
