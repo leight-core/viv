@@ -20,12 +20,13 @@
     ],
     "scripts": {
         "dev": "turbowatch",
+        "generate": "concurrently npm:generate:*",
+        "generate:prisma": "prisma generate",
         "build": "concurrently npm:build:*",
         "build:esbuild": "node esbuild.mjs",
         "build:types": "tsc --outDir lib",
         "depcheck": "depcheck",
         "prisma:format": "prisma format",
-        "prisma:generate": "prisma generate",
         "lint": "eslint src",
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },

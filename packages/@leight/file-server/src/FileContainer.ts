@@ -11,12 +11,12 @@ import {
     type IFileServiceConfig,
     type IFileSource,
 }                        from "@leight/file";
+import {FileSource}      from "./sdk";
 
 import {
     ChunkService,
     FileService
-}                   from "./service";
-import {FileSource} from "./source";
+} from "./service";
 
 export interface IFileContainer {
     ChunkService: IChunkService;

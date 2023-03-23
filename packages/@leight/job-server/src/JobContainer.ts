@@ -7,11 +7,11 @@ import {
     type IJobProgressService,
     type IJobSource
 }                        from "@leight/job";
+import {JobSource}       from "./sdk";
 import {
     JobExecutor,
     JobProgressService
 }                        from "./service";
-import {JobSource}       from "./source";
 
 export interface IJobContainer {
     JobProgressService: IJobProgressService;

@@ -9,13 +9,12 @@ import {
     type IUserService,
     type IUserSource,
 }                        from "@leight/user";
-
+import {UserSource}      from "./sdk";
 import {
     RegistrationService,
     UserJwtService,
     UserService
-}                   from "./service";
-import {UserSource} from "./source";
+}                        from "./service";
 
 export interface IUserContainer {
     RegistrationService: IRegistrationService;

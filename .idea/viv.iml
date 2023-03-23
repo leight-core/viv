@@ -104,6 +104,8 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/sort-client/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/job-client/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/calendar-client/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/generator-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/sdk/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.github" />
       <excludeFolder url="file://$MODULE_DIR$/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/sql/.turbo" />
@@ -291,6 +293,12 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/job-client/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/calendar-client/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/calendar-client/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/trpc-source-server/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/sdk/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/sdk/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/generator-server/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/generator-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/trpc-source-server/lib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

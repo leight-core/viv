@@ -29,7 +29,6 @@
     },
     "dependencies": {
         "@leight/container": "^0.5.47",
-        "@leight/source": "^0.5.46",
         "@leight/trpc": "^0.5.45",
         "@leight/user": "^0.5.49",
         "@leight/user-server": "^0.5.51",

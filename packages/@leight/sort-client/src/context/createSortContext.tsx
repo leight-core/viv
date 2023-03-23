@@ -24,7 +24,7 @@ export const createSortContext = <TSortSchema extends ISortSchema>(
                         [key as any]: order,
                     }
                 });
-            }
+            },
         }),
         name:  `[${name}] SortContext`,
         hint:  `Add [${name}] SortProvider`,

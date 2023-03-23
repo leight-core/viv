@@ -1,10 +1,6 @@
-import {
-    ISourceSchema,
-    IWithIdentity
-}                   from "@leight/source";
-import {IContext}   from "@leight/trpc";
-import {TokenError} from "@leight/user";
-import {TRPCError}  from "@trpc/server";
+import {type IContext} from "@leight/trpc";
+import {TokenError}    from "@leight/user";
+import {TRPCError}     from "@trpc/server";
 
 export interface IHandlerRequest<TRequest> {
     ctx: IContext;
@@ -78,8 +74,3 @@ export const withHandler = <TRequest, TResponse>(
         }
     };
 };
-
-export const withSourceHandler      = <TSourceSchema extends ISourceSchema>(props: IWithHandlerProps<TSourceSchema["Query"] | undefined, TSourceSchema["Entity"][]>) => withHandler<TSourceSchema["Query"] | undefined, TSourceSchema["Entity"][]>(props);
-export const withSourceCountHandler = <TSourceSchema extends ISourceSchema>(props: IWithHandlerProps<TSourceSchema["Query"] | undefined, number>) => withHandler<TSourceSchema["Query"] | undefined, number>(props);
-export const withFetchHandler       = <TSourceSchema extends ISourceSchema>(props: IWithHandlerProps<TSourceSchema["Query"], TSourceSchema["Entity"]>) => withHandler<TSourceSchema["Query"], TSourceSchema["Entity"]>(props);
-export const withFindHandler        = <TSourceSchema extends ISourceSchema>(props: IWithHandlerProps<IWithIdentity, TSourceSchema["Entity"]>) => withHandler<IWithIdentity, TSourceSchema["Entity"]>(props);

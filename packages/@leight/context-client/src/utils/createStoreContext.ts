@@ -3,6 +3,7 @@ import {
     type IUseOptionalState,
     type IUseState
 }                           from "@leight/context";
+import {isObject}           from "@leight/utils";
 import {
     type IStateCreator,
     type IStoreApi,
@@ -52,7 +53,11 @@ export const createStoreContext = <TStoreProps extends IStoreProps>(
     return {
         Provider: createProvider<TStoreProps>({
             Context,
-            createStore: props => createStore<TStoreProps["StoreProps"]>(($set, $get, $store) => (state(props)($set, $get, $store))),
+            createStore: ({defaults: $defaults, state: $state}) => createStore<TStoreProps["StoreProps"]>(($set, $get, $store) => ({
+                ...isObject($state) ? $state : {},
+                ...state({defaults: $defaults, state: $state})($set, $get, $store),
+                ...$defaults,
+            })),
         }),
         useState:         createUseState(Context, name, hint),
         useOptionalState: createOptionalUseState(Context),
