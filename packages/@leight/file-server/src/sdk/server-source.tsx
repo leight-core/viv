@@ -1,4 +1,7 @@
-// Generated file
+/**
+ Source code containing implementation of Server-side Source for File, TRPC router part (if no disabled) and
+ some other cool stuff.
+ */
 import {
     type IContainer,
     ServiceContext
@@ -24,7 +27,7 @@ import {withSourceProcedure} from "@leight/trpc-source-server";
 type IEntity = IFileSourceSchema["Entity"];
 type IQuery = IFileSourceSchema["Query"];
 
-export class FileSource extends AbstractSource<IFileSourceSchema> implements IFileSource {
+export class FileBaseSource extends AbstractSource<IFileSourceSchema> {
     static inject = [
         $PrismaClient,
     ];
@@ -58,6 +61,9 @@ export class FileSource extends AbstractSource<IFileSourceSchema> implements IFi
     prisma() {
         return this.prismaClient.file;
     }
+}
+
+export class FileSource extends FileBaseSource implements IFileSource {
 }
 
 export const FileSourceContext   = (container: IContainer) => new ServiceContext<IFileSource>(container, $FileSource);

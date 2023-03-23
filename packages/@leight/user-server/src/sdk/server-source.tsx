@@ -1,4 +1,7 @@
-// Generated file
+/**
+ Source code containing implementation of Server-side Source for User, TRPC router part (if no disabled) and
+ some other cool stuff.
+ */
 import {
     type IContainer,
     ServiceContext
@@ -18,11 +21,12 @@ import {
     type IUserSource,
     type IUserSourceSchema
 }                       from "@leight/user";
+import {UserSourceEx}   from "../source";
 
 type IEntity = IUserSourceSchema["Entity"];
 type IQuery = IUserSourceSchema["Query"];
 
-export class UserSource extends AbstractSource<IUserSourceSchema> implements IUserSource {
+export class UserBaseSource extends AbstractSource<IUserSourceSchema> {
     static inject = [
         $PrismaClient,
     ];
@@ -56,6 +60,9 @@ export class UserSource extends AbstractSource<IUserSourceSchema> implements IUs
     prisma() {
         return this.prismaClient.user;
     }
+}
+
+export class UserSource extends UserSourceEx implements IUserSource {
 }
 
 export const UserSourceContext = (container: IContainer) => new ServiceContext<IUserSource>(container, $UserSource);

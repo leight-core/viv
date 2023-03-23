@@ -1,5 +1,15 @@
 # @leight/file-server
 
+## 0.5.49
+
+### Patch Changes
+
+- Improved generator
+- Improved generator, enabled extensions, fixed UserSource
+- Updated dependencies
+- Updated dependencies
+    - @leight/file@0.5.48
+
 ## 0.5.48
 
 ### Patch Changes

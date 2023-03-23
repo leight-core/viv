@@ -24,7 +24,7 @@ export interface IWithTypes {
 }
 
 export interface IInterface {
-    extends?: string;
+    extends?: IPackageType[];
     body?: string;
 }
 
@@ -57,7 +57,7 @@ export interface IPackageType {
      */
     type: string;
     /**
-     * Where it comes from
+     * Where it comes from; if not specified, it should refer to an existing type in current package
      */
-    package: string;
+    package?: string;
 }

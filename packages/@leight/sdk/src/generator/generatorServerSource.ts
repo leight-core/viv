@@ -1,3 +1,4 @@
+import {IPackageType}    from "@leight/generator";
 import {withSourceFile}  from "@leight/generator-server";
 import {normalize}       from "node:path";
 import {type IGenerator} from "../api";
@@ -17,6 +18,11 @@ export interface IGeneratorServerSourceParams {
      */
     prismaModel: string;
     disabled?: ("trpc-procedure")[];
+    /**
+     * Optional extension of the source (if there are some custom methods)
+     */
+    sourceEx?: IPackageType;
+    header?: string;
 }
 
 export const generatorServerSource: IGenerator<IGeneratorServerSourceParams> = async (
@@ -29,9 +35,15 @@ export const generatorServerSource: IGenerator<IGeneratorServerSourceParams> = a
                     prismaPackage,
                     prismaModel,
                     disabled = [],
+                    sourceEx,
+                    header,
                 },
     }) => {
     withSourceFile()
+        .withHeader(`
+    Source code containing implementation of Server-side Source for ${modelName}, TRPC router part (if no disabled) and
+    some other cool stuff.
+        `)
         .withImports({
             imports: {
                 "@leight/container":     [
@@ -73,6 +85,11 @@ export const generatorServerSource: IGenerator<IGeneratorServerSourceParams> = a
                 ],
             },
         })
+        .withImports(sourceEx?.package ? {
+            imports: {
+                [sourceEx.package]: [sourceEx.type],
+            },
+        } : undefined)
         .withConsts({
             exports: {
                 [`${modelName}SourceContext`]: {
@@ -100,10 +117,9 @@ withSourceProcedure<I${modelName}SourceSchema>({
         })
         .withClasses({
             exports: {
-                [`${modelName}Source`]: {
-                    extends:    `AbstractSource<I${modelName}SourceSchema>`,
-                    implements: `I${modelName}Source`,
-                    body:       `
+                [`${modelName}BaseSource`]: {
+                    extends: `AbstractSource<I${modelName}SourceSchema>`,
+                    body:    `
     static inject = [
         $PrismaClient,
     ];
@@ -138,8 +154,12 @@ withSourceProcedure<I${modelName}SourceSchema>({
         return this.prismaClient.${prismaModel};
     }
                     `,
+                },
+                [`${modelName}Source`]:     {
+                    extends:    sourceEx?.type ? sourceEx.type : `${modelName}BaseSource`,
+                    implements: `I${modelName}Source`,
                 }
-            }
+            },
         })
         .saveTo({
             file: normalize(`${process.cwd()}/${file}`),

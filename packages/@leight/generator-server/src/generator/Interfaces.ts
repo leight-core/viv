@@ -15,9 +15,11 @@ export class Interface implements IExportable {
     }
 
     public export() {
-        const body = this.code.body?.trim() || "";
+        const body     = this.code.body?.trim() || "";
+        const $extends = this.code.extends?.map(({type}) => type.trim()).join(", ");
+
         return `
-${this.isExported ? "export" : ""} interface ${this.name}${this.code.extends ? ` extends ${this.code.extends.trim()}` : ""} {${body.length > 0 ? `\n${body}` : ""}\n}
+${this.isExported ? "export" : ""} interface ${this.name}${$extends ? ` extends ${$extends}` : ""} {${body.length > 0 ? `\n${body}` : ""}\n}
 `;
     }
 }

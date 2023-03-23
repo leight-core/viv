@@ -9,4 +9,8 @@ void withSdk(withServerSourceGenerators({
     prismaPackage: "@leight/prisma",
     prismaModel:   "user",
     disabled:      ["trpc-procedure"],
+    sourceEx:      {
+        type:    "UserSourceEx",
+        package: "../source",
+    },
 }));

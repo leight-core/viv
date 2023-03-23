@@ -20,6 +20,9 @@ export const generatorClientContext: IGenerator<IGeneratorClientContextParams> =
                 }
     }) => {
     withSourceFile()
+        .withHeader(`
+    Source code containig improved Zustand store stuff for Source support (client-side).
+        `)
         .withImports({
             imports: {
                 "@leight/source-client": [

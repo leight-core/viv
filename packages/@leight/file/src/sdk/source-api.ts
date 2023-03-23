@@ -1,4 +1,6 @@
-// Generated file
+/**
+ Source code of the common stuff for File which could be shared between server and client side.
+ */
 import {type IUseQuery} from "@leight/react-query";
 import {
     type ISource,

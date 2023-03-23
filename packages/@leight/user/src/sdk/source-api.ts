@@ -1,10 +1,13 @@
-// Generated file
-import {type IUseQuery} from "@leight/react-query";
+/**
+ Source code of the common stuff for User which could be shared between server and client side.
+ */
+import {type IUseQuery}     from "@leight/react-query";
 import {
     type ISource,
     type ISourceSchema,
     type IWithIdentity
-}                       from "@leight/source";
+}                           from "@leight/source";
+import {type IUserSourceEx} from "../api";
 import {
     type IUserCreateSchema,
     type IUserFilterSchema,
@@ -12,12 +15,12 @@ import {
     type IUserPatchSchema,
     type IUserSchema,
     type IUserSortSchema
-}                       from "./entity-schema";
+}                           from "./entity-schema";
 
 export type IUseUserFetchQuery = IUseQuery<IUserSourceSchema["Query"], IUserSourceSchema["Entity"]>;
 export type IUseUserFindQuery = IUseQuery<IWithIdentity, IUserSourceSchema["Entity"]>;
 
-export interface IUserSource extends ISource<IUserSourceSchema> {
+export interface IUserSource extends ISource<IUserSourceSchema>, IUserSourceEx {
 }
 
 export interface IUserSourceSchema extends ISourceSchema<

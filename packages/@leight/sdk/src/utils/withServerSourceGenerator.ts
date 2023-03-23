@@ -20,6 +20,7 @@ export const withServerSourceGenerators = (
         prismaPackage,
         prismaModel,
         disabled,
+        sourceEx,
     }: IWithServerSourceGeneratorsProps) => {
     if (!packageName) {
         throw new Error("Cannot resolve packageName");
@@ -36,6 +37,7 @@ export const withServerSourceGenerators = (
                 prismaPackage,
                 prismaModel,
                 disabled,
+                sourceEx,
             }
         }),
     ];

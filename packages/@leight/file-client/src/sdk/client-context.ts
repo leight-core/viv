@@ -1,4 +1,6 @@
-// Generated file
+/**
+ Source code containig improved Zustand store stuff for Source support (client-side).
+ */
 import {
     FileSchema,
     FileSortSchema,

@@ -53,7 +53,7 @@ export const generatorEntitySchema: IGenerator<IGeneratorEntitySchemaParams> = a
                 ],
             },
         })
-        .withImports(schemaEx?.model ? {
+        .withImports(schemaEx?.model?.package ? {
             imports: {
                 [schemaEx.model.package]: [
                     schemaEx.model.type,

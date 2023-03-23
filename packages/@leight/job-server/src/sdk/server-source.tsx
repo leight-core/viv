@@ -1,4 +1,7 @@
-// Generated file
+/**
+ Source code containing implementation of Server-side Source for Job, TRPC router part (if no disabled) and
+ some other cool stuff.
+ */
 import {
     type IContainer,
     ServiceContext
@@ -24,7 +27,7 @@ import {withSourceProcedure} from "@leight/trpc-source-server";
 type IEntity = IJobSourceSchema["Entity"];
 type IQuery = IJobSourceSchema["Query"];
 
-export class JobSource extends AbstractSource<IJobSourceSchema> implements IJobSource {
+export class JobBaseSource extends AbstractSource<IJobSourceSchema> {
     static inject = [
         $PrismaClient,
     ];
@@ -58,6 +61,9 @@ export class JobSource extends AbstractSource<IJobSourceSchema> implements IJobS
     prisma() {
         return this.prismaClient.job;
     }
+}
+
+export class JobSource extends JobBaseSource implements IJobSource {
 }
 
 export const JobSourceContext   = (container: IContainer) => new ServiceContext<IJobSource>(container, $JobSource);

@@ -1,5 +1,15 @@
 # @leight/user-server
 
+## 0.5.53
+
+### Patch Changes
+
+- Improved generator
+- Improved generator, enabled extensions, fixed UserSource
+- Updated dependencies
+- Updated dependencies
+    - @leight/user@0.5.51
+
 ## 0.5.52
 
 ### Patch Changes

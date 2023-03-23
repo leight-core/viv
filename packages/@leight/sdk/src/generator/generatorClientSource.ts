@@ -64,10 +64,14 @@ export const generatorClientSource: IGenerator<IGeneratorClientSourceParams> = a
         .withInterfaces((trpcPackage && trpcPath) ? {
             exports: {
                 [`I${modelName}SourceProps`]:        {
-                    extends: `ISourceProps<I${modelName}SourceSchema>`,
+                    extends: [
+                        {type: `ISourceProps<I${modelName}SourceSchema>`},
+                    ],
                 },
                 [`I${modelName}QueryProviderProps`]: {
-                    extends: `IQueryProviderProps<I${modelName}SourceSchema>`,
+                    extends: [
+                        {type: `IQueryProviderProps<I${modelName}SourceSchema>`},
+                    ],
                 },
             },
         } : undefined)

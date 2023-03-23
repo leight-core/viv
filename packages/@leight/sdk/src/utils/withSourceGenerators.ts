@@ -2,11 +2,13 @@ import {resolvePackageJson} from "@leight/utils-server";
 import {
     generatorEntitySchema,
     generatorSourceApi,
-    IGeneratorEntitySchemaParams
+    type IGeneratorEntitySchemaParams,
+    type IGeneratorSourceApiParams
 }                           from "../generator";
 
 export type IWithSourceGeneratorsProps =
     IGeneratorEntitySchemaParams
+    & IGeneratorSourceApiParams
     & {
         packageName?: string;
         sdk?: string;
@@ -20,6 +22,7 @@ export const withSourceGenerators = (
         PrismaSchema,
         schemaEx,
         sorts,
+        sourceEx,
     }: IWithSourceGeneratorsProps) => {
     if (!packageName) {
         throw new Error("Cannot resolve packageName");
@@ -45,6 +48,7 @@ export const withSourceGenerators = (
             barrel: true,
             params: {
                 modelName,
+                sourceEx,
             },
         }),
     ];

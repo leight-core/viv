@@ -1,5 +1,12 @@
 # @leight/file
 
+## 0.5.48
+
+### Patch Changes
+
+- Improved generator
+- Improved generator, enabled extensions, fixed UserSource
+
 ## 0.5.47
 
 ### Patch Changes
