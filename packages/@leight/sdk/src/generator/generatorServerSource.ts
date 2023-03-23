@@ -65,6 +65,11 @@ export const generatorServerSource: IGenerator<IGeneratorServerSourceParams> = a
                 ],
             },
         })
+        .withImports(sourceEx?.package ? {
+            imports: {
+                [sourceEx.package]: [sourceEx.type],
+            },
+        } : undefined)
         .withImports(!disabled.includes("trpc-procedure") ? {
             imports: {
                 "@leight/trpc-source-server": [
@@ -150,10 +155,10 @@ withSourceProcedure<I${modelName}SourceSchema>({
     }
                     `,
                 },
-                [`${modelName}Source`]: {
-                    extends:    sourceEx?.type ? (sourceEx.package ? `(await import("${sourceEx.package}")).${sourceEx.type}` : sourceEx.type) : `${modelName}BaseSource`,
+                [`${modelName}Source`]:     {
+                    extends:    sourceEx?.type ? sourceEx.type : `${modelName}BaseSource`,
                     implements: `I${modelName}Source`,
-                }
+                },
             },
         })
         .saveTo({
