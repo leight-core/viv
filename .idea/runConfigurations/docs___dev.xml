@@ -1,9 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="01 - changeset" type="js.build_tools.npm" folderName="change">
-    <package-json value="$PROJECT_DIR$/package.json" />
+  <configuration default="false" name="docs - dev" type="js.build_tools.npm" folderName="docs">
+    <package-json value="$PROJECT_DIR$/nextra/package.json" />
     <command value="run" />
     <scripts>
-      <script value="changeset" />
+      <script value="dev" />
     </scripts>
     <node-interpreter value="project" />
     <envs />

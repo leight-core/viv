@@ -1,0 +1,23 @@
+{
+    "name": "@leight/docs",
+    "version": "0.5.0",
+    "description": "Documentation for Leight Viv",
+    "private": true,
+    "license": "MIT",
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build && next export -o ../docs",
+        "start": "next start"
+    },
+    "dependencies": {
+        "next": "^13.2.4",
+        "nextra": "latest",
+        "nextra-theme-docs": "latest",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@types/node": "^18.15.7",
+        "typescript": "^5.0.2"
+    }
+}
