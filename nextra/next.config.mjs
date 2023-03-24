@@ -4,7 +4,8 @@ export const config = nextra({
     theme:       "nextra-theme-docs",
     themeConfig: "./theme.config.tsx",
 })({
-    images: {
+    basePath: "/viv",
+    images:   {
         unoptimized:    true,
         remotePatterns: [
             {
