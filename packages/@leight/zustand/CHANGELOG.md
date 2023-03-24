@@ -1,5 +1,13 @@
 # @leight/zustand
 
+## 0.5.49
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/utils@0.5.51
+
 ## 0.5.48
 
 ### Patch Changes

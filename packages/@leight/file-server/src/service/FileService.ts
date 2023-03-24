@@ -6,14 +6,11 @@ import {
     type IFileServiceConfig,
     type IFileServiceStoreProps,
     type IFileSource,
-}                       from "@leight/file";
-import {copySync}       from "fs-extra";
-import {detectFileMime} from "mime-detect";
-import fs               from "node:fs";
-import coolPath         from "node:path";
-
-import touch from "touch";
-import {v4}  from "uuid";
+}                   from "@leight/file";
+import {generateId} from "@leight/utils-server";
+import {copySync}   from "fs-extra";
+import fs           from "node:fs";
+import coolPath     from "node:path";
 
 export class FileService implements IFileService {
     static inject = [
@@ -47,12 +44,12 @@ export class FileService implements IFileService {
             mime,
             replace = false,
         }: IFileServiceStoreProps): Promise<IFile> {
-        const id       = v4();
+        const id       = generateId();
         const location = this.pathOf(id);
         fs.mkdirSync(coolPath.dirname(location), {recursive: true});
         file
             ? copySync(file, location, {overwrite: replace})
-            : touch.sync(location);
+            : (await import("touch")).sync(location);
         const data = {
             id,
             location,
@@ -82,10 +79,13 @@ export class FileService implements IFileService {
 
     protected async mimeOf(file?: string): Promise<string> {
         if (!file) {
-            return "application/octet-stream";
+            return (
+                this.fileServiceConfig.defaultMimeType ||
+                "application/octet-stream"
+            );
         }
         try {
-            return await detectFileMime(file);
+            return await (await import("mime-detect")).detectFileMime(file);
         } catch (e) {
             return (
                 this.fileServiceConfig.defaultMimeType ||

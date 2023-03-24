@@ -1,5 +1,11 @@
 # @leight/react-query
 
+## 0.5.12
+
+### Patch Changes
+
+- Version bump
+
 ## 0.5.11
 
 ### Patch Changes

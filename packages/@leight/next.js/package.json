@@ -1,5 +1,5 @@
 {
-    "version": "0.5.14",
+    "version": "0.5.15",
     "name": "@leight/next.js",
     "description": "Common next.js stuff.",
     "license": "MIT",
@@ -28,18 +28,18 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "^0.5.49",
-        "@leight/user": "^0.5.54",
-        "@leight/utils": "^0.5.50",
+        "@leight/container": "^0.5.50",
+        "@leight/user": "^0.5.56",
+        "@leight/utils": "^0.5.51",
         "next": "^13.2.4",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.27",
-        "@leight/eslint-config-eslint": "^0.5.36",
-        "@leight/tsconfig": "^0.5.50",
-        "@leight/turbowatch": "^0.5.15",
+        "@leight/esbuild": "^0.5.28",
+        "@leight/eslint-config-eslint": "^0.5.37",
+        "@leight/tsconfig": "^0.5.51",
+        "@leight/turbowatch": "^0.5.16",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
