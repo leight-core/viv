@@ -1,0 +1,13 @@
+{
+    "*": {
+        "type": "page"
+    },
+    "index": "Home",
+    "docs": "Docs",
+    "about": {
+        "title": "About",
+        "theme": {
+            "typesetting": "article"
+        }
+    }
+}

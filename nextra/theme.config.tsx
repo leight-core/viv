@@ -14,9 +14,20 @@ const config: DocsThemeConfig = {
     project:            {
         link: "https://github.com/leight-core/viv",
     },
-    docsRepositoryBase: "https://github.com/leight-core/viv",
+    docsRepositoryBase: "https://github.com/leight-core/viv/tree/main/nextra",
     footer:             {
-        text: "Leight Viv Documentation",
+        text: "Project Leight Viv Documentation",
+    },
+    sidebar:            {
+        defaultMenuCollapseLevel: 1,
+        toggleButton:             true,
+    },
+    banner:             {
+        key:  "wip",
+        text: "This documentation is still work in progress, so be please patient."
+    },
+    toc:                {
+        float: true,
     },
 };
 
