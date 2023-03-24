@@ -1,5 +1,16 @@
 # @leight/sdk
 
+## 0.5.5
+
+### Patch Changes
+
+- Version buuuuuuump
+- Updated dependencies
+    - @leight/generator@0.5.3
+    - @leight/generator-server@0.5.4
+    - @leight/utils@0.5.50
+    - @leight/utils-server@0.5.47
+
 ## 0.5.4
 
 ### Patch Changes

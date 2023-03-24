@@ -30,9 +30,14 @@
             ]
         },
         "init": {
-            "cache": false,
             "dependsOn": [
                 "^init"
+            ],
+            "outputs": [
+                "lib/**"
+            ],
+            "inputs": [
+                "src/**"
             ]
         },
         "build": {

@@ -1,5 +1,14 @@
 # @leight/calendar-client
 
+## 0.5.3
+
+### Patch Changes
+
+- Version buuuuuuump
+- Updated dependencies
+    - @leight/context-client@0.5.55
+    - @leight/zustand@0.5.48
+
 ## 0.5.2
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @leight/container-server
 
+## 0.5.47
+
+### Patch Changes
+
+- Version buuuuuuump
+- Updated dependencies
+    - @leight/file-server@0.5.52
+    - @leight/user-server@0.5.56
+    - @leight/job-server@0.5.53
+    - @leight/container@0.5.49
+    - @leight/import-server@0.5.47
+    - @leight/xlsx-import-server@0.5.47
+
 ## 0.5.46
 
 ### Patch Changes

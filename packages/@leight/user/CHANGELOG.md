@@ -1,5 +1,19 @@
 # @leight/user
 
+## 0.5.54
+
+### Patch Changes
+
+- Version buuuuuuump
+- Updated dependencies
+    - @leight/container@0.5.49
+    - @leight/filter@0.5.44
+    - @leight/prisma@0.5.60
+    - @leight/query@0.5.48
+    - @leight/react-query@0.5.11
+    - @leight/sort@0.5.45
+    - @leight/source@0.5.48
+
 ## 0.5.53
 
 ### Patch Changes

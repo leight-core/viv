@@ -2,7 +2,7 @@ import {
     type IUserSourceEx,
     type IUserSourceSchema
 }                       from "@leight/user";
-import {UserBaseSource} from "../sdk";
+import {UserBaseSource} from "../sdk/ServerBaseSource";
 
 export class UserSourceEx extends UserBaseSource implements IUserSourceEx {
     public findByEmail(email: string): Promise<IUserSourceSchema["Entity"]> {

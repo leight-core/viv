@@ -1,5 +1,14 @@
 # @leight/sort
 
+## 0.5.45
+
+### Patch Changes
+
+- Version buuuuuuump
+- Updated dependencies
+    - @leight/context@0.5.11
+    - @leight/zustand@0.5.48
+
 ## 0.5.44
 
 ### Patch Changes

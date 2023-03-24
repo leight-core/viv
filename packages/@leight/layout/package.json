@@ -1,5 +1,5 @@
 {
-    "version": "0.5.47",
+    "version": "0.5.48",
     "name": "@leight/layout",
     "description": "Layout related stuff.",
     "license": "MIT",
@@ -31,10 +31,10 @@
         "react": "^18.2.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.26",
-        "@leight/eslint-config-eslint": "^0.5.35",
-        "@leight/tsconfig": "^0.5.49",
-        "@leight/turbowatch": "^0.5.14",
+        "@leight/esbuild": "^0.5.27",
+        "@leight/eslint-config-eslint": "^0.5.36",
+        "@leight/tsconfig": "^0.5.50",
+        "@leight/turbowatch": "^0.5.15",
         "@types/node": "^18.15.0",
         "@types/react": "^18.0.28",
         "concurrently": "^7.6.0",

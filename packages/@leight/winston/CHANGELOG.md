@@ -1,5 +1,11 @@
 # @leight/winston
 
+## 0.5.47
+
+### Patch Changes
+
+- Version buuuuuuump
+
 ## 0.5.46
 
 ### Patch Changes
