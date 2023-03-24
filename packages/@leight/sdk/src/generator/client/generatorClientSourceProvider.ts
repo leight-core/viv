@@ -82,7 +82,7 @@ useCountQuery: IUse${entity}CountQuery;
         schema={${entity}Schema}
         SourceProvider={${entity}Provider}
         useSortState={use${entity}Sort}
-        ${trpc ? `useSourceQuery={trpc.${trpc.path}.source.query.useQuery}\n` : ""}{...props}
+        ${trpc ? `useSourceQuery={trpc.${trpc.path}.source.query.useQuery}\n` : "\t\t"}{...props}
     />;
 }
                     `,
@@ -92,7 +92,7 @@ useCountQuery: IUse${entity}CountQuery;
                     body: `props => {
     return <QueryProvider<I${entity}SourceSchema>
         SortProvider={${entity}SortProvider}
-        ${trpc ? `useCountQuery={trpc.${trpc.path}.source.count.useQuery}\n` : ""}{...props}
+        ${trpc ? `useCountQuery={trpc.${trpc.path}.source.count.useQuery}\n` : "\t\t"}{...props}
     />;
 }
                     `,

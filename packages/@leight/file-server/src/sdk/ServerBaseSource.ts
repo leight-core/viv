@@ -4,7 +4,10 @@
  */
 import {
     $FileSource,
-    type IFileSourceSchema
+    type IFileOrderBy,
+    type IFileSourceSchema,
+    type IFileWhere,
+    type IFileWhereUnique
 }                       from "@leight/file";
 import {
     $PrismaClient,
@@ -17,9 +20,6 @@ import {
 }                       from "@leight/source";
 import {AbstractSource} from "@leight/source-server";
 
-type IEntity = IFileSourceSchema["Entity"];
-type IQuery = IFileSourceSchema["Query"];
-
 export class FileBaseSource extends AbstractSource<IFileSourceSchema> {
     static inject = [
         $PrismaClient,
@@ -31,27 +31,39 @@ export class FileBaseSource extends AbstractSource<IFileSourceSchema> {
         super($FileSource);
     }
 
-    async runUpsert(props: ISource.IUpsert<IFileSourceSchema>): Promise<IEntity> {
+    async runUpsert(props: ISource.IUpsert<IFileSourceSchema>): Promise<IFileSourceSchema["Entity"]> {
         return this.prisma().upsert(withUpsert(props));
     }
 
-    async runCount(query?: IQuery): Promise<number> {
+    async runCount(query?: IFileSourceSchema["Query"]): Promise<number> {
         return this.prisma().count({
-            where: query?.filter,
+            where: this.toWhere(query?.filter),
         });
     }
 
-    async runQuery(query?: IQuery): Promise<IEntity[]> {
+    async runQuery(query?: IFileSourceSchema["Query"]): Promise<IFileSourceSchema["Entity"][]> {
         return this.prisma().findMany(withCursor({
             query,
             arg: {
-                where:   query?.filter,
-                orderBy: query?.sort,
+                where:   this.toWhere(query?.filter),
+                orderBy: this.toOrderBy(query?.sort),
             }
         }));
     }
 
     prisma() {
         return this.prismaClient.file;
+    }
+
+    toWhere(filter?: IFileSourceSchema["Filter"]): IFileWhere | undefined {
+        return undefined;
+    }
+
+    toWhereUnique(filter?: IFileSourceSchema["Filter"]): IFileWhereUnique | undefined {
+        return undefined;
+    }
+
+    toOrderBy(sort?: IFileSourceSchema["Sort"]): IFileOrderBy | undefined {
+        return sort as IFileOrderBy;
     }
 }

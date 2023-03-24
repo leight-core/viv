@@ -1,5 +1,13 @@
 # @leight/file
 
+## 0.5.52
+
+### Patch Changes
+
+- Improved generator
+- Updated dependencies
+    - @leight/prisma@0.5.61
+
 ## 0.5.51
 
 ### Patch Changes

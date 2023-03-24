@@ -40,6 +40,9 @@ export const generatorServerBaseSource: IGenerator<IGeneratorServerParams> = asy
             imports: {
                 [packages.schema]: [
                     `$${entity}Source`,
+                    `type I${entity}Where`,
+                    `type I${entity}WhereUnique`,
+                    `type I${entity}OrderBy`,
                     `type I${entity}SourceSchema`,
                 ],
             },
@@ -50,12 +53,6 @@ export const generatorServerBaseSource: IGenerator<IGeneratorServerParams> = asy
                     "type PrismaClient",
                 ],
             }
-        })
-        .withTypes({
-            types: {
-                "IEntity": `I${entity}SourceSchema["Entity"]`,
-                "IQuery":  `I${entity}SourceSchema["Query"]`,
-            },
         })
         .withClasses({
             exports: {
@@ -72,28 +69,40 @@ export const generatorServerBaseSource: IGenerator<IGeneratorServerParams> = asy
         super($${entity}Source);
     }
 
-    async runUpsert(props: ISource.IUpsert<I${entity}SourceSchema>): Promise<IEntity> {
+    async runUpsert(props: ISource.IUpsert<I${entity}SourceSchema>): Promise<I${entity}SourceSchema["Entity"]> {
         return this.prisma().upsert(withUpsert(props));
     }
 
-    async runCount(query?: IQuery): Promise<number> {
+    async runCount(query?: I${entity}SourceSchema["Query"]): Promise<number> {
         return this.prisma().count({
-            where: query?.filter,
+            where: this.toWhere(query?.filter),
         });
     }
 
-    async runQuery(query?: IQuery): Promise<IEntity[]> {
+    async runQuery(query?: I${entity}SourceSchema["Query"]): Promise<I${entity}SourceSchema["Entity"][]> {
         return this.prisma().findMany(withCursor({
             query,
             arg: {
-                where:   query?.filter,
-                orderBy: query?.sort,
+                where:   this.toWhere(query?.filter),
+                orderBy: this.toOrderBy(query?.sort),
             }
         }));
     }
     
     prisma() {
         return this.prismaClient.${prisma};
+    }
+    
+    toWhere(filter?: I${entity}SourceSchema["Filter"]): I${entity}Where | undefined {
+        return undefined;
+    }
+    
+    toWhereUnique(filter?: I${entity}SourceSchema["Filter"]): I${entity}WhereUnique | undefined {
+        return undefined;
+    }
+    
+    toOrderBy(sort?: I${entity}SourceSchema["Sort"]): I${entity}OrderBy | undefined {
+        return sort as I${entity}OrderBy;
     }
                     `,
                 },

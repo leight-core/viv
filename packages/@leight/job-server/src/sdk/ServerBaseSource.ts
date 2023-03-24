@@ -4,7 +4,10 @@
  */
 import {
     $JobSource,
-    type IJobSourceSchema
+    type IJobOrderBy,
+    type IJobSourceSchema,
+    type IJobWhere,
+    type IJobWhereUnique
 }                       from "@leight/job";
 import {
     $PrismaClient,
@@ -17,9 +20,6 @@ import {
 }                       from "@leight/source";
 import {AbstractSource} from "@leight/source-server";
 
-type IEntity = IJobSourceSchema["Entity"];
-type IQuery = IJobSourceSchema["Query"];
-
 export class JobBaseSource extends AbstractSource<IJobSourceSchema> {
     static inject = [
         $PrismaClient,
@@ -31,27 +31,39 @@ export class JobBaseSource extends AbstractSource<IJobSourceSchema> {
         super($JobSource);
     }
 
-    async runUpsert(props: ISource.IUpsert<IJobSourceSchema>): Promise<IEntity> {
+    async runUpsert(props: ISource.IUpsert<IJobSourceSchema>): Promise<IJobSourceSchema["Entity"]> {
         return this.prisma().upsert(withUpsert(props));
     }
 
-    async runCount(query?: IQuery): Promise<number> {
+    async runCount(query?: IJobSourceSchema["Query"]): Promise<number> {
         return this.prisma().count({
-            where: query?.filter,
+            where: this.toWhere(query?.filter),
         });
     }
 
-    async runQuery(query?: IQuery): Promise<IEntity[]> {
+    async runQuery(query?: IJobSourceSchema["Query"]): Promise<IJobSourceSchema["Entity"][]> {
         return this.prisma().findMany(withCursor({
             query,
             arg: {
-                where:   query?.filter,
-                orderBy: query?.sort,
+                where:   this.toWhere(query?.filter),
+                orderBy: this.toOrderBy(query?.sort),
             }
         }));
     }
 
     prisma() {
         return this.prismaClient.job;
+    }
+
+    toWhere(filter?: IJobSourceSchema["Filter"]): IJobWhere | undefined {
+        return undefined;
+    }
+
+    toWhereUnique(filter?: IJobSourceSchema["Filter"]): IJobWhereUnique | undefined {
+        return undefined;
+    }
+
+    toOrderBy(sort?: IJobSourceSchema["Sort"]): IJobOrderBy | undefined {
+        return sort as IJobOrderBy;
     }
 }

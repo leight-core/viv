@@ -1,5 +1,5 @@
 {
-    "version": "0.5.52",
+    "version": "0.5.53",
     "name": "@leight/file-server",
     "description": "File stuff on server-side.",
     "license": "MIT",
@@ -31,10 +31,10 @@
     },
     "dependencies": {
         "@leight/container": "^0.5.49",
-        "@leight/file": "^0.5.51",
+        "@leight/file": "^0.5.52",
         "@leight/next.js": "^0.5.14",
         "@leight/next.js-server": "^0.5.54",
-        "@leight/prisma": "^0.5.60",
+        "@leight/prisma": "^0.5.61",
         "@leight/query": "^0.5.48",
         "@leight/source": "^0.5.48",
         "@leight/source-server": "^0.5.48",
@@ -43,12 +43,13 @@
         "fs-extra": "^11.1.0",
         "mime-detect": "^1.1.4",
         "touch": "^3.1.0",
-        "uuid": "^9.0.0"
+        "uuid": "^9.0.0",
+        "zod": "3.21.1"
     },
     "devDependencies": {
         "@leight/esbuild": "^0.5.27",
         "@leight/eslint-config-eslint": "^0.5.36",
-        "@leight/sdk": "^0.5.5",
+        "@leight/sdk": "^0.5.6",
         "@leight/tsconfig": "^0.5.50",
         "@leight/turbowatch": "^0.5.15",
         "@types/fs-extra": "^11.0.1",

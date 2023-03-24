@@ -1,5 +1,11 @@
 # @leight/sdk
 
+## 0.5.6
+
+### Patch Changes
+
+- Improved generator
+
 ## 0.5.5
 
 ### Patch Changes

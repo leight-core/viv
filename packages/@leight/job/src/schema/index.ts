@@ -1,7 +1,7 @@
-import {PrismaSchema} from "@leight/prisma";
-import {z}            from "zod";
+import {JobStatusSchema} from "@leight/prisma";
+import {z}               from "zod";
 
-export const JobStatusSchema = PrismaSchema.JobStatusSchema;
+export {JobStatusSchema} from "@leight/prisma";
 export type IJobStatusSchema = typeof JobStatusSchema;
 export type IJobStatus = z.infer<IJobStatusSchema>;
 

@@ -4,7 +4,14 @@
  So, please, DO NOT modify this file as it would get re-generated and you would be f*cked up.
  */
 import {FilterSchema}       from "@leight/filter";
-import {PrismaSchema}       from "@leight/prisma";
+import {
+    FileOptionalDefaultsSchema,
+    FileOrderByWithRelationInputSchema,
+    FilePartialSchema,
+    FileSchema as $EntitySchema,
+    FileWhereInputSchema,
+    FileWhereUniqueInputSchema
+}                           from "@leight/prisma";
 import {
     ParamsSchema,
     QuerySchema
@@ -13,6 +20,12 @@ import {SortOrderSchema}    from "@leight/sort";
 import {WithIdentitySchema} from "@leight/source";
 import {z}                  from "zod";
 
+export type IFileWhereSchema = typeof FileWhereSchema;
+export type IFileWhere = z.infer<IFileWhereSchema>;
+export type IFileWhereUniqueSchema = typeof FileWhereUniqueSchema;
+export type IFileWhereUnique = z.infer<IFileWhereUniqueSchema>;
+export type IFileOrderBySchema = typeof FileOrderBySchema;
+export type IFileOrderBy = z.infer<IFileOrderBySchema>;
 export type IFileSchema = typeof FileSchema;
 export type IFile = z.infer<IFileSchema>;
 export type IFileCreateSchema = typeof FileCreateSchema;
@@ -28,19 +41,22 @@ export type IFileSort = z.infer<IFileSortSchema>;
 export type IFileQuerySchema = typeof FileQuerySchema;
 export type IFileQuery = z.infer<IFileQuerySchema>;
 
-export const FileSchema       = PrismaSchema.FileSchema;
-export const FileCreateSchema = PrismaSchema.FileOptionalDefaultsSchema;
-export const FilePatchSchema  = PrismaSchema.FilePartialSchema.merge(WithIdentitySchema);
-export const FileFilterSchema = z.union([
-    PrismaSchema.FileWhereInputSchema,
-    PrismaSchema.FileWhereUniqueInputSchema,
+export const FileWhereSchema       = FileWhereInputSchema;
+export const FileWhereUniqueSchema = FileWhereUniqueInputSchema;
+export const FileOrderBySchema     = FileOrderByWithRelationInputSchema;
+export const FileSchema            = $EntitySchema;
+export const FileCreateSchema      = FileOptionalDefaultsSchema;
+export const FilePatchSchema       = FilePartialSchema.merge(WithIdentitySchema);
+export const FileFilterSchema      = z.union([
+    FileWhereSchema,
+    FileWhereUniqueSchema,
     FilterSchema,
 ]);
-export const FileParamSchema  = ParamsSchema;
-export const FileSortSchema   = z.object({
+export const FileParamSchema       = ParamsSchema;
+export const FileSortSchema        = z.object({
     id: SortOrderSchema
 });
-export const FileQuerySchema  = QuerySchema({
+export const FileQuerySchema       = QuerySchema({
     filterSchema: FileFilterSchema,
     sortSchema:   FileSortSchema,
     paramsSchema: FileParamSchema,

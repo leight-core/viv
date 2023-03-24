@@ -4,7 +4,14 @@
  So, please, DO NOT modify this file as it would get re-generated and you would be f*cked up.
  */
 import {FilterSchema}       from "@leight/filter";
-import {PrismaSchema}       from "@leight/prisma";
+import {
+    UserOptionalDefaultsSchema,
+    UserOrderByWithRelationInputSchema,
+    UserPartialSchema,
+    UserSchema as $EntitySchema,
+    UserWhereInputSchema,
+    UserWhereUniqueInputSchema
+}                           from "@leight/prisma";
 import {
     ParamsSchema,
     QuerySchema
@@ -13,6 +20,12 @@ import {SortOrderSchema}    from "@leight/sort";
 import {WithIdentitySchema} from "@leight/source";
 import {z}                  from "zod";
 
+export type IUserWhereSchema = typeof UserWhereSchema;
+export type IUserWhere = z.infer<IUserWhereSchema>;
+export type IUserWhereUniqueSchema = typeof UserWhereUniqueSchema;
+export type IUserWhereUnique = z.infer<IUserWhereUniqueSchema>;
+export type IUserOrderBySchema = typeof UserOrderBySchema;
+export type IUserOrderBy = z.infer<IUserOrderBySchema>;
 export type IUserSchema = typeof UserSchema;
 export type IUser = z.infer<IUserSchema>;
 export type IUserCreateSchema = typeof UserCreateSchema;
@@ -28,19 +41,22 @@ export type IUserSort = z.infer<IUserSortSchema>;
 export type IUserQuerySchema = typeof UserQuerySchema;
 export type IUserQuery = z.infer<IUserQuerySchema>;
 
-export const UserSchema       = PrismaSchema.UserSchema;
-export const UserCreateSchema = PrismaSchema.UserOptionalDefaultsSchema;
-export const UserPatchSchema  = PrismaSchema.UserPartialSchema.merge(WithIdentitySchema);
-export const UserFilterSchema = z.union([
-    PrismaSchema.UserWhereInputSchema,
-    PrismaSchema.UserWhereUniqueInputSchema,
+export const UserWhereSchema       = UserWhereInputSchema;
+export const UserWhereUniqueSchema = UserWhereUniqueInputSchema;
+export const UserOrderBySchema     = UserOrderByWithRelationInputSchema;
+export const UserSchema            = $EntitySchema;
+export const UserCreateSchema      = UserOptionalDefaultsSchema;
+export const UserPatchSchema       = UserPartialSchema.merge(WithIdentitySchema);
+export const UserFilterSchema      = z.union([
+    UserWhereSchema,
+    UserWhereUniqueSchema,
     FilterSchema,
 ]);
-export const UserParamSchema  = ParamsSchema;
-export const UserSortSchema   = z.object({
+export const UserParamSchema       = ParamsSchema;
+export const UserSortSchema        = z.object({
     id: SortOrderSchema
 });
-export const UserQuerySchema  = QuerySchema({
+export const UserQuerySchema       = QuerySchema({
     filterSchema: UserFilterSchema,
     sortSchema:   UserSortSchema,
     paramsSchema: UserParamSchema,

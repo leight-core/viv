@@ -18,7 +18,12 @@ export const generatorCommonEntitySchema: IGenerator<IGeneratorCommonParams> = a
         .withImports({
             imports: {
                 [packages.prisma]: [
-                    "PrismaSchema",
+                    `${entity}Schema as $EntitySchema`,
+                    `${entity}OptionalDefaultsSchema`,
+                    `${entity}PartialSchema`,
+                    `${entity}WhereInputSchema`,
+                    `${entity}WhereUniqueInputSchema`,
+                    `${entity}OrderByWithRelationInputSchema`,
                 ],
                 "@leight/filter":  [
                     "FilterSchema",
@@ -47,13 +52,32 @@ export const generatorCommonEntitySchema: IGenerator<IGeneratorCommonParams> = a
         } : undefined)
         .withConsts({
             exports: {
-                [`${entity}Schema`]:       {body: schemaEx?.entity ? `PrismaSchema.${entity}Schema.merge(${schemaEx.entity.type})` : `PrismaSchema.${entity}Schema`},
-                [`${entity}CreateSchema`]: {body: `PrismaSchema.${entity}OptionalDefaultsSchema`},
-                [`${entity}PatchSchema`]:  {body: `PrismaSchema.${entity}PartialSchema.merge(WithIdentitySchema)`},
+                [`${entity}WhereSchema`]:       {body: `${entity}WhereInputSchema`},
+                [`${entity}WhereUniqueSchema`]: {body: `${entity}WhereUniqueInputSchema`},
+                [`${entity}OrderBySchema`]:     {body: `${entity}OrderByWithRelationInputSchema`},
+            },
+        })
+        .withTypes({
+            exports: {
+                [`I${entity}WhereSchema`]: `typeof ${entity}WhereSchema`,
+                [`I${entity}Where`]:       `z.infer<I${entity}WhereSchema>`,
+
+                [`I${entity}WhereUniqueSchema`]: `typeof ${entity}WhereUniqueSchema`,
+                [`I${entity}WhereUnique`]:       `z.infer<I${entity}WhereUniqueSchema>`,
+
+                [`I${entity}OrderBySchema`]: `typeof ${entity}OrderBySchema`,
+                [`I${entity}OrderBy`]:       `z.infer<I${entity}OrderBySchema>`,
+            }
+        })
+        .withConsts({
+            exports: {
+                [`${entity}Schema`]:       {body: schemaEx?.entity ? `$EntitySchema.merge(${schemaEx.entity.type})` : "$EntitySchema"},
+                [`${entity}CreateSchema`]: {body: `${entity}OptionalDefaultsSchema`},
+                [`${entity}PatchSchema`]:  {body: `${entity}PartialSchema.merge(WithIdentitySchema)`},
                 [`${entity}FilterSchema`]: {
                     body: `z.union([
-    PrismaSchema.${entity}WhereInputSchema,
-    PrismaSchema.${entity}WhereUniqueInputSchema,
+    ${entity}WhereSchema,
+    ${entity}WhereUniqueSchema,
     FilterSchema,
 ])
                     `,

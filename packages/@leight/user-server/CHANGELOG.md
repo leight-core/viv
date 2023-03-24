@@ -1,5 +1,14 @@
 # @leight/user-server
 
+## 0.5.57
+
+### Patch Changes
+
+- Improved generator
+- Updated dependencies
+    - @leight/prisma@0.5.61
+    - @leight/user@0.5.55
+
 ## 0.5.56
 
 ### Patch Changes

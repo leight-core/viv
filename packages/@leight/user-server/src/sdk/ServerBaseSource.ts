@@ -14,11 +14,11 @@ import {
 import {AbstractSource} from "@leight/source-server";
 import {
     $UserSource,
-    type IUserSourceSchema
+    type IUserOrderBy,
+    type IUserSourceSchema,
+    type IUserWhere,
+    type IUserWhereUnique
 }                       from "@leight/user";
-
-type IEntity = IUserSourceSchema["Entity"];
-type IQuery = IUserSourceSchema["Query"];
 
 export class UserBaseSource extends AbstractSource<IUserSourceSchema> {
     static inject = [
@@ -31,27 +31,39 @@ export class UserBaseSource extends AbstractSource<IUserSourceSchema> {
         super($UserSource);
     }
 
-    async runUpsert(props: ISource.IUpsert<IUserSourceSchema>): Promise<IEntity> {
+    async runUpsert(props: ISource.IUpsert<IUserSourceSchema>): Promise<IUserSourceSchema["Entity"]> {
         return this.prisma().upsert(withUpsert(props));
     }
 
-    async runCount(query?: IQuery): Promise<number> {
+    async runCount(query?: IUserSourceSchema["Query"]): Promise<number> {
         return this.prisma().count({
-            where: query?.filter,
+            where: this.toWhere(query?.filter),
         });
     }
 
-    async runQuery(query?: IQuery): Promise<IEntity[]> {
+    async runQuery(query?: IUserSourceSchema["Query"]): Promise<IUserSourceSchema["Entity"][]> {
         return this.prisma().findMany(withCursor({
             query,
             arg: {
-                where:   query?.filter,
-                orderBy: query?.sort,
+                where:   this.toWhere(query?.filter),
+                orderBy: this.toOrderBy(query?.sort),
             }
         }));
     }
 
     prisma() {
         return this.prismaClient.user;
+    }
+
+    toWhere(filter?: IUserSourceSchema["Filter"]): IUserWhere | undefined {
+        return undefined;
+    }
+
+    toWhereUnique(filter?: IUserSourceSchema["Filter"]): IUserWhereUnique | undefined {
+        return undefined;
+    }
+
+    toOrderBy(sort?: IUserSourceSchema["Sort"]): IUserOrderBy | undefined {
+        return sort as IUserOrderBy;
     }
 }
