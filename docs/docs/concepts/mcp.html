@@ -1,37 +1,46 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><title>Managed Code Pattern – Nextra</title><meta name="robots" content="index,follow"/><meta property="og:title" content="Managed Code Pattern – Nextra"/><meta name="theme-color" content="#111" media="(prefers-color-scheme: dark)"/><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/><style>
-    :root {
-        --nextra-primary-hue: 212deg;
-        --nextra-navbar-height: 4rem;
-        --nextra-menu-height: 3.75rem;
-        --nextra-banner-height: 2.5rem;
-    }
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charSet="utf-8"/>
+        <title>Managed Code Pattern – Nextra</title>
+        <meta name="robots" content="index,follow"/>
+        <meta property="og:title" content="Managed Code Pattern – Nextra"/>
+        <meta name="theme-color" content="#111" media="(prefers-color-scheme: dark)"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+        <style>
+            :root {
+                --nextra-primary-hue: 212deg;
+                --nextra-navbar-height: 4rem;
+                --nextra-menu-height: 3.75rem;
+                --nextra-banner-height: 2.5rem;
+            }
 
-    .dark {
-        --nextra-primary-hue: 204deg;
-    }
-</style>
-    <meta name="msapplication-TileColor" content="#fff"/>
-    <meta http-equiv="Content-Language" content="en"/>
-    <meta name="description" content="Nextra: the next docs builder"/>
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:site" content="@shuding_"/>
-    <meta property="og:title" content="Nextra: the next docs builder"/>
-    <meta property="og:description" content="Nextra: the next docs builder"/>
-    <meta name="apple-mobile-web-app-title" content="Nextra"/>
-    <meta name="next-head-count" content="15"/>
-    <link rel="preload" href="/viv/_next/static/css/0dadcc82f3eb59d9.css" as="style"/>
-    <link rel="stylesheet" href="/viv/_next/static/css/0dadcc82f3eb59d9.css" data-n-p=""/>
-    <noscript data-n-css=""></noscript>
-    <script defer="" nomodule="" src="/viv/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script>
-    <script src="/viv/_next/static/chunks/webpack-90577a04377c6e10.js" defer=""></script>
-    <script src="/viv/_next/static/chunks/framework-2c79e2a64abdb08b.js" defer=""></script>
-    <script src="/viv/_next/static/chunks/main-8d0d05aa2a82ee43.js" defer=""></script>
-    <script src="/viv/_next/static/chunks/pages/_app-aea6920bd27938ca.js" defer=""></script>
-    <script src="/viv/_next/static/chunks/242-06970b42c5f2844b.js" defer=""></script>
-    <script src="/viv/_next/static/chunks/pages/docs/concepts/mcp-16e930f25cc1bbf9.js" defer=""></script>
-    <script src="/viv/_next/static/7Ip1HERPjWyGXA8yv2zKK/_buildManifest.js" defer=""></script>
-    <script src="/viv/_next/static/7Ip1HERPjWyGXA8yv2zKK/_ssgManifest.js" defer=""></script>
-</head>
+            .dark {
+                --nextra-primary-hue: 204deg;
+            }
+        </style>
+        <meta name="msapplication-TileColor" content="#fff"/>
+        <meta http-equiv="Content-Language" content="en"/>
+        <meta name="description" content="Nextra: the next docs builder"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:site" content="@shuding_"/>
+        <meta property="og:title" content="Nextra: the next docs builder"/>
+        <meta property="og:description" content="Nextra: the next docs builder"/>
+        <meta name="apple-mobile-web-app-title" content="Nextra"/>
+        <meta name="next-head-count" content="15"/>
+        <link rel="preload" href="/viv/_next/static/css/0dadcc82f3eb59d9.css" as="style"/>
+        <link rel="stylesheet" href="/viv/_next/static/css/0dadcc82f3eb59d9.css" data-n-p=""/>
+        <noscript data-n-css=""></noscript>
+        <script defer="" nomodule="" src="/viv/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script>
+        <script src="/viv/_next/static/chunks/webpack-90577a04377c6e10.js" defer=""></script>
+        <script src="/viv/_next/static/chunks/framework-2c79e2a64abdb08b.js" defer=""></script>
+        <script src="/viv/_next/static/chunks/main-8d0d05aa2a82ee43.js" defer=""></script>
+        <script src="/viv/_next/static/chunks/pages/_app-aea6920bd27938ca.js" defer=""></script>
+        <script src="/viv/_next/static/chunks/242-06970b42c5f2844b.js" defer=""></script>
+        <script src="/viv/_next/static/chunks/pages/docs/concepts/mcp-16e930f25cc1bbf9.js" defer=""></script>
+        <script src="/viv/_next/static/ESU1fIEkhgZ6JGomQwUAr/_buildManifest.js" defer=""></script>
+        <script src="/viv/_next/static/ESU1fIEkhgZ6JGomQwUAr/_ssgManifest.js" defer=""></script>
+    </head>
     <body>
         <div id="__next">
             <script>!function () {
@@ -478,15 +487,25 @@
                             <p class="nx-mt-6 nx-leading-7 first:nx-mt-0">That&#x27;s the reason why I&#x27;ve come with this name: <em>Managed Code Pattern</em> means you have small input definition on top of which is generated some bigger
                                                                           piece of
                                                                           code which is <strong>not</strong> directly under your control.</p>
-<p class="nx-mt-6 nx-leading-7 first:nx-mt-0">For example, Prisma does this. Zod schema generator for Prisma does this. Leight does this for generating <a class="nx-text-primary-600 nx-underline nx-decoration-from-font [text-underline-position:from-font]" href="/viv/docs/concepts/source">Sources</a> and a lot of other stuff.</p>
-<h2 class="nx-font-semibold nx-tracking-tight nx-text-slate-900 dark:nx-text-slate-100 nx-mt-10 nx-border-b nx-pb-1 nx-text-3xl nx-border-neutral-200/70 contrast-more:nx-border-neutral-400 dark:nx-border-primary-100/10 contrast-more:dark:nx-border-neutral-400">Reason<span class="nx-absolute -nx-mt-20" id="reason"></span><a href="#reason" class="subheading-anchor" aria-label="Permalink for this section"></a></h2>
-<p class="nx-mt-6 nx-leading-7 first:nx-mt-0">Read-only generated code managed by some library. You&#x27;re isolated of internal changes, internal implementation, but you cas still alter behavior of the stuff.
-With this it&#x27;s much simpler to add new features, extends current things or fix bugs. Because you <strong>cannot</strong> alter the code, generator (thus <em>managed</em> piece of code) can
-do <strong>whatever it wants</strong> - it will not break anything of yours.</p>
-<p class="nx-mt-6 nx-leading-7 first:nx-mt-0">Because of generator presence, things are made in standard, predicable way, so you <strong>know</strong> what to expect. All callbacks retrieving data accepts <a class="nx-text-primary-600 nx-underline nx-decoration-from-font [text-underline-position:from-font]" href="/viv/docs/concepts/source">Query;</a>; all Sources provides same methods for
-counting, paging, sorting and other stuff. So you <strong>do not have</strong> a way how to do things differently, so it&#x27;s much simpler to use your app and focus on business logic.</p>
-<h2 class="nx-font-semibold nx-tracking-tight nx-text-slate-900 dark:nx-text-slate-100 nx-mt-10 nx-border-b nx-pb-1 nx-text-3xl nx-border-neutral-200/70 contrast-more:nx-border-neutral-400 dark:nx-border-primary-100/10 contrast-more:dark:nx-border-neutral-400">Implementation<span class="nx-absolute -nx-mt-20" id="implementation"></span><a href="#implementation" class="subheading-anchor" aria-label="Permalink for this section"></a></h2>
-<p class="nx-mt-6 nx-leading-7 first:nx-mt-0">Leight currently uses a few generators - <a href="https://www.prisma.io/" target="_blank" rel="noreferrer" class="nx-text-primary-600 nx-underline nx-decoration-from-font [text-underline-position:from-font]">Prisma<span class="nx-sr-only"> (opens in a new tab)</span></a>, <a href="https://github.com/chrishoermann/zod-prisma-types" target="_blank" rel="noreferrer" class="nx-text-primary-600 nx-underline nx-decoration-from-font [text-underline-position:from-font]">Zod schema generator<span class="nx-sr-only"> (opens in a new tab)</span></a> for Prisma and maybe something else not mentioned yet.</p>
+                            <p class="nx-mt-6 nx-leading-7 first:nx-mt-0">For example, Prisma does this. Zod schema generator for Prisma does this. Leight does this for generating
+                                <a class="nx-text-primary-600 nx-underline nx-decoration-from-font [text-underline-position:from-font]" href="/viv/docs/concepts/source">Sources</a> and a lot of other stuff.</p>
+                            <h2 class="nx-font-semibold nx-tracking-tight nx-text-slate-900 dark:nx-text-slate-100 nx-mt-10 nx-border-b nx-pb-1 nx-text-3xl nx-border-neutral-200/70 contrast-more:nx-border-neutral-400 dark:nx-border-primary-100/10 contrast-more:dark:nx-border-neutral-400">
+                                Reason<span class="nx-absolute -nx-mt-20" id="reason"></span><a href="#reason" class="subheading-anchor" aria-label="Permalink for this section"></a></h2>
+                            <p class="nx-mt-6 nx-leading-7 first:nx-mt-0">Read-only generated code managed by some library. You&#x27;re isolated of internal changes, internal implementation, but you cas still alter behavior of the stuff.
+                                                                          With this it&#x27;s much simpler to add new features, extends current things or fix bugs. Because you <strong>cannot</strong> alter the code, generator (thus <em>managed</em>
+                                                                          piece of code) can
+                                                                          do <strong>whatever it wants</strong> - it will not break anything of yours.</p>
+                            <p class="nx-mt-6 nx-leading-7 first:nx-mt-0">Because of generator presence, things are made in standard, predicable way, so you <strong>know</strong> what to expect. All callbacks retrieving data accepts
+                                <a class="nx-text-primary-600 nx-underline nx-decoration-from-font [text-underline-position:from-font]" href="/viv/docs/concepts/source">Query;</a>; all Sources provides same methods for
+                                                                          counting, paging, sorting and other stuff. So you <strong>do not have</strong> a way how to do things differently, so it&#x27;s much simpler to use your app and focus
+                                                                          on business logic.</p>
+                            <h2 class="nx-font-semibold nx-tracking-tight nx-text-slate-900 dark:nx-text-slate-100 nx-mt-10 nx-border-b nx-pb-1 nx-text-3xl nx-border-neutral-200/70 contrast-more:nx-border-neutral-400 dark:nx-border-primary-100/10 contrast-more:dark:nx-border-neutral-400">
+                                Implementation<span class="nx-absolute -nx-mt-20" id="implementation"></span><a href="#implementation" class="subheading-anchor" aria-label="Permalink for this section"></a></h2>
+                            <p class="nx-mt-6 nx-leading-7 first:nx-mt-0">Leight currently uses a few generators -
+                                <a href="https://www.prisma.io/" target="_blank" rel="noreferrer" class="nx-text-primary-600 nx-underline nx-decoration-from-font [text-underline-position:from-font]">Prisma<span class="nx-sr-only"> (opens in a new tab)</span></a>,
+                                <a href="https://github.com/chrishoermann/zod-prisma-types" target="_blank" rel="noreferrer" class="nx-text-primary-600 nx-underline nx-decoration-from-font [text-underline-position:from-font]">Zod schema
+                                                                                                                                                                                                                                  generator<span class="nx-sr-only"> (opens in a new tab)</span></a>
+                                                                          for Prisma and maybe something else not mentioned yet.</p>
                             <p class="nx-mt-6 nx-leading-7 first:nx-mt-0">Also, Leight itself implements <a class="nx-text-primary-600 nx-underline nx-decoration-from-font [text-underline-position:from-font]" href="/viv/docs/packages/sdk">generators</a>
                                                                           for its own parts based on Prisma, so for example Forms, Tables, tRPC procedures and some other things which you <em><strong>definitively</strong></em> do by hand are
                                                                           generated.</p>
@@ -543,7 +562,7 @@ counting, paging, sorting and other stuff. So you <strong>do not have</strong> a
             },
             "page": "/docs/concepts/mcp",
             "query": {},
-            "buildId": "7Ip1HERPjWyGXA8yv2zKK",
+            "buildId": "ESU1fIEkhgZ6JGomQwUAr",
             "assetPrefix": "/viv",
             "nextExport": true,
             "autoExport": true,

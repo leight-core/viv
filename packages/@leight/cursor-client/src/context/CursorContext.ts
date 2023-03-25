@@ -1,5 +1,7 @@
-import {createStoreContext} from "@leight/context-client";
-import {type IStoreProps}   from "@leight/zustand";
+import {
+    createStoreContext,
+    type IStoreProps
+} from "@leight/context-client";
 
 export type ICursorStoreProps = IStoreProps<{
     readonly page: number;

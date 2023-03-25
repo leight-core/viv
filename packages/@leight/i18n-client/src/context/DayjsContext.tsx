@@ -1,13 +1,15 @@
-import {createStoreContext} from "@leight/context-client";
+import {
+    createStoreContext,
+    type IStoreProps
+} from "@leight/context-client";
 import {
     type IDayjs,
     type IDayjsInput
-}                           from "@leight/i18n";
-import {type IStoreProps}   from "@leight/zustand";
+} from "@leight/i18n";
 import {
     ConfigType,
     Dayjs
-}                           from "dayjs";
+} from "dayjs";
 
 export type IDayjsStoreProps = IStoreProps<{
     wrap(input?: IDayjsInput | null, fallback?: IDayjsInput | null): Dayjs | null;
