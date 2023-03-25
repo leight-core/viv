@@ -1,3 +1,7 @@
 {
-    "index": "Overview"
+    "index": "Overview",
+    "container": "@leight/container",
+    "source": "@leight/source",
+    "zustand": "@leight/zustand",
+    "esbuild": "@leight/esbuild"
 }

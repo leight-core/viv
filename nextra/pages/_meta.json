@@ -2,7 +2,12 @@
     "*": {
         "type": "page"
     },
-    "index": "Home",
+    "index": {
+        "title": "Home",
+        "theme": {
+            "toc": true
+        }
+    },
     "docs": "Docs",
     "about": {
         "title": "About",
