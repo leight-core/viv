@@ -1,5 +1,7 @@
-import {createStoreContext} from "@leight/context-client";
-import {IStoreProps}        from "@leight/zustand";
+import {
+    createStoreContext,
+    type IStoreProps
+} from "@leight/context-client";
 
 export type ILoopsStoreProps = IStoreProps<{
     readonly isRunning: boolean;

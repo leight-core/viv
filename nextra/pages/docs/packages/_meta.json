@@ -1,8 +1,10 @@
 {
     "index": "Overview",
     "container": "@leight/container",
+    "context-client": "@leight/context-client",
     "source": "@leight/source",
     "sdk": "@leight/sdk",
+    "utils-client": "@leight/utils-client",
     "zustand": "@leight/zustand",
     "esbuild": "@leight/esbuild"
 }

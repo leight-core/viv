@@ -61,7 +61,7 @@ and a lot of other stuff.
 So here we're: you can pick [some tools](docs/packages), you can use a [whole collection](docs/workbench) and simplify your developer life a lot by generating pieces of repeated code,
 having everything typed and so on.
 
-## Mature status
+## Maturity
 
 You see this as yet another project. _You're right._
 
