@@ -1,4 +1,6 @@
 {
     "index": "Overview",
+    "monorepo": "Monorepo",
+    "prisma": "Prisma",
     "sdk": "SDK"
 }
