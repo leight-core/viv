@@ -2,6 +2,7 @@
     "index": "Overview",
     "container": "@leight/container",
     "source": "@leight/source",
+    "sdk": "@leight/sdk",
     "zustand": "@leight/zustand",
     "esbuild": "@leight/esbuild"
 }
