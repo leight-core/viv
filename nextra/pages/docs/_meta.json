@@ -1,9 +1,9 @@
 {
     "index": {
-        "title": "Introduction"
+        "title": "Welcome"
     },
-    "getting-started": "Getting started",
     "concepts": "Concepts",
+    "getting-started": "Getting started",
     "workbench": "Workbench",
     "packages": "Packages"
 }
