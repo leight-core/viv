@@ -47,7 +47,9 @@ This package provides a lot of tools for [React Context](https://react.dev/refer
 
 ## Usage
 
-### Create
+There are three stages: you define a shape of store and create all the required tools, provide values to component subtree and subscribe to value changes.
+
+### Store
 
 This is an example taken from [@leight/utils-client](../packages/utils-client).
 
@@ -144,7 +146,7 @@ export const {
 });
 ```
 
-### Provide
+### Provider
 
 <Callout type="info" emoji="ℹ️">
     Code, methods and interfaces inside `@leight` are mostly commented, so when you pick piece of code, read comments on properties to learn
@@ -176,7 +178,7 @@ export const MyComponent = () => {
 };
 ```
 
-### Consume
+### Consumer
 
 ```tsx
 /** here will be import from your package */
@@ -203,5 +205,95 @@ export const MyComponent = () => {
 	return <LoopProvider>
         <MyConsumer/>
     </LoopProvider>;
+};
+```
+
+## Advanced example
+
+`@leight` solves one interesting "problem" of Zustand: when you are creating new store, you have to provide all the store props; there are situations
+when you need provide store props when a `Provider` is created.
+
+So this library implements an ability to specify store props needed when a store is created and values which could be provided in `runtime`.
+
+Partial example from [`@leight/calendar-client`](../packages/calendar-client) where this approach is used.
+
+```tsx filename="CalendarProvider.tsx"
+import {
+    createStoreContext,
+    type IStoreProps
+} from "@leight/context-client";
+import {
+    type ICalendarProps,
+    type IUseCalendarOptions,
+    useCalendar
+} from "@tuplo/use-calendar";
+import {
+    type ComponentProps,
+    type FC
+} from "react";
+
+/**
+ * Defined store as you're used to, but...
+ */
+export type ICalendarStoreStoreProps = IStoreProps<{
+	/**
+     * Here are properties and methods required to run the store; here you have usually
+     * all store methods.
+     */
+    foo: string;
+}, {
+	/**
+     * Here the magic comes: those properties are required in `runtime`, so when `CalendarStoreProvider`
+     * is created.
+     */
+    calendar: ICalendarProps;
+}>
+
+export const {
+                 Provider:         CalendarStoreProvider,
+                 useState:         useCalendarStoreState,
+                 useOptionalState: useOptionalCalendarStoreState,
+                 useStore:         useCalendarStoreStore,
+                 useOptionalStore: useOptionalCalendarStoreStore,
+             } = createStoreContext<ICalendarStoreStoreProps>({
+    state: ({state}) => () => ({
+        /**
+         * Here you can see: you *must* provide required store props, thus you need to know default
+         * values here.
+         */
+        foo: "yep",
+        /**
+         * `calendar` props is also required, but it's required before, so you can be sure the whole store
+         * is ready here.
+         */
+        ...state,
+    }),
+    name:  "CalendarStoreContext",
+    hint:  "Add CalendarStoreProvider.",
+});
+
+export interface ICalendarProviderProps extends Omit<ComponentProps<typeof CalendarStoreProvider>, "state"> {
+    options?: Partial<IUseCalendarOptions>;
+}
+
+export const CalendarProvider: FC<ICalendarProviderProps> = ({options, ...props}) => {
+	/**
+     * Get your value from whatever source you need...
+     */
+	const calendar = useCalendar(options);
+    return <CalendarStoreProvider
+        /**
+         * Because you specified values of store, "state" prop is unlocked and required, so TypeScript
+         * tells you, whats needed here.
+         */
+        state={{
+			/**
+             * Tadaa! "calendar" props is required as you specified before, so you provide rest of
+             * store values here.
+             */
+            calendar,
+        }}
+        {...props}
+    />;
 };
 ```

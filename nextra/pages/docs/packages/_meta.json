@@ -1,5 +1,6 @@
 {
     "index": "Overview",
+    "calendar-client": "@leight/calendar-client",
     "container": "@leight/container",
     "context-client": "@leight/context-client",
     "source": "@leight/source",
