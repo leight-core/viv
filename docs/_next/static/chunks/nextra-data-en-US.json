@@ -1,4 +1,11 @@
 {
+    "/docs/concepts": {
+        "title": "Introduction",
+        "data": {
+            "": "Bobobo at the beginning! You may skip this section, but you'll loose deep insights into the libraries and what's behind the scenes.It's strongly recommended (by some unknown wizard) to at least fly through those pages (hey, I've put a lot of time to write this, you know...) and get\nused to the concepts here. They can help you at least steal some of my ideas (which I've probably stolen somewhere else) and boost your own project even\nwithout using any of this work.\nThis library has a lot of concepts which work well together, but may looks sometimes quite complicated. But everything done is well thought and polished.\nBelieve me, it was a lot of time and effort I've put into development of this thing.So - you're free to look around and see, why all the things are done in such ways and what put me into doing things by that.",
+            "whats-inside#What's inside": "You'll find this library wants you to use Monorepo. It's cool tool for managing codebase, even for a smaller app. There is some pain, but it's acceptable, believe me :)There are a lot of snippets which will help you to setup or integrate this library into your project. Basic assumption is you have Node backend, because full power of this\nlibrary is in covering fullstack TypeScript on both sides.The main target is the development of the application, so it's not suitable for static sites or just sites. But if you want some home-made app for something (pet project), or even\nsetup some bigger app, you can use this as it can help a lot. This project is highly optimized for small teams of one member which do not have a lot of time to mess\nwith all the libraries around.\nIf you continue, you got batteries included, also with the whole power plant."
+        }
+    },
     "/docs/concepts/code-splitting": {
         "title": "Code splitting",
         "data": {
@@ -23,13 +30,6 @@
             "project-leight-viv#Project: Leight Viv": "Leight Core rewritten, rethink with a lot of new ideas. This is now ultimate way how you can handle frontend development with default support for\nmonorepos, code generation and a lot of other things you can commonly use, but simplified.The main goal is to pick almost anything you repeatedly use and simplify it. So here we are!Viv is used because when I was expecting a child, a sex was unknown. Boy was Tobias and girl Vivienne. I've started to use Viv before... IT WAS A BOY, shit.\nI like him, but the name remains.",
             "the-name#The name": "Just a note: why Leight?The shortcut was L8, you see that, but I don't like number usage in names, it's strange, thus Leight.As development of library growth, it was used in live sports application, so the name came from Live something something I forgot now. It sounds interesting. That's it.",
             "team#Team": "Are you curious, how stable the project is? It isn't. Do you want to hear something else? I can lie, but as a lot of other libraries you probably rely on (same\nas this project), there is usually one or a few guys working on the library in the spare time.This project is done in cooperation with primary projects which uses it (corporate applications). But still, I'm, creating it in my spare time, with no\ncommercial support and nothing else. You do not pay for it, so you should expect nothing but my pure ideas for free.I'm Marek H. from Czechia. You're welcome to use anything, fork anything, write issues, extend this docs, ask questions, I'll be happy for that.This project is my legacy, so there is quite a low probability I'll abandon it."
-        }
-    },
-    "/docs/concepts": {
-        "title": "Introduction",
-        "data": {
-            "": "Bobobo at the beginning! You may skip this section, but you'll loose deep insights into the libraries and what's behind the scenes.It's strongly recommended (by some unknown wizard) to at least fly through those pages (hey, I've put a lot of time to write this, you know...) and get\nused to the concepts here. They can help you at least steal some of my ideas (which I've probably stolen somewhere else) and boost your own project even\nwithout using any of this work.\nThis library has a lot of concepts which work well together, but may looks sometimes quite complicated. But everything done is well thought and polished.\nBelieve me, it was a lot of time and effort I've put into development of this thing.So - you're free to look around and see, why all the things are done in such ways and what put me into doing things by that.",
-            "whats-inside#What's inside": "You'll find this library wants you to use Monorepo. It's cool tool for managing codebase, even for a smaller app. There is some pain, but it's acceptable, believe me :)There are a lot of snippets which will help you to setup or integrate this library into your project. Basic assumption is you have Node backend, because full power of this\nlibrary is in covering fullstack TypeScript on both sides.The main target is the development of the application, so it's not suitable for static sites or just sites. But if you want some home-made app for something (pet project), or even\nsetup some bigger app, you can use this as it can help a lot. This project is highly optimized for small teams of one member which do not have a lot of time to mess\nwith all the libraries around.\nIf you continue, you got batteries included, also with the whole power plant."
         }
     },
     "/docs/concepts/mcp": {
@@ -72,14 +72,20 @@
             "query#Query": ""
         }
     },
+    "/docs/concepts/source/server": {
+        "title": "Server",
+        "data": {
+            "": ""
+        }
+    },
     "/docs/concepts/source": {
         "title": "Introduction",
         "data": {
             "": ""
         }
     },
-    "/docs/concepts/source/server": {
-        "title": "Server",
+    "/docs/getting-started/packages": {
+        "title": "Packages",
         "data": {
             "": ""
         }
@@ -94,8 +100,8 @@
             "step-3#Step 3": "dfgdfg"
         }
     },
-    "/docs/getting-started/packages": {
-        "title": "Packages",
+    "/docs/packages/calendar-client": {
+        "title": "@leight/calendar-client",
         "data": {
             "": ""
         }
@@ -133,8 +139,14 @@
             "": "Here you are all packages in the project with some brief information about them."
         }
     },
-    "/docs/packages/utils-client": {
-        "title": "@leight/utils-client",
+    "/docs/packages/sdk": {
+        "title": "@leight/sdk",
+        "data": {
+            "": ""
+        }
+    },
+    "/docs/packages/zustand": {
+        "title": "@leight/zustand",
         "data": {
             "": ""
         }
@@ -145,26 +157,14 @@
             "": "Here you will find some tutorials and pieces which will help you use Leight Viv in it's full potential."
         }
     },
-    "/docs/packages/zustand": {
-        "title": "@leight/zustand",
-        "data": {
-            "": ""
-        }
-    },
-    "/docs/packages/sdk": {
-        "title": "@leight/sdk",
-        "data": {
-            "": ""
-        }
-    },
     "/docs/workbench/monorepo": {
         "title": "Monorepo setup",
         "data": {
             "": ""
         }
     },
-    "/docs/packages/source": {
-        "title": "@leight/source",
+    "/docs/packages/utils-client": {
+        "title": "@leight/utils-client",
         "data": {
             "": ""
         }
@@ -187,17 +187,6 @@
             "epilogue#Epilogue": "Now you're almost done: just update your turbo.json (or whatever monorepo you're using):\nDon't copy-paste this piece of code, just think about it's meaning: execute code generation before your build, so you're sure\neverything is in the place.\n\n{\n\"generate\": {\n\"cache\": false\n},\n\"build\": {\n\"dependsOn\": [\n\"^build\",\n\"generate\"\n]\n}\n}"
         }
     },
-    "/docs/workbench/zusstand": {
-        "title": "Zustand",
-        "data": {
-            "": "This is a very cool package for state management and creating stores. You can create shape of store outside\nReact components and then nicely use it where you want.By default, Zustand stores are global, so when you create some useBearStore(){:js}, it represents global state. Because @leight needs a lot of local\ncontexts (for example Source) for managing data for component subtrees, there was need for some little wrapper around\nZustand store.Motivation for creating this library was boilerplate around defining store, creating Context Providers, creating hooks and having everything typed. So here\ncomes this library - there is one simple method, which handles all the boilerplate for you.\n@leight/context-client re-exports everything from @leight/zustand for simplicity.",
-            "installation#Installation": "We're talking about Zustand, but all the magick is implemented in @leight/context-client package which handles React Context, also\nwrapping Zustand into the Context, so you can use Stores in component subtree.\n\n\nnpm i @leight/context-client\n\n\n\npnpm i @leight/context-client\n\n\n\nyarn add @leight/context-client\n\n\nThis package provides a lot of tools for React Context and for creating Zustand stores, see package page for more info.",
-            "usage#Usage": "",
-            "create#Create": "This is an example taken from @leight/utils-client.\nimport {createStoreContext, type IStoreProps} from \"@leight/context-client\";\n\n/**\n* Define and export store props as a type; type IStoreProps is re-exported from `@leight/zustand`.\n*\n* This is common store stuff same as for Zustand itself; if you want wrap your existing store, just use\n* IStoreProps. If you want to leave this library, remove it.\n*/\nexport type ILoopStoreProps = IStoreProps<{\nreadonly isRunning: boolean;\nreadonly isDone: boolean;\nreadonly isError: boolean;\nreadonly isSuccess?: boolean;\nreadonly current: number;\nreadonly total: number;\n\nprogress(): void;\n\nstart(total: number): void;\n\nfinish(withError?: boolean): void;\n\nerror(error?: boolean): void;\n\npercent(): number;\n}>\n\n/**\n* Here is where all the magick comes from:  `createStoreContext`; this method creates all boilerplate stuff you would eventually\n* write yourself....\n*/\nexport const {\n/**\n* ...you get StoreProvider, so you can wrap component subtree with this Store\n*/\nProvider:         LoopProvider,\n/**\n* ...you get hook for accessing store state within component subtree\n*\n* - this method throws an error if there is no provider\n*/\nuseState:         useLoopState,\n/**\n* ...this is an optional variant for the store - this method does not throw an error\n*/\nuseOptionalState: useOptionalLoopState,\n/**\n* ...you get access to store itself, if you need it\n*/\nuseStore:         useLoopStore,\n/**\n* ...and optional variant of store access\n*/\nuseOptionalStore: useOptionalLoopStore,\n} = createStoreContext<ILoopStoreProps>({\n/**\n* This is a little magic, but state is a callback which gets `default` and `state` from the ContextProvider when it's used. Remember those two values.\n*\n* You can access defaults (which is whole store type data (in this case `ILoopStoreProps`) or just required state (about it later).\n*\n* The last part of callback is a standard Zustand store creator.\n*/\nstate: ({defaults, state}) => (set, get) => ({\ntotal:     0,\nisRunning: false,\nisDone:    false,\nisError:   false,\nisSuccess: false,\ncurrent:   0,\nprogress:  () => set(({current}) => ({current: current + 1})),\nstart:     (total) => set({isRunning: true, total}),\nfinish:    (withError = false) =>\nset({\nisDone:    true,\nisRunning: false,\nisError:   withError,\nisSuccess: !withError,\n}),\nerror:     (isError = true) => set({isError, isSuccess: !isError}),\npercent:   () => {\nconst {current, total} = get();\nreturn (100 * current) / total;\n},\n}),\n/**\n* When context needs to throw an error, this names it, so you know who was the bad boy.\n*/\nname:  \"LoopContext\",\nhint:  \"Add LoopProvider.\"\n});",
-            "provide#Provide": "Code, methods and interfaces inside @leight are mostly commented, so when you pick piece of code, read comments on properties to learn\nmore.\nThis is the hardest part.\n/** here will be import from your package */\nimport {LoopProvider} from \"@leight/utils-client\";\n\nexport const MyComponent = () => {\nreturn <LoopProvider\n/**\n* Did you remember those two values?\n*\n* state: this resolved problem with Zustand where you must provide all values in the time of store creation, even those\n* you eventually don't have; this allows you to provide it here; `state` are required values a store cannot work without.\n*/\nstate={}\n/**\n* Just defaults; you can freely override whatever you want; but state muse be provided, if there are any required values.\n*/\ndefaults={}\n>\nhere I've available useLoop stuff and so on.\n</LoopProvider>;\n};",
-            "consume#Consume": "/** here will be import from your package */\nimport {LoopProvider, useLoopState} from \"@leight/utils-client\";\n\nexport const MyConsumer = () => {\n/**\n* When you want to use the store, it's the same as with native Zustand\n*\n* ...you can take the whole store (so also remember, the component will re-render\n* when anything changes in the store).\n*/\n// const store = useLoopState();\n/**\n* ...or you can use selectors, so the component will re-render only when selected\n* values changes. Everything is cleverly typed,\n* so don't worry, you won't lose any types.\n*/\nconst {isRunning} = useLoopState(({isRunning}) => ({isRunning}));\nreturn isRunning ? <span>Gogogogogo!</span> : <span>I'm lazy today!</span>;\n};\n\nexport const MyComponent = () => {\nreturn <LoopProvider>\n<MyConsumer/>\n</LoopProvider>;\n};"
-        }
-    },
     "/": {
         "title": "Project: Leight Viv",
         "data": {
@@ -214,6 +203,24 @@
             "typescript#TypeScript": "It's an opinion, but... there is no other choice: the project is built on top of TypeScript and heavily uses types to make you live a lot easier. Ok, there are some tradeoffs, but who cares.",
             "motivation#Motivation": "All the time new app is created, there is a lot of stuff repeatedly created, a lot of same concepts, data fetching, mutations and so on.This collection aims to make kind of \"standard\" which offloads thinking of \"how to get data\", \"how to sort data\", creating tables, forms, connecting them to the backend\nand a lot of other stuff.So here we're: you can pick some tools, you can use a whole collection and simplify your developer life a lot by generating pieces of repeated code,\nhaving everything typed and so on.",
             "maturity#Maturity": "You see this as yet another project. You're right.But it was quite long time in development and it's used in some projects, concepts and API of the whole collection is quite polished today and you can use whatever\npiece you want/need. The overall goal is to provide best practices over the best libraries available on the current market.This collection may be seen as an inspiration, how you can do things in a quite a nice way - not simple, because you can use thousands of lines of code to do relatively simple thing, but it's worth it, because\nat least - you will not repeat yourself :)."
+        }
+    },
+    "/docs/packages/source": {
+        "title": "@leight/source",
+        "data": {
+            "": ""
+        }
+    },
+    "/docs/workbench/zusstand": {
+        "title": "Zustand",
+        "data": {
+            "": "This is a very cool package for state management and creating stores. You can create shape of store outside\nReact components and then nicely use it where you want.By default, Zustand stores are global, so when you create some useBearStore(){:js}, it represents global state. Because @leight needs a lot of local\ncontexts (for example Source) for managing data for component subtrees, there was need for some little wrapper around\nZustand store.Motivation for creating this library was boilerplate around defining store, creating Context Providers, creating hooks and having everything typed. So here\ncomes this library - there is one simple method, which handles all the boilerplate for you.\n@leight/context-client re-exports everything from @leight/zustand for simplicity.",
+            "installation#Installation": "We're talking about Zustand, but all the magick is implemented in @leight/context-client package which handles React Context, also\nwrapping Zustand into the Context, so you can use Stores in component subtree.\n\n\nnpm i @leight/context-client\n\n\n\npnpm i @leight/context-client\n\n\n\nyarn add @leight/context-client\n\n\nThis package provides a lot of tools for React Context and for creating Zustand stores, see package page for more info.",
+            "usage#Usage": "There are three stages: you define a shape of store and create all the required tools, provide values to component subtree and subscribe to value changes.",
+            "store#Store": "This is an example taken from @leight/utils-client.\nimport {createStoreContext, type IStoreProps} from \"@leight/context-client\";\n\n/**\n* Define and export store props as a type; type IStoreProps is re-exported from `@leight/zustand`.\n*\n* This is common store stuff same as for Zustand itself; if you want wrap your existing store, just use\n* IStoreProps. If you want to leave this library, remove it.\n*/\nexport type ILoopStoreProps = IStoreProps<{\nreadonly isRunning: boolean;\nreadonly isDone: boolean;\nreadonly isError: boolean;\nreadonly isSuccess?: boolean;\nreadonly current: number;\nreadonly total: number;\n\nprogress(): void;\n\nstart(total: number): void;\n\nfinish(withError?: boolean): void;\n\nerror(error?: boolean): void;\n\npercent(): number;\n}>\n\n/**\n* Here is where all the magick comes from:  `createStoreContext`; this method creates all boilerplate stuff you would eventually\n* write yourself....\n*/\nexport const {\n/**\n* ...you get StoreProvider, so you can wrap component subtree with this Store\n*/\nProvider:         LoopProvider,\n/**\n* ...you get hook for accessing store state within component subtree\n*\n* - this method throws an error if there is no provider\n*/\nuseState:         useLoopState,\n/**\n* ...this is an optional variant for the store - this method does not throw an error\n*/\nuseOptionalState: useOptionalLoopState,\n/**\n* ...you get access to store itself, if you need it\n*/\nuseStore:         useLoopStore,\n/**\n* ...and optional variant of store access\n*/\nuseOptionalStore: useOptionalLoopStore,\n} = createStoreContext<ILoopStoreProps>({\n/**\n* This is a little magic, but state is a callback which gets `default` and `state` from the ContextProvider when it's used. Remember those two values.\n*\n* You can access defaults (which is whole store type data (in this case `ILoopStoreProps`) or just required state (about it later).\n*\n* The last part of callback is a standard Zustand store creator.\n*/\nstate: ({defaults, state}) => (set, get) => ({\ntotal:     0,\nisRunning: false,\nisDone:    false,\nisError:   false,\nisSuccess: false,\ncurrent:   0,\nprogress:  () => set(({current}) => ({current: current + 1})),\nstart:     (total) => set({isRunning: true, total}),\nfinish:    (withError = false) =>\nset({\nisDone:    true,\nisRunning: false,\nisError:   withError,\nisSuccess: !withError,\n}),\nerror:     (isError = true) => set({isError, isSuccess: !isError}),\npercent:   () => {\nconst {current, total} = get();\nreturn (100 * current) / total;\n},\n}),\n/**\n* When context needs to throw an error, this names it, so you know who was the bad boy.\n*/\nname:  \"LoopContext\",\nhint:  \"Add LoopProvider.\"\n});",
+            "provider#Provider": "Code, methods and interfaces inside @leight are mostly commented, so when you pick piece of code, read comments on properties to learn\nmore.\nThis is the hardest part.\n/** here will be import from your package */\nimport {LoopProvider} from \"@leight/utils-client\";\n\nexport const MyComponent = () => {\nreturn <LoopProvider\n/**\n* Did you remember those two values?\n*\n* state: this resolved problem with Zustand where you must provide all values in the time of store creation, even those\n* you eventually don't have; this allows you to provide it here; `state` are required values a store cannot work without.\n*/\nstate={}\n/**\n* Just defaults; you can freely override whatever you want; but state muse be provided, if there are any required values.\n*/\ndefaults={}\n>\nhere I've available useLoop stuff and so on.\n</LoopProvider>;\n};",
+            "consumer#Consumer": "/** here will be import from your package */\nimport {LoopProvider, useLoopState} from \"@leight/utils-client\";\n\nexport const MyConsumer = () => {\n/**\n* When you want to use the store, it's the same as with native Zustand\n*\n* ...you can take the whole store (so also remember, the component will re-render\n* when anything changes in the store).\n*/\n// const store = useLoopState();\n/**\n* ...or you can use selectors, so the component will re-render only when selected\n* values changes. Everything is cleverly typed,\n* so don't worry, you won't lose any types.\n*/\nconst {isRunning} = useLoopState(({isRunning}) => ({isRunning}));\nreturn isRunning ? <span>Gogogogogo!</span> : <span>I'm lazy today!</span>;\n};\n\nexport const MyComponent = () => {\nreturn <LoopProvider>\n<MyConsumer/>\n</LoopProvider>;\n};",
+            "advanced-example#Advanced example": "@leight solves one interesting \"problem\" of Zustand: when you are creating new store, you have to provide all the store props; there are situations\nwhen you need provide store props when a Provider is created.So this library implements an ability to specify store props needed when a store is created and values which could be provided in runtime.Partial example from @leight/calendar-client where this approach is used.\nimport {\ncreateStoreContext,\ntype IStoreProps\n} from \"@leight/context-client\";\nimport {\ntype ICalendarProps,\ntype IUseCalendarOptions,\nuseCalendar\n} from \"@tuplo/use-calendar\";\nimport {\ntype ComponentProps,\ntype FC\n} from \"react\";\n\n/**\n* Defined store as you're used to, but...\n*/\nexport type ICalendarStoreStoreProps = IStoreProps<{\n/**\n* Here are properties and methods required to run the store; here you have usually\n* all store methods.\n*/\nfoo: string;\n}, {\n/**\n* Here the magic comes: those properties are required in `runtime`, so when `CalendarStoreProvider`\n* is created.\n*/\ncalendar: ICalendarProps;\n}>\n\nexport const {\nProvider:         CalendarStoreProvider,\nuseState:         useCalendarStoreState,\nuseOptionalState: useOptionalCalendarStoreState,\nuseStore:         useCalendarStoreStore,\nuseOptionalStore: useOptionalCalendarStoreStore,\n} = createStoreContext<ICalendarStoreStoreProps>({\nstate: ({state}) => () => ({\n/**\n* Here you can see: you *must* provide required store props, thus you need to know default\n* values here.\n*/\nfoo: \"yep\",\n/**\n* `calendar` props is also required, but it's required before, so you can be sure the whole store\n* is ready here.\n*/\n...state,\n}),\nname:  \"CalendarStoreContext\",\nhint:  \"Add CalendarStoreProvider.\",\n});\n\nexport interface ICalendarProviderProps extends Omit<ComponentProps<typeof CalendarStoreProvider>, \"state\"> {\noptions?: Partial<IUseCalendarOptions>;\n}\n\nexport const CalendarProvider: FC<ICalendarProviderProps> = ({options, ...props}) => {\n/**\n* Get your value from whatever source you need...\n*/\nconst calendar = useCalendar(options);\nreturn <CalendarStoreProvider\n/**\n* Because you specified values of store, \"state\" prop is unlocked and required, so TypeScript\n* tells you, whats needed here.\n*/\nstate={{\n/**\n* Tadaa! \"calendar\" props is required as you specified before, so you provide rest of\n* store values here.\n*/\ncalendar,\n}}\n{...props}\n/>;\n};"
         }
     }
 }

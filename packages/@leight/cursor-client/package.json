@@ -30,7 +30,6 @@
     "dependencies": {
         "@leight/context-client": "^0.5.56",
         "@leight/query": "^0.5.49",
-        "@leight/zustand": "^0.5.49",
         "@mantine/core": "^6.0.1",
         "@mantine/hooks": "^6.0.1",
         "react": "^18.2.0",
