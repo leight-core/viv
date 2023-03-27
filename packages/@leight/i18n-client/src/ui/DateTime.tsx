@@ -1,14 +1,13 @@
-import {type IDayjsInput} from "@leight/i18n";
-import {FC}               from "react";
-import {useDayjsState}    from "../context";
+import {type FC}          from "react";
+import {useDateTimeState} from "../context";
 
 export interface IDateTimeProps {
-    input: IDayjsInput | null;
+    input?: string;
     fallback?: string;
 }
 
 export const DateTime: FC<IDateTimeProps> = ({input, fallback}) => {
-    const {toLocalDateTime} = useDayjsState(({toLocalDateTime}) => ({toLocalDateTime}));
+    const {toLocalDateTime} = useDateTimeState(({toLocalDateTime}) => ({toLocalDateTime}));
     return <>
         {toLocalDateTime(input, fallback)}
     </>;

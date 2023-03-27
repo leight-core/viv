@@ -1,9 +1,3 @@
-import * as dayjs from "dayjs";
-import {
-    type ConfigType,
-    type Dayjs
-}                 from "dayjs";
-
 /**
  * Type for useTranslation() `t` function.
  */
@@ -21,7 +15,3 @@ export interface IWithTranslation {
 export interface IWithLocale {
     locale: string;
 }
-
-export type IDayjs = typeof dayjs;
-export type IDayjsInput = ConfigType;
-export type IDayjsOutput = Dayjs;

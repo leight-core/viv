@@ -5,6 +5,7 @@
     "context-client": "@leight/context-client",
     "esbuild": "@leight/esbuild",
     "i18n-client": "@leight/i18n-client",
+    "mantine": "@leight/mantine",
     "sdk": "@leight/sdk",
     "source": "@leight/source",
     "utils-client": "@leight/utils-client",

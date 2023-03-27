@@ -1,15 +1,10 @@
-import {DayjsProvider}        from "@leight/i18n-client";
+import {DateTimeProvider}     from "@leight/i18n-client";
 import {type IPageWithLayout} from "@leight/layout";
-import {
-    LoadingOverlay,
-    MantineProvider
-}                             from "@mantine/core";
-import {DatesProvider}        from "@mantine/dates";
+import {MantineProvider}      from "@mantine/core";
 import {Notifications}        from "@mantine/notifications";
 import {SessionProvider}      from "next-auth/react";
 import {type AppProps}        from "next/app";
 import Head                   from "next/head";
-import {useRouter}            from "next/router";
 import {
     type ComponentProps,
     type FC
@@ -45,7 +40,6 @@ export const PageShell: FC<IPageShellProps> = (
         Component,
         pageProps,
     }) => {
-    const router = useRouter();
     return <>
         <Head>
             <title>{title}</title>
@@ -63,27 +57,18 @@ export const PageShell: FC<IPageShellProps> = (
             withNormalizeCSS
             emotionCache={emotionCache}
         >
-            <DayjsProvider
-                locale={router.locale || router.defaultLocale || "en" as any}
-                loading={<LoadingOverlay
-                    visible
-                    transitionDuration={500}
-                    loaderProps={{variant: "bars"}}
-                />}
-            >
-                {({state: {locale}}) => <DatesProvider settings={{locale}}>
-                    <Notifications position={"top-right"}/>
-                    <RouterTransition/>
-                    <SessionProvider
-                        refetchInterval={30}
-                        refetchOnWindowFocus
-                    >
-                        {(
-                            (Component as unknown as IPageWithLayout).layout || ((page) => page)
-                        )(<Component {...pageProps}/>)}
-                    </SessionProvider>
-                </DatesProvider>}
-            </DayjsProvider>
+            <DateTimeProvider>
+                <Notifications position={"top-right"}/>
+                <RouterTransition/>
+                <SessionProvider
+                    refetchInterval={30}
+                    refetchOnWindowFocus
+                >
+                    {(
+                        (Component as unknown as IPageWithLayout).layout || ((page) => page)
+                    )(<Component {...pageProps}/>)}
+                </SessionProvider>
+            </DateTimeProvider>
         </MantineProvider>
     </>;
 };
