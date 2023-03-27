@@ -1,5 +1,5 @@
 {
-    "version": "0.5.50",
+    "version": "0.5.51",
     "name": "@leight/i18n",
     "description": "Common i18n stuff shared across @leight/i18n packages.",
     "license": "MIT",
@@ -31,10 +31,10 @@
         "luxon": "^3.3.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.29",
-        "@leight/eslint-config-eslint": "^0.5.38",
-        "@leight/tsconfig": "^0.5.52",
-        "@leight/turbowatch": "^0.5.17",
+        "@leight/esbuild": "^0.5.30",
+        "@leight/eslint-config-eslint": "^0.5.39",
+        "@leight/tsconfig": "^0.5.53",
+        "@leight/turbowatch": "^0.5.18",
         "@types/luxon": "^3.2.0",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",

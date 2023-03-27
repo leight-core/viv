@@ -1,5 +1,19 @@
 # @leight/mantine
 
+## 0.5.57
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/file-client@0.5.56
+    - @leight/file@0.5.55
+    - @leight/i18n@0.5.51
+    - @leight/i18n-client@0.5.55
+    - @leight/layout@0.5.51
+    - @leight/utils@0.5.53
+    - @leight/utils-client@0.5.54
+
 ## 0.5.56
 
 ### Patch Changes
