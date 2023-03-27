@@ -1,5 +1,11 @@
 # @leight/i18n-client
 
+## 0.5.57
+
+### Patch Changes
+
+- Fixed types
+
 ## 0.5.56
 
 ### Patch Changes

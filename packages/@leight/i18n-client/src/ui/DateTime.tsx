@@ -1,9 +1,10 @@
+import {type IDateInput}  from "@leight/i18n";
 import {type FC}          from "react";
 import {useDateTimeState} from "../context";
 
 export interface IDateTimeProps {
-    input?: string;
-    fallback?: string;
+    input?: IDateInput;
+    fallback?: IDateInput;
 }
 
 export const DateTime: FC<IDateTimeProps> = ({input, fallback}) => {
