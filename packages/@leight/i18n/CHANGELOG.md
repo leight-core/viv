@@ -1,5 +1,11 @@
 # @leight/i18n
 
+## 0.5.53
+
+### Patch Changes
+
+- Added dependency
+
 ## 0.5.52
 
 ### Patch Changes
