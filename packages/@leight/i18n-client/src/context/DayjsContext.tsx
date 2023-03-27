@@ -15,7 +15,7 @@ import {
     type IDayjsOutput,
     locales
 }                      from "@leight/i18n";
-import dayjs           from "dayjs";
+import * as dayjs      from "dayjs";
 import duration        from "dayjs/plugin/duration";
 import localeData      from "dayjs/plugin/localeData";
 import localizedFormat from "dayjs/plugin/localizedFormat";

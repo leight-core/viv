@@ -6,6 +6,7 @@
         "emitDeclarationOnly": true,
         "disableSolutionSearching": true,
         "emitDecoratorMetadata": false,
+        "allowSyntheticDefaultImports": true,
         "experimentalDecorators": false,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,

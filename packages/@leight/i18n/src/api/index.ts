@@ -1,7 +1,8 @@
-import dayjs, {
+import * as dayjs from "dayjs";
+import {
     type ConfigType,
     type Dayjs
-} from "dayjs";
+}                 from "dayjs";
 
 /**
  * Type for useTranslation() `t` function.
