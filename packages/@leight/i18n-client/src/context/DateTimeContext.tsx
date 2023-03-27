@@ -6,15 +6,17 @@
 import {
     createStoreContext,
     type IStoreProps
-} from "@leight/context-client";
+}                 from "@leight/context-client";
 import {
     DateTime,
-    type DateTimeFormatOptions
-} from "@leight/i18n";
+    type DateTimeFormatOptions,
+    type IDateInput
+}                 from "@leight/i18n";
+import {isString} from "@leight/utils";
 import {
     type ComponentProps,
     type FC
-} from "react";
+}                 from "react";
 
 /**
  * Store shape for date time context.
@@ -23,21 +25,21 @@ export type IDateTimeStoreProps = IStoreProps<{
     /**
      * Take input string in ISO format and reformat it into the user's locale.
      */
-    toLocalDate(input?: string, fallback?: string): string | undefined;
+    toLocalDate(input?: IDateInput, fallback?: IDateInput): string | undefined;
     /**
      * Take input string in ISO format and return localized date & time
      */
-    toLocalDateTime(input?: string, fallback?: string): string | undefined;
+    toLocalDateTime(input?: IDateInput, fallback?: IDateInput): string | undefined;
 }>
 
-const iso2locale = (input?: string, fallback?: string, opts?: DateTimeFormatOptions): string | undefined => {
+const iso2locale = (input?: IDateInput, fallback?: IDateInput, opts?: DateTimeFormatOptions): string | undefined => {
     if (!input) {
         input = fallback;
     }
     if (!input) {
         return undefined;
     }
-    return DateTime.fromISO(input).toLocaleString(opts);
+    return (isString(input) ? DateTime.fromISO(input) : DateTime.fromJSDate(input)).toLocaleString(opts);
 };
 
 export const {

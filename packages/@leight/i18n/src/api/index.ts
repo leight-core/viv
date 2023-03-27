@@ -1,4 +1,11 @@
 /**
+ * Which types are accepted as input type for formatting functions.
+ */
+export type IDateInput =
+    string
+    | Date;
+
+/**
  * Type for useTranslation() `t` function.
  */
 export type IWithTranslator = (text: string | string[], valuesOrDefault?: Record<string, any> | string, values?: Record<string, any> | string) => string;
