@@ -9,11 +9,11 @@ import {Notifications}        from "@mantine/notifications";
 import {SessionProvider}      from "next-auth/react";
 import {type AppProps}        from "next/app";
 import Head                   from "next/head";
+import {useRouter}            from "next/router";
 import {
     type ComponentProps,
     type FC
 }                             from "react";
-import {useBootstrap}         from "../hook";
 import {RouterTransition}     from "../RouterTransition";
 
 export interface IPageShellProps {
@@ -45,12 +45,8 @@ export const PageShell: FC<IPageShellProps> = (
         Component,
         pageProps,
     }) => {
-    const {isLoading, bootstrap} = useBootstrap();
-    return isLoading ? <LoadingOverlay
-        visible
-        transitionDuration={500}
-        loaderProps={{variant: "bars"}}
-    /> : <>
+    const router = useRouter();
+    return <>
         <Head>
             <title>{title}</title>
             <meta
@@ -67,12 +63,15 @@ export const PageShell: FC<IPageShellProps> = (
             withNormalizeCSS
             emotionCache={emotionCache}
         >
-            <DatesProvider settings={{locale: bootstrap?.dayjs.locale}}>
-                <DayjsProvider
-                    state={{
-                        dayjs: bootstrap!.dayjs.dayjs,
-                    }}
-                >
+            <DayjsProvider
+                locale={router.locale || router.defaultLocale || "en" as any}
+                loading={<LoadingOverlay
+                    visible
+                    transitionDuration={500}
+                    loaderProps={{variant: "bars"}}
+                />}
+            >
+                {({state: {locale}}) => <DatesProvider settings={{locale}}>
                     <Notifications position={"top-right"}/>
                     <RouterTransition/>
                     <SessionProvider
@@ -83,8 +82,8 @@ export const PageShell: FC<IPageShellProps> = (
                             (Component as unknown as IPageWithLayout).layout || ((page) => page)
                         )(<Component {...pageProps}/>)}
                     </SessionProvider>
-                </DayjsProvider>
-            </DatesProvider>
+                </DatesProvider>}
+            </DayjsProvider>
         </MantineProvider>
     </>;
 };

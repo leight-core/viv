@@ -1,0 +1,124 @@
+import {
+    Callout,
+    Tab,
+    Tabs
+} from "nextra-theme-docs";
+
+# Day.js
+
+<Callout type="info" emoji="ℹ️">
+    Information about this package can be found [here](../packages/i18n-client).
+</Callout>
+
+`@leight` supports [Day.js](https://day.js.org/en/) library out-of-box with some simple stuff around
+packaged into [`@leight/i18n-client`](../packages/i18n-client).
+
+Reason is simple: provide single instance of `dayjs` into the app (ensures your app and library internals are using the same instance) with all
+the required plugins set up.
+
+## Installation
+
+This library takes with it quite a **punch** of dependencies.
+
+<Tabs items={['npm', 'pnpm', 'yarn']}>
+    <Tab>
+        ```bash copy filename="npm"
+        npm i @leight/i18n-client
+        ```
+    </Tab>
+    <Tab>
+        ```bash copy filename="pnpm"
+        pnpm i @leight/i18n-client
+        ```
+    </Tab>
+    <Tab>
+        ```bash copy filename="yarn"
+        yarn add @leight/i18n-client
+        ```
+    </Tab>
+</Tabs>
+
+## Usage
+
+Backend is powered by [`@leight/zustand`](../packages/zustand) and [`@leight/context-client`](../packages/context-client); it comes with some pieces: (store) provider and consumer (hooks).
+
+### Provider
+
+<Callout type="info" emoji="ℹ️">
+    [`@leight/zustand`](../packages/zustand) is built on top of [`@leight/context-client`](../packages/context-client) with some little magic pieces, so go and check it out if you
+    want to understand this example.
+</Callout>
+
+```tsx filename="PageShell.tsx"
+import {DayjsProvider} from "@leight/i18n-client";
+import {LoadingOverlay} from "@mantine/core";
+import {DatesProvider} from "@mantine/dates";
+import {useRouter} from "next/router";
+import {type FC} from "react";
+
+export interface IPageShellProps {
+}
+
+/**
+ * This is stripped version of PageShell used in @leight/mantine; it shows an example, how you can integrate
+ * this component into you app and how to use it.
+ */
+export const PageShell: FC<IPageShellProps> = () => {
+	/**
+     * Take locale info from whatever place you want, `leight` by default uses Next.js router
+     */
+    const router = useRouter();
+    return <>
+        {/**
+         * Make sure this component **is not** under component which re-renders as it's intented to be on a
+         * layout level of your app
+         */}
+        <DayjsProvider
+            /**
+             * This is simple stuff: provide locale (so provider could be much lighter on dependencies,
+             * because it's not resolving locale by it's own).
+             */
+            locale={router.locale || router.defaultLocale || "en" as any}
+            /**
+             * Naive approach is used: show loading until day.js is prepared for use; generally it does
+             * not accept an error state.
+             */
+            loading={<LoadingOverlay
+                visible
+                transitionDuration={500}
+                loaderProps={{variant: "bars"}}
+            />}
+        >
+            {/**
+              * If you need consume Dayjs context immediately, you can provide callback which will get
+              * everything set up; or you can pass children directly as you're used to.
+              *
+              * `DatesProvider` is here just as an example, because it's dependant on Dayjs context,
+              * so it needs to be consumed immediately; without it whole callback could be ommited.
+              */}
+            {({state: {locale}}) => <DatesProvider settings={{locale}}>
+            </DatesProvider>}
+        </DayjsProvider>
+    </>;
+};
+```
+
+### Consumer
+
+<Callout type="info" emoji="ℹ️">
+    You can see what's available in your IDE, or you can check source code of [Dayjs Store](https://github.com/leight-core/viv/blob/main/packages/%40leight/i18n-client/src/context/DayjsContext.tsx#L36).
+</Callout>
+
+```tsx
+import {useDayjsState} from '@leight/i18n-client';
+
+const MyComponent = () => {
+	/**
+     * Nothing interesting; just access a store (you can also listen for some parts of the store), where
+     * instance of dayjs and other stuff is hidden, see the source code if you want more.
+     */
+	const {dayjs} = useDayjsState();
+
+	return <></>
+}
+```

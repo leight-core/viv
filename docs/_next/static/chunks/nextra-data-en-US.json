@@ -1,9 +1,13 @@
 {
-    "/docs/concepts": {
-        "title": "Introduction",
+    "/about": {
+        "title": "About",
         "data": {
-            "": "Bobobo at the beginning! You may skip this section, but you'll loose deep insights into the libraries and what's behind the scenes.It's strongly recommended (by some unknown wizard) to at least fly through those pages (hey, I've put a lot of time to write this, you know...) and get\nused to the concepts here. They can help you at least steal some of my ideas (which I've probably stolen somewhere else) and boost your own project even\nwithout using any of this work.\nThis library has a lot of concepts which work well together, but may looks sometimes quite complicated. But everything done is well thought and polished.\nBelieve me, it was a lot of time and effort I've put into development of this thing.So - you're free to look around and see, why all the things are done in such ways and what put me into doing things by that.",
-            "whats-inside#What's inside": "You'll find this library wants you to use Monorepo. It's cool tool for managing codebase, even for a smaller app. There is some pain, but it's acceptable, believe me :)There are a lot of snippets which will help you to setup or integrate this library into your project. Basic assumption is you have Node backend, because full power of this\nlibrary is in covering fullstack TypeScript on both sides.The main target is the development of the application, so it's not suitable for static sites or just sites. But if you want some home-made app for something (pet project), or even\nsetup some bigger app, you can use this as it can help a lot. This project is highly optimized for small teams of one member which do not have a lot of time to mess\nwith all the libraries around.\nIf you continue, you got batteries included, also with the whole power plant."
+            "": "",
+            "eddejs#edde.js": "Very first project I've done as a javascript library which solved \"React\" for JavaScript 1.2 (embedded browsers for printers). It was quite\nan interesting library, a lot of nice ideas, but world has moved a lot by the time.But this was the start of the whole history of Leight Project.",
+            "project-leight-core#Project: Leight Core": "Originally there was just a little piece built with Next.js and antd with a few other tools.It did a great job, worked well, but API of the library wasn't good. There were a lot of flaws, so the work continued and Leight Viv was born.",
+            "project-leight-viv#Project: Leight Viv": "Leight Core rewritten, rethink with a lot of new ideas. This is now ultimate way how you can handle frontend development with default support for\nmonorepos, code generation and a lot of other things you can commonly use, but simplified.The main goal is to pick almost anything you repeatedly use and simplify it. So here we are!Viv is used because when I was expecting a child, a sex was unknown. Boy was Tobias and girl Vivienne. I've started to use Viv before... IT WAS A BOY, shit.\nI like him, but the name remains.",
+            "the-name#The name": "Just a note: why Leight?The shortcut was L8, you see that, but I don't like number usage in names, it's strange, thus Leight.As development of library growth, it was used in live sports application, so the name came from Live something something I forgot now. It sounds interesting. That's it.",
+            "team#Team": "Are you curious, how stable the project is? It isn't. Do you want to hear something else? I can lie, but as a lot of other libraries you probably rely on (same\nas this project), there is usually one or a few guys working on the library in the spare time.This project is done in cooperation with primary projects which uses it (corporate applications). But still, I'm, creating it in my spare time, with no\ncommercial support and nothing else. You do not pay for it, so you should expect nothing but my pure ideas for free.I'm Marek H. from Czechia. You're welcome to use anything, fork anything, write issues, extend this docs, ask questions, I'll be happy for that.This project is my legacy, so there is quite a low probability I'll abandon it."
         }
     },
     "/docs/concepts/code-splitting": {
@@ -21,15 +25,11 @@
             "trpc#tRPC": "This is related, but worth mentioning: because @leight expects you will use monorepo for managing all pieces of your app, this one is quite special.With you app - in the monorepo - you should have two packages for tRPC: one for a client, one for server, both serving as center point of component connection - all other packages can export procedures\nwhich should be connected in the server-side package; also this is the only exception where client can include server stuff, but this is due nature of tRPC."
         }
     },
-    "/about": {
-        "title": "About",
+    "/docs/concepts": {
+        "title": "Introduction",
         "data": {
-            "": "",
-            "eddejs#edde.js": "Very first project I've done as a javascript library which solved \"React\" for JavaScript 1.2 (embedded browsers for printers). It was quite\nan interesting library, a lot of nice ideas, but world has moved a lot by the time.But this was the start of the whole history of Leight Project.",
-            "project-leight-core#Project: Leight Core": "Originally there was just a little piece built with Next.js and antd with a few other tools.It did a great job, worked well, but API of the library wasn't good. There were a lot of flaws, so the work continued and Leight Viv was born.",
-            "project-leight-viv#Project: Leight Viv": "Leight Core rewritten, rethink with a lot of new ideas. This is now ultimate way how you can handle frontend development with default support for\nmonorepos, code generation and a lot of other things you can commonly use, but simplified.The main goal is to pick almost anything you repeatedly use and simplify it. So here we are!Viv is used because when I was expecting a child, a sex was unknown. Boy was Tobias and girl Vivienne. I've started to use Viv before... IT WAS A BOY, shit.\nI like him, but the name remains.",
-            "the-name#The name": "Just a note: why Leight?The shortcut was L8, you see that, but I don't like number usage in names, it's strange, thus Leight.As development of library growth, it was used in live sports application, so the name came from Live something something I forgot now. It sounds interesting. That's it.",
-            "team#Team": "Are you curious, how stable the project is? It isn't. Do you want to hear something else? I can lie, but as a lot of other libraries you probably rely on (same\nas this project), there is usually one or a few guys working on the library in the spare time.This project is done in cooperation with primary projects which uses it (corporate applications). But still, I'm, creating it in my spare time, with no\ncommercial support and nothing else. You do not pay for it, so you should expect nothing but my pure ideas for free.I'm Marek H. from Czechia. You're welcome to use anything, fork anything, write issues, extend this docs, ask questions, I'll be happy for that.This project is my legacy, so there is quite a low probability I'll abandon it."
+            "": "Bobobo at the beginning! You may skip this section, but you'll loose deep insights into the libraries and what's behind the scenes.It's strongly recommended (by some unknown wizard) to at least fly through those pages (hey, I've put a lot of time to write this, you know...) and get\nused to the concepts here. They can help you at least steal some of my ideas (which I've probably stolen somewhere else) and boost your own project even\nwithout using any of this work.\nThis library has a lot of concepts which work well together, but may looks sometimes quite complicated. But everything done is well thought and polished.\nBelieve me, it was a lot of time and effort I've put into development of this thing.So - you're free to look around and see, why all the things are done in such ways and what put me into doing things by that.",
+            "whats-inside#What's inside": "You'll find this library wants you to use Monorepo. It's cool tool for managing codebase, even for a smaller app. There is some pain, but it's acceptable, believe me :)There are a lot of snippets which will help you to setup or integrate this library into your project. Basic assumption is you have Node backend, because full power of this\nlibrary is in covering fullstack TypeScript on both sides.The main target is the development of the application, so it's not suitable for static sites or just sites. But if you want some home-made app for something (pet project), or even\nsetup some bigger app, you can use this as it can help a lot. This project is highly optimized for small teams of one member which do not have a lot of time to mess\nwith all the libraries around.\nIf you continue, you got batteries included, also with the whole power plant."
         }
     },
     "/docs/concepts/mcp": {
@@ -52,15 +52,6 @@
             "whats-pita#What's PITA": "PNPM. NEVER EVER use pnpm with @leight and monorepo. Why? Because it's in PITA section which means you will never sit again.Main problem is the way PNPM manages node_modules where it tries isolate everything, so TypeScript cries a lot, because it cannot name types without blablabla (you probably\nknow that error), but npm is cool with it and when you want generate Prisma schema, that's real hell. It's generated into one part of packages, but the others do not see it.So, if you really want to use PNPM, do not ask any questions.\nBuilding. Application or library with time of a few seconds can go up to a few minutes. Rebuilding, total mess. And last - and not least - live coding (watch). This was\nquite hard to get done in the right way and it's not optimal, but somehow works. You have to find way (here it's documented) how to execute, for example, 30 libraries in watch\nmode without you Mac being a small bomb.So be prepared having things in monorepo makes a bit heavier demands on your computer and overall setup of the project.Also startup time of the app could be quite painful. It depends on the tool you use, but there is cool Turbowatch, which helps a lot.\nSo be brave and continue, there is still a lot of interesting stuff going on, we've got you covered."
         }
     },
-    "/docs/concepts/package.json": {
-        "title": "package.json",
-        "data": {
-            "": "You can setup the project in whatever way you want, but here are some advices which could help a bit.",
-            "concurrently#concurrently": "npm i -D concurrently\n\n\n\npnpm i -D concurrently\n\n\n\nyarn add -D concurrently\n\n\nThis library is quite useful, because it enables you execute multiple sections of your scripts in parallel. You may think\nit would not be required everywhere, but it's -D dependency, so who cares.Than you can have something like this\n{\n\"scripts\": {\n\"build\": \"concurrently npm:build:*\",\n\"build:esbuild\": \"node esbuild.mjs\",\n\"build:types\": \"tsc --outDir lib\"\n}\n}",
-            "del-cli#del-cli": "npm i -D del-cli\n\n\n\npnpm i -D del-cli\n\n\n\nyarn add -D del-cli\n\n\nNice tool for deleting files, useful if you want to cleanup mess generated by all those build tools.\nBe careful here, because this command deletes also JavaScript files in the src folder, so if you blindly copy and execute this, don't blame me.It's useful when your TSC emits files into your source code, so you want to cleanup the mess.\n\n{\n\"scripts\": {\n\"cleanup\": \"del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}\"\n}\n}",
-            "dotenv#dotenv": "npm i -D dotenv-cli\n\n\n\npnpm i -D dotenv-cli\n\n\n\nyarn add -D dotenv-cli\n\n\nNice tool for forwarding env variables and reads .env files. Quite cool thing.\nDo you see this? So don't do that! If there is .env.development file, it would get loaded and you'll f*ck up your production build.\n\n{\n\"scripts\": {\n\"build\": \"dotenv -c development -- next build\"\n}\n}"
-        }
-    },
     "/docs/concepts/source/client": {
         "title": "Client",
         "data": {
@@ -72,10 +63,13 @@
             "query#Query": ""
         }
     },
-    "/docs/concepts/source/server": {
-        "title": "Server",
+    "/docs/concepts/package.json": {
+        "title": "package.json",
         "data": {
-            "": ""
+            "": "You can setup the project in whatever way you want, but here are some advices which could help a bit.",
+            "concurrently#concurrently": "npm i -D concurrently\n\n\n\npnpm i -D concurrently\n\n\n\nyarn add -D concurrently\n\n\nThis library is quite useful, because it enables you execute multiple sections of your scripts in parallel. You may think\nit would not be required everywhere, but it's -D dependency, so who cares.Than you can have something like this\n{\n\"scripts\": {\n\"build\": \"concurrently npm:build:*\",\n\"build:esbuild\": \"node esbuild.mjs\",\n\"build:types\": \"tsc --outDir lib\"\n}\n}",
+            "del-cli#del-cli": "npm i -D del-cli\n\n\n\npnpm i -D del-cli\n\n\n\nyarn add -D del-cli\n\n\nNice tool for deleting files, useful if you want to cleanup mess generated by all those build tools.\nBe careful here, because this command deletes also JavaScript files in the src folder, so if you blindly copy and execute this, don't blame me.It's useful when your TSC emits files into your source code, so you want to cleanup the mess.\n\n{\n\"scripts\": {\n\"cleanup\": \"del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}\"\n}\n}",
+            "dotenv#dotenv": "npm i -D dotenv-cli\n\n\n\npnpm i -D dotenv-cli\n\n\n\nyarn add -D dotenv-cli\n\n\nNice tool for forwarding env variables and reads .env files. Quite cool thing.\nDo you see this? So don't do that! If there is .env.development file, it would get loaded and you'll f*ck up your production build.\n\n{\n\"scripts\": {\n\"build\": \"dotenv -c development -- next build\"\n}\n}"
         }
     },
     "/docs/concepts/source": {
@@ -84,8 +78,8 @@
             "": ""
         }
     },
-    "/docs/getting-started/packages": {
-        "title": "Packages",
+    "/docs/concepts/source/server": {
+        "title": "Server",
         "data": {
             "": ""
         }
@@ -100,8 +94,8 @@
             "step-3#Step 3": "dfgdfg"
         }
     },
-    "/docs/packages/calendar-client": {
-        "title": "@leight/calendar-client",
+    "/docs/getting-started/packages": {
+        "title": "Packages",
         "data": {
             "": ""
         }
@@ -114,11 +108,10 @@
             "batteries-included#Batteries included": "Did you expect to have Getting started as the very first item in the menu? Nope.Why? Because you should understand, what this collection of\nlibraries does, because it's all connected via concepts which you should see first.\nSo please, continue to Concepts to check, if your mindset will be able to accept a library which is not done in that traditional way."
         }
     },
-    "/docs/packages/container": {
-        "title": "@leight/container",
+    "/docs/packages/calendar-client": {
+        "title": "@leight/calendar-client",
         "data": {
-            "": "",
-            "installation#Installation": "npm i @leight/container"
+            "": ""
         }
     },
     "/docs/packages/context-client": {
@@ -127,8 +120,21 @@
             "": ""
         }
     },
+    "/docs/packages/container": {
+        "title": "@leight/container",
+        "data": {
+            "": "",
+            "installation#Installation": "npm i @leight/container"
+        }
+    },
     "/docs/packages/esbuild": {
         "title": "@leight/esbuild",
+        "data": {
+            "": ""
+        }
+    },
+    "/docs/packages/i18n-client": {
+        "title": "@leight/i18n-client",
         "data": {
             "": ""
         }
@@ -142,23 +148,11 @@
     "/docs/packages/sdk": {
         "title": "@leight/sdk",
         "data": {
-            "": ""
+            "": "If you want see some examples, how to work with this library, see Workbench."
         }
     },
-    "/docs/packages/zustand": {
-        "title": "@leight/zustand",
-        "data": {
-            "": ""
-        }
-    },
-    "/docs/workbench": {
-        "title": "Workbench",
-        "data": {
-            "": "Here you will find some tutorials and pieces which will help you use Leight Viv in it's full potential."
-        }
-    },
-    "/docs/workbench/monorepo": {
-        "title": "Monorepo setup",
+    "/docs/packages/source": {
+        "title": "@leight/source",
         "data": {
             "": ""
         }
@@ -169,8 +163,30 @@
             "": ""
         }
     },
-    "/docs/workbench/prisma": {
-        "title": "Prisma",
+    "/docs/packages/zustand": {
+        "title": "@leight/zustand",
+        "data": {
+            "": "If you want see some examples, how to work with this library, see Workbench."
+        }
+    },
+    "/docs/workbench/dayjs": {
+        "title": "Day.js",
+        "data": {
+            "": "Information about this package can be found here.\n@leight supports Day.js library out-of-box with some simple stuff around\npackaged into @leight/i18n-client.Reason is simple: provide single instance of dayjs into the app (ensures your app and library internals are using the same instance) with all\nthe required plugins set up.",
+            "installation#Installation": "This library takes with it quite a punch of dependencies.\n\n\nnpm i @leight/i18n-client\n\n\n\npnpm i @leight/i18n-client\n\n\n\nyarn add @leight/i18n-client",
+            "usage#Usage": "Backend is powered by @leight/zustand and @leight/context-client; it comes with some pieces: (store) provider and consumer (hooks).",
+            "provider#Provider": "@leight/zustand is built on top of @leight/context-client with some little magic pieces, so go and check it out if you\nwant to understand this example.\n\nimport {DayjsProvider} from \"@leight/i18n-client\";\nimport {LoadingOverlay} from \"@mantine/core\";\nimport {DatesProvider} from \"@mantine/dates\";\nimport {useRouter} from \"next/router\";\nimport {type FC} from \"react\";\n\nexport interface IPageShellProps {\n}\n\n/**\n* This is stripped version of PageShell used in @leight/mantine; it shows an example, how you can integrate\n* this component into you app and how to use it.\n*/\nexport const PageShell: FC<IPageShellProps> = () => {\n/**\n* Take locale info from whatever place you want, `leight` by default uses Next.js router\n*/\nconst router = useRouter();\nreturn <>\n{/**\n* Make sure this component **is not** under component which re-renders as it's intented to be on a\n* layout level of your app\n*/}\n<DayjsProvider\n/**\n* This is simple stuff: provide locale (so provider could be much lighter on dependencies,\n* because it's not resolving locale by it's own).\n*/\nlocale={router.locale || router.defaultLocale || \"en\" as any}\n/**\n* Naive approach is used: show loading until day.js is prepared for use; generally it does\n* not accept an error state.\n*/\nloading={<LoadingOverlay\nvisible\ntransitionDuration={500}\nloaderProps={{variant: \"bars\"}}\n/>}\n>\n{/**\n* If you need consume Dayjs context immediately, you can provide callback which will get\n* everything set up; or you can pass children directly as you're used to.\n*\n* `DatesProvider` is here just as an example, because it's dependant on Dayjs context,\n* so it needs to be consumed immediately; without it whole callback could be ommited.\n*/}\n{({state: {locale}}) => <DatesProvider settings={{locale}}>\n</DatesProvider>}\n</DayjsProvider>\n</>;\n};",
+            "consumer#Consumer": "You can see what's available in your IDE, or you can check source code of Dayjs Store.\n\nimport {useDayjsState} from '@leight/i18n-client';\n\nconst MyComponent = () => {\n/**\n* Nothing interesting; just access a store (you can also listen for some parts of the store), where\n* instance of dayjs and other stuff is hidden, see the source code if you want more.\n*/\nconst {dayjs} = useDayjsState();\n\nreturn <></>\n}"
+        }
+    },
+    "/docs/workbench": {
+        "title": "Workbench",
+        "data": {
+            "": "Chapters in Workbench are sorted by relevance, so simpler or more basic things are up, complicated ones are near the bottom.\nHere you will find some tutorials and pieces which will help you use Leight Viv in it's full potential."
+        }
+    },
+    "/docs/workbench/monorepo": {
+        "title": "Monorepo setup",
         "data": {
             "": ""
         }
@@ -205,13 +221,13 @@
             "maturity#Maturity": "You see this as yet another project. You're right.But it was quite long time in development and it's used in some projects, concepts and API of the whole collection is quite polished today and you can use whatever\npiece you want/need. The overall goal is to provide best practices over the best libraries available on the current market.This collection may be seen as an inspiration, how you can do things in a quite a nice way - not simple, because you can use thousands of lines of code to do relatively simple thing, but it's worth it, because\nat least - you will not repeat yourself :)."
         }
     },
-    "/docs/packages/source": {
-        "title": "@leight/source",
+    "/docs/workbench/prisma": {
+        "title": "Prisma",
         "data": {
             "": ""
         }
     },
-    "/docs/workbench/zusstand": {
+    "/docs/workbench/zustand": {
         "title": "Zustand",
         "data": {
             "": "This is a very cool package for state management and creating stores. You can create shape of store outside\nReact components and then nicely use it where you want.By default, Zustand stores are global, so when you create some useBearStore(){:js}, it represents global state. Because @leight needs a lot of local\ncontexts (for example Source) for managing data for component subtrees, there was need for some little wrapper around\nZustand store.Motivation for creating this library was boilerplate around defining store, creating Context Providers, creating hooks and having everything typed. So here\ncomes this library - there is one simple method, which handles all the boilerplate for you.\n@leight/context-client re-exports everything from @leight/zustand for simplicity.",

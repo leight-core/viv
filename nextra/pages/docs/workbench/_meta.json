@@ -2,5 +2,7 @@
     "index": "Overview",
     "monorepo": "Monorepo",
     "prisma": "Prisma",
+    "dayjs": "Day.js",
+    "zustand": "Zustand",
     "sdk": "SDK"
 }

@@ -3,9 +3,10 @@
     "calendar-client": "@leight/calendar-client",
     "container": "@leight/container",
     "context-client": "@leight/context-client",
-    "source": "@leight/source",
+    "esbuild": "@leight/esbuild",
+    "i18n-client": "@leight/i18n-client",
     "sdk": "@leight/sdk",
+    "source": "@leight/source",
     "utils-client": "@leight/utils-client",
-    "zustand": "@leight/zustand",
-    "esbuild": "@leight/esbuild"
+    "zustand": "@leight/zustand"
 }
