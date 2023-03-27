@@ -1,5 +1,15 @@
 # @leight/next.js
 
+## 0.5.16
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/container@0.5.51
+    - @leight/user@0.5.57
+    - @leight/utils@0.5.52
+
 ## 0.5.15
 
 ### Patch Changes

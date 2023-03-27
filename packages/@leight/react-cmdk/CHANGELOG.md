@@ -1,5 +1,11 @@
 # @leight/react-cmdk
 
+## 0.5.50
+
+### Patch Changes
+
+- Version bump
+
 ## 0.5.49
 
 ### Patch Changes

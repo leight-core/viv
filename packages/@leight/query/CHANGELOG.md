@@ -1,5 +1,16 @@
 # @leight/query
 
+## 0.5.50
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/cursor@0.5.44
+    - @leight/filter@0.5.46
+    - @leight/react-query@0.5.13
+    - @leight/sort@0.5.47
+
 ## 0.5.49
 
 ### Patch Changes
