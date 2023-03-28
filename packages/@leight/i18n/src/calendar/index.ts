@@ -19,7 +19,7 @@ export interface ICalendarOfProps {
 /**
  * Generate calendar for rendering; it's built on Gregorian calendar.
  */
-export const calendarOf = ({input = DateTime.now(), margin = 1}: ICalendarOfProps): ICalendar => {
+export const calendarOf = ({input = DateTime.now(), margin = 1}: ICalendarOfProps = {input: DateTime.now(), margin: 1}): ICalendar => {
     const start     = input.startOf("month").minus({week: margin});
     const end       = input.endOf("month").plus({week: margin});
     const weekStart = start.startOf("week");
@@ -50,9 +50,9 @@ export const calendarOf = ({input = DateTime.now(), margin = 1}: ICalendarOfProp
     };
 };
 
-export const useCalendar = (props: ICalendarOfProps): ICalendar => {
+export const useCalendar = (props?: ICalendarOfProps): ICalendar => {
     return useMemo(() => calendarOf(props), [
-        (props.input || DateTime.now()).toISODate({format: "basic"}),
-        props.margin,
+        (props?.input || DateTime.now()).toISODate({format: "basic"}),
+        props?.margin || 1,
     ]);
 };
