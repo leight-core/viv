@@ -1,5 +1,28 @@
 # @leight/job
 
+## 0.5.60
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/prisma@0.5.66
+    - @leight/container@0.5.53
+    - @leight/filter@0.5.48
+    - @leight/query@0.5.52
+    - @leight/react-query@0.5.15
+    - @leight/sort@0.5.49
+    - @leight/source@0.5.52
+    - @leight/winston@0.5.51
+
+## 0.5.59
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/prisma@0.5.65
+
 ## 0.5.58
 
 ### Patch Changes

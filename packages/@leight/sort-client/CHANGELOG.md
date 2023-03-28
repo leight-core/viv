@@ -1,5 +1,14 @@
 # @leight/sort-client
 
+## 0.5.15
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/context-client@0.5.60
+    - @leight/sort@0.5.49
+
 ## 0.5.14
 
 ### Patch Changes

@@ -1,5 +1,5 @@
 {
-    "version": "0.5.60",
+    "version": "0.5.62",
     "name": "@leight/user-server",
     "description": "User stuff used server-side.",
     "license": "MIT",
@@ -30,20 +30,20 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "^0.5.52",
-        "@leight/prisma": "^0.5.64",
-        "@leight/query": "^0.5.51",
-        "@leight/source": "^0.5.51",
-        "@leight/source-server": "^0.5.51",
-        "@leight/user": "^0.5.58",
-        "@leight/utils": "^0.5.53"
+        "@leight/container": "^0.5.53",
+        "@leight/prisma": "^0.5.66",
+        "@leight/query": "^0.5.52",
+        "@leight/source": "^0.5.52",
+        "@leight/source-server": "^0.5.52",
+        "@leight/user": "^0.5.60",
+        "@leight/utils": "^0.5.54"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.30",
-        "@leight/eslint-config-eslint": "^0.5.39",
-        "@leight/sdk": "^0.5.9",
-        "@leight/tsconfig": "^0.5.53",
-        "@leight/turbowatch": "^0.5.18",
+        "@leight/esbuild": "^0.5.31",
+        "@leight/eslint-config-eslint": "^0.5.40",
+        "@leight/sdk": "^0.5.10",
+        "@leight/tsconfig": "^0.5.54",
+        "@leight/turbowatch": "^0.5.19",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

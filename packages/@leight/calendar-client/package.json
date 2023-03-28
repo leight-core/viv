@@ -1,5 +1,5 @@
 {
-    "version": "0.5.6",
+    "version": "0.5.7",
     "name": "@leight/calendar-client",
     "description": "Clever Calendar based on Mantine UI library.",
     "license": "MIT",
@@ -28,17 +28,17 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/context-client": "^0.5.58",
+        "@leight/context-client": "^0.5.60",
         "@mantine/core": "^6.0.1",
         "@mantine/hooks": "^6.0.1",
         "@tuplo/use-calendar": "^1.6.0",
         "react": "^18.2.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.30",
-        "@leight/eslint-config-eslint": "^0.5.39",
-        "@leight/tsconfig": "^0.5.53",
-        "@leight/turbowatch": "^0.5.18",
+        "@leight/esbuild": "^0.5.31",
+        "@leight/eslint-config-eslint": "^0.5.40",
+        "@leight/tsconfig": "^0.5.54",
+        "@leight/turbowatch": "^0.5.19",
         "@types/node": "^18.15.0",
         "@types/react": "^18.0.28",
         "concurrently": "^7.6.0",

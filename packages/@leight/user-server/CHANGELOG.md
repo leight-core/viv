@@ -1,5 +1,28 @@
 # @leight/user-server
 
+## 0.5.62
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/prisma@0.5.66
+    - @leight/user@0.5.60
+    - @leight/container@0.5.53
+    - @leight/query@0.5.52
+    - @leight/source@0.5.52
+    - @leight/source-server@0.5.52
+    - @leight/utils@0.5.54
+
+## 0.5.61
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/prisma@0.5.65
+    - @leight/user@0.5.59
+
 ## 0.5.60
 
 ### Patch Changes
