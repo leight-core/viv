@@ -108,6 +108,8 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/generator-server/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/generator/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/sdk/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/apps/nextra/pages" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/apps/nextra/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.github" />
       <excludeFolder url="file://$MODULE_DIR$/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/sql/.turbo" />
@@ -304,7 +306,9 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/generator/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/generator/lib" />
       <excludeFolder url="file://$MODULE_DIR$/docs/.next" />
-      <excludeFolder url="file://$MODULE_DIR$/nextra/.next" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/nextra/.next" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/nextra/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/nextra/bin" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -1,4 +1,15 @@
 {
+    "/about": {
+        "title": "About",
+        "data": {
+            "": "",
+            "eddejs#edde.js": "Very first project I've done as a javascript library which solved \"React\" for JavaScript 1.2 (embedded browsers for printers). It was quite\nan interesting library, a lot of nice ideas, but world has moved a lot by the time.But this was the start of the whole history of Leight Project.",
+            "project-leight-core#Project: Leight Core": "Originally there was just a little piece built with Next.js and antd with a few other tools.It did a great job, worked well, but API of the library wasn't good. There were a lot of flaws, so the work continued and Leight Viv was born.",
+            "project-leight-viv#Project: Leight Viv": "Leight Core rewritten, rethink with a lot of new ideas. This is now ultimate way how you can handle frontend development with default support for\nmonorepos, code generation and a lot of other things you can commonly use, but simplified.The main goal is to pick almost anything you repeatedly use and simplify it. So here we are!Viv is used because when I was expecting a child, a sex was unknown. Boy was Tobias and girl Vivienne. I've started to use Viv before... IT WAS A BOY, shit.\nI like him, but the name remains.",
+            "the-name#The name": "Just a note: why Leight?The shortcut was L8, you see that, but I don't like number usage in names, it's strange, thus Leight.As development of library growth, it was used in live sports application, so the name came from Live something something I forgot now. It sounds interesting. That's it.",
+            "team#Team": "Are you curious, how stable the project is? It isn't. Do you want to hear something else? I can lie, but as a lot of other libraries you probably rely on (same\nas this project), there is usually one or a few guys working on the library in the spare time.This project is done in cooperation with primary projects which uses it (corporate applications). But still, I'm, creating it in my spare time, with no\ncommercial support and nothing else. You do not pay for it, so you should expect nothing but my pure ideas for free.I'm Marek H. from Czechia. You're welcome to use anything, fork anything, write issues, extend this docs, ask questions, I'll be happy for that.This project is my legacy, so there is quite a low probability I'll abandon it."
+        }
+    },
     "/docs/concepts/code-splitting": {
         "title": "Code splitting",
         "data": {
@@ -14,31 +25,11 @@
             "trpc#tRPC": "This is related, but worth mentioning: because @leight expects you will use monorepo for managing all pieces of your app, this one is quite special.With you app - in the monorepo - you should have two packages for tRPC: one for a client, one for server, both serving as center point of component connection - all other packages can export procedures\nwhich should be connected in the server-side package; also this is the only exception where client can include server stuff, but this is due nature of tRPC."
         }
     },
-    "/about": {
-        "title": "About",
-        "data": {
-            "": "",
-            "eddejs#edde.js": "Very first project I've done as a javascript library which solved \"React\" for JavaScript 1.2 (embedded browsers for printers). It was quite\nan interesting library, a lot of nice ideas, but world has moved a lot by the time.But this was the start of the whole history of Leight Project.",
-            "project-leight-core#Project: Leight Core": "Originally there was just a little piece built with Next.js and antd with a few other tools.It did a great job, worked well, but API of the library wasn't good. There were a lot of flaws, so the work continued and Leight Viv was born.",
-            "project-leight-viv#Project: Leight Viv": "Leight Core rewritten, rethink with a lot of new ideas. This is now ultimate way how you can handle frontend development with default support for\nmonorepos, code generation and a lot of other things you can commonly use, but simplified.The main goal is to pick almost anything you repeatedly use and simplify it. So here we are!Viv is used because when I was expecting a child, a sex was unknown. Boy was Tobias and girl Vivienne. I've started to use Viv before... IT WAS A BOY, shit.\nI like him, but the name remains.",
-            "the-name#The name": "Just a note: why Leight?The shortcut was L8, you see that, but I don't like number usage in names, it's strange, thus Leight.As development of library growth, it was used in live sports application, so the name came from Live something something I forgot now. It sounds interesting. That's it.",
-            "team#Team": "Are you curious, how stable the project is? It isn't. Do you want to hear something else? I can lie, but as a lot of other libraries you probably rely on (same\nas this project), there is usually one or a few guys working on the library in the spare time.This project is done in cooperation with primary projects which uses it (corporate applications). But still, I'm, creating it in my spare time, with no\ncommercial support and nothing else. You do not pay for it, so you should expect nothing but my pure ideas for free.I'm Marek H. from Czechia. You're welcome to use anything, fork anything, write issues, extend this docs, ask questions, I'll be happy for that.This project is my legacy, so there is quite a low probability I'll abandon it."
-        }
-    },
     "/docs/concepts": {
         "title": "Introduction",
         "data": {
             "": "Bobobo at the beginning! You may skip this section, but you'll loose deep insights into the libraries and what's behind the scenes.It's strongly recommended (by some unknown wizard) to at least fly through those pages (hey, I've put a lot of time to write this, you know...) and get\nused to the concepts here. They can help you at least steal some of my ideas (which I've probably stolen somewhere else) and boost your own project even\nwithout using any of this work.\nThis library has a lot of concepts which work well together, but may looks sometimes quite complicated. But everything done is well thought and polished.\nBelieve me, it was a lot of time and effort I've put into development of this thing.So - you're free to look around and see, why all the things are done in such ways and what put me into doing things by that.",
             "whats-inside#What's inside": "You'll find this library wants you to use Monorepo. It's cool tool for managing codebase, even for a smaller app. There is some pain, but it's acceptable, believe me :)There are a lot of snippets which will help you to setup or integrate this library into your project. Basic assumption is you have Node backend, because full power of this\nlibrary is in covering fullstack TypeScript on both sides.The main target is the development of the application, so it's not suitable for static sites or just sites. But if you want some home-made app for something (pet project), or even\nsetup some bigger app, you can use this as it can help a lot. This project is highly optimized for small teams of one member which do not have a lot of time to mess\nwith all the libraries around.\nIf you continue, you got batteries included, also with the whole power plant."
-        }
-    },
-    "/docs/concepts/monorepo": {
-        "title": "Monorepo",
-        "data": {
-            "": "This page is just about concept and reasons, if you want full guide, see this workbench page.\nBecause a lot of concepts here are based on splitting code into smaller packages, I should say packages with single responsibility,\nmonorepo is needed.This is just a concept, why it's required, for tutorial, see Workbench. Because this project uses Turborepo, it\nalso provides setup using this tool.",
-            "whats-good#What's good": "You can create bilions of small libraries (those things with package.json) and split the logic/code across them. This library also generates a lof of stuff and it really\nlikes things clean and shiny, so you will have hard time if you do things in a different way. It may work, but be careful.So yes, obvious bonus is separated code and clean dependencies. You can also reuse pieces of your own app if you wish to publish your packages into the registry.",
-            "whats-not-so-good#What's not so good": "IDE support. Because of TypeScript and dynamics of development of small libraries, IDE support may suck a lot of time, you loose finding references, refactoring is quite\nhard and overall experience is a bit worse. That's a tradeoff of separated packages. You should accept it.",
-            "whats-pita#What's PITA": "PNPM. NEVER EVER use pnpm with @leight and monorepo. Why? Because it's in PITA section which means you will never sit again.Main problem is the way PNPM manages node_modules where it tries isolate everything, so TypeScript cries a lot, because it cannot name types without blablabla (you probably\nknow that error), but npm is cool with it and when you want generate Prisma schema, that's real hell. It's generated into one part of packages, but the others do not see it.So, if you really want to use PNPM, do not ask any questions.\nBuilding. Application or library with time of a few seconds can go up to a few minutes. Rebuilding, total mess. And last - and not least - live coding (watch). This was\nquite hard to get done in the right way and it's not optimal, but somehow works. You have to find way (here it's documented) how to execute, for example, 30 libraries in watch\nmode without you Mac being a small bomb.So be prepared having things in monorepo makes a bit heavier demands on your computer and overall setup of the project.Also startup time of the app could be quite painful. It depends on the tool you use, but there is cool Turbowatch, which helps a lot.\nSo be brave and continue, there is still a lot of interesting stuff going on, we've got you covered."
         }
     },
     "/docs/concepts/mcp": {
@@ -52,21 +43,6 @@
             "whats-generated#What's generated": "This is dynamic topic, so I'll put only a few of things I know now:\nSources - this wraps Prisma \"repository\", typings and makes a \"standard\" way how to get data\nSourceProvider for types data (isolates from where you get data)\nQueryProvider for managing SourceProviders, so you can simply manage Source state (filtering, ordering, paging, ...)\nSchemas for validating inputs/outputs\n...and some other things I don't know yet or I'm lazy to write now"
         }
     },
-    "/docs/concepts/package.json": {
-        "title": "package.json",
-        "data": {
-            "": "You can setup the project in whatever way you want, but here are some advices which could help a bit.",
-            "concurrently#concurrently": "npm i -D concurrently\n\n\n\npnpm i -D concurrently\n\n\n\nyarn add -D concurrently\n\n\nThis library is quite useful, because it enables you execute multiple sections of your scripts in parallel. You may think\nit would not be required everywhere, but it's -D dependency, so who cares.Than you can have something like this\n{\n\"scripts\": {\n\"build\": \"concurrently npm:build:*\",\n\"build:esbuild\": \"node esbuild.mjs\",\n\"build:types\": \"tsc --outDir lib\"\n}\n}",
-            "del-cli#del-cli": "npm i -D del-cli\n\n\n\npnpm i -D del-cli\n\n\n\nyarn add -D del-cli\n\n\nNice tool for deleting files, useful if you want to cleanup mess generated by all those build tools.\nBe careful here, because this command deletes also JavaScript files in the src folder, so if you blindly copy and execute this, don't blame me.It's useful when your TSC emits files into your source code, so you want to cleanup the mess.\n\n{\n\"scripts\": {\n\"cleanup\": \"del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}\"\n}\n}",
-            "dotenv#dotenv": "npm i -D dotenv-cli\n\n\n\npnpm i -D dotenv-cli\n\n\n\nyarn add -D dotenv-cli\n\n\nNice tool for forwarding env variables and reads .env files. Quite cool thing.\nDo you see this? So don't do that! If there is .env.development file, it would get loaded and you'll f*ck up your production build.\n\n{\n\"scripts\": {\n\"build\": \"dotenv -c development -- next build\"\n}\n}"
-        }
-    },
-    "/docs/concepts/source": {
-        "title": "Introduction",
-        "data": {
-            "": ""
-        }
-    },
     "/docs/concepts/source/client": {
         "title": "Client",
         "data": {
@@ -76,6 +52,21 @@
             "cursor#Cursor": "",
             "filter#Filter": "",
             "query#Query": ""
+        }
+    },
+    "/docs/concepts/source": {
+        "title": "Introduction",
+        "data": {
+            "": ""
+        }
+    },
+    "/docs/concepts/package.json": {
+        "title": "package.json",
+        "data": {
+            "": "You can setup the project in whatever way you want, but here are some advices which could help a bit.",
+            "concurrently#concurrently": "npm i -D concurrently\n\n\n\npnpm i -D concurrently\n\n\n\nyarn add -D concurrently\n\n\nThis library is quite useful, because it enables you execute multiple sections of your scripts in parallel. You may think\nit would not be required everywhere, but it's -D dependency, so who cares.Than you can have something like this\n{\n\"scripts\": {\n\"build\": \"concurrently npm:build:*\",\n\"build:esbuild\": \"node esbuild.mjs\",\n\"build:types\": \"tsc --outDir lib\"\n}\n}",
+            "del-cli#del-cli": "npm i -D del-cli\n\n\n\npnpm i -D del-cli\n\n\n\nyarn add -D del-cli\n\n\nNice tool for deleting files, useful if you want to cleanup mess generated by all those build tools.\nBe careful here, because this command deletes also JavaScript files in the src folder, so if you blindly copy and execute this, don't blame me.It's useful when your TSC emits files into your source code, so you want to cleanup the mess.\n\n{\n\"scripts\": {\n\"cleanup\": \"del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}\"\n}\n}",
+            "dotenv#dotenv": "npm i -D dotenv-cli\n\n\n\npnpm i -D dotenv-cli\n\n\n\nyarn add -D dotenv-cli\n\n\nNice tool for forwarding env variables and reads .env files. Quite cool thing.\nDo you see this? So don't do that! If there is .env.development file, it would get loaded and you'll f*ck up your production build.\n\n{\n\"scripts\": {\n\"build\": \"dotenv -c development -- next build\"\n}\n}"
         }
     },
     "/docs/concepts/source/server": {
@@ -94,29 +85,17 @@
             "step-3#Step 3": "dfgdfg"
         }
     },
+    "/docs/concepts/monorepo": {
+        "title": "Monorepo",
+        "data": {
+            "": "This page is just about concept and reasons, if you want full guide, see this workbench page.\nBecause a lot of concepts here are based on splitting code into smaller packages, I should say packages with single responsibility,\nmonorepo is needed.This is just a concept, why it's required, for tutorial, see Workbench. Because this project uses Turborepo, it\nalso provides setup using this tool.",
+            "whats-good#What's good": "You can create bilions of small libraries (those things with package.json) and split the logic/code across them. This library also generates a lof of stuff and it really\nlikes things clean and shiny, so you will have hard time if you do things in a different way. It may work, but be careful.So yes, obvious bonus is separated code and clean dependencies. You can also reuse pieces of your own app if you wish to publish your packages into the registry.",
+            "whats-not-so-good#What's not so good": "IDE support. Because of TypeScript and dynamics of development of small libraries, IDE support may suck a lot of time, you loose finding references, refactoring is quite\nhard and overall experience is a bit worse. That's a tradeoff of separated packages. You should accept it.",
+            "whats-pita#What's PITA": "PNPM. NEVER EVER use pnpm with @leight and monorepo. Why? Because it's in PITA section which means you will never sit again.Main problem is the way PNPM manages node_modules where it tries isolate everything, so TypeScript cries a lot, because it cannot name types without blablabla (you probably\nknow that error), but npm is cool with it and when you want generate Prisma schema, that's real hell. It's generated into one part of packages, but the others do not see it.So, if you really want to use PNPM, do not ask any questions.\nBuilding. Application or library with time of a few seconds can go up to a few minutes. Rebuilding, total mess. And last - and not least - live coding (watch). This was\nquite hard to get done in the right way and it's not optimal, but somehow works. You have to find way (here it's documented) how to execute, for example, 30 libraries in watch\nmode without you Mac being a small bomb.So be prepared having things in monorepo makes a bit heavier demands on your computer and overall setup of the project.Also startup time of the app could be quite painful. It depends on the tool you use, but there is cool Turbowatch, which helps a lot.\nSo be brave and continue, there is still a lot of interesting stuff going on, we've got you covered."
+        }
+    },
     "/docs/getting-started/packages": {
         "title": "Packages",
-        "data": {
-            "": ""
-        }
-    },
-    "/docs": {
-        "title": "Welcome",
-        "data": {
-            "": "So, here you're. You've found very interesting project, which is intended to help develop fullstack web applications with the help of Next.js, React, Mantine UI and\nzilions of other libraries.It's a quite specific project, so you have to start with it's concepts, just to check, if we can be friends.",
-            "requirements#Requirements": "You should be familiar with fullstack web development, in this case be familiar with Next.js, Prisma,\nReact and a lot of others stuff. If you don't know some used libraries, they have great docs too, so read it, it's not that hard :).Also, you have to be curious and open minded, because if you're kind of oldschool guy, leave, your health is in danger.",
-            "batteries-included#Batteries included": "Did you expect to have Getting started as the very first item in the menu? Nope.Why? Because you should understand, what this collection of\nlibraries does, because it's all connected via concepts which you should see first.\nSo please, continue to Concepts to check, if your mindset will be able to accept a library which is not done in that traditional way."
-        }
-    },
-    "/docs/packages/container": {
-        "title": "@leight/container",
-        "data": {
-            "": "",
-            "installation#Installation": "npm i @leight/container"
-        }
-    },
-    "/docs/packages/calendar-client": {
-        "title": "@leight/calendar-client",
         "data": {
             "": ""
         }
@@ -139,10 +118,23 @@
             "": ""
         }
     },
+    "/docs/packages/calendar-client": {
+        "title": "@leight/calendar-client",
+        "data": {
+            "": ""
+        }
+    },
     "/docs/packages": {
         "title": "Overview",
         "data": {
             "": "Here you are all packages in the project with some brief information about them."
+        }
+    },
+    "/docs/packages/container": {
+        "title": "@leight/container",
+        "data": {
+            "": "",
+            "installation#Installation": "npm i @leight/container"
         }
     },
     "/docs/packages/mantine": {
@@ -152,20 +144,28 @@
             "pageshell#PageShell": "This component is an entry point for your app, it provides all the services offered by @leight.\nimport {emotionCache} from \"@/my-app/emotion-cache\";\nimport \"@/my-app/styles/globals.css\";\nimport {PageShell} from \"@leight/mantine\";\nimport {trpc} from \"@my-app/trpc-client\";\nimport {appWithTranslation} from \"next-i18next\";\nimport type {AppProps} from \"next/app\";\n\nexport function MyApp(\n{\nComponent,\npageProps,\n}: AppProps) {\n/**\n* Just use PageShell and fill all required props; if you want to add your own\n* services, just put them as child as you're used to.\n*/\nreturn <PageShell\ntitle={\"my-app\"}\nemotionCache={emotionCache}\nComponent={Component}\npageProps={pageProps}\n/>;\n}\n\n/**\n* This is a bit unrelated, but to keep example complete, this provides connection of your app to tRPC.\n*/\nexport default trpc.withTRPC(appWithTranslation(MyApp));"
         }
     },
+    "/docs": {
+        "title": "Welcome",
+        "data": {
+            "": "So, here you're. You've found very interesting project, which is intended to help develop fullstack web applications with the help of Next.js, React, Mantine UI and\nzilions of other libraries.It's a quite specific project, so you have to start with it's concepts, just to check, if we can be friends.",
+            "requirements#Requirements": "You should be familiar with fullstack web development, in this case be familiar with Next.js, Prisma,\nReact and a lot of others stuff. If you don't know some used libraries, they have great docs too, so read it, it's not that hard :).Also, you have to be curious and open minded, because if you're kind of oldschool guy, leave, your health is in danger.",
+            "batteries-included#Batteries included": "Did you expect to have Getting started as the very first item in the menu? Nope.Why? Because you should understand, what this collection of\nlibraries does, because it's all connected via concepts which you should see first.\nSo please, continue to Concepts to check, if your mindset will be able to accept a library which is not done in that traditional way."
+        }
+    },
     "/docs/packages/sdk": {
         "title": "@leight/sdk",
         "data": {
             "": "If you want see some examples, how to work with this library, see Workbench."
         }
     },
-    "/docs/packages/source": {
-        "title": "@leight/source",
+    "/docs/packages/utils-client": {
+        "title": "@leight/utils-client",
         "data": {
             "": ""
         }
     },
-    "/docs/packages/utils-client": {
-        "title": "@leight/utils-client",
+    "/docs/packages/source": {
+        "title": "@leight/source",
         "data": {
             "": ""
         }
@@ -207,18 +207,6 @@
             "": ""
         }
     },
-    "/docs/workbench/sdk": {
-        "title": "SDK",
-        "data": {
-            "": "Everything you see here in code snippets has more options and also inline-source documentation of all available properties. So\nif you pickup some piece of code, read the code docs too.\nSDK stands as an implementation of MCP in the @leight collection. It's meant as development kit, which you should not modify\nas it comes from outside, in this case from generator.",
-            "installation#Installation": "npm i -D @leight/sdk tsx concurrently typescript\n\n\n\npnpm i -D @leight/sdk tsx concurrently typescript\n\n\n\nyarn add -D @leight/sdk tsx concurrently typescript\n\n\n\n@leight/sdk: The generator itself\ntsx: Generator does not ship executable as it expects being executed by the user (that's you!); with this in mind, you can use whatever executor you want\ntypescript: You already should have one for obvious reasons\nconcurrently: This one is also required by a concept and setup of package.json",
-            "usage#Usage": "If you want to use this part of the library, you should be familiar with Source concept.\n\nIf you want to use this, you're already using monorepo, but this guide also requires usage of standalone prisma package for your app (or lib).\nUpdate package.json (applies for all three kind of packages - client/server/common).\n{\n\"scripts\": {\n\"generate\": \"concurrently npm:generate:*\",\n\"generate:sdk\": \"tsx src/leight-sdk.ts\"\n}\n}\nAdd generator scripts to your package.json; concurrently is present, because some of your packages may use more generators (for example prisma), so you're already prepared. But this is up to you, you're\nthe boss.Now it's time for leight-sdk.ts configuration file: it's presence in src folder is just to keep everything together, and also it could get type-checked, so if something in generator API is changed, it could\nhelp you find cause instead of strange death.",
-            "common#Common": "For your API package (without suffix) create a file src/leight-sdk.ts; you can choose whatever name you want, but do not forget to update package.json.\nimport {withSdk, withSourceGenerators} from \"@leight/sdk\";\n\n/**\n* Generator itself (handles file creation, execution, console params stuff and others...)\n*/\nvoid withSdk(\n/**\n* Common (api) set of generators; at the end it uses usually more internal generators, which could\n* also be used manually if you want/need.\n*/\nwithSourceGenerators({\nentity:   \"Prisma entity name, for example User (case is important); this is used to generate Schemas\",\npackages: {\n/**\n* Because you have a standalone prisma package, you can use it here, so generator can properly\n* import all Prisma parts of the model you want to generate.\n*/\nprisma: \"@my-app/prisma\",\n},\n/**\n* You may optionally specify field names which should be generated in your SortSchema for the given\n* model. Remember that input (Sort) schema is not the same as OrderBy in Prisma, you have to handle\n* it in Source (to prevent direct internals exposure to the client).\n*/\nsorts:    [\n\"field-name\",\n\"field-name2\",\n\"field-name3\",\n],\n})\n);",
-            "client#Client": "For your client-side package create a file src/leight-sdk.ts; you can choose whatever name you want, but do not forget to update package.json.\nimport {withClientSourceGenerators, withSdk} from \"@leight/sdk\";\n\n/**\n* Generator itself (handles file creation, execution, console params stuff and others...)\n*/\nvoid withSdk(\n/**\n* Client set of generators; at the end, it uses more internal generators, which could\n* also be used manually if you want/need.\n*/\nwithClientSourceGenerators({\nentity:   \"Prisma entity name, for example User (case is important); this is used to generate Schemas\",\npackages: {\n/**\n* This is a reference to a common package with generated schemas, interfaces and other\n* stuff required. Usually, current package name without suffix.\n*/\nschema: \"@my-app/model-name\",\n},\ntrpc:     {\npath:    \"trpc.route.path\",\npackage: \"@my-app/trpc-client\",\n},\n})\n);",
-            "server#Server": "For your server-side package create a file src/leight-sdk.ts; you can choose whatever name you want, but do not forget to update package.json.\nimport {withServerSourceGenerators, withSdk} from \"@leight/sdk\";\n\n/**\n* Generator itself (handles file creation, execution, console params stuff and others...)\n*/\nvoid withSdk(\n/**\n* Server set of generators; at the end, it uses more internal generators, which could\n* also be used manually if you want/need.\n*/\nwithServerSourceGenerators({\nentity:   \"Prisma entity name, for example User (case is important); this is used to generate Schemas\",\npackages: {\n/**\n* This is a reference to a common package with generated schemas, interfaces and other\n* stuff required. Usually, current package name without suffix.\n*/\nschema: \"@my-app/model-name\",\n/**\n* Because you have a standalone prisma package, you can use it here, so generator can properly\n* import all Prisma parts of the model you want to generate.\n*/\nprisma: \"@my-app/prisma\",\n},\n/**\n* This is a single name of the property on prismaClient which will be generated into the Source.\n*/\nprisma:   \"prismaClient.<entityName>\",\n})\n);",
-            "epilogue#Epilogue": "Now you're almost done: just update your turbo.json (or whatever monorepo you're using):\nDon't copy-paste this piece of code, just think about it's meaning: execute code generation before your build, so you're sure\neverything is in the place.\n\n{\n\"generate\": {\n\"cache\": false\n},\n\"build\": {\n\"dependsOn\": [\n\"^build\",\n\"generate\"\n]\n}\n}"
-        }
-    },
     "/": {
         "title": "Project: Leight Viv",
         "data": {
@@ -235,6 +223,18 @@
             "typescript#TypeScript": "It's an opinion, but... there is no other choice: the project is built on top of TypeScript and heavily uses types to make you live a lot easier. Ok, there are some tradeoffs, but who cares.",
             "motivation#Motivation": "All the time new app is created, there is a lot of stuff repeatedly created, a lot of same concepts, data fetching, mutations and so on.This collection aims to make kind of \"standard\" which offloads thinking of \"how to get data\", \"how to sort data\", creating tables, forms, connecting them to the backend\nand a lot of other stuff.So here we're: you can pick some tools, you can use a whole collection and simplify your developer life a lot by generating pieces of repeated code,\nhaving everything typed and so on.",
             "maturity#Maturity": "You see this as yet another project. You're right.But it was quite long time in development and it's used in some projects, concepts and API of the whole collection is quite polished today and you can use whatever\npiece you want/need. The overall goal is to provide best practices over the best libraries available on the current market.This collection may be seen as an inspiration, how you can do things in a quite a nice way - not simple, because you can use thousands of lines of code to do relatively simple thing, but it's worth it, because\nat least - you will not repeat yourself :)."
+        }
+    },
+    "/docs/workbench/sdk": {
+        "title": "SDK",
+        "data": {
+            "": "Everything you see here in code snippets has more options and also inline-source documentation of all available properties. So\nif you pickup some piece of code, read the code docs too.\nSDK stands as an implementation of MCP in the @leight collection. It's meant as development kit, which you should not modify\nas it comes from outside, in this case from generator.",
+            "installation#Installation": "npm i -D @leight/sdk tsx concurrently typescript\n\n\n\npnpm i -D @leight/sdk tsx concurrently typescript\n\n\n\nyarn add -D @leight/sdk tsx concurrently typescript\n\n\n\n@leight/sdk: The generator itself\ntsx: Generator does not ship executable as it expects being executed by the user (that's you!); with this in mind, you can use whatever executor you want\ntypescript: You already should have one for obvious reasons\nconcurrently: This one is also required by a concept and setup of package.json",
+            "usage#Usage": "If you want to use this part of the library, you should be familiar with Source concept.\n\nIf you want to use this, you're already using monorepo, but this guide also requires usage of standalone prisma package for your app (or lib).\nUpdate package.json (applies for all three kind of packages - client/server/common).\n{\n\"scripts\": {\n\"generate\": \"concurrently npm:generate:*\",\n\"generate:sdk\": \"tsx src/leight-sdk.ts\"\n}\n}\nAdd generator scripts to your package.json; concurrently is present, because some of your packages may use more generators (for example prisma), so you're already prepared. But this is up to you, you're\nthe boss.Now it's time for leight-sdk.ts configuration file: it's presence in src folder is just to keep everything together, and also it could get type-checked, so if something in generator API is changed, it could\nhelp you find cause instead of strange death.",
+            "common#Common": "For your API package (without suffix) create a file src/leight-sdk.ts; you can choose whatever name you want, but do not forget to update package.json.\nimport {withSdk, withSourceGenerators} from \"@leight/sdk\";\n\n/**\n* Generator itself (handles file creation, execution, console params stuff and others...)\n*/\nvoid withSdk(\n/**\n* Common (api) set of generators; at the end it uses usually more internal generators, which could\n* also be used manually if you want/need.\n*/\nwithSourceGenerators({\nentity:   \"Prisma entity name, for example User (case is important); this is used to generate Schemas\",\npackages: {\n/**\n* Because you have a standalone prisma package, you can use it here, so generator can properly\n* import all Prisma parts of the model you want to generate.\n*/\nprisma: \"@my-app/prisma\",\n},\n/**\n* You may optionally specify field names which should be generated in your SortSchema for the given\n* model. Remember that input (Sort) schema is not the same as OrderBy in Prisma, you have to handle\n* it in Source (to prevent direct internals exposure to the client).\n*/\nsorts:    [\n\"field-name\",\n\"field-name2\",\n\"field-name3\",\n],\n})\n);",
+            "client#Client": "For your client-side package create a file src/leight-sdk.ts; you can choose whatever name you want, but do not forget to update package.json.\nimport {withClientSourceGenerators, withSdk} from \"@leight/sdk\";\n\n/**\n* Generator itself (handles file creation, execution, console params stuff and others...)\n*/\nvoid withSdk(\n/**\n* Client set of generators; at the end, it uses more internal generators, which could\n* also be used manually if you want/need.\n*/\nwithClientSourceGenerators({\nentity:   \"Prisma entity name, for example User (case is important); this is used to generate Schemas\",\npackages: {\n/**\n* This is a reference to a common package with generated schemas, interfaces and other\n* stuff required. Usually, current package name without suffix.\n*/\nschema: \"@my-app/model-name\",\n},\ntrpc:     {\npath:    \"trpc.route.path\",\npackage: \"@my-app/trpc-client\",\n},\n})\n);",
+            "server#Server": "For your server-side package create a file src/leight-sdk.ts; you can choose whatever name you want, but do not forget to update package.json.\nimport {withServerSourceGenerators, withSdk} from \"@leight/sdk\";\n\n/**\n* Generator itself (handles file creation, execution, console params stuff and others...)\n*/\nvoid withSdk(\n/**\n* Server set of generators; at the end, it uses more internal generators, which could\n* also be used manually if you want/need.\n*/\nwithServerSourceGenerators({\nentity:   \"Prisma entity name, for example User (case is important); this is used to generate Schemas\",\npackages: {\n/**\n* This is a reference to a common package with generated schemas, interfaces and other\n* stuff required. Usually, current package name without suffix.\n*/\nschema: \"@my-app/model-name\",\n/**\n* Because you have a standalone prisma package, you can use it here, so generator can properly\n* import all Prisma parts of the model you want to generate.\n*/\nprisma: \"@my-app/prisma\",\n},\n/**\n* This is a single name of the property on prismaClient which will be generated into the Source.\n*/\nprisma:   \"prismaClient.<entityName>\",\n})\n);",
+            "epilogue#Epilogue": "Now you're almost done: just update your turbo.json (or whatever monorepo you're using):\nDon't copy-paste this piece of code, just think about it's meaning: execute code generation before your build, so you're sure\neverything is in the place.\n\n{\n\"generate\": {\n\"cache\": false\n},\n\"build\": {\n\"dependsOn\": [\n\"^build\",\n\"generate\"\n]\n}\n}"
         }
     },
     "/docs/workbench/zustand": {
