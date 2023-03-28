@@ -7,7 +7,7 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build && next export -o ../docs && touch ../docs/.nojekyll",
-        "start": "next start"
+        "start": "dotenv -v PORT=9090 -- node ./.next/standalone/server.js"
     },
     "dependencies": {
         "next": "^13.2.4",
@@ -19,6 +19,7 @@
     "devDependencies": {
         "@types/node": "^18.15.7",
         "touch-cli": "^0.0.1",
+        "dotenv-cli": "^7.1.0",
         "typescript": "^5.0.2"
     }
 }
