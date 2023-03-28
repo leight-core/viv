@@ -110,6 +110,9 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/sdk/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/apps/nextra/pages" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/apps/nextra/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/apps/ladle/public" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/apps/ladle/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/apps/vitebook/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.github" />
       <excludeFolder url="file://$MODULE_DIR$/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/sql/.turbo" />

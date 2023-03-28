@@ -1,22 +1,19 @@
-import {DateTimeProvider}     from "@leight/i18n-client";
 import {type IPageWithLayout} from "@leight/layout";
-import {MantineProvider}      from "@mantine/core";
-import {Notifications}        from "@mantine/notifications";
 import {SessionProvider}      from "next-auth/react";
 import {type AppProps}        from "next/app";
 import Head                   from "next/head";
-import {
-    type ComponentProps,
-    type FC
-}                             from "react";
+import {type FC}              from "react";
 import {RouterTransition}     from "../RouterTransition";
+import {
+    type IShellProps,
+    Shell
+}                             from "./Shell";
 
-export interface IPageShellProps {
+export interface IPageShellProps extends IShellProps {
     /**
      * Default page title
      */
     title: string;
-    colorScheme?: "dark" | "light";
     /**
      * Incoming component name from Next.js _app
      */
@@ -25,7 +22,6 @@ export interface IPageShellProps {
      * Incoming component page props from Next.js _app
      */
     pageProps?: AppProps["pageProps"];
-    emotionCache?: ComponentProps<typeof MantineProvider>["emotionCache"];
     isLoading?: boolean;
 }
 
@@ -35,10 +31,9 @@ export interface IPageShellProps {
 export const PageShell: FC<IPageShellProps> = (
     {
         title,
-        colorScheme = "light",
-        emotionCache,
         Component,
         pageProps,
+        ...props
     }) => {
     return <>
         <Head>
@@ -51,24 +46,18 @@ export const PageShell: FC<IPageShellProps> = (
             />
             <link rel={"shortcut icon"} href={"/favicon.ico"}/>
         </Head>
-        <MantineProvider
-            theme={{colorScheme}}
-            withGlobalStyles
-            withNormalizeCSS
-            emotionCache={emotionCache}
+        <RouterTransition/>
+        <SessionProvider
+            refetchInterval={30}
+            refetchOnWindowFocus
         >
-            <DateTimeProvider>
-                <Notifications position={"top-right"}/>
-                <RouterTransition/>
-                <SessionProvider
-                    refetchInterval={30}
-                    refetchOnWindowFocus
-                >
-                    {(
-                        (Component as unknown as IPageWithLayout).layout || ((page) => page)
-                    )(<Component {...pageProps}/>)}
-                </SessionProvider>
-            </DateTimeProvider>
-        </MantineProvider>
+            <Shell
+                {...props}
+            >
+                {(
+                    (Component as unknown as IPageWithLayout).layout || ((page) => page)
+                )(<Component {...pageProps}/>)}
+            </Shell>
+        </SessionProvider>
     </>;
 };

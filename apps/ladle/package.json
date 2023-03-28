@@ -1,0 +1,24 @@
+{
+    "name": "@leight/ladle",
+    "private": true,
+    "version": "0.5.0",
+    "type": "module",
+    "scripts": {
+        "dev": "ladle serve",
+        "build": "ladle build"
+    },
+    "dependencies": {
+        "@ladle/react": "^2.10.2",
+        "@leight/calendar-client": "^0.5.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@types/react": "^18.0.28",
+        "@types/react-dom": "^18.0.11",
+        "@vitejs/plugin-react-swc": "^3.0.0",
+        "ladle": "^0.0.0",
+        "typescript": "^5.0.2",
+        "vite": "^4.2.1"
+    }
+}
