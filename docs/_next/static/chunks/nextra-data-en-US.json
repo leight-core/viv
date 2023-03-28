@@ -32,6 +32,15 @@
             "whats-inside#What's inside": "You'll find this library wants you to use Monorepo. It's cool tool for managing codebase, even for a smaller app. There is some pain, but it's acceptable, believe me :)There are a lot of snippets which will help you to setup or integrate this library into your project. Basic assumption is you have Node backend, because full power of this\nlibrary is in covering fullstack TypeScript on both sides.The main target is the development of the application, so it's not suitable for static sites or just sites. But if you want some home-made app for something (pet project), or even\nsetup some bigger app, you can use this as it can help a lot. This project is highly optimized for small teams of one member which do not have a lot of time to mess\nwith all the libraries around.\nIf you continue, you got batteries included, also with the whole power plant."
         }
     },
+    "/docs/concepts/monorepo": {
+        "title": "Monorepo",
+        "data": {
+            "": "This page is just about concept and reasons, if you want full guide, see this workbench page.\nBecause a lot of concepts here are based on splitting code into smaller packages, I should say packages with single responsibility,\nmonorepo is needed.This is just a concept, why it's required, for tutorial, see Workbench. Because this project uses Turborepo, it\nalso provides setup using this tool.",
+            "whats-good#What's good": "You can create bilions of small libraries (those things with package.json) and split the logic/code across them. This library also generates a lof of stuff and it really\nlikes things clean and shiny, so you will have hard time if you do things in a different way. It may work, but be careful.So yes, obvious bonus is separated code and clean dependencies. You can also reuse pieces of your own app if you wish to publish your packages into the registry.",
+            "whats-not-so-good#What's not so good": "IDE support. Because of TypeScript and dynamics of development of small libraries, IDE support may suck a lot of time, you loose finding references, refactoring is quite\nhard and overall experience is a bit worse. That's a tradeoff of separated packages. You should accept it.",
+            "whats-pita#What's PITA": "PNPM. NEVER EVER use pnpm with @leight and monorepo. Why? Because it's in PITA section which means you will never sit again.Main problem is the way PNPM manages node_modules where it tries isolate everything, so TypeScript cries a lot, because it cannot name types without blablabla (you probably\nknow that error), but npm is cool with it and when you want generate Prisma schema, that's real hell. It's generated into one part of packages, but the others do not see it.So, if you really want to use PNPM, do not ask any questions.\nBuilding. Application or library with time of a few seconds can go up to a few minutes. Rebuilding, total mess. And last - and not least - live coding (watch). This was\nquite hard to get done in the right way and it's not optimal, but somehow works. You have to find way (here it's documented) how to execute, for example, 30 libraries in watch\nmode without you Mac being a small bomb.So be prepared having things in monorepo makes a bit heavier demands on your computer and overall setup of the project.Also startup time of the app could be quite painful. It depends on the tool you use, but there is cool Turbowatch, which helps a lot.\nSo be brave and continue, there is still a lot of interesting stuff going on, we've got you covered."
+        }
+    },
     "/docs/concepts/mcp": {
         "title": "Managed Code Pattern",
         "data": {
@@ -41,15 +50,6 @@
             "reason#Reason": "Read-only generated code managed by some library. You're isolated of internal changes, internal implementation, but you cas still alter behavior of the stuff.\nWith this it's much simpler to add new features, extends current things or fix bugs. Because you cannot alter the code, generator (thus managed piece of code) can\ndo whatever it wants - it will not break anything of yours.Because of generator presence, things are made in standard, predicable way, so you know what to expect. All callbacks retrieving data accepts Query;; all Sources provides same methods for\ncounting, paging, sorting and other stuff. So you do not have a way how to do things differently, so it's much simpler to use your app and focus on business logic.",
             "implementation#Implementation": "Leight currently uses a few generators - Prisma, Zod schema generator for Prisma and maybe something else not mentioned yet.Also, Leight itself implements generators for its own parts based on Prisma, so for example Forms, Tables, tRPC procedures and some other things which you definitively do by hand are generated.There is SDK package which covers all parts of Leight Viv and it's quite simple to integrate it into your project, see Workbench for some tips.",
             "whats-generated#What's generated": "This is dynamic topic, so I'll put only a few of things I know now:\nSources - this wraps Prisma \"repository\", typings and makes a \"standard\" way how to get data\nSourceProvider for types data (isolates from where you get data)\nQueryProvider for managing SourceProviders, so you can simply manage Source state (filtering, ordering, paging, ...)\nSchemas for validating inputs/outputs\n...and some other things I don't know yet or I'm lazy to write now"
-        }
-    },
-    "/docs/concepts/monorepo": {
-        "title": "Monorepo",
-        "data": {
-            "": "This page is just about concept and reasons, if you want full guide, see this workbench page.\nBecause a lot of concepts here are based on splitting code into smaller packages, I should say packages with single responsibility,\nmonorepo is needed.This is just a concept, why it's required, for tutorial, see Workbench. Because this project uses Turborepo, it\nalso provides setup using this tool.",
-            "whats-good#What's good": "You can create bilions of small libraries (those things with package.json) and split the logic/code across them. This library also generates a lof of stuff and it really\nlikes things clean and shiny, so you will have hard time if you do things in a different way. It may work, but be careful.So yes, obvious bonus is separated code and clean dependencies. You can also reuse pieces of your own app if you wish to publish your packages into the registry.",
-            "whats-not-so-good#What's not so good": "IDE support. Because of TypeScript and dynamics of development of small libraries, IDE support may suck a lot of time, you loose finding references, refactoring is quite\nhard and overall experience is a bit worse. That's a tradeoff of separated packages. You should accept it.",
-            "whats-pita#What's PITA": "PNPM. NEVER EVER use pnpm with @leight and monorepo. Why? Because it's in PITA section which means you will never sit again.Main problem is the way PNPM manages node_modules where it tries isolate everything, so TypeScript cries a lot, because it cannot name types without blablabla (you probably\nknow that error), but npm is cool with it and when you want generate Prisma schema, that's real hell. It's generated into one part of packages, but the others do not see it.So, if you really want to use PNPM, do not ask any questions.\nBuilding. Application or library with time of a few seconds can go up to a few minutes. Rebuilding, total mess. And last - and not least - live coding (watch). This was\nquite hard to get done in the right way and it's not optimal, but somehow works. You have to find way (here it's documented) how to execute, for example, 30 libraries in watch\nmode without you Mac being a small bomb.So be prepared having things in monorepo makes a bit heavier demands on your computer and overall setup of the project.Also startup time of the app could be quite painful. It depends on the tool you use, but there is cool Turbowatch, which helps a lot.\nSo be brave and continue, there is still a lot of interesting stuff going on, we've got you covered."
         }
     },
     "/docs/concepts/package.json": {
@@ -94,14 +94,6 @@
             "step-3#Step 3": "dfgdfg"
         }
     },
-    "/docs": {
-        "title": "Welcome",
-        "data": {
-            "": "So, here you're. You've found very interesting project, which is intended to help develop fullstack web applications with the help of Next.js, React, Mantine UI and\nzilions of other libraries.It's a quite specific project, so you have to start with it's concepts, just to check, if we can be friends.",
-            "requirements#Requirements": "You should be familiar with fullstack web development, in this case be familiar with Next.js, Prisma,\nReact and a lot of others stuff. If you don't know some used libraries, they have great docs too, so read it, it's not that hard :).Also, you have to be curious and open minded, because if you're kind of oldschool guy, leave, your health is in danger.",
-            "batteries-included#Batteries included": "Did you expect to have Getting started as the very first item in the menu? Nope.Why? Because you should understand, what this collection of\nlibraries does, because it's all connected via concepts which you should see first.\nSo please, continue to Concepts to check, if your mindset will be able to accept a library which is not done in that traditional way."
-        }
-    },
     "/docs/getting-started/packages": {
         "title": "Packages",
         "data": {
@@ -119,6 +111,14 @@
         "data": {
             "": "",
             "installation#Installation": "npm i @leight/container"
+        }
+    },
+    "/docs": {
+        "title": "Welcome",
+        "data": {
+            "": "So, here you're. You've found very interesting project, which is intended to help develop fullstack web applications with the help of Next.js, React, Mantine UI and\nzilions of other libraries.It's a quite specific project, so you have to start with it's concepts, just to check, if we can be friends.",
+            "requirements#Requirements": "You should be familiar with fullstack web development, in this case be familiar with Next.js, Prisma,\nReact and a lot of others stuff. If you don't know some used libraries, they have great docs too, so read it, it's not that hard :).Also, you have to be curious and open minded, because if you're kind of oldschool guy, leave, your health is in danger.",
+            "batteries-included#Batteries included": "Did you expect to have Getting started as the very first item in the menu? Nope.Why? Because you should understand, what this collection of\nlibraries does, because it's all connected via concepts which you should see first.\nSo please, continue to Concepts to check, if your mindset will be able to accept a library which is not done in that traditional way."
         }
     },
     "/docs/packages/context-client": {
@@ -195,14 +195,14 @@
             "": "Chapters in Workbench are sorted by relevance, so simpler or more basic things are up, complicated ones are near the bottom.\nHere you will find some tutorials and pieces which will help you use Leight Viv in it's full potential."
         }
     },
-    "/docs/workbench/monorepo": {
-        "title": "Monorepo setup",
+    "/docs/workbench/prisma": {
+        "title": "Prisma",
         "data": {
             "": ""
         }
     },
-    "/docs/workbench/prisma": {
-        "title": "Prisma",
+    "/docs/workbench/monorepo": {
+        "title": "Monorepo setup",
         "data": {
             "": ""
         }

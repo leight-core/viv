@@ -1,5 +1,11 @@
 # @leight/i18n
 
+## 0.5.56
+
+### Patch Changes
+
+- Improved calendar
+
 ## 0.5.55
 
 ### Patch Changes

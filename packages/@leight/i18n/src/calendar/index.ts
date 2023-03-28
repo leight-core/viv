@@ -9,7 +9,7 @@ export interface ICalendarOfProps {
     /**
      * Input date around which a calendar should be generated
      */
-    input: DateTime;
+    input?: DateTime;
     /**
      * Margin in weeks (defaults to (-1 -> +1)
      */
@@ -19,7 +19,7 @@ export interface ICalendarOfProps {
 /**
  * Generate calendar for rendering; it's built on Gregorian calendar.
  */
-export const calendarOf = ({input, margin = 1}: ICalendarOfProps): ICalendar => {
+export const calendarOf = ({input = DateTime.now(), margin = 1}: ICalendarOfProps): ICalendar => {
     const start     = input.startOf("month").minus({week: margin});
     const end       = input.endOf("month").plus({week: margin});
     const weekStart = start.startOf("week");
@@ -52,7 +52,7 @@ export const calendarOf = ({input, margin = 1}: ICalendarOfProps): ICalendar => 
 
 export const useCalendar = (props: ICalendarOfProps): ICalendar => {
     return useMemo(() => calendarOf(props), [
-        props.input.toISODate({format: "basic"}),
+        (props.input || DateTime.now()).toISODate({format: "basic"}),
         props.margin,
     ]);
 };
