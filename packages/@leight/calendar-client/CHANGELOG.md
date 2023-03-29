@@ -1,5 +1,13 @@
 # @leight/calendar-client
 
+## 0.5.8
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/i18n@0.5.58
+
 ## 0.5.7
 
 ### Patch Changes

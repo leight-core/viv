@@ -88,4 +88,8 @@ export interface ICalendar {
      * Number of lines of the calendar (number of weeks); each wek has 7 days
      */
     weeks: IWeek[];
+    /**
+     * Contains localized day names (in a localized order)
+     */
+    days: string[];
 }

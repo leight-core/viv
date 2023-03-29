@@ -1,18 +1,8 @@
-import {Pagination}            from "@leight/cursor-client";
 import {type IWithTranslation} from "@leight/i18n";
 import {Translation}           from "@leight/i18n-client";
-import {Paper}                 from "@leight/mantine";
-import {type IUseSortState}    from "@leight/sort";
-import {SortIcon}              from "@leight/sort-client";
-import {
-    type ISourceSchema,
-    type IUseSourceState
-}                              from "@leight/source";
 import {isCallable}            from "@leight/utils";
 import {
     Box,
-    Center,
-    Divider,
     Group,
     LoadingOverlay,
     ScrollArea,
@@ -20,163 +10,134 @@ import {
 }                              from "@mantine/core";
 import {
     type ComponentProps,
+    type CSSProperties,
     type ReactNode
 }                              from "react";
 
-export interface ITableColumn<TSourceSchema extends ISourceSchema> {
+export interface ITableColumn<TItem = any> {
     /**
      * Explicitly override column title (by default column name is taken from Record<> in Table)
      */
     readonly title?: string;
+    /**
+     * Specify width of a column
+     */
     readonly width?: number;
-    readonly sort?: keyof TSourceSchema["Sort"];
+    /**
+     * Mandatory render method; if you do not want to render a column, mark it as hidden on a table itself.
+     */
+    render: ((item: TItem) => ReactNode) | (keyof TItem);
+    /**
+     * Optionally return styles for a table header column
+     */
+    headerStyle?: ((defaultStyle: CSSProperties) => CSSProperties | undefined) | CSSProperties;
+    /**
+     * Render header column; children is the original content of the column (translated name);
+     */
+    headerRender?: (children: ReactNode) => ReactNode;
 
-    render: ((entity: TSourceSchema["Entity"]) => ReactNode) | (keyof TSourceSchema["Entity"]);
+    /**
+     * Handle clicking column in table header.
+     */
+    onHeaderClick?(): void;
 }
 
-export interface ITableInternalProps<
-    TSourceSchema extends ISourceSchema,
-    TColumns extends string,
-> extends Partial<Omit<ComponentProps<typeof CoolTable>, "hidden">> {
-    /**
-     * Table schema used to infer all internal types.
-     */
-    readonly schema: TSourceSchema["EntitySchema"];
-    readonly useSource: IUseSourceState<TSourceSchema>;
-    readonly useSort: IUseSortState<TSourceSchema["SortSchema"]>;
+type InferItem<T> = T extends ITableColumn<infer U> ? U : T;
+
+export interface ITableInternalProps<TColumn extends ITableColumn, TColumnKeys extends string> extends Partial<Omit<ComponentProps<typeof CoolTable>, "hidden">> {
     readonly withTranslation: IWithTranslation;
-    readonly columns: Record<TColumns, ITableColumn<TSourceSchema>>;
-    readonly overrideColumns?: Partial<Record<TColumns, ITableColumn<TSourceSchema>>>;
-    readonly scrollX?: number;
-
     /**
-     * Specify hidden columns.
+     * Define table columns; they will be rendered by default in the specified order
      */
-    readonly hidden?: TColumns[];
-
+    readonly columns: Record<TColumnKeys, TColumn>;
     /**
-     * Optionally return column order.
+     * You can override some columns, if you need to
      */
-    readonly order?: TColumns[];
+    readonly overrideColumns?: Partial<Record<TColumnKeys, TColumn>>;
+    /**
+     * Shows loading overlay; defaults to false
+     */
+    readonly isLoading?: boolean;
+    /**
+     * If a table is long, you can specify scroll area
+     */
+    readonly scrollWidth?: number;
+    /**
+     * Mark the given columns as hidden
+     */
+    readonly hidden?: TColumnKeys[];
+    /**
+     * Specify an order of columns
+     */
+    readonly order?: TColumnKeys[];
+    /**
+     * Data of the table.
+     */
+    readonly items?: InferItem<TColumn>[];
 }
 
-export const chain = (value: any, chain: any[]) => {
-    if (!chain.length) {
-        console.warn("Chain does not have chaining values (an empty array).");
-        return value;
-    }
-    const index = chain.indexOf(value);
-    if (index === -1) {
-        return chain[0];
-    } else if ((index + 1) === chain.length) {
-        return chain[0];
-    }
-    return chain[index + 1];
-};
+export type ITableProps<TColumn extends ITableColumn, TColumnKeys extends string> = ITableInternalProps<TColumn, TColumnKeys>;
 
-/**
- * Public props which any component could extend from (non-partial).
- */
-export type ITableProps<
-    TSourceSchema extends ISourceSchema,
-    TColumns extends string,
-> = Omit<ITableInternalProps<TSourceSchema, TColumns>, "schema" | "useSource" | "useSort" | "columns" | "withTranslation">;
-
-export const Table = <
-    TSourceSchema extends ISourceSchema,
-    TColumns extends string,
->(
+export const Table = <TColumn extends ITableColumn, TColumnKeys extends string>(
     {
-        schema,
-        useSource,
-        useSort,
         withTranslation,
-        scrollX,
         columns,
         overrideColumns = {},
+        isLoading = false,
+        scrollWidth,
         hidden = [],
         order = Object.keys(columns) as any,
+        items = [],
         ...props
-    }: ITableInternalProps<TSourceSchema, TColumns>) => {
-    const {
-              entities,
-              isFetching,
-              isLoading,
-          }               = useSource((
-        {
-            entities,
-            isFetching,
-            isLoading,
-        }) => (
-        {
-            entities,
-            isFetching,
-            isLoading,
-        }));
-    const {sort, setSort} = useSort(({sort, setSort}) => ({sort, setSort}));
+    }: ITableInternalProps<TColumn, TColumnKeys>) => {
 
-    const $columns: [string, ITableColumn<TSourceSchema>][] = order.filter(column => !hidden.includes(column)).map(column => [
+    const $columns: [string, TColumn][] = order.filter(column => !hidden.includes(column)).map(column => [
         column,
         (overrideColumns as any)[column] || (columns as any)[column],
     ]);
 
-    return <Paper>
-        <Center>
-            <Pagination/>
-        </Center>
-        <Divider m={"md"}/>
-        <ScrollArea w={"100%"}>
-            <Box w={scrollX}>
-                <LoadingOverlay
-                    visible={isFetching || isLoading}
-                    overlayBlur={2}
-                    transitionDuration={250}
-                />
-                <CoolTable
-                    striped
-                    highlightOnHover
-                    withBorder
-                    withColumnBorders
-                    {...props}
-                >
-                    <thead>
-                        <tr>
-                            {$columns?.map(([name, column]) => <th
+    return <ScrollArea w={"100%"}>
+        <Box w={scrollWidth}>
+            <LoadingOverlay
+                visible={isLoading}
+                overlayBlur={2}
+                transitionDuration={250}
+            />
+            <CoolTable
+                striped
+                highlightOnHover
+                withBorder
+                withColumnBorders
+                {...props}
+            >
+                <thead>
+                    <tr>
+                        {$columns?.map(([name, column]) => {
+                            const defaultContent              = <Translation {...withTranslation} label={`table.column.${column?.title || name}`}/>;
+                            const defaultStyle: CSSProperties = {
+                                width: column.width ? `${column.width}rem` : undefined,
+                            };
+                            return <th
                                 key={name}
-                                style={{
-                                    cursor: column.sort ? "pointer" : undefined,
-                                    width:  column.width ? `${column.width}rem` : undefined,
-                                }}
-                                onClick={() => {
-                                    column.sort && setSort(column.sort, chain(sort[column.sort], [
-                                        "asc",
-                                        "desc",
-                                        undefined,
-                                    ]));
-                                }}
+                                style={(isCallable(column.headerStyle) ? column.headerStyle(defaultStyle) : column.headerStyle) || defaultStyle}
+                                onClick={() => column.onHeaderClick?.()}
                             >
                                 <Group>
-                                    {column.sort ? <SortIcon<TSourceSchema["Sort"]> sort={sort} index={column.sort}/> : null}
-                                    <Translation {...withTranslation} label={`table.column.${column?.title || name}`}/>
+                                    {column.headerRender?.(defaultContent) || defaultContent}
                                 </Group>
-                            </th>)}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {entities
-                            .filter(entity => schema.safeParse(entity).success)
-                            .map(entity => <tr key={entity.id}>
-                                {$columns.map(([name, column]) => <td key={name}>
-                                    {isCallable(column.render) ? column.render(entity) : (entity as any)[column.render]}
-                                </td>)}
-                            </tr>)}
-                    </tbody>
-                </CoolTable>
-            </Box>
-        </ScrollArea>
-        <Divider m={"md"}/>
-        <Center>
-            <Pagination/>
-        </Center>
-    </Paper>;
+                            </th>;
+                        })}
+                    </tr>
+                </thead>
+                <tbody>
+                    {items
+                        .map(item => <tr key={item.id}>
+                            {$columns.map(([name, column]) => <td key={name}>
+                                {isCallable(column.render) ? column.render(item) : (item as any)[column.render]}
+                            </td>)}
+                        </tr>)}
+                </tbody>
+            </CoolTable>
+        </Box>
+    </ScrollArea>;
 };

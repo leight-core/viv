@@ -1,0 +1,75 @@
+import { Table } from "@leight/table-client";
+import {
+    Callout,
+    Tab,
+    Tabs
+} from "nextra-theme-docs";
+
+# @leight/table-client
+
+Here you can find a way how to work with UI tables build on top of [Mantine Table](https://mantine.dev/core/table/) and [`Source`](../concepts/source).
+
+## Installation
+
+<Tabs items={['npm', 'pnpm', 'yarn']}>
+    <Tab>
+        ```bash copy filename="npm"
+        npm i @leight/table-client
+        ```
+    </Tab>
+    <Tab>
+        ```bash copy filename="pnpm"
+        pnpm i @leight/table-client
+        ```
+    </Tab>
+    <Tab>
+        ```bash copy filename="yarn"
+        yarn add @leight/table-client
+        ```
+    </Tab>
+</Tabs>
+
+## Usage
+
+Wraps [Mantine Table](https://mantine.dev/core/table/) with quite simpler usage, connects to [`Source`](../concepts/source) and also supports [i18next](https://www.i18next.com/) by default.
+
+### Table
+
+Common `Table` is a dummy thing without any data bindings with improved typings and usage, then the pure one from Mantine.
+
+<Table
+    withTranslation={{
+        namespace: 'foo',
+    }}
+    columns={{
+        id: {
+            render: 'id',
+        },
+        foo: {
+            width:'120',
+            render: ({foo}) => {
+                return <>extended {foo}</>
+            },
+        },
+        nunu: {
+            width: 10,
+            render: 'nunu',
+        },
+    }}
+    items={[
+        {id: '1', foo: 'foo1', nunu: 1},
+        {id: '2', foo: 'foo2', nunu: 2},
+    ]}
+/>
+
+### SourceTable
+
+<Callout>
+    If you want to understand, how this stuff works, you should read more about [`Source`](../concepts/source)s.
+</Callout>
+
+<Callout type="info" emoji="ℹ️">
+    This component is based on the `Table` above, so it shares a lot of common properties.
+</Callout>
+
+`SourceTable` is quite clever thing which requires a lot of other stuff to make it work, but it's worth it.

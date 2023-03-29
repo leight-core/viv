@@ -1,5 +1,5 @@
 {
-    "version": "0.5.55",
+    "version": "0.5.56",
     "name": "@leight/utils-client",
     "description": "Some utility stuff usable on client side.",
     "license": "MIT",

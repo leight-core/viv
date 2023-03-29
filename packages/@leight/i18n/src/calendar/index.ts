@@ -1,6 +1,8 @@
 import {
     DateTime,
-    Interval
+    Info,
+    Interval,
+    type StringUnitLength
 }                       from "luxon";
 import {useMemo}        from "react";
 import {type ICalendar} from "../api";
@@ -14,12 +16,22 @@ export interface ICalendarOfProps {
      * Margin in weeks (defaults to (-1 -> +1)
      */
     margin?: number;
+    dayFormat?: StringUnitLength;
 }
 
 /**
  * Generate calendar for rendering; it's built on Gregorian calendar.
  */
-export const calendarOf = ({input = DateTime.now(), margin = 0}: ICalendarOfProps = {input: DateTime.now(), margin: 1}): ICalendar => {
+export const calendarOf = (
+    {
+        input = DateTime.now(),
+        margin = 0,
+        dayFormat = "long"
+    }: ICalendarOfProps = {
+        input:     DateTime.now(),
+        margin:    1,
+        dayFormat: "long",
+    }): ICalendar => {
     const start     = input.startOf("month").minus({week: margin});
     const end       = input.endOf("month").plus({week: margin});
     const weekStart = start.startOf("week");
@@ -48,6 +60,7 @@ export const calendarOf = ({input = DateTime.now(), margin = 0}: ICalendarOfProp
                 }),
             };
         }),
+        days:  Info.weekdays(dayFormat),
     };
 };
 

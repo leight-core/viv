@@ -1,5 +1,5 @@
 {
-    "version": "0.5.57",
+    "version": "0.5.58",
     "name": "@leight/file",
     "description": "Common file stuff.",
     "license": "MIT",
@@ -32,7 +32,7 @@
     "dependencies": {
         "@leight/container": "^0.5.53",
         "@leight/filter": "^0.5.48",
-        "@leight/prisma": "^0.5.66",
+        "@leight/prisma": "^0.5.67",
         "@leight/query": "^0.5.52",
         "@leight/react-query": "^0.5.15",
         "@leight/sort": "^0.5.49",

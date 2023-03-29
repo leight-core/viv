@@ -1,5 +1,11 @@
 # @leight/docs
 
+## 0.5.6
+
+### Patch Changes
+
+- Version bump
+
 ## 0.5.5
 
 ### Patch Changes

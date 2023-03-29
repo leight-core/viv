@@ -1,3 +1,4 @@
+export * from "./chain";
 export * from "./cleanOf";
 export * from "./diffOf";
 export * from "./intersectOf";

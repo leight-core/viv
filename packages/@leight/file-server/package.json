@@ -1,5 +1,5 @@
 {
-    "version": "0.5.58",
+    "version": "0.5.59",
     "name": "@leight/file-server",
     "description": "File stuff on server-side.",
     "license": "MIT",
@@ -31,10 +31,10 @@
     },
     "dependencies": {
         "@leight/container": "^0.5.53",
-        "@leight/file": "^0.5.57",
+        "@leight/file": "^0.5.58",
         "@leight/next.js": "^0.5.18",
         "@leight/next.js-server": "^0.5.58",
-        "@leight/prisma": "^0.5.66",
+        "@leight/prisma": "^0.5.67",
         "@leight/query": "^0.5.52",
         "@leight/source": "^0.5.52",
         "@leight/source-server": "^0.5.52",

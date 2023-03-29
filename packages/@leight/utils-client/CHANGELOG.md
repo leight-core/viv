@@ -1,5 +1,11 @@
 # @leight/utils-client
 
+## 0.5.56
+
+### Patch Changes
+
+- Added classNames
+
 ## 0.5.55
 
 ### Patch Changes

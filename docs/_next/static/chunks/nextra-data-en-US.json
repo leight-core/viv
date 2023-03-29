@@ -94,12 +94,6 @@
             "step-3#Step 3": "dfgdfg"
         }
     },
-    "/docs/getting-started/packages": {
-        "title": "Packages",
-        "data": {
-            "": ""
-        }
-    },
     "/docs": {
         "title": "Welcome",
         "data": {
@@ -111,7 +105,8 @@
     "/docs/packages/calendar-client": {
         "title": "@leight/calendar-client",
         "data": {
-            "": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\nMark grey days off the current month\nuse classNames package, add multiple class names on the cell\n\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+            "": "Tools for rendering calendars with clever integrations with Source.",
+            "installation#Installation": "This package is build on top of Mantine.\nIf you want to use this package, it's recommended to install also @leight/mantine as there are tools\nwhich makes work with Calendar stuff much easier.\n\n\nnpm i @leight/calendar-client\n\n\n\npnpm i @leight/calendar-client\n\n\n\nyarn add @leight/calendar-client",
             "default-calendar#Default calendar": "import {Calendar} from \"@leight/calendar-client\";\n\nexport const Component = () => {\nreturn <Calendar/>;\n};",
             "calendar-with-an-input#Calendar with an input": "import {Calendar} from \"@leight/calendar-client\";\nimport {DateTime} from \"@leight/i18n\";\n\nexport const Component = () => {\nreturn <Calendar input={DateTime.fromObject({month: 1})}/>;\n};"
         }
@@ -123,14 +118,14 @@
             "installation#Installation": "npm i @leight/container"
         }
     },
-    "/docs/packages/context-client": {
-        "title": "@leight/context-client",
+    "/docs/getting-started/packages": {
+        "title": "Packages",
         "data": {
             "": ""
         }
     },
-    "/docs/packages/i18n-client": {
-        "title": "@leight/i18n-client",
+    "/docs/packages/context-client": {
+        "title": "@leight/context-client",
         "data": {
             "": ""
         }
@@ -141,10 +136,10 @@
             "": ""
         }
     },
-    "/docs/packages": {
-        "title": "Overview",
+    "/docs/packages/i18n-client": {
+        "title": "@leight/i18n-client",
         "data": {
-            "": "Here you are all packages in the project with some brief information about them."
+            "": "Rewrite DateTimeProvider to plain React context (it's not a store)\nAdd NumberProvider as a plain React context"
         }
     },
     "/docs/packages/mantine": {
@@ -154,10 +149,32 @@
             "pageshell#PageShell": "This component is an entry point for your app, it provides all the services offered by @leight.\nimport {emotionCache} from \"@/my-app/emotion-cache\";\nimport \"@/my-app/styles/globals.css\";\nimport {PageShell} from \"@leight/mantine\";\nimport {trpc} from \"@my-app/trpc-client\";\nimport {appWithTranslation} from \"next-i18next\";\nimport type {AppProps} from \"next/app\";\n\nexport function MyApp(\n{\nComponent,\npageProps,\n}: AppProps) {\n/**\n* Just use PageShell and fill all required props; if you want to add your own\n* services, just put them as child as you're used to.\n*/\nreturn <PageShell\ntitle={\"my-app\"}\nemotionCache={emotionCache}\nComponent={Component}\npageProps={pageProps}\n/>;\n}\n\n/**\n* This is a bit unrelated, but to keep example complete, this provides connection of your app to tRPC.\n*/\nexport default trpc.withTRPC(appWithTranslation(MyApp));"
         }
     },
+    "/docs/packages": {
+        "title": "Overview",
+        "data": {
+            "": "Here you are all packages in the project with some brief information about them."
+        }
+    },
     "/docs/packages/sdk": {
         "title": "@leight/sdk",
         "data": {
             "": "If you want see some examples, how to work with this library, see Workbench."
+        }
+    },
+    "/docs/packages/source": {
+        "title": "@leight/source",
+        "data": {
+            "": ""
+        }
+    },
+    "/docs/packages/table-client": {
+        "title": "@leight/table-client",
+        "data": {
+            "": "Here you can find a way how to work with UI tables build on top of Mantine Table and Source.",
+            "installation#Installation": "npm i @leight/table-client\n\n\n\npnpm i @leight/table-client\n\n\n\nyarn add @leight/table-client",
+            "usage#Usage": "Wraps Mantine Table with quite simpler usage, connects to Source and also supports i18next by default.",
+            "table#Table": "Common Table is a dummy thing without any data bindings with improved typings and usage, then the pure one from Mantine.",
+            "sourcetable#SourceTable": "If you want to understand, how this stuff works, you should read more about Sources.\n\nThis component is based on the Table above, so it shares a lot of common properties.\nSourceTable is quite clever thing which requires a lot of other stuff to make it work, but it's worth it."
         }
     },
     "/docs/packages/utils-client": {
@@ -166,10 +183,14 @@
             "": ""
         }
     },
-    "/docs/packages/source": {
-        "title": "@leight/source",
+    "/docs/packages/utils": {
+        "title": "@leight/utils",
         "data": {
-            "": ""
+            "": "This package contains a lot of small utilities from various other packages, which could be safely\nused on client/server.",
+            "installation#Installation": "npm i @leight/utils\n\n\n\npnpm i @leight/utils\n\n\n\nyarn add @leight/utils",
+            "api#API": "Each section here is exported from the package.",
+            "chain#chain()": "Useful when you need to rotate through values, for example true{:js} -> false{:js} -> undefined{:js}.Initial use case for this method was rotating sort order in tables (\"asc\"{:js} -> \"desc\":{:js} -> undefined{:js}).\nimport {chain} from \"@leight/utils\";\n\n/**\n* Next value: `false`\n*/\nconsole.log(\"Next value\", chain(true, [true, false, undefined]));\n/**\n* Next value: `A`\n*/\nconsole.log(\"Next value\", chain(\"C\", [\"A\", \"B\", \"C\"]));",
+            "cleanof#cleanOf()": "This method is proxy to fast-clean package.\nTakes an object as an input and removed all undefined{:js} properties while preserving null{:js}s.Second parameter of the method is options object from fast-clean.\nimport {cleanOf} from \"@leight/utils\";\n\n/**\n* Only `wipeMe` will be removed.\n*/\nconsole.log(\"cleanOf\", cleanOf({\nfoo: \"true\",\nbar: false,\nhello: null,\nwipeMe: undefined,\n}));"
         }
     },
     "/docs/packages/zustand": {
