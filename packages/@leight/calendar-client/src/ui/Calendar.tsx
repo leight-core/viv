@@ -12,9 +12,7 @@ import {
 import {type FC} from "react";
 
 const useStyles = createStyles(theme => ({
-    currentWeek: {
-        backgroundColor: theme.colors["gray"][2],
-    },
+    currentWeek: {},
     currentDay:  {
         backgroundColor: theme.colors["gray"][4],
     },
@@ -22,8 +20,8 @@ const useStyles = createStyles(theme => ({
         fontWeight: "bold",
     },
     outOfRange:  {
-        // backgroundColor: theme.colors["gray"][3],
-        opacity: 0.5,
+        backgroundColor: theme.colors["gray"][2],
+        opacity:         0.5,
     },
 }));
 
@@ -72,11 +70,18 @@ export const Calendar: FC<ICalendarProps> = ({weekCountSize = 0, columnSize = 3,
                 key={id}
                 span={columnSize}
                 sx={{
-                    height: "8rem",
+                    height:  "8em",
+                    padding: "0.2em 0.4em",
                 }}
                 className={current ? classes.currentDay : (outOfRange ? classes.outOfRange : classes.inRange)}
             >
-                {day.day}
+                <div
+                    style={{
+                        textAlign: "right",
+                    }}
+                >
+                    {day.day}
+                </div>
             </Grid.Col>)}
         </Grid>)}
     </>;
