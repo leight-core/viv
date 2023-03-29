@@ -1,1 +1,50 @@
+import { Calendar } from "@leight/calendar-client";
+import { DateTime } from "@leight/i18n";
+import { Shell } from "@leight/mantine";
+import {
+    Tab,
+    Tabs
+} from "nextra-theme-docs";
+
 # @leight/calendar-client
+
+**Mark grey days off the current month**
+
+## Default calendar
+
+<Tabs items={['code', 'preview']}>
+    <Tab>
+        ```tsx
+        import {Calendar} from "@leight/calendar-client";
+
+        export const Component = () => {
+            return <Calendar/>;
+        };
+        ```
+    </Tab>
+    <Tab>
+        <Shell>
+            <Calendar/>
+        </Shell>
+    </Tab>
+</Tabs>
+
+## Calendar with an input
+
+<Tabs items={['code', 'preview']}>
+    <Tab>
+        ```tsx
+        import {Calendar} from "@leight/calendar-client";
+        import {DateTime} from "@leight/i18n";
+
+        export const Component = () => {
+            return <Calendar input={DateTime.fromObject({month: 1})}/>;
+        };
+        ```
+    </Tab>
+    <Tab>
+        <Shell>
+            <Calendar input={DateTime.fromObject({month: 1})}/>
+        </Shell>
+    </Tab>
+</Tabs>

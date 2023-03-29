@@ -38,6 +38,10 @@ export interface IDay {
      * Is this day "today"?
      */
     current: boolean;
+    /**
+     * Is this day outside the current (input) month?
+     */
+    outOfRange: boolean;
 }
 
 export interface IWeek {
