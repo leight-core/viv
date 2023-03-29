@@ -1,4 +1,15 @@
 {
+    "/about": {
+        "title": "About",
+        "data": {
+            "": "",
+            "eddejs#edde.js": "Very first project I've done as a javascript library which solved \"React\" for JavaScript 1.2 (embedded browsers for printers). It was quite\nan interesting library, a lot of nice ideas, but world has moved a lot by the time.But this was the start of the whole history of Leight Project.",
+            "project-leight-core#Project: Leight Core": "Originally there was just a little piece built with Next.js and antd with a few other tools.It did a great job, worked well, but API of the library wasn't good. There were a lot of flaws, so the work continued and Leight Viv was born.",
+            "project-leight-viv#Project: Leight Viv": "Leight Core rewritten, rethink with a lot of new ideas. This is now ultimate way how you can handle frontend development with default support for\nmonorepos, code generation and a lot of other things you can commonly use, but simplified.The main goal is to pick almost anything you repeatedly use and simplify it. So here we are!Viv is used because when I was expecting a child, a sex was unknown. Boy was Tobias and girl Vivienne. I've started to use Viv before... IT WAS A BOY, shit.\nI like him, but the name remains.",
+            "the-name#The name": "Just a note: why Leight?The shortcut was L8, you see that, but I don't like number usage in names, it's strange, thus Leight.As development of library growth, it was used in live sports application, so the name came from Live something something I forgot now. It sounds interesting. That's it.",
+            "team#Team": "Are you curious, how stable the project is? It isn't. Do you want to hear something else? I can lie, but as a lot of other libraries you probably rely on (same\nas this project), there is usually one or a few guys working on the library in the spare time.This project is done in cooperation with primary projects which uses it (corporate applications). But still, I'm, creating it in my spare time, with no\ncommercial support and nothing else. You do not pay for it, so you should expect nothing but my pure ideas for free.I'm Marek H. from Czechia. You're welcome to use anything, fork anything, write issues, extend this docs, ask questions, I'll be happy for that.This project is my legacy, so there is quite a low probability I'll abandon it."
+        }
+    },
     "/docs/concepts/code-splitting": {
         "title": "Code splitting",
         "data": {
@@ -14,15 +25,11 @@
             "trpc#tRPC": "This is related, but worth mentioning: because @leight expects you will use monorepo for managing all pieces of your app, this one is quite special.With you app - in the monorepo - you should have two packages for tRPC: one for a client, one for server, both serving as center point of component connection - all other packages can export procedures\nwhich should be connected in the server-side package; also this is the only exception where client can include server stuff, but this is due nature of tRPC."
         }
     },
-    "/about": {
-        "title": "About",
+    "/docs/concepts": {
+        "title": "Introduction",
         "data": {
-            "": "",
-            "eddejs#edde.js": "Very first project I've done as a javascript library which solved \"React\" for JavaScript 1.2 (embedded browsers for printers). It was quite\nan interesting library, a lot of nice ideas, but world has moved a lot by the time.But this was the start of the whole history of Leight Project.",
-            "project-leight-core#Project: Leight Core": "Originally there was just a little piece built with Next.js and antd with a few other tools.It did a great job, worked well, but API of the library wasn't good. There were a lot of flaws, so the work continued and Leight Viv was born.",
-            "project-leight-viv#Project: Leight Viv": "Leight Core rewritten, rethink with a lot of new ideas. This is now ultimate way how you can handle frontend development with default support for\nmonorepos, code generation and a lot of other things you can commonly use, but simplified.The main goal is to pick almost anything you repeatedly use and simplify it. So here we are!Viv is used because when I was expecting a child, a sex was unknown. Boy was Tobias and girl Vivienne. I've started to use Viv before... IT WAS A BOY, shit.\nI like him, but the name remains.",
-            "the-name#The name": "Just a note: why Leight?The shortcut was L8, you see that, but I don't like number usage in names, it's strange, thus Leight.As development of library growth, it was used in live sports application, so the name came from Live something something I forgot now. It sounds interesting. That's it.",
-            "team#Team": "Are you curious, how stable the project is? It isn't. Do you want to hear something else? I can lie, but as a lot of other libraries you probably rely on (same\nas this project), there is usually one or a few guys working on the library in the spare time.This project is done in cooperation with primary projects which uses it (corporate applications). But still, I'm, creating it in my spare time, with no\ncommercial support and nothing else. You do not pay for it, so you should expect nothing but my pure ideas for free.I'm Marek H. from Czechia. You're welcome to use anything, fork anything, write issues, extend this docs, ask questions, I'll be happy for that.This project is my legacy, so there is quite a low probability I'll abandon it."
+            "": "Bobobo at the beginning! You may skip this section, but you'll loose deep insights into the libraries and what's behind the scenes.It's strongly recommended (by some unknown wizard) to at least fly through those pages (hey, I've put a lot of time to write this, you know...) and get\nused to the concepts here. They can help you at least steal some of my ideas (which I've probably stolen somewhere else) and boost your own project even\nwithout using any of this work.\nThis library has a lot of concepts which work well together, but may looks sometimes quite complicated. But everything done is well thought and polished.\nBelieve me, it was a lot of time and effort I've put into development of this thing.So - you're free to look around and see, why all the things are done in such ways and what put me into doing things by that.",
+            "whats-inside#What's inside": "You'll find this library wants you to use Monorepo. It's cool tool for managing codebase, even for a smaller app. There is some pain, but it's acceptable, believe me :)There are a lot of snippets which will help you to setup or integrate this library into your project. Basic assumption is you have Node backend, because full power of this\nlibrary is in covering fullstack TypeScript on both sides.The main target is the development of the application, so it's not suitable for static sites or just sites. But if you want some home-made app for something (pet project), or even\nsetup some bigger app, you can use this as it can help a lot. This project is highly optimized for small teams of one member which do not have a lot of time to mess\nwith all the libraries around.\nIf you continue, you got batteries included, also with the whole power plant."
         }
     },
     "/docs/concepts/mcp": {
@@ -34,13 +41,6 @@
             "reason#Reason": "Read-only generated code managed by some library. You're isolated of internal changes, internal implementation, but you cas still alter behavior of the stuff.\nWith this it's much simpler to add new features, extends current things or fix bugs. Because you cannot alter the code, generator (thus managed piece of code) can\ndo whatever it wants - it will not break anything of yours.Because of generator presence, things are made in standard, predicable way, so you know what to expect. All callbacks retrieving data accepts Query;; all Sources provides same methods for\ncounting, paging, sorting and other stuff. So you do not have a way how to do things differently, so it's much simpler to use your app and focus on business logic.",
             "implementation#Implementation": "Leight currently uses a few generators - Prisma, Zod schema generator for Prisma and maybe something else not mentioned yet.Also, Leight itself implements generators for its own parts based on Prisma, so for example Forms, Tables, tRPC procedures and some other things which you definitively do by hand are generated.There is SDK package which covers all parts of Leight Viv and it's quite simple to integrate it into your project, see Workbench for some tips.",
             "whats-generated#What's generated": "This is dynamic topic, so I'll put only a few of things I know now:\nSources - this wraps Prisma \"repository\", typings and makes a \"standard\" way how to get data\nSourceProvider for types data (isolates from where you get data)\nQueryProvider for managing SourceProviders, so you can simply manage Source state (filtering, ordering, paging, ...)\nSchemas for validating inputs/outputs\n...and some other things I don't know yet or I'm lazy to write now"
-        }
-    },
-    "/docs/concepts": {
-        "title": "Introduction",
-        "data": {
-            "": "Bobobo at the beginning! You may skip this section, but you'll loose deep insights into the libraries and what's behind the scenes.It's strongly recommended (by some unknown wizard) to at least fly through those pages (hey, I've put a lot of time to write this, you know...) and get\nused to the concepts here. They can help you at least steal some of my ideas (which I've probably stolen somewhere else) and boost your own project even\nwithout using any of this work.\nThis library has a lot of concepts which work well together, but may looks sometimes quite complicated. But everything done is well thought and polished.\nBelieve me, it was a lot of time and effort I've put into development of this thing.So - you're free to look around and see, why all the things are done in such ways and what put me into doing things by that.",
-            "whats-inside#What's inside": "You'll find this library wants you to use Monorepo. It's cool tool for managing codebase, even for a smaller app. There is some pain, but it's acceptable, believe me :)There are a lot of snippets which will help you to setup or integrate this library into your project. Basic assumption is you have Node backend, because full power of this\nlibrary is in covering fullstack TypeScript on both sides.The main target is the development of the application, so it's not suitable for static sites or just sites. But if you want some home-made app for something (pet project), or even\nsetup some bigger app, you can use this as it can help a lot. This project is highly optimized for small teams of one member which do not have a lot of time to mess\nwith all the libraries around.\nIf you continue, you got batteries included, also with the whole power plant."
         }
     },
     "/docs/concepts/monorepo": {
@@ -72,14 +72,14 @@
             "query#Query": ""
         }
     },
-    "/docs/concepts/source/server": {
-        "title": "Server",
+    "/docs/concepts/source": {
+        "title": "Introduction",
         "data": {
             "": ""
         }
     },
-    "/docs/concepts/source": {
-        "title": "Introduction",
+    "/docs/concepts/source/server": {
+        "title": "Server",
         "data": {
             "": ""
         }
@@ -100,10 +100,20 @@
             "": ""
         }
     },
+    "/docs": {
+        "title": "Welcome",
+        "data": {
+            "": "So, here you're. You've found very interesting project, which is intended to help develop fullstack web applications with the help of Next.js, React, Mantine UI and\nzilions of other libraries.It's a quite specific project, so you have to start with it's concepts, just to check, if we can be friends.",
+            "requirements#Requirements": "You should be familiar with fullstack web development, in this case be familiar with Next.js, Prisma,\nReact and a lot of others stuff. If you don't know some used libraries, they have great docs too, so read it, it's not that hard :).Also, you have to be curious and open minded, because if you're kind of oldschool guy, leave, your health is in danger.",
+            "batteries-included#Batteries included": "Did you expect to have Getting started as the very first item in the menu? Nope.Why? Because you should understand, what this collection of\nlibraries does, because it's all connected via concepts which you should see first.\nSo please, continue to Concepts to check, if your mindset will be able to accept a library which is not done in that traditional way."
+        }
+    },
     "/docs/packages/calendar-client": {
         "title": "@leight/calendar-client",
         "data": {
-            "": ""
+            "": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\nMark grey days off the current month\nuse classNames package, add multiple class names on the cell\n\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+            "default-calendar#Default calendar": "import {Calendar} from \"@leight/calendar-client\";\n\nexport const Component = () => {\nreturn <Calendar/>;\n};",
+            "calendar-with-an-input#Calendar with an input": "import {Calendar} from \"@leight/calendar-client\";\nimport {DateTime} from \"@leight/i18n\";\n\nexport const Component = () => {\nreturn <Calendar input={DateTime.fromObject({month: 1})}/>;\n};"
         }
     },
     "/docs/packages/container": {
@@ -119,14 +129,14 @@
             "": ""
         }
     },
-    "/docs/packages/esbuild": {
-        "title": "@leight/esbuild",
+    "/docs/packages/i18n-client": {
+        "title": "@leight/i18n-client",
         "data": {
             "": ""
         }
     },
-    "/docs/packages/i18n-client": {
-        "title": "@leight/i18n-client",
+    "/docs/packages/esbuild": {
+        "title": "@leight/esbuild",
         "data": {
             "": ""
         }
@@ -137,31 +147,11 @@
             "": "Here you are all packages in the project with some brief information about them."
         }
     },
-    "/docs": {
-        "title": "Welcome",
-        "data": {
-            "": "So, here you're. You've found very interesting project, which is intended to help develop fullstack web applications with the help of Next.js, React, Mantine UI and\nzilions of other libraries.It's a quite specific project, so you have to start with it's concepts, just to check, if we can be friends.",
-            "requirements#Requirements": "You should be familiar with fullstack web development, in this case be familiar with Next.js, Prisma,\nReact and a lot of others stuff. If you don't know some used libraries, they have great docs too, so read it, it's not that hard :).Also, you have to be curious and open minded, because if you're kind of oldschool guy, leave, your health is in danger.",
-            "batteries-included#Batteries included": "Did you expect to have Getting started as the very first item in the menu? Nope.Why? Because you should understand, what this collection of\nlibraries does, because it's all connected via concepts which you should see first.\nSo please, continue to Concepts to check, if your mindset will be able to accept a library which is not done in that traditional way."
-        }
-    },
     "/docs/packages/mantine": {
         "title": "@leight/mantine",
         "data": {
             "": "",
             "pageshell#PageShell": "This component is an entry point for your app, it provides all the services offered by @leight.\nimport {emotionCache} from \"@/my-app/emotion-cache\";\nimport \"@/my-app/styles/globals.css\";\nimport {PageShell} from \"@leight/mantine\";\nimport {trpc} from \"@my-app/trpc-client\";\nimport {appWithTranslation} from \"next-i18next\";\nimport type {AppProps} from \"next/app\";\n\nexport function MyApp(\n{\nComponent,\npageProps,\n}: AppProps) {\n/**\n* Just use PageShell and fill all required props; if you want to add your own\n* services, just put them as child as you're used to.\n*/\nreturn <PageShell\ntitle={\"my-app\"}\nemotionCache={emotionCache}\nComponent={Component}\npageProps={pageProps}\n/>;\n}\n\n/**\n* This is a bit unrelated, but to keep example complete, this provides connection of your app to tRPC.\n*/\nexport default trpc.withTRPC(appWithTranslation(MyApp));"
-        }
-    },
-    "/docs/packages/utils-client": {
-        "title": "@leight/utils-client",
-        "data": {
-            "": ""
-        }
-    },
-    "/docs/packages/zustand": {
-        "title": "@leight/zustand",
-        "data": {
-            "": "If you want see some examples, how to work with this library, see Workbench."
         }
     },
     "/docs/packages/sdk": {
@@ -170,10 +160,22 @@
             "": "If you want see some examples, how to work with this library, see Workbench."
         }
     },
+    "/docs/packages/utils-client": {
+        "title": "@leight/utils-client",
+        "data": {
+            "": ""
+        }
+    },
     "/docs/packages/source": {
         "title": "@leight/source",
         "data": {
             "": ""
+        }
+    },
+    "/docs/packages/zustand": {
+        "title": "@leight/zustand",
+        "data": {
+            "": "If you want see some examples, how to work with this library, see Workbench."
         }
     },
     "/docs/workbench/i18n": {
@@ -189,8 +191,20 @@
             "consumer---components#Consumer - Components": "import {Date, DateTime} from \"@leight/i18n-client\";\n\nexport const MyComponent2 = () => {\n/**\n* There are Date and DateTime components which internally use DateTime context; nothing special is inside,\n* no spans and so on, so you can do whatever you want with them.\n*/\nreturn <>\n<Date input={\"1995-04-14\"}/>\n<DateTime input={\"1995-04-14T07:32\"}/>\n</>;\n};"
         }
     },
+    "/docs/workbench": {
+        "title": "Workbench",
+        "data": {
+            "": "Chapters in Workbench are sorted by relevance, so simpler or more basic things are up, complicated ones are near the bottom.\nHere you will find some tutorials and pieces which will help you use Leight Viv in it's full potential."
+        }
+    },
     "/docs/workbench/monorepo": {
         "title": "Monorepo setup",
+        "data": {
+            "": ""
+        }
+    },
+    "/docs/workbench/prisma": {
+        "title": "Prisma",
         "data": {
             "": ""
         }
@@ -223,18 +237,6 @@
             "typescript#TypeScript": "It's an opinion, but... there is no other choice: the project is built on top of TypeScript and heavily uses types to make you live a lot easier. Ok, there are some tradeoffs, but who cares.",
             "motivation#Motivation": "All the time new app is created, there is a lot of stuff repeatedly created, a lot of same concepts, data fetching, mutations and so on.This collection aims to make kind of \"standard\" which offloads thinking of \"how to get data\", \"how to sort data\", creating tables, forms, connecting them to the backend\nand a lot of other stuff.So here we're: you can pick some tools, you can use a whole collection and simplify your developer life a lot by generating pieces of repeated code,\nhaving everything typed and so on.",
             "maturity#Maturity": "You see this as yet another project. You're right.But it was quite long time in development and it's used in some projects, concepts and API of the whole collection is quite polished today and you can use whatever\npiece you want/need. The overall goal is to provide best practices over the best libraries available on the current market.This collection may be seen as an inspiration, how you can do things in a quite a nice way - not simple, because you can use thousands of lines of code to do relatively simple thing, but it's worth it, because\nat least - you will not repeat yourself :)."
-        }
-    },
-    "/docs/workbench/prisma": {
-        "title": "Prisma",
-        "data": {
-            "": ""
-        }
-    },
-    "/docs/workbench": {
-        "title": "Workbench",
-        "data": {
-            "": "Chapters in Workbench are sorted by relevance, so simpler or more basic things are up, complicated ones are near the bottom.\nHere you will find some tutorials and pieces which will help you use Leight Viv in it's full potential."
         }
     },
     "/docs/workbench/zustand": {

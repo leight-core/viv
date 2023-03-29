@@ -2,16 +2,21 @@ import {
     DateTime,
     Info,
     useCalendar
-}                from "@leight/i18n";
-import {Date}    from "@leight/i18n-client";
+}                   from "@leight/i18n";
+import {Date}       from "@leight/i18n-client";
+import {classNames} from "@leight/utils-client";
 import {
     createStyles,
     Grid,
     Group
-}                from "@mantine/core";
-import {type FC} from "react";
+}                   from "@mantine/core";
+import {type FC}    from "react";
 
 const useStyles = createStyles(theme => ({
+    day:         {
+        height:  "8em",
+        padding: "0.2em 0.4em",
+    },
     currentWeek: {},
     currentDay:  {
         backgroundColor: theme.colors["gray"][4],
@@ -69,11 +74,7 @@ export const Calendar: FC<ICalendarProps> = ({weekCountSize = 0, columnSize = 3,
             {days.map(({day, current, outOfRange, id}) => <Grid.Col
                 key={id}
                 span={columnSize}
-                sx={{
-                    height:  "8em",
-                    padding: "0.2em 0.4em",
-                }}
-                className={current ? classes.currentDay : (outOfRange ? classes.outOfRange : classes.inRange)}
+                className={classNames(classes.day, current ? classes.currentDay : undefined, outOfRange ? classes.outOfRange : classes.inRange)}
             >
                 <div
                     style={{
