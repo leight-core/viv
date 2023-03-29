@@ -42,6 +42,8 @@ export interface ITableColumn<TItem = any> {
     onHeaderClick?(): void;
 }
 
+export type ITableColumns<TColumn extends ITableColumn, TColumnKeys extends string> = Record<TColumnKeys, TColumn>;
+
 type InferItem<T> = T extends ITableColumn<infer U> ? U : T;
 
 export interface ITableInternalProps<TColumn extends ITableColumn, TColumnKeys extends string> extends Partial<Omit<ComponentProps<typeof CoolTable>, "hidden">> {
@@ -52,11 +54,11 @@ export interface ITableInternalProps<TColumn extends ITableColumn, TColumnKeys e
     /**
      * Define table columns; they will be rendered by default in the specified order
      */
-    readonly columns: Record<TColumnKeys, TColumn>;
+    readonly columns: ITableColumns<TColumn, TColumnKeys>;
     /**
      * You can override some columns, if you need to
      */
-    readonly overrideColumns?: Partial<Record<TColumnKeys, TColumn>>;
+    readonly overrideColumns?: Partial<ITableColumns<TColumn, TColumnKeys>>;
     /**
      * Shows loading overlay; defaults to false
      */
