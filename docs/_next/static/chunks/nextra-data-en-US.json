@@ -94,6 +94,12 @@
             "step-3#Step 3": "dfgdfg"
         }
     },
+    "/docs/getting-started/packages": {
+        "title": "Packages",
+        "data": {
+            "": ""
+        }
+    },
     "/docs": {
         "title": "Welcome",
         "data": {
@@ -118,12 +124,6 @@
             "installation#Installation": "npm i @leight/container"
         }
     },
-    "/docs/getting-started/packages": {
-        "title": "Packages",
-        "data": {
-            "": ""
-        }
-    },
     "/docs/packages/context-client": {
         "title": "@leight/context-client",
         "data": {
@@ -142,17 +142,17 @@
             "": "Rewrite DateTimeProvider to plain React context (it's not a store)\nAdd NumberProvider as a plain React context"
         }
     },
+    "/docs/packages": {
+        "title": "Overview",
+        "data": {
+            "": "Here you are all packages in the project with some brief information about them."
+        }
+    },
     "/docs/packages/mantine": {
         "title": "@leight/mantine",
         "data": {
             "": "",
             "pageshell#PageShell": "This component is an entry point for your app, it provides all the services offered by @leight.\nimport {emotionCache} from \"@/my-app/emotion-cache\";\nimport \"@/my-app/styles/globals.css\";\nimport {PageShell} from \"@leight/mantine\";\nimport {trpc} from \"@my-app/trpc-client\";\nimport {appWithTranslation} from \"next-i18next\";\nimport type {AppProps} from \"next/app\";\n\nexport function MyApp(\n{\nComponent,\npageProps,\n}: AppProps) {\n/**\n* Just use PageShell and fill all required props; if you want to add your own\n* services, just put them as child as you're used to.\n*/\nreturn <PageShell\ntitle={\"my-app\"}\nemotionCache={emotionCache}\nComponent={Component}\npageProps={pageProps}\n/>;\n}\n\n/**\n* This is a bit unrelated, but to keep example complete, this provides connection of your app to tRPC.\n*/\nexport default trpc.withTRPC(appWithTranslation(MyApp));"
-        }
-    },
-    "/docs/packages": {
-        "title": "Overview",
-        "data": {
-            "": "Here you are all packages in the project with some brief information about them."
         }
     },
     "/docs/packages/sdk": {
@@ -170,11 +170,27 @@
     "/docs/packages/table-client": {
         "title": "@leight/table-client",
         "data": {
-            "": "Here you can find a way how to work with UI tables build on top of Mantine Table and Source.",
+            "": "Here you can find a way how to work with UI tables built on top of Mantine Table and Source.",
             "installation#Installation": "npm i @leight/table-client\n\n\n\npnpm i @leight/table-client\n\n\n\nyarn add @leight/table-client",
-            "usage#Usage": "Wraps Mantine Table with quite simpler usage, connects to Source and also supports i18next by default.",
-            "table#Table": "Common Table is a dummy thing without any data bindings with improved typings and usage, then the pure one from Mantine.",
-            "sourcetable#SourceTable": "If you want to understand, how this stuff works, you should read more about Sources.\n\nThis component is based on the Table above, so it shares a lot of common properties.\nSourceTable is quite clever thing which requires a lot of other stuff to make it work, but it's worth it."
+            "usage#Usage": "Wraps Mantine Table with quite simpler usage, connects to Source and also supports i18next by default.\nLook into individual sections, how to use this package."
+        }
+    },
+    "/docs/packages/table-client/source-table": {
+        "title": "SourceTable",
+        "data": {
+            "": "If you want to understand, how this stuff works, you should read more about Sources.\n\nThis component is based on the Table above, so it shares a lot of common properties.\nSourceTable is quite clever thing which requires a lot of other stuff to make it work, but it's worth it."
+        }
+    },
+    "/docs/packages/table-client/table": {
+        "title": "Table",
+        "data": {
+            "": "Common Table is a dummy thing without any data bindings with improved typings and usage, then the pure one from Mantine.",
+            "minimal-example#Minimal example": "Recommanded bare minimum for a table is to define it's column type and item (entity) it's working with. Also you have to specify\ncolumn names a table is needing as they force you to specify all of them in the implementation and allows for type-safe competition\naround the table.",
+            "code#Code": "import {\ntype ITableColumn,\nTable\n} from \"@leight/table-client\";\n\n/**\n* Defined your column type\n*/\nexport type IDefaultTableColumn = ITableColumn<{\n/**\n* Each column must provide an ID\n*/\nid: string;\nfoo: string;\nnumber: number;\n}>;\n\n/**\n* Define columns you're working with; table will enforce you to specify all\n* columns by it's typings.\n*\n* That's because you can change or override columns if you wish.\n*/\nexport type IDefaultTableColumnKeys =\n\"id\"\n| \"foo\"\n| \"number\"\n\nexport const DefaultTable = () => {\nreturn <Table<IDefaultTableColumn, IDefaultTableColumnKeys>\ncolumns={{\n/**\n* See type in the IDE to reveal it's mysteries\n*/\nid: {\nrender: \"id\",\n},\n/**\n* When you want to render the same value as it's input object,\n* just provide the property name (typed).\n*\n* This structure is enforced, because if you change your mind later\n* on and put some other properties (like width), it's much simpler to\n* do so.\n*/\nnumber: {\nwidth:  10,\nrender: \"number\",\n},\nfoo:    {\nwidth: 120,\n/**\n* Yaay! You can provide custom render method. Input is your `TItem`.\n*/\nrender: ({foo}) => {\nreturn <>extended {foo}</>;\n},\n},\n}}\n/**\n* Items you wish to render; this is the simplest example\n*/\nitems={[\n{id: \"1\", foo: \"foo1\", number: 1},\n{id: \"2\", foo: \"foo2\", number: 2},\n{id: \"42\", foo: \"foo42\", number: 42},\n]}\n/>;\n};",
+            "result#Result": "",
+            "a-bit-advanced-example#A bit advanced example": "This example shows how you can change column order and override \"built-in\" columns provided by table. This is useful when you define default\ntable implementation and later you want to change something without messing up with the original table internals.",
+            "code-1#Code": "import {\ntype ITableColumn,\nTable\n} from \"@leight/table-client\";\n\n/**\n* Defined your column type\n*/\nexport type IBetterTableColumn = ITableColumn<{\n/**\n* Each column must provide an ID\n*/\nid: string;\nfoo: string;\nnumber: number;\n}>;\n\n/**\n* Define columns you're working with; table will enforce you to specify all\n* columns by it's typings.\n*\n* That's because you can change or override columns if you wish.\n*/\nexport type IBetterTableColumnKeys =\n\"id\"\n| \"foo\"\n| \"number\"\n\nexport const BetterTable = () => {\nreturn <Table<IBetterTableColumn, IBetterTableColumnKeys>\ncolumns={{\n/**\n* See type in the IDE to reveal it's mysteries\n*/\nid: {\n/**\n* When you provide title, it goes through the translation, but\n* if not found, just the title is returned (in this cas column name\n* will be just ID)\n*\n* The Drawback is that you won't see the whole i18n sentence you have to add\n* to translations.\n*/\ntitle:  \"ID\",\nrender: \"id\",\n},\n/**\n* When you want to render the same value as it's input object,\n* just provide the property name (typed).\n*\n* This structure is enforced, because if you change your mind later\n* on and put some other properties (like width), it's much simpler to\n* do so.\n*/\nnumber: {\nwidth:  10,\nrender: () => \"nope\",\n},\nfoo:    {\nwidth: 120,\n/**\n* Yaay! You can provide custom render method. Input is your `TItem`.\n*/\nrender: ({foo}) => {\nreturn <>extended {foo}</>;\n},\n},\n}}\norder={[\n\"number\",\n\"id\",\n\"foo\"\n]}\noverrideColumns={{\nnumber: {\nrender: ({number}) => number * 2,\n},\n}}\n/**\n* Items you wish to render; this is the simplest example\n*/\nitems={[\n{id: \"1\", foo: \"foo1\", number: 1},\n{id: \"2\", foo: \"foo2\", number: 2},\n{id: \"42\", foo: \"foo42\", number: 42},\n]}\n/>;\n};",
+            "result-1#Result": "Notice that the first column has different values as the override is in action."
         }
     },
     "/docs/packages/utils-client": {

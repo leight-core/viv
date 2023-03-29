@@ -45,7 +45,10 @@ export interface ITableColumn<TItem = any> {
 type InferItem<T> = T extends ITableColumn<infer U> ? U : T;
 
 export interface ITableInternalProps<TColumn extends ITableColumn, TColumnKeys extends string> extends Partial<Omit<ComponentProps<typeof CoolTable>, "hidden">> {
-    readonly withTranslation: IWithTranslation;
+    /**
+     * Optional translation configuration
+     */
+    readonly withTranslation?: IWithTranslation;
     /**
      * Define table columns; they will be rendered by default in the specified order
      */
@@ -113,7 +116,11 @@ export const Table = <TColumn extends ITableColumn, TColumnKeys extends string>(
                 <thead>
                     <tr>
                         {$columns?.map(([name, column]) => {
-                            const defaultContent              = <Translation {...withTranslation} label={`table.column.${column?.title || name}`}/>;
+                            const defaultContent              = <Translation
+                                {...withTranslation}
+                                label={`table.column.${column?.title || name}`}
+                                withLabelFallback={column?.title || name}
+                            />;
                             const defaultStyle: CSSProperties = {
                                 width: column.width ? `${column.width}rem` : undefined,
                             };
