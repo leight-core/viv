@@ -1,7 +1,9 @@
 import {
     type ITableColumn,
+    type ITableProps,
     Table
-} from "@leight/table-client";
+}                from "@leight/table-client";
+import {type FC} from "react";
 
 /**
  * Defined your column type
@@ -17,7 +19,7 @@ export type IBetterTableColumn = ITableColumn<{
 
 /**
  * Define columns you're working with; table will enforce you to specify all
- * columns by it's typings.
+ * columns by its typings.
  *
  * That's because you can change or override columns if you wish.
  */
@@ -26,11 +28,17 @@ export type IBetterTableColumnKeys =
     | "foo"
     | "number"
 
-export const BetterTable = () => {
+/**
+ * Re-export table props.
+ */
+export interface IBetterTableProps extends ITableProps<IBetterTableColumn, IBetterTableColumnKeys> {
+}
+
+export const BetterTable: FC<IBetterTableProps> = props => {
     return <Table<IBetterTableColumn, IBetterTableColumnKeys>
         columns={{
             /**
-             * See type in the IDE to reveal it's mysteries
+             * See type in the IDE to reveal its mysteries
              */
             id: {
                 /**
@@ -84,5 +92,6 @@ export const BetterTable = () => {
             {id: "2", foo: "foo2", number: 2},
             {id: "42", foo: "foo42", number: 42},
         ]}
+        {...props}
     />;
 };

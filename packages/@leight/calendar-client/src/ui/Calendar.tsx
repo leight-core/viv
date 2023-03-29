@@ -82,7 +82,11 @@ export const Calendar: FC<ICalendarProps> = ({weekCountSize = 0, columnSize = 3,
                 {days.map(({day, current, outOfRange, id}) => <Grid.Col
                     key={id}
                     span={columnSize}
-                    className={classNames(classes.day, current ? classes.currentDay : undefined, outOfRange ? classes.outOfRange : classes.inRange)}
+                    className={classNames(
+                        classes.day,
+                        current ? classes.currentDay : undefined,
+                        outOfRange ? classes.outOfRange : classes.inRange
+                    )}
                 >
                     <div
                         style={{

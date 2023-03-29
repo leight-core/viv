@@ -1,0 +1,77 @@
+import { Shell } from "@leight/mantine";
+import { Callout } from "nextra-theme-docs";
+import { DefaultCalendar,CalendarWithInput } from "../../../../example/calendar-client";
+
+# Calendar
+
+<Callout type={'info'} emoji={'ℹ️'}>
+    If you want to use `Calendar`, you must have [`DateTimeProvider`](../i18n-client/date-time-provider) from [`@leight/i18n-client`](../i18n-client) somewhere in the component tree.
+
+    Or you can use [PageShell](../mantine/page-shell) or [Shell](../mantine/shell) from [@leight/mantine](../mantine).
+</Callout>
+
+<Callout>
+    This package requires [Mantine UI](https://mantine.dev/) provided by [@leight/mantine](../mantine).
+</Callout>
+
+This package provides UI for rendering localized calendar. It's based on a great library [Luxon](https://moment.github.io/luxon/#/) providing
+backend for date/time operations.
+
+## Minimal example
+
+### Code
+
+```tsx filename="DefaultCalendar.tsx"
+import {
+    Calendar,
+    type ICalendarProps
+}                from "@leight/calendar-client";
+import {type FC} from "react";
+
+export interface IDefaultCalendarProps extends ICalendarProps {
+}
+
+export const DefaultCalendar: FC<IDefaultCalendarProps> = (props) => {
+    return <Calendar
+        {...props}
+    />;
+};
+```
+
+### Result
+
+<Shell>
+    <DefaultCalendar/>
+</Shell>
+
+## With input
+
+### Code
+
+```tsx
+import {
+    Calendar,
+    type ICalendarProps
+}                 from "@leight/calendar-client";
+import {DateTime} from "@leight/i18n";
+import {type FC}  from "react";
+
+export interface ICalendarWithInputProps extends ICalendarProps {
+}
+
+export const CalendarWithInput: FC<ICalendarWithInputProps> = (props) => {
+    return <Calendar
+        /**
+         * You can pass input here or through the props; input is DateTime from Luxon
+         */
+        input={DateTime.fromObject({month: 2})}
+        {...props}
+    />;
+};
+```
+
+### Result
+
+<Shell>
+    <CalendarWithInput/>
+</Shell>

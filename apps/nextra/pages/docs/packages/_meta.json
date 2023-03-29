@@ -1,15 +1,15 @@
 {
     "index": "Overview",
-    "calendar-client": "@leight/calendar-client",
-    "container": "@leight/container",
-    "context-client": "@leight/context-client",
-    "esbuild": "@leight/esbuild",
-    "i18n-client": "@leight/i18n-client",
-    "mantine": "@leight/mantine",
-    "sdk": "@leight/sdk",
-    "source": "@leight/source",
-    "table-client": "@leight/table-client",
-    "utils": "@leight/utils",
-    "utils-client": "@leight/utils-client",
-    "zustand": "@leight/zustand"
+    "calendar-client": "calendar-client",
+    "container": "container",
+    "context-client": "context-client",
+    "esbuild": "esbuild",
+    "i18n-client": "i18n-client",
+    "mantine": "mantine",
+    "sdk": "sdk",
+    "source": "source",
+    "table-client": "table-client",
+    "utils": "utils",
+    "utils-client": "utils-client",
+    "zustand": "zustand"
 }

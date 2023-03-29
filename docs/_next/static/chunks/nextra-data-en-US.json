@@ -10,6 +10,13 @@
             "team#Team": "Are you curious, how stable the project is? It isn't. Do you want to hear something else? I can lie, but as a lot of other libraries you probably rely on (same\nas this project), there is usually one or a few guys working on the library in the spare time.This project is done in cooperation with primary projects which uses it (corporate applications). But still, I'm, creating it in my spare time, with no\ncommercial support and nothing else. You do not pay for it, so you should expect nothing but my pure ideas for free.I'm Marek H. from Czechia. You're welcome to use anything, fork anything, write issues, extend this docs, ask questions, I'll be happy for that.This project is my legacy, so there is quite a low probability I'll abandon it."
         }
     },
+    "/docs/concepts": {
+        "title": "Introduction",
+        "data": {
+            "": "Bobobo at the beginning! You may skip this section, but you'll loose deep insights into the libraries and what's behind the scenes.It's strongly recommended (by some unknown wizard) to at least fly through those pages (hey, I've put a lot of time to write this, you know...) and get\nused to the concepts here. They can help you at least steal some of my ideas (which I've probably stolen somewhere else) and boost your own project even\nwithout using any of this work.\nThis library has a lot of concepts which work well together, but may looks sometimes quite complicated. But everything done is well thought and polished.\nBelieve me, it was a lot of time and effort I've put into development of this thing.So - you're free to look around and see, why all the things are done in such ways and what put me into doing things by that.",
+            "whats-inside#What's inside": "You'll find this library wants you to use Monorepo. It's cool tool for managing codebase, even for a smaller app. There is some pain, but it's acceptable, believe me :)There are a lot of snippets which will help you to setup or integrate this library into your project. Basic assumption is you have Node backend, because full power of this\nlibrary is in covering fullstack TypeScript on both sides.The main target is the development of the application, so it's not suitable for static sites or just sites. But if you want some home-made app for something (pet project), or even\nsetup some bigger app, you can use this as it can help a lot. This project is highly optimized for small teams of one member which do not have a lot of time to mess\nwith all the libraries around.\nIf you continue, you got batteries included, also with the whole power plant."
+        }
+    },
     "/docs/concepts/code-splitting": {
         "title": "Code splitting",
         "data": {
@@ -23,13 +30,6 @@
             "leightfile-client#@leight/file-client": "This package provides React stuff on a client, table for listing files, handles uploading and a lot of other - client only stuff. Backend calls are handled via trpc which is another\npackage using the same concept of split code.",
             "leightfile-server#@leight/file-server": "Here is generated Source and overall server-only stuff: generated procedures and handling of FileSource (filtering, ordering, ...). Here you are in Node land so you can do whatever you want. Except\nincluding this on client.",
             "trpc#tRPC": "This is related, but worth mentioning: because @leight expects you will use monorepo for managing all pieces of your app, this one is quite special.With you app - in the monorepo - you should have two packages for tRPC: one for a client, one for server, both serving as center point of component connection - all other packages can export procedures\nwhich should be connected in the server-side package; also this is the only exception where client can include server stuff, but this is due nature of tRPC."
-        }
-    },
-    "/docs/concepts": {
-        "title": "Introduction",
-        "data": {
-            "": "Bobobo at the beginning! You may skip this section, but you'll loose deep insights into the libraries and what's behind the scenes.It's strongly recommended (by some unknown wizard) to at least fly through those pages (hey, I've put a lot of time to write this, you know...) and get\nused to the concepts here. They can help you at least steal some of my ideas (which I've probably stolen somewhere else) and boost your own project even\nwithout using any of this work.\nThis library has a lot of concepts which work well together, but may looks sometimes quite complicated. But everything done is well thought and polished.\nBelieve me, it was a lot of time and effort I've put into development of this thing.So - you're free to look around and see, why all the things are done in such ways and what put me into doing things by that.",
-            "whats-inside#What's inside": "You'll find this library wants you to use Monorepo. It's cool tool for managing codebase, even for a smaller app. There is some pain, but it's acceptable, believe me :)There are a lot of snippets which will help you to setup or integrate this library into your project. Basic assumption is you have Node backend, because full power of this\nlibrary is in covering fullstack TypeScript on both sides.The main target is the development of the application, so it's not suitable for static sites or just sites. But if you want some home-made app for something (pet project), or even\nsetup some bigger app, you can use this as it can help a lot. This project is highly optimized for small teams of one member which do not have a lot of time to mess\nwith all the libraries around.\nIf you continue, you got batteries included, also with the whole power plant."
         }
     },
     "/docs/concepts/mcp": {
@@ -94,27 +94,11 @@
             "step-3#Step 3": "dfgdfg"
         }
     },
-    "/docs/getting-started/packages": {
-        "title": "Packages",
-        "data": {
-            "": ""
-        }
-    },
-    "/docs": {
-        "title": "Welcome",
-        "data": {
-            "": "So, here you're. You've found very interesting project, which is intended to help develop fullstack web applications with the help of Next.js, React, Mantine UI and\nzilions of other libraries.It's a quite specific project, so you have to start with it's concepts, just to check, if we can be friends.",
-            "requirements#Requirements": "You should be familiar with fullstack web development, in this case be familiar with Next.js, Prisma,\nReact and a lot of others stuff. If you don't know some used libraries, they have great docs too, so read it, it's not that hard :).Also, you have to be curious and open minded, because if you're kind of oldschool guy, leave, your health is in danger.",
-            "batteries-included#Batteries included": "Did you expect to have Getting started as the very first item in the menu? Nope.Why? Because you should understand, what this collection of\nlibraries does, because it's all connected via concepts which you should see first.\nSo please, continue to Concepts to check, if your mindset will be able to accept a library which is not done in that traditional way."
-        }
-    },
     "/docs/packages/calendar-client": {
         "title": "@leight/calendar-client",
         "data": {
             "": "Tools for rendering calendars with clever integrations with Source.",
-            "installation#Installation": "This package is build on top of Mantine.\nIf you want to use this package, it's recommended to install also @leight/mantine as there are tools\nwhich makes work with Calendar stuff much easier.\n\n\nnpm i @leight/calendar-client\n\n\n\npnpm i @leight/calendar-client\n\n\n\nyarn add @leight/calendar-client",
-            "default-calendar#Default calendar": "import {Calendar} from \"@leight/calendar-client\";\n\nexport const Component = () => {\nreturn <Calendar/>;\n};",
-            "calendar-with-an-input#Calendar with an input": "import {Calendar} from \"@leight/calendar-client\";\nimport {DateTime} from \"@leight/i18n\";\n\nexport const Component = () => {\nreturn <Calendar input={DateTime.fromObject({month: 1})}/>;\n};"
+            "installation#Installation": "This package is build on top of Mantine.\nIf you want to use this package, it's recommended to install also @leight/mantine as there are tools\nwhich makes work with Calendar stuff much easier.\n\n\nnpm i @leight/calendar-client\n\n\n\npnpm i @leight/calendar-client\n\n\n\nyarn add @leight/calendar-client"
         }
     },
     "/docs/packages/container": {
@@ -136,6 +120,12 @@
             "": ""
         }
     },
+    "/docs/packages/i18n-client/date-time-provider": {
+        "title": "DateTimeProvider",
+        "data": {
+            "": "If you're using PageShell or Shell from @leight/mantine, this provider is already included.\nThis is the base component for any date & time related operations. For example, if you want to use Calendar, you must use this component."
+        }
+    },
     "/docs/packages/i18n-client": {
         "title": "@leight/i18n-client",
         "data": {
@@ -151,14 +141,32 @@
     "/docs/packages/mantine": {
         "title": "@leight/mantine",
         "data": {
+            "": ""
+        }
+    },
+    "/docs/packages/mantine/page-shell": {
+        "title": "Page Shell",
+        "data": {
             "": "",
             "pageshell#PageShell": "This component is an entry point for your app, it provides all the services offered by @leight.\nimport {emotionCache} from \"@/my-app/emotion-cache\";\nimport \"@/my-app/styles/globals.css\";\nimport {PageShell} from \"@leight/mantine\";\nimport {trpc} from \"@my-app/trpc-client\";\nimport {appWithTranslation} from \"next-i18next\";\nimport type {AppProps} from \"next/app\";\n\nexport function MyApp(\n{\nComponent,\npageProps,\n}: AppProps) {\n/**\n* Just use PageShell and fill all required props; if you want to add your own\n* services, just put them as child as you're used to.\n*/\nreturn <PageShell\ntitle={\"my-app\"}\nemotionCache={emotionCache}\nComponent={Component}\npageProps={pageProps}\n/>;\n}\n\n/**\n* This is a bit unrelated, but to keep example complete, this provides connection of your app to tRPC.\n*/\nexport default trpc.withTRPC(appWithTranslation(MyApp));"
+        }
+    },
+    "/docs/packages/mantine/shell": {
+        "title": "Shell",
+        "data": {
+            "": "dfgfdg"
         }
     },
     "/docs/packages/sdk": {
         "title": "@leight/sdk",
         "data": {
             "": "If you want see some examples, how to work with this library, see Workbench."
+        }
+    },
+    "/docs/getting-started/packages": {
+        "title": "Packages",
+        "data": {
+            "": ""
         }
     },
     "/docs/packages/source": {
@@ -189,14 +197,11 @@
             "code#Code": "import {\ntype ITableColumn,\nTable\n} from \"@leight/table-client\";\n\n/**\n* Defined your column type\n*/\nexport type IDefaultTableColumn = ITableColumn<{\n/**\n* Each column must provide an ID\n*/\nid: string;\nfoo: string;\nnumber: number;\n}>;\n\n/**\n* Define columns you're working with; table will enforce you to specify all\n* columns by it's typings.\n*\n* That's because you can change or override columns if you wish.\n*/\nexport type IDefaultTableColumnKeys =\n\"id\"\n| \"foo\"\n| \"number\"\n\nexport const DefaultTable = () => {\nreturn <Table<IDefaultTableColumn, IDefaultTableColumnKeys>\ncolumns={{\n/**\n* See type in the IDE to reveal it's mysteries\n*/\nid: {\nrender: \"id\",\n},\n/**\n* When you want to render the same value as it's input object,\n* just provide the property name (typed).\n*\n* This structure is enforced, because if you change your mind later\n* on and put some other properties (like width), it's much simpler to\n* do so.\n*/\nnumber: {\nwidth:  10,\nrender: \"number\",\n},\nfoo:    {\nwidth: 120,\n/**\n* Yaay! You can provide custom render method. Input is your `TItem`.\n*/\nrender: ({foo}) => {\nreturn <>extended {foo}</>;\n},\n},\n}}\n/**\n* Items you wish to render; this is the simplest example\n*/\nitems={[\n{id: \"1\", foo: \"foo1\", number: 1},\n{id: \"2\", foo: \"foo2\", number: 2},\n{id: \"42\", foo: \"foo42\", number: 42},\n]}\n/>;\n};",
             "result#Result": "",
             "a-bit-advanced-example#A bit advanced example": "This example shows how you can change column order and override \"built-in\" columns provided by table. This is useful when you define default\ntable implementation and later you want to change something without messing up with the original table internals.",
-            "code-1#Code": "import {\ntype ITableColumn,\nTable\n} from \"@leight/table-client\";\n\n/**\n* Defined your column type\n*/\nexport type IBetterTableColumn = ITableColumn<{\n/**\n* Each column must provide an ID\n*/\nid: string;\nfoo: string;\nnumber: number;\n}>;\n\n/**\n* Define columns you're working with; table will enforce you to specify all\n* columns by it's typings.\n*\n* That's because you can change or override columns if you wish.\n*/\nexport type IBetterTableColumnKeys =\n\"id\"\n| \"foo\"\n| \"number\"\n\nexport const BetterTable = () => {\nreturn <Table<IBetterTableColumn, IBetterTableColumnKeys>\ncolumns={{\n/**\n* See type in the IDE to reveal it's mysteries\n*/\nid: {\n/**\n* When you provide title, it goes through the translation, but\n* if not found, just the title is returned (in this cas column name\n* will be just ID)\n*\n* The Drawback is that you won't see the whole i18n sentence you have to add\n* to translations.\n*/\ntitle:  \"ID\",\nrender: \"id\",\n},\n/**\n* When you want to render the same value as it's input object,\n* just provide the property name (typed).\n*\n* This structure is enforced, because if you change your mind later\n* on and put some other properties (like width), it's much simpler to\n* do so.\n*/\nnumber: {\nwidth:  10,\nrender: () => \"nope\",\n},\nfoo:    {\nwidth: 120,\n/**\n* Yaay! You can provide custom render method. Input is your `TItem`.\n*/\nrender: ({foo}) => {\nreturn <>extended {foo}</>;\n},\n},\n}}\norder={[\n\"number\",\n\"id\",\n\"foo\"\n]}\noverrideColumns={{\nnumber: {\nrender: ({number}) => number * 2,\n},\n}}\n/**\n* Items you wish to render; this is the simplest example\n*/\nitems={[\n{id: \"1\", foo: \"foo1\", number: 1},\n{id: \"2\", foo: \"foo2\", number: 2},\n{id: \"42\", foo: \"foo42\", number: 42},\n]}\n/>;\n};",
-            "result-1#Result": "Notice that the first column has different values as the override is in action."
-        }
-    },
-    "/docs/packages/utils-client": {
-        "title": "@leight/utils-client",
-        "data": {
-            "": ""
+            "code-1#Code": "import {\ntype ITableColumn,\ntype ITableProps,\nTable\n}                from \"@leight/table-client\";\nimport {type FC} from \"react\";\n\n/**\n* Defined your column type\n*/\nexport type IBetterTableColumn = ITableColumn<{\n/**\n* Each column must provide an ID\n*/\nid: string;\nfoo: string;\nnumber: number;\n}>;\n\n/**\n* Define columns you're working with; table will enforce you to specify all\n* columns by its typings.\n*\n* That's because you can change or override columns if you wish.\n*/\nexport type IBetterTableColumnKeys =\n\"id\"\n| \"foo\"\n| \"number\"\n\n/**\n* Re-export table props.\n*/\nexport interface IBetterTableProps extends ITableProps<IBetterTableColumn, IBetterTableColumnKeys> {\n}\n\nexport const BetterTable: FC<IBetterTableProps> = props => {\nreturn <Table<IBetterTableColumn, IBetterTableColumnKeys>\ncolumns={{\n/**\n* See type in the IDE to reveal its mysteries\n*/\nid: {\n/**\n* When you provide title, it goes through the translation, but\n* if not found, just the title is returned (in this cas column name\n* will be just ID)\n*\n* The Drawback is that you won't see the whole i18n sentence you have to add\n* to translations.\n*/\ntitle:  \"ID\",\nrender: \"id\",\n},\n/**\n* When you want to render the same value as it's input object,\n* just provide the property name (typed).\n*\n* This structure is enforced, because if you change your mind later\n* on and put some other properties (like width), it's much simpler to\n* do so.\n*/\nnumber: {\nwidth:  10,\nrender: () => \"nope\",\n},\nfoo:    {\nwidth: 120,\n/**\n* Yaay! You can provide custom render method. Input is your `TItem`.\n*/\nrender: ({foo}) => {\nreturn <>extended {foo}</>;\n},\n},\n}}\norder={[\n\"number\",\n\"id\",\n\"foo\"\n]}\noverrideColumns={{\nnumber: {\nrender: ({number}) => number * 2,\n},\n}}\n/**\n* Items you wish to render; this is the simplest example\n*/\nitems={[\n{id: \"1\", foo: \"foo1\", number: 1},\n{id: \"2\", foo: \"foo2\", number: 2},\n{id: \"42\", foo: \"foo42\", number: 42},\n]}\n{...props}\n/>;\n};",
+            "result-1#Result": "Notice that the first column has different values as the override is in action.",
+            "loading-state#Loading state": "",
+            "code-2#Code": "Same as above, but with isLoading prop.",
+            "result-2#Result": ""
         }
     },
     "/docs/packages/utils": {
@@ -207,6 +212,12 @@
             "api#API": "Each section here is exported from the package.",
             "chain#chain()": "Useful when you need to rotate through values, for example true{:js} -> false{:js} -> undefined{:js}.Initial use case for this method was rotating sort order in tables (\"asc\"{:js} -> \"desc\":{:js} -> undefined{:js}).\nimport {chain} from \"@leight/utils\";\n\n/**\n* Next value: `false`\n*/\nconsole.log(\"Next value\", chain(true, [true, false, undefined]));\n/**\n* Next value: `A`\n*/\nconsole.log(\"Next value\", chain(\"C\", [\"A\", \"B\", \"C\"]));",
             "cleanof#cleanOf()": "This method is proxy to fast-clean package.\nTakes an object as an input and removed all undefined{:js} properties while preserving null{:js}s.Second parameter of the method is options object from fast-clean.\nimport {cleanOf} from \"@leight/utils\";\n\n/**\n* Only `wipeMe` will be removed.\n*/\nconsole.log(\"cleanOf\", cleanOf({\nfoo: \"true\",\nbar: false,\nhello: null,\nwipeMe: undefined,\n}));"
+        }
+    },
+    "/docs/packages/utils-client": {
+        "title": "@leight/utils-client",
+        "data": {
+            "": ""
         }
     },
     "/docs/packages/zustand": {
@@ -234,16 +245,28 @@
             "": "Chapters in Workbench are sorted by relevance, so simpler or more basic things are up, complicated ones are near the bottom.\nHere you will find some tutorials and pieces which will help you use Leight Viv in it's full potential."
         }
     },
+    "/docs/workbench/prisma": {
+        "title": "Prisma",
+        "data": {
+            "": ""
+        }
+    },
     "/docs/workbench/monorepo": {
         "title": "Monorepo setup",
         "data": {
             "": ""
         }
     },
-    "/docs/workbench/prisma": {
-        "title": "Prisma",
+    "/docs/packages/calendar-client/calendar": {
+        "title": "Calendar",
         "data": {
-            "": ""
+            "": "If you want to use Calendar, you must have DateTimeProvider from @leight/i18n-client somewhere in the component tree.Or you can use PageShell or Shell from @leight/mantine.\n\nThis package requires Mantine UI provided by @leight/mantine.\nThis package provides UI for rendering localized calendar. It's based on a great library Luxon providing\nbackend for date/time operations.",
+            "minimal-example#Minimal example": "",
+            "code#Code": "import {\nCalendar,\ntype ICalendarProps\n}                from \"@leight/calendar-client\";\nimport {type FC} from \"react\";\n\nexport interface IDefaultCalendarProps extends ICalendarProps {\n}\n\nexport const DefaultCalendar: FC<IDefaultCalendarProps> = (props) => {\nreturn <Calendar\n{...props}\n/>;\n};",
+            "result#Result": "",
+            "with-input#With input": "",
+            "code-1#Code": "import {\nCalendar,\ntype ICalendarProps\n}                 from \"@leight/calendar-client\";\nimport {DateTime} from \"@leight/i18n\";\nimport {type FC}  from \"react\";\n\nexport interface ICalendarWithInputProps extends ICalendarProps {\n}\n\nexport const CalendarWithInput: FC<ICalendarWithInputProps> = (props) => {\nreturn <Calendar\n/**\n* You can pass input here or through the props; input is DateTime from Luxon\n*/\ninput={DateTime.fromObject({month: 2})}\n{...props}\n/>;\n};",
+            "result-1#Result": ""
         }
     },
     "/docs/workbench/sdk": {
@@ -274,6 +297,14 @@
             "typescript#TypeScript": "It's an opinion, but... there is no other choice: the project is built on top of TypeScript and heavily uses types to make you live a lot easier. Ok, there are some tradeoffs, but who cares.",
             "motivation#Motivation": "All the time new app is created, there is a lot of stuff repeatedly created, a lot of same concepts, data fetching, mutations and so on.This collection aims to make kind of \"standard\" which offloads thinking of \"how to get data\", \"how to sort data\", creating tables, forms, connecting them to the backend\nand a lot of other stuff.So here we're: you can pick some tools, you can use a whole collection and simplify your developer life a lot by generating pieces of repeated code,\nhaving everything typed and so on.",
             "maturity#Maturity": "You see this as yet another project. You're right.But it was quite long time in development and it's used in some projects, concepts and API of the whole collection is quite polished today and you can use whatever\npiece you want/need. The overall goal is to provide best practices over the best libraries available on the current market.This collection may be seen as an inspiration, how you can do things in a quite a nice way - not simple, because you can use thousands of lines of code to do relatively simple thing, but it's worth it, because\nat least - you will not repeat yourself :)."
+        }
+    },
+    "/docs": {
+        "title": "Welcome",
+        "data": {
+            "": "So, here you're. You've found very interesting project, which is intended to help develop fullstack web applications with the help of Next.js, React, Mantine UI and\nzilions of other libraries.It's a quite specific project, so you have to start with it's concepts, just to check, if we can be friends.",
+            "requirements#Requirements": "You should be familiar with fullstack web development, in this case be familiar with Next.js, Prisma,\nReact and a lot of others stuff. If you don't know some used libraries, they have great docs too, so read it, it's not that hard :).Also, you have to be curious and open minded, because if you're kind of oldschool guy, leave, your health is in danger.",
+            "batteries-included#Batteries included": "Did you expect to have Getting started as the very first item in the menu? Nope.Why? Because you should understand, what this collection of\nlibraries does, because it's all connected via concepts which you should see first.\nSo please, continue to Concepts to check, if your mindset will be able to accept a library which is not done in that traditional way."
         }
     },
     "/docs/workbench/zustand": {
