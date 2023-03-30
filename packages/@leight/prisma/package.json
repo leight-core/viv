@@ -1,5 +1,5 @@
 {
-    "version": "0.5.67",
+    "version": "0.5.68",
     "name": "@leight/prisma",
     "description": "Some prisma related helpers. This package also contains all @leight exported Prisma models.",
     "license": "MIT",
@@ -31,15 +31,15 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "^0.5.53",
+        "@leight/container": "^0.5.54",
         "@prisma/client": "^4.11.0",
         "zod": "3.21.1"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.31",
-        "@leight/eslint-config-eslint": "^0.5.40",
-        "@leight/tsconfig": "^0.5.54",
-        "@leight/turbowatch": "^0.5.19",
+        "@leight/esbuild": "^0.5.32",
+        "@leight/eslint-config-eslint": "^0.5.41",
+        "@leight/tsconfig": "^0.5.55",
+        "@leight/turbowatch": "^0.5.20",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

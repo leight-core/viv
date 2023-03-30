@@ -50,53 +50,51 @@ export const Calendar: FC<ICalendarProps> = ({weekCountSize = 0, columnSize = 3,
     const columns                   = (days.length * columnSize) + weekCountSize;
     const {classes}                 = useStyles();
 
-    return <>
+    return <Container>
         <Group>
             <span>input: <Date input={input.toJSDate()}/></span>
             <span>from: <Date input={start.toJSDate()}/></span>
             <span>end: <Date input={end.toJSDate()}/></span>
         </Group>
 
-        <Container>
-            <Grid columns={columns}>
-                {weekCountSize > 0 && <Grid.Col span={weekCountSize}/>}
-                {days.map(day => <Grid.Col
-                    key={`day-${day}`}
-                    span={columnSize}
-                    className={classes.header}
-                >
-                    {day}
-                </Grid.Col>)}
-            </Grid>
-            {weeks.map(({days, number, current, id}) => <Grid
-                key={id}
-                columns={columns}
-                align={"end"}
-                className={current ? classes.currentWeek : undefined}
+        <Grid columns={columns}>
+            {weekCountSize > 0 && <Grid.Col span={weekCountSize}/>}
+            {days.map(day => <Grid.Col
+                key={`day-${day}`}
+                span={columnSize}
+                className={classes.header}
             >
-                {weekCountSize > 0 && <Grid.Col
-                    span={weekCountSize}
+                {day}
+            </Grid.Col>)}
+        </Grid>
+        {weeks.map(({days, number, current, id}) => <Grid
+            key={id}
+            columns={columns}
+            align={"end"}
+            className={current ? classes.currentWeek : undefined}
+        >
+            {weekCountSize > 0 && <Grid.Col
+                span={weekCountSize}
+            >
+                {number}.
+            </Grid.Col>}
+            {days.map(({day, current, outOfRange, id}) => <Grid.Col
+                key={id}
+                span={columnSize}
+                className={classNames(
+                    classes.day,
+                    current ? classes.currentDay : undefined,
+                    outOfRange ? classes.outOfRange : classes.inRange
+                )}
+            >
+                <div
+                    style={{
+                        textAlign: "right",
+                    }}
                 >
-                    {number}.
-                </Grid.Col>}
-                {days.map(({day, current, outOfRange, id}) => <Grid.Col
-                    key={id}
-                    span={columnSize}
-                    className={classNames(
-                        classes.day,
-                        current ? classes.currentDay : undefined,
-                        outOfRange ? classes.outOfRange : classes.inRange
-                    )}
-                >
-                    <div
-                        style={{
-                            textAlign: "right",
-                        }}
-                    >
-                        {day.day}
-                    </div>
-                </Grid.Col>)}
-            </Grid>)}
-        </Container>
-    </>;
+                    {day.day}
+                </div>
+            </Grid.Col>)}
+        </Grid>)}
+    </Container>;
 };

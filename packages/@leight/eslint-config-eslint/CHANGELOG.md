@@ -1,5 +1,11 @@
 # @leight/eslint-config-eslint
 
+## 0.5.41
+
+### Patch Changes
+
+- VErsion bump
+
 ## 0.5.40
 
 ### Patch Changes

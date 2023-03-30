@@ -1,5 +1,5 @@
 {
-    "version": "0.5.15",
+    "version": "0.5.16",
     "name": "@leight/sort-client",
     "description": "Client-side Sort utilities.",
     "license": "MIT",
@@ -28,16 +28,16 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/context-client": "^0.5.60",
-        "@leight/sort": "^0.5.49",
+        "@leight/context-client": "^0.5.61",
+        "@leight/sort": "^0.5.50",
         "@tabler/icons-react": "^2.11.0",
         "react": "^18.2.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.31",
-        "@leight/eslint-config-eslint": "^0.5.40",
-        "@leight/tsconfig": "^0.5.54",
-        "@leight/turbowatch": "^0.5.19",
+        "@leight/esbuild": "^0.5.32",
+        "@leight/eslint-config-eslint": "^0.5.41",
+        "@leight/tsconfig": "^0.5.55",
+        "@leight/turbowatch": "^0.5.20",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

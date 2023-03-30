@@ -1,5 +1,11 @@
 # @leight/generator
 
+## 0.5.8
+
+### Patch Changes
+
+- VErsion bump
+
 ## 0.5.7
 
 ### Patch Changes

@@ -10,13 +10,6 @@
             "team#Team": "Are you curious, how stable the project is? It isn't. Do you want to hear something else? I can lie, but as a lot of other libraries you probably rely on (same\nas this project), there is usually one or a few guys working on the library in the spare time.This project is done in cooperation with primary projects which uses it (corporate applications). But still, I'm, creating it in my spare time, with no\ncommercial support and nothing else. You do not pay for it, so you should expect nothing but my pure ideas for free.I'm Marek H. from Czechia. You're welcome to use anything, fork anything, write issues, extend this docs, ask questions, I'll be happy for that.This project is my legacy, so there is quite a low probability I'll abandon it."
         }
     },
-    "/docs/concepts": {
-        "title": "Introduction",
-        "data": {
-            "": "Bobobo at the beginning! You may skip this section, but you'll loose deep insights into the libraries and what's behind the scenes.It's strongly recommended (by some unknown wizard) to at least fly through those pages (hey, I've put a lot of time to write this, you know...) and get\nused to the concepts here. They can help you at least steal some of my ideas (which I've probably stolen somewhere else) and boost your own project even\nwithout using any of this work.\nThis library has a lot of concepts which work well together, but may looks sometimes quite complicated. But everything done is well thought and polished.\nBelieve me, it was a lot of time and effort I've put into development of this thing.So - you're free to look around and see, why all the things are done in such ways and what put me into doing things by that.",
-            "whats-inside#What's inside": "You'll find this library wants you to use Monorepo. It's cool tool for managing codebase, even for a smaller app. There is some pain, but it's acceptable, believe me :)There are a lot of snippets which will help you to setup or integrate this library into your project. Basic assumption is you have Node backend, because full power of this\nlibrary is in covering fullstack TypeScript on both sides.The main target is the development of the application, so it's not suitable for static sites or just sites. But if you want some home-made app for something (pet project), or even\nsetup some bigger app, you can use this as it can help a lot. This project is highly optimized for small teams of one member which do not have a lot of time to mess\nwith all the libraries around.\nIf you continue, you got batteries included, also with the whole power plant."
-        }
-    },
     "/docs/concepts/code-splitting": {
         "title": "Code splitting",
         "data": {
@@ -32,6 +25,13 @@
             "trpc#tRPC": "This is related, but worth mentioning: because @leight expects you will use monorepo for managing all pieces of your app, this one is quite special.With you app - in the monorepo - you should have two packages for tRPC: one for a client, one for server, both serving as center point of component connection - all other packages can export procedures\nwhich should be connected in the server-side package; also this is the only exception where client can include server stuff, but this is due nature of tRPC."
         }
     },
+    "/docs/concepts": {
+        "title": "Introduction",
+        "data": {
+            "": "Bobobo at the beginning! You may skip this section, but you'll loose deep insights into the libraries and what's behind the scenes.It's strongly recommended (by some unknown wizard) to at least fly through those pages (hey, I've put a lot of time to write this, you know...) and get\nused to the concepts here. They can help you at least steal some of my ideas (which I've probably stolen somewhere else) and boost your own project even\nwithout using any of this work.\nThis library has a lot of concepts which work well together, but may looks sometimes quite complicated. But everything done is well thought and polished.\nBelieve me, it was a lot of time and effort I've put into development of this thing.So - you're free to look around and see, why all the things are done in such ways and what put me into doing things by that.",
+            "whats-inside#What's inside": "You'll find this library wants you to use Monorepo. It's cool tool for managing codebase, even for a smaller app. There is some pain, but it's acceptable, believe me :)There are a lot of snippets which will help you to setup or integrate this library into your project. Basic assumption is you have Node backend, because full power of this\nlibrary is in covering fullstack TypeScript on both sides.The main target is the development of the application, so it's not suitable for static sites or just sites. But if you want some home-made app for something (pet project), or even\nsetup some bigger app, you can use this as it can help a lot. This project is highly optimized for small teams of one member which do not have a lot of time to mess\nwith all the libraries around.\nIf you continue, you got batteries included, also with the whole power plant."
+        }
+    },
     "/docs/concepts/mcp": {
         "title": "Managed Code Pattern",
         "data": {
@@ -41,15 +41,6 @@
             "reason#Reason": "Read-only generated code managed by some library. You're isolated of internal changes, internal implementation, but you cas still alter behavior of the stuff.\nWith this it's much simpler to add new features, extends current things or fix bugs. Because you cannot alter the code, generator (thus managed piece of code) can\ndo whatever it wants - it will not break anything of yours.Because of generator presence, things are made in standard, predicable way, so you know what to expect. All callbacks retrieving data accepts Query;; all Sources provides same methods for\ncounting, paging, sorting and other stuff. So you do not have a way how to do things differently, so it's much simpler to use your app and focus on business logic.",
             "implementation#Implementation": "Leight currently uses a few generators - Prisma, Zod schema generator for Prisma and maybe something else not mentioned yet.Also, Leight itself implements generators for its own parts based on Prisma, so for example Forms, Tables, tRPC procedures and some other things which you definitively do by hand are generated.There is SDK package which covers all parts of Leight Viv and it's quite simple to integrate it into your project, see Workbench for some tips.",
             "whats-generated#What's generated": "This is dynamic topic, so I'll put only a few of things I know now:\nSources - this wraps Prisma \"repository\", typings and makes a \"standard\" way how to get data\nSourceProvider for types data (isolates from where you get data)\nQueryProvider for managing SourceProviders, so you can simply manage Source state (filtering, ordering, paging, ...)\nSchemas for validating inputs/outputs\n...and some other things I don't know yet or I'm lazy to write now"
-        }
-    },
-    "/docs/concepts/monorepo": {
-        "title": "Monorepo",
-        "data": {
-            "": "This page is just about concept and reasons, if you want full guide, see this workbench page.\nBecause a lot of concepts here are based on splitting code into smaller packages, I should say packages with single responsibility,\nmonorepo is needed.This is just a concept, why it's required, for tutorial, see Workbench. Because this project uses Turborepo, it\nalso provides setup using this tool.",
-            "whats-good#What's good": "You can create bilions of small libraries (those things with package.json) and split the logic/code across them. This library also generates a lof of stuff and it really\nlikes things clean and shiny, so you will have hard time if you do things in a different way. It may work, but be careful.So yes, obvious bonus is separated code and clean dependencies. You can also reuse pieces of your own app if you wish to publish your packages into the registry.",
-            "whats-not-so-good#What's not so good": "IDE support. Because of TypeScript and dynamics of development of small libraries, IDE support may suck a lot of time, you loose finding references, refactoring is quite\nhard and overall experience is a bit worse. That's a tradeoff of separated packages. You should accept it.",
-            "whats-pita#What's PITA": "PNPM. NEVER EVER use pnpm with @leight and monorepo. Why? Because it's in PITA section which means you will never sit again.Main problem is the way PNPM manages node_modules where it tries isolate everything, so TypeScript cries a lot, because it cannot name types without blablabla (you probably\nknow that error), but npm is cool with it and when you want generate Prisma schema, that's real hell. It's generated into one part of packages, but the others do not see it.So, if you really want to use PNPM, do not ask any questions.\nBuilding. Application or library with time of a few seconds can go up to a few minutes. Rebuilding, total mess. And last - and not least - live coding (watch). This was\nquite hard to get done in the right way and it's not optimal, but somehow works. You have to find way (here it's documented) how to execute, for example, 30 libraries in watch\nmode without you Mac being a small bomb.So be prepared having things in monorepo makes a bit heavier demands on your computer and overall setup of the project.Also startup time of the app could be quite painful. It depends on the tool you use, but there is cool Turbowatch, which helps a lot.\nSo be brave and continue, there is still a lot of interesting stuff going on, we've got you covered."
         }
     },
     "/docs/concepts/package.json": {
@@ -94,6 +85,32 @@
             "step-3#Step 3": "dfgdfg"
         }
     },
+    "/docs": {
+        "title": "Welcome",
+        "data": {
+            "": "So, here you're. You've found very interesting project, which is intended to help develop fullstack web applications with the help of Next.js, React, Mantine UI and\nzilions of other libraries.It's a quite specific project, so you have to start with it's concepts, just to check, if we can be friends.",
+            "requirements#Requirements": "You should be familiar with fullstack web development, in this case be familiar with Next.js, Prisma,\nReact and a lot of others stuff. If you don't know some used libraries, they have great docs too, so read it, it's not that hard :).Also, you have to be curious and open minded, because if you're kind of oldschool guy, leave, your health is in danger.",
+            "batteries-included#Batteries included": "Did you expect to have Getting started as the very first item in the menu? Nope.Why? Because you should understand, what this collection of\nlibraries does, because it's all connected via concepts which you should see first.\nSo please, continue to Concepts to check, if your mindset will be able to accept a library which is not done in that traditional way."
+        }
+    },
+    "/docs/getting-started/packages": {
+        "title": "Packages",
+        "data": {
+            "": ""
+        }
+    },
+    "/docs/packages/calendar-client/calendar": {
+        "title": "Calendar",
+        "data": {
+            "": "If you want to use Calendar, you must have DateTimeProvider from @leight/i18n-client somewhere in the component tree.Or you can use PageShell or Shell from @leight/mantine.\n\nThis package requires Mantine UI provided by @leight/mantine.\nThis package provides UI for rendering localized calendar. It's based on a great library Luxon providing\nbackend for date/time operations.",
+            "minimal-example#Minimal example": "",
+            "code#Code": "import {\nCalendar,\ntype ICalendarProps\n}                from \"@leight/calendar-client\";\nimport {type FC} from \"react\";\n\nexport interface IDefaultCalendarProps extends ICalendarProps {\n}\n\nexport const DefaultCalendar: FC<IDefaultCalendarProps> = (props) => {\nreturn <Calendar\n{...props}\n/>;\n};",
+            "result#Result": "",
+            "with-input#With input": "",
+            "code-1#Code": "import {\nCalendar,\ntype ICalendarProps\n}                 from \"@leight/calendar-client\";\nimport {DateTime} from \"@leight/i18n\";\nimport {type FC}  from \"react\";\n\nexport interface ICalendarWithInputProps extends ICalendarProps {\n}\n\nexport const CalendarWithInput: FC<ICalendarWithInputProps> = (props) => {\nreturn <Calendar\n/**\n* You can pass input here or through the props; input is DateTime from Luxon\n*/\ninput={DateTime.fromObject({month: 2})}\n{...props}\n/>;\n};",
+            "result-1#Result": ""
+        }
+    },
     "/docs/packages/calendar-client": {
         "title": "@leight/calendar-client",
         "data": {
@@ -114,16 +131,16 @@
             "": ""
         }
     },
-    "/docs/packages/esbuild": {
-        "title": "@leight/esbuild",
-        "data": {
-            "": ""
-        }
-    },
     "/docs/packages/i18n-client/date-time-provider": {
         "title": "DateTimeProvider",
         "data": {
             "": "If you're using PageShell or Shell from @leight/mantine, this provider is already included.\nThis is the base component for any date & time related operations. For example, if you want to use Calendar, you must use this component."
+        }
+    },
+    "/docs/packages/esbuild": {
+        "title": "@leight/esbuild",
+        "data": {
+            "": ""
         }
     },
     "/docs/packages/i18n-client": {
@@ -144,6 +161,15 @@
             "": ""
         }
     },
+    "/docs/concepts/monorepo": {
+        "title": "Monorepo",
+        "data": {
+            "": "This page is just about concept and reasons, if you want full guide, see this workbench page.\nBecause a lot of concepts here are based on splitting code into smaller packages, I should say packages with single responsibility,\nmonorepo is needed.This is just a concept, why it's required, for tutorial, see Workbench. Because this project uses Turborepo, it\nalso provides setup using this tool.",
+            "whats-good#What's good": "You can create bilions of small libraries (those things with package.json) and split the logic/code across them. This library also generates a lof of stuff and it really\nlikes things clean and shiny, so you will have hard time if you do things in a different way. It may work, but be careful.So yes, obvious bonus is separated code and clean dependencies. You can also reuse pieces of your own app if you wish to publish your packages into the registry.",
+            "whats-not-so-good#What's not so good": "IDE support. Because of TypeScript and dynamics of development of small libraries, IDE support may suck a lot of time, you loose finding references, refactoring is quite\nhard and overall experience is a bit worse. That's a tradeoff of separated packages. You should accept it.",
+            "whats-pita#What's PITA": "PNPM. NEVER EVER use pnpm with @leight and monorepo. Why? Because it's in PITA section which means you will never sit again.Main problem is the way PNPM manages node_modules where it tries isolate everything, so TypeScript cries a lot, because it cannot name types without blablabla (you probably\nknow that error), but npm is cool with it and when you want generate Prisma schema, that's real hell. It's generated into one part of packages, but the others do not see it.So, if you really want to use PNPM, do not ask any questions.\nBuilding. Application or library with time of a few seconds can go up to a few minutes. Rebuilding, total mess. And last - and not least - live coding (watch). This was\nquite hard to get done in the right way and it's not optimal, but somehow works. You have to find way (here it's documented) how to execute, for example, 30 libraries in watch\nmode without you Mac being a small bomb.So be prepared having things in monorepo makes a bit heavier demands on your computer and overall setup of the project.Also startup time of the app could be quite painful. It depends on the tool you use, but there is cool Turbowatch, which helps a lot.\nSo be brave and continue, there is still a lot of interesting stuff going on, we've got you covered."
+        }
+    },
     "/docs/packages/mantine/page-shell": {
         "title": "Page Shell",
         "data": {
@@ -161,18 +187,6 @@
         "title": "@leight/sdk",
         "data": {
             "": "If you want see some examples, how to work with this library, see Workbench."
-        }
-    },
-    "/docs/getting-started/packages": {
-        "title": "Packages",
-        "data": {
-            "": ""
-        }
-    },
-    "/docs/packages/source": {
-        "title": "@leight/source",
-        "data": {
-            "": ""
         }
     },
     "/docs/packages/table-client": {
@@ -204,6 +218,12 @@
             "result-2#Result": ""
         }
     },
+    "/docs/packages/utils-client": {
+        "title": "@leight/utils-client",
+        "data": {
+            "": ""
+        }
+    },
     "/docs/packages/utils": {
         "title": "@leight/utils",
         "data": {
@@ -212,12 +232,6 @@
             "api#API": "Each section here is exported from the package.",
             "chain#chain()": "Useful when you need to rotate through values, for example true{:js} -> false{:js} -> undefined{:js}.Initial use case for this method was rotating sort order in tables (\"asc\"{:js} -> \"desc\":{:js} -> undefined{:js}).\nimport {chain} from \"@leight/utils\";\n\n/**\n* Next value: `false`\n*/\nconsole.log(\"Next value\", chain(true, [true, false, undefined]));\n/**\n* Next value: `A`\n*/\nconsole.log(\"Next value\", chain(\"C\", [\"A\", \"B\", \"C\"]));",
             "cleanof#cleanOf()": "This method is proxy to fast-clean package.\nTakes an object as an input and removed all undefined{:js} properties while preserving null{:js}s.Second parameter of the method is options object from fast-clean.\nimport {cleanOf} from \"@leight/utils\";\n\n/**\n* Only `wipeMe` will be removed.\n*/\nconsole.log(\"cleanOf\", cleanOf({\nfoo: \"true\",\nbar: false,\nhello: null,\nwipeMe: undefined,\n}));"
-        }
-    },
-    "/docs/packages/utils-client": {
-        "title": "@leight/utils-client",
-        "data": {
-            "": ""
         }
     },
     "/docs/packages/zustand": {
@@ -245,28 +259,16 @@
             "": "Chapters in Workbench are sorted by relevance, so simpler or more basic things are up, complicated ones are near the bottom.\nHere you will find some tutorials and pieces which will help you use Leight Viv in it's full potential."
         }
     },
-    "/docs/workbench/prisma": {
-        "title": "Prisma",
-        "data": {
-            "": ""
-        }
-    },
     "/docs/workbench/monorepo": {
         "title": "Monorepo setup",
         "data": {
             "": ""
         }
     },
-    "/docs/packages/calendar-client/calendar": {
-        "title": "Calendar",
+    "/docs/workbench/prisma": {
+        "title": "Prisma",
         "data": {
-            "": "If you want to use Calendar, you must have DateTimeProvider from @leight/i18n-client somewhere in the component tree.Or you can use PageShell or Shell from @leight/mantine.\n\nThis package requires Mantine UI provided by @leight/mantine.\nThis package provides UI for rendering localized calendar. It's based on a great library Luxon providing\nbackend for date/time operations.",
-            "minimal-example#Minimal example": "",
-            "code#Code": "import {\nCalendar,\ntype ICalendarProps\n}                from \"@leight/calendar-client\";\nimport {type FC} from \"react\";\n\nexport interface IDefaultCalendarProps extends ICalendarProps {\n}\n\nexport const DefaultCalendar: FC<IDefaultCalendarProps> = (props) => {\nreturn <Calendar\n{...props}\n/>;\n};",
-            "result#Result": "",
-            "with-input#With input": "",
-            "code-1#Code": "import {\nCalendar,\ntype ICalendarProps\n}                 from \"@leight/calendar-client\";\nimport {DateTime} from \"@leight/i18n\";\nimport {type FC}  from \"react\";\n\nexport interface ICalendarWithInputProps extends ICalendarProps {\n}\n\nexport const CalendarWithInput: FC<ICalendarWithInputProps> = (props) => {\nreturn <Calendar\n/**\n* You can pass input here or through the props; input is DateTime from Luxon\n*/\ninput={DateTime.fromObject({month: 2})}\n{...props}\n/>;\n};",
-            "result-1#Result": ""
+            "": ""
         }
     },
     "/docs/workbench/sdk": {
@@ -279,6 +281,12 @@
             "client#Client": "For your client-side package create a file src/leight-sdk.ts; you can choose whatever name you want, but do not forget to update package.json.\nimport {withClientSourceGenerators, withSdk} from \"@leight/sdk\";\n\n/**\n* Generator itself (handles file creation, execution, console params stuff and others...)\n*/\nvoid withSdk(\n/**\n* Client set of generators; at the end, it uses more internal generators, which could\n* also be used manually if you want/need.\n*/\nwithClientSourceGenerators({\nentity:   \"Prisma entity name, for example User (case is important); this is used to generate Schemas\",\npackages: {\n/**\n* This is a reference to a common package with generated schemas, interfaces and other\n* stuff required. Usually, current package name without suffix.\n*/\nschema: \"@my-app/model-name\",\n},\ntrpc:     {\npath:    \"trpc.route.path\",\npackage: \"@my-app/trpc-client\",\n},\n})\n);",
             "server#Server": "For your server-side package create a file src/leight-sdk.ts; you can choose whatever name you want, but do not forget to update package.json.\nimport {withServerSourceGenerators, withSdk} from \"@leight/sdk\";\n\n/**\n* Generator itself (handles file creation, execution, console params stuff and others...)\n*/\nvoid withSdk(\n/**\n* Server set of generators; at the end, it uses more internal generators, which could\n* also be used manually if you want/need.\n*/\nwithServerSourceGenerators({\nentity:   \"Prisma entity name, for example User (case is important); this is used to generate Schemas\",\npackages: {\n/**\n* This is a reference to a common package with generated schemas, interfaces and other\n* stuff required. Usually, current package name without suffix.\n*/\nschema: \"@my-app/model-name\",\n/**\n* Because you have a standalone prisma package, you can use it here, so generator can properly\n* import all Prisma parts of the model you want to generate.\n*/\nprisma: \"@my-app/prisma\",\n},\n/**\n* This is a single name of the property on prismaClient which will be generated into the Source.\n*/\nprisma:   \"prismaClient.<entityName>\",\n})\n);",
             "epilogue#Epilogue": "Now you're almost done: just update your turbo.json (or whatever monorepo you're using):\nDon't copy-paste this piece of code, just think about it's meaning: execute code generation before your build, so you're sure\neverything is in the place.\n\n{\n\"generate\": {\n\"cache\": false\n},\n\"build\": {\n\"dependsOn\": [\n\"^build\",\n\"generate\"\n]\n}\n}"
+        }
+    },
+    "/docs/packages/source": {
+        "title": "@leight/source",
+        "data": {
+            "": ""
         }
     },
     "/": {
@@ -297,14 +305,6 @@
             "typescript#TypeScript": "It's an opinion, but... there is no other choice: the project is built on top of TypeScript and heavily uses types to make you live a lot easier. Ok, there are some tradeoffs, but who cares.",
             "motivation#Motivation": "All the time new app is created, there is a lot of stuff repeatedly created, a lot of same concepts, data fetching, mutations and so on.This collection aims to make kind of \"standard\" which offloads thinking of \"how to get data\", \"how to sort data\", creating tables, forms, connecting them to the backend\nand a lot of other stuff.So here we're: you can pick some tools, you can use a whole collection and simplify your developer life a lot by generating pieces of repeated code,\nhaving everything typed and so on.",
             "maturity#Maturity": "You see this as yet another project. You're right.But it was quite long time in development and it's used in some projects, concepts and API of the whole collection is quite polished today and you can use whatever\npiece you want/need. The overall goal is to provide best practices over the best libraries available on the current market.This collection may be seen as an inspiration, how you can do things in a quite a nice way - not simple, because you can use thousands of lines of code to do relatively simple thing, but it's worth it, because\nat least - you will not repeat yourself :)."
-        }
-    },
-    "/docs": {
-        "title": "Welcome",
-        "data": {
-            "": "So, here you're. You've found very interesting project, which is intended to help develop fullstack web applications with the help of Next.js, React, Mantine UI and\nzilions of other libraries.It's a quite specific project, so you have to start with it's concepts, just to check, if we can be friends.",
-            "requirements#Requirements": "You should be familiar with fullstack web development, in this case be familiar with Next.js, Prisma,\nReact and a lot of others stuff. If you don't know some used libraries, they have great docs too, so read it, it's not that hard :).Also, you have to be curious and open minded, because if you're kind of oldschool guy, leave, your health is in danger.",
-            "batteries-included#Batteries included": "Did you expect to have Getting started as the very first item in the menu? Nope.Why? Because you should understand, what this collection of\nlibraries does, because it's all connected via concepts which you should see first.\nSo please, continue to Concepts to check, if your mindset will be able to accept a library which is not done in that traditional way."
         }
     },
     "/docs/workbench/zustand": {

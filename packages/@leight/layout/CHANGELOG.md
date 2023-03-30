@@ -1,5 +1,11 @@
 # @leight/layout
 
+## 0.5.53
+
+### Patch Changes
+
+- VErsion bump
+
 ## 0.5.52
 
 ### Patch Changes

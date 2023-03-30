@@ -1,5 +1,5 @@
 {
-    "version": "0.5.48",
+    "version": "0.5.49",
     "name": "@leight/filter",
     "description": "Common filter stuff (for filtering data in general).",
     "license": "MIT",
@@ -31,10 +31,10 @@
         "zod": "3.21.1"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.31",
-        "@leight/eslint-config-eslint": "^0.5.40",
-        "@leight/tsconfig": "^0.5.54",
-        "@leight/turbowatch": "^0.5.19",
+        "@leight/esbuild": "^0.5.32",
+        "@leight/eslint-config-eslint": "^0.5.41",
+        "@leight/tsconfig": "^0.5.55",
+        "@leight/turbowatch": "^0.5.20",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

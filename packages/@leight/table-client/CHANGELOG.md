@@ -1,5 +1,20 @@
 # @leight/table-client
 
+## 0.5.22
+
+### Patch Changes
+
+- VErsion bump
+- Updated dependencies
+    - @leight/cursor-client@0.5.22
+    - @leight/i18n@0.5.59
+    - @leight/i18n-client@0.5.59
+    - @leight/mantine@0.5.60
+    - @leight/sort@0.5.50
+    - @leight/sort-client@0.5.16
+    - @leight/source@0.5.53
+    - @leight/utils@0.5.56
+
 ## 0.5.21
 
 ### Patch Changes
