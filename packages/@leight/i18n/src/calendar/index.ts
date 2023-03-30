@@ -26,11 +26,11 @@ export const calendarOf = (
     {
         input = DateTime.now(),
         margin = 0,
-        dayFormat = "long"
+        dayFormat = "short"
     }: ICalendarOfProps = {
         input:     DateTime.now(),
         margin:    1,
-        dayFormat: "long",
+        dayFormat: "short",
     }): ICalendar => {
     const start     = input.startOf("month").minus({week: margin});
     const end       = input.endOf("month").plus({week: margin});
