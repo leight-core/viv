@@ -22,13 +22,12 @@ const useStyles = createStyles(theme => ({
         justifyContent:  "center",
         alignItems:      "center",
     },
-    day:         {
-        // height: "8em",
-        // padding: "0.2em 0.4em",
-        // border:      "1px solid #333",
-        // '& :hover': {
-        //     backgroundColor: theme.colors["gray"][9],
-        // },
+    day:        {
+        height:    "8em",
+        padding:   "0.4em 0.6em",
+        "&:hover": {
+            backgroundColor: theme.colors["gray"][2],
+        },
     },
     weekRow:     {
         border:       "1px solid",
@@ -42,9 +41,12 @@ const useStyles = createStyles(theme => ({
     inRange:     {
         fontWeight: "bold",
     },
-    outOfRange:  {
+    outOfRange: {
         backgroundColor: theme.colors["gray"][2],
         opacity:         0.5,
+        "&:hover":       {
+            backgroundColor: theme.colors["gray"][4],
+        },
     },
 }));
 
