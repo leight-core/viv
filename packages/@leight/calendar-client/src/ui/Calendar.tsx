@@ -14,15 +14,28 @@ import {
 import {type FC}    from "react";
 
 const useStyles = createStyles(theme => ({
+    calendar:    {
+        "& .mantine-Grid-root": {
+            border:         "1px solid",
+            borderColor:    theme.colors["gray"][4],
+            borderBottom:   "none",
+            borderRight:    "none",
+            "&:last-child": {
+                border:      "1px solid",
+                borderColor: theme.colors["gray"][4],
+                borderRight: "none",
+            },
+        },
+    },
     header:      {
-        backgroundColor: theme.colors["gray"][1],
+        backgroundColor: theme.colors["gray"][2],
         height:          "5em",
         display:         "flex",
         flex:            "1 1 auto",
         justifyContent:  "center",
         alignItems:      "center",
     },
-    day:        {
+    day:         {
         height:    "8em",
         padding:   "0.4em 0.6em",
         "&:hover": {
@@ -30,9 +43,10 @@ const useStyles = createStyles(theme => ({
         },
     },
     weekRow:     {
-        border:       "1px solid",
-        borderColor:  theme.colors["gray"][4],
-        borderBottom: "none",
+        "& > div": {
+            borderRight: "1px solid",
+            borderColor: theme.colors["gray"][4],
+        },
     },
     currentWeek: {},
     currentDay:  {
@@ -41,11 +55,10 @@ const useStyles = createStyles(theme => ({
     inRange:     {
         fontWeight: "bold",
     },
-    outOfRange: {
-        backgroundColor: theme.colors["gray"][2],
-        opacity:         0.5,
+    outOfRange:  {
+        backgroundColor: theme.colors["gray"][1],
         "&:hover":       {
-            backgroundColor: theme.colors["gray"][4],
+            backgroundColor: theme.colors["gray"][2],
         },
     },
 }));
@@ -70,55 +83,57 @@ export const Calendar: FC<ICalendarProps> = ({weekCountSize = 0, columnSize = 3,
                 <span>from: <Date input={start.toJSDate()}/></span>
                 <span>end: <Date input={end.toJSDate()}/></span>
             </Group>
-            <Grid
-                columns={columns}
-                className={classNames(
-                    classes.weekRow,
-                )}
+            <Stack
+                className={classes.calendar}
             >
-                {weekCountSize > 0 && <Grid.Col span={weekCountSize}/>}
-                {days.map(day => <Grid.Col
-                    key={`day-${day}`}
-                    span={columnSize}
-                    className={classNames(
-                        classes.header,
-                    )}
+                <Grid
+                    columns={columns}
+                    className={classes.weekRow}
                 >
-                    {day}
-                </Grid.Col>)}
-            </Grid>
-            {weeks.map(({days, number, current, id}) => <Grid
-                key={id}
-                columns={columns}
-                align={"end"}
-                className={classNames(
-                    classes.weekRow,
-                    current ? classes.currentWeek : undefined,
-                )}
-            >
-                {weekCountSize > 0 && <Grid.Col
-                    span={weekCountSize}
-                >
-                    {number}.
-                </Grid.Col>}
-                {days.map(({day, current, outOfRange, id}) => <Grid.Col
-                    key={id}
-                    span={columnSize}
-                    className={classNames(
-                        classes.day,
-                        current ? classes.currentDay : undefined,
-                        outOfRange ? classes.outOfRange : classes.inRange
-                    )}
-                >
-                    <div
-                        style={{
-                            textAlign: "right",
-                        }}
+                    {weekCountSize > 0 && <Grid.Col
+                        span={weekCountSize}
+                        className={classes.header}
+                    />}
+                    {days.map(day => <Grid.Col
+                        key={`day-${day}`}
+                        span={columnSize}
+                        className={classes.header}
                     >
-                        {day.day}
-                    </div>
-                </Grid.Col>)}
-            </Grid>)}
+                        {day}
+                    </Grid.Col>)}
+                </Grid>
+                {weeks.map(({days, number, current, id}) => <Grid
+                    key={id}
+                    columns={columns}
+                    className={classNames(
+                        classes.weekRow,
+                        current ? classes.currentWeek : undefined,
+                    )}
+                >
+                    {weekCountSize > 0 && <Grid.Col
+                        span={weekCountSize}
+                    >
+                        {number}.
+                    </Grid.Col>}
+                    {days.map(({day, current, outOfRange, id}) => <Grid.Col
+                        key={id}
+                        span={columnSize}
+                        className={classNames(
+                            classes.day,
+                            current ? classes.currentDay : undefined,
+                            outOfRange ? classes.outOfRange : classes.inRange
+                        )}
+                    >
+                        <div
+                            style={{
+                                textAlign: "right",
+                            }}
+                        >
+                            {day.day}
+                        </div>
+                    </Grid.Col>)}
+                </Grid>)}
+            </Stack>
         </Stack>
     </Container>;
 };
