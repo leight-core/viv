@@ -113,6 +113,7 @@
       <sourceFolder url="file://$MODULE_DIR$/apps/ladle/public" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/apps/ladle/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/apps/vitebook/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/calendar/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.github" />
       <excludeFolder url="file://$MODULE_DIR$/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/sql/.turbo" />
@@ -312,6 +313,8 @@
       <excludeFolder url="file://$MODULE_DIR$/apps/nextra/.next" />
       <excludeFolder url="file://$MODULE_DIR$/apps/nextra/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/apps/nextra/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/calendar/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/calendar/lib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

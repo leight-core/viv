@@ -1,20 +1,21 @@
+import {type ICalendarItem} from "@leight/calendar";
 import {
     DateTime,
     useCalendar
-}                   from "@leight/i18n";
-import {Date}       from "@leight/i18n-client";
-import {classNames} from "@leight/utils-client";
+}                           from "@leight/i18n";
+import {Date}               from "@leight/i18n-client";
+import {classNames}         from "@leight/utils-client";
 import {
     Container,
     createStyles,
     Grid,
     Group,
     Stack
-}                   from "@mantine/core";
-import {type FC}    from "react";
+}                           from "@mantine/core";
+import {type FC}            from "react";
 
 const useStyles = createStyles(theme => ({
-    calendar:    {
+    calendar:   {
         "& .mantine-Grid-root": {
             border:         "1px solid",
             borderColor:    theme.colors["gray"][4],
@@ -27,7 +28,7 @@ const useStyles = createStyles(theme => ({
             },
         },
     },
-    header:      {
+    header:     {
         backgroundColor: theme.colors["gray"][2],
         height:          "5em",
         display:         "flex",
@@ -35,27 +36,27 @@ const useStyles = createStyles(theme => ({
         justifyContent:  "center",
         alignItems:      "center",
     },
-    day:         {
+    day:        {
         height:    "8em",
         padding:   "0.4em 0.6em",
         "&:hover": {
             backgroundColor: theme.colors["gray"][2],
         },
     },
-    weekRow:     {
+    weekRow:    {
         "& > div": {
             borderRight: "1px solid",
             borderColor: theme.colors["gray"][4],
         },
     },
     currentWeek: {},
-    currentDay:  {
+    currentDay: {
         backgroundColor: theme.colors["gray"][4],
     },
-    inRange:     {
+    inRange:    {
         fontWeight: "bold",
     },
-    outOfRange:  {
+    outOfRange: {
         backgroundColor: theme.colors["gray"][1],
         "&:hover":       {
             backgroundColor: theme.colors["gray"][2],
@@ -67,9 +68,15 @@ export interface ICalendarProps {
     weekCountSize?: number;
     columnSize?: number;
     input?: DateTime;
+    items?: ICalendarItem[];
 }
 
-export const Calendar: FC<ICalendarProps> = ({weekCountSize = 0, columnSize = 3, input = DateTime.now().plus({month: 0})}) => {
+export const Calendar: FC<ICalendarProps> = (
+    {
+        weekCountSize = 0,
+        columnSize = 3,
+        input = DateTime.now().plus({month: 0}),
+    }) => {
     const {start, end, weeks, days} = useCalendar({
         input,
     });
