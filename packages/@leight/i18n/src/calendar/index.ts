@@ -45,6 +45,7 @@ export const calendarOf = (
     }): ICalendar => {
     const start     = input.startOf("month").minus({week: marginMinus || margin});
     const end       = input.endOf("month").plus({week: marginPlus || margin});
+    const length    = Math.max(Interval.fromDateTimes(start, end).count("weeks"), 6);
     const weekStart = start.startOf("week");
     const now       = DateTime.now();
     return {
@@ -56,7 +57,7 @@ export const calendarOf = (
             return Info.weekdays(dayFormat);
         },
         get weeks() {
-            return Array.from({length: Interval.fromDateTimes(start, end).count("weeks")}, (_, week) => {
+            return Array.from({length}, (_, week) => {
                 const $week = weekStart.plus({week});
                 const id    = `${$week.year}${$week.weekNumber}`;
                 return {

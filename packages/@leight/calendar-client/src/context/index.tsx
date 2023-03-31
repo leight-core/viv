@@ -18,6 +18,8 @@ export type ICalendarStoreStoreProps = IStoreProps<{
     today(): void;
     prevMonth(): void;
     nextMonth(): void;
+    readonly isLoading: boolean;
+    loading(isLoading: boolean): void;
 }, {
     /**
      * Calendar is computed based on an input, so it cannot be required
@@ -31,6 +33,10 @@ export const {
                  useState: useCalendar,
              } = createStoreContext<ICalendarStoreStoreProps>({
     state: ({state}) => (set) => ({
+        isLoading: false,
+        loading(isLoading) {
+            set({isLoading});
+        },
         setInput(input: DateTime) {
             set({
                 calendar: calendarOf({input}),
@@ -52,10 +58,14 @@ export const {
             });
         },
         prevMonth() {
-            this.minus({month: 1});
+            set(({calendar: {input}}) => ({
+                calendar: calendarOf({input: input.minus({month: 1})}),
+            }));
         },
         nextMonth() {
-            this.plus({month: 1});
+            set(({calendar: {input}}) => ({
+                calendar: calendarOf({input: input.plus({month: 1})}),
+            }));
         },
         ...state,
     }),

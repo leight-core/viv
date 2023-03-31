@@ -2,12 +2,12 @@ import {type IDateInput}  from "@leight/i18n";
 import {type FC}          from "react";
 import {useDateTimeState} from "../context";
 
-export interface IDateProps {
+export interface IDateInlineProps {
     input?: IDateInput;
     fallback?: IDateInput;
 }
 
-export const Date: FC<IDateProps> = ({input, fallback}) => {
+export const DateInline: FC<IDateInlineProps> = ({input, fallback}) => {
     const {toLocalDate} = useDateTimeState(({toLocalDate}) => ({toLocalDate}));
     return <>
         {toLocalDate(input, fallback)}

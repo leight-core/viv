@@ -1,5 +1,6 @@
 import { Shell } from "@leight/mantine";
 import { Callout } from "nextra-theme-docs";
+import { SourceExample } from "../../../../components/SourceExample";
 import { DefaultCalendar,CalendarWithInput } from "../../../../example/calendar-client";
 
 # Calendar
@@ -24,8 +25,15 @@ backend for date/time operations.
     a **control** over the calendar outside of the component itself.
 </Callout>
 
-### Code
+<Callout type={'info'} emoji={'ℹ️'}>
+    Calendar defaults to **6 weeks** to prevent jumping on months with lesser week count.
+</Callout>
 
+<SourceExample
+    example={<Shell>
+                 <DefaultCalendar/>
+             </Shell>}
+>
 ```tsx filename="DefaultCalendar.tsx"
 import {
     Calendar,
@@ -40,22 +48,21 @@ export interface IDefaultCalendarProps extends ICalendarProps {
 export const DefaultCalendar: FC<IDefaultCalendarProps> = (props) => {
     return <CalendarProvider>
         <Calendar
+            withControls={false}
             {...props}
         />
-    </CalendarProvider>;
+    </CalendarProvider>
 };
 ```
-
-### Result
-
-<Shell>
-    <DefaultCalendar/>
-</Shell>
+</SourceExample>
 
 ## With input
 
-### Code
-
+<SourceExample
+    example={<Shell>
+                 <CalendarWithInput/>
+             </Shell>}
+>
 ```tsx filename="CalendarWithInput.tsx"
 import {
     Calendar,
@@ -64,20 +71,29 @@ import {
     useCalendar
 }                 from "@leight/calendar-client";
 import {DateTime} from "@leight/i18n";
-import {type FC}  from "react";
+import {
+    type FC,
+    useEffect
+}                 from "react";
 
 export interface ICalendarWithInputProps extends ICalendarProps {
 }
 
 export const CalendarWithInput: FC<ICalendarWithInputProps> = (props) => {
     /**
-     * Calendar is powered by it's Calendar Store where state control and state itself lives.
+     * Calendar is powered by its Calendar Store where state control and state itself lives.
      */
     return <CalendarProvider
         /**
          * You can pass input here or through the props; input is DateTime from Luxon
          */
         input={DateTime.fromObject({month: 2})}
+        defaults={{
+            /**
+             * Set default loading state to emulate fetching calendar data
+             */
+            isLoading: true,
+        }}
     >
         <CalendarInternal {...props}/>
     </CalendarProvider>;
@@ -87,18 +103,22 @@ interface ICalendarInternalProps extends ICalendarWithInputProps {
 }
 
 const CalendarInternal: FC<ICalendarInternalProps> = (props) => {
-    const {today} = useCalendar(({today}) => ({today}));
-    return <>
-        <button onClick={() => today()}>Today</button>
-        <Calendar
-            {...props}
-        />
-    </>;
+    /**
+     * Control Calendar's loading state
+     */
+    const {loading} = useCalendar(({loading}) => ({loading}));
+    useEffect(() => {
+        setTimeout(() => {
+            /**
+             * Ou, "we have" data! Turn off loading
+             */
+            loading(false);
+        }, 1000);
+    }, []);
+    return <Calendar
+        {...props}
+    />;
 };
 ```
+</SourceExample>
 
-### Result
-
-<Shell>
-    <CalendarWithInput/>
-</Shell>

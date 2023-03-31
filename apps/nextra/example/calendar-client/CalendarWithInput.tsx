@@ -5,20 +5,29 @@ import {
     useCalendar
 }                 from "@leight/calendar-client";
 import {DateTime} from "@leight/i18n";
-import {type FC}  from "react";
+import {
+    type FC,
+    useEffect
+}                 from "react";
 
 export interface ICalendarWithInputProps extends ICalendarProps {
 }
 
 export const CalendarWithInput: FC<ICalendarWithInputProps> = (props) => {
     /**
-     * Calendar is powered by it's Calendar Store where state control and state itself lives.
+     * Calendar is powered by its Calendar Store where state control and state itself lives.
      */
     return <CalendarProvider
         /**
          * You can pass input here or through the props; input is DateTime from Luxon
          */
         input={DateTime.fromObject({month: 2})}
+        defaults={{
+            /**
+             * Set default loading state to emulate fetching calendar data
+             */
+            isLoading: true,
+        }}
     >
         <CalendarInternal {...props}/>
     </CalendarProvider>;
@@ -28,11 +37,19 @@ interface ICalendarInternalProps extends ICalendarWithInputProps {
 }
 
 const CalendarInternal: FC<ICalendarInternalProps> = (props) => {
-    const {today} = useCalendar(({today}) => ({today}));
-    return <>
-        <button onClick={() => today()}>Today</button>
-        <Calendar
-            {...props}
-        />
-    </>;
+    /**
+     * Control Calendar's loading state
+     */
+    const {loading} = useCalendar(({loading}) => ({loading}));
+    useEffect(() => {
+        setTimeout(() => {
+            /**
+             * Ou, "we have" data! Turn off loading
+             */
+            loading(false);
+        }, 1000);
+    }, []);
+    return <Calendar
+        {...props}
+    />;
 };

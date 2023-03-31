@@ -1,2 +1,2 @@
-export * from "./Date";
-export * from "./DateTime";
+export * from "./DateInline";
+export * from "./DateTimeInline";
