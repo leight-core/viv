@@ -224,6 +224,12 @@
             "result-2#Result": ""
         }
     },
+    "/docs/packages/utils-client": {
+        "title": "@leight/utils-client",
+        "data": {
+            "": ""
+        }
+    },
     "/docs/packages/utils": {
         "title": "@leight/utils",
         "data": {
@@ -232,12 +238,6 @@
             "api#API": "Each section here is exported from the package.",
             "chain#chain()": "Useful when you need to rotate through values, for example true{:js} -> false{:js} -> undefined{:js}.Initial use case for this method was rotating sort order in tables (\"asc\"{:js} -> \"desc\":{:js} -> undefined{:js}).\nimport {chain} from \"@leight/utils\";\n\n/**\n* Next value: `false`\n*/\nconsole.log(\"Next value\", chain(true, [true, false, undefined]));\n/**\n* Next value: `A`\n*/\nconsole.log(\"Next value\", chain(\"C\", [\"A\", \"B\", \"C\"]));",
             "cleanof#cleanOf()": "This method is proxy to fast-clean package.\nTakes an object as an input and removed all undefined{:js} properties while preserving null{:js}s.Second parameter of the method is options object from fast-clean.\nimport {cleanOf} from \"@leight/utils\";\n\n/**\n* Only `wipeMe` will be removed.\n*/\nconsole.log(\"cleanOf\", cleanOf({\nfoo: \"true\",\nbar: false,\nhello: null,\nwipeMe: undefined,\n}));"
-        }
-    },
-    "/docs/packages/utils-client": {
-        "title": "@leight/utils-client",
-        "data": {
-            "": ""
         }
     },
     "/docs/packages/zustand": {
@@ -271,6 +271,12 @@
             "": ""
         }
     },
+    "/docs/workbench/prisma": {
+        "title": "Prisma",
+        "data": {
+            "": ""
+        }
+    },
     "/docs/workbench/sdk": {
         "title": "SDK",
         "data": {
@@ -281,12 +287,6 @@
             "client#Client": "For your client-side package create a file src/leight-sdk.ts; you can choose whatever name you want, but do not forget to update package.json.\nimport {withClientSourceGenerators, withSdk} from \"@leight/sdk\";\n\n/**\n* Generator itself (handles file creation, execution, console params stuff and others...)\n*/\nvoid withSdk(\n/**\n* Client set of generators; at the end, it uses more internal generators, which could\n* also be used manually if you want/need.\n*/\nwithClientSourceGenerators({\nentity:   \"Prisma entity name, for example User (case is important); this is used to generate Schemas\",\npackages: {\n/**\n* This is a reference to a common package with generated schemas, interfaces and other\n* stuff required. Usually, current package name without suffix.\n*/\nschema: \"@my-app/model-name\",\n},\ntrpc:     {\npath:    \"trpc.route.path\",\npackage: \"@my-app/trpc-client\",\n},\n})\n);",
             "server#Server": "For your server-side package create a file src/leight-sdk.ts; you can choose whatever name you want, but do not forget to update package.json.\nimport {withServerSourceGenerators, withSdk} from \"@leight/sdk\";\n\n/**\n* Generator itself (handles file creation, execution, console params stuff and others...)\n*/\nvoid withSdk(\n/**\n* Server set of generators; at the end, it uses more internal generators, which could\n* also be used manually if you want/need.\n*/\nwithServerSourceGenerators({\nentity:   \"Prisma entity name, for example User (case is important); this is used to generate Schemas\",\npackages: {\n/**\n* This is a reference to a common package with generated schemas, interfaces and other\n* stuff required. Usually, current package name without suffix.\n*/\nschema: \"@my-app/model-name\",\n/**\n* Because you have a standalone prisma package, you can use it here, so generator can properly\n* import all Prisma parts of the model you want to generate.\n*/\nprisma: \"@my-app/prisma\",\n},\n/**\n* This is a single name of the property on prismaClient which will be generated into the Source.\n*/\nprisma:   \"prismaClient.<entityName>\",\n})\n);",
             "epilogue#Epilogue": "Now you're almost done: just update your turbo.json (or whatever monorepo you're using):\nDon't copy-paste this piece of code, just think about it's meaning: execute code generation before your build, so you're sure\neverything is in the place.\n\n{\n\"generate\": {\n\"cache\": false\n},\n\"build\": {\n\"dependsOn\": [\n\"^build\",\n\"generate\"\n]\n}\n}"
-        }
-    },
-    "/docs/workbench/prisma": {
-        "title": "Prisma",
-        "data": {
-            "": ""
         }
     },
     "/": {
