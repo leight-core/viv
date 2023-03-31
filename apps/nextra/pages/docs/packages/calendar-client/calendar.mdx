@@ -19,11 +19,17 @@ backend for date/time operations.
 
 ## Minimal example
 
+<Callout>
+    All Calendar instances needs (separate) [CalendarStoreProvider](./calendar-store-provider) to work; the reason you must provide you own store is to give you
+    a **control** over the calendar outside of the component itself.
+</Callout>
+
 ### Code
 
 ```tsx filename="DefaultCalendar.tsx"
 import {
     Calendar,
+    CalendarProvider,
     type ICalendarProps
 }                from "@leight/calendar-client";
 import {type FC} from "react";
@@ -32,9 +38,11 @@ export interface IDefaultCalendarProps extends ICalendarProps {
 }
 
 export const DefaultCalendar: FC<IDefaultCalendarProps> = (props) => {
-    return <Calendar
-        {...props}
-    />;
+    return <CalendarProvider>
+        <Calendar
+            {...props}
+        />
+    </CalendarProvider>;
 };
 ```
 
@@ -48,10 +56,12 @@ export const DefaultCalendar: FC<IDefaultCalendarProps> = (props) => {
 
 ### Code
 
-```tsx
+```tsx filename="CalendarWithInput.tsx"
 import {
     Calendar,
-    type ICalendarProps
+    CalendarProvider,
+    type ICalendarProps,
+    useCalendar
 }                 from "@leight/calendar-client";
 import {DateTime} from "@leight/i18n";
 import {type FC}  from "react";
@@ -60,13 +70,30 @@ export interface ICalendarWithInputProps extends ICalendarProps {
 }
 
 export const CalendarWithInput: FC<ICalendarWithInputProps> = (props) => {
-    return <Calendar
+    /**
+     * Calendar is powered by it's Calendar Store where state control and state itself lives.
+     */
+    return <CalendarProvider
         /**
          * You can pass input here or through the props; input is DateTime from Luxon
          */
         input={DateTime.fromObject({month: 2})}
-        {...props}
-    />;
+    >
+        <CalendarInternal {...props}/>
+    </CalendarProvider>;
+};
+
+interface ICalendarInternalProps extends ICalendarWithInputProps {
+}
+
+const CalendarInternal: FC<ICalendarInternalProps> = (props) => {
+    const {today} = useCalendar(({today}) => ({today}));
+    return <>
+        <button onClick={() => today()}>Today</button>
+        <Calendar
+            {...props}
+        />
+    </>;
 };
 ```
 

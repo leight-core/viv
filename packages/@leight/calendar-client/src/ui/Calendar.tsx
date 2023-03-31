@@ -1,8 +1,4 @@
 import {type ICalendarItem} from "@leight/calendar";
-import {
-    DateTime,
-    useCalendar
-}                           from "@leight/i18n";
 import {Date}               from "@leight/i18n-client";
 import {classNames}         from "@leight/utils-client";
 import {
@@ -12,7 +8,7 @@ import {
     Group,
     Stack
 }                           from "@mantine/core";
-import {type FC}            from "react";
+import {useCalendar}        from "../context";
 
 const useStyles = createStyles(theme => ({
     calendar:   {
@@ -64,24 +60,27 @@ const useStyles = createStyles(theme => ({
     },
 }));
 
-export interface ICalendarProps {
+export interface ICalendarProps<TCalendarItem extends ICalendarItem = ICalendarItem> {
     weekCountSize?: number;
     columnSize?: number;
-    input?: DateTime;
-    items?: ICalendarItem[];
+    items?: TCalendarItem[];
 }
 
-export const Calendar: FC<ICalendarProps> = (
+export const Calendar = <TCalendarItem extends ICalendarItem = ICalendarItem>(
     {
         weekCountSize = 0,
         columnSize = 3,
-        input = DateTime.now().plus({month: 0}),
-    }) => {
-    const {start, end, weeks, days} = useCalendar({
-        input,
-    });
-    const columns                   = (days.length * columnSize) + weekCountSize;
-    const {classes}                 = useStyles();
+    }: ICalendarProps<TCalendarItem>) => {
+    /**
+     * Listening for whole `calendar` changes is OK, because when something inside changes, the whole calendar goes
+     * recomputed.
+     */
+    const {calendar: {weeks, days, start, end, input}} = useCalendar(({calendar}) => ({calendar}));
+    /**
+     * This is specific for Mantine Grid: compute number of columns to render.
+     */
+    const columnCount                                  = (days.length * columnSize) + weekCountSize;
+    const {classes}                                    = useStyles();
 
     return <Container>
         <Stack>
@@ -90,11 +89,18 @@ export const Calendar: FC<ICalendarProps> = (
                 <span>from: <Date input={start.toJSDate()}/></span>
                 <span>end: <Date input={end.toJSDate()}/></span>
             </Group>
+            {/*
+                Stack is necessary to keep Grid in place properly or it shrinks and renders bad.
+            */}
             <Stack
                 className={classes.calendar}
             >
+                {/*
+                    First of all: render header with all days of week; they're already localised from
+                    the calendar, so it's just simple render here.
+                */}
                 <Grid
-                    columns={columns}
+                    columns={columnCount}
                     className={classes.weekRow}
                 >
                     {weekCountSize > 0 && <Grid.Col
@@ -109,9 +115,12 @@ export const Calendar: FC<ICalendarProps> = (
                         {day}
                     </Grid.Col>)}
                 </Grid>
+                {/*
+                    Quite simple stuff: take all weeks compute by the calendar and render them. That's all
+                */}
                 {weeks.map(({days, number, current, id}) => <Grid
                     key={id}
-                    columns={columns}
+                    columns={columnCount}
                     className={classNames(
                         classes.weekRow,
                         current ? classes.currentWeek : undefined,
@@ -122,6 +131,9 @@ export const Calendar: FC<ICalendarProps> = (
                     >
                         {number}.
                     </Grid.Col>}
+                    {/*
+                        Grid is already properly setup (number of columns), so render day by day as a calendar says.
+                    */}
                     {days.map(({day, current, outOfRange, id}) => <Grid.Col
                         key={id}
                         span={columnSize}

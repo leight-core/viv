@@ -4,7 +4,6 @@ import {
     Interval,
     type StringUnitLength
 }                       from "luxon";
-import {useMemo}        from "react";
 import {type ICalendar} from "../api";
 
 export interface ICalendarOfProps {
@@ -13,9 +12,19 @@ export interface ICalendarOfProps {
      */
     input?: DateTime;
     /**
-     * Margin in weeks (defaults to (-1 -> +1)
+     * Margin in weeks (defaults to (-1 -> +1); specific margin overrides this value (for example
+     * "marginPlus: 2" and "margin: 1" makes look ahead 2 weeks (from marginPlus), and look behind 1 week (from
+     * margin itself).
      */
     margin?: number;
+    /**
+     * Positive number of weeks to look ahead
+     */
+    marginPlus?: number;
+    /**
+     * Positive number of weeks to look behind
+     */
+    marginMinus?: number;
     dayFormat?: StringUnitLength;
 }
 
@@ -26,14 +35,16 @@ export const calendarOf = (
     {
         input = DateTime.now(),
         margin = 0,
+        marginPlus,
+        marginMinus,
         dayFormat = "short"
     }: ICalendarOfProps = {
         input:     DateTime.now(),
         margin:    1,
         dayFormat: "short",
     }): ICalendar => {
-    const start     = input.startOf("month").minus({week: margin});
-    const end       = input.endOf("month").plus({week: margin});
+    const start     = input.startOf("month").minus({week: marginMinus || margin});
+    const end       = input.endOf("month").plus({week: marginPlus || margin});
     const weekStart = start.startOf("week");
     const now       = DateTime.now();
     return {
@@ -41,32 +52,31 @@ export const calendarOf = (
         now,
         start,
         end,
-        weeks: Array.from({length: Interval.fromDateTimes(start, end).count("weeks")}, (_, week) => {
-            const $week = weekStart.plus({week});
-            const id    = `${$week.year}${$week.weekNumber}`;
-            return {
-                id,
-                week:    $week,
-                number:  $week.weekNumber,
-                current: $week.weekNumber === now.weekNumber,
-                days:    Array.from({length: 7}, (_, day) => {
-                    const $day = $week.plus({day: day});
-                    return {
-                        id:         `${id}${day}`,
-                        day:        $day,
-                        current:    !Math.floor(now.diff($day, "day").days),
-                        outOfRange: $day.month !== input.month || $day.year !== input.year,
-                    };
-                }),
-            };
-        }),
-        days:  Info.weekdays(dayFormat),
+        get days() {
+            return Info.weekdays(dayFormat);
+        },
+        get weeks() {
+            return Array.from({length: Interval.fromDateTimes(start, end).count("weeks")}, (_, week) => {
+                const $week = weekStart.plus({week});
+                const id    = `${$week.year}${$week.weekNumber}`;
+                return {
+                    id,
+                    week:    $week,
+                    number:  $week.weekNumber,
+                    current: $week.weekNumber === now.weekNumber,
+                    get days() {
+                        return Array.from({length: 7}, (_, day) => {
+                            const $day = $week.plus({day: day});
+                            return {
+                                id:         `${id}${day}`,
+                                day:        $day,
+                                current:    !Math.floor(now.diff($day, "day").days),
+                                outOfRange: $day.month !== input.month || $day.year !== input.year,
+                            };
+                        });
+                    },
+                };
+            });
+        },
     };
-};
-
-export const useCalendar = (props?: ICalendarOfProps): ICalendar => {
-    return useMemo(() => calendarOf(props), [
-        (props?.input || DateTime.now()).toISODate({format: "basic"}),
-        props?.margin || 0,
-    ]);
 };

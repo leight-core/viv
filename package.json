@@ -11,7 +11,7 @@
         "node": ">=16.0.0"
     },
     "scripts": {
-        "dev": "turbo run dev --parallel --concurrency 64 --no-daemon | roarr",
+        "dev": "turbo run dev --parallel --concurrency 64 --no-daemon",
         "build": "turbo run init --no-daemon && turbo run build --no-daemon",
         "lint": "turbo run lint --no-daemon",
         "depcheck": "turbo run depcheck --no-daemon --parallel",
@@ -26,9 +26,9 @@
         "packages/**/*"
     ],
     "devDependencies": {
-        "@changesets/cli": "^2.26.0",
-        "@roarr/cli": "^5.10.4",
-        "turbo": "^1.8.3",
-        "typescript": "^5.0.2"
+        "@changesets/cli": "^2.26.1",
+        "@roarr/cli": "^5.11.0",
+        "turbo": "^1.8.8",
+        "typescript": "^5.0.3"
     }
 }
