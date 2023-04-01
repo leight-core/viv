@@ -1,4 +1,7 @@
-import {type DateTime} from "luxon";
+import {
+    type DateTime,
+    type Interval
+} from "luxon";
 
 /**
  * Which types are accepted as input type for formatting functions.
@@ -80,6 +83,14 @@ export interface ICalendar {
      * Final date of the generated calendar
      */
     end: DateTime;
+    /**
+     * Interval based on start/end for querying dates.
+     */
+    interval: Interval;
+    /**
+     * Is the "now" in a current calendar interval?
+     */
+    isCurrent: boolean;
     /**
      * Just for convenience - actual timestamp
      */

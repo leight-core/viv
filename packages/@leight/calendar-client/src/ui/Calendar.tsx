@@ -4,6 +4,7 @@ import {
 }                    from "@leight/i18n-client";
 import {classNames}  from "@leight/utils-client";
 import {
+    Breadcrumbs,
     Container,
     createStyles,
     Grid,
@@ -13,6 +14,7 @@ import {
     Tooltip
 }                    from "@mantine/core";
 import {
+    IconCalendarEvent,
     IconChevronDown,
     IconChevronUp,
     IconCurrentLocation,
@@ -20,12 +22,16 @@ import {
 }                    from "@tabler/icons-react";
 import {
     ComponentProps,
-    type FC
+    type FC,
+    useState
 }                    from "react";
 import {useCalendar} from "../context";
 
 const useStyles = createStyles(theme => ({
-    calendar:      {
+    calendar: {
+        "& .secondary":         {
+            color: theme.colors["gray"][5],
+        },
         "& .mantine-Grid-root": {
             border:         "1px solid",
             borderColor:    theme.colors["gray"][4],
@@ -62,9 +68,6 @@ const useStyles = createStyles(theme => ({
             flex:           "1 1 auto",
             justifyContent: "end",
             alignItems:     "center",
-        },
-        "& .secondary":       {
-            color: theme.colors["gray"][5],
         },
         "& .icon":            {
             color:     theme.colors["gray"][5],
@@ -115,6 +118,7 @@ const useStyles = createStyles(theme => ({
 export interface ICalendarProps extends Omit<ComponentProps<typeof Container>, "children"> {
     withControls?: boolean;
     weekCountSize?: number;
+    highlightToday?: boolean;
     columnSize?: number;
     isLoading?: boolean;
 }
@@ -122,7 +126,8 @@ export interface ICalendarProps extends Omit<ComponentProps<typeof Container>, "
 export const Calendar: FC<ICalendarProps> = (
     {
         withControls = true,
-        weekCountSize = 0,
+        highlightToday = true,
+        weekCountSize = 2,
         columnSize = 3,
         isLoading: $isLoading,
         ...        props
@@ -141,29 +146,30 @@ export const Calendar: FC<ICalendarProps> = (
                             days,
                             start,
                             end,
-                            input,
+                            isCurrent,
                         }
-          }                  = useCalendar(({
-                                                calendar,
-                                                nextMonth,
-                                                prevMonth,
-                                                isLoading,
-                                                today,
-                                            }) => ({
+          }                         = useCalendar(({
+                                                       calendar,
+                                                       nextMonth,
+                                                       prevMonth,
+                                                       isLoading,
+                                                       today,
+                                                   }) => ({
         calendar,
         nextMonth,
         prevMonth,
         isLoading,
         today,
     }));
+    const [withWeeks, setWithWeeks] = useState(false);
     /**
      * This is specific for Mantine Grid: compute number of columns to render.
      */
-    const columnCount        = (days.length * columnSize) + weekCountSize;
-    const {t}                = useTranslation("common");
-    const {classes}          = useStyles();
-    const controlColumnCount = 12;
-    const controlWidth       = 3;
+    const columnCount               = (days.length * columnSize) + (withWeeks ? weekCountSize : 0);
+    const {t}                       = useTranslation("common");
+    const {classes}                 = useStyles();
+    const controlColumnCount        = 18;
+    const controlWidth              = 6;
 
     return <Container
         pos={"relative"}
@@ -187,9 +193,13 @@ export const Calendar: FC<ICalendarProps> = (
                     span={controlWidth}
                     className={"left"}
                 >
-                        <span className={"secondary"}>
-                            <DateInline input={input.toJSDate()}/>
-                        </span>
+                    <Breadcrumbs
+                        separator={"→"}
+                        className={"secondary"}
+                    >
+                        <DateInline input={start.toJSDate()} options={{day: "numeric", month: "numeric"}}/>
+                        <DateInline input={end.toJSDate()}/>
+                    </Breadcrumbs>
                 </Grid.Col>
                 <Grid.Col
                     span={controlColumnCount - (controlWidth * 2)}
@@ -203,10 +213,16 @@ export const Calendar: FC<ICalendarProps> = (
                     className={"right"}
                 >
                     <Group spacing={"sm"}>
-                        <Tooltip label={t("calendar.today.icon.tooltip", "Today")}>
+                        {!isCurrent && <Tooltip label={t("calendar.today.icon.tooltip", "Today")}>
                             <IconCurrentLocation
                                 className={"icon"}
                                 onClick={() => today()}
+                            />
+                        </Tooltip>}
+                        <Tooltip label={t("calendar.with-weeks.icon.tooltip", "Week numbers")}>
+                            <IconCalendarEvent
+                                className={"icon"}
+                                onClick={() => setWithWeeks(weeks => !weeks)}
                             />
                         </Tooltip>
                         <Tooltip label={t("calendar.search.icon.tooltip", "Select date")}>
@@ -223,10 +239,14 @@ export const Calendar: FC<ICalendarProps> = (
                 columns={columnCount}
                 className={classes.weekRow}
             >
-                {weekCountSize > 0 && <Grid.Col
+                {withWeeks && <Grid.Col
                     span={weekCountSize}
                     className={classes.header}
-                />}
+                >
+                    <Tooltip label={t("calendar.weeks-numbers.icon.tooltip", "Week no.")}>
+                        <IconCalendarEvent className={"secondary"}/>
+                    </Tooltip>
+                </Grid.Col>}
                 {days.map(day => <Grid.Col
                     key={`day-${day}`}
                     span={columnSize}
@@ -246,7 +266,7 @@ export const Calendar: FC<ICalendarProps> = (
                     current ? classes.currentWeek : undefined,
                 )}
             >
-                {weekCountSize > 0 && <Grid.Col
+                {withWeeks && <Grid.Col
                     span={weekCountSize}
                 >
                     {number}.
@@ -259,7 +279,7 @@ export const Calendar: FC<ICalendarProps> = (
                     span={columnSize}
                     className={classNames(
                         classes.day,
-                        current ? classes.currentDay : undefined,
+                        current && highlightToday ? classes.currentDay : undefined,
                         outOfRange ? classes.outOfRange : classes.inRange
                     )}
                 >
@@ -273,7 +293,7 @@ export const Calendar: FC<ICalendarProps> = (
                 </Grid.Col>)}
             </Grid>)}
             {withControls && <Grid
-                columns={12}
+                columns={controlColumnCount}
                 className={classNames(
                     classes.controls,
                     classes.controlSuffix,
@@ -283,11 +303,13 @@ export const Calendar: FC<ICalendarProps> = (
                     span={controlWidth}
                     className={"left"}
                 >
-                        <span
-                            className={"secondary"}
-                        >
-                            <DateInline input={end.toJSDate()}/>
-                        </span>
+                    <Breadcrumbs
+                        separator={"→"}
+                        className={"secondary"}
+                    >
+                        <DateInline input={end.plus({day: 1}).toJSDate()} options={{day: "numeric", month: "numeric"}}/>
+                        <DateInline input={end.plus({day: 1}).endOf("month").toJSDate()}/>
+                    </Breadcrumbs>
                 </Grid.Col>
                 <Grid.Col
                     span={controlColumnCount - (controlWidth * 2)}

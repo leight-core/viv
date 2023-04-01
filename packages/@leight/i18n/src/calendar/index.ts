@@ -45,7 +45,8 @@ export const calendarOf = (
     }): ICalendar => {
     const start     = input.startOf("month").minus({week: marginMinus || margin});
     const end       = input.endOf("month").plus({week: marginPlus || margin});
-    const length    = Math.max(Interval.fromDateTimes(start, end).count("weeks"), 6);
+    const interval  = Interval.fromDateTimes(start, end);
+    const length    = Math.max(interval.count("weeks"), 6);
     const weekStart = start.startOf("week");
     const now       = DateTime.now();
     return {
@@ -53,6 +54,10 @@ export const calendarOf = (
         now,
         start,
         end,
+        interval,
+        get isCurrent() {
+            return interval.contains(now);
+        },
         get days() {
             return Info.weekdays(dayFormat);
         },

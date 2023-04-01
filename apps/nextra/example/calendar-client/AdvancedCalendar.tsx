@@ -21,7 +21,7 @@ export const AdvancedCalendar: FC<IAdvancedCalendarProps> = (props) => {
         /**
          * You can pass input here or through the props; input is DateTime from Luxon
          */
-        input={DateTime.fromObject({month: 2})}
+        input={DateTime.fromObject({month: 2, day: 12})}
         defaults={{
             /**
              * Set default loading state to emulate fetching calendar data

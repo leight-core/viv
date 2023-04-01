@@ -25,11 +25,11 @@ export type IDateTimeStoreProps = IStoreProps<{
     /**
      * Take input string in ISO format and reformat it into the user's locale.
      */
-    toLocalDate(input?: IDateInput, fallback?: IDateInput): string | undefined;
+    toLocalDate(input?: IDateInput, fallback?: IDateInput, opts?: DateTimeFormatOptions): string | undefined;
     /**
      * Take input string in ISO format and return localized date & time
      */
-    toLocalDateTime(input?: IDateInput, fallback?: IDateInput): string | undefined;
+    toLocalDateTime(input?: IDateInput, fallback?: IDateInput, opts?: DateTimeFormatOptions): string | undefined;
 }>
 
 const iso2locale = (input?: IDateInput, fallback?: IDateInput, opts?: DateTimeFormatOptions): string | undefined => {
@@ -50,11 +50,11 @@ export const {
                  useOptionalStore: useOptionalDateTimeStore,
              } = createStoreContext<IDateTimeStoreProps>({
     state: () => () => ({
-        toLocalDate(input, fallback) {
-            return iso2locale(input, fallback, DateTime.DATE_MED);
+        toLocalDate(input, fallback, opts = DateTime.DATE_MED) {
+            return iso2locale(input, fallback, opts);
         },
-        toLocalDateTime(input, fallback) {
-            return iso2locale(input, fallback, DateTime.DATETIME_MED);
+        toLocalDateTime(input, fallback, opts = DateTime.DATETIME_MED) {
+            return iso2locale(input, fallback, opts);
         },
     }),
     name:  "DateTimeContext",

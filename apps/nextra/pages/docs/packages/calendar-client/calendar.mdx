@@ -27,6 +27,8 @@ backend for date/time operations.
 Calendar is using following (i18next) translations from namespace **`common`**
 - `calendar.today.icon.tooltip`: tooltip over selecting current date icon
 - `calendar.search.icon.tooltip`: tooltip over switching calendar to "search mode"
+- `calendar.with-weeks.icon.tooltip`: tooltip about switching number of weeks
+- `calendar.weeks-numbers.icon.tooltip`: tooltip with week numbers (when shown)
 
 ## Minimal example
 
@@ -97,7 +99,7 @@ export const AdvancedCalendar: FC<IAdvancedCalendarProps> = (props) => {
         /**
          * You can pass input here or through the props; input is DateTime from Luxon
          */
-        input={DateTime.fromObject({month: 2})}
+        input={DateTime.fromObject({month: 2, day: 12})}
         defaults={{
             /**
              * Set default loading state to emulate fetching calendar data
