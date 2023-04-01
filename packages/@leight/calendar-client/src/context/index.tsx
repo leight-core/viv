@@ -1,9 +1,9 @@
 import {createStoreContext} from "@leight/context-client";
 import {
-    calendarOf,
     DateTime,
     type DurationLike,
-    type ICalendar
+    type IWeeks,
+    weeksOf
 }                           from "@leight/i18n";
 import {type IStoreProps}   from "@leight/zustand";
 import {
@@ -25,7 +25,7 @@ export type ICalendarStoreStoreProps = IStoreProps<{
      * Calendar is computed based on an input, so it cannot be required
      * in the time of store creation.
      */
-    readonly calendar: ICalendar;
+    readonly weeks: IWeeks;
 }>
 
 export const {
@@ -39,32 +39,32 @@ export const {
         },
         setInput(input: DateTime) {
             set({
-                calendar: calendarOf({input}),
+                weeks: weeksOf({input}),
             });
         },
         plus(duration) {
-            set(({calendar: {input}}) => ({
-                calendar: calendarOf({input: input.plus(duration)}),
+            set(({weeks: {input}}) => ({
+                weeks: weeksOf({input: input.plus(duration)}),
             }));
         },
         minus(duration) {
-            set(({calendar: {input}}) => ({
-                calendar: calendarOf({input: input.minus(duration)}),
+            set(({weeks: {input}}) => ({
+                weeks: weeksOf({input: input.minus(duration)}),
             }));
         },
         today() {
             set({
-                calendar: calendarOf({input: DateTime.now()}),
+                weeks: weeksOf({input: DateTime.now()}),
             });
         },
         prevMonth() {
-            set(({calendar: {input}}) => ({
-                calendar: calendarOf({input: input.minus({month: 1})}),
+            set(({weeks: {input}}) => ({
+                weeks: weeksOf({input: input.minus({month: 1})}),
             }));
         },
         nextMonth() {
-            set(({calendar: {input}}) => ({
-                calendar: calendarOf({input: input.plus({month: 1})}),
+            set(({weeks: {input}}) => ({
+                weeks: weeksOf({input: input.plus({month: 1})}),
             }));
         },
         ...state,
@@ -80,7 +80,7 @@ export interface ICalendarProviderProps extends Omit<ComponentProps<typeof Calen
 export const CalendarProvider: FC<ICalendarProviderProps> = ({input, ...props}) => {
     return <CalendarStoreProvider
         state={{
-            calendar: calendarOf({input}),
+            weeks: weeksOf({input}),
         }}
         {...props}
     />;

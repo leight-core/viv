@@ -70,7 +70,7 @@ export interface IWeek {
     days: IDay[];
 }
 
-export interface ICalendar {
+export interface IWeeks {
     /**
      * Input date a calendar is generated of
      */

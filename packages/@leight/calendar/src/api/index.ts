@@ -14,9 +14,7 @@ export type ICalendarItem = z.infer<ICalendarItemSchema>;
  * Overall calendar data (could be returned from an API or whatever).
  */
 export const CalendarDataSchema = z.object({
-    items:            CalendarItemSchema.array(),
-    withPastEvents:   z.boolean(),
-    withFutureEvents: z.boolean(),
+    items: CalendarItemSchema.array(),
 });
 export type ICalendarDataSchema = typeof CalendarDataSchema;
 export type ICalendarData = z.infer<ICalendarDataSchema>;

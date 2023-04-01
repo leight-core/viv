@@ -141,21 +141,21 @@ export const Calendar: FC<ICalendarProps> = (
               prevMonth,
               isLoading,
               today,
-              calendar: {
-                            weeks,
-                            days,
-                            start,
-                            end,
-                            isCurrent,
-                        }
+              weeks: {
+                         weeks,
+                         days,
+                         start,
+                         end,
+                         isCurrent,
+                     }
           }                         = useCalendar(({
-                                                       calendar,
+                                                       weeks,
                                                        nextMonth,
                                                        prevMonth,
                                                        isLoading,
                                                        today,
                                                    }) => ({
-        calendar,
+        weeks,
         nextMonth,
         prevMonth,
         isLoading,

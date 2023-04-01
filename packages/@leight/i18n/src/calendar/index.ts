@@ -3,10 +3,10 @@ import {
     Info,
     Interval,
     type StringUnitLength
-}                       from "luxon";
-import {type ICalendar} from "../api";
+}                    from "luxon";
+import {type IWeeks} from "../api";
 
-export interface ICalendarOfProps {
+export interface IWeeksOfProps {
     /**
      * Input date around which a calendar should be generated
      */
@@ -29,20 +29,20 @@ export interface ICalendarOfProps {
 }
 
 /**
- * Generate calendar for rendering; it's built on Gregorian calendar.
+ * Generates calendar based on the given input - weeks in the month of the input.
  */
-export const calendarOf = (
+export const weeksOf = (
     {
         input = DateTime.now(),
         margin = 0,
         marginPlus,
         marginMinus,
         dayFormat = "short"
-    }: ICalendarOfProps = {
+    }: IWeeksOfProps = {
         input:     DateTime.now(),
         margin:    1,
         dayFormat: "short",
-    }): ICalendar => {
+    }): IWeeks => {
     const start     = input.startOf("month").minus({week: marginMinus || margin});
     const end       = input.endOf("month").plus({week: marginPlus || margin});
     const interval  = Interval.fromDateTimes(start, end);

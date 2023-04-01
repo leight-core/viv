@@ -137,14 +137,14 @@
             "installation#Installation": "npm i @leight/container"
         }
     },
-    "/docs/packages/context-client": {
-        "title": "@leight/context-client",
+    "/docs/packages/esbuild": {
+        "title": "@leight/esbuild",
         "data": {
             "": ""
         }
     },
-    "/docs/packages/esbuild": {
-        "title": "@leight/esbuild",
+    "/docs/packages/context-client": {
+        "title": "@leight/context-client",
         "data": {
             "": ""
         }
@@ -165,25 +165,6 @@
         "title": "Overview",
         "data": {
             "": "Here you are all packages in the project with some brief information about them."
-        }
-    },
-    "/docs/packages/mantine": {
-        "title": "@leight/mantine",
-        "data": {
-            "": ""
-        }
-    },
-    "/docs/packages/mantine/page-shell": {
-        "title": "Page Shell",
-        "data": {
-            "": "",
-            "pageshell#PageShell": "This component is an entry point for your app, it provides all the services offered by @leight.\nimport {emotionCache} from \"@/my-app/emotion-cache\";\nimport \"@/my-app/styles/globals.css\";\nimport {PageShell} from \"@leight/mantine\";\nimport {trpc} from \"@my-app/trpc-client\";\nimport {appWithTranslation} from \"next-i18next\";\nimport type {AppProps} from \"next/app\";\n\nexport function MyApp(\n{\nComponent,\npageProps,\n}: AppProps) {\n/**\n* Just use PageShell and fill all required props; if you want to add your own\n* services, just put them as child as you're used to.\n*/\nreturn <PageShell\ntitle={\"my-app\"}\nemotionCache={emotionCache}\nComponent={Component}\npageProps={pageProps}\n/>;\n}\n\n/**\n* This is a bit unrelated, but to keep example complete, this provides connection of your app to tRPC.\n*/\nexport default trpc.withTRPC(appWithTranslation(MyApp));"
-        }
-    },
-    "/docs/packages/mantine/shell": {
-        "title": "Shell",
-        "data": {
-            "": "dfgfdg"
         }
     },
     "/docs/packages/sdk": {
@@ -262,22 +243,28 @@
             "consumer---components#Consumer - Components": "import {Date, DateTime} from \"@leight/i18n-client\";\n\nexport const MyComponent2 = () => {\n/**\n* There are Date and DateTime components which internally use DateTime context; nothing special is inside,\n* no spans and so on, so you can do whatever you want with them.\n*/\nreturn <>\n<Date input={\"1995-04-14\"}/>\n<DateTime input={\"1995-04-14T07:32\"}/>\n</>;\n};"
         }
     },
-    "/docs/workbench/monorepo": {
-        "title": "Monorepo setup",
-        "data": {
-            "": ""
-        }
-    },
     "/docs/workbench": {
         "title": "Workbench",
         "data": {
             "": "Chapters in Workbench are sorted by relevance, so simpler or more basic things are up, complicated ones are near the bottom.\nHere you will find some tutorials and pieces which will help you use Leight Viv in it's full potential."
         }
     },
+    "/docs/workbench/monorepo": {
+        "title": "Monorepo setup",
+        "data": {
+            "": ""
+        }
+    },
     "/docs/workbench/prisma": {
         "title": "Prisma",
         "data": {
             "": ""
+        }
+    },
+    "/docs/packages/mantine/shell": {
+        "title": "Shell",
+        "data": {
+            "": "dfgfdg"
         }
     },
     "/docs/workbench/sdk": {
@@ -308,6 +295,19 @@
             "typescript#TypeScript": "It's an opinion, but... there is no other choice: the project is built on top of TypeScript and heavily uses types to make you live a lot easier. Ok, there are some tradeoffs, but who cares.",
             "motivation#Motivation": "All the time new app is created, there is a lot of stuff repeatedly created, a lot of same concepts, data fetching, mutations and so on.This collection aims to make kind of \"standard\" which offloads thinking of \"how to get data\", \"how to sort data\", creating tables, forms, connecting them to the backend\nand a lot of other stuff.So here we're: you can pick some tools, you can use a whole collection and simplify your developer life a lot by generating pieces of repeated code,\nhaving everything typed and so on.",
             "maturity#Maturity": "You see this as yet another project. You're right.But it was quite long time in development and it's used in some projects, concepts and API of the whole collection is quite polished today and you can use whatever\npiece you want/need. The overall goal is to provide best practices over the best libraries available on the current market.This collection may be seen as an inspiration, how you can do things in a quite a nice way - not simple, because you can use thousands of lines of code to do relatively simple thing, but it's worth it, because\nat least - you will not repeat yourself :)."
+        }
+    },
+    "/docs/packages/mantine": {
+        "title": "@leight/mantine",
+        "data": {
+            "": ""
+        }
+    },
+    "/docs/packages/mantine/page-shell": {
+        "title": "Page Shell",
+        "data": {
+            "": "",
+            "pageshell#PageShell": "This component is an entry point for your app, it provides all the services offered by @leight.\nimport {emotionCache} from \"@/my-app/emotion-cache\";\nimport \"@/my-app/styles/globals.css\";\nimport {PageShell} from \"@leight/mantine\";\nimport {trpc} from \"@my-app/trpc-client\";\nimport {appWithTranslation} from \"next-i18next\";\nimport type {AppProps} from \"next/app\";\n\nexport function MyApp(\n{\nComponent,\npageProps,\n}: AppProps) {\n/**\n* Just use PageShell and fill all required props; if you want to add your own\n* services, just put them as child as you're used to.\n*/\nreturn <PageShell\ntitle={\"my-app\"}\nemotionCache={emotionCache}\nComponent={Component}\npageProps={pageProps}\n/>;\n}\n\n/**\n* This is a bit unrelated, but to keep example complete, this provides connection of your app to tRPC.\n*/\nexport default trpc.withTRPC(appWithTranslation(MyApp));"
         }
     },
     "/docs/workbench/zustand": {
