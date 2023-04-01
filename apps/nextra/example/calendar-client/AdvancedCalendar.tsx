@@ -10,10 +10,10 @@ import {
     useEffect
 }                 from "react";
 
-export interface ICalendarWithInputProps extends ICalendarProps {
+export interface IAdvancedCalendarProps extends ICalendarProps {
 }
 
-export const CalendarWithInput: FC<ICalendarWithInputProps> = (props) => {
+export const AdvancedCalendar: FC<IAdvancedCalendarProps> = (props) => {
     /**
      * Calendar is powered by its Calendar Store where state control and state itself lives.
      */
@@ -33,7 +33,7 @@ export const CalendarWithInput: FC<ICalendarWithInputProps> = (props) => {
     </CalendarProvider>;
 };
 
-interface ICalendarInternalProps extends ICalendarWithInputProps {
+interface ICalendarInternalProps extends IAdvancedCalendarProps {
 }
 
 const CalendarInternal: FC<ICalendarInternalProps> = (props) => {

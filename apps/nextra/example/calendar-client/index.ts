@@ -1,2 +1,2 @@
-export * from "./CalendarWithInput";
+export * from "./AdvancedCalendar";
 export * from "./DefaultCalendar";

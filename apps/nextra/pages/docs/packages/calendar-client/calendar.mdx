@@ -1,7 +1,7 @@
 import { Shell } from "@leight/mantine";
 import { Callout } from "nextra-theme-docs";
 import { SourceExample } from "../../../../components/SourceExample";
-import { DefaultCalendar,CalendarWithInput } from "../../../../example/calendar-client";
+import { DefaultCalendar,AdvancedCalendar } from "../../../../example/calendar-client";
 
 # Calendar
 
@@ -17,6 +17,16 @@ import { DefaultCalendar,CalendarWithInput } from "../../../../example/calendar-
 
 This package provides UI for rendering localized calendar. It's based on a great library [Luxon](https://moment.github.io/luxon/#/) providing
 backend for date/time operations.
+
+## Translations
+
+<Callout>
+    Calendar uses given keys translated by default to English, thus keys are **not visible**, you have to copy keys provided below.
+</Callout>
+
+Calendar is using following (i18next) translations from namespace **`common`**
+- `calendar.today.icon.tooltip`: tooltip over selecting current date icon
+- `calendar.search.icon.tooltip`: tooltip over switching calendar to "search mode"
 
 ## Minimal example
 
@@ -56,14 +66,14 @@ export const DefaultCalendar: FC<IDefaultCalendarProps> = (props) => {
 ```
 </SourceExample>
 
-## With input
+## Advanced usage
 
 <SourceExample
     example={<Shell>
-                 <CalendarWithInput/>
+                 <AdvancedCalendar/>
              </Shell>}
 >
-```tsx filename="CalendarWithInput.tsx"
+```tsx filename="AdvancedCalendar.tsx"
 import {
     Calendar,
     CalendarProvider,
@@ -76,10 +86,10 @@ import {
     useEffect
 }                 from "react";
 
-export interface ICalendarWithInputProps extends ICalendarProps {
+export interface IAdvancedCalendarProps extends ICalendarProps {
 }
 
-export const CalendarWithInput: FC<ICalendarWithInputProps> = (props) => {
+export const AdvancedCalendar: FC<IAdvancedCalendarProps> = (props) => {
     /**
      * Calendar is powered by its Calendar Store where state control and state itself lives.
      */
@@ -99,7 +109,7 @@ export const CalendarWithInput: FC<ICalendarWithInputProps> = (props) => {
     </CalendarProvider>;
 };
 
-interface ICalendarInternalProps extends ICalendarWithInputProps {
+interface ICalendarInternalProps extends IAdvancedCalendarProps {
 }
 
 const CalendarInternal: FC<ICalendarInternalProps> = (props) => {

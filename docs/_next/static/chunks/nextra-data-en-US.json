@@ -1,15 +1,4 @@
 {
-    "/about": {
-        "title": "About",
-        "data": {
-            "": "",
-            "eddejs#edde.js": "Very first project I've done as a javascript library which solved \"React\" for JavaScript 1.2 (embedded browsers for printers). It was quite\nan interesting library, a lot of nice ideas, but world has moved a lot by the time.But this was the start of the whole history of Leight Project.",
-            "project-leight-core#Project: Leight Core": "Originally there was just a little piece built with Next.js and antd with a few other tools.It did a great job, worked well, but API of the library wasn't good. There were a lot of flaws, so the work continued and Leight Viv was born.",
-            "project-leight-viv#Project: Leight Viv": "Leight Core rewritten, rethink with a lot of new ideas. This is now ultimate way how you can handle frontend development with default support for\nmonorepos, code generation and a lot of other things you can commonly use, but simplified.The main goal is to pick almost anything you repeatedly use and simplify it. So here we are!Viv is used because when I was expecting a child, a sex was unknown. Boy was Tobias and girl Vivienne. I've started to use Viv before... IT WAS A BOY, shit.\nI like him, but the name remains.",
-            "the-name#The name": "Just a note: why Leight?The shortcut was L8, you see that, but I don't like number usage in names, it's strange, thus Leight.As development of library growth, it was used in live sports application, so the name came from Live something something I forgot now. It sounds interesting. That's it.",
-            "team#Team": "Are you curious, how stable the project is? It isn't. Do you want to hear something else? I can lie, but as a lot of other libraries you probably rely on (same\nas this project), there is usually one or a few guys working on the library in the spare time.This project is done in cooperation with primary projects which uses it (corporate applications). But still, I'm, creating it in my spare time, with no\ncommercial support and nothing else. You do not pay for it, so you should expect nothing but my pure ideas for free.I'm Marek H. from Czechia. You're welcome to use anything, fork anything, write issues, extend this docs, ask questions, I'll be happy for that.This project is my legacy, so there is quite a low probability I'll abandon it."
-        }
-    },
     "/docs/concepts/code-splitting": {
         "title": "Code splitting",
         "data": {
@@ -23,6 +12,17 @@
             "leightfile-client#@leight/file-client": "This package provides React stuff on a client, table for listing files, handles uploading and a lot of other - client only stuff. Backend calls are handled via trpc which is another\npackage using the same concept of split code.",
             "leightfile-server#@leight/file-server": "Here is generated Source and overall server-only stuff: generated procedures and handling of FileSource (filtering, ordering, ...). Here you are in Node land so you can do whatever you want. Except\nincluding this on client.",
             "trpc#tRPC": "This is related, but worth mentioning: because @leight expects you will use monorepo for managing all pieces of your app, this one is quite special.With you app - in the monorepo - you should have two packages for tRPC: one for a client, one for server, both serving as center point of component connection - all other packages can export procedures\nwhich should be connected in the server-side package; also this is the only exception where client can include server stuff, but this is due nature of tRPC."
+        }
+    },
+    "/about": {
+        "title": "About",
+        "data": {
+            "": "",
+            "eddejs#edde.js": "Very first project I've done as a javascript library which solved \"React\" for JavaScript 1.2 (embedded browsers for printers). It was quite\nan interesting library, a lot of nice ideas, but world has moved a lot by the time.But this was the start of the whole history of Leight Project.",
+            "project-leight-core#Project: Leight Core": "Originally there was just a little piece built with Next.js and antd with a few other tools.It did a great job, worked well, but API of the library wasn't good. There were a lot of flaws, so the work continued and Leight Viv was born.",
+            "project-leight-viv#Project: Leight Viv": "Leight Core rewritten, rethink with a lot of new ideas. This is now ultimate way how you can handle frontend development with default support for\nmonorepos, code generation and a lot of other things you can commonly use, but simplified.The main goal is to pick almost anything you repeatedly use and simplify it. So here we are!Viv is used because when I was expecting a child, a sex was unknown. Boy was Tobias and girl Vivienne. I've started to use Viv before... IT WAS A BOY, shit.\nI like him, but the name remains.",
+            "the-name#The name": "Just a note: why Leight?The shortcut was L8, you see that, but I don't like number usage in names, it's strange, thus Leight.As development of library growth, it was used in live sports application, so the name came from Live something something I forgot now. It sounds interesting. That's it.",
+            "team#Team": "Are you curious, how stable the project is? It isn't. Do you want to hear something else? I can lie, but as a lot of other libraries you probably rely on (same\nas this project), there is usually one or a few guys working on the library in the spare time.This project is done in cooperation with primary projects which uses it (corporate applications). But still, I'm, creating it in my spare time, with no\ncommercial support and nothing else. You do not pay for it, so you should expect nothing but my pure ideas for free.I'm Marek H. from Czechia. You're welcome to use anything, fork anything, write issues, extend this docs, ask questions, I'll be happy for that.This project is my legacy, so there is quite a low probability I'll abandon it."
         }
     },
     "/docs/concepts": {
@@ -52,6 +52,15 @@
             "whats-pita#What's PITA": "PNPM. NEVER EVER use pnpm with @leight and monorepo. Why? Because it's in PITA section which means you will never sit again.Main problem is the way PNPM manages node_modules where it tries isolate everything, so TypeScript cries a lot, because it cannot name types without blablabla (you probably\nknow that error), but npm is cool with it and when you want generate Prisma schema, that's real hell. It's generated into one part of packages, but the others do not see it.So, if you really want to use PNPM, do not ask any questions.\nBuilding. Application or library with time of a few seconds can go up to a few minutes. Rebuilding, total mess. And last - and not least - live coding (watch). This was\nquite hard to get done in the right way and it's not optimal, but somehow works. You have to find way (here it's documented) how to execute, for example, 30 libraries in watch\nmode without you Mac being a small bomb.So be prepared having things in monorepo makes a bit heavier demands on your computer and overall setup of the project.Also startup time of the app could be quite painful. It depends on the tool you use, but there is cool Turbowatch, which helps a lot.\nSo be brave and continue, there is still a lot of interesting stuff going on, we've got you covered."
         }
     },
+    "/docs/concepts/package.json": {
+        "title": "package.json",
+        "data": {
+            "": "You can setup the project in whatever way you want, but here are some advices which could help a bit.",
+            "concurrently#concurrently": "npm i -D concurrently\n\n\n\npnpm i -D concurrently\n\n\n\nyarn add -D concurrently\n\n\nThis library is quite useful, because it enables you execute multiple sections of your scripts in parallel. You may think\nit would not be required everywhere, but it's -D dependency, so who cares.Than you can have something like this\n{\n\"scripts\": {\n\"build\": \"concurrently npm:build:*\",\n\"build:esbuild\": \"node esbuild.mjs\",\n\"build:types\": \"tsc --outDir lib\"\n}\n}",
+            "del-cli#del-cli": "npm i -D del-cli\n\n\n\npnpm i -D del-cli\n\n\n\nyarn add -D del-cli\n\n\nNice tool for deleting files, useful if you want to cleanup mess generated by all those build tools.\nBe careful here, because this command deletes also JavaScript files in the src folder, so if you blindly copy and execute this, don't blame me.It's useful when your TSC emits files into your source code, so you want to cleanup the mess.\n\n{\n\"scripts\": {\n\"cleanup\": \"del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}\"\n}\n}",
+            "dotenv#dotenv": "npm i -D dotenv-cli\n\n\n\npnpm i -D dotenv-cli\n\n\n\nyarn add -D dotenv-cli\n\n\nNice tool for forwarding env variables and reads .env files. Quite cool thing.\nDo you see this? So don't do that! If there is .env.development file, it would get loaded and you'll f*ck up your production build.\n\n{\n\"scripts\": {\n\"build\": \"dotenv -c development -- next build\"\n}\n}"
+        }
+    },
     "/docs/concepts/source/client": {
         "title": "Client",
         "data": {
@@ -63,19 +72,34 @@
             "query#Query": ""
         }
     },
-    "/docs/concepts/package.json": {
-        "title": "package.json",
+    "/docs/concepts/source": {
+        "title": "Introduction",
         "data": {
-            "": "You can setup the project in whatever way you want, but here are some advices which could help a bit.",
-            "concurrently#concurrently": "npm i -D concurrently\n\n\n\npnpm i -D concurrently\n\n\n\nyarn add -D concurrently\n\n\nThis library is quite useful, because it enables you execute multiple sections of your scripts in parallel. You may think\nit would not be required everywhere, but it's -D dependency, so who cares.Than you can have something like this\n{\n\"scripts\": {\n\"build\": \"concurrently npm:build:*\",\n\"build:esbuild\": \"node esbuild.mjs\",\n\"build:types\": \"tsc --outDir lib\"\n}\n}",
-            "del-cli#del-cli": "npm i -D del-cli\n\n\n\npnpm i -D del-cli\n\n\n\nyarn add -D del-cli\n\n\nNice tool for deleting files, useful if you want to cleanup mess generated by all those build tools.\nBe careful here, because this command deletes also JavaScript files in the src folder, so if you blindly copy and execute this, don't blame me.It's useful when your TSC emits files into your source code, so you want to cleanup the mess.\n\n{\n\"scripts\": {\n\"cleanup\": \"del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}\"\n}\n}",
-            "dotenv#dotenv": "npm i -D dotenv-cli\n\n\n\npnpm i -D dotenv-cli\n\n\n\nyarn add -D dotenv-cli\n\n\nNice tool for forwarding env variables and reads .env files. Quite cool thing.\nDo you see this? So don't do that! If there is .env.development file, it would get loaded and you'll f*ck up your production build.\n\n{\n\"scripts\": {\n\"build\": \"dotenv -c development -- next build\"\n}\n}"
+            "": ""
         }
     },
     "/docs/concepts/source/server": {
         "title": "Server",
         "data": {
             "": ""
+        }
+    },
+    "/docs/getting-started/installation": {
+        "title": "Installation",
+        "data": {
+            "": "",
+            "foo#Foo": "",
+            "step-1#Step 1": "dfgfgf",
+            "step-2#Step 2": "dfgdfgffd dfgdfgf",
+            "step-3#Step 3": "dfgdfg"
+        }
+    },
+    "/docs": {
+        "title": "Welcome",
+        "data": {
+            "": "So, here you're. You've found very interesting project, which is intended to help develop fullstack web applications with the help of Next.js, React, Mantine UI and\nzilions of other libraries.It's a quite specific project, so you have to start with it's concepts, just to check, if we can be friends.",
+            "requirements#Requirements": "You should be familiar with fullstack web development, in this case be familiar with Next.js, Prisma,\nReact and a lot of others stuff. If you don't know some used libraries, they have great docs too, so read it, it's not that hard :).Also, you have to be curious and open minded, because if you're kind of oldschool guy, leave, your health is in danger.",
+            "batteries-included#Batteries included": "Did you expect to have Getting started as the very first item in the menu? Nope.Why? Because you should understand, what this collection of\nlibraries does, because it's all connected via concepts which you should see first.\nSo please, continue to Concepts to check, if your mindset will be able to accept a library which is not done in that traditional way."
         }
     },
     "/docs/getting-started/packages": {
@@ -90,36 +114,13 @@
             "": "This component holds state for a Calendar component. Each calendar should have it's own Store until you want to\nshare same state between multiple calendars."
         }
     },
-    "/docs": {
-        "title": "Welcome",
-        "data": {
-            "": "So, here you're. You've found very interesting project, which is intended to help develop fullstack web applications with the help of Next.js, React, Mantine UI and\nzilions of other libraries.It's a quite specific project, so you have to start with it's concepts, just to check, if we can be friends.",
-            "requirements#Requirements": "You should be familiar with fullstack web development, in this case be familiar with Next.js, Prisma,\nReact and a lot of others stuff. If you don't know some used libraries, they have great docs too, so read it, it's not that hard :).Also, you have to be curious and open minded, because if you're kind of oldschool guy, leave, your health is in danger.",
-            "batteries-included#Batteries included": "Did you expect to have Getting started as the very first item in the menu? Nope.Why? Because you should understand, what this collection of\nlibraries does, because it's all connected via concepts which you should see first.\nSo please, continue to Concepts to check, if your mindset will be able to accept a library which is not done in that traditional way."
-        }
-    },
-    "/docs/concepts/source": {
-        "title": "Introduction",
-        "data": {
-            "": ""
-        }
-    },
     "/docs/packages/calendar-client/calendar": {
         "title": "Calendar",
         "data": {
             "": "If you want to use Calendar, you must have DateTimeProvider from @leight/i18n-client somewhere in the component tree.Or you can use PageShell or Shell from @leight/mantine.\n\nThis package requires Mantine UI provided by @leight/mantine.\nThis package provides UI for rendering localized calendar. It's based on a great library Luxon providing\nbackend for date/time operations.",
-            "minimal-example#Minimal example": "All Calendar instances needs (separate) CalendarStoreProvider to work; the reason you must provide you own store is to give you\na control over the calendar outside of the component itself.\n\nCalendar defaults to 6 weeks to prevent jumping on months with lesser week count.\n\n\nimport {\nCalendar,\nCalendarProvider,\ntype ICalendarProps\n}                from \"@leight/calendar-client\";\nimport {type FC} from \"react\";\n\nexport interface IDefaultCalendarProps extends ICalendarProps {\n}\n\nexport const DefaultCalendar: FC<IDefaultCalendarProps> = (props) => {\nreturn <CalendarProvider>\n<Calendar\nwithControls={false}\n{...props}\n/>\n</CalendarProvider>;\n};",
-            "with-input#With input": "import {\nCalendar,\nCalendarProvider,\ntype ICalendarProps,\nuseCalendar\n}                 from \"@leight/calendar-client\";\nimport {DateTime} from \"@leight/i18n\";\nimport {\ntype FC,\nuseEffect\n}                 from \"react\";\n\nexport interface ICalendarWithInputProps extends ICalendarProps {\n}\n\nexport const CalendarWithInput: FC<ICalendarWithInputProps> = (props) => {\n/**\n* Calendar is powered by its Calendar Store where state control and state itself lives.\n*/\nreturn <CalendarProvider\n/**\n* You can pass input here or through the props; input is DateTime from Luxon\n*/\ninput={DateTime.fromObject({month: 2})}\ndefaults={{\n/**\n* Set default loading state to emulate fetching calendar data\n*/\nisLoading: true,\n}}\n>\n<CalendarInternal {...props}/>\n</CalendarProvider>;\n};\n\ninterface ICalendarInternalProps extends ICalendarWithInputProps {\n}\n\nconst CalendarInternal: FC<ICalendarInternalProps> = (props) => {\n/**\n* Control Calendar's loading state\n*/\nconst {loading} = useCalendar(({loading}) => ({loading}));\nuseEffect(() => {\nsetTimeout(() => {\n/**\n* Ou, \"we have\" data! Turn off loading\n*/\nloading(false);\n}, 1000);\n}, []);\nreturn <Calendar\n{...props}\n/>;\n};"
-        }
-    },
-    "/docs/getting-started/installation": {
-        "title": "Installation",
-        "data": {
-            "": "",
-            "foo#Foo": "",
-            "step-1#Step 1": "dfgfgf",
-            "step-2#Step 2": "dfgdfgffd dfgdfgf",
-            "step-3#Step 3": "dfgdfg"
+            "translations#Translations": "Calendar uses given keys translated by default to English, thus keys are not visible, you have to copy keys provided below.\nCalendar is using following (i18next) translations from namespace common\ncalendar.today.icon.tooltip: tooltip over selecting current date icon\ncalendar.search.icon.tooltip: tooltip over switching calendar to \"search mode\"",
+            "minimal-example#Minimal example": "All Calendar instances needs (separate) CalendarStoreProvider to work; the reason you must provide you own store is to give you\na control over the calendar outside of the component itself.\n\nCalendar defaults to 6 weeks to prevent jumping on months with lesser week count.\n\n\nimport {\nCalendar,\nCalendarProvider,\ntype ICalendarProps\n}                from \"@leight/calendar-client\";\nimport {type FC} from \"react\";\n\nexport interface IDefaultCalendarProps extends ICalendarProps {\n}\n\nexport const DefaultCalendar: FC<IDefaultCalendarProps> = (props) => {\nreturn <CalendarProvider>\n<Calendar\nwithControls={false}\n{...props}\n/>\n</CalendarProvider>\n};",
+            "advanced-usage#Advanced usage": "import {\nCalendar,\nCalendarProvider,\ntype ICalendarProps,\nuseCalendar\n}                 from \"@leight/calendar-client\";\nimport {DateTime} from \"@leight/i18n\";\nimport {\ntype FC,\nuseEffect\n}                 from \"react\";\n\nexport interface IAdvancedCalendarProps extends ICalendarProps {\n}\n\nexport const AdvancedCalendar: FC<IAdvancedCalendarProps> = (props) => {\n/**\n* Calendar is powered by its Calendar Store where state control and state itself lives.\n*/\nreturn <CalendarProvider\n/**\n* You can pass input here or through the props; input is DateTime from Luxon\n*/\ninput={DateTime.fromObject({month: 2})}\ndefaults={{\n/**\n* Set default loading state to emulate fetching calendar data\n*/\nisLoading: true,\n}}\n>\n<CalendarInternal {...props}/>\n</CalendarProvider>;\n};\n\ninterface ICalendarInternalProps extends IAdvancedCalendarProps {\n}\n\nconst CalendarInternal: FC<ICalendarInternalProps> = (props) => {\n/**\n* Control Calendar's loading state\n*/\nconst {loading} = useCalendar(({loading}) => ({loading}));\nuseEffect(() => {\nsetTimeout(() => {\n/**\n* Ou, \"we have\" data! Turn off loading\n*/\nloading(false);\n}, 1000);\n}, []);\nreturn <Calendar\n{...props}\n/>;\n};"
         }
     },
     "/docs/packages/calendar-client": {
@@ -148,16 +149,16 @@
             "": ""
         }
     },
-    "/docs/packages/i18n-client": {
-        "title": "@leight/i18n-client",
-        "data": {
-            "": "Rewrite DateTimeProvider to plain React context (it's not a store)\nAdd NumberProvider as a plain React context"
-        }
-    },
     "/docs/packages/i18n-client/date-time-provider": {
         "title": "DateTimeProvider",
         "data": {
             "": "If you're using PageShell or Shell from @leight/mantine, this provider is already included.\nThis is the base component for any date & time related operations. For example, if you want to use Calendar, you must use this component."
+        }
+    },
+    "/docs/packages/i18n-client": {
+        "title": "@leight/i18n-client",
+        "data": {
+            "": "Rewrite DateTimeProvider to plain React context (it's not a store)\nAdd NumberProvider as a plain React context"
         }
     },
     "/docs/packages": {
@@ -177,6 +178,24 @@
         "data": {
             "": "",
             "pageshell#PageShell": "This component is an entry point for your app, it provides all the services offered by @leight.\nimport {emotionCache} from \"@/my-app/emotion-cache\";\nimport \"@/my-app/styles/globals.css\";\nimport {PageShell} from \"@leight/mantine\";\nimport {trpc} from \"@my-app/trpc-client\";\nimport {appWithTranslation} from \"next-i18next\";\nimport type {AppProps} from \"next/app\";\n\nexport function MyApp(\n{\nComponent,\npageProps,\n}: AppProps) {\n/**\n* Just use PageShell and fill all required props; if you want to add your own\n* services, just put them as child as you're used to.\n*/\nreturn <PageShell\ntitle={\"my-app\"}\nemotionCache={emotionCache}\nComponent={Component}\npageProps={pageProps}\n/>;\n}\n\n/**\n* This is a bit unrelated, but to keep example complete, this provides connection of your app to tRPC.\n*/\nexport default trpc.withTRPC(appWithTranslation(MyApp));"
+        }
+    },
+    "/docs/packages/mantine/shell": {
+        "title": "Shell",
+        "data": {
+            "": "dfgfdg"
+        }
+    },
+    "/docs/packages/sdk": {
+        "title": "@leight/sdk",
+        "data": {
+            "": "If you want see some examples, how to work with this library, see Workbench."
+        }
+    },
+    "/docs/packages/source": {
+        "title": "@leight/source",
+        "data": {
+            "": ""
         }
     },
     "/docs/packages/table-client": {
@@ -210,12 +229,6 @@
     },
     "/docs/packages/utils-client": {
         "title": "@leight/utils-client",
-        "data": {
-            "": ""
-        }
-    },
-    "/docs/packages/source": {
-        "title": "@leight/source",
         "data": {
             "": ""
         }
@@ -255,18 +268,6 @@
             "": "Chapters in Workbench are sorted by relevance, so simpler or more basic things are up, complicated ones are near the bottom.\nHere you will find some tutorials and pieces which will help you use Leight Viv in it's full potential."
         }
     },
-    "/docs/workbench/monorepo": {
-        "title": "Monorepo setup",
-        "data": {
-            "": ""
-        }
-    },
-    "/docs/workbench/prisma": {
-        "title": "Prisma",
-        "data": {
-            "": ""
-        }
-    },
     "/docs/workbench/sdk": {
         "title": "SDK",
         "data": {
@@ -277,18 +278,6 @@
             "client#Client": "For your client-side package create a file src/leight-sdk.ts; you can choose whatever name you want, but do not forget to update package.json.\nimport {withClientSourceGenerators, withSdk} from \"@leight/sdk\";\n\n/**\n* Generator itself (handles file creation, execution, console params stuff and others...)\n*/\nvoid withSdk(\n/**\n* Client set of generators; at the end, it uses more internal generators, which could\n* also be used manually if you want/need.\n*/\nwithClientSourceGenerators({\nentity:   \"Prisma entity name, for example User (case is important); this is used to generate Schemas\",\npackages: {\n/**\n* This is a reference to a common package with generated schemas, interfaces and other\n* stuff required. Usually, current package name without suffix.\n*/\nschema: \"@my-app/model-name\",\n},\ntrpc:     {\npath:    \"trpc.route.path\",\npackage: \"@my-app/trpc-client\",\n},\n})\n);",
             "server#Server": "For your server-side package create a file src/leight-sdk.ts; you can choose whatever name you want, but do not forget to update package.json.\nimport {withServerSourceGenerators, withSdk} from \"@leight/sdk\";\n\n/**\n* Generator itself (handles file creation, execution, console params stuff and others...)\n*/\nvoid withSdk(\n/**\n* Server set of generators; at the end, it uses more internal generators, which could\n* also be used manually if you want/need.\n*/\nwithServerSourceGenerators({\nentity:   \"Prisma entity name, for example User (case is important); this is used to generate Schemas\",\npackages: {\n/**\n* This is a reference to a common package with generated schemas, interfaces and other\n* stuff required. Usually, current package name without suffix.\n*/\nschema: \"@my-app/model-name\",\n/**\n* Because you have a standalone prisma package, you can use it here, so generator can properly\n* import all Prisma parts of the model you want to generate.\n*/\nprisma: \"@my-app/prisma\",\n},\n/**\n* This is a single name of the property on prismaClient which will be generated into the Source.\n*/\nprisma:   \"prismaClient.<entityName>\",\n})\n);",
             "epilogue#Epilogue": "Now you're almost done: just update your turbo.json (or whatever monorepo you're using):\nDon't copy-paste this piece of code, just think about it's meaning: execute code generation before your build, so you're sure\neverything is in the place.\n\n{\n\"generate\": {\n\"cache\": false\n},\n\"build\": {\n\"dependsOn\": [\n\"^build\",\n\"generate\"\n]\n}\n}"
-        }
-    },
-    "/docs/packages/sdk": {
-        "title": "@leight/sdk",
-        "data": {
-            "": "If you want see some examples, how to work with this library, see Workbench."
-        }
-    },
-    "/docs/packages/mantine/shell": {
-        "title": "Shell",
-        "data": {
-            "": "dfgfdg"
         }
     },
     "/": {
@@ -307,6 +296,18 @@
             "typescript#TypeScript": "It's an opinion, but... there is no other choice: the project is built on top of TypeScript and heavily uses types to make you live a lot easier. Ok, there are some tradeoffs, but who cares.",
             "motivation#Motivation": "All the time new app is created, there is a lot of stuff repeatedly created, a lot of same concepts, data fetching, mutations and so on.This collection aims to make kind of \"standard\" which offloads thinking of \"how to get data\", \"how to sort data\", creating tables, forms, connecting them to the backend\nand a lot of other stuff.So here we're: you can pick some tools, you can use a whole collection and simplify your developer life a lot by generating pieces of repeated code,\nhaving everything typed and so on.",
             "maturity#Maturity": "You see this as yet another project. You're right.But it was quite long time in development and it's used in some projects, concepts and API of the whole collection is quite polished today and you can use whatever\npiece you want/need. The overall goal is to provide best practices over the best libraries available on the current market.This collection may be seen as an inspiration, how you can do things in a quite a nice way - not simple, because you can use thousands of lines of code to do relatively simple thing, but it's worth it, because\nat least - you will not repeat yourself :)."
+        }
+    },
+    "/docs/workbench/prisma": {
+        "title": "Prisma",
+        "data": {
+            "": ""
+        }
+    },
+    "/docs/workbench/monorepo": {
+        "title": "Monorepo setup",
+        "data": {
+            "": ""
         }
     },
     "/docs/workbench/zustand": {

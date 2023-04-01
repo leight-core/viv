@@ -1,15 +1,22 @@
-import {DateInline}  from "@leight/i18n-client";
+import {
+    DateInline,
+    useTranslation
+}                    from "@leight/i18n-client";
 import {classNames}  from "@leight/utils-client";
 import {
     Container,
     createStyles,
     Grid,
+    Group,
     LoadingOverlay,
-    Stack
+    Stack,
+    Tooltip
 }                    from "@mantine/core";
 import {
     IconChevronDown,
-    IconChevronUp
+    IconChevronUp,
+    IconCurrentLocation,
+    IconSearch
 }                    from "@tabler/icons-react";
 import {
     ComponentProps,
@@ -45,6 +52,9 @@ const useStyles = createStyles(theme => ({
             cursor:         "pointer",
             "&:hover":      {
                 backgroundColor: theme.colors["gray"][1],
+                "& .icon":       {
+                    color: theme.colors["gray"][7],
+                },
             },
         },
         "& .right":           {
@@ -55,7 +65,14 @@ const useStyles = createStyles(theme => ({
         },
         "& .secondary":       {
             color: theme.colors["gray"][5],
-        }
+        },
+        "& .icon":            {
+            color:     theme.colors["gray"][5],
+            cursor:    "pointer",
+            "&:hover": {
+                color: theme.colors["gray"][7],
+            },
+        },
     },
     controlPrefix: {},
     controlSuffix: {},
@@ -118,6 +135,7 @@ export const Calendar: FC<ICalendarProps> = (
               nextMonth,
               prevMonth,
               isLoading,
+              today,
               calendar: {
                             weeks,
                             days,
@@ -125,11 +143,24 @@ export const Calendar: FC<ICalendarProps> = (
                             end,
                             input,
                         }
-          }                  = useCalendar(({calendar, nextMonth, prevMonth, isLoading}) => ({calendar, nextMonth, prevMonth, isLoading}));
+          }                  = useCalendar(({
+                                                calendar,
+                                                nextMonth,
+                                                prevMonth,
+                                                isLoading,
+                                                today,
+                                            }) => ({
+        calendar,
+        nextMonth,
+        prevMonth,
+        isLoading,
+        today,
+    }));
     /**
      * This is specific for Mantine Grid: compute number of columns to render.
      */
     const columnCount        = (days.length * columnSize) + weekCountSize;
+    const {t}                = useTranslation("common");
     const {classes}          = useStyles();
     const controlColumnCount = 12;
     const controlWidth       = 3;
@@ -165,13 +196,23 @@ export const Calendar: FC<ICalendarProps> = (
                     className={"middle"}
                     onClick={() => prevMonth()}
                 >
-                    <IconChevronUp/>
+                    <IconChevronUp className={"icon"}/>
                 </Grid.Col>
                 <Grid.Col
                     span={controlWidth}
                     className={"right"}
                 >
-                    -- dynamic controls
+                    <Group spacing={"sm"}>
+                        <Tooltip label={t("calendar.today.icon.tooltip", "Today")}>
+                            <IconCurrentLocation
+                                className={"icon"}
+                                onClick={() => today()}
+                            />
+                        </Tooltip>
+                        <Tooltip label={t("calendar.search.icon.tooltip", "Select date")}>
+                            <IconSearch className={"icon"}/>
+                        </Tooltip>
+                    </Group>
                 </Grid.Col>
             </Grid>}
             {/*
@@ -253,7 +294,7 @@ export const Calendar: FC<ICalendarProps> = (
                     className={"middle"}
                     onClick={() => nextMonth()}
                 >
-                    <IconChevronDown/>
+                    <IconChevronDown className={"icon"}/>
                 </Grid.Col>
                 <Grid.Col
                     span={controlWidth}
