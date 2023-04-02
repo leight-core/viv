@@ -4,21 +4,22 @@ import {
 }                    from "@leight/i18n-client";
 import {classNames}  from "@leight/utils-client";
 import {
+    Box,
     Breadcrumbs,
     Container,
     createStyles,
     Grid,
     Group,
     LoadingOverlay,
-    Stack,
+    Overlay,
     Tooltip
 }                    from "@mantine/core";
 import {
     IconCalendarEvent,
+    IconChartDonut2,
     IconChevronDown,
     IconChevronUp,
-    IconCurrentLocation,
-    IconSearch
+    IconCurrentLocation
 }                    from "@tabler/icons-react";
 import {
     ComponentProps,
@@ -26,6 +27,7 @@ import {
     useState
 }                    from "react";
 import {useCalendar} from "../context";
+import {Months}      from "./Months";
 
 const useStyles = createStyles(theme => ({
     calendar: {
@@ -115,7 +117,7 @@ const useStyles = createStyles(theme => ({
     },
 }));
 
-export interface ICalendarProps extends Omit<ComponentProps<typeof Container>, "children"> {
+export interface ICalendarProps extends Omit<ComponentProps<typeof Box>, "children"> {
     withControls?: boolean;
     weekCountSize?: number;
     highlightToday?: boolean;
@@ -148,46 +150,53 @@ export const Calendar: FC<ICalendarProps> = (
                          end,
                          isCurrent,
                      }
-          }                         = useCalendar(({
-                                                       weeks,
-                                                       nextMonth,
-                                                       prevMonth,
-                                                       isLoading,
-                                                       today,
-                                                   }) => ({
+          }                                 = useCalendar(({
+                                                               weeks,
+                                                               nextMonth,
+                                                               prevMonth,
+                                                               isLoading,
+                                                               today,
+                                                           }) => ({
         weeks,
         nextMonth,
         prevMonth,
         isLoading,
         today,
     }));
-    const [withWeeks, setWithWeeks] = useState(false);
+    const [isSelectMonth, setIsSelectMonth] = useState(false);
+    const [withWeeks, setWithWeeks]         = useState(false);
     /**
      * This is specific for Mantine Grid: compute number of columns to render.
      */
-    const columnCount               = (days.length * columnSize) + (withWeeks ? weekCountSize : 0);
-    const {t}                       = useTranslation("common");
-    const {classes}                 = useStyles();
-    const controlColumnCount        = 18;
-    const controlWidth              = 6;
+    const columnCount                       = (days.length * columnSize) + (withWeeks ? weekCountSize : 0);
+    const {t}                               = useTranslation("common");
+    const {classes}                         = useStyles();
+    const controlColumnCount                = 18;
+    const controlWidth                      = 6;
 
     return <Container
-        pos={"relative"}
-        {...props}
+        className={classes.calendar}
     >
-        <LoadingOverlay visible={$isLoading !== undefined ? $isLoading : isLoading}/>
-        {/*
-            Stack is necessary to keep Grid in place properly or it shrinks and renders bad.
-         */}
-        <Stack
-            className={classes.calendar}
+        <Box
+            pos={"relative"}
+            {...props}
         >
+            {isSelectMonth && <Overlay
+                color={"#FFF"}
+                opacity={0.75}
+            >
+                <Months/>
+            </Overlay>}
+            <LoadingOverlay
+                visible={$isLoading !== undefined ? $isLoading : isLoading}
+            />
             {withControls && <Grid
                 columns={controlColumnCount}
                 className={classNames(
                     classes.controls,
                     classes.controlPrefix,
                 )}
+                m={0}
             >
                 <Grid.Col
                     span={controlWidth}
@@ -225,8 +234,11 @@ export const Calendar: FC<ICalendarProps> = (
                                 onClick={() => setWithWeeks(weeks => !weeks)}
                             />
                         </Tooltip>
-                        <Tooltip label={t("calendar.search.icon.tooltip", "Select date")}>
-                            <IconSearch className={"icon"}/>
+                        <Tooltip label={t("calendar.select-month.icon.tooltip", "Select month")}>
+                            <IconChartDonut2
+                                className={"icon"}
+                                onClick={() => setIsSelectMonth(select => !select)}
+                            />
                         </Tooltip>
                     </Group>
                 </Grid.Col>
@@ -238,6 +250,7 @@ export const Calendar: FC<ICalendarProps> = (
             <Grid
                 columns={columnCount}
                 className={classes.weekRow}
+                m={0}
             >
                 {withWeeks && <Grid.Col
                     span={weekCountSize}
@@ -265,6 +278,7 @@ export const Calendar: FC<ICalendarProps> = (
                     classes.weekRow,
                     current ? classes.currentWeek : undefined,
                 )}
+                m={0}
             >
                 {withWeeks && <Grid.Col
                     span={weekCountSize}
@@ -298,6 +312,7 @@ export const Calendar: FC<ICalendarProps> = (
                     classes.controls,
                     classes.controlSuffix,
                 )}
+                m={0}
             >
                 <Grid.Col
                     span={controlWidth}
@@ -323,6 +338,6 @@ export const Calendar: FC<ICalendarProps> = (
                     className={"right"}
                 />
             </Grid>}
-        </Stack>
+        </Box>
     </Container>;
 };

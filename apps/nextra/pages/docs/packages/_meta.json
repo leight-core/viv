@@ -4,6 +4,7 @@
     "container": "container",
     "context-client": "context-client",
     "esbuild": "esbuild",
+    "i18n": "i18n",
     "i18n-client": "i18n-client",
     "mantine": "mantine",
     "sdk": "sdk",
