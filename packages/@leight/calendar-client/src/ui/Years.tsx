@@ -1,35 +1,45 @@
-import {DateInline}    from "@leight/i18n-client";
-import {classNames}    from "@leight/utils-client";
+import {type IYear} from "@leight/i18n";
+import {DateInline} from "@leight/i18n-client";
+import {classNames} from "@leight/utils-client";
 import {
-    ActionIcon,
     Button,
     Grid,
     Group,
     Text
-}                      from "@mantine/core";
+}                   from "@mantine/core";
 import {
     IconChevronLeft,
-    IconChevronRight,
-    IconChevronsLeft,
-    IconChevronsRight
-}                      from "@tabler/icons-react";
-import {type FC}       from "react";
-import {useYears}      from "../context";
-import {CalendarShell} from "./CalendarShell";
+    IconChevronRight
+}                   from "@tabler/icons-react";
+import {
+    type FC,
+    type PropsWithChildren
+}                   from "react";
+import {useYears}   from "../context";
+import {
+    CalendarShell,
+    type ICalendarShellProps
+}                   from "./CalendarShell";
 
-export interface IYearsProps {
-    withControls?: boolean;
+export type IYearsProps = PropsWithChildren<Omit<ICalendarShellProps, "children" | "onClick"> & {
+    onClick?(props: IYearsProps.IOnClickProps): void;
+}>;
+
+export namespace IYearsProps {
+    export interface IOnClickProps {
+        year: IYear;
+    }
 }
 
-export const Years: FC<IYearsProps> = () => {
+export const Years: FC<IYearsProps> = (
+    {
+        children,
+        onClick,
+        ...props
+    }) => {
     const {years: {years, isCurrent, input, start, end, columns, rows}, today, prevYear, nextYear} = useYears();
-    console.log("yea", years);
-
     return <CalendarShell
         controlsTopLeft={<Group spacing={"sm"}>
-            <ActionIcon variant={"subtle"}>
-                <IconChevronsLeft/>
-            </ActionIcon>
             <Button.Group>
                 <Button
                     size={"sm"}
@@ -69,10 +79,8 @@ export const Years: FC<IYearsProps> = () => {
                     />
                 </Button>
             </Button.Group>
-            <ActionIcon variant={"subtle"}>
-                <IconChevronsRight/>
-            </ActionIcon>
         </Group>}
+        {...props}
     >
         {({classes}) => <>
             {Array.from({length: rows}, (_, row) => <Grid
@@ -94,11 +102,13 @@ export const Years: FC<IYearsProps> = () => {
                             classes.yearCell,
                             year.isCurrent ? classes.currentYear : undefined,
                         )}
+                        onClick={() => onClick?.({year})}
                     >
                         {year.name}
                     </Grid.Col>;
                 })}
             </Grid>)}
+            {children}
         </>}
     </CalendarShell>;
 };

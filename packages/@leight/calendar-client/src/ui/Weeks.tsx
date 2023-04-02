@@ -11,31 +11,33 @@ import {
 import {
     IconCalendarEvent,
     IconChevronLeft,
-    IconChevronRight,
-    IconChevronsLeft,
-    IconChevronsRight
+    IconChevronRight
 }                   from "@tabler/icons-react";
 import {
     type FC,
+    type PropsWithChildren,
     useState
 }                   from "react";
 import {useWeeks}   from "../context";
 import {
     CalendarShell,
-    ICalendarShellProps
+    type ICalendarShellProps
 }                   from "./CalendarShell";
 
-export interface IWeeksProps extends Omit<ICalendarShellProps, "children"> {
+export type IWeeksProps = PropsWithChildren<Omit<ICalendarShellProps, "children"> & {
     weekCountSize?: number;
+    defaultWithWeekNo?: boolean;
     columnSize?: number;
     highlightToday?: boolean;
-}
+}>
 
 export const Weeks: FC<IWeeksProps> = (
     {
         highlightToday = true,
+        defaultWithWeekNo = false,
         weekCountSize = 2,
         columnSize = 3,
+        children,
         ...props
     }) => {
     const {
@@ -51,7 +53,7 @@ export const Weeks: FC<IWeeksProps> = (
                          isCurrent,
                      }
           }                         = useWeeks();
-    const [withWeeks, setWithWeeks] = useState(false);
+    const [withWeeks, setWithWeeks] = useState(defaultWithWeekNo);
     /**
      * This is specific for Mantine Grid: compute number of columns to render.
      */
@@ -59,9 +61,6 @@ export const Weeks: FC<IWeeksProps> = (
 
     return <CalendarShell
         controlsTopLeft={<Group spacing={"sm"}>
-            <ActionIcon variant={"subtle"}>
-                <IconChevronsLeft/>
-            </ActionIcon>
             <Button.Group>
                 <Button
                     size={"sm"}
@@ -124,9 +123,6 @@ export const Weeks: FC<IWeeksProps> = (
                     />
                 </Button>
             </Button.Group>
-            <ActionIcon variant={"subtle"}>
-                <IconChevronsRight/>
-            </ActionIcon>
         </Group>}
         controlsBottomLeft={<ActionIcon
             variant={"subtle"}
@@ -134,9 +130,6 @@ export const Weeks: FC<IWeeksProps> = (
         >
             <IconCalendarEvent/>
         </ActionIcon>}
-        controlsBottomMiddle={<Text c={"dimmed"}>
-            <DateInline input={start.toJSDate()} options={{month: "long", year: "numeric"}}/>
-        </Text>}
         {...props}
     >
         {({classes}) => <>
@@ -203,6 +196,7 @@ export const Weeks: FC<IWeeksProps> = (
                     </div>
                 </Grid.Col>)}
             </Grid>)}
+            {children}
         </>}
     </CalendarShell>;
 };

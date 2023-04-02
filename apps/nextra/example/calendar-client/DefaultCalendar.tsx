@@ -11,6 +11,7 @@ export interface IDefaultCalendarProps extends ICalendarProps {
 export const DefaultCalendar: FC<IDefaultCalendarProps> = (props) => {
     return <CalendarProvider>
         <Calendar
+            withControls={false}
             {...props}
         />
     </CalendarProvider>;

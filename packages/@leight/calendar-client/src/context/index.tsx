@@ -5,21 +5,26 @@ import {
 }                       from "react";
 import {MonthsProvider} from "./months";
 import {WeeksProvider}  from "./weeks";
+import {YearsProvider}  from "./years";
 
 export type ICalendarProviderProps = PropsWithChildren<{
     input?: DateTime;
 }>;
 
 export const CalendarProvider: FC<ICalendarProviderProps> = ({children, input}) => {
-    return <MonthsProvider
+    return <YearsProvider
         input={input}
     >
-        <WeeksProvider
+        <MonthsProvider
             input={input}
         >
-            {children}
-        </WeeksProvider>
-    </MonthsProvider>;
+            <WeeksProvider
+                input={input}
+            >
+                {children}
+            </WeeksProvider>
+        </MonthsProvider>
+    </YearsProvider>;
 };
 
 export * from "./months";

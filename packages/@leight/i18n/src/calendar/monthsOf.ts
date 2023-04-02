@@ -20,7 +20,7 @@ export const monthsOf = (
         monthFormat = "long",
     }: IMonthsOfProps): IMonths => {
     const start    = input.startOf("year");
-    const end      = input?.endOf("year");
+    const end      = input.endOf("year");
     const interval = Interval.fromDateTimes(start, end);
     const length   = interval.count("months");
     const now      = DateTime.now();
@@ -46,7 +46,7 @@ export const monthsOf = (
                     name:      $month.toLocaleString({month: "long"}),
                     month:     $month,
                     number:    $month.month,
-                    isCurrent: input?.year === $month.year && input?.month === $month.month,
+                    isCurrent: now.year === $month.year && now.month === $month.month,
                 };
             });
         },

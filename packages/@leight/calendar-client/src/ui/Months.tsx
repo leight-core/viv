@@ -1,36 +1,49 @@
-import {DateTime}      from "@leight/i18n";
-import {DateInline}    from "@leight/i18n-client";
-import {classNames}    from "@leight/utils-client";
 import {
-    ActionIcon,
+    DateTime,
+    type IMonth
+}                   from "@leight/i18n";
+import {DateInline} from "@leight/i18n-client";
+import {classNames} from "@leight/utils-client";
+import {
     Button,
     Grid,
     Group,
     Text
-}                      from "@mantine/core";
+}                   from "@mantine/core";
 import {
     IconChevronLeft,
-    IconChevronRight,
-    IconChevronsLeft,
-    IconChevronsRight
-}                      from "@tabler/icons-react";
-import {type FC}       from "react";
-import {useMonths}     from "../context";
-import {CalendarShell} from "./CalendarShell";
+    IconChevronRight
+}                   from "@tabler/icons-react";
+import {
+    type FC,
+    type PropsWithChildren
+}                   from "react";
+import {useMonths}  from "../context";
+import {
+    CalendarShell,
+    type ICalendarShellProps
+}                   from "./CalendarShell";
 
-export interface IMonthsProps {
-    withControls?: boolean;
+export type IMonthsProps = PropsWithChildren<Omit<ICalendarShellProps, "children" | "onClick"> & {
+    onClick?(props: IIMonthsProps.IOnClickProps): void;
+}>;
+
+export namespace IIMonthsProps {
+    export interface IOnClickProps {
+        month: IMonth;
+    }
 }
 
-export const Months: FC<IMonthsProps> = () => {
+export const Months: FC<IMonthsProps> = ({
+                                             children,
+                                             onClick,
+                                             ...props
+                                         }) => {
     const {months: {months, isCurrent, input}, today, prevYear, nextYear} = useMonths();
     const columnCount                                                     = 4;
     const rowCount                                                        = months.length / columnCount;
     return <CalendarShell
         controlsTopLeft={<Group spacing={"sm"}>
-            <ActionIcon variant={"subtle"}>
-                <IconChevronsLeft/>
-            </ActionIcon>
             <Button.Group>
                 <Button
                     size={"sm"}
@@ -73,10 +86,8 @@ export const Months: FC<IMonthsProps> = () => {
                     />
                 </Button>
             </Button.Group>
-            <ActionIcon variant={"subtle"}>
-                <IconChevronsRight/>
-            </ActionIcon>
         </Group>}
+        {...props}
     >
         {({classes}) => <>
             {Array.from({length: rowCount}, (_, row) => <Grid
@@ -98,11 +109,13 @@ export const Months: FC<IMonthsProps> = () => {
                             classes.monthCell,
                             month.isCurrent ? classes.currentMonth : undefined,
                         )}
+                        onClick={() => onClick?.({month})}
                     >
                         {month.name}
                     </Grid.Col>;
                 })}
             </Grid>)}
+            {children}
         </>}
     </CalendarShell>;
 };
