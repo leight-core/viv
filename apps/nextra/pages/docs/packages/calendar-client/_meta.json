@@ -1,4 +1,6 @@
 {
     "index": "Overview",
-    "calendar": "Calendar"
+    "calendar": "Calendar",
+    "calendar-provider": "CalendarProvider",
+    "weeks": "Weeks"
 }

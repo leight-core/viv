@@ -9,7 +9,6 @@ import {
 }                       from "@mantine/core";
 import {
     IconCalendarEvent,
-    IconChartDonut2,
     IconChevronDown,
     IconChevronUp
 }                       from "@tabler/icons-react";
@@ -23,7 +22,10 @@ import {useWeeks}       from "../context";
 import {DateRageInline} from "../inline";
 
 const useStyles = createStyles(theme => ({
-    weeks:         {
+    weeks: {
+        "& .secondary":         {
+            color: theme.colors["gray"][5],
+        },
         "& .mantine-Grid-root": {
             border:         "1px solid",
             borderColor:    theme.colors["gray"][4],
@@ -188,19 +190,19 @@ export const Weeks: FC<IWeeksProps> = (
                             onClick={() => setWithWeeks(weeks => !weeks)}
                         />
                     </Tooltip>
-                    <Tooltip label={t("select-month.icon.tooltip", "Select month")}>
-                        <IconChartDonut2
-                            className={"icon"}
-                            onClick={() => setIsSelectMonth(select => !select)}
-                        />
-                    </Tooltip>
+                    {/*<Tooltip label={t("select-month.icon.tooltip", "Select month")}>*/}
+                    {/*    <IconChartDonut2*/}
+                    {/*        className={"icon"}*/}
+                    {/*        onClick={() => setIsSelectMonth(select => !select)}*/}
+                    {/*    />*/}
+                    {/*</Tooltip>*/}
                 </Group>
             </Grid.Col>
         </Grid>}
         {/*
-                First of all: render header with all days of the week; they're already localised from
-                the calendar, so it's just simple render here.
-             */}
+            First of all: render header with all days of the week; they're already localised from
+            the calendar, so it's just simple render here.
+         */}
         <Grid
             columns={columnCount}
             className={classes.weekRow}
@@ -223,8 +225,8 @@ export const Weeks: FC<IWeeksProps> = (
             </Grid.Col>)}
         </Grid>
         {/*
-                Quite simple stuff: take all weeks compute by the calendar and render them. That's all
-             */}
+            Quite simple stuff: take all weeks compute by the calendar and render them. That's all
+         */}
         {weeks.map(({days, number, current, id}) => <Grid
             key={id}
             columns={columnCount}
@@ -240,8 +242,8 @@ export const Weeks: FC<IWeeksProps> = (
                 {number}.
             </Grid.Col>}
             {/*
-                    Grid is already properly setup (number of columns), so render day by day as a calendar says.
-                 */}
+                Grid is already properly setup (number of columns), so render day by day as a calendar says.
+             */}
             {days.map(({day, current, outOfRange, id}) => <Grid.Col
                 key={id}
                 span={columnSize}
