@@ -10,6 +10,13 @@
             "team#Team": "Are you curious, how stable the project is? It isn't. Do you want to hear something else? I can lie, but as a lot of other libraries you probably rely on (same\nas this project), there is usually one or a few guys working on the library in the spare time.This project is done in cooperation with primary projects which uses it (corporate applications). But still, I'm, creating it in my spare time, with no\ncommercial support and nothing else. You do not pay for it, so you should expect nothing but my pure ideas for free.I'm Marek H. from Czechia. You're welcome to use anything, fork anything, write issues, extend this docs, ask questions, I'll be happy for that.This project is my legacy, so there is quite a low probability I'll abandon it."
         }
     },
+    "/docs/concepts": {
+        "title": "Introduction",
+        "data": {
+            "": "Bobobo at the beginning! You may skip this section, but you'll loose deep insights into the libraries and what's behind the scenes.It's strongly recommended (by some unknown wizard) to at least fly through those pages (hey, I've put a lot of time to write this, you know...) and get\nused to the concepts here. They can help you at least steal some of my ideas (which I've probably stolen somewhere else) and boost your own project even\nwithout using any of this work.\nThis library has a lot of concepts which work well together, but may looks sometimes quite complicated. But everything done is well thought and polished.\nBelieve me, it was a lot of time and effort I've put into development of this thing.So - you're free to look around and see, why all the things are done in such ways and what put me into doing things by that.",
+            "whats-inside#What's inside": "You'll find this library wants you to use Monorepo. It's cool tool for managing codebase, even for a smaller app. There is some pain, but it's acceptable, believe me :)There are a lot of snippets which will help you to setup or integrate this library into your project. Basic assumption is you have Node backend, because full power of this\nlibrary is in covering fullstack TypeScript on both sides.The main target is the development of the application, so it's not suitable for static sites or just sites. But if you want some home-made app for something (pet project), or even\nsetup some bigger app, you can use this as it can help a lot. This project is highly optimized for small teams of one member which do not have a lot of time to mess\nwith all the libraries around.\nIf you continue, you got batteries included, also with the whole power plant."
+        }
+    },
     "/docs/concepts/code-splitting": {
         "title": "Code splitting",
         "data": {
@@ -23,13 +30,6 @@
             "leightfile-client#@leight/file-client": "This package provides React stuff on a client, table for listing files, handles uploading and a lot of other - client only stuff. Backend calls are handled via trpc which is another\npackage using the same concept of split code.",
             "leightfile-server#@leight/file-server": "Here is generated Source and overall server-only stuff: generated procedures and handling of FileSource (filtering, ordering, ...). Here you are in Node land so you can do whatever you want. Except\nincluding this on client.",
             "trpc#tRPC": "This is related, but worth mentioning: because @leight expects you will use monorepo for managing all pieces of your app, this one is quite special.With you app - in the monorepo - you should have two packages for tRPC: one for a client, one for server, both serving as center point of component connection - all other packages can export procedures\nwhich should be connected in the server-side package; also this is the only exception where client can include server stuff, but this is due nature of tRPC."
-        }
-    },
-    "/docs/concepts": {
-        "title": "Introduction",
-        "data": {
-            "": "Bobobo at the beginning! You may skip this section, but you'll loose deep insights into the libraries and what's behind the scenes.It's strongly recommended (by some unknown wizard) to at least fly through those pages (hey, I've put a lot of time to write this, you know...) and get\nused to the concepts here. They can help you at least steal some of my ideas (which I've probably stolen somewhere else) and boost your own project even\nwithout using any of this work.\nThis library has a lot of concepts which work well together, but may looks sometimes quite complicated. But everything done is well thought and polished.\nBelieve me, it was a lot of time and effort I've put into development of this thing.So - you're free to look around and see, why all the things are done in such ways and what put me into doing things by that.",
-            "whats-inside#What's inside": "You'll find this library wants you to use Monorepo. It's cool tool for managing codebase, even for a smaller app. There is some pain, but it's acceptable, believe me :)There are a lot of snippets which will help you to setup or integrate this library into your project. Basic assumption is you have Node backend, because full power of this\nlibrary is in covering fullstack TypeScript on both sides.The main target is the development of the application, so it's not suitable for static sites or just sites. But if you want some home-made app for something (pet project), or even\nsetup some bigger app, you can use this as it can help a lot. This project is highly optimized for small teams of one member which do not have a lot of time to mess\nwith all the libraries around.\nIf you continue, you got batteries included, also with the whole power plant."
         }
     },
     "/docs/concepts/mcp": {
@@ -118,16 +118,9 @@
         "title": "Calendar",
         "data": {
             "": "If you want to use Calendar, you must have DateTimeProvider from @leight/i18n-client somewhere in the component tree.Or you can use PageShell or Shell from @leight/mantine.\n\nThis package requires Mantine UI provided by @leight/mantine.\nThis package provides UI for rendering localized calendar. It's based on a great library Luxon providing\nbackend for date/time operations.",
-            "translations#Translations": "Calendar uses given keys translated by default to English, thus keys are not visible, you have to copy keys provided below.\nCalendar is using following (i18next) translations from namespace common\ncalendar.today.icon.tooltip: tooltip over selecting current date icon\ncalendar.search.icon.tooltip: tooltip over switching calendar to \"search mode\"\ncalendar.with-weeks.icon.tooltip: tooltip about switching number of weeks\ncalendar.weeks-numbers.icon.tooltip: tooltip with week numbers (when shown)",
-            "minimal-example#Minimal example": "All Calendar instances needs (separate) CalendarStoreProvider to work; the reason you must provide you own store is to give you\na control over the calendar outside of the component itself.\n\nCalendar defaults to 6 weeks to prevent jumping on months with lesser week count.\n\n\nimport {\nCalendar,\nCalendarProvider,\ntype ICalendarProps\n}                from \"@leight/calendar-client\";\nimport {type FC} from \"react\";\n\nexport interface IDefaultCalendarProps extends ICalendarProps {\n}\n\nexport const DefaultCalendar: FC<IDefaultCalendarProps> = (props) => {\nreturn <CalendarProvider>\n<Calendar\nwithControls={false}\n{...props}\n/>\n</CalendarProvider>\n};",
-            "advanced-usage#Advanced usage": "import {\nCalendar,\nCalendarProvider,\ntype ICalendarProps,\nuseCalendar\n}                 from \"@leight/calendar-client\";\nimport {DateTime} from \"@leight/i18n\";\nimport {\ntype FC,\nuseEffect\n}                 from \"react\";\n\nexport interface IAdvancedCalendarProps extends ICalendarProps {\n}\n\nexport const AdvancedCalendar: FC<IAdvancedCalendarProps> = (props) => {\n/**\n* Calendar is powered by its Calendar Store where state control and state itself lives.\n*/\nreturn <CalendarProvider\n/**\n* You can pass input here or through the props; input is DateTime from Luxon\n*/\ninput={DateTime.fromObject({month: 2, day: 12})}\ndefaults={{\n/**\n* Set default loading state to emulate fetching calendar data\n*/\nisLoading: true,\n}}\n>\n<CalendarInternal {...props}/>\n</CalendarProvider>;\n};\n\ninterface ICalendarInternalProps extends IAdvancedCalendarProps {\n}\n\nconst CalendarInternal: FC<ICalendarInternalProps> = (props) => {\n/**\n* Control Calendar's loading state\n*/\nconst {loading} = useCalendar(({loading}) => ({loading}));\nuseEffect(() => {\nsetTimeout(() => {\n/**\n* Ou, \"we have\" data! Turn off loading\n*/\nloading(false);\n}, 1000);\n}, []);\nreturn <Calendar\n{...props}\n/>;\n};"
-        }
-    },
-    "/docs/packages/calendar-client": {
-        "title": "@leight/calendar-client",
-        "data": {
-            "": "Tools for rendering calendars with clever integrations with Source.",
-            "installation#Installation": "This package is build on top of Mantine.\nIf you want to use this package, it's recommended to install also @leight/mantine as there are tools\nwhich makes work with Calendar stuff much easier.\n\n\nnpm i @leight/calendar-client\n\n\n\npnpm i @leight/calendar-client\n\n\n\nyarn add @leight/calendar-client"
+            "translations#Translations": "Calendar uses given keys translated by default to English, thus keys are not visible, you have to copy keys provided below.\nCalendar is using following (i18next) translations from namespace calendar\ntoday.icon.tooltip: tooltip over selecting current date icon\nwith-weeks.icon.tooltip: tooltip about switching number of weeks\ncalendar.weeks-numbers.icon.tooltip: tooltip with week numbers (when shown)\nselect-month.icon.tooltip: month selection tooltip",
+            "minimal-example#Minimal example": "All Calendar instances needs (separate) CalendarStoreProvider to work; the reason you must provide you own store is to give you\na control over the calendar outside of the component itself.\n\nCalendar defaults to 6 weeks to prevent jumping on months with lesser week count.\n\n\nimport {\nCalendar,\nCalendarProvider,\ntype ICalendarProps\n}                from \"@leight/calendar-client\";\nimport {type FC} from \"react\";\n\nexport interface IDefaultCalendarProps extends ICalendarProps {\n}\n\nexport const DefaultCalendar: FC<IDefaultCalendarProps> = (props) => {\nreturn <CalendarProvider>\n<Calendar\nwithControls={false}\n{...props}\n/>\n</CalendarProvider>;\n};",
+            "advanced-usage#Advanced usage": "import {\nCalendar,\nCalendarProvider,\ntype ICalendarProps\n}                 from \"@leight/calendar-client\";\nimport {DateTime} from \"@leight/i18n\";\nimport {type FC}  from \"react\";\n\nexport interface IAdvancedCalendarProps extends ICalendarProps {\n}\n\nexport const AdvancedCalendar: FC<IAdvancedCalendarProps> = (props) => {\nreturn <CalendarProvider\n/**\n* You can pass input here or through the props; input is DateTime from Luxon\n*/\ninput={DateTime.fromObject({month: 2, day: 12})}\n>\n<CalendarInternal {...props}/>\n</CalendarProvider>;\n};\n\ninterface ICalendarInternalProps extends IAdvancedCalendarProps {\n}\n\nconst CalendarInternal: FC<ICalendarInternalProps> = (props) => {\nreturn <Calendar\n{...props}\n/>;\n};"
         }
     },
     "/docs/packages/container": {
@@ -137,14 +130,21 @@
             "installation#Installation": "npm i @leight/container"
         }
     },
-    "/docs/packages/esbuild": {
-        "title": "@leight/esbuild",
+    "/docs/packages/calendar-client": {
+        "title": "@leight/calendar-client",
         "data": {
-            "": ""
+            "": "Tools for rendering calendars with clever integrations with Source.",
+            "installation#Installation": "This package is build on top of Mantine.\nIf you want to use this package, it's recommended to install also @leight/mantine as there are tools\nwhich makes work with Calendar stuff much easier.\n\n\nnpm i @leight/calendar-client\n\n\n\npnpm i @leight/calendar-client\n\n\n\nyarn add @leight/calendar-client"
         }
     },
     "/docs/packages/context-client": {
         "title": "@leight/context-client",
+        "data": {
+            "": ""
+        }
+    },
+    "/docs/packages/esbuild": {
+        "title": "@leight/esbuild",
         "data": {
             "": ""
         }
@@ -161,22 +161,57 @@
             "": "Rewrite DateTimeProvider to plain React context (it's not a store)\nAdd NumberProvider as a plain React context"
         }
     },
+    "/docs/packages/i18n": {
+        "title": "@leight/i18n",
+        "data": {
+            "": "This library provides common localization stuff for the client and server. It also contains some interesting methods for generating calendar\ndata.",
+            "installation#Installation": "npm i @leight/i18n\n\n\n\npnpm i @leight/i18n\n\n\n\nyarn add @leight/i18n"
+        }
+    },
+    "/docs/packages/i18n/weeks-of": {
+        "title": "weeksOf",
+        "data": {
+            "": "This method is useful when you want to get weeks from the given input, for example, when rendering calendar.Default implementation can be seen in the Calendar UI.",
+            "usage#Usage": "What information you can get? See the interface IWeeks\ninput date\ncurrent date (real now)\nstart date (where is the first week of the month, or applied margin)\nend date (where is the last week of the month, or applied margin)\nLuxon Interval of start to end\nisCurrent tells you if the current interval matches now (so you see current month)\nlocalised list of days (no need for translations)\nlist of weeks: they matches number of weeks on input month plus margins if specified\nevery week has its days (see IWeek and IDay interface)",
+            "code#Code": "Just simply call weeksOf(){:js} and you'll get calendar data (weeks) of the given input in the month of the input.\nimport {DateTime, weeksOf} from \"@leight/i18n\";\n\nconst weeks = weeksOf({input: DateTime.now()});",
+            "example-output#Example output": "This output is JSON.stringify(){:js} of the IWeeks interface, so there will be little differences, but this is just an example what\nyou can get.\n{\n\"input\": \"2023-04-02T01:54:13.458+02:00\",\n\"now\": \"2023-04-02T01:54:13.459+02:00\",\n\"start\": \"2023-03-25T00:00:00.000+01:00\",\n\"end\": \"2023-05-07T23:59:59.999+02:00\",\n\"interval\": {\n\"s\": \"2023-03-25T00:00:00.000+01:00\",\n\"e\": \"2023-05-07T23:59:59.999+02:00\",\n\"invalid\": null,\n\"isLuxonInterval\": true\n},\n\"isCurrent\": true,\n\"days\": [\n\"po\",\n\"út\",\n\"st\",\n\"čt\",\n\"pá\",\n\"so\",\n\"ne\"\n],\n\"weeks\": [\n{\n\"id\": \"202312\",\n\"week\": \"2023-03-20T00:00:00.000+01:00\",\n\"number\": 12,\n\"current\": false,\n\"days\": [\n{\n\"id\": \"2023120\",\n\"day\": \"2023-03-20T00:00:00.000+01:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023121\",\n\"day\": \"2023-03-21T00:00:00.000+01:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023122\",\n\"day\": \"2023-03-22T00:00:00.000+01:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023123\",\n\"day\": \"2023-03-23T00:00:00.000+01:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023124\",\n\"day\": \"2023-03-24T00:00:00.000+01:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023125\",\n\"day\": \"2023-03-25T00:00:00.000+01:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023126\",\n\"day\": \"2023-03-26T00:00:00.000+01:00\",\n\"current\": false,\n\"outOfRange\": true\n}\n]\n},\n{\n\"id\": \"202313\",\n\"week\": \"2023-03-27T00:00:00.000+02:00\",\n\"number\": 13,\n\"current\": true,\n\"days\": [\n{\n\"id\": \"2023130\",\n\"day\": \"2023-03-27T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023131\",\n\"day\": \"2023-03-28T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023132\",\n\"day\": \"2023-03-29T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023133\",\n\"day\": \"2023-03-30T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023134\",\n\"day\": \"2023-03-31T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023135\",\n\"day\": \"2023-04-01T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023136\",\n\"day\": \"2023-04-02T00:00:00.000+02:00\",\n\"current\": true,\n\"outOfRange\": false\n}\n]\n},\n{\n\"id\": \"202314\",\n\"week\": \"2023-04-03T00:00:00.000+02:00\",\n\"number\": 14,\n\"current\": false,\n\"days\": [\n{\n\"id\": \"2023140\",\n\"day\": \"2023-04-03T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023141\",\n\"day\": \"2023-04-04T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023142\",\n\"day\": \"2023-04-05T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023143\",\n\"day\": \"2023-04-06T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023144\",\n\"day\": \"2023-04-07T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023145\",\n\"day\": \"2023-04-08T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023146\",\n\"day\": \"2023-04-09T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n}\n]\n},\n{\n\"id\": \"202315\",\n\"week\": \"2023-04-10T00:00:00.000+02:00\",\n\"number\": 15,\n\"current\": false,\n\"days\": [\n{\n\"id\": \"2023150\",\n\"day\": \"2023-04-10T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023151\",\n\"day\": \"2023-04-11T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023152\",\n\"day\": \"2023-04-12T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023153\",\n\"day\": \"2023-04-13T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023154\",\n\"day\": \"2023-04-14T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023155\",\n\"day\": \"2023-04-15T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023156\",\n\"day\": \"2023-04-16T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n}\n]\n},\n{\n\"id\": \"202316\",\n\"week\": \"2023-04-17T00:00:00.000+02:00\",\n\"number\": 16,\n\"current\": false,\n\"days\": [\n{\n\"id\": \"2023160\",\n\"day\": \"2023-04-17T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023161\",\n\"day\": \"2023-04-18T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023162\",\n\"day\": \"2023-04-19T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023163\",\n\"day\": \"2023-04-20T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023164\",\n\"day\": \"2023-04-21T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023165\",\n\"day\": \"2023-04-22T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023166\",\n\"day\": \"2023-04-23T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n}\n]\n},\n{\n\"id\": \"202317\",\n\"week\": \"2023-04-24T00:00:00.000+02:00\",\n\"number\": 17,\n\"current\": false,\n\"days\": [\n{\n\"id\": \"2023170\",\n\"day\": \"2023-04-24T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023171\",\n\"day\": \"2023-04-25T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023172\",\n\"day\": \"2023-04-26T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023173\",\n\"day\": \"2023-04-27T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023174\",\n\"day\": \"2023-04-28T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023175\",\n\"day\": \"2023-04-29T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023176\",\n\"day\": \"2023-04-30T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n}\n]\n},\n{\n\"id\": \"202318\",\n\"week\": \"2023-05-01T00:00:00.000+02:00\",\n\"number\": 18,\n\"current\": false,\n\"days\": [\n{\n\"id\": \"2023180\",\n\"day\": \"2023-05-01T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023181\",\n\"day\": \"2023-05-02T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023182\",\n\"day\": \"2023-05-03T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023183\",\n\"day\": \"2023-05-04T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023184\",\n\"day\": \"2023-05-05T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023185\",\n\"day\": \"2023-05-06T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023186\",\n\"day\": \"2023-05-07T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n}\n]\n}\n]\n}"
+        }
+    },
     "/docs/packages": {
         "title": "Overview",
         "data": {
             "": "Here you are all packages in the project with some brief information about them."
         }
     },
-    "/docs/packages/sdk": {
-        "title": "@leight/sdk",
+    "/docs/packages/mantine": {
+        "title": "@leight/mantine",
         "data": {
-            "": "If you want see some examples, how to work with this library, see Workbench."
+            "": ""
+        }
+    },
+    "/docs/packages/mantine/page-shell": {
+        "title": "Page Shell",
+        "data": {
+            "": "",
+            "pageshell#PageShell": "This component is an entry point for your app, it provides all the services offered by @leight.\nimport {emotionCache} from \"@/my-app/emotion-cache\";\nimport \"@/my-app/styles/globals.css\";\nimport {PageShell} from \"@leight/mantine\";\nimport {trpc} from \"@my-app/trpc-client\";\nimport {appWithTranslation} from \"next-i18next\";\nimport type {AppProps} from \"next/app\";\n\nexport function MyApp(\n{\nComponent,\npageProps,\n}: AppProps) {\n/**\n* Just use PageShell and fill all required props; if you want to add your own\n* services, just put them as child as you're used to.\n*/\nreturn <PageShell\ntitle={\"my-app\"}\nemotionCache={emotionCache}\nComponent={Component}\npageProps={pageProps}\n/>;\n}\n\n/**\n* This is a bit unrelated, but to keep example complete, this provides connection of your app to tRPC.\n*/\nexport default trpc.withTRPC(appWithTranslation(MyApp));"
+        }
+    },
+    "/docs/packages/mantine/shell": {
+        "title": "Shell",
+        "data": {
+            "": "dfgfdg"
         }
     },
     "/docs/packages/source": {
         "title": "@leight/source",
         "data": {
             "": ""
+        }
+    },
+    "/docs/packages/sdk": {
+        "title": "@leight/sdk",
+        "data": {
+            "": "If you want see some examples, how to work with this library, see Workbench."
         }
     },
     "/docs/packages/table-client": {
@@ -261,12 +296,6 @@
             "": ""
         }
     },
-    "/docs/packages/mantine/shell": {
-        "title": "Shell",
-        "data": {
-            "": "dfgfdg"
-        }
-    },
     "/docs/workbench/sdk": {
         "title": "SDK",
         "data": {
@@ -295,19 +324,6 @@
             "typescript#TypeScript": "It's an opinion, but... there is no other choice: the project is built on top of TypeScript and heavily uses types to make you live a lot easier. Ok, there are some tradeoffs, but who cares.",
             "motivation#Motivation": "All the time new app is created, there is a lot of stuff repeatedly created, a lot of same concepts, data fetching, mutations and so on.This collection aims to make kind of \"standard\" which offloads thinking of \"how to get data\", \"how to sort data\", creating tables, forms, connecting them to the backend\nand a lot of other stuff.So here we're: you can pick some tools, you can use a whole collection and simplify your developer life a lot by generating pieces of repeated code,\nhaving everything typed and so on.",
             "maturity#Maturity": "You see this as yet another project. You're right.But it was quite long time in development and it's used in some projects, concepts and API of the whole collection is quite polished today and you can use whatever\npiece you want/need. The overall goal is to provide best practices over the best libraries available on the current market.This collection may be seen as an inspiration, how you can do things in a quite a nice way - not simple, because you can use thousands of lines of code to do relatively simple thing, but it's worth it, because\nat least - you will not repeat yourself :)."
-        }
-    },
-    "/docs/packages/mantine": {
-        "title": "@leight/mantine",
-        "data": {
-            "": ""
-        }
-    },
-    "/docs/packages/mantine/page-shell": {
-        "title": "Page Shell",
-        "data": {
-            "": "",
-            "pageshell#PageShell": "This component is an entry point for your app, it provides all the services offered by @leight.\nimport {emotionCache} from \"@/my-app/emotion-cache\";\nimport \"@/my-app/styles/globals.css\";\nimport {PageShell} from \"@leight/mantine\";\nimport {trpc} from \"@my-app/trpc-client\";\nimport {appWithTranslation} from \"next-i18next\";\nimport type {AppProps} from \"next/app\";\n\nexport function MyApp(\n{\nComponent,\npageProps,\n}: AppProps) {\n/**\n* Just use PageShell and fill all required props; if you want to add your own\n* services, just put them as child as you're used to.\n*/\nreturn <PageShell\ntitle={\"my-app\"}\nemotionCache={emotionCache}\nComponent={Component}\npageProps={pageProps}\n/>;\n}\n\n/**\n* This is a bit unrelated, but to keep example complete, this provides connection of your app to tRPC.\n*/\nexport default trpc.withTRPC(appWithTranslation(MyApp));"
         }
     },
     "/docs/workbench/zustand": {

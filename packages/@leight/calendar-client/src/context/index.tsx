@@ -1,25 +1,33 @@
 import {createStoreContext} from "@leight/context-client";
 import {
     DateTime,
-    type DurationLike,
     type IWeeks,
     weeksOf
 }                           from "@leight/i18n";
 import {type IStoreProps}   from "@leight/zustand";
 import {
     type ComponentProps,
-    type FC
+    type FC,
+    PropsWithChildren
 }                           from "react";
 
-export type ICalendarStoreStoreProps = IStoreProps<{
-    setInput(input: DateTime): void;
-    plus(duration: DurationLike): void;
-    minus(duration: DurationLike): void;
+export type IWeeksStoreStoreProps = IStoreProps<{
+    /**
+     * Set weeks of the given date
+     */
+    weeksOf(input: DateTime): void;
+    /**
+     * Move to the current month
+     */
     today(): void;
+    /**
+     * Change weeks to the previous month
+     */
     prevMonth(): void;
+    /**
+     * Change weeks to the next month
+     */
     nextMonth(): void;
-    readonly isLoading: boolean;
-    loading(isLoading: boolean): void;
 }, {
     /**
      * Calendar is computed based on an input, so it cannot be required
@@ -29,28 +37,14 @@ export type ICalendarStoreStoreProps = IStoreProps<{
 }>
 
 export const {
-                 Provider: CalendarStoreProvider,
-                 useState: useCalendar,
-             } = createStoreContext<ICalendarStoreStoreProps>({
+                 Provider: WeeksStoreProvider,
+                 useState: useWeeks,
+             } = createStoreContext<IWeeksStoreStoreProps>({
     state: ({state}) => (set) => ({
-        isLoading: false,
-        loading(isLoading) {
-            set({isLoading});
-        },
-        setInput(input: DateTime) {
+        weeksOf(input: DateTime) {
             set({
                 weeks: weeksOf({input}),
             });
-        },
-        plus(duration) {
-            set(({weeks: {input}}) => ({
-                weeks: weeksOf({input: input.plus(duration)}),
-            }));
-        },
-        minus(duration) {
-            set(({weeks: {input}}) => ({
-                weeks: weeksOf({input: input.minus(duration)}),
-            }));
         },
         today() {
             set({
@@ -69,19 +63,31 @@ export const {
         },
         ...state,
     }),
-    name:  "CalendarStoreContext",
-    hint:  "Add CalendarStoreProvider.",
+    name:  "WeeksContext",
+    hint:  "Add WeeksProvider.",
 });
 
-export interface ICalendarProviderProps extends Omit<ComponentProps<typeof CalendarStoreProvider>, "state"> {
+export interface IWeeksProviderProps extends Omit<ComponentProps<typeof WeeksStoreProvider>, "state"> {
     input?: DateTime;
 }
 
-export const CalendarProvider: FC<ICalendarProviderProps> = ({input, ...props}) => {
-    return <CalendarStoreProvider
+export const WeeksProvider: FC<IWeeksProviderProps> = ({input, ...props}) => {
+    return <WeeksStoreProvider
         state={{
             weeks: weeksOf({input}),
         }}
         {...props}
     />;
+};
+
+export type ICalendarProviderProps = PropsWithChildren<{
+    input?: DateTime;
+}>;
+
+export const CalendarProvider: FC<ICalendarProviderProps> = ({children, ...props}) => {
+    return <WeeksProvider
+        {...props}
+    >
+        {children}
+    </WeeksProvider>;
 };
