@@ -48,38 +48,44 @@ const useStyles = createStyles(theme => ({
     controlsPrefix: {},
     controlsSuffix: {},
     header:         {
-        backgroundColor: theme.colors["gray"][2],
-        height:          "5em",
+        backgroundColor: theme.colors["gray"][0],
+        fontWeight:      "bold",
+        height:          "3em",
         display:         "flex",
         flex:            "1 1 auto",
         justifyContent:  "center",
         alignItems:      "center",
     },
-    day:            {
-        height:    "8em",
-        padding:   "0.4em 0.6em",
-        "&:hover": {
-            backgroundColor: theme.colors["gray"][2],
-        },
+    cell:           {
+        height:  "6em",
+        padding: "0.4em 0.6em",
     },
-    weekRow:        {
+    monthCell:      {
+        display:        "flex",
+        flex:           "1 1 auto",
+        justifyContent: "center",
+        alignItems:     "center",
+        cursor:         "pointer",
+    },
+    row:            {
         "& > div": {
             borderRight: "1px solid",
             borderColor: theme.colors["gray"][4],
         },
     },
+    currentMonth:   {
+        fontWeight:      "bold",
+        backgroundColor: theme.colors["gray"][1],
+    },
     currentWeek:    {},
     currentDay:     {
-        backgroundColor: theme.colors["gray"][4],
+        backgroundColor: theme.colors["gray"][2],
     },
     inRange:        {
         fontWeight: "bold",
     },
     outOfRange:     {
-        backgroundColor: theme.colors["gray"][1],
-        "&:hover":       {
-            backgroundColor: theme.colors["gray"][2],
-        },
+        backgroundColor: theme.colors["gray"][0],
     },
 }));
 
@@ -172,7 +178,7 @@ export const CalendarShell: FC<ICalendarShellProps> = (
             </Grid.Col>
         </Grid>}
         {renderComponent(children, renderProps)}
-        {withControls && <Grid
+        {withControls && (controlsBottomLeft || controlsBottomMiddle || controlsBottomRight) && <Grid
             columns={controlColumnCount}
             className={classNames(
                 classes.controlsGrid,

@@ -1,28 +1,15 @@
 import { Shell } from "@leight/mantine";
 import { SourceExample } from "../../../../components";
-import { DefaultWeeks } from "../../../../example/calendar-client";
+import { DefaultWeeks,DefaultWeeksExample } from "../../../../example/calendar-client";
 
 # Weeks
 
 This component alone is useful for paging through weeks of a month (common calendar as you know it).
 
-## Translations
-
-List of used translations, defaults to English. All translations comes from **calendar** namespace.
-
-| Label                        | Description                        |
-|:-----------------------------|------------------------------------|
-| weeks.previous-month.tooltip | Tooltip over previous month button |
-| weeks.next-month.tooltip     | Tooltip over next month button     |
-| weeks.previous-event.tooltip | Tooltip over previous event button |
-| weeks.next-event.tooltip     | Tooltip over next event button     |
-
 ## Minimal example
 
 <SourceExample
-    example={<Shell>
-        <DefaultWeeks/>
-    </Shell>}
+    example={<DefaultWeeksExample/>}
 >
 ```tsx
 import {

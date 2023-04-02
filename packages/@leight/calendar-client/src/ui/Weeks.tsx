@@ -1,16 +1,12 @@
 import {DateTime}   from "@leight/i18n";
-import {
-    DateInline,
-    useTranslation
-}                   from "@leight/i18n-client";
+import {DateInline} from "@leight/i18n-client";
 import {classNames} from "@leight/utils-client";
 import {
     ActionIcon,
     Button,
     Grid,
     Group,
-    Text,
-    Tooltip
+    Text
 }                   from "@mantine/core";
 import {
     IconCalendarEvent,
@@ -60,7 +56,6 @@ export const Weeks: FC<IWeeksProps> = (
      * This is specific for Mantine Grid: compute number of columns to render.
      */
     const columnCount               = (days.length * columnSize) + (withWeeks ? weekCountSize : 0);
-    const {t}                       = useTranslation("calendar");
 
     return <CalendarShell
         controlsTopLeft={<Group spacing={"sm"}>
@@ -151,18 +146,16 @@ export const Weeks: FC<IWeeksProps> = (
              */}
             <Grid
                 columns={columnCount}
-                className={classes.weekRow}
+                className={classes.row}
                 m={0}
             >
                 {withWeeks && <Grid.Col
                     span={weekCountSize}
                     className={classes.header}
                 >
-                    <Tooltip label={t("weeks-numbers.icon.tooltip", "Week no.")}>
-                        <ActionIcon variant={"light"}>
-                            <IconCalendarEvent/>
-                        </ActionIcon>
-                    </Tooltip>
+                    <ActionIcon variant={"light"}>
+                        <IconCalendarEvent/>
+                    </ActionIcon>
                 </Grid.Col>}
                 {days.map(day => <Grid.Col
                     key={`day-${day}`}
@@ -175,12 +168,12 @@ export const Weeks: FC<IWeeksProps> = (
             {/*
                 Quite simple stuff: take all weeks compute by the calendar and render them. That's all
              */}
-            {weeks.map(({days, number, current, id}) => <Grid
+            {weeks.map(({days, number, isCurrent, id}) => <Grid
                 key={id}
                 columns={columnCount}
                 className={classNames(
-                    classes.weekRow,
-                    current ? classes.currentWeek : undefined,
+                    classes.row,
+                    isCurrent ? classes.currentWeek : undefined,
                 )}
                 m={0}
             >
@@ -192,13 +185,13 @@ export const Weeks: FC<IWeeksProps> = (
                 {/*
                     Grid is already properly setup (number of columns), so render day by day as a calendar says.
                  */}
-                {days.map(({day, current, outOfRange, id}) => <Grid.Col
+                {days.map(({day, isCurrent, isOutOfRange, id}) => <Grid.Col
                     key={id}
                     span={columnSize}
                     className={classNames(
-                        classes.day,
-                        current && highlightToday ? classes.currentDay : undefined,
-                        outOfRange ? classes.outOfRange : classes.inRange
+                        classes.cell,
+                        isCurrent && highlightToday ? classes.currentDay : undefined,
+                        isOutOfRange ? classes.outOfRange : classes.inRange
                     )}
                 >
                     <div

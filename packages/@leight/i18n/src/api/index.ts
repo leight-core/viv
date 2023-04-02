@@ -1,8 +1,3 @@
-import {
-    type DateTime,
-    type Interval
-} from "luxon";
-
 /**
  * Which types are accepted as input type for formatting functions.
  */
@@ -28,79 +23,5 @@ export interface IWithLocale {
     locale: string;
 }
 
-export interface IDay {
-    /**
-     * Id of a day; unique within years, can be used as a React key
-     */
-    id: string;
-    /**
-     * Current date
-     */
-    day: DateTime;
-    /**
-     * Is this day "today"?
-     */
-    current: boolean;
-    /**
-     * Is this day outside the current (input) month?
-     */
-    outOfRange: boolean;
-}
-
-export interface IWeek {
-    /**
-     * Id of a week; unique within years, can be used as a React key
-     */
-    id: string;
-    /**
-     * Beginning of the week
-     */
-    week: DateTime;
-    /**
-     * Week number
-     */
-    number: number;
-    /**
-     * Is this week current?
-     */
-    current: boolean;
-    /**
-     * 0-6 dayjs in a week
-     */
-    days: IDay[];
-}
-
-export interface IWeeks {
-    /**
-     * Input date a calendar is generated of
-     */
-    input: DateTime;
-    /**
-     * Start date of the generated calendar
-     */
-    start: DateTime;
-    /**
-     * Final date of the generated calendar
-     */
-    end: DateTime;
-    /**
-     * Interval based on start/end for querying dates.
-     */
-    interval: Interval;
-    /**
-     * Is the "now" in a current calendar interval?
-     */
-    isCurrent: boolean;
-    /**
-     * Just for convenience - actual timestamp
-     */
-    now: DateTime;
-    /**
-     * Number of lines of the calendar (number of weeks); each wek has 7 days
-     */
-    weeks: IWeek[];
-    /**
-     * Contains localized day names (in a localized order)
-     */
-    days: string[];
-}
+export * from "./weeks";
+export * from "./months";

@@ -43,4 +43,4 @@ can use in whatever way you want (for example, IQuery to shape queries into a re
 [xlsx-import](xlsx-import)
 [xlsx-import-client](xlsx-import-client)
 [xlsx-import-server](xlsx-import-server)
-[zustand](zustand)
+[zustand](zustandx)
