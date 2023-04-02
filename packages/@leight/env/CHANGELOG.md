@@ -1,5 +1,11 @@
 # @leight/env
 
+## 0.5.25
+
+### Patch Changes
+
+- Version bump
+
 ## 0.5.24
 
 ### Patch Changes

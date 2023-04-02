@@ -1,8 +1,8 @@
 {
     "index": "Overview",
     "calendar": "Calendar",
-    "calendar-provider": "CalendarProvider",
     "weeks": "Weeks",
     "months": "Months",
-    "years": "Years"
+    "years": "Years",
+    "calendar-provider": "CalendarProvider"
 }

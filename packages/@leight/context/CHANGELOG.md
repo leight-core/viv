@@ -1,5 +1,13 @@
 # @leight/context
 
+## 0.5.17
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/zustand@0.5.54
+
 ## 0.5.16
 
 ### Patch Changes

@@ -41,6 +41,7 @@ export interface IYears {
     interval: Interval;
     columns: number;
     rows: number;
+    count: number;
     /**
      * Is the "now" in a current calendar interval?
      */

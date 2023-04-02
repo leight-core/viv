@@ -1,5 +1,5 @@
 {
-    "version": "0.5.54",
+    "version": "0.5.55",
     "name": "@leight/xlsx-import-client",
     "description": "Client-side tools for imports.",
     "license": "MIT",
@@ -28,12 +28,12 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/i18n-client": "^0.5.59",
-        "@leight/job": "^0.5.62",
-        "@leight/job-client": "^0.5.13",
-        "@leight/mantine": "^0.5.60",
-        "@leight/tsconfig": "^0.5.55",
-        "@leight/utils-client": "^0.5.57",
+        "@leight/i18n-client": "^0.5.60",
+        "@leight/job": "^0.5.63",
+        "@leight/job-client": "^0.5.14",
+        "@leight/mantine": "^0.5.61",
+        "@leight/tsconfig": "^0.5.56",
+        "@leight/utils-client": "^0.5.58",
         "@mantine/core": "^6.0.1",
         "@mantine/dropzone": "^6.0.1",
         "@mantine/hooks": "^6.0.1",
@@ -42,11 +42,11 @@
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.32",
-        "@leight/eslint-config-eslint": "^0.5.41",
+        "@leight/esbuild": "^0.5.33",
+        "@leight/eslint-config-eslint": "^0.5.42",
         "@leight/tsconfig": "*",
-        "@leight/turbowatch": "^0.5.20",
-        "@leight/xlsx-import": "^0.5.53",
+        "@leight/turbowatch": "^0.5.21",
+        "@leight/xlsx-import": "^0.5.54",
         "@types/node": "^18.15.0",
         "@types/react": "^18.0.28",
         "concurrently": "^7.6.0",

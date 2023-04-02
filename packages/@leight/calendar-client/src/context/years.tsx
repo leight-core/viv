@@ -21,6 +21,8 @@ export type IYearsStoreStoreProps = IStoreProps<{
     today(): void;
     prevYear(): void;
     nextYear(): void;
+    prevYears(): void;
+    nextYears(): void;
 }, {
     /**
      * Calendar is computed based on an input, so it cannot be required
@@ -52,6 +54,16 @@ export const {
         nextYear() {
             set(({years: {input}}) => ({
                 years: yearsOf({input: input.plus({year: 1})}),
+            }));
+        },
+        prevYears() {
+            set(({years: {count, input}}) => ({
+                years: yearsOf({input: input.minus({year: count})}),
+            }));
+        },
+        nextYears() {
+            set(({years: {count, input}}) => ({
+                years: yearsOf({input: input.plus({year: count})}),
             }));
         },
         ...state,

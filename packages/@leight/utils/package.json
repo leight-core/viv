@@ -1,5 +1,5 @@
 {
-    "version": "0.5.56",
+    "version": "0.5.57",
     "name": "@leight/utils",
     "description": "Some simple utils used in @leight libraries.",
     "license": "MIT",
@@ -38,10 +38,10 @@
         "is-string": "^1.0.7"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.32",
-        "@leight/eslint-config-eslint": "^0.5.41",
-        "@leight/tsconfig": "^0.5.55",
-        "@leight/turbowatch": "^0.5.20",
+        "@leight/esbuild": "^0.5.33",
+        "@leight/eslint-config-eslint": "^0.5.42",
+        "@leight/tsconfig": "^0.5.56",
+        "@leight/turbowatch": "^0.5.21",
         "@types/is-callable": "^1.1.0",
         "@types/is-object": "^1.0.2",
         "@types/is-string": "^1.0.0",

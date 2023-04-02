@@ -1,4 +1,5 @@
 import { Shell } from "@leight/mantine";
+import { Callout } from "nextra-theme-docs";
 import { SourceExample } from "../../../../components";
 import { DefaultWeeks,DefaultWeeksExample } from "../../../../example/calendar-client";
 
@@ -6,7 +7,14 @@ import { DefaultWeeks,DefaultWeeksExample } from "../../../../example/calendar-c
 
 This component alone is useful for paging through weeks of a month (common calendar as you know it).
 
+`Weeks` is by default quite lightweight component as it does **not** allow select months/years as the full
+[Calendar](./calendar) component.
+
 ## Minimal example
+
+<Callout type={'info'} emoji={'ℹ️'}>
+    This is the most minimal version of calendar you can get, but it is also basically feature-less.
+</Callout>
 
 <SourceExample
     example={<DefaultWeeksExample/>}
@@ -28,8 +36,14 @@ export const DefaultWeeks: FC<IDefaultWeeksProps> = () => {
      * CalendarProvider provides all stuff needed for the whole Calendar (weeks/months/years/...).
      */
     return <WeeksProvider>
-        <Weeks/>
-    </WeeksProvider>;
+        <Weeks
+            /**
+             * Controls are enabled by default and do not create such overhead; this is just for
+             * an example to render must minimal calendar.
+             */
+            withControls={false}
+        />
+    </WeeksProvider>
 };
 ```
 </SourceExample>

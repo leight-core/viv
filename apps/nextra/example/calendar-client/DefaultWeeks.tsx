@@ -14,6 +14,12 @@ export const DefaultWeeks: FC<IDefaultWeeksProps> = () => {
      * CalendarProvider provides all stuff needed for the whole Calendar (weeks/months/years/...).
      */
     return <WeeksProvider>
-        <Weeks/>
+        <Weeks
+            /**
+             * Controls are enabled by default and do not create such overhead; this is just for
+             * an example to render must minimal calendar.
+             */
+            withControls={false}
+        />
     </WeeksProvider>;
 };

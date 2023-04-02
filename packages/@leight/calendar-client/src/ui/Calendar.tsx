@@ -1,12 +1,12 @@
 import {type DateTime} from "@leight/i18n";
+import {DateInline}    from "@leight/i18n-client";
 import {
     ActionIcon,
     Box,
-    Group,
+    Button,
     Overlay
 }                      from "@mantine/core";
 import {
-    IconCalendarQuestion,
     IconCalendarSearch,
     IconX
 }                      from "@tabler/icons-react";
@@ -46,24 +46,28 @@ const CalendarInternal: FC<Omit<ICalendarProps, "input">> = ({withControls}) => 
     return <Box pos={"relative"}>
         <Weeks
             withControls={withControls}
-            controlsBottomRight={<Group>
-                <ActionIcon
+            controlsBottomMiddle={<Button.Group>
+                <Button
+                    variant={"subtle"}
                     onClick={() => {
                         setSelectMonth(true);
                         monthsOf(weeks.input);
                     }}
+                    leftIcon={<IconCalendarSearch/>}
                 >
-                    <IconCalendarQuestion/>
-                </ActionIcon>
-                <ActionIcon
+                    <DateInline input={weeks.input.toJSDate()} options={{month: "long"}}/>
+                </Button>
+                <Button
+                    variant={"subtle"}
                     onClick={() => {
                         setSelectYear(true);
                         yearsOf(weeks.input);
                     }}
+                    leftIcon={<IconCalendarSearch/>}
                 >
-                    <IconCalendarSearch/>
-                </ActionIcon>
-            </Group>}
+                    <DateInline input={weeks.input.toJSDate()} options={{year: "numeric"}}/>
+                </Button>
+            </Button.Group>}
         >
             {selectMonth && <Overlay color={"#FFF"} opacity={1}>
                 <Months
@@ -71,7 +75,7 @@ const CalendarInternal: FC<Omit<ICalendarProps, "input">> = ({withControls}) => 
                         weeksOf(month);
                         setSelectMonth(false);
                     }}
-                    controlsBottomRight={<ActionIcon
+                    controlsBottomMiddle={<ActionIcon
                         variant={"subtle"}
                         onClick={() => setSelectMonth(false)}
                     >
@@ -85,7 +89,7 @@ const CalendarInternal: FC<Omit<ICalendarProps, "input">> = ({withControls}) => 
                         weeksOf(year);
                         setSelectYear(false);
                     }}
-                    controlsBottomRight={<ActionIcon
+                    controlsBottomMiddle={<ActionIcon
                         variant={"subtle"}
                         onClick={() => setSelectYear(false)}
                     >

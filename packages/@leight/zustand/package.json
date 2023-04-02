@@ -1,5 +1,5 @@
 {
-    "version": "0.5.53",
+    "version": "0.5.54",
     "name": "@leight/zustand",
     "description": "Zustand helper stuff.",
     "license": "MIT",
@@ -28,15 +28,15 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/utils": "^0.5.56",
+        "@leight/utils": "^0.5.57",
         "react": "^18.2.0",
         "zustand": "^4.3.6"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.32",
-        "@leight/eslint-config-eslint": "^0.5.41",
-        "@leight/tsconfig": "^0.5.55",
-        "@leight/turbowatch": "^0.5.20",
+        "@leight/esbuild": "^0.5.33",
+        "@leight/eslint-config-eslint": "^0.5.42",
+        "@leight/tsconfig": "^0.5.56",
+        "@leight/turbowatch": "^0.5.21",
         "@types/node": "^18.15.0",
         "@types/react": "^18.0.28",
         "concurrently": "^7.6.0",

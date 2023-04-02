@@ -9,14 +9,16 @@ export interface IYearsOfProps {
      * Input date - years of the year will be generated
      */
     input?: DateTime;
+    columns?: number;
+    rows?: number;
 }
 
 export const yearsOf = (
     {
         input = DateTime.now(),
+        columns = 5,
+        rows = 3,
     }: IYearsOfProps): IYears => {
-    const columns  = 5;
-    const rows     = 3;
     const margin   = ((columns - 1) / 2) + (((rows - 1) / 2) * columns);
     const start    = input.minus({year: margin});
     const end      = input.plus({year: margin});
@@ -31,6 +33,7 @@ export const yearsOf = (
         interval,
         columns,
         rows,
+        count: columns * rows,
         now,
         get isCurrent() {
             return now.year >= start.year && now.year <= end.year;

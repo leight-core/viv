@@ -11,7 +11,9 @@ import {
 import {
     IconCalendarEvent,
     IconChevronLeft,
-    IconChevronRight
+    IconChevronRight,
+    IconChevronsLeft,
+    IconChevronsRight
 }                   from "@tabler/icons-react";
 import {
     type FC,
@@ -77,6 +79,7 @@ export const Weeks: FC<IWeeksProps> = (
                     size={"sm"}
                     variant={"subtle"}
                     onClick={() => prevYear()}
+                    leftIcon={<IconChevronsLeft/>}
                 >
                     <DateInline
                         input={start.minus({year: 1}).toJSDate()}
@@ -105,6 +108,7 @@ export const Weeks: FC<IWeeksProps> = (
                     size={"sm"}
                     variant={"subtle"}
                     onClick={() => nextYear()}
+                    rightIcon={<IconChevronsRight/>}
                 >
                     <DateInline
                         input={start.plus({year: 1}).toJSDate()}

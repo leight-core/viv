@@ -1,5 +1,5 @@
 {
-    "version": "0.5.8",
+    "version": "0.5.9",
     "name": "@leight/generator",
     "description": "Common stuff for generator.",
     "license": "MIT",
@@ -29,9 +29,9 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.32",
-        "@leight/eslint-config-eslint": "^0.5.41",
-        "@leight/tsconfig": "^0.5.55",
+        "@leight/esbuild": "^0.5.33",
+        "@leight/eslint-config-eslint": "^0.5.42",
+        "@leight/tsconfig": "^0.5.56",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
