@@ -39,6 +39,8 @@ export interface IYears {
      * Interval based on start/end for querying dates.
      */
     interval: Interval;
+    columns: number;
+    rows: number;
     /**
      * Is the "now" in a current calendar interval?
      */

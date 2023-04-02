@@ -15,7 +15,9 @@ export const yearsOf = (
     {
         input = DateTime.now(),
     }: IYearsOfProps): IYears => {
-    const margin   = 4;
+    const columns  = 5;
+    const rows     = 3;
+    const margin   = ((columns - 1) / 2) + (((rows - 1) / 2) * columns);
     const start    = input.minus({year: margin});
     const end      = input.plus({year: margin});
     const interval = Interval.fromDateTimes(start, end);
@@ -27,9 +29,11 @@ export const yearsOf = (
         start,
         end,
         interval,
+        columns,
+        rows,
         now,
         get isCurrent() {
-            return interval.contains(now);
+            return now.year >= start.year && now.year <= end.year;
         },
         get list() {
             return Array.from({length}, (_, year) => start.year + year);
@@ -42,7 +46,7 @@ export const yearsOf = (
                     id,
                     name:      $year.year,
                     year:      $year,
-                    isCurrent: input.year === $year.year,
+                    isCurrent: now.year === $year.year,
                 };
             });
         },

@@ -1,4 +1,3 @@
-import {DateTime}      from "@leight/i18n";
 import {DateInline}    from "@leight/i18n-client";
 import {classNames}    from "@leight/utils-client";
 import {
@@ -23,9 +22,9 @@ export interface IYearsProps {
 }
 
 export const Years: FC<IYearsProps> = () => {
-    const {years: {years, isCurrent, input}, today, prevYear, nextYear} = useYears();
-    const columnCount                                                   = 5;
-    const rowCount                                                      = years.length / columnCount;
+    const {years: {years, isCurrent, input, start, end, columns, rows}, today, prevYear, nextYear} = useYears();
+    console.log("yea", years);
+
     return <CalendarShell
         controlsTopLeft={<Group spacing={"sm"}>
             <ActionIcon variant={"subtle"}>
@@ -39,7 +38,7 @@ export const Years: FC<IYearsProps> = () => {
                     leftIcon={<IconChevronLeft/>}
                 >
                     <DateInline
-                        input={input.minus({year: 1}).toJSDate()}
+                        input={start.minus({year: 1}).toJSDate()}
                         options={{year: "numeric"}}
                     />
                 </Button>
@@ -52,10 +51,7 @@ export const Years: FC<IYearsProps> = () => {
                 disabled={isCurrent}
             >
                 <Text c={"dimmed"}>
-                    {isCurrent ?
-                        <DateInline input={DateTime.now().toJSDate()} options={{day: "numeric", year: "numeric"}}/> :
-                        <DateInline input={input.toJSDate()} options={{year: "numeric"}}/>
-                    }
+                    <DateInline input={input.toJSDate()} options={{year: "numeric"}}/>
                 </Text>
             </Button>
         </Group>}
@@ -68,7 +64,7 @@ export const Years: FC<IYearsProps> = () => {
                     rightIcon={<IconChevronRight/>}
                 >
                     <DateInline
-                        input={input.plus({year: 1}).toJSDate()}
+                        input={end.plus({year: 1}).toJSDate()}
                         options={{year: "numeric"}}
                     />
                 </Button>
@@ -79,14 +75,14 @@ export const Years: FC<IYearsProps> = () => {
         </Group>}
     >
         {({classes}) => <>
-            {Array.from({length: rowCount}, (_, row) => <Grid
+            {Array.from({length: rows}, (_, row) => <Grid
                 key={`year${row}`}
-                columns={columnCount}
+                columns={columns}
                 className={classes.row}
                 m={0}
             >
-                {Array.from({length: columnCount}, (_, column) => {
-                    const year = years[(row * columnCount) + column];
+                {Array.from({length: columns}, (_, column) => {
+                    const year = years[(row * columns) + column];
                     if (!year) {
                         return null;
                     }
