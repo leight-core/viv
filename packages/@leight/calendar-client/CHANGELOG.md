@@ -1,5 +1,11 @@
 # @leight/calendar-client
 
+## 0.5.11
+
+### Patch Changes
+
+- Version bump
+
 ## 0.5.10
 
 ### Patch Changes

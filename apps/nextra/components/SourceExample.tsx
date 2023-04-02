@@ -14,14 +14,14 @@ export type ISourceExampleProps = PropsWithChildren<{
 
 export const SourceExample: FC<ISourceExampleProps> = ({example, children}) => {
     return <Tabs items={[
-        "Code",
         "Example",
+        "Code",
     ]}>
         <Tab>
-            {children}
+            {example}
         </Tab>
         <Tab>
-            {example}
+            {children}
         </Tab>
     </Tabs>;
 };

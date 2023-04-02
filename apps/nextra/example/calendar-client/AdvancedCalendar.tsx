@@ -2,9 +2,16 @@ import {
     Calendar,
     CalendarProvider,
     type ICalendarProps
-}                 from "@leight/calendar-client";
-import {DateTime} from "@leight/i18n";
-import {type FC}  from "react";
+}                   from "@leight/calendar-client";
+import {
+    DateTime,
+    type IDay
+}                   from "@leight/i18n";
+import {DateInline} from "@leight/i18n-client";
+import {
+    type FC,
+    useState
+}                   from "react";
 
 export interface IAdvancedCalendarProps extends ICalendarProps {
 }
@@ -24,7 +31,12 @@ interface ICalendarInternalProps extends IAdvancedCalendarProps {
 }
 
 const CalendarInternal: FC<ICalendarInternalProps> = (props) => {
-    return <Calendar
-        {...props}
-    />;
+    const [day, setDay] = useState<IDay>();
+    return <>
+        <Calendar
+            onClick={({day}) => setDay(day)}
+            {...props}
+        />
+        <div>selected date: {day ? <DateInline input={day.day.toJSDate()}/> : "- click the calendar -"}</div>
+    </>;
 };

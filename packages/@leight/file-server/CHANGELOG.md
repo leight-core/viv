@@ -1,5 +1,14 @@
 # @leight/file-server
 
+## 0.5.62
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/prisma@0.5.70
+    - @leight/file@0.5.61
+
 ## 0.5.61
 
 ### Patch Changes

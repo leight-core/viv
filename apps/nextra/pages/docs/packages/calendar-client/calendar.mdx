@@ -18,22 +18,10 @@ import { DefaultCalendar,AdvancedCalendar,AdvancedCalendarExample } from "../../
 This package provides UI for rendering localized calendar. It's based on a great library [Luxon](https://moment.github.io/luxon/#/) providing
 backend for date/time operations.
 
-## Translations
-
-<Callout>
-    Calendar uses given keys translated by default to English, thus keys are **not visible**, you have to copy keys provided below.
-</Callout>
-
-Calendar is using following (i18next) translations from namespace **`calendar`**
-- `today.icon.tooltip`: tooltip over selecting current date icon
-- `with-weeks.icon.tooltip`: tooltip about switching number of weeks
-- `calendar.weeks-numbers.icon.tooltip`: tooltip with week numbers (when shown)
-- `select-month.icon.tooltip`: month selection tooltip
-
 ## Minimal example
 
 <Callout>
-    All Calendar instances needs (separate) [CalendarStoreProvider](./calendar-store-provider) to work; the reason you must provide you own store is to give you
+    All Calendar instances needs (separate) [CalendarProvider](./calendar-provider) to work; the reason you must provide you own store is to give you
     a **control** over the calendar outside of the component itself.
 </Callout>
 
@@ -82,9 +70,16 @@ import {
     Calendar,
     CalendarProvider,
     type ICalendarProps
-}                 from "@leight/calendar-client";
-import {DateTime} from "@leight/i18n";
-import {type FC}  from "react";
+}                   from "@leight/calendar-client";
+import {
+    DateTime,
+    type IDay
+}                   from "@leight/i18n";
+import {DateInline} from "@leight/i18n-client";
+import {
+    type FC,
+    useState
+}                   from "react";
 
 export interface IAdvancedCalendarProps extends ICalendarProps {
 }
@@ -104,9 +99,14 @@ interface ICalendarInternalProps extends IAdvancedCalendarProps {
 }
 
 const CalendarInternal: FC<ICalendarInternalProps> = (props) => {
-    return <Calendar
-        {...props}
-    />;
+    const [day, setDay] = useState<IDay>();
+    return <>
+        <Calendar
+            onClick={({day}) => setDay(day)}
+            {...props}
+        />
+        <div>selected date: {day ? <DateInline input={day.day.toJSDate()}/> : '- click the calendar -'}</div>
+    </>;
 };
 ```
 </SourceExample>

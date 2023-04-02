@@ -109,6 +109,7 @@ export const Months: FC<IMonthsProps> = ({
                             classes.monthCell,
                             month.isCurrent ? classes.currentMonth : undefined,
                         )}
+                        style={onClick ? {cursor: "pointer"} : undefined}
                         onClick={() => onClick?.({month})}
                     >
                         {month.name}

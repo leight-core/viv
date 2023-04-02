@@ -21,10 +21,14 @@ import {
     useYears
 }                      from "../context";
 import {Months}        from "./Months";
-import {Weeks}         from "./Weeks";
+import {
+    IWeeksProps,
+    Weeks
+}                      from "./Weeks";
 import {Years}         from "./Years";
 
 export interface ICalendarProps {
+    onClick?: IWeeksProps["onClick"];
     withControls?: boolean;
     input?: DateTime;
 }
@@ -37,7 +41,7 @@ export const Calendar: FC<ICalendarProps> = ({input, ...props}) => {
     </CalendarProvider>;
 };
 
-const CalendarInternal: FC<Omit<ICalendarProps, "input">> = ({withControls}) => {
+const CalendarInternal: FC<Omit<ICalendarProps, "input">> = ({withControls, onClick}) => {
     const {weeksOf, weeks}              = useWeeks(({weeksOf, weeks}) => ({weeksOf, weeks}));
     const {monthsOf}                    = useMonths(({monthsOf}) => ({monthsOf}));
     const {yearsOf}                     = useYears(({yearsOf}) => ({yearsOf}));
@@ -45,6 +49,7 @@ const CalendarInternal: FC<Omit<ICalendarProps, "input">> = ({withControls}) => 
     const [selectYear, setSelectYear]   = useState(false);
     return <Box pos={"relative"}>
         <Weeks
+            onClick={onClick}
             withControls={withControls}
             controlsBottomMiddle={<Button.Group>
                 <Button

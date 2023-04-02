@@ -1,5 +1,11 @@
 # @leight/prisma
 
+## 0.5.70
+
+### Patch Changes
+
+- Version bump
+
 ## 0.5.69
 
 ### Patch Changes

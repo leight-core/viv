@@ -68,14 +68,12 @@ const useStyles = createStyles(theme => ({
         flex:           "1 1 auto",
         justifyContent: "center",
         alignItems:     "center",
-        cursor:         "pointer",
     },
     yearCell:       {
         display:        "flex",
         flex:           "1 1 auto",
         justifyContent: "center",
         alignItems:     "center",
-        cursor:         "pointer",
     },
     row:            {
         "& > div": {

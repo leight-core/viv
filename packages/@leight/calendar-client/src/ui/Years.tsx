@@ -148,6 +148,7 @@ export const Years: FC<IYearsProps> = (
                             classes.yearCell,
                             year.isCurrent ? classes.currentYear : undefined,
                         )}
+                        style={onClick ? {cursor: "pointer"} : undefined}
                         onClick={() => onClick?.({year})}
                     >
                         {year.name}

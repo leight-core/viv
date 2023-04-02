@@ -1,5 +1,5 @@
 {
-    "version": "0.5.10",
+    "version": "0.5.11",
     "name": "@leight/calendar-client",
     "description": "Clever Calendar based on Mantine UI library.",
     "license": "MIT",

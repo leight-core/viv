@@ -1,5 +1,13 @@
 # @leight/job-client
 
+## 0.5.15
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/job@0.5.64
+
 ## 0.5.14
 
 ### Patch Changes

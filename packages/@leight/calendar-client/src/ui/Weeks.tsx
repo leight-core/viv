@@ -1,4 +1,7 @@
-import {DateTime}   from "@leight/i18n";
+import {
+    DateTime,
+    type IDay
+}                   from "@leight/i18n";
 import {DateInline} from "@leight/i18n-client";
 import {classNames} from "@leight/utils-client";
 import {
@@ -26,15 +29,24 @@ import {
     type ICalendarShellProps
 }                   from "./CalendarShell";
 
-export type IWeeksProps = PropsWithChildren<Omit<ICalendarShellProps, "children"> & {
+export type IWeeksProps = PropsWithChildren<Omit<ICalendarShellProps, "children" | "onClick"> & {
+    onClick?(props: IWeeksProps.IOnClickProps): void;
+
     weekCountSize?: number;
     defaultWithWeekNo?: boolean;
     columnSize?: number;
     highlightToday?: boolean;
 }>
 
+export namespace IWeeksProps {
+    export interface IOnClickProps {
+        day: IDay;
+    }
+}
+
 export const Weeks: FC<IWeeksProps> = (
     {
+        onClick,
         highlightToday = true,
         defaultWithWeekNo = false,
         weekCountSize = 2,
@@ -182,21 +194,26 @@ export const Weeks: FC<IWeeksProps> = (
                 {/*
                     Grid is already properly setup (number of columns), so render day by day as a calendar says.
                  */}
-                {days.map(({day, isCurrent, isOutOfRange, id}) => <Grid.Col
-                    key={id}
+                {days.map(day => <Grid.Col
+                    key={day.id}
                     span={columnSize}
                     className={classNames(
                         classes.cell,
-                        isCurrent && highlightToday ? classes.currentDay : undefined,
-                        isOutOfRange ? classes.outOfRange : classes.inRange
+                        day.isCurrent && highlightToday ? classes.currentDay : undefined,
+                        day.isOutOfRange ? classes.outOfRange : classes.inRange
                     )}
+                    style={onClick ? {cursor: "pointer"} : undefined}
+                    onClick={() => onClick?.({day})}
                 >
                     <div
                         style={{
                             textAlign: "right",
                         }}
                     >
-                        {day.day}
+                        {/*
+                            Doesn't look this funny?
+                        */}
+                        {day.day.day}
                     </div>
                 </Grid.Col>)}
             </Grid>)}

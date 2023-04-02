@@ -1,5 +1,5 @@
 {
-    "version": "0.5.61",
+    "version": "0.5.62",
     "name": "@leight/file-client",
     "description": "File stuff for client-side.",
     "license": "MIT",
@@ -30,7 +30,7 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/file": "^0.5.60",
+        "@leight/file": "^0.5.61",
         "@leight/query-client": "^0.5.21",
         "@leight/sort-client": "^0.5.17",
         "@leight/source-client": "^0.5.24",
