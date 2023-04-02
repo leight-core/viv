@@ -1,18 +1,21 @@
-import {type IContainer}                from "@leight/container";
+import {type IContainer} from "@leight/container";
 import {
     $PrismaClient,
     type PrismaClient
-}                                       from "@leight/prisma";
+}                        from "@leight/prisma";
 import {
     $RegistrationService,
     $UserJwtService,
     type IRegistrationService,
     type IUserJwtService
-}                                       from "@leight/user";
-import {Logger}                         from "@leight/winston";
-import {PrismaAdapter}                  from "@next-auth/prisma-adapter";
-import NextAuthShit, {type AuthOptions} from "next-auth";
-import {type Provider}                  from "next-auth/providers";
+}                        from "@leight/user";
+import {Logger}          from "@leight/winston";
+import {PrismaAdapter}   from "@next-auth/prisma-adapter";
+import NextAuthShit, {
+    type AuthOptions,
+    Session
+}                        from "next-auth";
+import {type Provider}   from "next-auth/providers";
 
 export interface INextAuthEndpointProps {
     options?: Partial<AuthOptions>;
@@ -49,7 +52,7 @@ export const NextAuthEndpoint = ({options, providers, container}: INextAuthEndpo
         },
         providers: providers.filter((provider): provider is Provider => !!provider),
         callbacks: {
-            jwt: async (token) => {
+            jwt:     async (token) => {
                 try {
                     await registrationService.handle(token);
                     return await userJwtService.token(token.token);
@@ -62,7 +65,7 @@ export const NextAuthEndpoint = ({options, providers, container}: INextAuthEndpo
                 }
             },
             session: async ({session, token}) => {
-                const $session = {...session};
+                const $session: any = {...session};
                 if ($session && token?.sub) {
                     $session.user = {
                         userId: token.sub,
@@ -70,7 +73,7 @@ export const NextAuthEndpoint = ({options, providers, container}: INextAuthEndpo
                         ...session.user,
                     };
                 }
-                return $session;
+                return $session as Session;
             },
         },
         ...options,

@@ -1,7 +1,7 @@
 import { Shell } from "@leight/mantine";
 import { Callout } from "nextra-theme-docs";
 import { SourceExample } from "../../../../components";
-import { DefaultCalendar,AdvancedCalendar } from "../../../../example/calendar-client";
+import { DefaultCalendar,AdvancedCalendar,AdvancedCalendarExample } from "../../../../example/calendar-client";
 
 # Calendar
 
@@ -71,9 +71,7 @@ export const DefaultCalendar: FC<IDefaultCalendarProps> = (props) => {
 ## Advanced usage
 
 <SourceExample
-    example={<Shell>
-                 <AdvancedCalendar/>
-             </Shell>}
+    example={<AdvancedCalendarExample/>}
 >
 ```tsx filename="AdvancedCalendar.tsx"
 import {

@@ -1,31 +1,35 @@
-import {useTranslation} from "@leight/i18n-client";
-import {classNames}     from "@leight/utils-client";
+import {DateTime}   from "@leight/i18n";
 import {
+    DateInline,
+    useTranslation
+}                   from "@leight/i18n-client";
+import {classNames} from "@leight/utils-client";
+import {
+    ActionIcon,
+    Button,
     Container,
     createStyles,
     Grid,
     Group,
+    Text,
     Tooltip
-}                       from "@mantine/core";
+}                   from "@mantine/core";
 import {
     IconCalendarEvent,
-    IconChevronDown,
-    IconChevronUp
-}                       from "@tabler/icons-react";
+    IconChevronLeft,
+    IconChevronRight,
+    IconChevronsLeft,
+    IconChevronsRight
+}                   from "@tabler/icons-react";
 import {
     type ComponentProps,
     type FC,
     useState
-}                       from "react";
-import {TodayButton}    from "../button";
-import {useWeeks}       from "../context";
-import {DateRageInline} from "../inline";
+}                   from "react";
+import {useWeeks}   from "../context";
 
 const useStyles = createStyles(theme => ({
-    weeks: {
-        "& .secondary":         {
-            color: theme.colors["gray"][5],
-        },
+    weeks:          {
         "& .mantine-Grid-root": {
             border:         "1px solid",
             borderColor:    theme.colors["gray"][4],
@@ -39,41 +43,27 @@ const useStyles = createStyles(theme => ({
         },
         userSelect:             "none",
     },
-    controls:      {
+    controlsGrid:   {
         "& > div:last-child": {
             borderRight: "1px solid",
             borderColor: theme.colors["gray"][4],
         },
-        "& .middle":          {
-            display:        "flex",
-            flex:           "1 1 auto",
-            justifyContent: "center",
-            alignItems:     "center",
-            cursor:         "pointer",
-            "&:hover":      {
-                backgroundColor: theme.colors["gray"][1],
-                "& .icon":       {
-                    color: theme.colors["gray"][7],
-                },
-            },
-        },
-        "& .right":           {
-            display:        "flex",
-            flex:           "1 1 auto",
-            justifyContent: "end",
-            alignItems:     "center",
-        },
-        "& .icon":            {
-            color:     theme.colors["gray"][5],
-            cursor:    "pointer",
-            "&:hover": {
-                color: theme.colors["gray"][7],
-            },
-        },
     },
-    controlPrefix: {},
-    controlSuffix: {},
-    header:        {
+    controls:       {
+        display:    "flex",
+        flex:       "1 1 auto",
+        alignItems: "center",
+    },
+    controlsLeft:   {},
+    controlsMiddle: {
+        justifyContent: "center",
+    },
+    controlsRight:  {
+        justifyContent: "end",
+    },
+    controlsPrefix: {},
+    controlsSuffix: {},
+    header:         {
         backgroundColor: theme.colors["gray"][2],
         height:          "5em",
         display:         "flex",
@@ -81,27 +71,27 @@ const useStyles = createStyles(theme => ({
         justifyContent:  "center",
         alignItems:      "center",
     },
-    day:           {
+    day:            {
         height:    "8em",
         padding:   "0.4em 0.6em",
         "&:hover": {
             backgroundColor: theme.colors["gray"][2],
         },
     },
-    weekRow:       {
+    weekRow:        {
         "& > div": {
             borderRight: "1px solid",
             borderColor: theme.colors["gray"][4],
         },
     },
-    currentWeek:   {},
-    currentDay:    {
+    currentWeek:    {},
+    currentDay:     {
         backgroundColor: theme.colors["gray"][4],
     },
-    inRange:       {
+    inRange:        {
         fontWeight: "bold",
     },
-    outOfRange:    {
+    outOfRange:     {
         backgroundColor: theme.colors["gray"][1],
         "&:hover":       {
             backgroundColor: theme.colors["gray"][2],
@@ -128,6 +118,8 @@ export const Weeks: FC<IWeeksProps> = (
     const {
               nextMonth,
               prevMonth,
+              prevYear,
+              nextYear,
               today,
               weeks: {
                          weeks,
@@ -144,7 +136,7 @@ export const Weeks: FC<IWeeksProps> = (
     const columnCount               = (days.length * columnSize) + (withWeeks ? weekCountSize : 0);
     const {t}                       = useTranslation("calendar");
     const controlColumnCount        = 18;
-    const controlWidth              = 6;
+    const controlWidth              = 7;
 
     return <Container
         className={classes.weeks}
@@ -153,49 +145,103 @@ export const Weeks: FC<IWeeksProps> = (
         {withControls && <Grid
             columns={controlColumnCount}
             className={classNames(
-                classes.controls,
-                classes.controlPrefix,
+                classes.controlsGrid,
+                classes.controlsPrefix,
             )}
             m={0}
         >
             <Grid.Col
                 span={controlWidth}
-                className={"left"}
+                className={classNames(
+                    classes.controls,
+                    classes.controlsLeft,
+                )}
             >
-                <DateRageInline
-                    className={"secondary"}
-                    start={start}
-                    end={end}
-                />
+                <Group spacing={"sm"}>
+                    <ActionIcon variant={"subtle"}>
+                        <IconChevronsLeft/>
+                    </ActionIcon>
+                    <Button.Group>
+                        <Button
+                            size={"sm"}
+                            variant={"subtle"}
+                            onClick={() => prevMonth()}
+                            leftIcon={<IconChevronLeft/>}
+                        >
+                            <DateInline
+                                input={start.minus({month: 1}).toJSDate()}
+                                options={{month: "long"}}
+                            />
+                        </Button>
+                        <Button
+                            size={"sm"}
+                            variant={"subtle"}
+                            onClick={() => prevYear()}
+                        >
+                            <DateInline
+                                input={start.minus({year: 1}).toJSDate()}
+                                options={{year: "numeric"}}
+                            />
+                        </Button>
+                    </Button.Group>
+                </Group>
             </Grid.Col>
             <Grid.Col
                 span={controlColumnCount - (controlWidth * 2)}
-                className={"middle"}
-                onClick={() => prevMonth()}
+                className={classNames(
+                    classes.controls,
+                    classes.controlsMiddle,
+                )}
             >
-                <IconChevronUp className={"icon"}/>
+                <Group spacing={"sm"}>
+                    <Button
+                        variant={"subtle"}
+                        onClick={() => today()}
+                        disabled={isCurrent}
+                    >
+                        <Text c={"dimmed"}>
+                            {isCurrent ?
+                                <DateInline input={DateTime.now().toJSDate()} options={{day: "numeric", month: "long", year: "numeric"}}/> :
+                                <DateInline input={start.toJSDate()} options={{month: "long", year: "numeric"}}/>
+                            }
+                        </Text>
+                    </Button>
+                </Group>
             </Grid.Col>
             <Grid.Col
                 span={controlWidth}
-                className={"right"}
+                className={classNames(
+                    classes.controls,
+                    classes.controlsRight,
+                )}
             >
                 <Group spacing={"sm"}>
-                    <TodayButton
-                        isCurrent={isCurrent}
-                        onClick={today}
-                    />
-                    <Tooltip label={t("with-weeks.icon.tooltip", "Week numbers")}>
-                        <IconCalendarEvent
-                            className={"icon"}
-                            onClick={() => setWithWeeks(weeks => !weeks)}
-                        />
-                    </Tooltip>
-                    {/*<Tooltip label={t("select-month.icon.tooltip", "Select month")}>*/}
-                    {/*    <IconChartDonut2*/}
-                    {/*        className={"icon"}*/}
-                    {/*        onClick={() => setIsSelectMonth(select => !select)}*/}
-                    {/*    />*/}
-                    {/*</Tooltip>*/}
+                    <Button.Group>
+                        <Button
+                            size={"sm"}
+                            variant={"subtle"}
+                            onClick={() => nextYear()}
+                        >
+                            <DateInline
+                                input={start.plus({year: 1}).toJSDate()}
+                                options={{year: "numeric"}}
+                            />
+                        </Button>
+                        <Button
+                            size={"sm"}
+                            variant={"subtle"}
+                            onClick={() => nextMonth()}
+                            rightIcon={<IconChevronRight/>}
+                        >
+                            <DateInline
+                                input={start.plus({month: 1}).toJSDate()}
+                                options={{month: "long"}}
+                            />
+                        </Button>
+                    </Button.Group>
+                    <ActionIcon variant={"subtle"}>
+                        <IconChevronsRight/>
+                    </ActionIcon>
                 </Group>
             </Grid.Col>
         </Grid>}
@@ -213,7 +259,9 @@ export const Weeks: FC<IWeeksProps> = (
                 className={classes.header}
             >
                 <Tooltip label={t("weeks-numbers.icon.tooltip", "Week no.")}>
-                    <IconCalendarEvent className={"secondary"}/>
+                    <ActionIcon variant={"light"}>
+                        <IconCalendarEvent/>
+                    </ActionIcon>
                 </Tooltip>
             </Grid.Col>}
             {days.map(day => <Grid.Col
@@ -265,31 +313,42 @@ export const Weeks: FC<IWeeksProps> = (
         {withControls && <Grid
             columns={controlColumnCount}
             className={classNames(
-                classes.controls,
-                classes.controlSuffix,
+                classes.controlsGrid,
+                classes.controlsSuffix,
             )}
             m={0}
         >
             <Grid.Col
                 span={controlWidth}
-                className={"left"}
+                className={classNames(
+                    classes.controls,
+                    classes.controlsLeft,
+                )}
             >
-                <DateRageInline
-                    className={"secondary"}
-                    start={end.plus({day: 1})}
-                    end={end.plus({day: 1}).endOf("month")}
-                />
+                <ActionIcon
+                    variant={"subtle"}
+                    onClick={() => setWithWeeks(weeks => !weeks)}
+                >
+                    <IconCalendarEvent/>
+                </ActionIcon>
             </Grid.Col>
             <Grid.Col
                 span={controlColumnCount - (controlWidth * 2)}
-                className={"middle"}
-                onClick={() => nextMonth()}
+                className={classNames(
+                    classes.controls,
+                    classes.controlsMiddle,
+                )}
             >
-                <IconChevronDown className={"icon"}/>
+                <Text c={"dimmed"}>
+                    <DateInline input={start.toJSDate()} options={{month: "long", year: "numeric"}}/>
+                </Text>
             </Grid.Col>
             <Grid.Col
                 span={controlWidth}
-                className={"right"}
+                className={classNames(
+                    classes.controls,
+                    classes.controlsRight,
+                )}
             />
         </Grid>}
     </Container>;

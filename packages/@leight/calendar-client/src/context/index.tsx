@@ -28,6 +28,8 @@ export type IWeeksStoreStoreProps = IStoreProps<{
      * Change weeks to the next month
      */
     nextMonth(): void;
+    prevYear(): void;
+    nextYear(): void;
 }, {
     /**
      * Calendar is computed based on an input, so it cannot be required
@@ -59,6 +61,16 @@ export const {
         nextMonth() {
             set(({weeks: {input}}) => ({
                 weeks: weeksOf({input: input.plus({month: 1})}),
+            }));
+        },
+        prevYear() {
+            set(({weeks: {input}}) => ({
+                weeks: weeksOf({input: input.minus({year: 1})}),
+            }));
+        },
+        nextYear() {
+            set(({weeks: {input}}) => ({
+                weeks: weeksOf({input: input.plus({year: 1})}),
             }));
         },
         ...state,

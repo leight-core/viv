@@ -1,20 +1,21 @@
-import {useTranslation}      from "@leight/i18n-client";
-import {Tooltip}             from "@mantine/core";
+import {ActionIcon}          from "@mantine/core";
 import {IconCurrentLocation} from "@tabler/icons-react";
-import {type FC}             from "react";
+import {
+    type ComponentProps,
+    type FC
+}                            from "react";
 
-export interface ITodayButtonProps {
+export interface ITodayButtonProps extends Omit<ComponentProps<typeof ActionIcon>, "children"> {
     isCurrent: boolean;
 
     onClick(): void;
 }
 
-export const TodayButton: FC<ITodayButtonProps> = ({isCurrent, onClick}) => {
-    const {t} = useTranslation("calendar");
-    return isCurrent ? null : <Tooltip label={t("calendar.today.icon.tooltip", "Today")}>
+export const TodayButton: FC<ITodayButtonProps> = ({isCurrent, onClick, ...props}) => {
+    return isCurrent ? null : <ActionIcon {...props}>
         <IconCurrentLocation
-            className={"icon"}
             onClick={() => onClick()}
+            {...props}
         />
-    </Tooltip>;
+    </ActionIcon>;
 };
