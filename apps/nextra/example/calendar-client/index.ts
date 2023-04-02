@@ -5,3 +5,5 @@ export * from "./DefaultMonths";
 export * from "./DefaultMonthsExample";
 export * from "./DefaultWeeks";
 export * from "./DefaultWeeksExample";
+export * from "./DefaultYears";
+export * from "./DefaultYearsExample";

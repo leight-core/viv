@@ -72,12 +72,6 @@
             "query#Query": ""
         }
     },
-    "/docs/concepts/source/server": {
-        "title": "Server",
-        "data": {
-            "": ""
-        }
-    },
     "/docs/concepts/source": {
         "title": "Introduction",
         "data": {
@@ -94,12 +88,6 @@
             "step-3#Step 3": "dfgdfg"
         }
     },
-    "/docs/getting-started/packages": {
-        "title": "Packages",
-        "data": {
-            "": ""
-        }
-    },
     "/docs": {
         "title": "Welcome",
         "data": {
@@ -108,10 +96,16 @@
             "batteries-included#Batteries included": "Did you expect to have Getting started as the very first item in the menu? Nope.Why? Because you should understand, what this collection of\nlibraries does, because it's all connected via concepts which you should see first.\nSo please, continue to Concepts to check, if your mindset will be able to accept a library which is not done in that traditional way."
         }
     },
-    "/docs/packages/calendar-client/calendar-provider": {
-        "title": "CalendarProvider",
+    "/docs/concepts/source/server": {
+        "title": "Server",
         "data": {
-            "": "This component holds state for a Calendar component. Each calendar should have it's own Store until you want to\nshare same state between multiple calendars."
+            "": ""
+        }
+    },
+    "/docs/getting-started/packages": {
+        "title": "Packages",
+        "data": {
+            "": ""
         }
     },
     "/docs/packages/calendar-client/calendar": {
@@ -123,18 +117,24 @@
             "advanced-usage#Advanced usage": "import {\nCalendar,\nCalendarProvider,\ntype ICalendarProps\n}                 from \"@leight/calendar-client\";\nimport {DateTime} from \"@leight/i18n\";\nimport {type FC}  from \"react\";\n\nexport interface IAdvancedCalendarProps extends ICalendarProps {\n}\n\nexport const AdvancedCalendar: FC<IAdvancedCalendarProps> = (props) => {\nreturn <CalendarProvider\n/**\n* You can pass input here or through the props; input is DateTime from Luxon\n*/\ninput={DateTime.fromObject({month: 2, day: 12})}\n>\n<CalendarInternal {...props}/>\n</CalendarProvider>;\n};\n\ninterface ICalendarInternalProps extends IAdvancedCalendarProps {\n}\n\nconst CalendarInternal: FC<ICalendarInternalProps> = (props) => {\nreturn <Calendar\n{...props}\n/>;\n};"
         }
     },
-    "/docs/packages/calendar-client": {
-        "title": "@leight/calendar-client",
+    "/docs/packages/calendar-client/calendar-provider": {
+        "title": "CalendarProvider",
         "data": {
-            "": "Tools for rendering calendars with clever integrations with Source.",
-            "installation#Installation": "This package is build on top of Mantine.\nIf you want to use this package, it's recommended to install also @leight/mantine as there are tools\nwhich makes work with Calendar stuff much easier.\n\n\nnpm i @leight/calendar-client\n\n\n\npnpm i @leight/calendar-client\n\n\n\nyarn add @leight/calendar-client"
+            "": "This component holds state for a Calendar component. Each calendar should have it's own Store until you want to\nshare same state between multiple calendars."
         }
     },
     "/docs/packages/calendar-client/months": {
         "title": "Months",
         "data": {
             "": "Months calendar based on an arbitrary input date (to get current year).",
-            "minimal-example#Minimal example": "import {\nWeeks,\nWeeksProvider\n}                from \"@leight/calendar-client\";\nimport {type FC} from \"react\";\n\nexport interface IDefaultWeeksProps {\n}\n\nexport const DefaultWeeks: FC<IDefaultWeeksProps> = () => {\n/**\n* Here you can use WeeksProvider or CalendarProvider.\n*\n* CalendarProvider provides all stuff needed for the whole Calendar (weeks/months/years/...).\n*/\nreturn <WeeksProvider>\n<Weeks/>\n</WeeksProvider>;\n};"
+            "minimal-example#Minimal example": "import {\nMonths,\nMonthsProvider\n}                from \"@leight/calendar-client\";\nimport {type FC} from \"react\";\n\nexport interface IDefaultMonthsProps {\n}\n\nexport const DefaultMonths: FC<IDefaultMonthsProps> = () => {\nreturn <MonthsProvider>\n<Months/>\n</MonthsProvider>;\n};"
+        }
+    },
+    "/docs/packages/calendar-client": {
+        "title": "@leight/calendar-client",
+        "data": {
+            "": "Tools for rendering calendars with clever integrations with Source.",
+            "installation#Installation": "This package is build on top of Mantine.\nIf you want to use this package, it's recommended to install also @leight/mantine as there are tools\nwhich makes work with Calendar stuff much easier.\n\n\nnpm i @leight/calendar-client\n\n\n\npnpm i @leight/calendar-client\n\n\n\nyarn add @leight/calendar-client"
         }
     },
     "/docs/packages/calendar-client/weeks": {
@@ -144,10 +144,11 @@
             "minimal-example#Minimal example": "import {\nWeeks,\nWeeksProvider\n}                from \"@leight/calendar-client\";\nimport {type FC} from \"react\";\n\nexport interface IDefaultWeeksProps {\n}\n\nexport const DefaultWeeks: FC<IDefaultWeeksProps> = () => {\n/**\n* Here you can use WeeksProvider or CalendarProvider.\n*\n* CalendarProvider provides all stuff needed for the whole Calendar (weeks/months/years/...).\n*/\nreturn <WeeksProvider>\n<Weeks/>\n</WeeksProvider>;\n};"
         }
     },
-    "/docs/packages/context-client": {
-        "title": "@leight/context-client",
+    "/docs/packages/calendar-client/years": {
+        "title": "Years",
         "data": {
-            "": ""
+            "": "Years calendar based on an arbitrary input date (to get current year).",
+            "minimal-example#Minimal example": "import {\nYears,\nYearsProvider\n}                from \"@leight/calendar-client\";\nimport {type FC} from \"react\";\n\nexport interface IDefaultYearsProps {\n}\n\nexport const DefaultYears: FC<IDefaultYearsProps> = () => {\nreturn <YearsProvider>\n<Years/>\n</YearsProvider>;\n};"
         }
     },
     "/docs/packages/container": {
@@ -157,8 +158,8 @@
             "installation#Installation": "npm i @leight/container"
         }
     },
-    "/docs/packages/esbuild": {
-        "title": "@leight/esbuild",
+    "/docs/packages/context-client": {
+        "title": "@leight/context-client",
         "data": {
             "": ""
         }
@@ -169,10 +170,23 @@
             "": "If you're using PageShell or Shell from @leight/mantine, this provider is already included.\nThis is the base component for any date & time related operations. For example, if you want to use Calendar, you must use this component."
         }
     },
+    "/docs/packages/esbuild": {
+        "title": "@leight/esbuild",
+        "data": {
+            "": ""
+        }
+    },
     "/docs/packages/i18n-client": {
         "title": "@leight/i18n-client",
         "data": {
             "": "Rewrite DateTimeProvider to plain React context (it's not a store)\nAdd NumberProvider as a plain React context"
+        }
+    },
+    "/docs/packages/i18n": {
+        "title": "@leight/i18n",
+        "data": {
+            "": "This library provides common localization stuff for the client and server. It also contains some interesting methods for generating calendar\ndata.",
+            "installation#Installation": "npm i @leight/i18n\n\n\n\npnpm i @leight/i18n\n\n\n\nyarn add @leight/i18n"
         }
     },
     "/docs/packages/i18n/weeks-of": {
@@ -184,23 +198,16 @@
             "example-output#Example output": "This output is JSON.stringify(){:js} of the IWeeks interface, so there will be little differences, but this is just an example what\nyou can get.\n{\n\"input\": \"2023-04-02T01:54:13.458+02:00\",\n\"now\": \"2023-04-02T01:54:13.459+02:00\",\n\"start\": \"2023-03-25T00:00:00.000+01:00\",\n\"end\": \"2023-05-07T23:59:59.999+02:00\",\n\"interval\": {\n\"s\": \"2023-03-25T00:00:00.000+01:00\",\n\"e\": \"2023-05-07T23:59:59.999+02:00\",\n\"invalid\": null,\n\"isLuxonInterval\": true\n},\n\"isCurrent\": true,\n\"days\": [\n\"po\",\n\"út\",\n\"st\",\n\"čt\",\n\"pá\",\n\"so\",\n\"ne\"\n],\n\"weeks\": [\n{\n\"id\": \"202312\",\n\"week\": \"2023-03-20T00:00:00.000+01:00\",\n\"number\": 12,\n\"current\": false,\n\"days\": [\n{\n\"id\": \"2023120\",\n\"day\": \"2023-03-20T00:00:00.000+01:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023121\",\n\"day\": \"2023-03-21T00:00:00.000+01:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023122\",\n\"day\": \"2023-03-22T00:00:00.000+01:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023123\",\n\"day\": \"2023-03-23T00:00:00.000+01:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023124\",\n\"day\": \"2023-03-24T00:00:00.000+01:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023125\",\n\"day\": \"2023-03-25T00:00:00.000+01:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023126\",\n\"day\": \"2023-03-26T00:00:00.000+01:00\",\n\"current\": false,\n\"outOfRange\": true\n}\n]\n},\n{\n\"id\": \"202313\",\n\"week\": \"2023-03-27T00:00:00.000+02:00\",\n\"number\": 13,\n\"current\": true,\n\"days\": [\n{\n\"id\": \"2023130\",\n\"day\": \"2023-03-27T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023131\",\n\"day\": \"2023-03-28T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023132\",\n\"day\": \"2023-03-29T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023133\",\n\"day\": \"2023-03-30T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023134\",\n\"day\": \"2023-03-31T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023135\",\n\"day\": \"2023-04-01T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023136\",\n\"day\": \"2023-04-02T00:00:00.000+02:00\",\n\"current\": true,\n\"outOfRange\": false\n}\n]\n},\n{\n\"id\": \"202314\",\n\"week\": \"2023-04-03T00:00:00.000+02:00\",\n\"number\": 14,\n\"current\": false,\n\"days\": [\n{\n\"id\": \"2023140\",\n\"day\": \"2023-04-03T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023141\",\n\"day\": \"2023-04-04T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023142\",\n\"day\": \"2023-04-05T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023143\",\n\"day\": \"2023-04-06T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023144\",\n\"day\": \"2023-04-07T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023145\",\n\"day\": \"2023-04-08T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023146\",\n\"day\": \"2023-04-09T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n}\n]\n},\n{\n\"id\": \"202315\",\n\"week\": \"2023-04-10T00:00:00.000+02:00\",\n\"number\": 15,\n\"current\": false,\n\"days\": [\n{\n\"id\": \"2023150\",\n\"day\": \"2023-04-10T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023151\",\n\"day\": \"2023-04-11T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023152\",\n\"day\": \"2023-04-12T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023153\",\n\"day\": \"2023-04-13T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023154\",\n\"day\": \"2023-04-14T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023155\",\n\"day\": \"2023-04-15T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023156\",\n\"day\": \"2023-04-16T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n}\n]\n},\n{\n\"id\": \"202316\",\n\"week\": \"2023-04-17T00:00:00.000+02:00\",\n\"number\": 16,\n\"current\": false,\n\"days\": [\n{\n\"id\": \"2023160\",\n\"day\": \"2023-04-17T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023161\",\n\"day\": \"2023-04-18T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023162\",\n\"day\": \"2023-04-19T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023163\",\n\"day\": \"2023-04-20T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023164\",\n\"day\": \"2023-04-21T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023165\",\n\"day\": \"2023-04-22T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023166\",\n\"day\": \"2023-04-23T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n}\n]\n},\n{\n\"id\": \"202317\",\n\"week\": \"2023-04-24T00:00:00.000+02:00\",\n\"number\": 17,\n\"current\": false,\n\"days\": [\n{\n\"id\": \"2023170\",\n\"day\": \"2023-04-24T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023171\",\n\"day\": \"2023-04-25T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023172\",\n\"day\": \"2023-04-26T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023173\",\n\"day\": \"2023-04-27T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023174\",\n\"day\": \"2023-04-28T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023175\",\n\"day\": \"2023-04-29T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n},\n{\n\"id\": \"2023176\",\n\"day\": \"2023-04-30T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": false\n}\n]\n},\n{\n\"id\": \"202318\",\n\"week\": \"2023-05-01T00:00:00.000+02:00\",\n\"number\": 18,\n\"current\": false,\n\"days\": [\n{\n\"id\": \"2023180\",\n\"day\": \"2023-05-01T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023181\",\n\"day\": \"2023-05-02T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023182\",\n\"day\": \"2023-05-03T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023183\",\n\"day\": \"2023-05-04T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023184\",\n\"day\": \"2023-05-05T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023185\",\n\"day\": \"2023-05-06T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n},\n{\n\"id\": \"2023186\",\n\"day\": \"2023-05-07T00:00:00.000+02:00\",\n\"current\": false,\n\"outOfRange\": true\n}\n]\n}\n]\n}"
         }
     },
-    "/docs/packages/i18n": {
-        "title": "@leight/i18n",
+    "/docs/packages": {
+        "title": "Overview",
         "data": {
-            "": "This library provides common localization stuff for the client and server. It also contains some interesting methods for generating calendar\ndata.",
-            "installation#Installation": "npm i @leight/i18n\n\n\n\npnpm i @leight/i18n\n\n\n\nyarn add @leight/i18n"
+            "": "Here you are all packages in the project with some brief information about them."
         }
     },
     "/docs/packages/mantine": {
         "title": "@leight/mantine",
         "data": {
             "": ""
-        }
-    },
-    "/docs/packages": {
-        "title": "Overview",
-        "data": {
-            "": "Here you are all packages in the project with some brief information about them."
         }
     },
     "/docs/packages/mantine/page-shell": {
@@ -263,10 +270,20 @@
             "": ""
         }
     },
-    "/docs/workbench": {
-        "title": "Workbench",
+    "/docs/packages/utils": {
+        "title": "@leight/utils",
         "data": {
-            "": "Chapters in Workbench are sorted by relevance, so simpler or more basic things are up, complicated ones are near the bottom.\nHere you will find some tutorials and pieces which will help you use Leight Viv in it's full potential."
+            "": "This package contains a lot of small utilities from various other packages, which could be safely\nused on client/server.",
+            "installation#Installation": "npm i @leight/utils\n\n\n\npnpm i @leight/utils\n\n\n\nyarn add @leight/utils",
+            "api#API": "Each section here is exported from the package.",
+            "chain#chain()": "Useful when you need to rotate through values, for example true{:js} -> false{:js} -> undefined{:js}.Initial use case for this method was rotating sort order in tables (\"asc\"{:js} -> \"desc\":{:js} -> undefined{:js}).\nimport {chain} from \"@leight/utils\";\n\n/**\n* Next value: `false`\n*/\nconsole.log(\"Next value\", chain(true, [true, false, undefined]));\n/**\n* Next value: `A`\n*/\nconsole.log(\"Next value\", chain(\"C\", [\"A\", \"B\", \"C\"]));",
+            "cleanof#cleanOf()": "This method is proxy to fast-clean package.\nTakes an object as an input and removed all undefined{:js} properties while preserving null{:js}s.Second parameter of the method is options object from fast-clean.\nimport {cleanOf} from \"@leight/utils\";\n\n/**\n* Only `wipeMe` will be removed.\n*/\nconsole.log(\"cleanOf\", cleanOf({\nfoo: \"true\",\nbar: false,\nhello: null,\nwipeMe: undefined,\n}));"
+        }
+    },
+    "/docs/packages/zustand": {
+        "title": "@leight/zustand",
+        "data": {
+            "": "If you want see some examples, how to work with this library, see Workbench."
         }
     },
     "/docs/workbench/i18n": {
@@ -282,14 +299,10 @@
             "consumer---components#Consumer - Components": "import {Date, DateTime} from \"@leight/i18n-client\";\n\nexport const MyComponent2 = () => {\n/**\n* There are Date and DateTime components which internally use DateTime context; nothing special is inside,\n* no spans and so on, so you can do whatever you want with them.\n*/\nreturn <>\n<Date input={\"1995-04-14\"}/>\n<DateTime input={\"1995-04-14T07:32\"}/>\n</>;\n};"
         }
     },
-    "/docs/packages/utils": {
-        "title": "@leight/utils",
+    "/docs/workbench": {
+        "title": "Workbench",
         "data": {
-            "": "This package contains a lot of small utilities from various other packages, which could be safely\nused on client/server.",
-            "installation#Installation": "npm i @leight/utils\n\n\n\npnpm i @leight/utils\n\n\n\nyarn add @leight/utils",
-            "api#API": "Each section here is exported from the package.",
-            "chain#chain()": "Useful when you need to rotate through values, for example true{:js} -> false{:js} -> undefined{:js}.Initial use case for this method was rotating sort order in tables (\"asc\"{:js} -> \"desc\":{:js} -> undefined{:js}).\nimport {chain} from \"@leight/utils\";\n\n/**\n* Next value: `false`\n*/\nconsole.log(\"Next value\", chain(true, [true, false, undefined]));\n/**\n* Next value: `A`\n*/\nconsole.log(\"Next value\", chain(\"C\", [\"A\", \"B\", \"C\"]));",
-            "cleanof#cleanOf()": "This method is proxy to fast-clean package.\nTakes an object as an input and removed all undefined{:js} properties while preserving null{:js}s.Second parameter of the method is options object from fast-clean.\nimport {cleanOf} from \"@leight/utils\";\n\n/**\n* Only `wipeMe` will be removed.\n*/\nconsole.log(\"cleanOf\", cleanOf({\nfoo: \"true\",\nbar: false,\nhello: null,\nwipeMe: undefined,\n}));"
+            "": "Chapters in Workbench are sorted by relevance, so simpler or more basic things are up, complicated ones are near the bottom.\nHere you will find some tutorials and pieces which will help you use Leight Viv in it's full potential."
         }
     },
     "/docs/workbench/monorepo": {
@@ -302,12 +315,6 @@
         "title": "Prisma",
         "data": {
             "": ""
-        }
-    },
-    "/docs/packages/zustand": {
-        "title": "@leight/zustand",
-        "data": {
-            "": "If you want see some examples, how to work with this library, see Workbench."
         }
     },
     "/docs/workbench/sdk": {

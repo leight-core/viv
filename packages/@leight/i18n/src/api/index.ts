@@ -25,3 +25,4 @@ export interface IWithLocale {
 
 export * from "./weeks";
 export * from "./months";
+export * from "./years";

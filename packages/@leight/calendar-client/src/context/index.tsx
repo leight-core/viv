@@ -24,3 +24,4 @@ export const CalendarProvider: FC<ICalendarProviderProps> = ({children, input}) 
 
 export * from "./months";
 export * from "./weeks";
+export * from "./years";

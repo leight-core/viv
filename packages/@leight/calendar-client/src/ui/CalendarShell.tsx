@@ -47,7 +47,7 @@ const useStyles = createStyles(theme => ({
     },
     controlsPrefix: {},
     controlsSuffix: {},
-    header:         {
+    header:       {
         backgroundColor: theme.colors["gray"][0],
         fontWeight:      "bold",
         height:          "3em",
@@ -56,35 +56,46 @@ const useStyles = createStyles(theme => ({
         justifyContent:  "center",
         alignItems:      "center",
     },
-    cell:           {
+    cell:         {
         height:  "6em",
         padding: "0.4em 0.6em",
     },
-    monthCell:      {
+    monthCell:    {
         display:        "flex",
         flex:           "1 1 auto",
         justifyContent: "center",
         alignItems:     "center",
         cursor:         "pointer",
     },
-    row:            {
+    yearCell:     {
+        display:        "flex",
+        flex:           "1 1 auto",
+        justifyContent: "center",
+        alignItems:     "center",
+        cursor:         "pointer",
+    },
+    row:          {
         "& > div": {
             borderRight: "1px solid",
             borderColor: theme.colors["gray"][4],
         },
     },
-    currentMonth:   {
+    currentMonth: {
         fontWeight:      "bold",
         backgroundColor: theme.colors["gray"][1],
     },
-    currentWeek:    {},
-    currentDay:     {
+    currentYear:  {
+        fontWeight:      "bold",
+        backgroundColor: theme.colors["gray"][1],
+    },
+    currentWeek:  {},
+    currentDay:   {
         backgroundColor: theme.colors["gray"][2],
     },
-    inRange:        {
+    inRange:      {
         fontWeight: "bold",
     },
-    outOfRange:     {
+    outOfRange:   {
         backgroundColor: theme.colors["gray"][0],
     },
 }));

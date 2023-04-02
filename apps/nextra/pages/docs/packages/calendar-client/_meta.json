@@ -3,5 +3,6 @@
     "calendar": "Calendar",
     "calendar-provider": "CalendarProvider",
     "weeks": "Weeks",
-    "months": "Months"
+    "months": "Months",
+    "years": "Years"
 }
