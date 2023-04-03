@@ -155,7 +155,10 @@ export const Weeks: FC<IWeeksProps> = (
              */}
             <Grid
                 columns={columnCount}
-                className={classes.row}
+                className={classNames(
+                    classes.calendarGrid,
+                    classes.row,
+                )}
                 m={0}
             >
                 {withWeeks && <Grid.Col
@@ -181,6 +184,7 @@ export const Weeks: FC<IWeeksProps> = (
                 key={id}
                 columns={columnCount}
                 className={classNames(
+                    classes.calendarGrid,
                     classes.row,
                     isCurrent ? classes.currentWeek : undefined,
                 )}

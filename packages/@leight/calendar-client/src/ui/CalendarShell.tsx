@@ -9,23 +9,23 @@ import {
 import {
     type ComponentProps,
     type FC,
-    ReactNode
+    type ReactNode
 }                            from "react";
 
 const useStyles = createStyles(theme => ({
     calendar:       {
-        "& .mantine-Grid-root": {
-            border:         "1px solid",
-            borderColor:    theme.colors["gray"][4],
-            borderBottom:   "none",
-            borderRight:    "none",
-            "&:last-child": {
-                border:      "1px solid",
-                borderColor: theme.colors["gray"][4],
-                borderRight: "none",
-            },
+        userSelect: "none",
+    },
+    calendarGrid:   {
+        border:         "1px solid",
+        borderColor:    theme.colors["gray"][4],
+        borderBottom:   "none",
+        borderRight:    "none",
+        "&:last-child": {
+            border:      "1px solid",
+            borderColor: theme.colors["gray"][4],
+            borderRight: "none",
         },
-        userSelect:             "none",
     },
     controlsGrid:   {
         "& > div:last-child": {
@@ -156,6 +156,7 @@ export const CalendarShell: FC<ICalendarShellProps> = (
         {withControls && <Grid
             columns={controlColumnCount}
             className={classNames(
+                classes.calendarGrid,
                 classes.controlsGrid,
                 classes.controlsPrefix,
             )}
@@ -193,6 +194,7 @@ export const CalendarShell: FC<ICalendarShellProps> = (
         {withControls && (controlsBottomLeft || controlsBottomMiddle || controlsBottomRight) && <Grid
             columns={controlColumnCount}
             className={classNames(
+                classes.calendarGrid,
                 classes.controlsGrid,
                 classes.controlsSuffix,
             )}

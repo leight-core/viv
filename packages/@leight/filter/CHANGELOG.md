@@ -1,5 +1,11 @@
 # @leight/filter
 
+## 0.5.51
+
+### Patch Changes
+
+- Updated packages
+
 ## 0.5.50
 
 ### Patch Changes

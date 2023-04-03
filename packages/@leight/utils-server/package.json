@@ -1,5 +1,5 @@
 {
-    "version": "0.5.53",
+    "version": "0.5.54",
     "name": "@leight/utils-server",
     "description": "Utilities usable only on server-side.",
     "license": "MIT",
@@ -30,15 +30,15 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/utils": "^0.5.57",
+        "@leight/utils": "^0.5.58",
         "@paralleldrive/cuid2": "^2.2.0",
         "fast-glob": "^3.2.12"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.33",
-        "@leight/eslint-config-eslint": "^0.5.42",
-        "@leight/tsconfig": "^0.5.56",
-        "@leight/turbowatch": "^0.5.21",
+        "@leight/esbuild": "^0.5.34",
+        "@leight/eslint-config-eslint": "^0.5.43",
+        "@leight/tsconfig": "^0.5.57",
+        "@leight/turbowatch": "^0.5.22",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

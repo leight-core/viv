@@ -1,5 +1,11 @@
 # @leight/winston
 
+## 0.5.54
+
+### Patch Changes
+
+- Updated packages
+
 ## 0.5.53
 
 ### Patch Changes

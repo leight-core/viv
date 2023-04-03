@@ -34,11 +34,12 @@ export namespace IIMonthsProps {
     }
 }
 
-export const Months: FC<IMonthsProps> = ({
-                                             children,
-                                             onClick,
-                                             ...props
-                                         }) => {
+export const Months: FC<IMonthsProps> = (
+    {
+        children,
+        onClick,
+        ...props
+    }) => {
     const {months: {months, isCurrent, input}, today, prevYear, nextYear} = useMonths();
     const columnCount                                                     = 4;
     const rowCount                                                        = months.length / columnCount;
@@ -93,7 +94,10 @@ export const Months: FC<IMonthsProps> = ({
             {Array.from({length: rowCount}, (_, row) => <Grid
                 key={`month${row}`}
                 columns={columnCount}
-                className={classes.row}
+                className={classNames(
+                    classes.calendarGrid,
+                    classes.row,
+                )}
                 m={0}
             >
                 {Array.from({length: columnCount}, (_, column) => {

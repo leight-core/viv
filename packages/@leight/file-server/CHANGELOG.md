@@ -1,5 +1,22 @@
 # @leight/file-server
 
+## 0.5.63
+
+### Patch Changes
+
+- Updated packages
+- Updated dependencies
+    - @leight/prisma@0.5.71
+    - @leight/file@0.5.62
+    - @leight/container@0.5.56
+    - @leight/next.js@0.5.21
+    - @leight/next.js-server@0.5.61
+    - @leight/query@0.5.55
+    - @leight/source@0.5.55
+    - @leight/source-server@0.5.55
+    - @leight/trpc-source-server@0.5.9
+    - @leight/utils-server@0.5.54
+
 ## 0.5.62
 
 ### Patch Changes

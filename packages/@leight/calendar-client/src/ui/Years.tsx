@@ -44,7 +44,6 @@ export const Years: FC<IYearsProps> = (
               years: {
                          years,
                          isCurrent,
-                         input,
                          start,
                          end,
                          columns,
@@ -132,7 +131,10 @@ export const Years: FC<IYearsProps> = (
             {Array.from({length: rows}, (_, row) => <Grid
                 key={`year${row}`}
                 columns={columns}
-                className={classes.row}
+                className={classNames(
+                    classes.calendarGrid,
+                    classes.row,
+                )}
                 m={0}
             >
                 {Array.from({length: columns}, (_, column) => {
