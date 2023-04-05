@@ -1,5 +1,22 @@
 # @leight/job-client
 
+## 0.5.17
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+- Updated dependencies [9e54ef4c]
+- Updated dependencies
+    - @leight/job@0.5.66
+    - @leight/i18n@0.5.62
+    - @leight/i18n-client@0.5.62
+    - @leight/query-client@0.5.23
+    - @leight/sdk@0.5.14
+    - @leight/sort-client@0.5.19
+    - @leight/source-client@0.5.26
+    - @leight/utils@0.5.59
+
 ## 0.5.16
 
 ### Patch Changes

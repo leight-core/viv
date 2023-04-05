@@ -1,5 +1,22 @@
 # @leight/file
 
+## 0.5.63
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+- Updated dependencies [9e54ef4c]
+- Updated dependencies
+    - @leight/prisma@0.5.72
+    - @leight/container@0.5.57
+    - @leight/filter@0.5.52
+    - @leight/query@0.5.56
+    - @leight/react-query@0.5.19
+    - @leight/sort@0.5.53
+    - @leight/source@0.5.56
+    - @leight/zod@0.5.1
+
 ## 0.5.62
 
 ### Patch Changes

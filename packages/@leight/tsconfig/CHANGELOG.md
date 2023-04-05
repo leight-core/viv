@@ -1,5 +1,12 @@
 # @leight/tsconfig
 
+## 0.5.58
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+
 ## 0.5.57
 
 ### Patch Changes

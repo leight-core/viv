@@ -1,5 +1,15 @@
 # @leight/sql
 
+## 0.5.56
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+- Updated dependencies [9e54ef4c]
+- Updated dependencies
+    - @leight/prisma@0.5.72
+
 ## 0.5.55
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @leight/query-client
 
+## 0.5.23
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+- Updated dependencies [9e54ef4c]
+- Updated dependencies
+    - @leight/context@0.5.19
+    - @leight/cursor-client@0.5.25
+    - @leight/sort@0.5.53
+    - @leight/source@0.5.56
+
 ## 0.5.22
 
 ### Patch Changes

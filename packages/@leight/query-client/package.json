@@ -1,5 +1,5 @@
 {
-    "version": "0.5.22",
+    "version": "0.5.23",
     "name": "@leight/query-client",
     "description": "Client-side Query utilities.",
     "license": "MIT",
@@ -28,18 +28,18 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/context": "^0.5.18",
-        "@leight/cursor-client": "^0.5.24",
-        "@leight/sort": "^0.5.52",
-        "@leight/source": "^0.5.55",
+        "@leight/context": "^0.5.19",
+        "@leight/cursor-client": "^0.5.25",
+        "@leight/sort": "^0.5.53",
+        "@leight/source": "^0.5.56",
         "react": "^18.2.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.34",
-        "@leight/eslint-config-eslint": "^0.5.43",
-        "@leight/query": "^0.5.55",
-        "@leight/tsconfig": "^0.5.57",
-        "@leight/turbowatch": "^0.5.22",
+        "@leight/esbuild": "^0.5.35",
+        "@leight/eslint-config-eslint": "^0.5.44",
+        "@leight/query": "^0.5.56",
+        "@leight/tsconfig": "^0.5.58",
+        "@leight/turbowatch": "^0.5.23",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

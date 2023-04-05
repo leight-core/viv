@@ -1,5 +1,15 @@
 # @leight/prisma
 
+## 0.5.72
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+- Updated dependencies [9e54ef4c]
+- Updated dependencies
+    - @leight/container@0.5.57
+
 ## 0.5.71
 
 ### Patch Changes

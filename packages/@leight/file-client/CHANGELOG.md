@@ -1,5 +1,20 @@
 # @leight/file-client
 
+## 0.5.64
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+- Updated dependencies [9e54ef4c]
+- Updated dependencies
+    - @leight/file@0.5.63
+    - @leight/query-client@0.5.23
+    - @leight/sort-client@0.5.19
+    - @leight/source-client@0.5.26
+    - @leight/utils@0.5.59
+    - @leight/utils-client@0.5.60
+
 ## 0.5.63
 
 ### Patch Changes

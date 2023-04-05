@@ -1,5 +1,12 @@
 # @leight/react-query
 
+## 0.5.19
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+
 ## 0.5.18
 
 ### Patch Changes

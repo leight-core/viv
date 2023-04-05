@@ -1,5 +1,12 @@
 # @leight/winston
 
+## 0.5.55
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+
 ## 0.5.54
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @leight/sort-client
 
+## 0.5.19
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+- Updated dependencies [9e54ef4c]
+- Updated dependencies
+    - @leight/context-client@0.5.64
+    - @leight/sort@0.5.53
+
 ## 0.5.18
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @leight/xlsx-import-client
 
+## 0.5.57
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+- Updated dependencies [9e54ef4c]
+- Updated dependencies
+    - @leight/job-client@0.5.17
+    - @leight/tsconfig@0.5.58
+    - @leight/job@0.5.66
+    - @leight/i18n-client@0.5.62
+    - @leight/mantine@0.5.63
+    - @leight/utils-client@0.5.60
+
 ## 0.5.56
 
 ### Patch Changes

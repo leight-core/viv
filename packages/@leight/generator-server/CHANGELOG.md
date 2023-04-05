@@ -1,5 +1,17 @@
 # @leight/generator-server
 
+## 0.5.12
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+- Updated dependencies [9e54ef4c]
+- Updated dependencies
+    - @leight/generator@0.5.11
+    - @leight/utils@0.5.59
+    - @leight/utils-server@0.5.55
+
 ## 0.5.11
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @leight/trpc-server
 
+## 0.5.61
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+- Updated dependencies [9e54ef4c]
+- Updated dependencies
+    - @leight/user-server@0.5.68
+    - @leight/user@0.5.66
+    - @leight/container@0.5.57
+    - @leight/trpc@0.5.55
+
 ## 0.5.60
 
 ### Patch Changes

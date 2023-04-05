@@ -1,5 +1,17 @@
 # @leight/context-client
 
+## 0.5.64
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+- Updated dependencies [9e54ef4c]
+- Updated dependencies
+    - @leight/context@0.5.19
+    - @leight/utils@0.5.59
+    - @leight/zustand@0.5.56
+
 ## 0.5.63
 
 ### Patch Changes

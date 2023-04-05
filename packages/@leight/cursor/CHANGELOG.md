@@ -1,5 +1,14 @@
 # @leight/cursor
 
+## 0.5.50
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+- Updated dependencies
+    - @leight/zod@0.5.1
+
 ## 0.5.49
 
 ### Patch Changes

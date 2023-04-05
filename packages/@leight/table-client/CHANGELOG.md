@@ -1,5 +1,22 @@
 # @leight/table-client
 
+## 0.5.25
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+- Updated dependencies [9e54ef4c]
+- Updated dependencies
+    - @leight/cursor-client@0.5.25
+    - @leight/i18n@0.5.62
+    - @leight/i18n-client@0.5.62
+    - @leight/mantine@0.5.63
+    - @leight/sort@0.5.53
+    - @leight/sort-client@0.5.19
+    - @leight/source@0.5.56
+    - @leight/utils@0.5.59
+
 ## 0.5.24
 
 ### Patch Changes

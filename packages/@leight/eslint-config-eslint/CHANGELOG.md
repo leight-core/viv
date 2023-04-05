@@ -1,5 +1,12 @@
 # @leight/eslint-config-eslint
 
+## 0.5.44
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+
 ## 0.5.43
 
 ### Patch Changes

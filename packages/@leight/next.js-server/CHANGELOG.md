@@ -1,5 +1,21 @@
 # @leight/next.js-server
 
+## 0.5.62
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+- Updated dependencies [9e54ef4c]
+- Updated dependencies
+    - @leight/user-server@0.5.68
+    - @leight/prisma@0.5.72
+    - @leight/user@0.5.66
+    - @leight/container@0.5.57
+    - @leight/next.js@0.5.22
+    - @leight/utils@0.5.59
+    - @leight/winston@0.5.55
+
 ## 0.5.61
 
 ### Patch Changes

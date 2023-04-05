@@ -1,5 +1,14 @@
 # @leight/env
 
+## 0.5.27
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+- Updated dependencies
+    - @leight/zod@0.5.1
+
 ## 0.5.26
 
 ### Patch Changes

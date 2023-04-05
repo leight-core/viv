@@ -1,5 +1,12 @@
 # @leight/esbuild
 
+## 0.5.35
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+
 ## 0.5.34
 
 ### Patch Changes

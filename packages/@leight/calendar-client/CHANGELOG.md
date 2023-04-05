@@ -1,5 +1,21 @@
 # @leight/calendar-client
 
+## 0.5.13
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+- Updated dependencies [9e54ef4c]
+- Updated dependencies
+    - @leight/context-client@0.5.64
+    - @leight/i18n@0.5.62
+    - @leight/i18n-client@0.5.62
+    - @leight/mantine@0.5.63
+    - @leight/utils@0.5.59
+    - @leight/utils-client@0.5.60
+    - @leight/zustand@0.5.56
+
 ## 0.5.12
 
 ### Patch Changes

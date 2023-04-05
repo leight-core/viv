@@ -1,5 +1,18 @@
 # @leight/xlsx-import
 
+## 0.5.56
+
+### Patch Changes
+
+- 9e54ef4c: Added @total-typescript/ts-reset
+- Version bump
+- Updated dependencies [9e54ef4c]
+- Updated dependencies
+    - @leight/job@0.5.66
+    - @leight/import@0.5.55
+    - @leight/trpc@0.5.55
+    - @leight/zod@0.5.1
+
 ## 0.5.55
 
 ### Patch Changes
