@@ -33,6 +33,7 @@
         "strict": true,
         "strictPropertyInitialization": true,
         "types": [
+            "@total-typescript/ts-reset",
             "node"
         ],
         "useDefineForClassFields": true

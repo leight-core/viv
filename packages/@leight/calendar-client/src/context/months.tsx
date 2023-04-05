@@ -57,7 +57,7 @@ export const {
         ...state,
     }),
     name:  "MonthsContext",
-    hint:  "Add MonthsProvider.",
+    hint:  "Add CalendarProvider or MonthsProvider.",
 });
 
 export interface IMonthsProviderProps extends Omit<ComponentProps<typeof MonthsStoreProvider>, "state"> {

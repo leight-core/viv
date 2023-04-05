@@ -1,47 +1,41 @@
-import {type DateTime} from "@leight/i18n";
-import {DateInline}    from "@leight/i18n-client";
+import {DateInline} from "@leight/i18n-client";
 import {
     ActionIcon,
     Box,
     Button,
     Overlay
-}                      from "@mantine/core";
+}                   from "@mantine/core";
 import {
     IconCalendarSearch,
     IconX
-}                      from "@tabler/icons-react";
+}                   from "@tabler/icons-react";
 import {
     type FC,
     useState
-}                      from "react";
+}                   from "react";
 import {
-    CalendarProvider,
     useMonths,
     useWeeks,
     useYears
-}                      from "../context";
-import {Months}        from "./Months";
+}                   from "../context";
+import {Months}     from "./Months";
 import {
     IWeeksProps,
     Weeks
-}                      from "./Weeks";
-import {Years}         from "./Years";
+}                   from "./Weeks";
+import {Years}      from "./Years";
 
-export interface ICalendarProps {
+export interface ICalendarProps extends IWeeksProps {
     onClick?: IWeeksProps["onClick"];
     withControls?: boolean;
-    input?: DateTime;
 }
 
-export const Calendar: FC<ICalendarProps> = ({input, ...props}) => {
-    return <CalendarProvider
-        input={input}
-    >
-        <CalendarInternal {...props}/>
-    </CalendarProvider>;
-};
-
-const CalendarInternal: FC<Omit<ICalendarProps, "input">> = ({withControls, onClick}) => {
+export const Calendar: FC<ICalendarProps> = (
+    {
+        onClick,
+        withControls = true,
+        ...props
+    }) => {
     const {weeksOf, weeks}              = useWeeks(({weeksOf, weeks}) => ({weeksOf, weeks}));
     const {monthsOf}                    = useMonths(({monthsOf}) => ({monthsOf}));
     const {yearsOf}                     = useYears(({yearsOf}) => ({yearsOf}));
@@ -73,6 +67,7 @@ const CalendarInternal: FC<Omit<ICalendarProps, "input">> = ({withControls, onCl
                     <DateInline input={weeks.input.toJSDate()} options={{year: "numeric"}}/>
                 </Button>
             </Button.Group>}
+            {...props}
         >
             {selectMonth && <Overlay color={"#FFF"} opacity={1}>
                 <Months

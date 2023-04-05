@@ -1,7 +1,7 @@
 {
-    "version": "0.5.54",
-    "name": "@leight/xlsx-import-server",
-    "description": "Support for XLSX import (server-side) using @leight/job stuff.",
+    "version": "0.5.0",
+    "name": "@leight/zod",
+    "description": "Zod helper stuff.",
     "license": "MIT",
     "repository": {
         "type": "git",
@@ -28,17 +28,7 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "^0.5.56",
-        "@leight/file": "^0.5.62",
-        "@leight/import": "^0.5.54",
-        "@leight/job": "^0.5.65",
-        "@leight/trpc-server": "^0.5.60",
-        "@leight/utils": "^0.5.58",
-        "@leight/utils-server": "^0.5.54",
-        "@leight/xlsx-import": "^0.5.55",
-        "@leight/zod": "^0.5.0",
-        "measure-time": "^5.0.8",
-        "xlsx": "^0.18.5"
+        "zod": "3.21.1"
     },
     "devDependencies": {
         "@leight/esbuild": "^0.5.34",

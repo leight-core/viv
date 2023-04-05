@@ -50,7 +50,7 @@ export const NextAuthEndpoint = ({options, providers, container}: INextAuthEndpo
         session:   {
             strategy: "jwt",
         },
-        providers: providers.filter((provider): provider is Provider => !!provider),
+        providers: providers.filter(Boolean),
         callbacks: {
             jwt:     async (token) => {
                 try {

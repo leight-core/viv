@@ -69,7 +69,7 @@ export const {
         ...state,
     }),
     name:  "YearsContext",
-    hint:  "Add YearsProvider.",
+    hint:  "Add CalendarProvider or YearsProvider.",
 });
 
 export interface IYearsProviderProps extends Omit<ComponentProps<typeof YearsStoreProvider>, "state"> {

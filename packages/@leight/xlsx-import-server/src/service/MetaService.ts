@@ -1,17 +1,18 @@
 import type {
-    IMetaSchema,
+    IMeta,
     IMetaService,
     IMetaServiceConfig,
     ITabService,
     ITranslationService,
-}         from "@leight/xlsx-import";
+}               from "@leight/xlsx-import";
 import {
     $MetaServiceConfig,
     $TabService,
     $TranslationService,
     MetaSchema
-}         from "@leight/xlsx-import";
-import fs from "fs";
+}               from "@leight/xlsx-import";
+import {jsonOf} from "@leight/zod";
+import fs       from "node:fs";
 
 export class MetaService implements IMetaService {
     static inject = [
@@ -27,7 +28,7 @@ export class MetaService implements IMetaService {
     ) {
     }
 
-    async toMeta({workbook, name}: IMetaService.MetaProps): Promise<IMetaSchema> {
+    async toMeta({workbook, name}: IMetaService.MetaProps): Promise<IMeta> {
         const tabs         = await this.tabService.toTabs(workbook);
         const translations = await this.translationService.toTranslations(
             workbook
@@ -36,9 +37,12 @@ export class MetaService implements IMetaService {
         const template     = `${this.metaServiceConfig.templates}/${type}.json`;
 
         if (!tabs.length && type && fs.existsSync(template)) {
-            const meta = JSON.parse(fs.readFileSync(template, "utf8"));
-            MetaSchema.parse(meta);
-            return meta;
+            /**
+             * CHECK RETURN TYPE
+             */
+            const aaa = jsonOf(MetaSchema, fs.readFileSync(template, "utf8"));
+
+            return jsonOf(MetaSchema, fs.readFileSync(template, "utf8"));
         }
 
         return {

@@ -75,7 +75,7 @@ export const {
         ...state,
     }),
     name:  "WeeksContext",
-    hint:  "Add WeeksProvider.",
+    hint:  "Add CalendarProvider or WeeksProvider.",
 });
 
 export interface IWeeksProviderProps extends Omit<ComponentProps<typeof WeeksStoreProvider>, "state"> {

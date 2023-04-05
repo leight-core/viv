@@ -1,5 +1,5 @@
 import type {
-    ITranslationSchema,
+    ITranslation,
     ITranslationService,
     IXlsxTranslation
 } from "@leight/xlsx-import";
@@ -9,14 +9,14 @@ import {
 } from "xlsx";
 
 export class TranslationService implements ITranslationService {
-    async toTranslations(workbook: WorkBook): Promise<ITranslationSchema[]> {
+    async toTranslations(workbook: WorkBook): Promise<ITranslation[]> {
         const {translations} = workbook.Sheets;
         if (!translations) {
             return [];
         }
         return utils
             .sheet_to_json<IXlsxTranslation>(translations)
-            .reduce<ITranslationSchema[]>(
+            .reduce<ITranslation[]>(
                 (result, current) => {
                     return [
                         ...result,
@@ -32,7 +32,7 @@ export class TranslationService implements ITranslationService {
             );
     }
 
-    translate(item: Record<string, string>, translations: ITranslationSchema[]): Record<string, string> {
+    translate(item: Record<string, string>, translations: ITranslation[]): Record<string, string> {
         const output: Record<string, string> = {...item};
         translations.forEach(({to, from: {source, concat}}) => {
             output[to] = source.map(key => item[key] ?? "").filter(Boolean).join(concat);
