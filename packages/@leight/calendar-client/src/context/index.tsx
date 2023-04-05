@@ -3,9 +3,9 @@ import {
     type FC,
     type PropsWithChildren
 }                         from "react";
-import {MonthsOfProvider} from "./months";
-import {WeeksOfProvider}  from "./weeks";
-import {YearsOfProvider}  from "./years";
+import {MonthsOfProvider} from "./MonthsOfStore";
+import {WeeksOfProvider}  from "./WeeksOfStore";
+import {YearsOfProvider}  from "./YearsOfStore";
 
 export type ICalendarProviderProps = PropsWithChildren<{
     date?: DateTime;
@@ -27,6 +27,7 @@ export const CalendarProvider: FC<ICalendarProviderProps> = ({children, date}) =
     </YearsOfProvider>;
 };
 
-export * from "./months";
-export * from "./weeks";
-export * from "./years";
+export * from "./CalendarItemsStore";
+export * from "./MonthsOfStore";
+export * from "./WeeksOfStore";
+export * from "./YearsOfStore";

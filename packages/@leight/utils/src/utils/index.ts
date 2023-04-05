@@ -9,3 +9,4 @@ export * from "./Pack";
 export * from "./toHumanBytes";
 export * from "./toHumanNumber";
 export * from "./toPercent";
+export * from "./withBool";

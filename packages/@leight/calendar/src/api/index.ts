@@ -4,20 +4,24 @@ import {z}        from "@leight/zod";
 /**
  * Defines an individual calendar item being rendered/handled in a particular day.
  */
-export const CalendarItemSchema = z.object({
+export const CalendarEventSchema = z.object({
     date: z.string().transform(input => DateTime.fromISO(input)),
+    data: z.record(z.any()).optional(),
 });
-export type ICalendarItemSchema = typeof CalendarItemSchema;
-export type ICalendarItem = z.infer<ICalendarItemSchema>;
+export type ICalendarEventSchema = typeof CalendarEventSchema;
+export type ICalendarEvent = z.infer<ICalendarEventSchema>;
 
 /**
  * Overall calendar data (could be returned from an API or whatever).
  */
-export const CalendarDataSchema = z.object({
-    items: CalendarItemSchema.array(),
+export const CalendarItemsSchema = z.object({
+    /**
+     * Single events
+     */
+    events: CalendarEventSchema.array(),
 });
-export type ICalendarDataSchema = typeof CalendarDataSchema;
-export type ICalendarData = z.infer<ICalendarDataSchema>;
+export type ICalendarItemsSchema = typeof CalendarItemsSchema;
+export type ICalendarItems = z.infer<ICalendarItemsSchema>;
 
 export * from "./months";
 export * from "./weeks";

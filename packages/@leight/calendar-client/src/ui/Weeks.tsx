@@ -1,31 +1,35 @@
-import {type IDay}    from "@leight/calendar";
-import {DateTime}     from "@leight/i18n";
-import {DateInline}   from "@leight/i18n-client";
-import {classNames}   from "@leight/utils-client";
+import {type IDay}  from "@leight/calendar";
+import {DateTime}   from "@leight/i18n";
+import {DateInline} from "@leight/i18n-client";
+import {classNames} from "@leight/utils-client";
 import {
     ActionIcon,
     Button,
     Grid,
     Group,
+    Stack,
     Text
-}                     from "@mantine/core";
+}                   from "@mantine/core";
 import {
     IconCalendarEvent,
     IconChevronLeft,
     IconChevronRight,
     IconChevronsLeft,
     IconChevronsRight
-}                     from "@tabler/icons-react";
+}                   from "@tabler/icons-react";
 import {
     type FC,
     type PropsWithChildren,
     useState
-}                     from "react";
-import {WeeksOfStore} from "../context";
+}                   from "react";
+import {
+    CalendarItemsStore,
+    WeeksOfStore
+}                   from "../context";
 import {
     CalendarShell,
     type ICalendarShellProps
-}                     from "./CalendarShell";
+}                   from "./CalendarShell";
 
 export type IWeeksProps = PropsWithChildren<Omit<ICalendarShellProps, "children" | "onClick"> & {
     onClick?(props: IWeeksProps.IOnClickProps): void;
@@ -64,7 +68,11 @@ export const Weeks: FC<IWeeksProps> = (
                          start,
                          isCurrent,
                      }
-          }                         = WeeksOfStore.useState();
+          }     = WeeksOfStore.useState();
+    const items = CalendarItemsStore.useOptionalState();
+
+    console.log("items!", items?.items);
+
     const [withWeeks, setWithWeeks] = useState(defaultWithWeekNo);
     /**
      * This is specific for Mantine Grid: compute number of columns to render.
@@ -207,16 +215,19 @@ export const Weeks: FC<IWeeksProps> = (
                     style={onClick ? {cursor: "pointer"} : undefined}
                     onClick={() => onClick?.({day})}
                 >
-                    <div
-                        style={{
-                            textAlign:    "right",
-                            paddingRight: "0.4em",
-                            paddingTop:   "0.2em",
-                        }}
+                    <Stack
+                        justify={"space-between"}
+                        style={{height: "100%", padding: "0 0.3em"}}
                     >
-                        {/* Doesn't look this funny? */}
-                        {day.day.day}
-                    </div>
+                        <Group position={"apart"}>
+                            <Group spacing={0}>
+                                <ActionIcon size={"sm"}>
+                                    <IconCalendarEvent/>
+                                </ActionIcon>
+                            </Group>
+                            {day.day.day}
+                        </Group>
+                    </Stack>
                 </Grid.Col>)}
             </Grid>)}
             {children}

@@ -1,19 +1,27 @@
 import {
     type InferSelectors,
     switchScheme
-}                   from "@leight/mantine";
-import {isCallable} from "@leight/utils";
-import {classNames} from "@leight/utils-client";
+} from "@leight/mantine";
 import {
+    isCallable,
+    withBool
+} from "@leight/utils";
+import {
+    BlockStore,
+    classNames
+} from "@leight/utils-client";
+import {
+    Box,
     Container,
     createStyles,
-    Grid
-}                   from "@mantine/core";
+    Grid,
+    LoadingOverlay
+} from "@mantine/core";
 import {
     type ComponentProps,
     type FC,
     type ReactNode
-}                   from "react";
+} from "react";
 
 const useStyles = createStyles(theme => ({
     calendar:     {
@@ -184,6 +192,7 @@ export const CalendarShell: FC<ICalendarShellProps> = (
         children,
         ...props
     }) => {
+    const blockStore         = BlockStore.useOptionalState();
     const {classes}          = useStyles();
     const controlColumnCount = 18;
     const controlWidth       = 7;
@@ -192,10 +201,11 @@ export const CalendarShell: FC<ICalendarShellProps> = (
         classes,
     };
 
-    return <Container
+    return <Box
         className={classes.calendar}
         {...props}
     >
+        <LoadingOverlay visible={withBool(blockStore?.isBlock, false)}/>
         {withControls && <Grid
             columns={controlColumnCount}
             className={classNames(
@@ -271,5 +281,5 @@ export const CalendarShell: FC<ICalendarShellProps> = (
                 {renderComponent(controlsBottomRight, renderProps)}
             </Grid.Col>
         </Grid>}
-    </Container>;
+    </Box>;
 };
