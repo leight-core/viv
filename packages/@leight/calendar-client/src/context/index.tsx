@@ -1,30 +1,30 @@
-import {type DateTime}  from "@leight/i18n";
+import {type DateTime}    from "@leight/i18n";
 import {
     type FC,
     type PropsWithChildren
-}                       from "react";
-import {MonthsProvider} from "./months";
-import {WeeksProvider}  from "./weeks";
-import {YearsProvider}  from "./years";
+}                         from "react";
+import {MonthsOfProvider} from "./months";
+import {WeeksOfProvider}  from "./weeks";
+import {YearsOfProvider}  from "./years";
 
 export type ICalendarProviderProps = PropsWithChildren<{
     date?: DateTime;
 }>;
 
 export const CalendarProvider: FC<ICalendarProviderProps> = ({children, date}) => {
-    return <YearsProvider
+    return <YearsOfProvider
         date={date}
     >
-        <MonthsProvider
+        <MonthsOfProvider
             date={date}
         >
-            <WeeksProvider
+            <WeeksOfProvider
                 date={date}
             >
                 {children}
-            </WeeksProvider>
-        </MonthsProvider>
-    </YearsProvider>;
+            </WeeksOfProvider>
+        </MonthsOfProvider>
+    </YearsOfProvider>;
 };
 
 export * from "./months";

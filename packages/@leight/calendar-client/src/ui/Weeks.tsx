@@ -81,7 +81,7 @@ export const Weeks: FC<IWeeksProps> = (
                     leftIcon={<IconChevronLeft/>}
                 >
                     <DateInline
-                        input={start.minus({month: 1}).toJSDate()}
+                        date={start.minus({month: 1})}
                         options={{month: "long"}}
                     />
                 </Button>
@@ -92,7 +92,7 @@ export const Weeks: FC<IWeeksProps> = (
                     leftIcon={<IconChevronsLeft/>}
                 >
                     <DateInline
-                        input={start.minus({year: 1}).toJSDate()}
+                        date={start.minus({year: 1})}
                         options={{year: "numeric"}}
                     />
                 </Button>
@@ -106,8 +106,8 @@ export const Weeks: FC<IWeeksProps> = (
             >
                 <Text c={"dimmed"}>
                     {isCurrent ?
-                        <DateInline input={DateTime.now().toJSDate()} options={{day: "numeric", month: "long", year: "numeric"}}/> :
-                        <DateInline input={start.toJSDate()} options={{month: "long", year: "numeric"}}/>
+                        <DateInline date={DateTime.now()} options={{day: "numeric", month: "long", year: "numeric"}}/> :
+                        <DateInline date={start} options={{month: "long", year: "numeric"}}/>
                     }
                 </Text>
             </Button>
@@ -121,7 +121,7 @@ export const Weeks: FC<IWeeksProps> = (
                     rightIcon={<IconChevronsRight/>}
                 >
                     <DateInline
-                        input={start.plus({year: 1}).toJSDate()}
+                        date={start.plus({year: 1})}
                         options={{year: "numeric"}}
                     />
                 </Button>
@@ -132,7 +132,7 @@ export const Weeks: FC<IWeeksProps> = (
                     rightIcon={<IconChevronRight/>}
                 >
                     <DateInline
-                        input={start.plus({month: 1}).toJSDate()}
+                        date={start.plus({month: 1})}
                         options={{month: "long"}}
                     />
                 </Button>

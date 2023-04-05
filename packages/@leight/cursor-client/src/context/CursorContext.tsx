@@ -2,6 +2,10 @@ import {
     createStoreContext,
     type IStoreProps
 } from "@leight/context-client";
+import {
+    ComponentProps,
+    FC
+} from "react";
 
 export type ICursorStoreProps = IStoreProps<{
     readonly page: number;
@@ -19,13 +23,7 @@ export type ICursorStoreProps = IStoreProps<{
     setIsLoading(isLoading: boolean): void;
 }>
 
-export const {
-                 Provider:         CursorProvider,
-                 useState:         useCursorState,
-                 useOptionalState: useOptionalCursorState,
-                 useStore:         useCursorStore,
-                 useOptionalStore: useOptionalCursorStore,
-             } = createStoreContext<ICursorStoreProps>({
+export const CursorStore = createStoreContext<ICursorStoreProps>({
     state: () => (set) => ({
         page:      0,
         size:      30,
@@ -51,6 +49,15 @@ export const {
             set({isLoading});
         },
     }),
-    name:  "CursorContext",
-    hint:  "Add CursorProvider.",
+    name:  "CursorStore",
+    hint:  "Add CursorStore.Provider.",
 });
+
+export interface ICursorProviderProps extends Omit<ComponentProps<typeof CursorStore["Provider"]>, "state"> {
+}
+
+export const CursorProvider: FC<ICursorProviderProps> = props => {
+    return <CursorStore.Provider
+        {...props}
+    />;
+};

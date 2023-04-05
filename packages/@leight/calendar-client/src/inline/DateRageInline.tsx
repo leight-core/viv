@@ -30,11 +30,11 @@ export const DateRageInline: FC<IDateRageInlineProps> = (
         {...props}
     >
         <DateInline
-            input={start.toJSDate()}
+            date={start}
             options={startOptions}
         />
         <DateInline
-            input={end.toJSDate()}
+            date={end}
             options={endOptions}
         />
     </Breadcrumbs>;

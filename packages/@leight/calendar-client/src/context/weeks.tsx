@@ -71,15 +71,15 @@ export const WeeksOfStore = createStoreContext<IWeeksStoreStoreProps>({
         },
         ...state,
     }),
-    name:  "WeeksContext",
-    hint:  "Add CalendarProvider or WeeksProvider.",
+    name:  "WeeksOfStore",
+    hint:  "Add WeeksOfProvider or CalendarProvider.",
 });
 
-export interface IWeeksProviderProps extends Omit<ComponentProps<typeof WeeksOfStore["Provider"]>, "state"> {
+export interface IWeeksOfProviderProps extends Omit<ComponentProps<typeof WeeksOfStore["Provider"]>, "state"> {
     date?: DateTime;
 }
 
-export const WeeksProvider: FC<IWeeksProviderProps> = ({date, ...props}) => {
+export const WeeksOfProvider: FC<IWeeksOfProviderProps> = ({date, ...props}) => {
     return <WeeksOfStore.Provider
         state={{
             weeks: weeksOf({date}),

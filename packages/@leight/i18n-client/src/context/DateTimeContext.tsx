@@ -10,7 +10,8 @@ import {
 import {
     DateTime,
     type DateTimeFormatOptions,
-    type IDateInput
+    type IDateInput,
+    isDateTime
 }                 from "@leight/i18n";
 import {isString} from "@leight/utils";
 import {
@@ -25,47 +26,46 @@ export type IDateTimeStoreProps = IStoreProps<{
     /**
      * Take input string in ISO format and reformat it into the user's locale.
      */
-    toLocalDate(input?: IDateInput, fallback?: IDateInput, opts?: DateTimeFormatOptions): string | undefined;
+    toLocalDate(date?: IDateInput, fallback?: IDateInput, opts?: DateTimeFormatOptions): string | undefined;
     /**
      * Take input string in ISO format and return localized date & time
      */
-    toLocalDateTime(input?: IDateInput, fallback?: IDateInput, opts?: DateTimeFormatOptions): string | undefined;
+    toLocalDateTime(date?: IDateInput, fallback?: IDateInput, opts?: DateTimeFormatOptions): string | undefined;
 }>
 
-const iso2locale = (input?: IDateInput, fallback?: IDateInput, opts?: DateTimeFormatOptions): string | undefined => {
-    if (!input) {
-        input = fallback;
+const iso2locale = (date?: IDateInput, fallback?: IDateInput, opts?: DateTimeFormatOptions): string | undefined => {
+    if (!date) {
+        date = fallback;
     }
-    if (!input) {
+    if (!date) {
         return undefined;
     }
-    return (isString(input) ? DateTime.fromISO(input) : DateTime.fromJSDate(input)).toLocaleString(opts);
+    if (isString(date)) {
+        return DateTime.fromISO(date).toLocaleString(opts);
+    } else if (isDateTime(date)) {
+        return date.toLocaleString(opts);
+    }
+    return DateTime.fromJSDate(date).toLocaleString(opts);
 };
 
-export const {
-                 Provider:         DateTimeStoreProvider,
-                 useState:         useDateTimeState,
-                 useOptionalState: useOptionalDateTimeState,
-                 useStore:         useDateTimeStore,
-                 useOptionalStore: useOptionalDateTimeStore,
-             } = createStoreContext<IDateTimeStoreProps>({
+export const DateTimeStore = createStoreContext<IDateTimeStoreProps>({
     state: () => () => ({
-        toLocalDate(input, fallback, opts = DateTime.DATE_MED) {
-            return iso2locale(input, fallback, opts);
+        toLocalDate(date, fallback, opts = DateTime.DATE_MED) {
+            return iso2locale(date, fallback, opts);
         },
-        toLocalDateTime(input, fallback, opts = DateTime.DATETIME_MED) {
-            return iso2locale(input, fallback, opts);
+        toLocalDateTime(date, fallback, opts = DateTime.DATETIME_MED) {
+            return iso2locale(date, fallback, opts);
         },
     }),
-    name:  "DateTimeContext",
-    hint:  "Add DateTimeStoreProvider.",
+    name:  "DateTimeStore",
+    hint:  "Add DateTimeStore.Provider.",
 });
 
-export interface IDateTimeProviderProps extends Omit<ComponentProps<typeof DateTimeStoreProvider>, "state"> {
+export interface IDateTimeProviderProps extends Omit<ComponentProps<typeof DateTimeStore["Provider"]>, "state"> {
 }
 
 export const DateTimeProvider: FC<IDateTimeProviderProps> = ({...props}) => {
-    return <DateTimeStoreProvider
+    return <DateTimeStore.Provider
         {...props}
     />;
 };

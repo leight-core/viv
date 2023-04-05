@@ -6,7 +6,7 @@ import {z}                 from "@leight/zod";
 import {PropsWithChildren} from "react";
 import {
     CursorProvider,
-    useCursorState
+    CursorStore
 }                          from "../context";
 
 export type ICursorControlProps<TQuerySchema extends IQuerySchema> = PropsWithChildren<{
@@ -20,7 +20,7 @@ const InternalCursor = <TQuerySchema extends IQuerySchema>({useCountQuery, child
     /**
      * @TODO connect to FilterProvider/FilterStore
      */
-    const {setTotal, setIsLoading} = useCursorState(({setTotal, setIsLoading}) => ({setTotal, setIsLoading}));
+    const {setTotal, setIsLoading} = CursorStore.useState(({setTotal, setIsLoading}) => ({setTotal, setIsLoading}));
     useCountQuery({}, {
         onSuccess: data => {
             setTotal(data);

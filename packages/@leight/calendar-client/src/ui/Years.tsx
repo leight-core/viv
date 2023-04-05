@@ -66,7 +66,7 @@ export const Years: FC<IYearsProps> = (
                     leftIcon={<IconChevronsLeft/>}
                 >
                     <DateInline
-                        input={start.minus({year: count}).toJSDate()}
+                        date={start.minus({year: count})}
                         options={{year: "numeric"}}
                     />
                 </Button>
@@ -77,7 +77,7 @@ export const Years: FC<IYearsProps> = (
                     leftIcon={<IconChevronLeft/>}
                 >
                     <DateInline
-                        input={start.minus({year: 1}).toJSDate()}
+                        date={start.minus({year: 1})}
                         options={{year: "numeric"}}
                     />
                 </Button>
@@ -108,7 +108,7 @@ export const Years: FC<IYearsProps> = (
                     rightIcon={<IconChevronRight/>}
                 >
                     <DateInline
-                        input={end.plus({year: 1}).toJSDate()}
+                        date={end.plus({year: 1})}
                         options={{year: "numeric"}}
                     />
                 </Button>
@@ -119,7 +119,7 @@ export const Years: FC<IYearsProps> = (
                     leftIcon={<IconChevronsRight/>}
                 >
                     <DateInline
-                        input={end.plus({year: count}).toJSDate()}
+                        date={end.plus({year: count})}
                         options={{year: "numeric"}}
                     />
                 </Button>

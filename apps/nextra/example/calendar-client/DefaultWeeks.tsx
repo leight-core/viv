@@ -1,6 +1,6 @@
 import {
     Weeks,
-    WeeksProvider
+    WeeksOfProvider
 }                from "@leight/calendar-client";
 import {type FC} from "react";
 
@@ -13,7 +13,7 @@ export const DefaultWeeks: FC<IDefaultWeeksProps> = () => {
      *
      * CalendarProvider provides all stuff needed for the whole Calendar (weeks/months/years/...).
      */
-    return <WeeksProvider>
+    return <WeeksOfProvider>
         <Weeks
             /**
              * Controls are enabled by default and do not create such overhead; this is just for
@@ -21,5 +21,5 @@ export const DefaultWeeks: FC<IDefaultWeeksProps> = () => {
              */
             withControls={false}
         />
-    </WeeksProvider>;
+    </WeeksOfProvider>;
 };

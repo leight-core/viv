@@ -2,6 +2,10 @@ import {
     createStoreContext,
     type IStoreProps
 } from "@leight/context-client";
+import {
+    ComponentProps,
+    FC
+} from "react";
 
 export type ILoopsStoreProps = IStoreProps<{
     readonly isRunning: boolean;
@@ -12,13 +16,7 @@ export type ILoopsStoreProps = IStoreProps<{
     dec(): void;
 }>
 
-export const {
-                 Provider:         LoopsProvider,
-                 useState:         useLoopsState,
-                 useOptionalState: useOptionalLoopsState,
-                 useStore:         useLoopsStore,
-                 useOptionalStore: useOptionalLoopsStore,
-             } = createStoreContext<ILoopsStoreProps>({
+export const LoopsStore = createStoreContext<ILoopsStoreProps>({
     state: () => (set, get) => ({
         get isRunning() {
             return get().current > 0;
@@ -27,6 +25,15 @@ export const {
         inc:     () => set(({current}) => ({current: current + 1})),
         dec:     () => set(({current}) => ({current: current - 1})),
     }),
-    name:  "LoopsContext",
+    name:  "LoopsStore",
     hint:  "Add LoopsProvider."
 });
+
+export interface ILoopsProviderProps extends Omit<ComponentProps<typeof LoopsStore["Provider"]>, "state"> {
+}
+
+export const LoopsProvider: FC<ILoopsProviderProps> = props => {
+    return <LoopsStore.Provider
+        {...props}
+    />;
+};

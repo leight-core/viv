@@ -54,7 +54,7 @@ export const Calendar: FC<ICalendarProps> = (
                     }}
                     leftIcon={<IconCalendarSearch/>}
                 >
-                    <DateInline input={weeks.date.toJSDate()} options={{month: "long"}}/>
+                    <DateInline date={weeks.date} options={{month: "long"}}/>
                 </Button>
                 <Button
                     variant={"subtle"}
@@ -64,7 +64,7 @@ export const Calendar: FC<ICalendarProps> = (
                     }}
                     leftIcon={<IconCalendarSearch/>}
                 >
-                    <DateInline input={weeks.date.toJSDate()} options={{year: "numeric"}}/>
+                    <DateInline date={weeks.date} options={{year: "numeric"}}/>
                 </Button>
             </Button.Group>}
             {...props}
@@ -76,7 +76,7 @@ export const Calendar: FC<ICalendarProps> = (
                         setSelectMonth(false);
                     }}
                     controlsBottomMiddle={<ActionIcon
-                        variant={"subtle"}
+                        variant={"outline"}
                         onClick={() => setSelectMonth(false)}
                     >
                         <IconX/>
@@ -90,7 +90,7 @@ export const Calendar: FC<ICalendarProps> = (
                         setSelectYear(false);
                     }}
                     controlsBottomMiddle={<ActionIcon
-                        variant={"subtle"}
+                        variant={"outline"}
                         onClick={() => setSelectYear(false)}
                     >
                         <IconX/>

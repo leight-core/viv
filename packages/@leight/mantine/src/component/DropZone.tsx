@@ -9,7 +9,7 @@ import {
 }                                 from "@leight/i18n-client";
 import {
     LoopProvider,
-    useLoopsState
+    LoopsStore
 }                                 from "@leight/utils-client";
 import {
     Divider,
@@ -65,7 +65,7 @@ export const DropZone: FC<IDropZoneProps> = (
     const theme             = useMantineTheme();
     const {t}               = useTranslation(withTranslation.namespace);
     const [files, setFiles] = useState<IFileWithPath[]>([]);
-    const {current: loops}  = useLoopsState();
+    const {current: loops}  = LoopsStore.useState();
 
     useEffect(() => {
         if (files.length > 0 && !loops) {

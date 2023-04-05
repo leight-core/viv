@@ -51,7 +51,7 @@ export const Months: FC<IMonthsProps> = (
                     leftIcon={<IconChevronLeft/>}
                 >
                     <DateInline
-                        input={date.minus({year: 1}).toJSDate()}
+                        date={date.minus({year: 1})}
                         options={{year: "numeric"}}
                     />
                 </Button>
@@ -65,8 +65,8 @@ export const Months: FC<IMonthsProps> = (
             >
                 <Text c={"dimmed"}>
                     {isCurrent ?
-                        <DateInline input={DateTime.now().toJSDate()} options={{day: "numeric", month: "long", year: "numeric"}}/> :
-                        <DateInline input={date.toJSDate()} options={{year: "numeric"}}/>
+                        <DateInline date={DateTime.now()} options={{day: "numeric", month: "long", year: "numeric"}}/> :
+                        <DateInline date={date} options={{year: "numeric"}}/>
                     }
                 </Text>
             </Button>
@@ -80,7 +80,7 @@ export const Months: FC<IMonthsProps> = (
                     rightIcon={<IconChevronRight/>}
                 >
                     <DateInline
-                        input={date.plus({year: 1}).toJSDate()}
+                        date={date.plus({year: 1})}
                         options={{year: "numeric"}}
                     />
                 </Button>

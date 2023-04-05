@@ -1,5 +1,5 @@
 import {type IStoreProvider} from "@leight/context";
-import {useCursorState}      from "@leight/cursor-client";
+import {CursorStore}         from "@leight/cursor-client";
 import {type IUseSortState}  from "@leight/sort";
 import {
     type ISourceSchema,
@@ -47,7 +47,7 @@ const InternalSource = <TSourceSchema extends ISourceSchema>(
         onSuccess,
         children,
     }: IInternalSourceProps<TSourceSchema>) => {
-    const {page, size} = useCursorState(({page, size}) => ({page, size}));
+    const {page, size} = CursorStore.useState(({page, size}) => ({page, size}));
     const {sort}       = useSortState(({sort}) => ({sort}));
     const result       = useSourceQuery({
         cursor: {

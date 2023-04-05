@@ -35,6 +35,6 @@ const CalendarInternal: FC<ICalendarInternalProps> = (props) => {
             onClick={({day}) => setDay(day)}
             {...props}
         />
-        <div>selected date: {day ? <DateInline input={day.day.toJSDate()}/> : "- click the calendar -"}</div>
+        <div>selected date: {day ? <DateInline date={day.day}/> : "- click the calendar -"}</div>
     </>;
 };

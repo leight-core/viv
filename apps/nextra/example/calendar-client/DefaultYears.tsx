@@ -1,6 +1,6 @@
 import {
     Years,
-    YearsProvider
+    YearsOfProvider
 }                from "@leight/calendar-client";
 import {type FC} from "react";
 
@@ -8,7 +8,7 @@ export interface IDefaultYearsProps {
 }
 
 export const DefaultYears: FC<IDefaultYearsProps> = () => {
-    return <YearsProvider>
+    return <YearsOfProvider>
         <Years/>
-    </YearsProvider>;
+    </YearsOfProvider>;
 };

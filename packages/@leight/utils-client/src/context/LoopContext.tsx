@@ -2,6 +2,10 @@ import {
     createStoreContext,
     type IStoreProps
 } from "@leight/context-client";
+import {
+    ComponentProps,
+    FC
+} from "react";
 
 export type ILoopStoreProps = IStoreProps<{
     readonly isRunning: boolean;
@@ -22,13 +26,7 @@ export type ILoopStoreProps = IStoreProps<{
     percent(): number;
 }>
 
-export const {
-                 Provider:         LoopProvider,
-                 useState:         useLoopState,
-                 useOptionalState: useOptionalLoopState,
-                 useStore:         useLoopStore,
-                 useOptionalStore: useOptionalLoopStore,
-             } = createStoreContext<ILoopStoreProps>({
+export const LoopStore = createStoreContext<ILoopStoreProps>({
     state: () => (set, get) => ({
         total:     0,
         isRunning: false,
@@ -51,6 +49,15 @@ export const {
             return (100 * current) / total;
         },
     }),
-    name:  "LoopContext",
+    name:  "LoopStore",
     hint:  "Add LoopProvider."
 });
+
+export interface ILoopProviderProps extends Omit<ComponentProps<typeof LoopStore["Provider"]>, "state"> {
+}
+
+export const LoopProvider: FC<ILoopProviderProps> = props => {
+    return <LoopStore.Provider
+        {...props}
+    />;
+};

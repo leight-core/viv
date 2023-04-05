@@ -53,15 +53,15 @@ export const MonthsOfStore = createStoreContext<IMonthsStoreStoreProps>({
         },
         ...state,
     }),
-    name:  "MonthsContext",
-    hint:  "Add CalendarProvider or MonthsProvider.",
+    name:  "MonthsOfStore",
+    hint:  "Add MonthsOfProvider or CalendarProvider.",
 });
 
-export interface IMonthsProviderProps extends Omit<ComponentProps<typeof MonthsOfStore["Provider"]>, "state"> {
+export interface IMonthsOfProviderProps extends Omit<ComponentProps<typeof MonthsOfStore["Provider"]>, "state"> {
     date?: DateTime;
 }
 
-export const MonthsProvider: FC<IMonthsProviderProps> = ({date, ...props}) => {
+export const MonthsOfProvider: FC<IMonthsOfProviderProps> = ({date, ...props}) => {
     return <MonthsOfStore.Provider
         state={{
             months: monthsOf({date}),

@@ -77,15 +77,15 @@ export const YearsOfStore = createStoreContext<IYearsStoreStoreProps>({
         },
         ...state,
     }),
-    name:  "YearsContext",
-    hint:  "Add CalendarProvider or YearsProvider.",
+    name:  "YearsOfStore",
+    hint:  "Add YearsOfProvider or CalendarProvider.",
 });
 
-export interface IYearsProviderProps extends Omit<ComponentProps<typeof YearsOfStore["Provider"]>, "state"> {
+export interface IYearsOfProviderProps extends Omit<ComponentProps<typeof YearsOfStore["Provider"]>, "state"> {
     date?: DateTime;
 }
 
-export const YearsProvider: FC<IYearsProviderProps> = ({date, ...props}) => {
+export const YearsOfProvider: FC<IYearsOfProviderProps> = ({date, ...props}) => {
     return <YearsOfStore.Provider
         state={{
             years: yearsOf({date}),

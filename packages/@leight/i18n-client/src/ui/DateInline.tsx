@@ -1,22 +1,22 @@
 import {
     type DateTimeFormatOptions,
     type IDateInput
-}                         from "@leight/i18n";
+}                      from "@leight/i18n";
 import {
     type FC,
-    HTMLProps
-}                         from "react";
-import {useDateTimeState} from "../context";
+    type HTMLProps
+}                      from "react";
+import {DateTimeStore} from "../context";
 
 export interface IDateInlineProps extends Omit<HTMLProps<HTMLSpanElement>, "children"> {
-    input?: IDateInput;
+    date?: IDateInput;
     fallback?: IDateInput;
     options?: DateTimeFormatOptions;
 }
 
-export const DateInline: FC<IDateInlineProps> = ({input, fallback, options, ...props}) => {
-    const {toLocalDate} = useDateTimeState(({toLocalDate}) => ({toLocalDate}));
+export const DateInline: FC<IDateInlineProps> = ({date, fallback, options, ...props}) => {
+    const {toLocalDate} = DateTimeStore.useState(({toLocalDate}) => ({toLocalDate}));
     return <span {...props}>
-        {toLocalDate(input, fallback, options)}
+        {toLocalDate(date, fallback, options)}
     </span>;
 };

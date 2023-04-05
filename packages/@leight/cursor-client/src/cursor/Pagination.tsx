@@ -1,18 +1,18 @@
 import {
     Loader,
     Pagination as CoolPagination
-}                       from "@mantine/core";
+}                    from "@mantine/core";
 import {
     type ComponentProps,
     type FC
-}                       from "react";
-import {useCursorState} from "../context";
+}                    from "react";
+import {CursorStore} from "../context";
 
 export interface IPaginationProps extends Partial<ComponentProps<typeof CoolPagination>> {
 }
 
 export const Pagination: FC<IPaginationProps> = ({...props}) => {
-    const {page, pages, setPage, isLoading} = useCursorState(({page, pages, setPage, isLoading}) => ({page, pages, setPage, isLoading}));
+    const {page, pages, setPage, isLoading} = CursorStore.useState(({page, pages, setPage, isLoading}) => ({page, pages, setPage, isLoading}));
     if (isLoading) {
         return <Loader variant="dots"/>;
     }
