@@ -1,12 +1,10 @@
+import {type IDay}  from "@leight/calendar";
 import {
     Calendar,
     CalendarProvider,
     type ICalendarProps
 }                   from "@leight/calendar-client";
-import {
-    DateTime,
-    type IDay
-}                   from "@leight/i18n";
+import {DateTime}   from "@leight/i18n";
 import {DateInline} from "@leight/i18n-client";
 import {
     type FC,
@@ -21,7 +19,7 @@ export const AdvancedCalendar: FC<IAdvancedCalendarProps> = (props) => {
         /**
          * You can pass input here or through the props; input is DateTime from Luxon
          */
-        input={DateTime.fromObject({month: 2, day: 12})}
+        date={DateTime.fromObject({month: 2, day: 12})}
     >
         <CalendarInternal {...props}/>
     </CalendarProvider>;

@@ -8,18 +8,18 @@ import {WeeksProvider}  from "./weeks";
 import {YearsProvider}  from "./years";
 
 export type ICalendarProviderProps = PropsWithChildren<{
-    input?: DateTime;
+    date?: DateTime;
 }>;
 
-export const CalendarProvider: FC<ICalendarProviderProps> = ({children, input}) => {
+export const CalendarProvider: FC<ICalendarProviderProps> = ({children, date}) => {
     return <YearsProvider
-        input={input}
+        date={date}
     >
         <MonthsProvider
-            input={input}
+            date={date}
         >
             <WeeksProvider
-                input={input}
+                date={date}
             >
                 {children}
             </WeeksProvider>

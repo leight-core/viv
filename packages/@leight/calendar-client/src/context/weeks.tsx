@@ -1,9 +1,9 @@
-import {createStoreContext} from "@leight/context-client";
 import {
-    DateTime,
     type IWeeks,
     weeksOf
-}                           from "@leight/i18n";
+}                           from "@leight/calendar";
+import {createStoreContext} from "@leight/context-client";
+import {DateTime}           from "@leight/i18n";
 import {type IStoreProps}   from "@leight/zustand";
 import {
     type ComponentProps,
@@ -14,7 +14,7 @@ export type IWeeksStoreStoreProps = IStoreProps<{
     /**
      * Set weeks of the given date
      */
-    weeksOf(input: DateTime): void;
+    weeksOf(date: DateTime): void;
     /**
      * Move to the current month
      */
@@ -37,39 +37,36 @@ export type IWeeksStoreStoreProps = IStoreProps<{
     readonly weeks: IWeeks;
 }>
 
-export const {
-                 Provider: WeeksStoreProvider,
-                 useState: useWeeks,
-             } = createStoreContext<IWeeksStoreStoreProps>({
+export const WeeksOfStore = createStoreContext<IWeeksStoreStoreProps>({
     state: ({state}) => (set) => ({
-        weeksOf(input: DateTime) {
+        weeksOf(date: DateTime) {
             set({
-                weeks: weeksOf({input}),
+                weeks: weeksOf({date}),
             });
         },
         today() {
             set({
-                weeks: weeksOf({input: DateTime.now()}),
+                weeks: weeksOf({date: DateTime.now()}),
             });
         },
         prevMonth() {
-            set(({weeks: {input}}) => ({
-                weeks: weeksOf({input: input.minus({month: 1})}),
+            set(({weeks: {date}}) => ({
+                weeks: weeksOf({date: date.minus({month: 1})}),
             }));
         },
         nextMonth() {
-            set(({weeks: {input}}) => ({
-                weeks: weeksOf({input: input.plus({month: 1})}),
+            set(({weeks: {date}}) => ({
+                weeks: weeksOf({date: date.plus({month: 1})}),
             }));
         },
         prevYear() {
-            set(({weeks: {input}}) => ({
-                weeks: weeksOf({input: input.minus({year: 1})}),
+            set(({weeks: {date}}) => ({
+                weeks: weeksOf({date: date.minus({year: 1})}),
             }));
         },
         nextYear() {
-            set(({weeks: {input}}) => ({
-                weeks: weeksOf({input: input.plus({year: 1})}),
+            set(({weeks: {date}}) => ({
+                weeks: weeksOf({date: date.plus({year: 1})}),
             }));
         },
         ...state,
@@ -78,14 +75,14 @@ export const {
     hint:  "Add CalendarProvider or WeeksProvider.",
 });
 
-export interface IWeeksProviderProps extends Omit<ComponentProps<typeof WeeksStoreProvider>, "state"> {
-    input?: DateTime;
+export interface IWeeksProviderProps extends Omit<ComponentProps<typeof WeeksOfStore["Provider"]>, "state"> {
+    date?: DateTime;
 }
 
-export const WeeksProvider: FC<IWeeksProviderProps> = ({input, ...props}) => {
-    return <WeeksStoreProvider
+export const WeeksProvider: FC<IWeeksProviderProps> = ({date, ...props}) => {
+    return <WeeksOfStore.Provider
         state={{
-            weeks: weeksOf({input}),
+            weeks: weeksOf({date}),
         }}
         {...props}
     />;

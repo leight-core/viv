@@ -18,3 +18,7 @@ export const CalendarDataSchema = z.object({
 });
 export type ICalendarDataSchema = typeof CalendarDataSchema;
 export type ICalendarData = z.infer<ICalendarDataSchema>;
+
+export * from "./months";
+export * from "./weeks";
+export * from "./years";

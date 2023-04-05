@@ -37,11 +37,6 @@ export class MetaService implements IMetaService {
         const template     = `${this.metaServiceConfig.templates}/${type}.json`;
 
         if (!tabs.length && type && fs.existsSync(template)) {
-            /**
-             * CHECK RETURN TYPE
-             */
-            const aaa = jsonOf(MetaSchema, fs.readFileSync(template, "utf8"));
-
             return jsonOf(MetaSchema, fs.readFileSync(template, "utf8"));
         }
 

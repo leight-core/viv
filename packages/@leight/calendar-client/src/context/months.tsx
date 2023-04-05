@@ -1,9 +1,9 @@
-import {createStoreContext} from "@leight/context-client";
 import {
-    DateTime,
     type IMonths,
     monthsOf
-}                           from "@leight/i18n";
+}                           from "@leight/calendar";
+import {createStoreContext} from "@leight/context-client";
+import {DateTime}           from "@leight/i18n";
 import {type IStoreProps}   from "@leight/zustand";
 import {
     type ComponentProps,
@@ -14,7 +14,7 @@ export type IMonthsStoreStoreProps = IStoreProps<{
     /**
      * Set months of the given date
      */
-    monthsOf(input: DateTime): void;
+    monthsOf(date: DateTime): void;
     /**
      * Move to the current month
      */
@@ -29,29 +29,26 @@ export type IMonthsStoreStoreProps = IStoreProps<{
     readonly months: IMonths;
 }>
 
-export const {
-                 Provider: MonthsStoreProvider,
-                 useState: useMonths,
-             } = createStoreContext<IMonthsStoreStoreProps>({
+export const MonthsOfStore = createStoreContext<IMonthsStoreStoreProps>({
     state: ({state}) => (set) => ({
-        monthsOf(input: DateTime) {
+        monthsOf(date: DateTime) {
             set({
-                months: monthsOf({input}),
+                months: monthsOf({date}),
             });
         },
         today() {
             set({
-                months: monthsOf({input: DateTime.now()}),
+                months: monthsOf({date: DateTime.now()}),
             });
         },
         prevYear() {
-            set(({months: {input}}) => ({
-                months: monthsOf({input: input.minus({year: 1})}),
+            set(({months: {date}}) => ({
+                months: monthsOf({date: date.minus({year: 1})}),
             }));
         },
         nextYear() {
-            set(({months: {input}}) => ({
-                months: monthsOf({input: input.plus({year: 1})}),
+            set(({months: {date}}) => ({
+                months: monthsOf({date: date.plus({year: 1})}),
             }));
         },
         ...state,
@@ -60,14 +57,14 @@ export const {
     hint:  "Add CalendarProvider or MonthsProvider.",
 });
 
-export interface IMonthsProviderProps extends Omit<ComponentProps<typeof MonthsStoreProvider>, "state"> {
-    input?: DateTime;
+export interface IMonthsProviderProps extends Omit<ComponentProps<typeof MonthsOfStore["Provider"]>, "state"> {
+    date?: DateTime;
 }
 
-export const MonthsProvider: FC<IMonthsProviderProps> = ({input, ...props}) => {
-    return <MonthsStoreProvider
+export const MonthsProvider: FC<IMonthsProviderProps> = ({date, ...props}) => {
+    return <MonthsOfStore.Provider
         state={{
-            months: monthsOf({input}),
+            months: monthsOf({date}),
         }}
         {...props}
     />;

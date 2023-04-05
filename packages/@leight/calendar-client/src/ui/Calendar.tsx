@@ -14,9 +14,9 @@ import {
     useState
 }                   from "react";
 import {
-    useMonths,
-    useWeeks,
-    useYears
+    MonthsOfStore,
+    WeeksOfStore,
+    YearsOfStore
 }                   from "../context";
 import {Months}     from "./Months";
 import {
@@ -36,9 +36,9 @@ export const Calendar: FC<ICalendarProps> = (
         withControls = true,
         ...props
     }) => {
-    const {weeksOf, weeks}              = useWeeks(({weeksOf, weeks}) => ({weeksOf, weeks}));
-    const {monthsOf}                    = useMonths(({monthsOf}) => ({monthsOf}));
-    const {yearsOf}                     = useYears(({yearsOf}) => ({yearsOf}));
+    const {weeksOf, weeks}              = WeeksOfStore.useState(({weeksOf, weeks}) => ({weeksOf, weeks}));
+    const {monthsOf}                    = MonthsOfStore.useState(({monthsOf}) => ({monthsOf}));
+    const {yearsOf}                     = YearsOfStore.useState(({yearsOf}) => ({yearsOf}));
     const [selectMonth, setSelectMonth] = useState(false);
     const [selectYear, setSelectYear]   = useState(false);
     return <Box pos={"relative"}>
@@ -50,21 +50,21 @@ export const Calendar: FC<ICalendarProps> = (
                     variant={"subtle"}
                     onClick={() => {
                         setSelectMonth(true);
-                        monthsOf(weeks.input);
+                        monthsOf(weeks.date);
                     }}
                     leftIcon={<IconCalendarSearch/>}
                 >
-                    <DateInline input={weeks.input.toJSDate()} options={{month: "long"}}/>
+                    <DateInline input={weeks.date.toJSDate()} options={{month: "long"}}/>
                 </Button>
                 <Button
                     variant={"subtle"}
                     onClick={() => {
                         setSelectYear(true);
-                        yearsOf(weeks.input);
+                        yearsOf(weeks.date);
                     }}
                     leftIcon={<IconCalendarSearch/>}
                 >
-                    <DateInline input={weeks.input.toJSDate()} options={{year: "numeric"}}/>
+                    <DateInline input={weeks.date.toJSDate()} options={{year: "numeric"}}/>
                 </Button>
             </Button.Group>}
             {...props}

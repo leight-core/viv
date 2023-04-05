@@ -1,33 +1,31 @@
-import {
-    DateTime,
-    type IDay
-}                   from "@leight/i18n";
-import {DateInline} from "@leight/i18n-client";
-import {classNames} from "@leight/utils-client";
+import {type IDay}    from "@leight/calendar";
+import {DateTime}     from "@leight/i18n";
+import {DateInline}   from "@leight/i18n-client";
+import {classNames}   from "@leight/utils-client";
 import {
     ActionIcon,
     Button,
     Grid,
     Group,
     Text
-}                   from "@mantine/core";
+}                     from "@mantine/core";
 import {
     IconCalendarEvent,
     IconChevronLeft,
     IconChevronRight,
     IconChevronsLeft,
     IconChevronsRight
-}                   from "@tabler/icons-react";
+}                     from "@tabler/icons-react";
 import {
     type FC,
     type PropsWithChildren,
     useState
-}                   from "react";
-import {useWeeks}   from "../context";
+}                     from "react";
+import {WeeksOfStore} from "../context";
 import {
     CalendarShell,
     type ICalendarShellProps
-}                   from "./CalendarShell";
+}                     from "./CalendarShell";
 
 export type IWeeksProps = PropsWithChildren<Omit<ICalendarShellProps, "children" | "onClick"> & {
     onClick?(props: IWeeksProps.IOnClickProps): void;
@@ -66,7 +64,7 @@ export const Weeks: FC<IWeeksProps> = (
                          start,
                          isCurrent,
                      }
-          }                         = useWeeks();
+          }                         = WeeksOfStore.useState();
     const [withWeeks, setWithWeeks] = useState(defaultWithWeekNo);
     /**
      * This is specific for Mantine Grid: compute number of columns to render.

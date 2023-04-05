@@ -22,7 +22,3 @@ export interface IWithTranslation {
 export interface IWithLocale {
     locale: string;
 }
-
-export * from "./weeks";
-export * from "./months";
-export * from "./years";

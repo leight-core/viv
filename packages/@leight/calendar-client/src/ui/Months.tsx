@@ -1,28 +1,26 @@
-import {
-    DateTime,
-    type IMonth
-}                   from "@leight/i18n";
-import {DateInline} from "@leight/i18n-client";
-import {classNames} from "@leight/utils-client";
+import {type IMonth}   from "@leight/calendar";
+import {DateTime}      from "@leight/i18n";
+import {DateInline}    from "@leight/i18n-client";
+import {classNames}    from "@leight/utils-client";
 import {
     Button,
     Grid,
     Group,
     Text
-}                   from "@mantine/core";
+}                      from "@mantine/core";
 import {
     IconChevronLeft,
     IconChevronRight
-}                   from "@tabler/icons-react";
+}                      from "@tabler/icons-react";
 import {
     type FC,
     type PropsWithChildren
-}                   from "react";
-import {useMonths}  from "../context";
+}                      from "react";
+import {MonthsOfStore} from "../context";
 import {
     CalendarShell,
     type ICalendarShellProps
-}                   from "./CalendarShell";
+}                      from "./CalendarShell";
 
 export type IMonthsProps = PropsWithChildren<Omit<ICalendarShellProps, "children" | "onClick"> & {
     onClick?(props: IIMonthsProps.IOnClickProps): void;
@@ -40,9 +38,9 @@ export const Months: FC<IMonthsProps> = (
         onClick,
         ...props
     }) => {
-    const {months: {months, isCurrent, input}, today, prevYear, nextYear} = useMonths();
-    const columnCount                                                     = 4;
-    const rowCount                                                        = months.length / columnCount;
+    const {months: {months, isCurrent, date}, today, prevYear, nextYear} = MonthsOfStore.useState();
+    const columnCount                                                    = 4;
+    const rowCount                                                       = months.length / columnCount;
     return <CalendarShell
         controlsTopLeft={<Group spacing={"sm"}>
             <Button.Group>
@@ -53,7 +51,7 @@ export const Months: FC<IMonthsProps> = (
                     leftIcon={<IconChevronLeft/>}
                 >
                     <DateInline
-                        input={input.minus({year: 1}).toJSDate()}
+                        input={date.minus({year: 1}).toJSDate()}
                         options={{year: "numeric"}}
                     />
                 </Button>
@@ -68,7 +66,7 @@ export const Months: FC<IMonthsProps> = (
                 <Text c={"dimmed"}>
                     {isCurrent ?
                         <DateInline input={DateTime.now().toJSDate()} options={{day: "numeric", month: "long", year: "numeric"}}/> :
-                        <DateInline input={input.toJSDate()} options={{year: "numeric"}}/>
+                        <DateInline input={date.toJSDate()} options={{year: "numeric"}}/>
                     }
                 </Text>
             </Button>
@@ -82,7 +80,7 @@ export const Months: FC<IMonthsProps> = (
                     rightIcon={<IconChevronRight/>}
                 >
                     <DateInline
-                        input={input.plus({year: 1}).toJSDate()}
+                        input={date.plus({year: 1}).toJSDate()}
                         options={{year: "numeric"}}
                     />
                 </Button>

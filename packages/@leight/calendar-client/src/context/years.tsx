@@ -1,9 +1,9 @@
-import {createStoreContext} from "@leight/context-client";
 import {
-    DateTime,
     type IYears,
     yearsOf
-}                           from "@leight/i18n";
+}                           from "@leight/calendar";
+import {createStoreContext} from "@leight/context-client";
+import {DateTime}           from "@leight/i18n";
 import {type IStoreProps}   from "@leight/zustand";
 import {
     type ComponentProps,
@@ -14,14 +14,26 @@ export type IYearsStoreStoreProps = IStoreProps<{
     /**
      * Set years of the given date
      */
-    yearsOf(input: DateTime): void;
+    yearsOf(date: DateTime): void;
     /**
      * Move to the current year
      */
     today(): void;
+    /**
+     * Move to the previous year (floating years)
+     */
     prevYear(): void;
+    /**
+     * Move to the next year (floating years)
+     */
     nextYear(): void;
+    /**
+     * Move to the previous "page" of years
+     */
     prevYears(): void;
+    /**
+     * Move to the next "page" of years
+     */
     nextYears(): void;
 }, {
     /**
@@ -31,39 +43,36 @@ export type IYearsStoreStoreProps = IStoreProps<{
     readonly years: IYears;
 }>
 
-export const {
-                 Provider: YearsStoreProvider,
-                 useState: useYears,
-             } = createStoreContext<IYearsStoreStoreProps>({
+export const YearsOfStore = createStoreContext<IYearsStoreStoreProps>({
     state: ({state}) => (set) => ({
-        yearsOf(input: DateTime) {
+        yearsOf(date: DateTime) {
             set({
-                years: yearsOf({input}),
+                years: yearsOf({date}),
             });
         },
         today() {
             set({
-                years: yearsOf({input: DateTime.now()}),
+                years: yearsOf({date: DateTime.now()}),
             });
         },
         prevYear() {
-            set(({years: {input}}) => ({
-                years: yearsOf({input: input.minus({year: 1})}),
+            set(({years: {date}}) => ({
+                years: yearsOf({date: date.minus({year: 1})}),
             }));
         },
         nextYear() {
-            set(({years: {input}}) => ({
-                years: yearsOf({input: input.plus({year: 1})}),
+            set(({years: {date}}) => ({
+                years: yearsOf({date: date.plus({year: 1})}),
             }));
         },
         prevYears() {
-            set(({years: {count, input}}) => ({
-                years: yearsOf({input: input.minus({year: count})}),
+            set(({years: {count, date}}) => ({
+                years: yearsOf({date: date.minus({year: count})}),
             }));
         },
         nextYears() {
-            set(({years: {count, input}}) => ({
-                years: yearsOf({input: input.plus({year: count})}),
+            set(({years: {count, date}}) => ({
+                years: yearsOf({date: date.plus({year: count})}),
             }));
         },
         ...state,
@@ -72,14 +81,14 @@ export const {
     hint:  "Add CalendarProvider or YearsProvider.",
 });
 
-export interface IYearsProviderProps extends Omit<ComponentProps<typeof YearsStoreProvider>, "state"> {
-    input?: DateTime;
+export interface IYearsProviderProps extends Omit<ComponentProps<typeof YearsOfStore["Provider"]>, "state"> {
+    date?: DateTime;
 }
 
-export const YearsProvider: FC<IYearsProviderProps> = ({input, ...props}) => {
-    return <YearsStoreProvider
+export const YearsProvider: FC<IYearsProviderProps> = ({date, ...props}) => {
+    return <YearsOfStore.Provider
         state={{
-            years: yearsOf({input}),
+            years: yearsOf({date}),
         }}
         {...props}
     />;
