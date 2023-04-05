@@ -1,5 +1,5 @@
 import {JobStatusSchema} from "@leight/prisma";
-import {z}               from "zod";
+import {z}               from "@leight/zod";
 
 export {JobStatusSchema} from "@leight/prisma";
 export type IJobStatusSchema = typeof JobStatusSchema;

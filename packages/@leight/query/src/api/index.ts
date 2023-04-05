@@ -8,7 +8,7 @@ import {
     type ISortSchema,
     SortSchema
 }                       from "@leight/sort";
-import {z}              from "zod";
+import {z}              from "@leight/zod";
 
 export const ParamsSchema = z.object({});
 export type IParamsSchema = typeof ParamsSchema;

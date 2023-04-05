@@ -32,7 +32,7 @@
         "@leight/job": "^0.5.65",
         "@leight/trpc": "^0.5.54",
         "xlsx": "^0.18.5",
-        "zod": "3.21.1"
+        "@leight/zod": "^0.5.0"
     },
     "devDependencies": {
         "@leight/esbuild": "^0.5.34",

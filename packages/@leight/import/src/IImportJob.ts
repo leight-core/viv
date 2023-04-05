@@ -1,5 +1,5 @@
 import {JobSchema} from "@leight/job";
-import {z}         from "zod";
+import {z}         from "@leight/zod";
 
 export const ImportJobSchema = JobSchema.merge(z.object({
     params: z.object({

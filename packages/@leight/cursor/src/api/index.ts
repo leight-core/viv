@@ -1,4 +1,4 @@
-import {z} from "zod";
+import {z} from "@leight/zod";
 
 export const CursorSchema = z.object({
     page: z.number().min(0),

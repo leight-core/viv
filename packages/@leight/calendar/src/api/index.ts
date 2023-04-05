@@ -1,5 +1,5 @@
 import {DateTime} from "@leight/i18n";
-import {z}        from "zod";
+import {z}        from "@leight/zod";
 
 /**
  * Defines an individual calendar item being rendered/handled in a particular day.

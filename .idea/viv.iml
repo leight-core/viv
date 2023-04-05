@@ -114,6 +114,7 @@
       <sourceFolder url="file://$MODULE_DIR$/apps/ladle/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/apps/vitebook/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/calendar/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/trpc-source-server/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/zod/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.github" />
       <excludeFolder url="file://$MODULE_DIR$/lib" />

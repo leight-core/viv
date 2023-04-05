@@ -9,8 +9,8 @@ import {
 import {type IUseQuery}     from "@leight/react-query";
 import {type ISortSchema}   from "@leight/sort";
 import {type IToString}     from "@leight/utils";
+import {z}                  from "@leight/zod";
 import {type IStoreProps}   from "@leight/zustand";
-import {z}                  from "zod";
 
 export type ISourceName =
     string

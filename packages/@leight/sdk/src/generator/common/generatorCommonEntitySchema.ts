@@ -38,7 +38,7 @@ export const generatorCommonEntitySchema: IGenerator<IGeneratorCommonParams> = a
                 "@leight/source":  [
                     "WithIdentitySchema",
                 ],
-                "zod":             [
+                "@leight/zod": [
                     "z",
                 ],
             },

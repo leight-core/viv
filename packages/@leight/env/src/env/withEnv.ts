@@ -1,4 +1,4 @@
-import {z}            from "zod";
+import {z}            from "@leight/zod";
 import {ClientSchema} from "./ClientSchema";
 import {ServerSchema} from "./ServerSchema";
 

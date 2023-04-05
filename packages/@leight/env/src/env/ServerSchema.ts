@@ -1,4 +1,4 @@
-import {z} from "zod";
+import {z} from "@leight/zod";
 
 export const ServerSchema = z.object({
     DATABASE_URL:    z.string().url(),

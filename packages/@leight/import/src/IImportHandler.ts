@@ -1,4 +1,4 @@
-import {ZodType}                from "zod";
+import {ZodType}                from "@leight/zod";
 import {type IImportBeginEvent} from "./IImportBeginEvent";
 import {type IImportEndEvent}   from "./IImportEndEvent";
 

@@ -18,7 +18,7 @@ import {
 }                           from "@leight/query";
 import {SortOrderSchema}    from "@leight/sort";
 import {WithIdentitySchema} from "@leight/source";
-import {z}                  from "zod";
+import {z}                  from "@leight/zod";
 import {JobSchemaOverride}  from "../schema";
 
 export type IJobWhereSchema = typeof JobWhereSchema;

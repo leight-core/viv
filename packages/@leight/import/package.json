@@ -29,7 +29,7 @@
     },
     "dependencies": {
         "@leight/job": "^0.5.65",
-        "zod": "3.21.1"
+        "@leight/zod": "^0.5.0"
     },
     "devDependencies": {
         "@leight/esbuild": "^0.5.34",

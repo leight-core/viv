@@ -1,4 +1,4 @@
-import {z} from "zod";
+import {z} from "@leight/zod";
 
 export const FilterSchema = z.object({
     id:       z.string().optional(),

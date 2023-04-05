@@ -1,6 +1,6 @@
 import {type IUseState}   from "@leight/context";
+import {z}                from "@leight/zod";
 import {type IStoreProps} from "@leight/zustand";
-import {z}                from "zod";
 
 export const SortOrderSchema = z.enum([
     "asc",

@@ -2,8 +2,8 @@ import {
     type IQuerySchema,
     type IUseCursorCountQuery
 }                          from "@leight/query";
+import {z}                 from "@leight/zod";
 import {PropsWithChildren} from "react";
-import {z}                 from "zod";
 import {
     CursorProvider,
     useCursorState
