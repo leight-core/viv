@@ -202,19 +202,19 @@ export const Weeks: FC<IWeeksProps> = (
                     className={classNames(
                         classes.cell,
                         day.isCurrent && highlightToday ? classes.currentDay : undefined,
-                        day.isOutOfRange ? classes.outOfRange : classes.inRange
+                        day.isOutOfRange ? classes.outOfRange : classes.inRange,
                     )}
                     style={onClick ? {cursor: "pointer"} : undefined}
                     onClick={() => onClick?.({day})}
                 >
                     <div
                         style={{
-                            textAlign: "right",
+                            textAlign:    "right",
+                            paddingRight: "0.4em",
+                            paddingTop:   "0.2em",
                         }}
                     >
-                        {/*
-                            Doesn't look this funny?
-                        */}
+                        {/* Doesn't look this funny? */}
                         {day.day.day}
                     </div>
                 </Grid.Col>)}

@@ -40,8 +40,8 @@ const useStyles = createStyles(theme => ({
     },
     controlsGrid: {
         "& > div:last-child": {
-            borderRight: "1px solid",
-            borderColor: switchScheme(
+            borderRight:      "1px solid",
+            borderRightColor: switchScheme(
                 theme,
                 theme.colors.gray[6],
                 theme.colors.gray[4]
@@ -77,7 +77,7 @@ const useStyles = createStyles(theme => ({
     },
     cell:         {
         height:    "6em",
-        padding:   "0.4em 0.6em",
+        padding:   "0",
         "&:hover": {
             backgroundColor: switchScheme(
                 theme,
