@@ -22,6 +22,9 @@ export type IStoreProviderProps<TStoreProps extends IStoreProps> =
 
 export type IStoreProvider<TStoreProps extends IStoreProps> = FC<IStoreProviderProps<TStoreProps>>;
 
+/**
+ * Use state of a store with an optional state selector
+ */
 export interface IUseState<TStoreProps extends IStoreProps> {
     <U>(selector: (state: TStoreProps["StoreProps"]) => U): U;
 
