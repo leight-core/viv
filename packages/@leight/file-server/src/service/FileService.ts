@@ -7,7 +7,7 @@ import {
     type IFileServiceStoreProps,
     type IFileSource,
 }                   from "@leight/file";
-import {generateId} from "@leight/utils-server";
+import {generateId} from "@leight/utils";
 import {copySync}   from "fs-extra";
 import fs           from "node:fs";
 import coolPath     from "node:path";

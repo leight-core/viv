@@ -30,6 +30,7 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
+        "@paralleldrive/cuid2": "^2.2.0",
         "devalue": "^4.3.0",
         "fast-clean": "^1.2.1",
         "filesize": "^10.0.6",

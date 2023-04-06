@@ -1,6 +1,7 @@
 export * from "./chain";
 export * from "./cleanOf";
 export * from "./diffOf";
+export * from "./generateId";
 export * from "./intersectOf";
 export * from "./isCallable";
 export * from "./isObject";

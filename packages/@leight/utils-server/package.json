@@ -31,7 +31,6 @@
     },
     "dependencies": {
         "@leight/utils": "^0.5.60",
-        "@paralleldrive/cuid2": "^2.2.0",
         "fast-glob": "^3.2.12"
     },
     "devDependencies": {
