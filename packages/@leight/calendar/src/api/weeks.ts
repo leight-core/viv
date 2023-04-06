@@ -75,7 +75,11 @@ export interface IWeeks {
      */
     weeks: IWeek[];
     /**
+     * Flat array of all days
+     */
+    days: IDay[];
+    /**
      * Contains localized day names (in a localized order)
      */
-    days: string[];
+    list: string[];
 }

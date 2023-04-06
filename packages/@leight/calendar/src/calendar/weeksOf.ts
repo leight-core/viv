@@ -48,6 +48,10 @@ export const weeksOf = (
     const interval  = Interval.fromDateTimes(start, end);
     const length    = Math.max(interval.count("weeks"), 6);
     const weekStart = start.startOf("week");
+    const days      = Interval.fromDateTimes(
+        weekStart,
+        weekStart.plus({week: length}),
+    ).count("days");
     const now       = DateTime.now();
     return {
         date,
@@ -58,13 +62,13 @@ export const weeksOf = (
         get isCurrent() {
             return interval.contains(now);
         },
-        get days() {
+        get list() {
             return Info.weekdays(dayFormat);
         },
         get weeks() {
             return Array.from({length}, (_, week) => {
                 const $week = weekStart.plus({week});
-                const id    = `${$week.year}${$week.weekNumber}`;
+                const id    = `${$week.year}-${$week.weekNumber}`;
                 return {
                     id,
                     week:      $week,
@@ -74,13 +78,24 @@ export const weeksOf = (
                         return Array.from({length: 7}, (_, day) => {
                             const $day = $week.plus({day: day});
                             return {
-                                id:           `${id}${day}`,
+                                id:           `${id}-${day}`,
                                 day:          $day,
                                 isCurrent:    !Math.floor(now.diff($day, "day").days),
                                 isOutOfRange: $day.month !== date.month || $day.year !== date.year,
                             };
                         });
                     },
+                };
+            });
+        },
+        get days() {
+            return Array.from({length: days}, (_, day) => {
+                const $day = weekStart.plus({day: day});
+                return {
+                    id:           `${start.year}-${$day.weekNumber}-${$day.day}`,
+                    day:          $day,
+                    isCurrent:    !Math.floor(now.diff($day, "day").days),
+                    isOutOfRange: $day.month !== date.month || $day.year !== date.year,
                 };
             });
         },

@@ -20,7 +20,7 @@ import {
 }                   from "../context";
 import {Months}     from "./Months";
 import {
-    IWeeksProps,
+    type IWeeksProps,
     Weeks
 }                   from "./Weeks";
 import {Years}      from "./Years";
@@ -76,7 +76,7 @@ export const Calendar: FC<ICalendarProps> = (
                         setSelectMonth(false);
                     }}
                     controlsBottomMiddle={<ActionIcon
-                        variant={"outline"}
+                        variant={"subtle"}
                         onClick={() => setSelectMonth(false)}
                     >
                         <IconX/>
@@ -90,7 +90,7 @@ export const Calendar: FC<ICalendarProps> = (
                         setSelectYear(false);
                     }}
                     controlsBottomMiddle={<ActionIcon
-                        variant={"outline"}
+                        variant={"subtle"}
                         onClick={() => setSelectYear(false)}
                     >
                         <IconX/>

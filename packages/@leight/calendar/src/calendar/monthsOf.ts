@@ -40,7 +40,7 @@ export const monthsOf = (
         get months() {
             return Array.from({length}, (_, month) => {
                 const $month = start.plus({month});
-                const id     = `${$month.year}${$month.month}`;
+                const id     = `${$month.year}-${$month.month}`;
                 return {
                     id,
                     name:      $month.toLocaleString({month: "long"}),

@@ -1,35 +1,40 @@
-import {type IDay}  from "@leight/calendar";
-import {DateTime}   from "@leight/i18n";
-import {DateInline} from "@leight/i18n-client";
-import {classNames} from "@leight/utils-client";
+import {type IDay}     from "@leight/calendar";
+import {DateTime}      from "@leight/i18n";
+import {DateInline}    from "@leight/i18n-client";
+import {classNames}    from "@leight/utils-client";
 import {
     ActionIcon,
     Button,
     Grid,
     Group,
+    Overlay,
     Stack,
     Text
-}                   from "@mantine/core";
+}                      from "@mantine/core";
+import {useDisclosure} from "@mantine/hooks";
 import {
     IconCalendarEvent,
     IconChevronLeft,
     IconChevronRight,
     IconChevronsLeft,
-    IconChevronsRight
-}                   from "@tabler/icons-react";
+    IconChevronsRight,
+    IconX
+}                      from "@tabler/icons-react";
 import {
     type FC,
     type PropsWithChildren,
+    ReactNode,
+    useRef,
     useState
-}                   from "react";
+}                      from "react";
 import {
     CalendarItemsStore,
     WeeksOfStore
-}                   from "../context";
+}                      from "../context";
 import {
     CalendarShell,
     type ICalendarShellProps
-}                   from "./CalendarShell";
+}                      from "./CalendarShell";
 
 export type IWeeksProps = PropsWithChildren<Omit<ICalendarShellProps, "children" | "onClick"> & {
     onClick?(props: IWeeksProps.IOnClickProps): void;
@@ -64,20 +69,23 @@ export const Weeks: FC<IWeeksProps> = (
               today,
               weeks: {
                          weeks,
-                         days,
+                         list,
                          start,
                          isCurrent,
                      }
-          }     = WeeksOfStore.useState();
-    const items = CalendarItemsStore.useOptionalState();
-
-    console.log("items!", items?.items);
-
-    const [withWeeks, setWithWeeks] = useState(defaultWithWeekNo);
+          }                                                     = WeeksOfStore.useState();
+    const items                                                 = CalendarItemsStore.useOptionalState();
+    const [isOverlay, {open: openOverlay, close: closeOverlay}] = useDisclosure(false);
+    const overlay                                               = useRef<ReactNode>();
+    const [withWeeks, setWithWeeks]                             = useState(defaultWithWeekNo);
+    const withOverlay                                           = (children: ReactNode) => {
+        overlay.current = children;
+        openOverlay();
+    };
     /**
      * This is specific for Mantine Grid: compute number of columns to render.
      */
-    const columnCount               = (days.length * columnSize) + (withWeeks ? weekCountSize : 0);
+    const columnCount                                           = (list.length * columnSize) + (withWeeks ? weekCountSize : 0);
 
     return <CalendarShell
         controlsTopLeft={<Group spacing={"sm"}>
@@ -155,6 +163,18 @@ export const Weeks: FC<IWeeksProps> = (
         {...props}
     >
         {({classes}) => <>
+            {isOverlay && <Overlay color={"#FFF"} opacity={1}>
+                <Group position={"apart"}>
+                    <div/>
+                    <ActionIcon
+                        variant={"subtle"}
+                        onClick={() => closeOverlay()}
+                    >
+                        <IconX/>
+                    </ActionIcon>
+                </Group>
+                {overlay.current}
+            </Overlay>}
             {/*
                 First of all: render header with all days of the week; they're already localised from
                 the calendar, so it's just simple render here.
@@ -175,7 +195,7 @@ export const Weeks: FC<IWeeksProps> = (
                         <IconCalendarEvent/>
                     </ActionIcon>
                 </Grid.Col>}
-                {days.map(day => <Grid.Col
+                {list.map(day => <Grid.Col
                     key={`day-${day}`}
                     span={columnSize}
                     className={classes.header}
@@ -213,7 +233,10 @@ export const Weeks: FC<IWeeksProps> = (
                         day.isOutOfRange ? classes.outOfRange : classes.inRange,
                     )}
                     style={onClick ? {cursor: "pointer"} : undefined}
-                    onClick={() => onClick?.({day})}
+                    onClick={() => {
+                        withOverlay(<h1>{day.id}</h1>);
+                        onClick?.({day});
+                    }}
                 >
                     <Stack
                         justify={"space-between"}
