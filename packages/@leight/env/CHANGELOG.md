@@ -1,5 +1,13 @@
 # @leight/env
 
+## 0.5.28
+
+### Patch Changes
+
+- Version bump & general update
+- Updated dependencies
+    - @leight/zod@0.5.3
+
 ## 0.5.27
 
 ### Patch Changes

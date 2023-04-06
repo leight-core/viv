@@ -1,5 +1,5 @@
 {
-    "version": "0.5.57",
+    "version": "0.5.58",
     "name": "@leight/container",
     "description": "Common container stuff.",
     "license": "MIT",
@@ -31,10 +31,10 @@
         "pumpit": "^4.1.1"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.35",
-        "@leight/eslint-config-eslint": "^0.5.44",
-        "@leight/tsconfig": "^0.5.58",
-        "@leight/turbowatch": "^0.5.23",
+        "@leight/esbuild": "^0.5.36",
+        "@leight/eslint-config-eslint": "^0.5.45",
+        "@leight/tsconfig": "^0.5.59",
+        "@leight/turbowatch": "^0.5.24",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

@@ -1,5 +1,14 @@
 # @leight/calendar
 
+## 0.5.4
+
+### Patch Changes
+
+- Version bump & general update
+- Updated dependencies
+    - @leight/i18n@0.5.63
+    - @leight/zod@0.5.3
+
 ## 0.5.3
 
 ### Patch Changes
