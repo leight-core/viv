@@ -12,7 +12,7 @@ export function useContext<TContext>(
     if (!$context) {
         throw new Error(
             `There is no [${name}] context available.${
-                hint ? `" ${hint}` : ""
+                hint ? ` ${hint}` : ""
             } `
         );
     }
