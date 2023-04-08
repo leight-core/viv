@@ -1,5 +1,5 @@
 {
-    "version": "0.5.70",
+    "version": "0.5.71",
     "name": "@leight/user-server",
     "description": "User stuff used server-side.",
     "license": "MIT",
