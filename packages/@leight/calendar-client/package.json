@@ -1,5 +1,5 @@
 {
-    "version": "0.5.16",
+    "version": "0.5.17",
     "name": "@leight/calendar-client",
     "description": "Clever Calendar based on Mantine UI library.",
     "license": "MIT",
@@ -36,7 +36,7 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/calendar": "^0.5.6",
+        "@leight/calendar": "^0.5.7",
         "@leight/context-client": "^0.5.67",
         "@leight/i18n": "^0.5.65",
         "@leight/i18n-client": "^0.5.65",

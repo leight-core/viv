@@ -1,5 +1,13 @@
 # @leight/calendar-client
 
+## 0.5.17
+
+### Patch Changes
+
+- 6ac1bdcc: Updated CalendarSource to force from/to filters
+- Updated dependencies
+    - @leight/calendar@0.5.7
+
 ## 0.5.16
 
 ### Patch Changes

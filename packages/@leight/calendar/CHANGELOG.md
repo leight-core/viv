@@ -1,5 +1,11 @@
 # @leight/calendar
 
+## 0.5.7
+
+### Patch Changes
+
+- Added Calendar Source schema with filters
+
 ## 0.5.6
 
 ### Patch Changes
