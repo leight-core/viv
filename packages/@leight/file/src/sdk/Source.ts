@@ -13,5 +13,10 @@ import {type IFileSourceSchema} from "./SourceSchema";
 export interface IFileSource extends ISource<IFileSourceSchema> {
 }
 
-export const $FileSource       = Symbol.for("@leight/file/IFileSource");
-export const FileSourceContext = (container: IContainer) => new ServiceContext<IFileSource>(container, $FileSource);
+export const $FileSource                      = Symbol.for("@leight/file/IFileSource");
+export const FileSourceContext                = (container: IContainer) => new ServiceContext<IFileSource>(container, $FileSource);
+/**
+ * Default export marking a file it's generated and also preventing failing
+ * an empty file export (every module "must" have an export).
+ */
+export const $leight_oovmjmh8z8koxgrwbda6wlca = true;

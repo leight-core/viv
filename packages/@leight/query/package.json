@@ -1,5 +1,5 @@
 {
-    "version": "0.5.57",
+    "version": "0.5.58",
     "name": "@leight/query",
     "description": "Common query stuff (for querying data).",
     "license": "MIT",
@@ -28,17 +28,17 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/cursor": "^0.5.51",
-        "@leight/filter": "^0.5.53",
-        "@leight/react-query": "^0.5.20",
-        "@leight/sort": "^0.5.54",
-        "@leight/zod": "^0.5.3"
+        "@leight/cursor": "^0.5.52",
+        "@leight/filter": "^0.5.54",
+        "@leight/react-query": "^0.5.21",
+        "@leight/sort": "^0.5.55",
+        "@leight/zod": "^0.5.4"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.36",
-        "@leight/eslint-config-eslint": "^0.5.45",
-        "@leight/tsconfig": "^0.5.59",
-        "@leight/turbowatch": "^0.5.24",
+        "@leight/esbuild": "^0.5.37",
+        "@leight/eslint-config-eslint": "^0.5.46",
+        "@leight/tsconfig": "^0.5.60",
+        "@leight/turbowatch": "^0.5.25",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

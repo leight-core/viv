@@ -10,25 +10,25 @@ import {
     type FC
 }                           from "react";
 
-export type IWeeksStoreStoreProps = IStoreProps<{
+export type IWeeksStoreProps = IStoreProps<{
     /**
      * Set weeks of the given date
      */
-    weeksOf(date: DateTime): void;
+    weeksOf(date: DateTime): IWeeks;
     /**
      * Move to the current month
      */
-    today(): void;
+    today(): IWeeks;
     /**
      * Change weeks to the previous month
      */
-    prevMonth(): void;
+    prevMonth(): IWeeks;
     /**
      * Change weeks to the next month
      */
-    nextMonth(): void;
-    prevYear(): void;
-    nextYear(): void;
+    nextMonth(): IWeeks;
+    prevYear(): IWeeks;
+    nextYear(): IWeeks;
 }, {
     /**
      * Calendar is computed based on an input, so it cannot be required
@@ -37,37 +37,43 @@ export type IWeeksStoreStoreProps = IStoreProps<{
     readonly weeks: IWeeks;
 }>
 
-export const WeeksOfStore = createStoreContext<IWeeksStoreStoreProps>({
-    state: ({state}) => (set) => ({
+export const WeeksOfStore = createStoreContext<IWeeksStoreProps>({
+    state: ({state}) => (set, get) => ({
         weeksOf(date: DateTime) {
             set({
                 weeks: weeksOf({date}),
             });
+            return get().weeks;
         },
         today() {
             set({
                 weeks: weeksOf({date: DateTime.now()}),
             });
+            return get().weeks;
         },
         prevMonth() {
             set(({weeks: {date}}) => ({
                 weeks: weeksOf({date: date.minus({month: 1})}),
             }));
+            return get().weeks;
         },
         nextMonth() {
             set(({weeks: {date}}) => ({
                 weeks: weeksOf({date: date.plus({month: 1})}),
             }));
+            return get().weeks;
         },
         prevYear() {
             set(({weeks: {date}}) => ({
                 weeks: weeksOf({date: date.minus({year: 1})}),
             }));
+            return get().weeks;
         },
         nextYear() {
             set(({weeks: {date}}) => ({
                 weeks: weeksOf({date: date.plus({year: 1})}),
             }));
+            return get().weeks;
         },
         ...state,
     }),

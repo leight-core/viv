@@ -41,23 +41,34 @@ export type IUserSort = z.infer<IUserSortSchema>;
 export type IUserQuerySchema = typeof UserQuerySchema;
 export type IUserQuery = z.infer<IUserQuerySchema>;
 
-export const UserWhereSchema       = UserWhereInputSchema;
-export const UserWhereUniqueSchema = UserWhereUniqueInputSchema;
-export const UserOrderBySchema     = UserOrderByWithRelationInputSchema;
-export const UserSchema            = $EntitySchema;
-export const UserCreateSchema      = UserOptionalDefaultsSchema;
-export const UserPatchSchema       = UserPartialSchema.merge(WithIdentitySchema);
-export const UserFilterSchema      = z.union([
+export const UserWhereSchema                  = UserWhereInputSchema;
+export const UserWhereUniqueSchema            = UserWhereUniqueInputSchema;
+export const UserOrderBySchema                = UserOrderByWithRelationInputSchema;
+/**
+ * Schema definition for User
+ */
+export const UserSchema                       = $EntitySchema;
+export const UserCreateSchema                 = UserOptionalDefaultsSchema;
+export const UserPatchSchema                  = UserPartialSchema.merge(WithIdentitySchema);
+export const UserFilterSchema                 = z.union([
     UserWhereSchema,
     UserWhereUniqueSchema,
     FilterSchema,
 ]);
-export const UserParamSchema       = ParamsSchema;
-export const UserSortSchema        = z.object({
+export const UserParamSchema                  = ParamsSchema;
+export const UserSortSchema                   = z.object({
     id: SortOrderSchema
 });
-export const UserQuerySchema       = QuerySchema({
+/**
+ * Query definition for User
+ */
+export const UserQuerySchema                  = QuerySchema({
     filterSchema: UserFilterSchema,
     sortSchema:   UserSortSchema,
     paramsSchema: UserParamSchema,
 });
+/**
+ * Default export marking a file it's generated and also preventing failing
+ * an empty file export (every module "must" have an export).
+ */
+export const $leight_e4asxiyub0zd7ou1g9w7taxy = true;

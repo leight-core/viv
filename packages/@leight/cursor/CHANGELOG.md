@@ -1,5 +1,13 @@
 # @leight/cursor
 
+## 0.5.52
+
+### Patch Changes
+
+- Updated packages
+- Updated dependencies
+    - @leight/zod@0.5.4
+
 ## 0.5.51
 
 ### Patch Changes

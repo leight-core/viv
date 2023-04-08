@@ -1,48 +1,46 @@
-import {DateInline} from "@leight/i18n-client";
+import {type ICalendarEventSchema} from "@leight/calendar";
+import {DateInline}                from "@leight/i18n-client";
+import {type ISourceSchema}        from "@leight/source";
 import {
     ActionIcon,
     Box,
     Button,
     Overlay
-}                   from "@mantine/core";
+}                                  from "@mantine/core";
 import {
     IconCalendarSearch,
     IconX
-}                   from "@tabler/icons-react";
-import {
-    type FC,
-    useState
-}                   from "react";
+}                                  from "@tabler/icons-react";
+import {useState}                  from "react";
 import {
     MonthsOfStore,
     WeeksOfStore,
     YearsOfStore
-}                   from "../context";
-import {Months}     from "./Months";
+}                                  from "../context";
+import {Months}                    from "./Months";
 import {
     type IWeeksProps,
     Weeks
-}                   from "./Weeks";
-import {Years}      from "./Years";
+}                                  from "./Weeks";
+import {Years}                     from "./Years";
 
-export interface ICalendarProps extends IWeeksProps {
-    onClick?: IWeeksProps["onClick"];
+export interface ICalendarProps<TSourceSchema extends ISourceSchema<ICalendarEventSchema> = ISourceSchema<ICalendarEventSchema>> extends IWeeksProps<TSourceSchema> {
     withControls?: boolean;
 }
 
-export const Calendar: FC<ICalendarProps> = (
+export const Calendar = <TSourceSchema extends ISourceSchema<ICalendarEventSchema> = ISourceSchema<ICalendarEventSchema>>(
     {
         onClick,
         withControls = true,
         ...props
-    }) => {
+    }: ICalendarProps<TSourceSchema>) => {
     const {weeksOf, weeks}              = WeeksOfStore.useState(({weeksOf, weeks}) => ({weeksOf, weeks}));
     const {monthsOf}                    = MonthsOfStore.useState(({monthsOf}) => ({monthsOf}));
     const {yearsOf}                     = YearsOfStore.useState(({yearsOf}) => ({yearsOf}));
     const [selectMonth, setSelectMonth] = useState(false);
     const [selectYear, setSelectYear]   = useState(false);
     return <Box pos={"relative"}>
-        <Weeks
+        <Weeks<TSourceSchema>
             onClick={onClick}
             withControls={withControls}
             controlsBottomMiddle={<Button.Group>
@@ -70,7 +68,7 @@ export const Calendar: FC<ICalendarProps> = (
             {...props}
         >
             {selectMonth && <Overlay color={"#FFF"} opacity={1}>
-                <Months
+                <Months<TSourceSchema>
                     onClick={({month: {month}}) => {
                         weeksOf(month);
                         setSelectMonth(false);
@@ -84,7 +82,7 @@ export const Calendar: FC<ICalendarProps> = (
                 />
             </Overlay>}
             {selectYear && <Overlay color={"#FFF"} opacity={1}>
-                <Years
+                <Years<TSourceSchema>
                     onClick={({year: {year}}) => {
                         weeksOf(year);
                         setSelectYear(false);

@@ -1,5 +1,5 @@
 /**
- Base Source contains default implementation of Source for entity User. This could be used for further extensions,
+ Base Prisma Source contains default implementation of Source for entity User connected to Prisma. This could be used for further extensions,
  also default export uses this as a parent class.
  */
 import {
@@ -20,7 +20,7 @@ import {
     type IUserWhereUnique
 }                       from "@leight/user";
 
-export class UserBaseSource extends AbstractSource<IUserSourceSchema> {
+export class UserBasePrismaSource extends AbstractSource<IUserSourceSchema> {
     static inject = [
         $PrismaClient,
     ];
@@ -67,3 +67,9 @@ export class UserBaseSource extends AbstractSource<IUserSourceSchema> {
         return sort as IUserOrderBy;
     }
 }
+
+/**
+ * Default export marking a file it's generated and also preventing failing
+ * an empty file export (every module "must" have an export).
+ */
+export const $leight_qw7jznhe5h6sh9klhso1gxne = true;

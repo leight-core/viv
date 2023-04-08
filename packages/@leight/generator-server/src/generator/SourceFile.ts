@@ -6,7 +6,10 @@ import {
     type IWithInterfaces,
     type IWithTypes
 }                           from "@leight/generator";
-import {diffOf}             from "@leight/utils";
+import {
+    diffOf,
+    generateId
+}                           from "@leight/utils";
 import {resolvePackageJson} from "@leight/utils-server";
 import {
     appendFileSync,
@@ -92,6 +95,19 @@ export class SourceFile implements IExportable {
     }
 
     public saveTo({file, barrel, silent = false}: SourceFile.ISaveToProps) {
+        this.withConsts({
+            exports: {
+                [`$leight_${generateId()}`]: {
+                    body:    "true",
+                    comment: `
+/**
+ * Default export marking a file it's generated and also preventing failing
+ * an empty file export (every module "must" have an export).
+ */
+                    `,
+                },
+            }
+        });
         mkdirSync(dirname(file), {recursive: true});
         writeFileSync(file, this.export(), {
             flag:     "w+",

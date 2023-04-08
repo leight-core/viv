@@ -1,5 +1,21 @@
 # @leight/xlsx-import-server
 
+## 0.5.57
+
+### Patch Changes
+
+- Updated packages
+- Updated dependencies
+    - @leight/file@0.5.65
+    - @leight/job@0.5.68
+    - @leight/container@0.5.59
+    - @leight/import@0.5.57
+    - @leight/trpc-server@0.5.63
+    - @leight/utils@0.5.61
+    - @leight/utils-server@0.5.57
+    - @leight/xlsx-import@0.5.58
+    - @leight/zod@0.5.4
+
 ## 0.5.56
 
 ### Patch Changes

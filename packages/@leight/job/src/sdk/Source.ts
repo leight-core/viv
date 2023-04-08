@@ -13,5 +13,10 @@ import {type IJobSourceSchema} from "./SourceSchema";
 export interface IJobSource extends ISource<IJobSourceSchema> {
 }
 
-export const $JobSource       = Symbol.for("@leight/job/IJobSource");
-export const JobSourceContext = (container: IContainer) => new ServiceContext<IJobSource>(container, $JobSource);
+export const $JobSource                       = Symbol.for("@leight/job/IJobSource");
+export const JobSourceContext                 = (container: IContainer) => new ServiceContext<IJobSource>(container, $JobSource);
+/**
+ * Default export marking a file it's generated and also preventing failing
+ * an empty file export (every module "must" have an export).
+ */
+export const $leight_vondaruexidlmqwugpme3jf6 = true;

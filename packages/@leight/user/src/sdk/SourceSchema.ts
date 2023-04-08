@@ -13,7 +13,7 @@ import {
     type IUserPatchSchema,
     type IUserSchema,
     type IUserSortSchema
-}                       from "./Schema";
+}                       from "./PrismaSchema";
 
 export type IUseUserQuery = IUseQuery<IUserSourceSchema["Query"] | undefined, IUserSourceSchema["Entity"][]>;
 export type IUseUserCountQuery = IUseQuery<IUserSourceSchema["Query"] | undefined, number>;
@@ -29,3 +29,9 @@ export interface IUserSourceSchema extends ISourceSchema<
     IUserParamSchema
 > {
 }
+
+/**
+ * Default export marking a file it's generated and also preventing failing
+ * an empty file export (every module "must" have an export).
+ */
+export const $leight_o6rvce8fim4qgjfvd02gvyrz = true;

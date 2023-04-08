@@ -1,28 +1,29 @@
-import {type IMonth}   from "@leight/calendar";
-import {DateTime}      from "@leight/i18n";
-import {DateInline}    from "@leight/i18n-client";
-import {classNames}    from "@leight/utils-client";
+import {
+    type ICalendarEventSchema,
+    type IMonth
+}                               from "@leight/calendar";
+import {DateTime}               from "@leight/i18n";
+import {DateInline}             from "@leight/i18n-client";
+import {type ISourceSchema}     from "@leight/source";
+import {classNames}             from "@leight/utils-client";
 import {
     Button,
     Grid,
     Group,
     Text
-}                      from "@mantine/core";
+}                               from "@mantine/core";
 import {
     IconChevronLeft,
     IconChevronRight
-}                      from "@tabler/icons-react";
-import {
-    type FC,
-    type PropsWithChildren
-}                      from "react";
-import {MonthsOfStore} from "../context";
+}                               from "@tabler/icons-react";
+import {type PropsWithChildren} from "react";
+import {MonthsOfStore}          from "../context";
 import {
     CalendarShell,
     type ICalendarShellProps
-}                      from "./CalendarShell";
+}                               from "./CalendarShell";
 
-export type IMonthsProps = PropsWithChildren<Omit<ICalendarShellProps, "children" | "onClick"> & {
+export type IMonthsProps<TSourceSchema extends ISourceSchema<ICalendarEventSchema> = ISourceSchema<ICalendarEventSchema>> = PropsWithChildren<Omit<ICalendarShellProps<TSourceSchema>, "children" | "onClick"> & {
     onClick?(props: IIMonthsProps.IOnClickProps): void;
 }>;
 
@@ -32,12 +33,12 @@ export namespace IIMonthsProps {
     }
 }
 
-export const Months: FC<IMonthsProps> = (
+export const Months = <TSourceSchema extends ISourceSchema<ICalendarEventSchema> = ISourceSchema<ICalendarEventSchema>>(
     {
         children,
         onClick,
         ...props
-    }) => {
+    }: IMonthsProps<TSourceSchema>) => {
     const {months: {months, isCurrent, date}, today, prevYear, nextYear} = MonthsOfStore.useState();
     const columnCount                                                    = 4;
     const rowCount                                                       = months.length / columnCount;

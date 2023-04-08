@@ -1,5 +1,5 @@
 /**
- Base Source contains default implementation of Source for entity File. This could be used for further extensions,
+ Base Prisma Source contains default implementation of Source for entity File connected to Prisma. This could be used for further extensions,
  also default export uses this as a parent class.
  */
 import {
@@ -20,7 +20,7 @@ import {
 }                       from "@leight/source";
 import {AbstractSource} from "@leight/source-server";
 
-export class FileBaseSource extends AbstractSource<IFileSourceSchema> {
+export class FileBasePrismaSource extends AbstractSource<IFileSourceSchema> {
     static inject = [
         $PrismaClient,
     ];
@@ -67,3 +67,9 @@ export class FileBaseSource extends AbstractSource<IFileSourceSchema> {
         return sort as IFileOrderBy;
     }
 }
+
+/**
+ * Default export marking a file it's generated and also preventing failing
+ * an empty file export (every module "must" have an export).
+ */
+export const $leight_hotu1crr6wtrbcs1gruoy3wi = true;

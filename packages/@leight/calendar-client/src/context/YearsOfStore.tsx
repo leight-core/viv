@@ -10,31 +10,31 @@ import {
     type FC
 }                           from "react";
 
-export type IYearsStoreStoreProps = IStoreProps<{
+export type IYearsStoreProps = IStoreProps<{
     /**
      * Set years of the given date
      */
-    yearsOf(date: DateTime): void;
+    yearsOf(date: DateTime): IYears;
     /**
      * Move to the current year
      */
-    today(): void;
+    today(): IYears;
     /**
      * Move to the previous year (floating years)
      */
-    prevYear(): void;
+    prevYear(): IYears;
     /**
      * Move to the next year (floating years)
      */
-    nextYear(): void;
+    nextYear(): IYears;
     /**
      * Move to the previous "page" of years
      */
-    prevYears(): void;
+    prevYears(): IYears;
     /**
      * Move to the next "page" of years
      */
-    nextYears(): void;
+    nextYears(): IYears;
 }, {
     /**
      * Calendar is computed based on an input, so it cannot be required
@@ -43,37 +43,43 @@ export type IYearsStoreStoreProps = IStoreProps<{
     readonly years: IYears;
 }>
 
-export const YearsOfStore = createStoreContext<IYearsStoreStoreProps>({
-    state: ({state}) => (set) => ({
+export const YearsOfStore = createStoreContext<IYearsStoreProps>({
+    state: ({state}) => (set, get) => ({
         yearsOf(date: DateTime) {
             set({
                 years: yearsOf({date}),
             });
+            return get().years;
         },
         today() {
             set({
                 years: yearsOf({date: DateTime.now()}),
             });
+            return get().years;
         },
         prevYear() {
             set(({years: {date}}) => ({
                 years: yearsOf({date: date.minus({year: 1})}),
             }));
+            return get().years;
         },
         nextYear() {
             set(({years: {date}}) => ({
                 years: yearsOf({date: date.plus({year: 1})}),
             }));
+            return get().years;
         },
         prevYears() {
             set(({years: {count, date}}) => ({
                 years: yearsOf({date: date.minus({year: count})}),
             }));
+            return get().years;
         },
         nextYears() {
             set(({years: {count, date}}) => ({
                 years: yearsOf({date: date.plus({year: count})}),
             }));
+            return get().years;
         },
         ...state,
     }),

@@ -15,21 +15,22 @@ import {
 
 export type IJobSource = ISourceProps<IJobSourceSchema>;
 
-const StoreSourceContext             = createSourceContext<IJobSourceSchema>({
+/**
+ * Defines Store for Job, so you can access it's data.
+ */
+export const JobSourceStore                   = createSourceContext<IJobSourceSchema>({
     name:   "Job",
     schema: JobSchema,
 });
-const StoreSortContext               = createSortContext<IJobSortSchema>({
+/**
+ * Defines Store for Job sorting data.
+ */
+export const JobSortStore                     = createSortContext<IJobSortSchema>({
     name:   "JobSort",
     schema: JobSortSchema,
 });
-export const JobProvider             = StoreSourceContext.Provider;
-export const useJobSource            = StoreSourceContext.useState;
-export const useOptionalJobSource    = StoreSourceContext.useOptionalState;
-export const useJobStore             = StoreSourceContext.useStore;
-export const useOptionalJobStore     = StoreSourceContext.useOptionalStore;
-export const JobSortProvider         = StoreSortContext.Provider;
-export const useJobSort              = StoreSortContext.useState;
-export const useOptionalJobSort      = StoreSortContext.useOptionalState;
-export const useJobSortStore         = StoreSortContext.useStore;
-export const useOptionalJobSortStore = StoreSortContext.useOptionalStore;
+/**
+ * Default export marking a file it's generated and also preventing failing
+ * an empty file export (every module "must" have an export).
+ */
+export const $leight_vs3ljfs2tj8jv8pek5ssnzv5 = true;

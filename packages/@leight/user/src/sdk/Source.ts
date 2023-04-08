@@ -14,5 +14,10 @@ import {type IUserSourceSchema} from "./SourceSchema";
 export interface IUserSource extends ISource<IUserSourceSchema>, IUserSourceEx {
 }
 
-export const $UserSource       = Symbol.for("@leight/user/IUserSource");
-export const UserSourceContext = (container: IContainer) => new ServiceContext<IUserSource>(container, $UserSource);
+export const $UserSource                      = Symbol.for("@leight/user/IUserSource");
+export const UserSourceContext                = (container: IContainer) => new ServiceContext<IUserSource>(container, $UserSource);
+/**
+ * Default export marking a file it's generated and also preventing failing
+ * an empty file export (every module "must" have an export).
+ */
+export const $leight_kdf7q93xftxklzrbeck5zl5h = true;

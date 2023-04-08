@@ -1,5 +1,21 @@
 # @leight/job-client
 
+## 0.5.19
+
+### Patch Changes
+
+- Updated packages
+- Updated dependencies
+    - @leight/job@0.5.68
+    - @leight/sdk@0.5.16
+    - @leight/i18n@0.5.64
+    - @leight/i18n-client@0.5.64
+    - @leight/query-client@0.5.25
+    - @leight/sort-client@0.5.21
+    - @leight/source-client@0.5.28
+    - @leight/table-client@0.5.27
+    - @leight/utils@0.5.61
+
 ## 0.5.18
 
 ### Patch Changes

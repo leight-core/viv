@@ -10,17 +10,17 @@ import {
     type FC
 }                           from "react";
 
-export type IMonthsStoreStoreProps = IStoreProps<{
+export type IMonthsStoreProps = IStoreProps<{
     /**
      * Set months of the given date
      */
-    monthsOf(date: DateTime): void;
+    monthsOf(date: DateTime): IMonths;
     /**
      * Move to the current month
      */
-    today(): void;
-    prevYear(): void;
-    nextYear(): void;
+    today(): IMonths;
+    prevYear(): IMonths;
+    nextYear(): IMonths;
 }, {
     /**
      * Calendar is computed based on an input, so it cannot be required
@@ -29,27 +29,31 @@ export type IMonthsStoreStoreProps = IStoreProps<{
     readonly months: IMonths;
 }>
 
-export const MonthsOfStore = createStoreContext<IMonthsStoreStoreProps>({
-    state: ({state}) => (set) => ({
+export const MonthsOfStore = createStoreContext<IMonthsStoreProps>({
+    state: ({state}) => (set, get) => ({
         monthsOf(date: DateTime) {
             set({
                 months: monthsOf({date}),
             });
+            return get().months;
         },
         today() {
             set({
                 months: monthsOf({date: DateTime.now()}),
             });
+            return get().months;
         },
         prevYear() {
             set(({months: {date}}) => ({
                 months: monthsOf({date: date.minus({year: 1})}),
             }));
+            return get().months;
         },
         nextYear() {
             set(({months: {date}}) => ({
                 months: monthsOf({date: date.plus({year: 1})}),
             }));
+            return get().months;
         },
         ...state,
     }),

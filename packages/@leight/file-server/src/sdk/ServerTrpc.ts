@@ -10,7 +10,12 @@ import {
 }                            from "@leight/file";
 import {withSourceProcedure} from "@leight/trpc-source-server";
 
-export const FileSourceProcedure = withSourceProcedure<IFileSourceSchema>({
+export const FileSourceProcedure              = withSourceProcedure<IFileSourceSchema>({
     source: $FileSource,
     schema: FileQuerySchema,
 });
+/**
+ * Default export marking a file it's generated and also preventing failing
+ * an empty file export (every module "must" have an export).
+ */
+export const $leight_f48s49wutrdviu3e3taz02f7 = true;

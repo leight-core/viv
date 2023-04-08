@@ -15,21 +15,22 @@ import {
 
 export type IFileSource = ISourceProps<IFileSourceSchema>;
 
-const StoreSourceContext              = createSourceContext<IFileSourceSchema>({
+/**
+ * Defines Store for File, so you can access it's data.
+ */
+export const FileSourceStore                  = createSourceContext<IFileSourceSchema>({
     name:   "File",
     schema: FileSchema,
 });
-const StoreSortContext                = createSortContext<IFileSortSchema>({
+/**
+ * Defines Store for File sorting data.
+ */
+export const FileSortStore                    = createSortContext<IFileSortSchema>({
     name:   "FileSort",
     schema: FileSortSchema,
 });
-export const FileProvider             = StoreSourceContext.Provider;
-export const useFileSource            = StoreSourceContext.useState;
-export const useOptionalFileSource    = StoreSourceContext.useOptionalState;
-export const useFileStore             = StoreSourceContext.useStore;
-export const useOptionalFileStore     = StoreSourceContext.useOptionalStore;
-export const FileSortProvider         = StoreSortContext.Provider;
-export const useFileSort              = StoreSortContext.useState;
-export const useOptionalFileSort      = StoreSortContext.useOptionalState;
-export const useFileSortStore         = StoreSortContext.useStore;
-export const useOptionalFileSortStore = StoreSortContext.useOptionalStore;
+/**
+ * Default export marking a file it's generated and also preventing failing
+ * an empty file export (every module "must" have an export).
+ */
+export const $leight_pbz109peqktjiff0mk97fddf = true;

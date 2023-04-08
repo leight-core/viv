@@ -1,30 +1,31 @@
-import {type IYear}     from "@leight/calendar";
-import {DateInline}     from "@leight/i18n-client";
-import {classNames}     from "@leight/utils-client";
+import {
+    type ICalendarEventSchema,
+    type IYear
+}                               from "@leight/calendar";
+import {DateInline}             from "@leight/i18n-client";
+import {type ISourceSchema}     from "@leight/source";
+import {classNames}             from "@leight/utils-client";
 import {
     Button,
     Grid,
     Group,
     Text
-}                       from "@mantine/core";
+}                               from "@mantine/core";
 import {
     IconChevronLeft,
     IconChevronRight,
     IconChevronsLeft,
     IconChevronsRight
-}                       from "@tabler/icons-react";
-import {
-    type FC,
-    type PropsWithChildren
-}                       from "react";
-import {YearsOfStore}   from "../context";
-import {DateRageInline} from "../inline";
+}                               from "@tabler/icons-react";
+import {type PropsWithChildren} from "react";
+import {YearsOfStore}           from "../context";
+import {DateRageInline}         from "../inline";
 import {
     CalendarShell,
     type ICalendarShellProps
-}                       from "./CalendarShell";
+}                               from "./CalendarShell";
 
-export type IYearsProps = PropsWithChildren<Omit<ICalendarShellProps, "children" | "onClick"> & {
+export type IYearsProps<TSourceSchema extends ISourceSchema<ICalendarEventSchema> = ISourceSchema<ICalendarEventSchema>> = PropsWithChildren<Omit<ICalendarShellProps<TSourceSchema>, "children" | "onClick"> & {
     onClick?(props: IYearsProps.IOnClickProps): void;
 }>;
 
@@ -34,12 +35,12 @@ export namespace IYearsProps {
     }
 }
 
-export const Years: FC<IYearsProps> = (
+export const Years = <TSourceSchema extends ISourceSchema<ICalendarEventSchema> = ISourceSchema<ICalendarEventSchema>>(
     {
         children,
         onClick,
         ...props
-    }) => {
+    }: IYearsProps<TSourceSchema>) => {
     const {
               years: {
                          years,

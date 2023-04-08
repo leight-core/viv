@@ -1,5 +1,5 @@
 /**
- Base Source contains default implementation of Source for entity Job. This could be used for further extensions,
+ Base Prisma Source contains default implementation of Source for entity Job connected to Prisma. This could be used for further extensions,
  also default export uses this as a parent class.
  */
 import {
@@ -20,7 +20,7 @@ import {
 }                       from "@leight/source";
 import {AbstractSource} from "@leight/source-server";
 
-export class JobBaseSource extends AbstractSource<IJobSourceSchema> {
+export class JobBasePrismaSource extends AbstractSource<IJobSourceSchema> {
     static inject = [
         $PrismaClient,
     ];
@@ -67,3 +67,9 @@ export class JobBaseSource extends AbstractSource<IJobSourceSchema> {
         return sort as IJobOrderBy;
     }
 }
+
+/**
+ * Default export marking a file it's generated and also preventing failing
+ * an empty file export (every module "must" have an export).
+ */
+export const $leight_iapwn5v5exg9pf7f9hpr6jfg = true;

@@ -1,5 +1,11 @@
 # @leight/zod
 
+## 0.5.4
+
+### Patch Changes
+
+- Updated packages
+
 ## 0.5.3
 
 ### Patch Changes

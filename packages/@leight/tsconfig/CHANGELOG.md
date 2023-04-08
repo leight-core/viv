@@ -1,5 +1,11 @@
 # @leight/tsconfig
 
+## 0.5.60
+
+### Patch Changes
+
+- Updated packages
+
 ## 0.5.59
 
 ### Patch Changes

@@ -41,23 +41,34 @@ export type IFileSort = z.infer<IFileSortSchema>;
 export type IFileQuerySchema = typeof FileQuerySchema;
 export type IFileQuery = z.infer<IFileQuerySchema>;
 
-export const FileWhereSchema       = FileWhereInputSchema;
-export const FileWhereUniqueSchema = FileWhereUniqueInputSchema;
-export const FileOrderBySchema     = FileOrderByWithRelationInputSchema;
-export const FileSchema            = $EntitySchema;
-export const FileCreateSchema      = FileOptionalDefaultsSchema;
-export const FilePatchSchema       = FilePartialSchema.merge(WithIdentitySchema);
-export const FileFilterSchema      = z.union([
+export const FileWhereSchema                  = FileWhereInputSchema;
+export const FileWhereUniqueSchema            = FileWhereUniqueInputSchema;
+export const FileOrderBySchema                = FileOrderByWithRelationInputSchema;
+/**
+ * Schema definition for File
+ */
+export const FileSchema                       = $EntitySchema;
+export const FileCreateSchema                 = FileOptionalDefaultsSchema;
+export const FilePatchSchema                  = FilePartialSchema.merge(WithIdentitySchema);
+export const FileFilterSchema                 = z.union([
     FileWhereSchema,
     FileWhereUniqueSchema,
     FilterSchema,
 ]);
-export const FileParamSchema       = ParamsSchema;
-export const FileSortSchema        = z.object({
+export const FileParamSchema                  = ParamsSchema;
+export const FileSortSchema                   = z.object({
     id: SortOrderSchema
 });
-export const FileQuerySchema       = QuerySchema({
+/**
+ * Query definition for File
+ */
+export const FileQuerySchema                  = QuerySchema({
     filterSchema: FileFilterSchema,
     sortSchema:   FileSortSchema,
     paramsSchema: FileParamSchema,
 });
+/**
+ * Default export marking a file it's generated and also preventing failing
+ * an empty file export (every module "must" have an export).
+ */
+export const $leight_w50s0h4lzipbeha6n8hzo7tj = true;

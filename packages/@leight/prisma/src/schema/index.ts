@@ -260,7 +260,7 @@ export const AccountWithRelationsSchema: z.ZodType<AccountWithRelations> = Accou
 //------------------------------------------------------
 
 export type AccountOptionalDefaultsRelations = {
-    user: UserOptionalDefaultsRelations;
+    user: UserOptionalDefaultsWithRelations;
 };
 
 export type AccountOptionalDefaultsWithRelations =
@@ -335,7 +335,7 @@ export const SessionWithRelationsSchema: z.ZodType<SessionWithRelations> = Sessi
 //------------------------------------------------------
 
 export type SessionOptionalDefaultsRelations = {
-    user: UserOptionalDefaultsRelations;
+    user: UserOptionalDefaultsWithRelations;
 };
 
 export type SessionOptionalDefaultsWithRelations =
@@ -419,11 +419,11 @@ export const UserWithRelationsSchema: z.ZodType<UserWithRelations> = UserSchema.
 //------------------------------------------------------
 
 export type UserOptionalDefaultsRelations = {
-    accounts: AccountOptionalDefaultsRelations[];
-    sessions: SessionOptionalDefaultsRelations[];
-    UserToken: UserTokenOptionalDefaultsRelations[];
-    File: FileOptionalDefaultsRelations[];
-    Job: JobOptionalDefaultsRelations[];
+    accounts: AccountOptionalDefaultsWithRelations[];
+    sessions: SessionOptionalDefaultsWithRelations[];
+    UserToken: UserTokenOptionalDefaultsWithRelations[];
+    File: FileOptionalDefaultsWithRelations[];
+    Job: JobOptionalDefaultsWithRelations[];
 };
 
 export type UserOptionalDefaultsWithRelations =
@@ -535,7 +535,7 @@ export const TokenWithRelationsSchema: z.ZodType<TokenWithRelations> = TokenSche
 //------------------------------------------------------
 
 export type TokenOptionalDefaultsRelations = {
-    UserToken: UserTokenOptionalDefaultsRelations[];
+    UserToken: UserTokenOptionalDefaultsWithRelations[];
 };
 
 export type TokenOptionalDefaultsWithRelations =
@@ -611,8 +611,8 @@ export const UserTokenWithRelationsSchema: z.ZodType<UserTokenWithRelations> = U
 //------------------------------------------------------
 
 export type UserTokenOptionalDefaultsRelations = {
-    user: UserOptionalDefaultsRelations;
-    token: TokenOptionalDefaultsRelations;
+    user: UserOptionalDefaultsWithRelations;
+    token: TokenOptionalDefaultsWithRelations;
 };
 
 export type UserTokenOptionalDefaultsWithRelations =
@@ -696,7 +696,7 @@ export const FileWithRelationsSchema: z.ZodType<FileWithRelations> = FileSchema.
 //------------------------------------------------------
 
 export type FileOptionalDefaultsRelations = {
-    user?: UserOptionalDefaultsRelations | null;
+    user?: UserOptionalDefaultsWithRelations | null;
 };
 
 export type FileOptionalDefaultsWithRelations =
@@ -822,8 +822,8 @@ export const JobWithRelationsSchema: z.ZodType<JobWithRelations> = JobSchema.mer
 //------------------------------------------------------
 
 export type JobOptionalDefaultsRelations = {
-    user?: UserOptionalDefaultsRelations | null;
-    logs: JobLogOptionalDefaultsRelations[];
+    user?: UserOptionalDefaultsWithRelations | null;
+    logs: JobLogOptionalDefaultsWithRelations[];
 };
 
 export type JobOptionalDefaultsWithRelations =
@@ -906,7 +906,7 @@ export const JobLogWithRelationsSchema: z.ZodType<JobLogWithRelations> = JobLogS
 //------------------------------------------------------
 
 export type JobLogOptionalDefaultsRelations = {
-    job: JobOptionalDefaultsRelations;
+    job: JobOptionalDefaultsWithRelations;
 };
 
 export type JobLogOptionalDefaultsWithRelations =

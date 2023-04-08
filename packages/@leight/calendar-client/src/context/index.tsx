@@ -27,7 +27,6 @@ export const CalendarProvider: FC<ICalendarProviderProps> = ({children, date}) =
     </YearsOfProvider>;
 };
 
-export * from "./CalendarItemsStore";
 export * from "./MonthsOfStore";
 export * from "./WeeksOfStore";
 export * from "./YearsOfStore";

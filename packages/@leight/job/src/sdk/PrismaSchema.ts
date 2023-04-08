@@ -42,23 +42,34 @@ export type IJobSort = z.infer<IJobSortSchema>;
 export type IJobQuerySchema = typeof JobQuerySchema;
 export type IJobQuery = z.infer<IJobQuerySchema>;
 
-export const JobWhereSchema       = JobWhereInputSchema;
-export const JobWhereUniqueSchema = JobWhereUniqueInputSchema;
-export const JobOrderBySchema     = JobOrderByWithRelationInputSchema;
-export const JobSchema            = $EntitySchema.merge(JobSchemaOverride);
-export const JobCreateSchema      = JobOptionalDefaultsSchema;
-export const JobPatchSchema       = JobPartialSchema.merge(WithIdentitySchema);
-export const JobFilterSchema      = z.union([
+export const JobWhereSchema                   = JobWhereInputSchema;
+export const JobWhereUniqueSchema             = JobWhereUniqueInputSchema;
+export const JobOrderBySchema                 = JobOrderByWithRelationInputSchema;
+/**
+ * Schema definition for Job
+ */
+export const JobSchema                        = $EntitySchema.merge(JobSchemaOverride);
+export const JobCreateSchema                  = JobOptionalDefaultsSchema;
+export const JobPatchSchema                   = JobPartialSchema.merge(WithIdentitySchema);
+export const JobFilterSchema                  = z.union([
     JobWhereSchema,
     JobWhereUniqueSchema,
     FilterSchema,
 ]);
-export const JobParamSchema       = ParamsSchema;
-export const JobSortSchema        = z.object({
+export const JobParamSchema                   = ParamsSchema;
+export const JobSortSchema                    = z.object({
     started: SortOrderSchema
 });
-export const JobQuerySchema       = QuerySchema({
+/**
+ * Query definition for Job
+ */
+export const JobQuerySchema                   = QuerySchema({
     filterSchema: JobFilterSchema,
     sortSchema:   JobSortSchema,
     paramsSchema: JobParamSchema,
 });
+/**
+ * Default export marking a file it's generated and also preventing failing
+ * an empty file export (every module "must" have an export).
+ */
+export const $leight_t2drqibkbuucb5639rkiucip = true;

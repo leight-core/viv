@@ -1,33 +1,37 @@
+import {type ICalendarEventSchema} from "@leight/calendar";
 import {
     type InferSelectors,
     switchScheme
-} from "@leight/mantine";
+}                                  from "@leight/mantine";
+import {
+    type ISourceSchema,
+    type IUseSourceState
+}                                  from "@leight/source";
 import {
     isCallable,
     withBool
-} from "@leight/utils";
+}                                  from "@leight/utils";
 import {
     BlockStore,
     classNames
-} from "@leight/utils-client";
+}                                  from "@leight/utils-client";
 import {
     Box,
     Container,
     createStyles,
     Grid,
     LoadingOverlay
-} from "@mantine/core";
+}                                  from "@mantine/core";
 import {
     type ComponentProps,
-    type FC,
     type ReactNode
-} from "react";
+}                                  from "react";
 
 const useStyles = createStyles(theme => ({
-    calendar:     {
+    calendar:       {
         userSelect: "none",
     },
-    calendarGrid: {
+    calendarGrid:   {
         border:         "1px solid",
         borderColor:    switchScheme(
             theme,
@@ -46,7 +50,7 @@ const useStyles = createStyles(theme => ({
             borderRight: "none",
         },
     },
-    controlsGrid: {
+    controlsGrid:   {
         "& > div:last-child": {
             borderRight:      "1px solid",
             borderRightColor: switchScheme(
@@ -70,7 +74,7 @@ const useStyles = createStyles(theme => ({
     },
     controlsPrefix: {},
     controlsSuffix: {},
-    header:       {
+    header:         {
         backgroundColor: switchScheme(
             theme,
             theme.colors.gray[6],
@@ -83,7 +87,7 @@ const useStyles = createStyles(theme => ({
         justifyContent:  "center",
         alignItems:      "center",
     },
-    cell:         {
+    cell:           {
         height:    "6em",
         padding:   "0",
         "&:hover": {
@@ -106,7 +110,7 @@ const useStyles = createStyles(theme => ({
         justifyContent: "center",
         alignItems:     "center",
     },
-    row:          {
+    row:            {
         "& > div": {
             borderRight: "1px solid",
             borderColor: switchScheme(
@@ -116,7 +120,7 @@ const useStyles = createStyles(theme => ({
             ),
         },
     },
-    currentMonth: {
+    currentMonth:   {
         fontWeight:      "bold",
         backgroundColor: switchScheme(
             theme,
@@ -124,7 +128,7 @@ const useStyles = createStyles(theme => ({
             theme.colors.gray[1]
         ),
     },
-    currentYear:  {
+    currentYear:    {
         fontWeight:      "bold",
         backgroundColor: switchScheme(
             theme,
@@ -133,7 +137,7 @@ const useStyles = createStyles(theme => ({
         ),
     },
     currentWeek:    {},
-    currentDay:   {
+    currentDay:     {
         backgroundColor: switchScheme(
             theme,
             theme.colors.gray[6],
@@ -143,7 +147,7 @@ const useStyles = createStyles(theme => ({
     inRange:        {
         fontWeight: "bold",
     },
-    outOfRange:   {
+    outOfRange:     {
         backgroundColor: switchScheme(
             theme,
             theme.colors.gray[6],
@@ -164,7 +168,13 @@ export namespace ICalendarComponent {
     }
 }
 
-export interface ICalendarShellProps extends Omit<ComponentProps<typeof Container>, "children"> {
+export interface ICalendarShellEvents<TSourceSchema extends ISourceSchema<ICalendarEventSchema>> {
+    schema: TSourceSchema["EntitySchema"];
+    useSource: IUseSourceState<TSourceSchema>;
+}
+
+export interface ICalendarShellProps<TSourceSchema extends ISourceSchema<ICalendarEventSchema>> extends Omit<ComponentProps<typeof Container>, "children"> {
+    events?: ICalendarShellEvents<TSourceSchema>;
     withControls?: boolean;
     controlsTopLeft?: ICalendarComponent;
     controlsTopMiddle?: ICalendarComponent;
@@ -180,8 +190,10 @@ const renderComponent = (component: ICalendarComponent | undefined, props: ICale
 /**
  * Styled shell for Calendar.
  */
-export const CalendarShell: FC<ICalendarShellProps> = (
+export const CalendarShell = <TSourceSchema extends ISourceSchema<ICalendarEventSchema> = ISourceSchema<ICalendarEventSchema>>(
     {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        events,
         withControls = true,
         controlsTopLeft,
         controlsTopMiddle,
@@ -191,7 +203,7 @@ export const CalendarShell: FC<ICalendarShellProps> = (
         controlsBottomRight,
         children,
         ...props
-    }) => {
+    }: ICalendarShellProps<TSourceSchema>) => {
     const blockStore         = BlockStore.useOptionalState();
     const {classes}          = useStyles();
     const controlColumnCount = 18;

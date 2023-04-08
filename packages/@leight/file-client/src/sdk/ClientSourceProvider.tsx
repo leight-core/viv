@@ -19,9 +19,8 @@ import {
 }                from "@leight/source-client";
 import {type FC} from "react";
 import {
-    FileProvider,
-    FileSortProvider,
-    useFileSort
+    FileSortStore,
+    FileSourceStore
 }                from "./ClientStore";
 
 export interface IFileSourceProps extends ISourceProps<IFileSourceSchema> {
@@ -32,17 +31,28 @@ export interface IFileQueryProviderProps extends IQueryProviderProps<IFileSource
     useCountQuery: IUseFileCountQuery;
 }
 
+/**
+ * Provides access to File data with a connection to filtering and sorting.
+ */
 export const FileSource: FC<IFileSourceProps>               = props => {
     return <Source<IFileSourceSchema>
         schema={FileSchema}
-        SourceProvider={FileProvider}
-        useSortState={useFileSort}
+        SourceProvider={FileSourceStore.Provider}
+        useSortState={FileSortStore.useState}
         {...props}
     />;
 };
+/**
+ * Provides all Query parts for File used in fetching and sorting its data.
+ */
 export const FileQueryProvider: FC<IFileQueryProviderProps> = props => {
     return <QueryProvider<IFileSourceSchema>
-        SortProvider={FileSortProvider}
+        SortProvider={FileSortStore.Provider}
         {...props}
     />;
 };
+/**
+ * Default export marking a file it's generated and also preventing failing
+ * an empty file export (every module "must" have an export).
+ */
+export const $leight_fy1za4f60mq5gk7mazvkf4ei               = true;

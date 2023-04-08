@@ -1,13 +1,18 @@
 import {
     withSdk,
-    withServerSourceGenerators
+    withServerSourceGenerators,
+    withServerSourceGeneratorsEntity
 } from "@leight/sdk";
 
-void withSdk(withServerSourceGenerators({
-    entity:   "Job",
-    packages: {
-        schema: "@leight/job",
-        prisma: "@leight/prisma",
-    },
-    prisma:   "job",
-}));
+void withSdk(
+    withServerSourceGenerators(
+        withServerSourceGeneratorsEntity({
+            name:     "Job",
+            packages: {
+                schema: "@leight/job",
+                prisma: "@leight/prisma",
+            },
+            prisma:   "job",
+        })
+    )
+);

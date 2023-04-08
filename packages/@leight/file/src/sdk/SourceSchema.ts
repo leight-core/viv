@@ -13,7 +13,7 @@ import {
     type IFilePatchSchema,
     type IFileSchema,
     type IFileSortSchema
-}                       from "./Schema";
+}                       from "./PrismaSchema";
 
 export type IUseFileQuery = IUseQuery<IFileSourceSchema["Query"] | undefined, IFileSourceSchema["Entity"][]>;
 export type IUseFileCountQuery = IUseQuery<IFileSourceSchema["Query"] | undefined, number>;
@@ -29,3 +29,9 @@ export interface IFileSourceSchema extends ISourceSchema<
     IFileParamSchema
 > {
 }
+
+/**
+ * Default export marking a file it's generated and also preventing failing
+ * an empty file export (every module "must" have an export).
+ */
+export const $leight_m34so4u7k60zd5f9w46lyneu = true;

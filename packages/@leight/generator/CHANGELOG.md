@@ -1,5 +1,11 @@
 # @leight/generator
 
+## 0.5.13
+
+### Patch Changes
+
+- Updated packages
+
 ## 0.5.12
 
 ### Patch Changes

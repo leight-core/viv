@@ -19,9 +19,8 @@ import {
 }                from "@leight/source-client";
 import {type FC} from "react";
 import {
-    JobProvider,
-    JobSortProvider,
-    useJobSort
+    JobSortStore,
+    JobSourceStore
 }                from "./ClientStore";
 
 export interface IJobSourceProps extends ISourceProps<IJobSourceSchema> {
@@ -32,17 +31,28 @@ export interface IJobQueryProviderProps extends IQueryProviderProps<IJobSourceSc
     useCountQuery: IUseJobCountQuery;
 }
 
+/**
+ * Provides access to Job data with a connection to filtering and sorting.
+ */
 export const JobSource: FC<IJobSourceProps>               = props => {
     return <Source<IJobSourceSchema>
         schema={JobSchema}
-        SourceProvider={JobProvider}
-        useSortState={useJobSort}
+        SourceProvider={JobSourceStore.Provider}
+        useSortState={JobSortStore.useState}
         {...props}
     />;
 };
+/**
+ * Provides all Query parts for Job used in fetching and sorting its data.
+ */
 export const JobQueryProvider: FC<IJobQueryProviderProps> = props => {
     return <QueryProvider<IJobSourceSchema>
-        SortProvider={JobSortProvider}
+        SortProvider={JobSortStore.Provider}
         {...props}
     />;
 };
+/**
+ * Default export marking a file it's generated and also preventing failing
+ * an empty file export (every module "must" have an export).
+ */
+export const $leight_u5qfar9i7qfnvgyt8s0x447f             = true;

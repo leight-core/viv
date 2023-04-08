@@ -13,7 +13,7 @@ import {
     type IJobPatchSchema,
     type IJobSchema,
     type IJobSortSchema
-}                       from "./Schema";
+}                       from "./PrismaSchema";
 
 export type IUseJobQuery = IUseQuery<IJobSourceSchema["Query"] | undefined, IJobSourceSchema["Entity"][]>;
 export type IUseJobCountQuery = IUseQuery<IJobSourceSchema["Query"] | undefined, number>;
@@ -29,3 +29,9 @@ export interface IJobSourceSchema extends ISourceSchema<
     IJobParamSchema
 > {
 }
+
+/**
+ * Default export marking a file it's generated and also preventing failing
+ * an empty file export (every module "must" have an export).
+ */
+export const $leight_a07698eq44z9jltr79jh6vji = true;

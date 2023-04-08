@@ -1,11 +1,17 @@
 import {
     withClientSourceGenerators,
+    withClientSourceGeneratorsEntity,
     withSdk
 } from "@leight/sdk";
 
-void withSdk(withClientSourceGenerators({
-    entity:   "File",
-    packages: {
-        schema: "@leight/file",
-    },
-}));
+void withSdk(
+    withClientSourceGenerators(
+        withClientSourceGeneratorsEntity({
+            disabled: ["table"],
+            name:     "File",
+            packages: {
+                schema: "@leight/file",
+            },
+        })
+    )
+);

@@ -1,5 +1,11 @@
 # @leight/turbowatch
 
+## 0.5.25
+
+### Patch Changes
+
+- Updated packages
+
 ## 0.5.24
 
 ### Patch Changes

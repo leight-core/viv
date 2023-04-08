@@ -1,7 +1,12 @@
-import {type IDay}     from "@leight/calendar";
-import {DateTime}      from "@leight/i18n";
-import {DateInline}    from "@leight/i18n-client";
-import {classNames}    from "@leight/utils-client";
+import {
+    type ICalendarEventSchema,
+    type IDay,
+    type IWeeks
+}                           from "@leight/calendar";
+import {DateTime}           from "@leight/i18n";
+import {DateInline}         from "@leight/i18n-client";
+import {type ISourceSchema} from "@leight/source";
+import {classNames}         from "@leight/utils-client";
 import {
     ActionIcon,
     Button,
@@ -10,8 +15,8 @@ import {
     Overlay,
     Stack,
     Text
-}                      from "@mantine/core";
-import {useDisclosure} from "@mantine/hooks";
+}                           from "@mantine/core";
+import {useDisclosure}      from "@mantine/hooks";
 import {
     IconCalendarEvent,
     IconChevronLeft,
@@ -19,25 +24,23 @@ import {
     IconChevronsLeft,
     IconChevronsRight,
     IconX
-}                      from "@tabler/icons-react";
+}                           from "@tabler/icons-react";
 import {
-    type FC,
     type PropsWithChildren,
-    ReactNode,
+    type ReactNode,
     useRef,
     useState
-}                      from "react";
-import {
-    CalendarItemsStore,
-    WeeksOfStore
-}                      from "../context";
+}                           from "react";
+import {WeeksOfStore}       from "../context";
 import {
     CalendarShell,
     type ICalendarShellProps
-}                      from "./CalendarShell";
+}                           from "./CalendarShell";
 
-export type IWeeksProps = PropsWithChildren<Omit<ICalendarShellProps, "children" | "onClick"> & {
+export type IWeeksProps<TSourceSchema extends ISourceSchema<ICalendarEventSchema> = ISourceSchema<ICalendarEventSchema>> = PropsWithChildren<Omit<ICalendarShellProps<TSourceSchema>, "children" | "onClick" | "onChange"> & {
     onClick?(props: IWeeksProps.IOnClickProps): void;
+    onChange?(props: IWeeksProps.IOnChangeProps): void;
+    renderDayInline?(props: IWeeksProps.IRenderInlineProps<TSourceSchema>): ReactNode;
 
     weekCountSize?: number;
     defaultWithWeekNo?: boolean;
@@ -49,18 +52,31 @@ export namespace IWeeksProps {
     export interface IOnClickProps {
         day: IDay;
     }
+
+    export interface IOnChangeProps {
+        weeks: IWeeks;
+    }
+
+    export interface IRenderInlineProps<TSourceSchema extends ISourceSchema<ICalendarEventSchema>> {
+        schema: TSourceSchema["EntitySchema"];
+        day: IDay;
+        events: TSourceSchema["Entity"][];
+    }
 }
 
-export const Weeks: FC<IWeeksProps> = (
+export const Weeks = <TSourceSchema extends ISourceSchema<ICalendarEventSchema> = ISourceSchema<ICalendarEventSchema>>(
     {
         onClick,
+        onChange = () => null,
+        events,
+        renderDayInline,
         highlightToday = true,
         defaultWithWeekNo = false,
         weekCountSize = 2,
         columnSize = 3,
         children,
         ...props
-    }) => {
+    }: IWeeksProps<TSourceSchema>) => {
     const {
               nextMonth,
               prevMonth,
@@ -74,7 +90,17 @@ export const Weeks: FC<IWeeksProps> = (
                          isCurrent,
                      }
           }                                                     = WeeksOfStore.useState();
-    const items                                                 = CalendarItemsStore.useOptionalState();
+    const source                                                = events?.useSource();
+    const $events                                               = events && source?.entities
+        .filter(event => events.schema.safeParse(event))
+        .map(event => events.schema.parse(event))
+        .reduce<Record<string, TSourceSchema["Entity"][]>>((prev, current) => {
+            const stamp = current.date.toLocaleString({day: "numeric", month: "numeric", year: "numeric"});
+            return {
+                ...prev,
+                [stamp]: (prev[stamp] || []).concat(current),
+            };
+        }, {});
     const [isOverlay, {open: openOverlay, close: closeOverlay}] = useDisclosure(false);
     const overlay                                               = useRef<ReactNode>();
     const [withWeeks, setWithWeeks]                             = useState(defaultWithWeekNo);
@@ -93,7 +119,7 @@ export const Weeks: FC<IWeeksProps> = (
                 <Button
                     size={"sm"}
                     variant={"subtle"}
-                    onClick={() => prevMonth()}
+                    onClick={() => onChange({weeks: prevMonth()})}
                     leftIcon={<IconChevronLeft/>}
                 >
                     <DateInline
@@ -104,7 +130,7 @@ export const Weeks: FC<IWeeksProps> = (
                 <Button
                     size={"sm"}
                     variant={"subtle"}
-                    onClick={() => prevYear()}
+                    onClick={() => onChange({weeks: prevYear()})}
                     leftIcon={<IconChevronsLeft/>}
                 >
                     <DateInline
@@ -117,7 +143,7 @@ export const Weeks: FC<IWeeksProps> = (
         controlsTopMiddle={<Group spacing={"sm"}>
             <Button
                 variant={"subtle"}
-                onClick={() => today()}
+                onClick={() => onChange({weeks: today()})}
                 disabled={isCurrent}
             >
                 <Text c={"dimmed"}>
@@ -133,7 +159,7 @@ export const Weeks: FC<IWeeksProps> = (
                 <Button
                     size={"sm"}
                     variant={"subtle"}
-                    onClick={() => nextYear()}
+                    onClick={() => onChange({weeks: nextYear()})}
                     rightIcon={<IconChevronsRight/>}
                 >
                     <DateInline
@@ -144,7 +170,7 @@ export const Weeks: FC<IWeeksProps> = (
                 <Button
                     size={"sm"}
                     variant={"subtle"}
-                    onClick={() => nextMonth()}
+                    onClick={() => onChange({weeks: nextMonth()})}
                     rightIcon={<IconChevronRight/>}
                 >
                     <DateInline
@@ -250,6 +276,13 @@ export const Weeks: FC<IWeeksProps> = (
                             </Group>
                             {day.day.day}
                         </Group>
+                        {renderDayInline && events ? <div>
+                            {renderDayInline({
+                                schema: events.schema,
+                                day,
+                                events: $events?.[day.id] || [],
+                            })}
+                        </div> : null}
                     </Stack>
                 </Grid.Col>)}
             </Grid>)}

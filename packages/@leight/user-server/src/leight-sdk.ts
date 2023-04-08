@@ -1,18 +1,23 @@
 import {
     withSdk,
-    withServerSourceGenerators
+    withServerSourceGenerators,
+    withServerSourceGeneratorsEntity
 } from "@leight/sdk";
 
-void withSdk(withServerSourceGenerators({
-    entity:   "User",
-    packages: {
-        schema: "@leight/user",
-        prisma: "@leight/prisma",
-    },
-    prisma:   "user",
-    disabled: ["trpc-procedure"],
-    sourceEx: {
-        type:    "UserSourceEx",
-        package: "../source",
-    },
-}));
+void withSdk(
+    withServerSourceGenerators(
+        withServerSourceGeneratorsEntity({
+            disabled:     ["trpc"],
+            name:         "User",
+            packages:     {
+                schema: "@leight/user",
+                prisma: "@leight/prisma",
+            },
+            prisma:       "user",
+            withSourceEx: {
+                type:    "UserSourceEx",
+                package: "../source",
+            },
+        })
+    )
+);

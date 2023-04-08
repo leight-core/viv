@@ -1,5 +1,21 @@
 # @leight/calendar-client
 
+## 0.5.15
+
+### Patch Changes
+
+- Updated packages
+- Updated dependencies
+    - @leight/calendar@0.5.5
+    - @leight/context-client@0.5.66
+    - @leight/i18n@0.5.64
+    - @leight/i18n-client@0.5.64
+    - @leight/mantine@0.5.65
+    - @leight/source@0.5.58
+    - @leight/utils@0.5.61
+    - @leight/utils-client@0.5.62
+    - @leight/zustand@0.5.58
+
 ## 0.5.14
 
 ### Patch Changes
