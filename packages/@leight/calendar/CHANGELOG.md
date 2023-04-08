@@ -1,5 +1,16 @@
 # @leight/calendar
 
+## 0.5.6
+
+### Patch Changes
+
+- Updated packages
+- Updated dependencies
+    - @leight/filter@0.5.55
+    - @leight/i18n@0.5.65
+    - @leight/source@0.5.59
+    - @leight/zod@0.5.5
+
 ## 0.5.5
 
 ### Patch Changes

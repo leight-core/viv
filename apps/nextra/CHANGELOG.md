@@ -1,5 +1,17 @@
 # @leight/docs
 
+## 0.5.14
+
+### Patch Changes
+
+- Updated packages
+- Updated dependencies
+    - @leight/calendar-client@0.5.16
+    - @leight/i18n@0.5.65
+    - @leight/table-client@0.5.28
+    - @leight/utils-server@0.5.58
+    - @leight/zod@0.5.5
+
 ## 0.5.13
 
 ### Patch Changes

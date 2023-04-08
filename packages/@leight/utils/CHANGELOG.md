@@ -1,5 +1,11 @@
 # @leight/utils
 
+## 0.5.62
+
+### Patch Changes
+
+- Updated packages
+
 ## 0.5.61
 
 ### Patch Changes

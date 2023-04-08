@@ -17,6 +17,8 @@ export namespace IGeneratorCommonEntitySchemaParams {
             schema: IPackageType;
             create?: IPackageType;
             patch?: IPackageType;
+            filter?: IPackageType;
+            params?: IPackageType;
         },
         /**
          * Specify sort fields of the Sort query
@@ -100,6 +102,20 @@ export const generatorCommonEntitySchema: IGenerator<IGeneratorCommonEntitySchem
                     ],
                 } : {},
             })
+            .withImports({
+                imports: withSchema.filter?.package ? {
+                    [withSchema.filter?.package]: [
+                        withSchema.filter.type,
+                    ],
+                } : {},
+            })
+            .withImports({
+                imports: withSchema.params?.package ? {
+                    [withSchema.params?.package]: [
+                        withSchema.params.type,
+                    ],
+                } : {},
+            })
             .withConsts({
                 exports: {
                     [`${name}Schema`]:       {
@@ -112,10 +128,8 @@ export const generatorCommonEntitySchema: IGenerator<IGeneratorCommonEntitySchem
                     },
                     [`${name}CreateSchema`]: {body: withSchema.create ? withSchema.create.type : "CreateSchema"},
                     [`${name}PatchSchema`]:  {body: withSchema.patch ? withSchema.patch.type : "WithIdentitySchema"},
-                    [`${name}FilterSchema`]: {
-                        body: `FilterSchema`,
-                    },
-                    [`${name}ParamSchema`]:  {body: `ParamsSchema`},
+                    [`${name}FilterSchema`]: {body: withSchema.filter ? withSchema.filter.type : `FilterSchema`},
+                    [`${name}ParamSchema`]:  {body: withSchema.params ? withSchema.params.type : `ParamsSchema`},
                     [`${name}SortSchema`]:   {
                         body: `
 z.object({

@@ -1,5 +1,14 @@
 # @leight/import
 
+## 0.5.58
+
+### Patch Changes
+
+- Updated packages
+- Updated dependencies
+    - @leight/job@0.5.69
+    - @leight/zod@0.5.5
+
 ## 0.5.57
 
 ### Patch Changes

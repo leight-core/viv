@@ -1,5 +1,13 @@
 # @leight/prisma
 
+## 0.5.75
+
+### Patch Changes
+
+- Updated packages
+- Updated dependencies
+    - @leight/container@0.5.60
+
 ## 0.5.74
 
 ### Patch Changes
