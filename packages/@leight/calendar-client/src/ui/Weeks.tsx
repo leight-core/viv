@@ -1,12 +1,11 @@
 import {
-    type ICalendarEventSchema,
+    type ICalendarEventSourceSchema,
     type IDay,
     type IWeeks
-}                           from "@leight/calendar";
-import {DateTime}           from "@leight/i18n";
-import {DateInline}         from "@leight/i18n-client";
-import {type ISourceSchema} from "@leight/source";
-import {classNames}         from "@leight/utils-client";
+}                      from "@leight/calendar";
+import {DateTime}      from "@leight/i18n";
+import {DateInline}    from "@leight/i18n-client";
+import {classNames}    from "@leight/utils-client";
 import {
     ActionIcon,
     Button,
@@ -15,8 +14,8 @@ import {
     Overlay,
     Stack,
     Text
-}                           from "@mantine/core";
-import {useDisclosure}      from "@mantine/hooks";
+}                      from "@mantine/core";
+import {useDisclosure} from "@mantine/hooks";
 import {
     IconCalendarEvent,
     IconChevronLeft,
@@ -24,20 +23,20 @@ import {
     IconChevronsLeft,
     IconChevronsRight,
     IconX
-}                           from "@tabler/icons-react";
+}                      from "@tabler/icons-react";
 import {
     type PropsWithChildren,
     type ReactNode,
     useRef,
     useState
-}                           from "react";
-import {WeeksOfStore}       from "../context";
+}                      from "react";
+import {WeeksOfStore}  from "../context";
 import {
     CalendarShell,
     type ICalendarShellProps
-}                           from "./CalendarShell";
+}                      from "./CalendarShell";
 
-export type IWeeksProps<TSourceSchema extends ISourceSchema<ICalendarEventSchema> = ISourceSchema<ICalendarEventSchema>> = PropsWithChildren<Omit<ICalendarShellProps<TSourceSchema>, "children" | "onClick" | "onChange"> & {
+export type IWeeksProps<TSourceSchema extends ICalendarEventSourceSchema = ICalendarEventSourceSchema> = PropsWithChildren<Omit<ICalendarShellProps<TSourceSchema>, "children" | "onClick" | "onChange"> & {
     onClick?(props: IWeeksProps.IOnClickProps): void;
     onChange?(props: IWeeksProps.IOnChangeProps): void;
     renderDayInline?(props: IWeeksProps.IRenderInlineProps<TSourceSchema>): ReactNode;
@@ -57,14 +56,14 @@ export namespace IWeeksProps {
         weeks: IWeeks;
     }
 
-    export interface IRenderInlineProps<TSourceSchema extends ISourceSchema<ICalendarEventSchema>> {
+    export interface IRenderInlineProps<TSourceSchema extends ICalendarEventSourceSchema> {
         schema: TSourceSchema["EntitySchema"];
         day: IDay;
         events: TSourceSchema["Entity"][];
     }
 }
 
-export const Weeks = <TSourceSchema extends ISourceSchema<ICalendarEventSchema> = ISourceSchema<ICalendarEventSchema>>(
+export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalendarEventSourceSchema>(
     {
         onClick,
         onChange = () => null,

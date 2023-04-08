@@ -12,7 +12,7 @@
     },
     "scripts": {
         "dev": "turbo run dev --parallel --concurrency 64 --no-daemon | roarr",
-        "build": "turbo run init --no-daemon && turbo run build --no-daemon",
+        "build": "turbo run init --no-daemon && turbo run build --concurrency=50% --no-daemon",
         "lint": "turbo run lint --no-daemon",
         "depcheck": "turbo run depcheck --no-daemon --parallel",
         "cleanup": "turbo run cleanup --no-daemon --parallel",

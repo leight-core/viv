@@ -1,10 +1,9 @@
 import {
-    type ICalendarEventSchema,
+    type ICalendarEventSourceSchema,
     type IMonth
 }                               from "@leight/calendar";
 import {DateTime}               from "@leight/i18n";
 import {DateInline}             from "@leight/i18n-client";
-import {type ISourceSchema}     from "@leight/source";
 import {classNames}             from "@leight/utils-client";
 import {
     Button,
@@ -23,7 +22,7 @@ import {
     type ICalendarShellProps
 }                               from "./CalendarShell";
 
-export type IMonthsProps<TSourceSchema extends ISourceSchema<ICalendarEventSchema> = ISourceSchema<ICalendarEventSchema>> = PropsWithChildren<Omit<ICalendarShellProps<TSourceSchema>, "children" | "onClick"> & {
+export type IMonthsProps<TSourceSchema extends ICalendarEventSourceSchema = ICalendarEventSourceSchema> = PropsWithChildren<Omit<ICalendarShellProps<TSourceSchema>, "children" | "onClick"> & {
     onClick?(props: IIMonthsProps.IOnClickProps): void;
 }>;
 
@@ -33,7 +32,7 @@ export namespace IIMonthsProps {
     }
 }
 
-export const Months = <TSourceSchema extends ISourceSchema<ICalendarEventSchema> = ISourceSchema<ICalendarEventSchema>>(
+export const Months = <TSourceSchema extends ICalendarEventSourceSchema = ICalendarEventSourceSchema>(
     {
         children,
         onClick,

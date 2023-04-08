@@ -1,34 +1,33 @@
-import {type ICalendarEventSchema} from "@leight/calendar";
-import {DateInline}                from "@leight/i18n-client";
-import {type ISourceSchema}        from "@leight/source";
+import {type ICalendarEventSourceSchema} from "@leight/calendar";
+import {DateInline}                      from "@leight/i18n-client";
 import {
     ActionIcon,
     Box,
     Button,
     Overlay
-}                                  from "@mantine/core";
+}                                        from "@mantine/core";
 import {
     IconCalendarSearch,
     IconX
-}                                  from "@tabler/icons-react";
-import {useState}                  from "react";
+}                                        from "@tabler/icons-react";
+import {useState}                        from "react";
 import {
     MonthsOfStore,
     WeeksOfStore,
     YearsOfStore
-}                                  from "../context";
-import {Months}                    from "./Months";
+}                                        from "../context";
+import {Months}                          from "./Months";
 import {
     type IWeeksProps,
     Weeks
-}                                  from "./Weeks";
-import {Years}                     from "./Years";
+}                                        from "./Weeks";
+import {Years}                           from "./Years";
 
-export interface ICalendarProps<TSourceSchema extends ISourceSchema<ICalendarEventSchema> = ISourceSchema<ICalendarEventSchema>> extends IWeeksProps<TSourceSchema> {
+export interface ICalendarProps<TSourceSchema extends ICalendarEventSourceSchema = ICalendarEventSourceSchema> extends IWeeksProps<TSourceSchema> {
     withControls?: boolean;
 }
 
-export const Calendar = <TSourceSchema extends ISourceSchema<ICalendarEventSchema> = ISourceSchema<ICalendarEventSchema>>(
+export const Calendar = <TSourceSchema extends ICalendarEventSourceSchema = ICalendarEventSourceSchema>(
     {
         onClick,
         withControls = true,

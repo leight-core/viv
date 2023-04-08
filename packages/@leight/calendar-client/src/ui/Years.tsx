@@ -1,9 +1,8 @@
 import {
-    type ICalendarEventSchema,
+    type ICalendarEventSourceSchema,
     type IYear
 }                               from "@leight/calendar";
 import {DateInline}             from "@leight/i18n-client";
-import {type ISourceSchema}     from "@leight/source";
 import {classNames}             from "@leight/utils-client";
 import {
     Button,
@@ -25,7 +24,7 @@ import {
     type ICalendarShellProps
 }                               from "./CalendarShell";
 
-export type IYearsProps<TSourceSchema extends ISourceSchema<ICalendarEventSchema> = ISourceSchema<ICalendarEventSchema>> = PropsWithChildren<Omit<ICalendarShellProps<TSourceSchema>, "children" | "onClick"> & {
+export type IYearsProps<TSourceSchema extends ICalendarEventSourceSchema = ICalendarEventSourceSchema> = PropsWithChildren<Omit<ICalendarShellProps<TSourceSchema>, "children" | "onClick"> & {
     onClick?(props: IYearsProps.IOnClickProps): void;
 }>;
 
@@ -35,7 +34,7 @@ export namespace IYearsProps {
     }
 }
 
-export const Years = <TSourceSchema extends ISourceSchema<ICalendarEventSchema> = ISourceSchema<ICalendarEventSchema>>(
+export const Years = <TSourceSchema extends ICalendarEventSourceSchema = ICalendarEventSourceSchema>(
     {
         children,
         onClick,

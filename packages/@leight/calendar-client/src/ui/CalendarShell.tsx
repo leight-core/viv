@@ -1,31 +1,28 @@
-import {type ICalendarEventSchema} from "@leight/calendar";
+import {type ICalendarEventSourceSchema} from "@leight/calendar";
 import {
     type InferSelectors,
     switchScheme
-}                                  from "@leight/mantine";
-import {
-    type ISourceSchema,
-    type IUseSourceState
-}                                  from "@leight/source";
+}                                        from "@leight/mantine";
+import {type IUseSourceState}            from "@leight/source";
 import {
     isCallable,
     withBool
-}                                  from "@leight/utils";
+}                                        from "@leight/utils";
 import {
     BlockStore,
     classNames
-}                                  from "@leight/utils-client";
+}                                        from "@leight/utils-client";
 import {
     Box,
     Container,
     createStyles,
     Grid,
     LoadingOverlay
-}                                  from "@mantine/core";
+}                                        from "@mantine/core";
 import {
     type ComponentProps,
     type ReactNode
-}                                  from "react";
+}                                        from "react";
 
 const useStyles = createStyles(theme => ({
     calendar:       {
@@ -168,12 +165,12 @@ export namespace ICalendarComponent {
     }
 }
 
-export interface ICalendarShellEvents<TSourceSchema extends ISourceSchema<ICalendarEventSchema>> {
+export interface ICalendarShellEvents<TSourceSchema extends ICalendarEventSourceSchema> {
     schema: TSourceSchema["EntitySchema"];
     useSource: IUseSourceState<TSourceSchema>;
 }
 
-export interface ICalendarShellProps<TSourceSchema extends ISourceSchema<ICalendarEventSchema>> extends Omit<ComponentProps<typeof Container>, "children"> {
+export interface ICalendarShellProps<TSourceSchema extends ICalendarEventSourceSchema> extends Omit<ComponentProps<typeof Container>, "children"> {
     events?: ICalendarShellEvents<TSourceSchema>;
     withControls?: boolean;
     controlsTopLeft?: ICalendarComponent;
@@ -190,7 +187,7 @@ const renderComponent = (component: ICalendarComponent | undefined, props: ICale
 /**
  * Styled shell for Calendar.
  */
-export const CalendarShell = <TSourceSchema extends ISourceSchema<ICalendarEventSchema> = ISourceSchema<ICalendarEventSchema>>(
+export const CalendarShell = <TSourceSchema extends ICalendarEventSourceSchema = ICalendarEventSourceSchema>(
     {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         events,

@@ -1,6 +1,11 @@
 import {FilterSchema} from "@leight/filter";
 import {DateTime}     from "@leight/i18n";
-import {EntitySchema} from "@leight/source";
+import {
+    EntitySchema,
+    type ICreateSchema,
+    type IPatchSchema,
+    type ISourceSchema
+}                     from "@leight/source";
 import {z}            from "@leight/zod";
 
 /**
@@ -14,12 +19,19 @@ export const CalendarEventSchema = EntitySchema.merge(z.object({
 export type ICalendarEventSchema = typeof CalendarEventSchema;
 export type ICalendarEvent = z.infer<ICalendarEventSchema>;
 
-export const CalendarFilterQuery = FilterSchema.merge(z.object({
+export const CalendarEventFilterSchema = FilterSchema.merge(z.object({
     from: z.string().transform(input => DateTime.fromISO(input)),
     to:   z.string().transform(input => DateTime.fromISO(input)),
 }));
-export type ICalendarFilterQuery = typeof CalendarFilterQuery;
-export type ICalendarFilter = z.infer<ICalendarFilterQuery>;
+export type ICalendarEventFilterSchema = typeof CalendarEventFilterSchema;
+export type ICalendarEventFilter = z.infer<ICalendarEventFilterSchema>;
+
+export type ICalendarEventSourceSchema = ISourceSchema<
+    ICalendarEventSchema,
+    ICreateSchema,
+    IPatchSchema,
+    ICalendarEventFilterSchema
+>;
 
 export * from "./months";
 export * from "./weeks";
