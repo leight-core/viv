@@ -27,6 +27,7 @@ import {
 import {
     type PropsWithChildren,
     type ReactNode,
+    useEffect,
     useRef,
     useState
 }                      from "react";
@@ -86,6 +87,7 @@ export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalend
                          weeks,
                          list,
                          start,
+                         end,
                          isCurrent,
                      }
           }                                                     = WeeksOfStore.useState();
@@ -108,6 +110,13 @@ export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalend
         overlay.current = children;
         openOverlay();
     };
+
+    useEffect(() => {
+        filter?.setFilter({
+            from: start,
+            to:   end,
+        });
+    }, []);
 
     const onChange: IWeeksProps<TSourceSchema>["onChange"] = props => {
         filter?.setFilter({
