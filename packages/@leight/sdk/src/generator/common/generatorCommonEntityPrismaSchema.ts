@@ -115,7 +115,7 @@ export const generatorCommonEntityPrismaSchema: IGenerator<IGeneratorCommonEntit
             .withConsts({
                 exports: {
                     [`${name}Schema`]: {
-                        body:    withSchemaEx?.entity ? `$EntitySchema.merge(${withPackageType(withSchemaEx.entity)}})` : "$EntitySchema",
+                        body:    withSchemaEx?.entity ? `$EntitySchema.merge(${withPackageType(withSchemaEx.entity)})` : "$EntitySchema",
                         comment: `
 /**
  * Schema definition for ${name}

@@ -16,8 +16,10 @@ void withSdk(
             ],
             withPrismaSchemaEx: {
                 entity: {
-                    type:    "JobSchemaOverride",
-                    package: "../schema",
+                    type:        "JobSchemaOverride",
+                    withPackage: {
+                        package: "../schema",
+                    },
                 }
             }
         })

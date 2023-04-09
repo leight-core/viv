@@ -13,7 +13,12 @@ void withSdk(
             },
             withSourceSchemaEx: {
                 extends: [
-                    {type: "IUserSourceEx", package: "../api"},
+                    {
+                        type:        "IUserSourceEx",
+                        withPackage: {
+                            package: "../api",
+                        }
+                    },
                 ],
             },
         })

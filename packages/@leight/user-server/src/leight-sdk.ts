@@ -15,8 +15,10 @@ void withSdk(
             },
             prisma:       "user",
             withSourceEx: {
-                type:    "UserSourceEx",
-                package: "../source",
+                type:        "UserSourceEx",
+                withPackage: {
+                    package: "../source",
+                },
             },
         })
     )

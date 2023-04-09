@@ -8,7 +8,7 @@ import {
     ServiceContext
 }                               from "@leight/container";
 import {type ISource}           from "@leight/source";
-import {type IUserSourceEx}     from "../api";
+import {IUserSourceEx}          from "../api";
 import {type IUserSourceSchema} from "./SourceSchema";
 
 export interface IUserSource extends ISource<IUserSourceSchema>, IUserSourceEx {
@@ -20,4 +20,4 @@ export const UserSourceContext                = (container: IContainer) => new S
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_nc5ja8aslbp8z0jhqo325u07 = true;
+export const $leight_mvw6hmr5p2ty62jbhfa1guu2 = true;
