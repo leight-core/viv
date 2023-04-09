@@ -55,9 +55,17 @@ export interface IWeeks {
      */
     start: DateTime;
     /**
+     * When a generated calendar starts
+     */
+    calendarStart: DateTime;
+    /**
      * Final date of the generated calendar
      */
     end: DateTime;
+    /**
+     * When a generated calendar ends
+     */
+    calendarEnd: DateTime;
     /**
      * Interval based on start/end for querying dates.
      */

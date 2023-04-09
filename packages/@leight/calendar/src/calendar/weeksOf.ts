@@ -43,21 +43,24 @@ export const weeksOf = (
         margin:    1,
         dayFormat: "short",
     }): IWeeks => {
-    const start     = date.startOf("month").minus({week: marginMinus || margin});
-    const end       = date.endOf("month").plus({week: marginPlus || margin});
-    const interval  = Interval.fromDateTimes(start, end);
-    const length    = Math.max(interval.count("weeks"), 6);
-    const weekStart = start.startOf("week");
-    const days      = Interval.fromDateTimes(
-        weekStart,
-        weekStart.plus({week: length}),
+    const start         = date.startOf("month").minus({week: marginMinus || margin});
+    const end           = date.endOf("month").plus({week: marginPlus || margin});
+    const interval      = Interval.fromDateTimes(start, end);
+    const length        = Math.max(interval.count("weeks"), 6);
+    const calendarStart = start.startOf("week");
+    const calendarEnd   = calendarStart.plus({week: length});
+    const days          = Interval.fromDateTimes(
+        calendarStart,
+        calendarEnd,
     ).count("days");
-    const now       = DateTime.now();
+    const now           = DateTime.now();
     return {
         date,
         now,
         start,
+        calendarStart,
         end,
+        calendarEnd,
         interval,
         get isCurrent() {
             return interval.contains(now);
@@ -67,7 +70,7 @@ export const weeksOf = (
         },
         get weeks() {
             return Array.from({length}, (_, week) => {
-                const $week = weekStart.plus({week});
+                const $week = calendarStart.plus({week});
                 const id    = `${$week.year}-${$week.weekNumber}`;
                 return {
                     id,
@@ -90,7 +93,7 @@ export const weeksOf = (
         },
         get days() {
             return Array.from({length: days}, (_, day) => {
-                const $day = weekStart.plus({day: day});
+                const $day = calendarStart.plus({day: day});
                 return {
                     id:           $day.toLocaleString({day: "numeric", month: "numeric", year: "numeric"}),
                     day:          $day,
