@@ -64,8 +64,9 @@ export const generatorClientSourceProvider: IGenerator<IGeneratorClientSourcePro
                     "react":                 [
                         "type FC",
                     ],
-                    "./ClientStore":         [
+                    "./ClientStore": [
                         `${name}SourceStore`,
+                        `${name}FilterStore`,
                         `${name}SortStore`,
                     ]
                 }
@@ -114,12 +115,12 @@ useCountQuery: IUse${name}CountQuery;
  * Provides access to ${name} data with a connection to filtering and sorting. 
  */
                         `,
-                        body:    `props => {
+                        body: `props => {
     return <Source<I${name}SourceSchema>
         schema={${name}Schema}
         SourceProvider={${name}SourceStore.Provider}
         useSortState={${name}SortStore.useState}
-        ${withTrpc ? `useSourceQuery={trpc.${withTrpc.path}.source.query.useQuery}\n\t\t` : "\t\t"}{...props}
+        ${withTrpc ? `useSourceQuery={trpc.${withTrpc.path}.source.query.useQuery}\n\t\t` : ""}{...props}
     />;
 }
                     `,
@@ -131,8 +132,9 @@ useCountQuery: IUse${name}CountQuery;
  * Provides all Query parts for ${name} used in fetching and sorting its data. 
  */
                         `,
-                        body:    `props => {
+                        body: `props => {
     return <QueryProvider<I${name}SourceSchema>
+        FilterProvider={${name}FilterStore.Provider}
         SortProvider={${name}SortStore.Provider}
         ${withTrpc ? `useCountQuery={trpc.${withTrpc.path}.source.count.useQuery}\n\t\t` : "\t\t"}{...props}
     />;

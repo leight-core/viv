@@ -116,6 +116,7 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/calendar/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/trpc-source-server/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/zod/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/filter-client/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.github" />
       <excludeFolder url="file://$MODULE_DIR$/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/sql/.turbo" />
@@ -319,6 +320,8 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/calendar/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/zod/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/zod/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/filter-client/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/filter-client/lib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

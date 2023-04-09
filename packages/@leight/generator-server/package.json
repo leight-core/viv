@@ -1,5 +1,5 @@
 {
-    "version": "0.5.15",
+    "version": "0.5.16",
     "name": "@leight/generator-server",
     "description": "Set of tools used for source code generation from... source code :).",
     "license": "MIT",
@@ -29,14 +29,14 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/generator": "^0.5.14",
-        "@leight/utils": "^0.5.62",
-        "@leight/utils-server": "^0.5.58"
+        "@leight/generator": "^0.5.15",
+        "@leight/utils": "^0.5.63",
+        "@leight/utils-server": "^0.5.59"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.38",
-        "@leight/eslint-config-eslint": "^0.5.47",
-        "@leight/tsconfig": "^0.5.61",
+        "@leight/esbuild": "^0.5.39",
+        "@leight/eslint-config-eslint": "^0.5.48",
+        "@leight/tsconfig": "^0.5.62",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

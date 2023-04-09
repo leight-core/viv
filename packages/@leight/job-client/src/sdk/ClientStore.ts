@@ -1,17 +1,20 @@
 /**
  Source code containing improved Zustand store stuff for Source support (client-side).
  */
+import {createFilterContext} from "@leight/filter-client";
 import {
+    type IJobFilterSchema,
     type IJobSortSchema,
     type IJobSourceSchema,
+    JobFilterSchema,
     JobSchema,
     JobSortSchema
-}                          from "@leight/job";
-import {createSortContext} from "@leight/sort-client";
+}                            from "@leight/job";
+import {createSortContext}   from "@leight/sort-client";
 import {
     createSourceContext,
     type ISourceProps
-}                          from "@leight/source-client";
+}                            from "@leight/source-client";
 
 export type IJobSource = ISourceProps<IJobSourceSchema>;
 
@@ -21,6 +24,13 @@ export type IJobSource = ISourceProps<IJobSourceSchema>;
 export const JobSourceStore                   = createSourceContext<IJobSourceSchema>({
     name:   "Job",
     schema: JobSchema,
+});
+/**
+ * Defines Store for Job filtering entities.
+ */
+export const JobFilterStore                   = createFilterContext<IJobFilterSchema>({
+    name:   "JobFilter",
+    schema: JobFilterSchema,
 });
 /**
  * Defines Store for Job sorting data.
@@ -33,4 +43,4 @@ export const JobSortStore                     = createSortContext<IJobSortSchema
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_yfra1eof1bfcyk5jkvt50l3n = true;
+export const $leight_kbhrgmlgj00gd40j5ceafy3l = true;

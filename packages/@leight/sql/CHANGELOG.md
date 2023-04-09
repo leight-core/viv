@@ -1,5 +1,13 @@
 # @leight/sql
 
+## 0.5.60
+
+### Patch Changes
+
+- VErsion bump
+- Updated dependencies
+    - @leight/prisma@0.5.76
+
 ## 0.5.59
 
 ### Patch Changes

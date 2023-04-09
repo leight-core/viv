@@ -19,6 +19,7 @@ import {
 }                from "@leight/source-client";
 import {type FC} from "react";
 import {
+    JobFilterStore,
     JobSortStore,
     JobSourceStore
 }                from "./ClientStore";
@@ -47,6 +48,7 @@ export const JobSource: FC<IJobSourceProps>               = props => {
  */
 export const JobQueryProvider: FC<IJobQueryProviderProps> = props => {
     return <QueryProvider<IJobSourceSchema>
+        FilterProvider={JobFilterStore.Provider}
         SortProvider={JobSortStore.Provider}
         {...props}
     />;
@@ -55,4 +57,4 @@ export const JobQueryProvider: FC<IJobQueryProviderProps> = props => {
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_q467mx0u94eq4i3uc89klhot             = true;
+export const $leight_pj7e18zq6a97e4v15da1hxgg             = true;

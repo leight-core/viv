@@ -1,5 +1,19 @@
 # @leight/file-client
 
+## 0.5.68
+
+### Patch Changes
+
+- VErsion bump
+- Updated dependencies
+    - @leight/filter-client@0.5.1
+    - @leight/query-client@0.5.27
+    - @leight/file@0.5.67
+    - @leight/sort-client@0.5.23
+    - @leight/source-client@0.5.30
+    - @leight/utils@0.5.63
+    - @leight/utils-client@0.5.64
+
 ## 0.5.67
 
 ### Patch Changes

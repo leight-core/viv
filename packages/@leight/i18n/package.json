@@ -1,5 +1,5 @@
 {
-    "version": "0.5.65",
+    "version": "0.5.66",
     "name": "@leight/i18n",
     "description": "Common i18n stuff shared across @leight/i18n packages.",
     "license": "MIT",
@@ -28,16 +28,16 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/utils": "^0.5.62",
+        "@leight/utils": "^0.5.63",
         "@types/luxon": "^3.2.0",
         "luxon": "^3.3.0",
         "react": "^18.2.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.38",
-        "@leight/eslint-config-eslint": "^0.5.47",
-        "@leight/tsconfig": "^0.5.61",
-        "@leight/turbowatch": "^0.5.26",
+        "@leight/esbuild": "^0.5.39",
+        "@leight/eslint-config-eslint": "^0.5.48",
+        "@leight/tsconfig": "^0.5.62",
+        "@leight/turbowatch": "^0.5.27",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

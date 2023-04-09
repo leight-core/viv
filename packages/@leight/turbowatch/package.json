@@ -1,5 +1,5 @@
 {
-    "version": "0.5.26",
+    "version": "0.5.27",
     "name": "@leight/turbowatch",
     "description": "Turbowatch helper stuff.",
     "license": "MIT",
@@ -31,9 +31,9 @@
         "turbowatch": "^2.3.2"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.38",
-        "@leight/eslint-config-eslint": "^0.5.47",
-        "@leight/tsconfig": "^0.5.61",
+        "@leight/esbuild": "^0.5.39",
+        "@leight/eslint-config-eslint": "^0.5.48",
+        "@leight/tsconfig": "^0.5.62",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

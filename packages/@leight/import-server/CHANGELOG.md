@@ -1,5 +1,14 @@
 # @leight/import-server
 
+## 0.5.59
+
+### Patch Changes
+
+- VErsion bump
+- Updated dependencies
+    - @leight/container@0.5.61
+    - @leight/import@0.5.59
+
 ## 0.5.58
 
 ### Patch Changes

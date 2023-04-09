@@ -1,5 +1,11 @@
 # @leight/container
 
+## 0.5.61
+
+### Patch Changes
+
+- VErsion bump
+
 ## 0.5.60
 
 ### Patch Changes

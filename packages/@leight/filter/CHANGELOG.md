@@ -1,5 +1,13 @@
 # @leight/filter
 
+## 0.5.56
+
+### Patch Changes
+
+- VErsion bump
+- Updated dependencies
+    - @leight/zod@0.5.6
+
 ## 0.5.55
 
 ### Patch Changes

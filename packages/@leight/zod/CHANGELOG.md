@@ -1,5 +1,11 @@
 # @leight/zod
 
+## 0.5.6
+
+### Patch Changes
+
+- VErsion bump
+
 ## 0.5.5
 
 ### Patch Changes

@@ -47,11 +47,16 @@ export const generatorClientSourceStore: IGenerator<IGeneratorClientSourceStoreP
                     "@leight/sort-client":   [
                         "createSortContext",
                     ],
+                    "@leight/filter-client": [
+                        "createFilterContext",
+                    ],
                     [packages.schema]:       [
                         `type I${name}SourceSchema`,
                         `${name}Schema`,
                         `type I${name}SortSchema`,
                         `${name}SortSchema`,
+                        `type I${name}FilterSchema`,
+                        `${name}FilterSchema`,
                     ],
                 },
             })
@@ -72,6 +77,19 @@ export const generatorClientSourceStore: IGenerator<IGeneratorClientSourceStoreP
 createSourceContext<I${name}SourceSchema>({
     name:   "${name}",
     schema: ${name}Schema,
+})
+                    `,
+                    },
+                    [`${name}FilterStore`]: {
+                        comment: `
+/**
+ * Defines Store for ${name} filtering entities.
+ */
+                        `,
+                        body:    `
+createFilterContext<I${name}FilterSchema>({
+    name:   "${name}Filter",
+    schema: ${name}FilterSchema,
 })
                     `,
                     },

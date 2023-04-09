@@ -1,5 +1,16 @@
 # @leight/trpc-source-server
 
+## 0.5.14
+
+### Patch Changes
+
+- VErsion bump
+- Updated dependencies
+    - @leight/container@0.5.61
+    - @leight/cursor@0.5.54
+    - @leight/source@0.5.60
+    - @leight/trpc-server@0.5.65
+
 ## 0.5.13
 
 ### Patch Changes

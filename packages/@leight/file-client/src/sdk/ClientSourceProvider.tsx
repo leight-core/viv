@@ -19,6 +19,7 @@ import {
 }                from "@leight/source-client";
 import {type FC} from "react";
 import {
+    FileFilterStore,
     FileSortStore,
     FileSourceStore
 }                from "./ClientStore";
@@ -47,6 +48,7 @@ export const FileSource: FC<IFileSourceProps>               = props => {
  */
 export const FileQueryProvider: FC<IFileQueryProviderProps> = props => {
     return <QueryProvider<IFileSourceSchema>
+        FilterProvider={FileFilterStore.Provider}
         SortProvider={FileSortStore.Provider}
         {...props}
     />;
@@ -55,4 +57,4 @@ export const FileQueryProvider: FC<IFileQueryProviderProps> = props => {
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_mr2vf6mihbnhvw58yueaoezj               = true;
+export const $leight_k1j1wv70oya516h2bivshhuk               = true;

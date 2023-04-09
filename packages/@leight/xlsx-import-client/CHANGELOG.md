@@ -1,5 +1,18 @@
 # @leight/xlsx-import-client
 
+## 0.5.61
+
+### Patch Changes
+
+- VErsion bump
+- Updated dependencies
+    - @leight/job-client@0.5.21
+    - @leight/job@0.5.70
+    - @leight/i18n-client@0.5.66
+    - @leight/mantine@0.5.67
+    - @leight/tsconfig@0.5.62
+    - @leight/utils-client@0.5.64
+
 ## 0.5.60
 
 ### Patch Changes

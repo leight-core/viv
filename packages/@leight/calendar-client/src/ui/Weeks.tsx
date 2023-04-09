@@ -66,7 +66,7 @@ export namespace IWeeksProps {
 export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalendarEventSourceSchema>(
     {
         onClick,
-        onChange = () => null,
+        onChange: $onChange = () => null,
         events,
         renderDayInline,
         highlightToday = true,
@@ -90,6 +90,7 @@ export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalend
                      }
           }                                                     = WeeksOfStore.useState();
     const source                                                = events?.useSource();
+    const filter                                                = events?.useFilter();
     const $events                                               = events && source?.entities
         .filter(event => events.schema.safeParse(event))
         .map(event => events.schema.parse(event))
@@ -107,10 +108,19 @@ export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalend
         overlay.current = children;
         openOverlay();
     };
+
+    const onChange: IWeeksProps<TSourceSchema>["onChange"] = props => {
+        filter?.setFilter({
+            from: props.weeks.start,
+            to:   props.weeks.end,
+        });
+        $onChange?.(props);
+    };
+
     /**
      * This is specific for Mantine Grid: compute number of columns to render.
      */
-    const columnCount                                           = (list.length * columnSize) + (withWeeks ? weekCountSize : 0);
+    const columnCount = (list.length * columnSize) + (withWeeks ? weekCountSize : 0);
 
     return <CalendarShell
         controlsTopLeft={<Group spacing={"sm"}>

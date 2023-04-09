@@ -1,4 +1,5 @@
 import {type ICalendarEventSourceSchema} from "@leight/calendar";
+import {IUseFilterState}                 from "@leight/filter";
 import {
     type InferSelectors,
     switchScheme
@@ -168,6 +169,7 @@ export namespace ICalendarComponent {
 export interface ICalendarShellEvents<TSourceSchema extends ICalendarEventSourceSchema> {
     schema: TSourceSchema["EntitySchema"];
     useSource: IUseSourceState<TSourceSchema>;
+    useFilter: IUseFilterState<TSourceSchema["FilterSchema"]>;
 }
 
 export interface ICalendarShellProps<TSourceSchema extends ICalendarEventSourceSchema> extends Omit<ComponentProps<typeof Container>, "children"> {
