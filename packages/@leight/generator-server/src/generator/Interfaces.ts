@@ -1,7 +1,8 @@
 import {
     type IExportable,
     type IInterface
-} from "@leight/generator";
+}                        from "@leight/generator";
+import {withPackageType} from "../index";
 
 export class Interface implements IExportable {
     public readonly name: string;
@@ -16,7 +17,7 @@ export class Interface implements IExportable {
 
     public export() {
         const body     = this.code.body?.trim() || "";
-        const $extends = this.code.extends?.map(({type}) => type.trim()).join(", ");
+        const $extends = this.code.extends?.map($extends => withPackageType($extends).trim()).join(", ");
 
         return `
 ${this.isExported ? "export" : ""} interface ${this.name}${$extends ? ` extends ${$extends}` : ""} {${body.length > 0 ? `\n\t${body}` : ""}\n}

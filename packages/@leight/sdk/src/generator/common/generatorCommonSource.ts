@@ -1,5 +1,8 @@
 import {IPackageType}    from "@leight/generator";
-import {withSourceFile}  from "@leight/generator-server";
+import {
+    withPackageImport,
+    withSourceFile
+}                        from "@leight/generator-server";
 import {normalize}       from "node:path";
 import {type IGenerator} from "../../api";
 
@@ -47,12 +50,12 @@ export const generatorCommonSource: IGenerator<IGeneratorCommonSourceParams> = a
             })
             .withImports(withSourceEx?.extends ? {
                 imports: withSourceEx.extends
-                             .filter(((item): item is Required<IPackageType> => Boolean(item.package)))
-                             .reduce((prev, {type, package: $package}) => ({
+                             .filter(((item): item is Required<IPackageType> => Boolean(item.withPackage)))
+                             .reduce((prev, withPackage) => ({
                                  ...prev,
-                                 [$package]: [
-                                     `type ${type}`,
-                                     ...(prev[$package] || [])
+                                 [withPackage.withPackage.package]: [
+                                     withPackageImport(withPackage, "type"),
+                                     ...(prev[withPackage.withPackage.package] || [])
                                  ],
                              }), {} as Record<string, any>),
             } : undefined)

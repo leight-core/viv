@@ -1,5 +1,9 @@
 import {IPackageType}    from "@leight/generator";
-import {withSourceFile}  from "@leight/generator-server";
+import {
+    withPackageImport,
+    withPackageType,
+    withSourceFile
+}                        from "@leight/generator-server";
 import {normalize}       from "node:path";
 import {type IGenerator} from "../../api";
 
@@ -82,54 +86,54 @@ export const generatorCommonEntitySchema: IGenerator<IGeneratorCommonEntitySchem
                 }
             })
             .withImports({
-                imports: withSchema.schema.package ? {
-                    [withSchema.schema.package]: [
-                        withSchema.schema.type,
+                imports: withSchema.schema.withPackage ? {
+                    [withSchema.schema.withPackage.package]: [
+                        withPackageImport(withSchema.schema),
                     ],
                 } : {},
             })
             .withImports({
-                imports: withSchema.create?.package ? {
-                    [withSchema.create?.package]: [
-                        withSchema.create.type,
+                imports: withSchema.create?.withPackage ? {
+                    [withSchema.create?.withPackage.package]: [
+                        withPackageImport(withSchema.create),
                     ],
                 } : {},
             })
             .withImports({
-                imports: withSchema.patch?.package ? {
-                    [withSchema.patch?.package]: [
-                        withSchema.patch.type,
+                imports: withSchema.patch?.withPackage ? {
+                    [withSchema.patch?.withPackage.package]: [
+                        withPackageImport(withSchema.patch),
                     ],
                 } : {},
             })
             .withImports({
-                imports: withSchema.filter?.package ? {
-                    [withSchema.filter?.package]: [
-                        withSchema.filter.type,
+                imports: withSchema.filter?.withPackage ? {
+                    [withSchema.filter?.withPackage.package]: [
+                        withPackageImport(withSchema.filter),
                     ],
                 } : {},
             })
             .withImports({
-                imports: withSchema.params?.package ? {
-                    [withSchema.params?.package]: [
-                        withSchema.params.type,
+                imports: withSchema.params?.withPackage ? {
+                    [withSchema.params?.withPackage.package]: [
+                        withPackageImport(withSchema.params),
                     ],
                 } : {},
             })
             .withConsts({
                 exports: {
                     [`${name}Schema`]:       {
-                        body:    withSchema.schema.type,
+                        body:    withPackageType(withSchema.schema),
                         comment: `
 /**
  * Schema definition for ${name}
  */
                     `,
                     },
-                    [`${name}CreateSchema`]: {body: withSchema.create ? withSchema.create.type : "CreateSchema"},
-                    [`${name}PatchSchema`]:  {body: withSchema.patch ? withSchema.patch.type : "WithIdentitySchema"},
-                    [`${name}FilterSchema`]: {body: withSchema.filter ? withSchema.filter.type : `FilterSchema`},
-                    [`${name}ParamSchema`]:  {body: withSchema.params ? withSchema.params.type : `ParamsSchema`},
+                    [`${name}CreateSchema`]: {body: withSchema.create ? withPackageType(withSchema.create) : "CreateSchema"},
+                    [`${name}PatchSchema`]:  {body: withSchema.patch ? withPackageType(withSchema.patch) : "WithIdentitySchema"},
+                    [`${name}FilterSchema`]: {body: withSchema.filter ? withPackageType(withSchema.filter) : `FilterSchema`},
+                    [`${name}ParamSchema`]:  {body: withSchema.params ? withPackageType(withSchema.params) : `ParamsSchema`},
                     [`${name}SortSchema`]:   {
                         body: `
 z.object({

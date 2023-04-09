@@ -60,5 +60,14 @@ export interface IPackageType {
     /**
      * Where it comes from; if not specified, it should refer to an existing type in current package
      */
-    package?: string;
+    withPackage?: {
+        /**
+         * Import alis
+         */
+        alias?: string;
+        /**
+         * Import from
+         */
+        package: string;
+    };
 }

@@ -1,5 +1,9 @@
 import {IPackageType}    from "@leight/generator";
-import {withSourceFile}  from "@leight/generator-server";
+import {
+    withPackageImport,
+    withPackageType,
+    withSourceFile
+}                        from "@leight/generator-server";
 import {normalize}       from "node:path";
 import {type IGenerator} from "../../api";
 
@@ -82,10 +86,10 @@ export const generatorCommonEntityPrismaSchema: IGenerator<IGeneratorCommonEntit
                     ],
                 },
             })
-            .withImports(withSchemaEx?.entity?.package ? {
+            .withImports(withSchemaEx?.entity?.withPackage ? {
                 imports: {
-                    [withSchemaEx.entity.package]: [
-                        withSchemaEx.entity.type,
+                    [withSchemaEx.entity.withPackage.package]: [
+                        withPackageImport(withSchemaEx.entity),
                     ],
                 },
             } : undefined)
@@ -110,8 +114,8 @@ export const generatorCommonEntityPrismaSchema: IGenerator<IGeneratorCommonEntit
             })
             .withConsts({
                 exports: {
-                    [`${name}Schema`]:       {
-                        body:    withSchemaEx?.entity ? `$EntitySchema.merge(${withSchemaEx.entity.type})` : "$EntitySchema",
+                    [`${name}Schema`]: {
+                        body:    withSchemaEx?.entity ? `$EntitySchema.merge(${withPackageType(withSchemaEx.entity)}})` : "$EntitySchema",
                         comment: `
 /**
  * Schema definition for ${name}
