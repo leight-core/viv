@@ -1,5 +1,9 @@
 import {IPackageType}    from "@leight/generator";
-import {withSourceFile}  from "@leight/generator-server";
+import {
+    withPackageImport,
+    withPackageType,
+    withSourceFile
+}                        from "@leight/generator-server";
 import {normalize}       from "node:path";
 import {type IGenerator} from "../../api";
 
@@ -62,17 +66,17 @@ export const generatorServerSource: IGenerator<IGeneratorServerSourceParams> = a
                     ],
                 },
             })
-            .withImports(sourceEx?.package ? {
+            .withImports(sourceEx?.withPackage ? {
                 imports: {
-                    [sourceEx.package]: [
-                        sourceEx.type,
+                    [sourceEx.withPackage.package]: [
+                        withPackageImport(sourceEx),
                     ],
                 },
             } : undefined)
             .withClasses({
                 exports: {
                     [`${name}Source`]: {
-                        extends:    sourceEx?.type ? sourceEx.type : baseSource,
+                        extends:    sourceEx?.type ? withPackageType(sourceEx) : baseSource,
                         implements: `I${name}Source`,
                     },
                 },
