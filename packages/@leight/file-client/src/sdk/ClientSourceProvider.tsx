@@ -39,6 +39,7 @@ export const FileSource: FC<IFileSourceProps>               = props => {
     return <Source<IFileSourceSchema>
         schema={FileSchema}
         SourceProvider={FileSourceStore.Provider}
+        useFilterState={FileFilterStore.useState}
         useSortState={FileSortStore.useState}
         {...props}
     />;
@@ -57,4 +58,4 @@ export const FileQueryProvider: FC<IFileQueryProviderProps> = props => {
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_q38nnhpgoeu1fvvavd3voj48               = true;
+export const $leight_bwo01phcey98mptysk7o6c5e               = true;

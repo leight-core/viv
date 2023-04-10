@@ -119,6 +119,7 @@ useCountQuery: IUse${name}CountQuery;
     return <Source<I${name}SourceSchema>
         schema={${name}Schema}
         SourceProvider={${name}SourceStore.Provider}
+        useFilterState={${name}FilterStore.useState}
         useSortState={${name}SortStore.useState}
         ${withTrpc ? `useSourceQuery={trpc.${withTrpc.path}.source.query.useQuery}\n\t\t` : ""}{...props}
     />;

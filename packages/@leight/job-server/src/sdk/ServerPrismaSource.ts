@@ -8,17 +8,18 @@ import {
     type IJobSourceSchema,
     type IJobWhere,
     type IJobWhereUnique
-}                       from "@leight/job";
+}                     from "@leight/job";
 import {
     $PrismaClient,
     type PrismaClient
-}                       from "@leight/prisma";
-import {withCursor}     from "@leight/query";
+}                     from "@leight/prisma";
+import {withCursor}   from "@leight/query";
+import {type ISource} from "@leight/source";
 import {
-    type ISource,
+    AbstractSource,
+    withPatch,
     withUpsert
-}                       from "@leight/source";
-import {AbstractSource} from "@leight/source-server";
+}                     from "@leight/source-server";
 
 export class JobBasePrismaSource extends AbstractSource<IJobSourceSchema> {
     static inject = [
@@ -29,6 +30,22 @@ export class JobBasePrismaSource extends AbstractSource<IJobSourceSchema> {
         protected prismaClient: PrismaClient,
     ) {
         super($JobSource);
+    }
+
+    async runFind(id: string): Promise<IJobSourceSchema["Entity"]> {
+        return this.prisma().findUniqueOrThrow({
+            where: {id},
+        });
+    }
+
+    async runCreate(entity: IJobSourceSchema["Create"]): Promise<IJobSourceSchema["Entity"]> {
+        return this.prisma().create({
+            data: entity,
+        });
+    }
+
+    async runPatch(patch: IJobSourceSchema["Patch"]): Promise<IJobSourceSchema["Entity"]> {
+        return this.prisma().update(withPatch(patch));
     }
 
     async runUpsert(props: ISource.IUpsert<IJobSourceSchema>): Promise<IJobSourceSchema["Entity"]> {
@@ -72,4 +89,4 @@ export class JobBasePrismaSource extends AbstractSource<IJobSourceSchema> {
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_gkji973zdr2779rdy7vlheq2 = true;
+export const $leight_qwrjnvkpepzldc9avxgc9ll0 = true;

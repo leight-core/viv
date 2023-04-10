@@ -1,7 +1,6 @@
 import {type IStoreProvider} from "@leight/context";
 import {
     type ICreateStore,
-    type IStateCreatorProps,
     type IStoreContext,
     type IStoreProps,
 }                            from "@leight/zustand";
@@ -24,8 +23,10 @@ export const createProvider = <TStoreProps extends IStoreProps>(
             defaults,
             state,
         }) {
-        const store = createStore({defaults, state} as IStateCreatorProps<TStoreProps>);
-        const memo  = useMemo(() => ({state: store.getState(), store}), []);
+        const memo = useMemo(() => {
+            const store = createStore({defaults, state});
+            return {state: store.getState(), store};
+        }, []);
         return (
             <Context.Provider value={memo}>
                 {withConsumer(children, Context)}

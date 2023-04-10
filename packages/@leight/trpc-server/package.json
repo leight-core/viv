@@ -1,5 +1,5 @@
 {
-    "version": "0.5.65",
+    "version": "0.5.66",
     "name": "@leight/trpc-server",
     "description": "Set of utils for tRPC server-side.",
     "license": "MIT",
@@ -28,19 +28,19 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/container": "^0.5.61",
-        "@leight/trpc": "^0.5.59",
-        "@leight/user": "^0.5.70",
-        "@leight/user-server": "^0.5.73",
+        "@leight/container": "^0.5.62",
+        "@leight/trpc": "^0.5.60",
+        "@leight/user": "^0.5.71",
+        "@leight/user-server": "^0.5.74",
         "@trpc/server": "^10.15.0",
         "next-auth": "^4.20.1",
         "react": "^18.2.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.39",
-        "@leight/eslint-config-eslint": "^0.5.48",
-        "@leight/tsconfig": "^0.5.62",
-        "@leight/turbowatch": "^0.5.27",
+        "@leight/esbuild": "^0.5.40",
+        "@leight/eslint-config-eslint": "^0.5.49",
+        "@leight/tsconfig": "^0.5.63",
+        "@leight/turbowatch": "^0.5.28",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

@@ -3,13 +3,14 @@ import {
     type IStoreProps
 } from "@leight/context-client";
 import {
-    ComponentProps,
-    FC
+    type ComponentProps,
+    type FC
 } from "react";
 
 export type ILoopsStoreProps = IStoreProps<{
-    readonly isRunning: boolean;
     readonly current: number;
+
+    isRunning(): boolean;
 
     inc(): void;
 
@@ -18,12 +19,12 @@ export type ILoopsStoreProps = IStoreProps<{
 
 export const LoopsStore = createStoreContext<ILoopsStoreProps>({
     state: () => (set, get) => ({
-        get isRunning() {
+        current: 0,
+        isRunning() {
             return get().current > 0;
         },
-        current: 0,
-        inc:     () => set(({current}) => ({current: current + 1})),
-        dec:     () => set(({current}) => ({current: current - 1})),
+        inc: () => set(({current}) => ({current: current + 1})),
+        dec: () => set(({current}) => ({current: current - 1})),
     }),
     name:  "LoopsStore",
     hint:  "Add LoopsProvider."

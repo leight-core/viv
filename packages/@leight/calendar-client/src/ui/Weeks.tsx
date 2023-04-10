@@ -116,7 +116,10 @@ export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalend
             from: start,
             to:   end,
         });
-    }, []);
+    }, [
+        start.toISO(),
+        end.toISO(),
+    ]);
 
     const onChange: IWeeksProps<TSourceSchema>["onChange"] = props => {
         filter?.setFilter({
@@ -132,6 +135,7 @@ export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalend
     const columnCount = (list.length * columnSize) + (withWeeks ? weekCountSize : 0);
 
     return <CalendarShell
+        events={events}
         controlsTopLeft={<Group spacing={"sm"}>
             <Button.Group>
                 <Button
@@ -277,10 +281,7 @@ export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalend
                         day.isOutOfRange ? classes.outOfRange : classes.inRange,
                     )}
                     style={onClick ? {cursor: "pointer"} : undefined}
-                    onClick={() => {
-                        withOverlay(<h1>{day.id}</h1>);
-                        onClick?.({day});
-                    }}
+                    onClick={() => onClick?.({day})}
                 >
                     <Stack
                         justify={"space-between"}

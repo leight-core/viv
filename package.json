@@ -12,8 +12,8 @@
     },
     "scripts": {
         "dev": "turbo run dev --parallel --concurrency 64 --no-daemon | roarr",
-        "build": "turbo run init --no-daemon && turbo run build --concurrency=50% --no-daemon",
-        "build:force": "turbo run init --force --no-daemon && turbo run build --force --concurrency=50% --no-daemon",
+        "build": "turbo run init --concurrency=50% --no-daemon && turbo run build --concurrency=50% --no-daemon",
+        "build:force": "turbo run init --concurrency=50% --force --no-daemon && turbo run build --force --concurrency=50% --no-daemon",
         "lint": "turbo run lint --no-daemon",
         "depcheck": "turbo run depcheck --no-daemon --parallel",
         "cleanup": "turbo run cleanup --concurrency=50% --no-daemon --parallel",

@@ -8,17 +8,18 @@ import {
     type IFileSourceSchema,
     type IFileWhere,
     type IFileWhereUnique
-}                       from "@leight/file";
+}                     from "@leight/file";
 import {
     $PrismaClient,
     type PrismaClient
-}                       from "@leight/prisma";
-import {withCursor}     from "@leight/query";
+}                     from "@leight/prisma";
+import {withCursor}   from "@leight/query";
+import {type ISource} from "@leight/source";
 import {
-    type ISource,
+    AbstractSource,
+    withPatch,
     withUpsert
-}                       from "@leight/source";
-import {AbstractSource} from "@leight/source-server";
+}                     from "@leight/source-server";
 
 export class FileBasePrismaSource extends AbstractSource<IFileSourceSchema> {
     static inject = [
@@ -29,6 +30,22 @@ export class FileBasePrismaSource extends AbstractSource<IFileSourceSchema> {
         protected prismaClient: PrismaClient,
     ) {
         super($FileSource);
+    }
+
+    async runFind(id: string): Promise<IFileSourceSchema["Entity"]> {
+        return this.prisma().findUniqueOrThrow({
+            where: {id},
+        });
+    }
+
+    async runCreate(entity: IFileSourceSchema["Create"]): Promise<IFileSourceSchema["Entity"]> {
+        return this.prisma().create({
+            data: entity,
+        });
+    }
+
+    async runPatch(patch: IFileSourceSchema["Patch"]): Promise<IFileSourceSchema["Entity"]> {
+        return this.prisma().update(withPatch(patch));
     }
 
     async runUpsert(props: ISource.IUpsert<IFileSourceSchema>): Promise<IFileSourceSchema["Entity"]> {
@@ -72,4 +89,4 @@ export class FileBasePrismaSource extends AbstractSource<IFileSourceSchema> {
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_omwd9uv5gwbln3d3f42cnsxp = true;
+export const $leight_yzv66bsrcdhlza2q0bzo8akm = true;

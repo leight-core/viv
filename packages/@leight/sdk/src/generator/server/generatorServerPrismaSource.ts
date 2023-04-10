@@ -58,10 +58,11 @@ export const generatorServerPrismaSource: IGenerator<IGeneratorServerPrismaSourc
                     ],
                     "@leight/source":        [
                         "type ISource",
-                        "withUpsert",
                     ],
                     "@leight/source-server": [
                         "AbstractSource",
+                        "withUpsert",
+                        "withPatch",
                     ],
                 },
             })
@@ -96,6 +97,22 @@ export const generatorServerPrismaSource: IGenerator<IGeneratorServerPrismaSourc
         protected prismaClient: PrismaClient,
     ) {
         super($${name}Source);
+    }
+
+    async runFind(id: string): Promise<I${name}SourceSchema["Entity"]> {
+        return this.prisma().findUniqueOrThrow({
+            where: {id},
+        });
+    }
+
+    async runCreate(entity: I${name}SourceSchema["Create"]): Promise<I${name}SourceSchema["Entity"]> {
+        return this.prisma().create({
+            data: entity,
+        });
+    }
+
+    async runPatch(patch: I${name}SourceSchema["Patch"]): Promise<I${name}SourceSchema["Entity"]> {
+        return this.prisma().update(withPatch(patch));
     }
 
     async runUpsert(props: ISource.IUpsert<I${name}SourceSchema>): Promise<I${name}SourceSchema["Entity"]> {

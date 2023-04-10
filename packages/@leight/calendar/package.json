@@ -1,5 +1,5 @@
 {
-    "version": "0.5.8",
+    "version": "0.5.9",
     "name": "@leight/calendar",
     "description": "Common calendar stuff.",
     "license": "MIT",
@@ -28,16 +28,16 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/filter": "^0.5.56",
-        "@leight/i18n": "^0.5.66",
-        "@leight/source": "^0.5.60",
-        "@leight/zod": "^0.5.6"
+        "@leight/filter": "^0.5.57",
+        "@leight/i18n": "^0.5.67",
+        "@leight/source": "^0.5.61",
+        "@leight/zod": "^0.5.7"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.39",
-        "@leight/eslint-config-eslint": "^0.5.48",
-        "@leight/tsconfig": "^0.5.62",
-        "@leight/turbowatch": "^0.5.27",
+        "@leight/esbuild": "^0.5.40",
+        "@leight/eslint-config-eslint": "^0.5.49",
+        "@leight/tsconfig": "^0.5.63",
+        "@leight/turbowatch": "^0.5.28",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

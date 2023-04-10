@@ -5,20 +5,21 @@
 import {
     $PrismaClient,
     type PrismaClient
-}                       from "@leight/prisma";
-import {withCursor}     from "@leight/query";
+}                     from "@leight/prisma";
+import {withCursor}   from "@leight/query";
+import {type ISource} from "@leight/source";
 import {
-    type ISource,
+    AbstractSource,
+    withPatch,
     withUpsert
-}                       from "@leight/source";
-import {AbstractSource} from "@leight/source-server";
+}                     from "@leight/source-server";
 import {
     $UserSource,
     type IUserOrderBy,
     type IUserSourceSchema,
     type IUserWhere,
     type IUserWhereUnique
-}                       from "@leight/user";
+}                     from "@leight/user";
 
 export class UserBasePrismaSource extends AbstractSource<IUserSourceSchema> {
     static inject = [
@@ -29,6 +30,22 @@ export class UserBasePrismaSource extends AbstractSource<IUserSourceSchema> {
         protected prismaClient: PrismaClient,
     ) {
         super($UserSource);
+    }
+
+    async runFind(id: string): Promise<IUserSourceSchema["Entity"]> {
+        return this.prisma().findUniqueOrThrow({
+            where: {id},
+        });
+    }
+
+    async runCreate(entity: IUserSourceSchema["Create"]): Promise<IUserSourceSchema["Entity"]> {
+        return this.prisma().create({
+            data: entity,
+        });
+    }
+
+    async runPatch(patch: IUserSourceSchema["Patch"]): Promise<IUserSourceSchema["Entity"]> {
+        return this.prisma().update(withPatch(patch));
     }
 
     async runUpsert(props: ISource.IUpsert<IUserSourceSchema>): Promise<IUserSourceSchema["Entity"]> {
@@ -72,4 +89,4 @@ export class UserBasePrismaSource extends AbstractSource<IUserSourceSchema> {
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_q21zag7nwljw4teljno7h41n = true;
+export const $leight_f7ok7msbmz1wg9abrr6hhnl5 = true;

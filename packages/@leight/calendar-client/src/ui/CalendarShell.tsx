@@ -1,10 +1,16 @@
 import {type ICalendarEventSourceSchema} from "@leight/calendar";
-import {IUseFilterState}                 from "@leight/filter";
+import {
+    type IFilterStoreProps,
+    type IUseFilterState
+}                                        from "@leight/filter";
 import {
     type InferSelectors,
     switchScheme
 }                                        from "@leight/mantine";
-import {type IUseSourceState}            from "@leight/source";
+import {
+    type ISourceStoreProps,
+    type IUseSourceState
+}                                        from "@leight/source";
 import {
     isCallable,
     withBool
@@ -156,13 +162,15 @@ const useStyles = createStyles(theme => ({
 
 export type ICalendarStyles = InferSelectors<typeof useStyles>;
 
-export type ICalendarComponent =
-    ((props: ICalendarComponent.IRenderProps) => ReactNode)
+export type ICalendarComponent<TSourceSchema extends ICalendarEventSourceSchema> =
+    ((props: ICalendarComponent.IRenderProps<TSourceSchema>) => ReactNode)
     | ReactNode;
 
 export namespace ICalendarComponent {
-    export interface IRenderProps {
+    export interface IRenderProps<TSourceSchema extends ICalendarEventSourceSchema> {
         classes: ICalendarStyles;
+        source?: ISourceStoreProps<TSourceSchema>["StoreProps"];
+        filter?: IFilterStoreProps<TSourceSchema["FilterSchema"]>["StoreProps"];
     }
 }
 
@@ -175,23 +183,22 @@ export interface ICalendarShellEvents<TSourceSchema extends ICalendarEventSource
 export interface ICalendarShellProps<TSourceSchema extends ICalendarEventSourceSchema> extends Omit<ComponentProps<typeof Container>, "children"> {
     events?: ICalendarShellEvents<TSourceSchema>;
     withControls?: boolean;
-    controlsTopLeft?: ICalendarComponent;
-    controlsTopMiddle?: ICalendarComponent;
-    controlsTopRight?: ICalendarComponent;
-    controlsBottomLeft?: ICalendarComponent;
-    controlsBottomMiddle?: ICalendarComponent;
-    controlsBottomRight?: ICalendarComponent;
-    children: ICalendarComponent;
+    controlsTopLeft?: ICalendarComponent<TSourceSchema>;
+    controlsTopMiddle?: ICalendarComponent<TSourceSchema>;
+    controlsTopRight?: ICalendarComponent<TSourceSchema>;
+    controlsBottomLeft?: ICalendarComponent<TSourceSchema>;
+    controlsBottomMiddle?: ICalendarComponent<TSourceSchema>;
+    controlsBottomRight?: ICalendarComponent<TSourceSchema>;
+    children: ICalendarComponent<TSourceSchema>;
 }
 
-const renderComponent = (component: ICalendarComponent | undefined, props: ICalendarComponent.IRenderProps) => isCallable(component) ? component(props) : component;
+const renderComponent = <TSourceSchema extends ICalendarEventSourceSchema>(component: ICalendarComponent<TSourceSchema> | undefined, props: ICalendarComponent.IRenderProps<TSourceSchema>) => isCallable(component) ? component(props) : component;
 
 /**
  * Styled shell for Calendar.
  */
 export const CalendarShell = <TSourceSchema extends ICalendarEventSourceSchema = ICalendarEventSourceSchema>(
     {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         events,
         withControls = true,
         controlsTopLeft,
@@ -204,19 +211,23 @@ export const CalendarShell = <TSourceSchema extends ICalendarEventSourceSchema =
         ...props
     }: ICalendarShellProps<TSourceSchema>) => {
     const blockStore         = BlockStore.useOptionalState();
+    const source             = events?.useSource();
+    const filter             = events?.useFilter();
     const {classes}          = useStyles();
     const controlColumnCount = 18;
     const controlWidth       = 7;
 
-    const renderProps: ICalendarComponent.IRenderProps = {
+    const renderProps: ICalendarComponent.IRenderProps<TSourceSchema> = {
         classes,
+        source,
+        filter,
     };
 
     return <Box
         className={classes.calendar}
         {...props}
     >
-        <LoadingOverlay visible={withBool(blockStore?.isBlock, false)}/>
+        <LoadingOverlay visible={withBool(blockStore?.isBlock, events?.useSource().isFetching || false)}/>
         {withControls && <Grid
             columns={controlColumnCount}
             className={classNames(

@@ -1,3 +1,12 @@
+import {type IWithIdentity} from "@leight/source";
+
+export const withPatch = <T extends IWithIdentity>({id, ...patch}: T) => {
+    return {
+        data:  patch,
+        where: {id},
+    };
+};
+
 export interface IWithUpsertProps {
     create: any;
     filter: any;

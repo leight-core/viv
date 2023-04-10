@@ -1,5 +1,14 @@
 # @leight/filter-client
 
+## 0.5.2
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/context-client@0.5.69
+    - @leight/filter@0.5.57
+
 ## 0.5.1
 
 ### Patch Changes
