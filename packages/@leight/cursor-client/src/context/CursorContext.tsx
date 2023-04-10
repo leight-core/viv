@@ -3,8 +3,8 @@ import {
     type IStoreProps
 } from "@leight/context-client";
 import {
-    ComponentProps,
-    FC
+    type ComponentProps,
+    type FC
 } from "react";
 
 export type ICursorStoreProps = IStoreProps<{

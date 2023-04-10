@@ -136,8 +136,9 @@ useCountQuery: IUse${name}CountQuery;
                         body: `props => {
     return <QueryProvider<I${name}SourceSchema>
         FilterProvider={${name}FilterStore.Provider}
+        useFilterState={${name}FilterStore.useState}
         SortProvider={${name}SortStore.Provider}
-        ${withTrpc ? `useCountQuery={trpc.${withTrpc.path}.source.count.useQuery}\n\t\t` : "\t\t"}{...props}
+        ${withTrpc ? `useCountQuery={trpc.${withTrpc.path}.source.count.useQuery}\n\t\t` : ""}{...props}
     />;
 }
                     `,

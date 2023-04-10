@@ -2,7 +2,7 @@ import {
     DateTime,
     Info,
     Interval,
-    StringUnitLength
+    type StringUnitLength
 }                     from "@leight/i18n";
 import {type IMonths} from "../api";
 

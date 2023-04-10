@@ -36,7 +36,7 @@ export type IQueryProviderInternalProps<TSourceSchema extends ISourceSchema> = P
     defaultSort?: TSourceSchema["Sort"];
     defaultCursor?: TSourceSchema["Cursor"];
 }>;
-export type IQueryProviderProps<TSourceSchema extends ISourceSchema> = Omit<IQueryProviderInternalProps<TSourceSchema>, "useCountQuery" | "SortProvider" | "FilterProvider">;
+export type IQueryProviderProps<TSourceSchema extends ISourceSchema> = Omit<IQueryProviderInternalProps<TSourceSchema>, "useCountQuery" | "useFilterState" | "SortProvider" | "FilterProvider">;
 
 export const QueryProvider = <TSourceSchema extends ISourceSchema>(
     {

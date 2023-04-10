@@ -1,5 +1,5 @@
 {
-    "version": "0.5.57",
+    "version": "0.5.58",
     "name": "@leight/filter",
     "description": "Common filter stuff (for filtering data in general).",
     "license": "MIT",
@@ -28,15 +28,15 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/context": "^0.5.24",
-        "@leight/zod": "^0.5.7",
-        "@leight/zustand": "^0.5.61"
+        "@leight/context": "^0.5.25",
+        "@leight/zod": "^0.5.8",
+        "@leight/zustand": "^0.5.62"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.40",
-        "@leight/eslint-config-eslint": "^0.5.49",
-        "@leight/tsconfig": "^0.5.63",
-        "@leight/turbowatch": "^0.5.28",
+        "@leight/esbuild": "^0.5.41",
+        "@leight/eslint-config-eslint": "^0.5.50",
+        "@leight/tsconfig": "^0.5.64",
+        "@leight/turbowatch": "^0.5.29",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",

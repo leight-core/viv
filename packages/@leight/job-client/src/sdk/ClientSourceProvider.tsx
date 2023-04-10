@@ -50,6 +50,7 @@ export const JobSource: FC<IJobSourceProps>               = props => {
 export const JobQueryProvider: FC<IJobQueryProviderProps> = props => {
     return <QueryProvider<IJobSourceSchema>
         FilterProvider={JobFilterStore.Provider}
+        useFilterState={JobFilterStore.useState}
         SortProvider={JobSortStore.Provider}
         {...props}
     />;
@@ -58,4 +59,4 @@ export const JobQueryProvider: FC<IJobQueryProviderProps> = props => {
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_cvdheoy86tgq2yu7iapmd7e1             = true;
+export const $leight_xv8rftnwicqm4f0w1sr0oolf             = true;

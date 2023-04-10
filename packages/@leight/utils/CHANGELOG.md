@@ -1,5 +1,11 @@
 # @leight/utils
 
+## 0.5.65
+
+### Patch Changes
+
+- Version bump
+
 ## 0.5.64
 
 ### Patch Changes
