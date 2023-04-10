@@ -18,15 +18,15 @@ export interface ISourceInternalProps<TSourceSchema extends ISourceSchema> {
     /**
      * Shape of the data this Source is operating on
      */
-    readonly schema: TSourceSchema["EntitySchema"];
+    schema: TSourceSchema["EntitySchema"];
     /**
      * React query used to actually query data
      */
-    readonly useSourceQuery: IUseSourceQuery<TSourceSchema>;
-    readonly useFilterState: IUseFilterState<TSourceSchema["FilterSchema"]>;
-    readonly useSortState: IUseSortState<TSourceSchema["SortSchema"]>;
-    readonly SourceProvider: IStoreProvider<ISourceStoreProps<TSourceSchema>>;
-    readonly children?: ((store: IStoreApi<ISourceStoreProps<TSourceSchema>>) => ReactNode) | ReactNode;
+    useSourceQuery: IUseSourceQuery<TSourceSchema>;
+    useFilterState: IUseFilterState<TSourceSchema["FilterSchema"]>;
+    useSortState: IUseSortState<TSourceSchema["SortSchema"]>;
+    SourceProvider: IStoreProvider<ISourceStoreProps<TSourceSchema>>;
+    children?: ((store: IStoreApi<ISourceStoreProps<TSourceSchema>>) => ReactNode) | ReactNode;
 
     /**
      * Optional callback when data is fetched

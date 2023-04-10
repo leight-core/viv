@@ -1,5 +1,15 @@
 # @leight/file-client
 
+## 0.5.70
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/source-client@0.5.32
+    - @leight/query-client@0.5.29
+    - @leight/file@0.5.69
+
 ## 0.5.69
 
 ### Patch Changes

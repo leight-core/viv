@@ -1,6 +1,9 @@
 import {type IStoreProvider}       from "@leight/context";
 import {CursorControl}             from "@leight/cursor-client";
-import {type IFilterStoreProps}    from "@leight/filter";
+import {
+    type IFilterStoreProps,
+    type IUseFilterState
+}                                  from "@leight/filter";
 import {type IUseCursorCountQuery} from "@leight/query";
 import {type ISortStoreProps}      from "@leight/sort";
 import {type ISourceSchema}        from "@leight/source";
@@ -11,6 +14,10 @@ export type IQueryProviderInternalProps<TSourceSchema extends ISourceSchema> = P
      * Typed filter provider
      */
     FilterProvider: IStoreProvider<IFilterStoreProps<TSourceSchema["FilterSchema"]>>;
+    /**
+     * Specify query filter state
+     */
+    useFilterState: IUseFilterState<TSourceSchema["FilterSchema"]>;
     /**
      * Typed sort provider
      */
@@ -34,6 +41,7 @@ export type IQueryProviderProps<TSourceSchema extends ISourceSchema> = Omit<IQue
 export const QueryProvider = <TSourceSchema extends ISourceSchema>(
     {
         FilterProvider,
+        useFilterState,
         SortProvider,
         defaultFilter,
         defaultSort,
@@ -49,6 +57,7 @@ export const QueryProvider = <TSourceSchema extends ISourceSchema>(
         >
             <CursorControl
                 useCountQuery={useCountQuery}
+                useFilterState={useFilterState}
                 defaultCursor={defaultCursor}
             >
                 {children}

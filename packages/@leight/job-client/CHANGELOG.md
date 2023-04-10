@@ -1,5 +1,15 @@
 # @leight/job-client
 
+## 0.5.23
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/source-client@0.5.32
+    - @leight/query-client@0.5.29
+    - @leight/job@0.5.72
+
 ## 0.5.22
 
 ### Patch Changes

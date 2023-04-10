@@ -1,27 +1,33 @@
-import {
-    type IQuerySchema,
-    type IUseCursorCountQuery
-}                          from "@leight/query";
-import {z}                 from "@leight/zod";
-import {PropsWithChildren} from "react";
+import {type IUseFilterState}      from "@leight/filter";
+import {type IUseCursorCountQuery} from "@leight/query";
+import {type ISourceSchema}        from "@leight/source";
+import {type PropsWithChildren}    from "react";
 import {
     CursorProvider,
     CursorStore
-}                          from "../context";
+}                                  from "../context";
 
-export type ICursorControlProps<TQuerySchema extends IQuerySchema> = PropsWithChildren<{
-    useCountQuery: IUseCursorCountQuery<TQuerySchema>;
-    defaultCursor?: z.infer<TQuerySchema>["cursor"];
+export type ICursorControlProps<TSourceSchema extends ISourceSchema> = PropsWithChildren<{
+    useCountQuery: IUseCursorCountQuery<TSourceSchema["QuerySchema"]>;
+    useFilterState: IUseFilterState<TSourceSchema["FilterSchema"]>;
+    defaultCursor?: TSourceSchema["Cursor"];
 }>;
 
-type IInternalCursor<TQuerySchema extends IQuerySchema> = ICursorControlProps<TQuerySchema>;
+type IInternalCursor<TSourceSchema extends ISourceSchema> = ICursorControlProps<TSourceSchema>;
 
-const InternalCursor = <TQuerySchema extends IQuerySchema>({useCountQuery, children}: IInternalCursor<TQuerySchema>) => {
-    /**
-     * @TODO connect to FilterProvider/FilterStore
-     */
+const InternalCursor = <TSourceSchema extends ISourceSchema>(
+    {
+        useCountQuery,
+        useFilterState,
+        children,
+    }: IInternalCursor<TSourceSchema>) => {
     const {setTotal, setIsLoading} = CursorStore.useState(({setTotal, setIsLoading}) => ({setTotal, setIsLoading}));
-    useCountQuery({}, {
+    const {filter}                 = useFilterState(({filter}) => ({filter}));
+    useCountQuery({
+        filter,
+    }, {
+        staleTime: undefined,
+        cacheTime: undefined,
         onSuccess: data => {
             setTotal(data);
         },
@@ -32,11 +38,11 @@ const InternalCursor = <TQuerySchema extends IQuerySchema>({useCountQuery, child
     return <>{children}</>;
 };
 
-export const CursorControl = <TQuerySchema extends IQuerySchema>(
+export const CursorControl = <TSourceSchema extends ISourceSchema>(
     {
         defaultCursor,
         ...props
-    }: ICursorControlProps<TQuerySchema>) => {
+    }: ICursorControlProps<TSourceSchema>) => {
     return <CursorProvider
         defaults={defaultCursor}
     >

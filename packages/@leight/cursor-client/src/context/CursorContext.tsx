@@ -50,7 +50,7 @@ export const CursorStore = createStoreContext<ICursorStoreProps>({
         },
     }),
     name:  "CursorStore",
-    hint:  "Add CursorStore.Provider.",
+    hint:  "Add CursorProvider.",
 });
 
 export interface ICursorProviderProps extends Omit<ComponentProps<typeof CursorStore["Provider"]>, "state"> {
