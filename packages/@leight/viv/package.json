@@ -1,0 +1,75 @@
+{
+    "version": "0.6.0",
+    "name": "@leight/viv",
+    "description": "Common framework stuff usable on client/server.",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/leight-core/viv.git"
+    },
+    "engines": {
+        "node": ">=16.0.0"
+    },
+    "sideEffects": false,
+    "type": "module",
+    "module": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "files": [
+        "lib",
+        "src"
+    ],
+    "scripts": {
+        "dev": "turbowatch",
+        "generate": "concurrently npm:generate:*",
+        "generate:prisma": "prisma generate",
+        "build": "concurrently npm:build:*",
+        "build:esbuild": "node esbuild.mjs",
+        "build:types": "tsc --outDir lib",
+        "depcheck": "depcheck",
+        "lint": "eslint src",
+        "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
+    },
+    "dependencies": {
+        "@paralleldrive/cuid2": "^2.2.0",
+        "@prisma/client": "^4.12.0",
+        "@tanstack/react-query": "^4.26.1",
+        "@trpc/server": "^10.15.0",
+        "devalue": "^4.3.0",
+        "fast-clean": "^1.2.1",
+        "filesize": "^10.0.6",
+        "is-callable": "^1.2.7",
+        "is-object": "^1.0.2",
+        "is-string": "^1.0.7",
+        "luxon": "^3.3.0",
+        "next": "^13.2.4",
+        "next-auth": "^4.20.1",
+        "pumpit": "^4.1.1",
+        "react": "^18.2.0",
+        "winston": "^3.8.2",
+        "xlsx": "^0.18.5",
+        "zod": "3.21.1",
+        "zustand": "^4.3.7"
+    },
+    "devDependencies": {
+        "@leight/esbuild": "^0.5.40",
+        "@leight/eslint-config-eslint": "^0.5.49",
+        "@leight/tsconfig": "^0.5.63",
+        "@leight/turbowatch": "^0.5.28",
+        "@types/is-callable": "^1.1.0",
+        "@types/is-object": "^1.0.2",
+        "@types/is-string": "^1.0.0",
+        "@types/node": "^18.15.0",
+        "concurrently": "^7.6.0",
+        "del-cli": "^5.0.0",
+        "depcheck": "^1.4.3",
+        "eslint": "^8.36.0",
+        "prisma": "^4.12.0",
+        "turbowatch": "^2.3.2",
+        "typescript": "^5.0.2",
+        "zod-prisma-types": "^2.5.1"
+    },
+    "bugs": {
+        "url": "https://github.com/leight-core/viv/issues"
+    },
+    "homepage": "https://github.com/leight-core/viv#readme"
+}

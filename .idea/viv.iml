@@ -117,6 +117,7 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/trpc-source-server/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/zod/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/filter-client/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/viv/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.github" />
       <excludeFolder url="file://$MODULE_DIR$/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/sql/.turbo" />
@@ -322,6 +323,9 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/zod/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/filter-client/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/filter-client/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/viv/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/viv-client/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/viv-server/.turbo" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

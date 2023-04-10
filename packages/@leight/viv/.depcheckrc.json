@@ -1,0 +1,8 @@
+{
+    "ignores": [
+        "zod-prisma-types",
+        "@leight/esbuild",
+        "@leight/tsconfig",
+        "@types/node"
+    ]
+}
