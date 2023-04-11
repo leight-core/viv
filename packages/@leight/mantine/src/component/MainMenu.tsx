@@ -43,13 +43,15 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
-export interface IMainMenuProps<TLinks extends Record<string, ILink>> {
+export type IMainMenuLinks = Record<string, ILink>;
+
+export interface IMainMenuProps<TLinks extends IMainMenuLinks> {
     withTranslation?: IWithTranslation;
     links: TLinks;
     active?: keyof TLinks;
 }
 
-export const MainMenu = <TLinks extends Record<string, ILink>>(
+export const MainMenu = <TLinks extends IMainMenuLinks>(
     {
         links,
         active,

@@ -1,5 +1,11 @@
 # @leight/mantine
 
+## 0.5.71
+
+### Patch Changes
+
+- Added menu link type
+
 ## 0.5.70
 
 ### Patch Changes
