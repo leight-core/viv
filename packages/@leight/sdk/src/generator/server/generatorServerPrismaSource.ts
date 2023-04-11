@@ -140,7 +140,7 @@ export const generatorServerPrismaSource: IGenerator<IGeneratorServerPrismaSourc
     }
     
     toWhere(filter?: I${name}SourceSchema["Filter"]): I${name}Where | undefined {
-        return undefined;
+        return filter;
     }
     
     toWhereUnique(filter?: I${name}SourceSchema["Filter"]): I${name}WhereUnique | undefined {

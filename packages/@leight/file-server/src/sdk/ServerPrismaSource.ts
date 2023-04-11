@@ -73,7 +73,7 @@ export class FileBasePrismaSource extends AbstractSource<IFileSourceSchema> {
     }
 
     toWhere(filter?: IFileSourceSchema["Filter"]): IFileWhere | undefined {
-        return undefined;
+        return filter;
     }
 
     toWhereUnique(filter?: IFileSourceSchema["Filter"]): IFileWhereUnique | undefined {
@@ -89,4 +89,4 @@ export class FileBasePrismaSource extends AbstractSource<IFileSourceSchema> {
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_uof6nchsbvbq50t978wu3egc = true;
+export const $leight_ej1cmdvzurc4nxh0p7v6qx3k = true;

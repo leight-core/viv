@@ -73,7 +73,7 @@ export class JobBasePrismaSource extends AbstractSource<IJobSourceSchema> {
     }
 
     toWhere(filter?: IJobSourceSchema["Filter"]): IJobWhere | undefined {
-        return undefined;
+        return filter;
     }
 
     toWhereUnique(filter?: IJobSourceSchema["Filter"]): IJobWhereUnique | undefined {
@@ -89,4 +89,4 @@ export class JobBasePrismaSource extends AbstractSource<IJobSourceSchema> {
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_p68vv6up4rk4t4qrq94eixqv = true;
+export const $leight_rh9qmq5i5nk38y816quc0sil = true;
