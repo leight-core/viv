@@ -1,28 +1,28 @@
 /**
- Base Prisma Source contains default implementation of Source for entity Job connected to Prisma. This could be used for further extensions,
- also default export uses this as a parent class.
+	Base Prisma Source contains default implementation of Source for entity Job connected to Prisma. This could be used for further extensions,
+    also default export uses this as a parent class.
  */
+import {withCursor} from "@leight/query";
 import {
-    $JobSource,
-    type IJobOrderBy,
-    type IJobSourceSchema,
-    type IJobWhere,
-    type IJobWhereUnique
-}                     from "@leight/job";
-import {
-    $PrismaClient,
-    type PrismaClient
-}                     from "@leight/prisma";
-import {withCursor}   from "@leight/query";
+	$PrismaClient,
+	type PrismaClient
+} from "@leight/prisma";
 import {type ISource} from "@leight/source";
 import {
-    AbstractSource,
-    withPatch,
-    withUpsert
-}                     from "@leight/source-server";
+	AbstractSource,
+	withUpsert,
+	withPatch
+} from "@leight/source-server";
+import {
+	$JobSource,
+	type IJobWhere,
+	type IJobWhereUnique,
+	type IJobOrderBy,
+	type IJobSourceSchema
+} from "@leight/job";
 
 export class JobBasePrismaSource extends AbstractSource<IJobSourceSchema> {
-    static inject = [
+	static inject = [
         $PrismaClient,
     ];
 
@@ -67,19 +67,19 @@ export class JobBasePrismaSource extends AbstractSource<IJobSourceSchema> {
             }
         }));
     }
-
+    
     prisma() {
         return this.prismaClient.job;
     }
-
+    
     toWhere(filter?: IJobSourceSchema["Filter"]): IJobWhere | undefined {
         return filter;
     }
-
+    
     toWhereUnique(filter?: IJobSourceSchema["Filter"]): IJobWhereUnique | undefined {
         return undefined;
     }
-
+    
     toOrderBy(sort?: IJobSourceSchema["Sort"]): IJobOrderBy | undefined {
         return sort as IJobOrderBy;
     }
@@ -89,4 +89,4 @@ export class JobBasePrismaSource extends AbstractSource<IJobSourceSchema> {
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_rh9qmq5i5nk38y816quc0sil = true;
+export const $leight_riwrc86kqqfym94dcprv2dw2 = true;

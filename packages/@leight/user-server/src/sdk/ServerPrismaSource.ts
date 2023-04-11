@@ -1,28 +1,28 @@
 /**
- Base Prisma Source contains default implementation of Source for entity User connected to Prisma. This could be used for further extensions,
- also default export uses this as a parent class.
+	Base Prisma Source contains default implementation of Source for entity User connected to Prisma. This could be used for further extensions,
+    also default export uses this as a parent class.
  */
+import {withCursor} from "@leight/query";
 import {
-    $PrismaClient,
-    type PrismaClient
-}                     from "@leight/prisma";
-import {withCursor}   from "@leight/query";
+	$PrismaClient,
+	type PrismaClient
+} from "@leight/prisma";
 import {type ISource} from "@leight/source";
 import {
-    AbstractSource,
-    withPatch,
-    withUpsert
-}                     from "@leight/source-server";
+	AbstractSource,
+	withUpsert,
+	withPatch
+} from "@leight/source-server";
 import {
-    $UserSource,
-    type IUserOrderBy,
-    type IUserSourceSchema,
-    type IUserWhere,
-    type IUserWhereUnique
-}                     from "@leight/user";
+	$UserSource,
+	type IUserWhere,
+	type IUserWhereUnique,
+	type IUserOrderBy,
+	type IUserSourceSchema
+} from "@leight/user";
 
 export class UserBasePrismaSource extends AbstractSource<IUserSourceSchema> {
-    static inject = [
+	static inject = [
         $PrismaClient,
     ];
 
@@ -67,19 +67,19 @@ export class UserBasePrismaSource extends AbstractSource<IUserSourceSchema> {
             }
         }));
     }
-
+    
     prisma() {
         return this.prismaClient.user;
     }
-
+    
     toWhere(filter?: IUserSourceSchema["Filter"]): IUserWhere | undefined {
         return filter;
     }
-
+    
     toWhereUnique(filter?: IUserSourceSchema["Filter"]): IUserWhereUnique | undefined {
         return undefined;
     }
-
+    
     toOrderBy(sort?: IUserSourceSchema["Sort"]): IUserOrderBy | undefined {
         return sort as IUserOrderBy;
     }
@@ -89,4 +89,4 @@ export class UserBasePrismaSource extends AbstractSource<IUserSourceSchema> {
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_warlnb5bulfveen8k15j5bt1 = true;
+export const $leight_qlho7btuzg8q8vhrkxelhau2 = true;

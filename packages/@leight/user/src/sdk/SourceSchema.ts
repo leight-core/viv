@@ -1,19 +1,19 @@
 /**
- Source code of the common stuff for User which could be shared between server and client side.
+	Source code of the common stuff for User which could be shared between server and client side.
  */
+import {
+	type IWithIdentity,
+	type ISourceSchema
+} from "@leight/source";
 import {type IUseQuery} from "@leight/react-query";
 import {
-    type ISourceSchema,
-    type IWithIdentity
-}                       from "@leight/source";
-import {
-    type IUserCreateSchema,
-    type IUserFilterSchema,
-    type IUserParamSchema,
-    type IUserPatchSchema,
-    type IUserSchema,
-    type IUserSortSchema
-}                       from "./PrismaSchema";
+	type IUserCreateSchema,
+	type IUserFilterSchema,
+	type IUserParamSchema,
+	type IUserPatchSchema,
+	type IUserSchema,
+	type IUserSortSchema
+} from "./PrismaSchema";
 
 export type IUseUserQuery = IUseQuery<IUserSourceSchema["Query"] | undefined, IUserSourceSchema["Entity"][]>;
 export type IUseUserCountQuery = IUseQuery<IUserSourceSchema["Query"] | undefined, number>;
@@ -27,11 +27,11 @@ export interface IUserSourceSchema extends ISourceSchema<
     IUserFilterSchema,
     IUserSortSchema,
     IUserParamSchema
-> {
+ > {
 }
 
 /**
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_g9k1sm4vy055o1oimudh1xgd = true;
+export const $leight_r8fr2j8fpox5yg2dufr7crdv = true;

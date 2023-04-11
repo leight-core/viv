@@ -1,19 +1,19 @@
 /**
- Source code of the common stuff for File which could be shared between server and client side.
+	Source code of the common stuff for File which could be shared between server and client side.
  */
+import {
+	type IWithIdentity,
+	type ISourceSchema
+} from "@leight/source";
 import {type IUseQuery} from "@leight/react-query";
 import {
-    type ISourceSchema,
-    type IWithIdentity
-}                       from "@leight/source";
-import {
-    type IFileCreateSchema,
-    type IFileFilterSchema,
-    type IFileParamSchema,
-    type IFilePatchSchema,
-    type IFileSchema,
-    type IFileSortSchema
-}                       from "./PrismaSchema";
+	type IFileCreateSchema,
+	type IFileFilterSchema,
+	type IFileParamSchema,
+	type IFilePatchSchema,
+	type IFileSchema,
+	type IFileSortSchema
+} from "./PrismaSchema";
 
 export type IUseFileQuery = IUseQuery<IFileSourceSchema["Query"] | undefined, IFileSourceSchema["Entity"][]>;
 export type IUseFileCountQuery = IUseQuery<IFileSourceSchema["Query"] | undefined, number>;
@@ -27,11 +27,11 @@ export interface IFileSourceSchema extends ISourceSchema<
     IFileFilterSchema,
     IFileSortSchema,
     IFileParamSchema
-> {
+ > {
 }
 
 /**
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_xus0ine4wiw4glc79dxbkny2 = true;
+export const $leight_n90yxwzdtxvpaob16yf624jx = true;

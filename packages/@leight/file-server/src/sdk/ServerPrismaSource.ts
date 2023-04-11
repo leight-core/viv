@@ -1,28 +1,28 @@
 /**
- Base Prisma Source contains default implementation of Source for entity File connected to Prisma. This could be used for further extensions,
- also default export uses this as a parent class.
+	Base Prisma Source contains default implementation of Source for entity File connected to Prisma. This could be used for further extensions,
+    also default export uses this as a parent class.
  */
+import {withCursor} from "@leight/query";
 import {
-    $FileSource,
-    type IFileOrderBy,
-    type IFileSourceSchema,
-    type IFileWhere,
-    type IFileWhereUnique
-}                     from "@leight/file";
-import {
-    $PrismaClient,
-    type PrismaClient
-}                     from "@leight/prisma";
-import {withCursor}   from "@leight/query";
+	$PrismaClient,
+	type PrismaClient
+} from "@leight/prisma";
 import {type ISource} from "@leight/source";
 import {
-    AbstractSource,
-    withPatch,
-    withUpsert
-}                     from "@leight/source-server";
+	AbstractSource,
+	withUpsert,
+	withPatch
+} from "@leight/source-server";
+import {
+	$FileSource,
+	type IFileWhere,
+	type IFileWhereUnique,
+	type IFileOrderBy,
+	type IFileSourceSchema
+} from "@leight/file";
 
 export class FileBasePrismaSource extends AbstractSource<IFileSourceSchema> {
-    static inject = [
+	static inject = [
         $PrismaClient,
     ];
 
@@ -67,19 +67,19 @@ export class FileBasePrismaSource extends AbstractSource<IFileSourceSchema> {
             }
         }));
     }
-
+    
     prisma() {
         return this.prismaClient.file;
     }
-
+    
     toWhere(filter?: IFileSourceSchema["Filter"]): IFileWhere | undefined {
         return filter;
     }
-
+    
     toWhereUnique(filter?: IFileSourceSchema["Filter"]): IFileWhereUnique | undefined {
         return undefined;
     }
-
+    
     toOrderBy(sort?: IFileSourceSchema["Sort"]): IFileOrderBy | undefined {
         return sort as IFileOrderBy;
     }
@@ -89,4 +89,4 @@ export class FileBasePrismaSource extends AbstractSource<IFileSourceSchema> {
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_ej1cmdvzurc4nxh0p7v6qx3k = true;
+export const $leight_lr0ghy0p3aq6g2ichmgbd05v = true;
