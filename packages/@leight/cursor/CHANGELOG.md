@@ -1,12 +1,20 @@
 # @leight/cursor
 
+## 0.5.57
+
+### Patch Changes
+
+- Version bump (updated packages)
+- Updated dependencies
+  - @leight/zod@0.5.9
+
 ## 0.5.56
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/zod@0.5.8
+  - @leight/zod@0.5.8
 
 ## 0.5.55
 
@@ -14,7 +22,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/zod@0.5.7
+  - @leight/zod@0.5.7
 
 ## 0.5.54
 
@@ -22,7 +30,7 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/zod@0.5.6
+  - @leight/zod@0.5.6
 
 ## 0.5.53
 
@@ -30,7 +38,7 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/zod@0.5.5
+  - @leight/zod@0.5.5
 
 ## 0.5.52
 
@@ -38,7 +46,7 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/zod@0.5.4
+  - @leight/zod@0.5.4
 
 ## 0.5.51
 
@@ -46,7 +54,7 @@
 
 - Version bump & general update
 - Updated dependencies
-    - @leight/zod@0.5.3
+  - @leight/zod@0.5.3
 
 ## 0.5.50
 
@@ -55,7 +63,7 @@
 - 9e54ef4c: Added @total-typescript/ts-reset
 - Version bump
 - Updated dependencies
-    - @leight/zod@0.5.1
+  - @leight/zod@0.5.1
 
 ## 0.5.49
 

@@ -1,15 +1,26 @@
 # @leight/cursor-client
 
+## 0.5.33
+
+### Patch Changes
+
+- Version bump (updated packages)
+- Updated dependencies
+  - @leight/context-client@0.5.71
+  - @leight/filter@0.5.59
+  - @leight/query@0.5.63
+  - @leight/source@0.5.63
+
 ## 0.5.32
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.70
-    - @leight/filter@0.5.58
-    - @leight/query@0.5.62
-    - @leight/source@0.5.62
+  - @leight/context-client@0.5.70
+  - @leight/filter@0.5.58
+  - @leight/query@0.5.62
+  - @leight/source@0.5.62
 
 ## 0.5.31
 
@@ -23,9 +34,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.69
-    - @leight/query@0.5.61
-    - @leight/zod@0.5.7
+  - @leight/context-client@0.5.69
+  - @leight/query@0.5.61
+  - @leight/zod@0.5.7
 
 ## 0.5.29
 
@@ -33,9 +44,9 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/context-client@0.5.68
-    - @leight/query@0.5.60
-    - @leight/zod@0.5.6
+  - @leight/context-client@0.5.68
+  - @leight/query@0.5.60
+  - @leight/zod@0.5.6
 
 ## 0.5.28
 
@@ -43,9 +54,9 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/context-client@0.5.67
-    - @leight/query@0.5.59
-    - @leight/zod@0.5.5
+  - @leight/context-client@0.5.67
+  - @leight/query@0.5.59
+  - @leight/zod@0.5.5
 
 ## 0.5.27
 
@@ -53,9 +64,9 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/context-client@0.5.66
-    - @leight/query@0.5.58
-    - @leight/zod@0.5.4
+  - @leight/context-client@0.5.66
+  - @leight/query@0.5.58
+  - @leight/zod@0.5.4
 
 ## 0.5.26
 
@@ -63,9 +74,9 @@
 
 - Version bump & general update
 - Updated dependencies
-    - @leight/context-client@0.5.65
-    - @leight/query@0.5.57
-    - @leight/zod@0.5.3
+  - @leight/context-client@0.5.65
+  - @leight/query@0.5.57
+  - @leight/zod@0.5.3
 
 ## 0.5.25
 
@@ -75,9 +86,9 @@
 - Version bump
 - Updated dependencies [9e54ef4c]
 - Updated dependencies
-    - @leight/context-client@0.5.64
-    - @leight/query@0.5.56
-    - @leight/zod@0.5.1
+  - @leight/context-client@0.5.64
+  - @leight/query@0.5.56
+  - @leight/zod@0.5.1
 
 ## 0.5.24
 
@@ -85,8 +96,8 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/context-client@0.5.63
-    - @leight/query@0.5.55
+  - @leight/context-client@0.5.63
+  - @leight/query@0.5.55
 
 ## 0.5.23
 
@@ -94,8 +105,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.62
-    - @leight/query@0.5.54
+  - @leight/context-client@0.5.62
+  - @leight/query@0.5.54
 
 ## 0.5.22
 
@@ -103,8 +114,8 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/context-client@0.5.61
-    - @leight/query@0.5.53
+  - @leight/context-client@0.5.61
+  - @leight/query@0.5.53
 
 ## 0.5.21
 
@@ -112,8 +123,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.60
-    - @leight/query@0.5.52
+  - @leight/context-client@0.5.60
+  - @leight/query@0.5.52
 
 ## 0.5.20
 
@@ -121,8 +132,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.58
-    - @leight/query@0.5.51
+  - @leight/context-client@0.5.58
+  - @leight/query@0.5.51
 
 ## 0.5.19
 
@@ -130,8 +141,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.57
-    - @leight/query@0.5.50
+  - @leight/context-client@0.5.57
+  - @leight/query@0.5.50
 
 ## 0.5.18
 
@@ -139,9 +150,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.56
-    - @leight/query@0.5.49
-    - @leight/zustand@0.5.49
+  - @leight/context-client@0.5.56
+  - @leight/query@0.5.49
+  - @leight/zustand@0.5.49
 
 ## 0.5.17
 
@@ -149,9 +160,9 @@
 
 - Version buuuuuuump
 - Updated dependencies
-    - @leight/context-client@0.5.55
-    - @leight/query@0.5.48
-    - @leight/zustand@0.5.48
+  - @leight/context-client@0.5.55
+  - @leight/query@0.5.48
+  - @leight/zustand@0.5.48
 
 ## 0.5.16
 
@@ -159,9 +170,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.54
-    - @leight/query@0.5.47
-    - @leight/zustand@0.5.47
+  - @leight/context-client@0.5.54
+  - @leight/query@0.5.47
+  - @leight/zustand@0.5.47
 
 ## 0.5.15
 
@@ -171,9 +182,9 @@
 - a436d96d: Updated packages
 - Updated dependencies
 - Updated dependencies [a436d96d]
-    - @leight/context-client@0.5.53
-    - @leight/zustand@0.5.46
-    - @leight/query@0.5.46
+  - @leight/context-client@0.5.53
+  - @leight/zustand@0.5.46
+  - @leight/query@0.5.46
 
 ## 0.5.14
 
@@ -181,8 +192,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.52
-    - @leight/query@0.5.45
+  - @leight/context-client@0.5.52
+  - @leight/query@0.5.45
 
 ## 0.5.13
 
@@ -190,8 +201,8 @@
 
 - Version bump, updated packages
 - Updated dependencies
-    - @leight/context-client@0.5.51
-    - @leight/query@0.5.44
+  - @leight/context-client@0.5.51
+  - @leight/query@0.5.44
 
 ## 0.5.12
 
@@ -199,8 +210,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.50
-    - @leight/query@0.5.43
+  - @leight/context-client@0.5.50
+  - @leight/query@0.5.43
 
 ## 0.5.11
 
@@ -208,8 +219,8 @@
 
 - Release with actual build... again
 - Updated dependencies
-    - @leight/context-client@0.5.49
-    - @leight/query@0.5.42
+  - @leight/context-client@0.5.49
+  - @leight/query@0.5.42
 
 ## 0.5.10
 
@@ -217,8 +228,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.48
-    - @leight/query@0.5.41
+  - @leight/context-client@0.5.48
+  - @leight/query@0.5.41
 
 ## 0.5.9
 
@@ -226,8 +237,8 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/context-client@0.5.47
-    - @leight/query@0.5.40
+  - @leight/context-client@0.5.47
+  - @leight/query@0.5.40
 
 ## 0.5.8
 
@@ -235,8 +246,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.46
-    - @leight/query@0.5.38
+  - @leight/context-client@0.5.46
+  - @leight/query@0.5.38
 
 ## 0.5.7
 
@@ -246,8 +257,8 @@
 - Added store defaults
 - Updated dependencies [a7029792]
 - Updated dependencies [312fbc60]
-    - @leight/query@0.5.36
-    - @leight/context-client@0.5.45
+  - @leight/query@0.5.36
+  - @leight/context-client@0.5.45
 
 ## 0.5.6
 
@@ -279,7 +290,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.44
+  - @leight/context-client@0.5.44
 
 ## 0.5.1
 
@@ -287,5 +298,5 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/query@0.5.33
-    - @leight/query-client@0.5.1
+  - @leight/query@0.5.33
+  - @leight/query-client@0.5.1

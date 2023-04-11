@@ -1,12 +1,27 @@
 # @leight/file
 
+## 0.5.72
+
+### Patch Changes
+
+- Version bump (updated packages)
+- Updated dependencies
+  - @leight/container@0.5.64
+  - @leight/filter@0.5.59
+  - @leight/prisma@0.5.81
+  - @leight/query@0.5.63
+  - @leight/react-query@0.5.26
+  - @leight/sort@0.5.60
+  - @leight/source@0.5.63
+  - @leight/zod@0.5.9
+
 ## 0.5.71
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.80
+  - @leight/prisma@0.5.80
 
 ## 0.5.70
 
@@ -14,14 +29,14 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.79
-    - @leight/container@0.5.63
-    - @leight/filter@0.5.58
-    - @leight/query@0.5.62
-    - @leight/react-query@0.5.25
-    - @leight/sort@0.5.59
-    - @leight/source@0.5.62
-    - @leight/zod@0.5.8
+  - @leight/prisma@0.5.79
+  - @leight/container@0.5.63
+  - @leight/filter@0.5.58
+  - @leight/query@0.5.62
+  - @leight/react-query@0.5.25
+  - @leight/sort@0.5.59
+  - @leight/source@0.5.62
+  - @leight/zod@0.5.8
 
 ## 0.5.69
 
@@ -29,7 +44,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.78
+  - @leight/prisma@0.5.78
 
 ## 0.5.68
 
@@ -37,14 +52,14 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/filter@0.5.57
-    - @leight/prisma@0.5.77
-    - @leight/source@0.5.61
-    - @leight/container@0.5.62
-    - @leight/query@0.5.61
-    - @leight/react-query@0.5.24
-    - @leight/sort@0.5.58
-    - @leight/zod@0.5.7
+  - @leight/filter@0.5.57
+  - @leight/prisma@0.5.77
+  - @leight/source@0.5.61
+  - @leight/container@0.5.62
+  - @leight/query@0.5.61
+  - @leight/react-query@0.5.24
+  - @leight/sort@0.5.58
+  - @leight/zod@0.5.7
 
 ## 0.5.67
 
@@ -52,14 +67,14 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/filter@0.5.56
-    - @leight/prisma@0.5.76
-    - @leight/container@0.5.61
-    - @leight/query@0.5.60
-    - @leight/react-query@0.5.23
-    - @leight/sort@0.5.57
-    - @leight/source@0.5.60
-    - @leight/zod@0.5.6
+  - @leight/filter@0.5.56
+  - @leight/prisma@0.5.76
+  - @leight/container@0.5.61
+  - @leight/query@0.5.60
+  - @leight/react-query@0.5.23
+  - @leight/sort@0.5.57
+  - @leight/source@0.5.60
+  - @leight/zod@0.5.6
 
 ## 0.5.66
 
@@ -67,14 +82,14 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/prisma@0.5.75
-    - @leight/container@0.5.60
-    - @leight/filter@0.5.55
-    - @leight/query@0.5.59
-    - @leight/react-query@0.5.22
-    - @leight/sort@0.5.56
-    - @leight/source@0.5.59
-    - @leight/zod@0.5.5
+  - @leight/prisma@0.5.75
+  - @leight/container@0.5.60
+  - @leight/filter@0.5.55
+  - @leight/query@0.5.59
+  - @leight/react-query@0.5.22
+  - @leight/sort@0.5.56
+  - @leight/source@0.5.59
+  - @leight/zod@0.5.5
 
 ## 0.5.65
 
@@ -82,14 +97,14 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/prisma@0.5.74
-    - @leight/container@0.5.59
-    - @leight/filter@0.5.54
-    - @leight/query@0.5.58
-    - @leight/react-query@0.5.21
-    - @leight/sort@0.5.55
-    - @leight/source@0.5.58
-    - @leight/zod@0.5.4
+  - @leight/prisma@0.5.74
+  - @leight/container@0.5.59
+  - @leight/filter@0.5.54
+  - @leight/query@0.5.58
+  - @leight/react-query@0.5.21
+  - @leight/sort@0.5.55
+  - @leight/source@0.5.58
+  - @leight/zod@0.5.4
 
 ## 0.5.64
 
@@ -97,14 +112,14 @@
 
 - Version bump & general update
 - Updated dependencies
-    - @leight/prisma@0.5.73
-    - @leight/container@0.5.58
-    - @leight/filter@0.5.53
-    - @leight/query@0.5.57
-    - @leight/react-query@0.5.20
-    - @leight/sort@0.5.54
-    - @leight/source@0.5.57
-    - @leight/zod@0.5.3
+  - @leight/prisma@0.5.73
+  - @leight/container@0.5.58
+  - @leight/filter@0.5.53
+  - @leight/query@0.5.57
+  - @leight/react-query@0.5.20
+  - @leight/sort@0.5.54
+  - @leight/source@0.5.57
+  - @leight/zod@0.5.3
 
 ## 0.5.63
 
@@ -114,14 +129,14 @@
 - Version bump
 - Updated dependencies [9e54ef4c]
 - Updated dependencies
-    - @leight/prisma@0.5.72
-    - @leight/container@0.5.57
-    - @leight/filter@0.5.52
-    - @leight/query@0.5.56
-    - @leight/react-query@0.5.19
-    - @leight/sort@0.5.53
-    - @leight/source@0.5.56
-    - @leight/zod@0.5.1
+  - @leight/prisma@0.5.72
+  - @leight/container@0.5.57
+  - @leight/filter@0.5.52
+  - @leight/query@0.5.56
+  - @leight/react-query@0.5.19
+  - @leight/sort@0.5.53
+  - @leight/source@0.5.56
+  - @leight/zod@0.5.1
 
 ## 0.5.62
 
@@ -129,13 +144,13 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/prisma@0.5.71
-    - @leight/container@0.5.56
-    - @leight/filter@0.5.51
-    - @leight/query@0.5.55
-    - @leight/react-query@0.5.18
-    - @leight/sort@0.5.52
-    - @leight/source@0.5.55
+  - @leight/prisma@0.5.71
+  - @leight/container@0.5.56
+  - @leight/filter@0.5.51
+  - @leight/query@0.5.55
+  - @leight/react-query@0.5.18
+  - @leight/sort@0.5.52
+  - @leight/source@0.5.55
 
 ## 0.5.61
 
@@ -143,7 +158,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.70
+  - @leight/prisma@0.5.70
 
 ## 0.5.60
 
@@ -151,13 +166,13 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.69
-    - @leight/container@0.5.55
-    - @leight/filter@0.5.50
-    - @leight/query@0.5.54
-    - @leight/react-query@0.5.17
-    - @leight/sort@0.5.51
-    - @leight/source@0.5.54
+  - @leight/prisma@0.5.69
+  - @leight/container@0.5.55
+  - @leight/filter@0.5.50
+  - @leight/query@0.5.54
+  - @leight/react-query@0.5.17
+  - @leight/sort@0.5.51
+  - @leight/source@0.5.54
 
 ## 0.5.59
 
@@ -165,13 +180,13 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/prisma@0.5.68
-    - @leight/container@0.5.54
-    - @leight/filter@0.5.49
-    - @leight/query@0.5.53
-    - @leight/react-query@0.5.16
-    - @leight/sort@0.5.50
-    - @leight/source@0.5.53
+  - @leight/prisma@0.5.68
+  - @leight/container@0.5.54
+  - @leight/filter@0.5.49
+  - @leight/query@0.5.53
+  - @leight/react-query@0.5.16
+  - @leight/sort@0.5.50
+  - @leight/source@0.5.53
 
 ## 0.5.58
 
@@ -179,7 +194,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.67
+  - @leight/prisma@0.5.67
 
 ## 0.5.57
 
@@ -187,13 +202,13 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.66
-    - @leight/container@0.5.53
-    - @leight/filter@0.5.48
-    - @leight/query@0.5.52
-    - @leight/react-query@0.5.15
-    - @leight/sort@0.5.49
-    - @leight/source@0.5.52
+  - @leight/prisma@0.5.66
+  - @leight/container@0.5.53
+  - @leight/filter@0.5.48
+  - @leight/query@0.5.52
+  - @leight/react-query@0.5.15
+  - @leight/sort@0.5.49
+  - @leight/source@0.5.52
 
 ## 0.5.56
 
@@ -201,7 +216,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.65
+  - @leight/prisma@0.5.65
 
 ## 0.5.55
 
@@ -209,13 +224,13 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/container@0.5.52
-    - @leight/filter@0.5.47
-    - @leight/prisma@0.5.64
-    - @leight/query@0.5.51
-    - @leight/react-query@0.5.14
-    - @leight/sort@0.5.48
-    - @leight/source@0.5.51
+  - @leight/container@0.5.52
+  - @leight/filter@0.5.47
+  - @leight/prisma@0.5.64
+  - @leight/query@0.5.51
+  - @leight/react-query@0.5.14
+  - @leight/sort@0.5.48
+  - @leight/source@0.5.51
 
 ## 0.5.54
 
@@ -223,13 +238,13 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/container@0.5.51
-    - @leight/filter@0.5.46
-    - @leight/prisma@0.5.63
-    - @leight/query@0.5.50
-    - @leight/react-query@0.5.13
-    - @leight/sort@0.5.47
-    - @leight/source@0.5.50
+  - @leight/container@0.5.51
+  - @leight/filter@0.5.46
+  - @leight/prisma@0.5.63
+  - @leight/query@0.5.50
+  - @leight/react-query@0.5.13
+  - @leight/sort@0.5.47
+  - @leight/source@0.5.50
 
 ## 0.5.53
 
@@ -237,13 +252,13 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/container@0.5.50
-    - @leight/filter@0.5.45
-    - @leight/prisma@0.5.62
-    - @leight/query@0.5.49
-    - @leight/react-query@0.5.12
-    - @leight/sort@0.5.46
-    - @leight/source@0.5.49
+  - @leight/container@0.5.50
+  - @leight/filter@0.5.45
+  - @leight/prisma@0.5.62
+  - @leight/query@0.5.49
+  - @leight/react-query@0.5.12
+  - @leight/sort@0.5.46
+  - @leight/source@0.5.49
 
 ## 0.5.52
 
@@ -251,7 +266,7 @@
 
 - Improved generator
 - Updated dependencies
-    - @leight/prisma@0.5.61
+  - @leight/prisma@0.5.61
 
 ## 0.5.51
 
@@ -259,13 +274,13 @@
 
 - Version buuuuuuump
 - Updated dependencies
-    - @leight/container@0.5.49
-    - @leight/filter@0.5.44
-    - @leight/prisma@0.5.60
-    - @leight/query@0.5.48
-    - @leight/react-query@0.5.11
-    - @leight/sort@0.5.45
-    - @leight/source@0.5.48
+  - @leight/container@0.5.49
+  - @leight/filter@0.5.44
+  - @leight/prisma@0.5.60
+  - @leight/query@0.5.48
+  - @leight/react-query@0.5.11
+  - @leight/sort@0.5.45
+  - @leight/source@0.5.48
 
 ## 0.5.50
 
@@ -292,12 +307,12 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/filter@0.5.43
-    - @leight/prisma@0.5.59
-    - @leight/query@0.5.47
-    - @leight/react-query@0.5.10
-    - @leight/sort@0.5.44
-    - @leight/source@0.5.47
+  - @leight/filter@0.5.43
+  - @leight/prisma@0.5.59
+  - @leight/query@0.5.47
+  - @leight/react-query@0.5.10
+  - @leight/sort@0.5.44
+  - @leight/source@0.5.47
 
 ## 0.5.46
 
@@ -307,9 +322,9 @@
 - a436d96d: Updated packages
 - Updated dependencies
 - Updated dependencies [a436d96d]
-    - @leight/filter@0.5.42
-    - @leight/prisma@0.5.58
-    - @leight/source@0.5.46
+  - @leight/filter@0.5.42
+  - @leight/prisma@0.5.58
+  - @leight/source@0.5.46
 
 ## 0.5.45
 
@@ -317,9 +332,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/filter@0.5.41
-    - @leight/prisma@0.5.56
-    - @leight/source@0.5.45
+  - @leight/filter@0.5.41
+  - @leight/prisma@0.5.56
+  - @leight/source@0.5.45
 
 ## 0.5.44
 
@@ -327,9 +342,9 @@
 
 - Version bump, updated packages
 - Updated dependencies
-    - @leight/filter@0.5.40
-    - @leight/prisma@0.5.55
-    - @leight/source@0.5.44
+  - @leight/filter@0.5.40
+  - @leight/prisma@0.5.55
+  - @leight/source@0.5.44
 
 ## 0.5.43
 
@@ -337,9 +352,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/filter@0.5.39
-    - @leight/prisma@0.5.54
-    - @leight/source@0.5.43
+  - @leight/filter@0.5.39
+  - @leight/prisma@0.5.54
+  - @leight/source@0.5.43
 
 ## 0.5.42
 
@@ -347,9 +362,9 @@
 
 - Release with actual build... again
 - Updated dependencies
-    - @leight/filter@0.5.38
-    - @leight/prisma@0.5.53
-    - @leight/source@0.5.42
+  - @leight/filter@0.5.38
+  - @leight/prisma@0.5.53
+  - @leight/source@0.5.42
 
 ## 0.5.41
 
@@ -357,9 +372,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/filter@0.5.37
-    - @leight/prisma@0.5.52
-    - @leight/source@0.5.41
+  - @leight/filter@0.5.37
+  - @leight/prisma@0.5.52
+  - @leight/source@0.5.41
 
 ## 0.5.40
 
@@ -367,9 +382,9 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/filter@0.5.36
-    - @leight/prisma@0.5.51
-    - @leight/source@0.5.40
+  - @leight/filter@0.5.36
+  - @leight/prisma@0.5.51
+  - @leight/source@0.5.40
 
 ## 0.5.39
 
@@ -377,9 +392,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/filter@0.5.35
-    - @leight/prisma@0.5.50
-    - @leight/source@0.5.38
+  - @leight/filter@0.5.35
+  - @leight/prisma@0.5.50
+  - @leight/source@0.5.38
 
 ## 0.5.38
 
@@ -387,9 +402,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.48
-    - @leight/source@0.5.35
-    - @leight/filter@0.5.33
+  - @leight/prisma@0.5.48
+  - @leight/source@0.5.35
+  - @leight/filter@0.5.33
 
 ## 0.5.37
 
@@ -397,9 +412,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.47
-    - @leight/filter@0.5.32
-    - @leight/source@0.5.34
+  - @leight/prisma@0.5.47
+  - @leight/filter@0.5.32
+  - @leight/source@0.5.34
 
 ## 0.5.36
 
@@ -407,9 +422,9 @@
 
 - 2c523860: Version bump
 - Updated dependencies [2c523860]
-    - @leight/filter@0.5.31
-    - @leight/prisma@0.5.46
-    - @leight/source@0.5.33
+  - @leight/filter@0.5.31
+  - @leight/prisma@0.5.46
+  - @leight/source@0.5.33
 
 ## 0.5.35
 
@@ -417,9 +432,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.45
-    - @leight/source@0.5.32
-    - @leight/filter@0.5.30
+  - @leight/prisma@0.5.45
+  - @leight/source@0.5.32
+  - @leight/filter@0.5.30
 
 ## 0.5.34
 
@@ -427,9 +442,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.43
-    - @leight/filter@0.5.29
-    - @leight/source@0.5.30
+  - @leight/prisma@0.5.43
+  - @leight/filter@0.5.29
+  - @leight/source@0.5.30
 
 ## 0.5.33
 
@@ -437,9 +452,9 @@
 
 - Reverted some changes
 - Updated dependencies
-    - @leight/filter@0.5.28
-    - @leight/prisma@0.5.42
-    - @leight/source@0.5.29
+  - @leight/filter@0.5.28
+  - @leight/prisma@0.5.42
+  - @leight/source@0.5.29
 
 ## 0.5.32
 
@@ -447,9 +462,9 @@
 
 - Fixed package.json
 - Updated dependencies
-    - @leight/filter@0.5.27
-    - @leight/prisma@0.5.41
-    - @leight/source@0.5.28
+  - @leight/filter@0.5.27
+  - @leight/prisma@0.5.41
+  - @leight/source@0.5.28
 
 ## 0.5.31
 
@@ -457,9 +472,9 @@
 
 - Experimentally lowered number of dependencies
 - Updated dependencies
-    - @leight/filter@0.5.26
-    - @leight/prisma@0.5.38
-    - @leight/source@0.5.27
+  - @leight/filter@0.5.26
+  - @leight/prisma@0.5.38
+  - @leight/source@0.5.27
 
 ## 0.5.30
 
@@ -467,9 +482,9 @@
 
 - Fixed package.json
 - Updated dependencies
-    - @leight/filter@0.5.25
-    - @leight/prisma@0.5.37
-    - @leight/source@0.5.26
+  - @leight/filter@0.5.25
+  - @leight/prisma@0.5.37
+  - @leight/source@0.5.26
 
 ## 0.5.29
 
@@ -477,9 +492,9 @@
 
 - Moved to npm
 - Updated dependencies
-    - @leight/prisma@0.5.36
-    - @leight/filter@0.5.24
-    - @leight/source@0.5.25
+  - @leight/prisma@0.5.36
+  - @leight/filter@0.5.24
+  - @leight/source@0.5.25
 
 ## 0.5.28
 
@@ -487,7 +502,7 @@
 
 - Trying to fix Prisma client shit
 - Updated dependencies
-    - @leight/prisma@0.5.35
+  - @leight/prisma@0.5.35
 
 ## 0.5.27
 
@@ -495,9 +510,9 @@
 
 - Removed TSyringe, moved everything to esbuild
 - Updated dependencies
-    - @leight/filter@0.5.23
-    - @leight/prisma@0.5.32
-    - @leight/source@0.5.24
+  - @leight/filter@0.5.23
+  - @leight/prisma@0.5.32
+  - @leight/source@0.5.24
 
 ## 0.5.26
 
@@ -505,9 +520,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.30
-    - @leight/source@0.5.22
-    - @leight/filter@0.5.22
+  - @leight/prisma@0.5.30
+  - @leight/source@0.5.22
+  - @leight/filter@0.5.22
 
 ## 0.5.25
 
@@ -515,9 +530,9 @@
 
 - Re-release + updated deps
 - Updated dependencies
-    - @leight/prisma@0.5.28
-    - @leight/source@0.5.21
-    - @leight/query@0.5.21
+  - @leight/prisma@0.5.28
+  - @leight/source@0.5.21
+  - @leight/query@0.5.21
 
 ## 0.5.24
 
@@ -525,9 +540,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.27
-    - @leight/source@0.5.20
-    - @leight/query@0.5.20
+  - @leight/prisma@0.5.27
+  - @leight/source@0.5.20
+  - @leight/query@0.5.20
 
 ## 0.5.23
 
@@ -535,9 +550,9 @@
 
 - Just a record here
 - Updated dependencies
-    - @leight/prisma@0.5.26
-    - @leight/source@0.5.19
-    - @leight/query@0.5.19
+  - @leight/prisma@0.5.26
+  - @leight/source@0.5.19
+  - @leight/query@0.5.19
 
 ## 0.5.22
 
@@ -545,9 +560,9 @@
 
 - Version bump II
 - Updated dependencies
-    - @leight/prisma@0.5.25
-    - @leight/source@0.5.18
-    - @leight/query@0.5.18
+  - @leight/prisma@0.5.25
+  - @leight/source@0.5.18
+  - @leight/query@0.5.18
 
 ## 0.5.21
 
@@ -555,9 +570,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.24
-    - @leight/query@0.5.17
-    - @leight/source@0.5.17
+  - @leight/prisma@0.5.24
+  - @leight/query@0.5.17
+  - @leight/source@0.5.17
 
 ## 0.5.20
 
@@ -565,9 +580,9 @@
 
 - Build
 - Updated dependencies
-    - @leight/prisma@0.5.23
-    - @leight/source@0.5.16
-    - @leight/query@0.5.16
+  - @leight/prisma@0.5.23
+  - @leight/source@0.5.16
+  - @leight/query@0.5.16
 
 ## 0.5.19
 
@@ -575,9 +590,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.22
-    - @leight/query@0.5.15
-    - @leight/source@0.5.15
+  - @leight/prisma@0.5.22
+  - @leight/query@0.5.15
+  - @leight/source@0.5.15
 
 ## 0.5.18
 
@@ -585,9 +600,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.21
-    - @leight/source@0.5.14
-    - @leight/query@0.5.14
+  - @leight/prisma@0.5.21
+  - @leight/source@0.5.14
+  - @leight/query@0.5.14
 
 ## 0.5.17
 
@@ -595,9 +610,9 @@
 
 - Sync re-release
 - Updated dependencies
-    - @leight/prisma@0.5.20
-    - @leight/query@0.5.13
-    - @leight/source@0.5.13
+  - @leight/prisma@0.5.20
+  - @leight/query@0.5.13
+  - @leight/source@0.5.13
 
 ## 0.5.16
 
@@ -605,9 +620,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.18
-    - @leight/source@0.5.12
-    - @leight/query@0.5.11
+  - @leight/prisma@0.5.18
+  - @leight/source@0.5.12
+  - @leight/query@0.5.11
 
 ## 0.5.15
 
@@ -615,9 +630,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.16
-    - @leight/source@0.5.11
-    - @leight/query@0.5.10
+  - @leight/prisma@0.5.16
+  - @leight/source@0.5.11
+  - @leight/query@0.5.10
 
 ## 0.5.14
 
@@ -627,9 +642,9 @@
 - Experimentally enabled Zod schema generator
 - Updated dependencies
 - Updated dependencies
-    - @leight/prisma@0.5.15
-    - @leight/query@0.5.9
-    - @leight/source@0.5.10
+  - @leight/prisma@0.5.15
+  - @leight/query@0.5.9
+  - @leight/source@0.5.10
 
 ## 0.5.13
 
@@ -637,8 +652,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.14
-    - @leight/source@0.5.9
+  - @leight/prisma@0.5.14
+  - @leight/source@0.5.9
 
 ## 0.5.12
 
@@ -646,8 +661,8 @@
 
 - Re-release with fixed typings
 - Updated dependencies
-    - @leight/prisma@0.5.13
-    - @leight/source@0.5.8
+  - @leight/prisma@0.5.13
+  - @leight/source@0.5.8
 
 ## 0.5.11
 
@@ -655,8 +670,8 @@
 
 - Re-release
 - Updated dependencies
-    - @leight/prisma@0.5.12
-    - @leight/source@0.5.7
+  - @leight/prisma@0.5.12
+  - @leight/source@0.5.7
 
 ## 0.5.10
 
@@ -664,8 +679,8 @@
 
 - Re-release with updated package.json
 - Updated dependencies
-    - @leight/prisma@0.5.11
-    - @leight/source@0.5.6
+  - @leight/prisma@0.5.11
+  - @leight/source@0.5.6
 
 ## 0.5.9
 
@@ -673,8 +688,8 @@
 
 - Added support for IRepository, added some sources; re-release of all the other packages
 - Updated dependencies
-    - @leight/prisma@0.5.10
-    - @leight/source@0.5.5
+  - @leight/prisma@0.5.10
+  - @leight/source@0.5.5
 
 ## 0.5.8
 
@@ -682,7 +697,7 @@
 
 - Improved container stuff
 - Updated dependencies
-    - @leight/prisma@0.5.9
+  - @leight/prisma@0.5.9
 
 ## 0.5.7
 
@@ -690,7 +705,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.8
+  - @leight/prisma@0.5.8
 
 ## 0.5.6
 
@@ -698,7 +713,7 @@
 
 - Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
 - Updated dependencies
-    - @leight/prisma@0.5.7
+  - @leight/prisma@0.5.7
 
 ## 0.5.5
 
@@ -706,7 +721,7 @@
 
 - Changed whole build to just ESM, optimized build speed
 - Updated dependencies
-    - @leight/prisma@0.5.6
+  - @leight/prisma@0.5.6
 
 ## 0.5.4
 
@@ -714,7 +729,7 @@
 
 - Experiment with only ESM exports
 - Updated dependencies
-    - @leight/prisma@0.5.5
+  - @leight/prisma@0.5.5
 
 ## 0.5.3
 
@@ -722,7 +737,7 @@
 
 - Changed package type to "module"
 - Updated dependencies
-    - @leight/prisma@0.5.4
+  - @leight/prisma@0.5.4
 
 ## 0.5.2
 
@@ -730,7 +745,7 @@
 
 - Updatred all packages
 - Updated dependencies
-    - @leight/prisma@0.5.3
+  - @leight/prisma@0.5.3
 
 ## 0.5.1
 
@@ -738,4 +753,4 @@
 
 - e4af2419: Experimental publish of the new @leight packages
 - Updated dependencies [e4af2419]
-    - @leight/prisma@0.5.1
+  - @leight/prisma@0.5.1

@@ -1,12 +1,20 @@
 # @leight/i18n
 
+## 0.5.69
+
+### Patch Changes
+
+- Version bump (updated packages)
+- Updated dependencies
+  - @leight/utils@0.5.66
+
 ## 0.5.68
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/utils@0.5.65
+  - @leight/utils@0.5.65
 
 ## 0.5.67
 
@@ -14,7 +22,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/utils@0.5.64
+  - @leight/utils@0.5.64
 
 ## 0.5.66
 
@@ -22,7 +30,7 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/utils@0.5.63
+  - @leight/utils@0.5.63
 
 ## 0.5.65
 
@@ -30,7 +38,7 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/utils@0.5.62
+  - @leight/utils@0.5.62
 
 ## 0.5.64
 
@@ -38,7 +46,7 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/utils@0.5.61
+  - @leight/utils@0.5.61
 
 ## 0.5.63
 
@@ -46,7 +54,7 @@
 
 - Version bump & general update
 - Updated dependencies
-    - @leight/utils@0.5.60
+  - @leight/utils@0.5.60
 
 ## 0.5.62
 

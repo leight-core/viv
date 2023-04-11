@@ -1,5 +1,11 @@
 # @leight/layout
 
+## 0.5.63
+
+### Patch Changes
+
+- Version bump (updated packages)
+
 ## 0.5.62
 
 ### Patch Changes

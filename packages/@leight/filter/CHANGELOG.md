@@ -1,14 +1,24 @@
 # @leight/filter
 
+## 0.5.59
+
+### Patch Changes
+
+- Version bump (updated packages)
+- Updated dependencies
+  - @leight/context@0.5.26
+  - @leight/zod@0.5.9
+  - @leight/zustand@0.5.63
+
 ## 0.5.58
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.25
-    - @leight/zod@0.5.8
-    - @leight/zustand@0.5.62
+  - @leight/context@0.5.25
+  - @leight/zod@0.5.8
+  - @leight/zustand@0.5.62
 
 ## 0.5.57
 
@@ -16,9 +26,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.24
-    - @leight/zod@0.5.7
-    - @leight/zustand@0.5.61
+  - @leight/context@0.5.24
+  - @leight/zod@0.5.7
+  - @leight/zustand@0.5.61
 
 ## 0.5.56
 
@@ -26,7 +36,7 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/zod@0.5.6
+  - @leight/zod@0.5.6
 
 ## 0.5.55
 
@@ -34,7 +44,7 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/zod@0.5.5
+  - @leight/zod@0.5.5
 
 ## 0.5.54
 
@@ -42,7 +52,7 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/zod@0.5.4
+  - @leight/zod@0.5.4
 
 ## 0.5.53
 
@@ -50,7 +60,7 @@
 
 - Version bump & general update
 - Updated dependencies
-    - @leight/zod@0.5.3
+  - @leight/zod@0.5.3
 
 ## 0.5.52
 
@@ -59,7 +69,7 @@
 - 9e54ef4c: Added @total-typescript/ts-reset
 - Version bump
 - Updated dependencies
-    - @leight/zod@0.5.1
+  - @leight/zod@0.5.1
 
 ## 0.5.51
 

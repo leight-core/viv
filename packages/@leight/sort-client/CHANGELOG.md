@@ -1,13 +1,22 @@
 # @leight/sort-client
 
+## 0.5.26
+
+### Patch Changes
+
+- Version bump (updated packages)
+- Updated dependencies
+  - @leight/context-client@0.5.71
+  - @leight/sort@0.5.60
+
 ## 0.5.25
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.70
-    - @leight/sort@0.5.59
+  - @leight/context-client@0.5.70
+  - @leight/sort@0.5.59
 
 ## 0.5.24
 
@@ -15,8 +24,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.69
-    - @leight/sort@0.5.58
+  - @leight/context-client@0.5.69
+  - @leight/sort@0.5.58
 
 ## 0.5.23
 
@@ -24,8 +33,8 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/context-client@0.5.68
-    - @leight/sort@0.5.57
+  - @leight/context-client@0.5.68
+  - @leight/sort@0.5.57
 
 ## 0.5.22
 
@@ -33,8 +42,8 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/context-client@0.5.67
-    - @leight/sort@0.5.56
+  - @leight/context-client@0.5.67
+  - @leight/sort@0.5.56
 
 ## 0.5.21
 
@@ -42,8 +51,8 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/context-client@0.5.66
-    - @leight/sort@0.5.55
+  - @leight/context-client@0.5.66
+  - @leight/sort@0.5.55
 
 ## 0.5.20
 
@@ -51,8 +60,8 @@
 
 - Version bump & general update
 - Updated dependencies
-    - @leight/context-client@0.5.65
-    - @leight/sort@0.5.54
+  - @leight/context-client@0.5.65
+  - @leight/sort@0.5.54
 
 ## 0.5.19
 
@@ -62,8 +71,8 @@
 - Version bump
 - Updated dependencies [9e54ef4c]
 - Updated dependencies
-    - @leight/context-client@0.5.64
-    - @leight/sort@0.5.53
+  - @leight/context-client@0.5.64
+  - @leight/sort@0.5.53
 
 ## 0.5.18
 
@@ -71,8 +80,8 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/context-client@0.5.63
-    - @leight/sort@0.5.52
+  - @leight/context-client@0.5.63
+  - @leight/sort@0.5.52
 
 ## 0.5.17
 
@@ -80,8 +89,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.62
-    - @leight/sort@0.5.51
+  - @leight/context-client@0.5.62
+  - @leight/sort@0.5.51
 
 ## 0.5.16
 
@@ -89,8 +98,8 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/context-client@0.5.61
-    - @leight/sort@0.5.50
+  - @leight/context-client@0.5.61
+  - @leight/sort@0.5.50
 
 ## 0.5.15
 
@@ -98,8 +107,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.60
-    - @leight/sort@0.5.49
+  - @leight/context-client@0.5.60
+  - @leight/sort@0.5.49
 
 ## 0.5.14
 
@@ -107,8 +116,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.58
-    - @leight/sort@0.5.48
+  - @leight/context-client@0.5.58
+  - @leight/sort@0.5.48
 
 ## 0.5.13
 
@@ -116,8 +125,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.57
-    - @leight/sort@0.5.47
+  - @leight/context-client@0.5.57
+  - @leight/sort@0.5.47
 
 ## 0.5.12
 
@@ -125,8 +134,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.56
-    - @leight/sort@0.5.46
+  - @leight/context-client@0.5.56
+  - @leight/sort@0.5.46
 
 ## 0.5.11
 
@@ -134,8 +143,8 @@
 
 - Version buuuuuuump
 - Updated dependencies
-    - @leight/context-client@0.5.55
-    - @leight/sort@0.5.45
+  - @leight/context-client@0.5.55
+  - @leight/sort@0.5.45
 
 ## 0.5.10
 
@@ -143,8 +152,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.54
-    - @leight/sort@0.5.44
+  - @leight/context-client@0.5.54
+  - @leight/sort@0.5.44
 
 ## 0.5.9
 
@@ -154,8 +163,8 @@
 - a436d96d: Updated packages
 - Updated dependencies
 - Updated dependencies [a436d96d]
-    - @leight/context-client@0.5.53
-    - @leight/sort@0.5.43
+  - @leight/context-client@0.5.53
+  - @leight/sort@0.5.43
 
 ## 0.5.8
 
@@ -163,8 +172,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.52
-    - @leight/sort@0.5.42
+  - @leight/context-client@0.5.52
+  - @leight/sort@0.5.42
 
 ## 0.5.7
 
@@ -172,8 +181,8 @@
 
 - Version bump, updated packages
 - Updated dependencies
-    - @leight/context-client@0.5.51
-    - @leight/sort@0.5.41
+  - @leight/context-client@0.5.51
+  - @leight/sort@0.5.41
 
 ## 0.5.6
 
@@ -181,8 +190,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.50
-    - @leight/sort@0.5.40
+  - @leight/context-client@0.5.50
+  - @leight/sort@0.5.40
 
 ## 0.5.5
 
@@ -190,8 +199,8 @@
 
 - Release with actual build... again
 - Updated dependencies
-    - @leight/context-client@0.5.49
-    - @leight/sort@0.5.38
+  - @leight/context-client@0.5.49
+  - @leight/sort@0.5.38
 
 ## 0.5.4
 
@@ -199,8 +208,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.48
-    - @leight/sort@0.5.37
+  - @leight/context-client@0.5.48
+  - @leight/sort@0.5.37
 
 ## 0.5.3
 
@@ -208,8 +217,8 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/context-client@0.5.47
-    - @leight/sort@0.5.35
+  - @leight/context-client@0.5.47
+  - @leight/sort@0.5.35
 
 ## 0.5.2
 
@@ -217,8 +226,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.46
-    - @leight/sort@0.5.34
+  - @leight/context-client@0.5.46
+  - @leight/sort@0.5.34
 
 ## 0.5.1
 
@@ -230,5 +239,5 @@
 - Updated dependencies [98c0d1f0]
 - Updated dependencies [a7029792]
 - Updated dependencies [312fbc60]
-    - @leight/sort@0.5.33
-    - @leight/context-client@0.5.45
+  - @leight/sort@0.5.33
+  - @leight/context-client@0.5.45

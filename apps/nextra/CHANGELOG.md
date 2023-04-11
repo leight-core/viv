@@ -1,16 +1,28 @@
 # @leight/docs
 
+## 0.5.18
+
+### Patch Changes
+
+- Version bump (updated packages)
+- Updated dependencies
+  - @leight/calendar-client@0.5.21
+  - @leight/i18n@0.5.69
+  - @leight/table-client@0.5.32
+  - @leight/utils-server@0.5.62
+  - @leight/zod@0.5.9
+
 ## 0.5.17
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/calendar-client@0.5.20
-    - @leight/i18n@0.5.68
-    - @leight/table-client@0.5.31
-    - @leight/utils-server@0.5.61
-    - @leight/zod@0.5.8
+  - @leight/calendar-client@0.5.20
+  - @leight/i18n@0.5.68
+  - @leight/table-client@0.5.31
+  - @leight/utils-server@0.5.61
+  - @leight/zod@0.5.8
 
 ## 0.5.16
 
@@ -18,11 +30,11 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/calendar-client@0.5.19
-    - @leight/i18n@0.5.67
-    - @leight/table-client@0.5.30
-    - @leight/utils-server@0.5.60
-    - @leight/zod@0.5.7
+  - @leight/calendar-client@0.5.19
+  - @leight/i18n@0.5.67
+  - @leight/table-client@0.5.30
+  - @leight/utils-server@0.5.60
+  - @leight/zod@0.5.7
 
 ## 0.5.15
 
@@ -30,11 +42,11 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/calendar-client@0.5.18
-    - @leight/i18n@0.5.66
-    - @leight/table-client@0.5.29
-    - @leight/utils-server@0.5.59
-    - @leight/zod@0.5.6
+  - @leight/calendar-client@0.5.18
+  - @leight/i18n@0.5.66
+  - @leight/table-client@0.5.29
+  - @leight/utils-server@0.5.59
+  - @leight/zod@0.5.6
 
 ## 0.5.14
 
@@ -42,11 +54,11 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/calendar-client@0.5.16
-    - @leight/i18n@0.5.65
-    - @leight/table-client@0.5.28
-    - @leight/utils-server@0.5.58
-    - @leight/zod@0.5.5
+  - @leight/calendar-client@0.5.16
+  - @leight/i18n@0.5.65
+  - @leight/table-client@0.5.28
+  - @leight/utils-server@0.5.58
+  - @leight/zod@0.5.5
 
 ## 0.5.13
 
@@ -54,11 +66,11 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/calendar-client@0.5.15
-    - @leight/i18n@0.5.64
-    - @leight/table-client@0.5.27
-    - @leight/utils-server@0.5.57
-    - @leight/zod@0.5.4
+  - @leight/calendar-client@0.5.15
+  - @leight/i18n@0.5.64
+  - @leight/table-client@0.5.27
+  - @leight/utils-server@0.5.57
+  - @leight/zod@0.5.4
 
 ## 0.5.12
 
@@ -66,11 +78,11 @@
 
 - Version bump & general update
 - Updated dependencies
-    - @leight/calendar-client@0.5.14
-    - @leight/i18n@0.5.63
-    - @leight/table-client@0.5.26
-    - @leight/utils-server@0.5.56
-    - @leight/zod@0.5.3
+  - @leight/calendar-client@0.5.14
+  - @leight/i18n@0.5.63
+  - @leight/table-client@0.5.26
+  - @leight/utils-server@0.5.56
+  - @leight/zod@0.5.3
 
 ## 0.5.11
 
@@ -80,10 +92,10 @@
 - Version bump
 - Updated dependencies [9e54ef4c]
 - Updated dependencies
-    - @leight/calendar-client@0.5.13
-    - @leight/i18n@0.5.62
-    - @leight/table-client@0.5.25
-    - @leight/utils-server@0.5.55
+  - @leight/calendar-client@0.5.13
+  - @leight/i18n@0.5.62
+  - @leight/table-client@0.5.25
+  - @leight/utils-server@0.5.55
 
 ## 0.5.10
 
@@ -91,10 +103,10 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/calendar-client@0.5.12
-    - @leight/table-client@0.5.24
-    - @leight/i18n@0.5.61
-    - @leight/utils-server@0.5.54
+  - @leight/calendar-client@0.5.12
+  - @leight/table-client@0.5.24
+  - @leight/i18n@0.5.61
+  - @leight/utils-server@0.5.54
 
 ## 0.5.9
 
@@ -102,7 +114,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/calendar-client@0.5.11
+  - @leight/calendar-client@0.5.11
 
 ## 0.5.8
 
@@ -110,10 +122,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/calendar-client@0.5.10
-    - @leight/i18n@0.5.60
-    - @leight/table-client@0.5.23
-    - @leight/utils-server@0.5.53
+  - @leight/calendar-client@0.5.10
+  - @leight/i18n@0.5.60
+  - @leight/table-client@0.5.23
+  - @leight/utils-server@0.5.53
 
 ## 0.5.7
 
@@ -121,7 +133,7 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/utils-server@0.5.52
+  - @leight/utils-server@0.5.52
 
 ## 0.5.6
 

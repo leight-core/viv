@@ -1,14 +1,24 @@
 # @leight/next.js
 
+## 0.5.29
+
+### Patch Changes
+
+- Version bump (updated packages)
+- Updated dependencies
+  - @leight/user@0.5.75
+  - @leight/container@0.5.64
+  - @leight/utils@0.5.66
+
 ## 0.5.28
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/user@0.5.73
-    - @leight/container@0.5.63
-    - @leight/utils@0.5.65
+  - @leight/user@0.5.73
+  - @leight/container@0.5.63
+  - @leight/utils@0.5.65
 
 ## 0.5.27
 
@@ -16,9 +26,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/user@0.5.71
-    - @leight/container@0.5.62
-    - @leight/utils@0.5.64
+  - @leight/user@0.5.71
+  - @leight/container@0.5.62
+  - @leight/utils@0.5.64
 
 ## 0.5.26
 
@@ -26,9 +36,9 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/user@0.5.70
-    - @leight/container@0.5.61
-    - @leight/utils@0.5.63
+  - @leight/user@0.5.70
+  - @leight/container@0.5.61
+  - @leight/utils@0.5.63
 
 ## 0.5.25
 
@@ -36,9 +46,9 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/user@0.5.69
-    - @leight/container@0.5.60
-    - @leight/utils@0.5.62
+  - @leight/user@0.5.69
+  - @leight/container@0.5.60
+  - @leight/utils@0.5.62
 
 ## 0.5.24
 
@@ -46,9 +56,9 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/user@0.5.68
-    - @leight/container@0.5.59
-    - @leight/utils@0.5.61
+  - @leight/user@0.5.68
+  - @leight/container@0.5.59
+  - @leight/utils@0.5.61
 
 ## 0.5.23
 
@@ -56,9 +66,9 @@
 
 - Version bump & general update
 - Updated dependencies
-    - @leight/user@0.5.67
-    - @leight/container@0.5.58
-    - @leight/utils@0.5.60
+  - @leight/user@0.5.67
+  - @leight/container@0.5.58
+  - @leight/utils@0.5.60
 
 ## 0.5.22
 
@@ -68,9 +78,9 @@
 - Version bump
 - Updated dependencies [9e54ef4c]
 - Updated dependencies
-    - @leight/user@0.5.66
-    - @leight/container@0.5.57
-    - @leight/utils@0.5.59
+  - @leight/user@0.5.66
+  - @leight/container@0.5.57
+  - @leight/utils@0.5.59
 
 ## 0.5.21
 
@@ -78,9 +88,9 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/user@0.5.65
-    - @leight/container@0.5.56
-    - @leight/utils@0.5.58
+  - @leight/user@0.5.65
+  - @leight/container@0.5.56
+  - @leight/utils@0.5.58
 
 ## 0.5.20
 
@@ -88,9 +98,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/user@0.5.63
-    - @leight/container@0.5.55
-    - @leight/utils@0.5.57
+  - @leight/user@0.5.63
+  - @leight/container@0.5.55
+  - @leight/utils@0.5.57
 
 ## 0.5.19
 
@@ -98,9 +108,9 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/user@0.5.62
-    - @leight/container@0.5.54
-    - @leight/utils@0.5.56
+  - @leight/user@0.5.62
+  - @leight/container@0.5.54
+  - @leight/utils@0.5.56
 
 ## 0.5.18
 
@@ -108,9 +118,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/user@0.5.60
-    - @leight/container@0.5.53
-    - @leight/utils@0.5.54
+  - @leight/user@0.5.60
+  - @leight/container@0.5.53
+  - @leight/utils@0.5.54
 
 ## 0.5.17
 
@@ -118,9 +128,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/user@0.5.58
-    - @leight/container@0.5.52
-    - @leight/utils@0.5.53
+  - @leight/user@0.5.58
+  - @leight/container@0.5.52
+  - @leight/utils@0.5.53
 
 ## 0.5.16
 
@@ -128,9 +138,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/container@0.5.51
-    - @leight/user@0.5.57
-    - @leight/utils@0.5.52
+  - @leight/container@0.5.51
+  - @leight/user@0.5.57
+  - @leight/utils@0.5.52
 
 ## 0.5.15
 
@@ -138,9 +148,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/user@0.5.56
-    - @leight/container@0.5.50
-    - @leight/utils@0.5.51
+  - @leight/user@0.5.56
+  - @leight/container@0.5.50
+  - @leight/utils@0.5.51
 
 ## 0.5.14
 
@@ -148,9 +158,9 @@
 
 - Version buuuuuuump
 - Updated dependencies
-    - @leight/user@0.5.54
-    - @leight/container@0.5.49
-    - @leight/utils@0.5.50
+  - @leight/user@0.5.54
+  - @leight/container@0.5.49
+  - @leight/utils@0.5.50
 
 ## 0.5.13
 
@@ -158,9 +168,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/container@0.5.48
-    - @leight/user@0.5.50
-    - @leight/utils@0.5.49
+  - @leight/container@0.5.48
+  - @leight/user@0.5.50
+  - @leight/utils@0.5.49
 
 ## 0.5.12
 
@@ -170,9 +180,9 @@
 - a436d96d: Updated packages
 - Updated dependencies
 - Updated dependencies [a436d96d]
-    - @leight/container@0.5.47
-    - @leight/utils@0.5.48
-    - @leight/user@0.5.49
+  - @leight/container@0.5.47
+  - @leight/utils@0.5.48
+  - @leight/user@0.5.49
 
 ## 0.5.11
 
@@ -180,9 +190,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/container@0.5.45
-    - @leight/user@0.5.48
-    - @leight/utils@0.5.47
+  - @leight/container@0.5.45
+  - @leight/user@0.5.48
+  - @leight/utils@0.5.47
 
 ## 0.5.10
 
@@ -190,9 +200,9 @@
 
 - Version bump, updated packages
 - Updated dependencies
-    - @leight/container@0.5.44
-    - @leight/user@0.5.47
-    - @leight/utils@0.5.46
+  - @leight/container@0.5.44
+  - @leight/user@0.5.47
+  - @leight/utils@0.5.46
 
 ## 0.5.9
 
@@ -200,9 +210,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/utils@0.5.45
-    - @leight/user@0.5.46
-    - @leight/container@0.5.43
+  - @leight/utils@0.5.45
+  - @leight/user@0.5.46
+  - @leight/container@0.5.43
 
 ## 0.5.8
 
@@ -210,9 +220,9 @@
 
 - Release with actual build... again
 - Updated dependencies
-    - @leight/container@0.5.42
-    - @leight/user@0.5.45
-    - @leight/utils@0.5.44
+  - @leight/container@0.5.42
+  - @leight/user@0.5.45
+  - @leight/utils@0.5.44
 
 ## 0.5.7
 
@@ -220,9 +230,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/container@0.5.41
-    - @leight/user@0.5.44
-    - @leight/utils@0.5.43
+  - @leight/container@0.5.41
+  - @leight/user@0.5.44
+  - @leight/utils@0.5.43
 
 ## 0.5.6
 
@@ -230,9 +240,9 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/container@0.5.40
-    - @leight/user@0.5.43
-    - @leight/utils@0.5.42
+  - @leight/container@0.5.40
+  - @leight/user@0.5.43
+  - @leight/utils@0.5.42
 
 ## 0.5.5
 
@@ -240,9 +250,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/container@0.5.39
-    - @leight/user@0.5.42
-    - @leight/utils@0.5.41
+  - @leight/container@0.5.39
+  - @leight/user@0.5.42
+  - @leight/utils@0.5.41
 
 ## 0.5.4
 
@@ -250,9 +260,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/container@0.5.38
-    - @leight/user@0.5.41
-    - @leight/utils@0.5.40
+  - @leight/container@0.5.38
+  - @leight/user@0.5.41
+  - @leight/utils@0.5.40
 
 ## 0.5.3
 
@@ -260,9 +270,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/container@0.5.37
-    - @leight/user@0.5.40
-    - @leight/utils@0.5.39
+  - @leight/container@0.5.37
+  - @leight/user@0.5.40
+  - @leight/utils@0.5.39
 
 ## 0.5.2
 
@@ -270,9 +280,9 @@
 
 - 2c523860: Version bump
 - Updated dependencies [2c523860]
-    - @leight/container@0.5.36
-    - @leight/utils@0.5.38
-    - @leight/user@0.5.39
+  - @leight/container@0.5.36
+  - @leight/utils@0.5.38
+  - @leight/user@0.5.39
 
 ## 0.5.1
 
@@ -280,6 +290,6 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/user@0.5.38
-    - @leight/container@0.5.35
-    - @leight/utils@0.5.37
+  - @leight/user@0.5.38
+  - @leight/container@0.5.35
+  - @leight/utils@0.5.37

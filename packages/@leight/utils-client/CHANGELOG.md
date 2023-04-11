@@ -1,13 +1,22 @@
 # @leight/utils-client
 
+## 0.5.67
+
+### Patch Changes
+
+- Version bump (updated packages)
+- Updated dependencies
+  - @leight/context-client@0.5.71
+  - @leight/utils@0.5.66
+
 ## 0.5.66
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.70
-    - @leight/utils@0.5.65
+  - @leight/context-client@0.5.70
+  - @leight/utils@0.5.65
 
 ## 0.5.65
 
@@ -15,8 +24,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.69
-    - @leight/utils@0.5.64
+  - @leight/context-client@0.5.69
+  - @leight/utils@0.5.64
 
 ## 0.5.64
 
@@ -24,8 +33,8 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/context-client@0.5.68
-    - @leight/utils@0.5.63
+  - @leight/context-client@0.5.68
+  - @leight/utils@0.5.63
 
 ## 0.5.63
 
@@ -33,8 +42,8 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/context-client@0.5.67
-    - @leight/utils@0.5.62
+  - @leight/context-client@0.5.67
+  - @leight/utils@0.5.62
 
 ## 0.5.62
 
@@ -42,8 +51,8 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/context-client@0.5.66
-    - @leight/utils@0.5.61
+  - @leight/context-client@0.5.66
+  - @leight/utils@0.5.61
 
 ## 0.5.61
 
@@ -51,8 +60,8 @@
 
 - Version bump & general update
 - Updated dependencies
-    - @leight/context-client@0.5.65
-    - @leight/utils@0.5.60
+  - @leight/context-client@0.5.65
+  - @leight/utils@0.5.60
 
 ## 0.5.60
 
@@ -62,8 +71,8 @@
 - Version bump
 - Updated dependencies [9e54ef4c]
 - Updated dependencies
-    - @leight/context-client@0.5.64
-    - @leight/utils@0.5.59
+  - @leight/context-client@0.5.64
+  - @leight/utils@0.5.59
 
 ## 0.5.59
 
@@ -71,8 +80,8 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/context-client@0.5.63
-    - @leight/utils@0.5.58
+  - @leight/context-client@0.5.63
+  - @leight/utils@0.5.58
 
 ## 0.5.58
 
@@ -80,8 +89,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.62
-    - @leight/utils@0.5.57
+  - @leight/context-client@0.5.62
+  - @leight/utils@0.5.57
 
 ## 0.5.57
 
@@ -89,8 +98,8 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/context-client@0.5.61
-    - @leight/utils@0.5.56
+  - @leight/context-client@0.5.61
+  - @leight/utils@0.5.56
 
 ## 0.5.56
 
@@ -104,8 +113,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.60
-    - @leight/utils@0.5.54
+  - @leight/context-client@0.5.60
+  - @leight/utils@0.5.54
 
 ## 0.5.54
 
@@ -113,8 +122,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.58
-    - @leight/utils@0.5.53
+  - @leight/context-client@0.5.58
+  - @leight/utils@0.5.53
 
 ## 0.5.53
 
@@ -122,8 +131,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.57
-    - @leight/utils@0.5.52
+  - @leight/context-client@0.5.57
+  - @leight/utils@0.5.52
 
 ## 0.5.52
 
@@ -131,9 +140,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.56
-    - @leight/utils@0.5.51
-    - @leight/zustand@0.5.49
+  - @leight/context-client@0.5.56
+  - @leight/utils@0.5.51
+  - @leight/zustand@0.5.49
 
 ## 0.5.51
 
@@ -141,9 +150,9 @@
 
 - Version buuuuuuump
 - Updated dependencies
-    - @leight/context-client@0.5.55
-    - @leight/utils@0.5.50
-    - @leight/zustand@0.5.48
+  - @leight/context-client@0.5.55
+  - @leight/utils@0.5.50
+  - @leight/zustand@0.5.48
 
 ## 0.5.50
 
@@ -151,9 +160,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.54
-    - @leight/utils@0.5.49
-    - @leight/zustand@0.5.47
+  - @leight/context-client@0.5.54
+  - @leight/utils@0.5.49
+  - @leight/zustand@0.5.47
 
 ## 0.5.49
 
@@ -163,9 +172,9 @@
 - a436d96d: Updated packages
 - Updated dependencies
 - Updated dependencies [a436d96d]
-    - @leight/context-client@0.5.53
-    - @leight/zustand@0.5.46
-    - @leight/utils@0.5.48
+  - @leight/context-client@0.5.53
+  - @leight/zustand@0.5.46
+  - @leight/utils@0.5.48
 
 ## 0.5.48
 
@@ -173,8 +182,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.52
-    - @leight/utils@0.5.47
+  - @leight/context-client@0.5.52
+  - @leight/utils@0.5.47
 
 ## 0.5.47
 
@@ -182,8 +191,8 @@
 
 - Version bump, updated packages
 - Updated dependencies
-    - @leight/context-client@0.5.51
-    - @leight/utils@0.5.46
+  - @leight/context-client@0.5.51
+  - @leight/utils@0.5.46
 
 ## 0.5.46
 
@@ -191,8 +200,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.50
-    - @leight/utils@0.5.45
+  - @leight/context-client@0.5.50
+  - @leight/utils@0.5.45
 
 ## 0.5.45
 
@@ -200,8 +209,8 @@
 
 - Release with actual build... again
 - Updated dependencies
-    - @leight/context-client@0.5.49
-    - @leight/utils@0.5.44
+  - @leight/context-client@0.5.49
+  - @leight/utils@0.5.44
 
 ## 0.5.44
 
@@ -209,8 +218,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.48
-    - @leight/utils@0.5.43
+  - @leight/context-client@0.5.48
+  - @leight/utils@0.5.43
 
 ## 0.5.43
 
@@ -218,8 +227,8 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/context-client@0.5.47
-    - @leight/utils@0.5.42
+  - @leight/context-client@0.5.47
+  - @leight/utils@0.5.42
 
 ## 0.5.42
 
@@ -227,8 +236,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.46
-    - @leight/utils@0.5.41
+  - @leight/context-client@0.5.46
+  - @leight/utils@0.5.41
 
 ## 0.5.41
 
@@ -236,8 +245,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.44
-    - @leight/utils@0.5.40
+  - @leight/context-client@0.5.44
+  - @leight/utils@0.5.40
 
 ## 0.5.40
 
@@ -245,8 +254,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.43
-    - @leight/utils@0.5.39
+  - @leight/context-client@0.5.43
+  - @leight/utils@0.5.39
 
 ## 0.5.39
 
@@ -254,8 +263,8 @@
 
 - 2c523860: Version bump
 - Updated dependencies [2c523860]
-    - @leight/context-client@0.5.42
-    - @leight/utils@0.5.38
+  - @leight/context-client@0.5.42
+  - @leight/utils@0.5.38
 
 ## 0.5.38
 
@@ -263,8 +272,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.41
-    - @leight/utils@0.5.37
+  - @leight/context-client@0.5.41
+  - @leight/utils@0.5.37
 
 ## 0.5.37
 
@@ -272,8 +281,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.40
-    - @leight/utils@0.5.36
+  - @leight/context-client@0.5.40
+  - @leight/utils@0.5.36
 
 ## 0.5.36
 
@@ -281,8 +290,8 @@
 
 - Reverted some changes
 - Updated dependencies
-    - @leight/context-client@0.5.39
-    - @leight/utils@0.5.35
+  - @leight/context-client@0.5.39
+  - @leight/utils@0.5.35
 
 ## 0.5.35
 
@@ -290,8 +299,8 @@
 
 - Fixed package.json
 - Updated dependencies
-    - @leight/context-client@0.5.38
-    - @leight/utils@0.5.34
+  - @leight/context-client@0.5.38
+  - @leight/utils@0.5.34
 
 ## 0.5.34
 
@@ -299,8 +308,8 @@
 
 - Experimentally lowered number of dependencies
 - Updated dependencies
-    - @leight/context-client@0.5.37
-    - @leight/utils@0.5.33
+  - @leight/context-client@0.5.37
+  - @leight/utils@0.5.33
 
 ## 0.5.33
 
@@ -308,8 +317,8 @@
 
 - Fixed package.json
 - Updated dependencies
-    - @leight/context-client@0.5.36
-    - @leight/utils@0.5.32
+  - @leight/context-client@0.5.36
+  - @leight/utils@0.5.32
 
 ## 0.5.32
 
@@ -317,8 +326,8 @@
 
 - Moved to npm
 - Updated dependencies
-    - @leight/context-client@0.5.35
-    - @leight/utils@0.5.31
+  - @leight/context-client@0.5.35
+  - @leight/utils@0.5.31
 
 ## 0.5.31
 
@@ -326,8 +335,8 @@
 
 - Removed TSyringe, moved everything to esbuild
 - Updated dependencies
-    - @leight/context-client@0.5.34
-    - @leight/utils@0.5.30
+  - @leight/context-client@0.5.34
+  - @leight/utils@0.5.30
 
 ## 0.5.30
 
@@ -335,8 +344,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.33
-    - @leight/utils@0.5.29
+  - @leight/context-client@0.5.33
+  - @leight/utils@0.5.29
 
 ## 0.5.29
 
@@ -344,8 +353,8 @@
 
 - Re-release + updated deps
 - Updated dependencies
-    - @leight/context-client@0.5.32
-    - @leight/utils@0.5.28
+  - @leight/context-client@0.5.32
+  - @leight/utils@0.5.28
 
 ## 0.5.28
 
@@ -353,8 +362,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.31
-    - @leight/utils@0.5.27
+  - @leight/context-client@0.5.31
+  - @leight/utils@0.5.27
 
 ## 0.5.27
 
@@ -362,8 +371,8 @@
 
 - Just a record here
 - Updated dependencies
-    - @leight/context-client@0.5.30
-    - @leight/utils@0.5.26
+  - @leight/context-client@0.5.30
+  - @leight/utils@0.5.26
 
 ## 0.5.26
 
@@ -371,8 +380,8 @@
 
 - Version bump II
 - Updated dependencies
-    - @leight/context-client@0.5.29
-    - @leight/utils@0.5.25
+  - @leight/context-client@0.5.29
+  - @leight/utils@0.5.25
 
 ## 0.5.25
 
@@ -380,8 +389,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.28
-    - @leight/utils@0.5.24
+  - @leight/context-client@0.5.28
+  - @leight/utils@0.5.24
 
 ## 0.5.24
 
@@ -389,8 +398,8 @@
 
 - Build
 - Updated dependencies
-    - @leight/context-client@0.5.27
-    - @leight/utils@0.5.23
+  - @leight/context-client@0.5.27
+  - @leight/utils@0.5.23
 
 ## 0.5.23
 
@@ -398,8 +407,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.26
-    - @leight/utils@0.5.22
+  - @leight/context-client@0.5.26
+  - @leight/utils@0.5.22
 
 ## 0.5.22
 
@@ -407,8 +416,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.24
-    - @leight/utils@0.5.21
+  - @leight/context-client@0.5.24
+  - @leight/utils@0.5.21
 
 ## 0.5.21
 
@@ -416,7 +425,7 @@
 
 - Improved Store API and CMDK
 - Updated dependencies
-    - @leight/context-client@0.5.23
+  - @leight/context-client@0.5.23
 
 ## 0.5.20
 
@@ -424,8 +433,8 @@
 
 - Sync re-release
 - Updated dependencies
-    - @leight/context-client@0.5.22
-    - @leight/utils@0.5.20
+  - @leight/context-client@0.5.22
+  - @leight/utils@0.5.20
 
 ## 0.5.19
 
@@ -433,7 +442,7 @@
 
 - Improved zustand store stuff
 - Updated dependencies
-    - @leight/context-client@0.5.20
+  - @leight/context-client@0.5.20
 
 ## 0.5.18
 
@@ -441,8 +450,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.18
-    - @leight/utils@0.5.19
+  - @leight/context-client@0.5.18
+  - @leight/utils@0.5.19
 
 ## 0.5.17
 
@@ -450,8 +459,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.16
-    - @leight/utils@0.5.18
+  - @leight/context-client@0.5.16
+  - @leight/utils@0.5.18
 
 ## 0.5.16
 
@@ -461,8 +470,8 @@
 - Experimentally enabled Zod schema generator
 - Updated dependencies
 - Updated dependencies
-    - @leight/context-client@0.5.15
-    - @leight/utils@0.5.17
+  - @leight/context-client@0.5.15
+  - @leight/utils@0.5.17
 
 ## 0.5.15
 
@@ -470,8 +479,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.14
-    - @leight/utils@0.5.16
+  - @leight/context-client@0.5.14
+  - @leight/utils@0.5.16
 
 ## 0.5.14
 
@@ -479,8 +488,8 @@
 
 - Re-release with fixed typings
 - Updated dependencies
-    - @leight/context-client@0.5.13
-    - @leight/utils@0.5.15
+  - @leight/context-client@0.5.13
+  - @leight/utils@0.5.15
 
 ## 0.5.13
 
@@ -488,8 +497,8 @@
 
 - Re-release
 - Updated dependencies
-    - @leight/context-client@0.5.12
-    - @leight/utils@0.5.14
+  - @leight/context-client@0.5.12
+  - @leight/utils@0.5.14
 
 ## 0.5.12
 
@@ -497,8 +506,8 @@
 
 - Re-release with updated package.json
 - Updated dependencies
-    - @leight/context-client@0.5.11
-    - @leight/utils@0.5.13
+  - @leight/context-client@0.5.11
+  - @leight/utils@0.5.13
 
 ## 0.5.11
 
@@ -506,8 +515,8 @@
 
 - Added support for IRepository, added some sources; re-release of all the other packages
 - Updated dependencies
-    - @leight/context-client@0.5.10
-    - @leight/utils@0.5.12
+  - @leight/context-client@0.5.10
+  - @leight/utils@0.5.12
 
 ## 0.5.10
 
@@ -515,8 +524,8 @@
 
 - Improved container stuff
 - Updated dependencies
-    - @leight/context-client@0.5.9
-    - @leight/utils@0.5.10
+  - @leight/context-client@0.5.9
+  - @leight/utils@0.5.10
 
 ## 0.5.9
 
@@ -524,8 +533,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/utils@0.5.9
-    - @leight/context-client@0.5.8
+  - @leight/utils@0.5.9
+  - @leight/context-client@0.5.8
 
 ## 0.5.8
 
@@ -533,8 +542,8 @@
 
 - Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
 - Updated dependencies
-    - @leight/context-client@0.5.7
-    - @leight/utils@0.5.7
+  - @leight/context-client@0.5.7
+  - @leight/utils@0.5.7
 
 ## 0.5.7
 
@@ -542,8 +551,8 @@
 
 - Changed whole build to just ESM, optimized build speed
 - Updated dependencies
-    - @leight/context-client@0.5.6
-    - @leight/utils@0.5.6
+  - @leight/context-client@0.5.6
+  - @leight/utils@0.5.6
 
 ## 0.5.6
 
@@ -551,8 +560,8 @@
 
 - Experiment with only ESM exports
 - Updated dependencies
-    - @leight/context-client@0.5.5
-    - @leight/utils@0.5.5
+  - @leight/context-client@0.5.5
+  - @leight/utils@0.5.5
 
 ## 0.5.5
 
@@ -560,8 +569,8 @@
 
 - Changed package type to "module"
 - Updated dependencies
-    - @leight/context-client@0.5.4
-    - @leight/utils@0.5.4
+  - @leight/context-client@0.5.4
+  - @leight/utils@0.5.4
 
 ## 0.5.4
 
@@ -569,8 +578,8 @@
 
 - Updatred all packages
 - Updated dependencies
-    - @leight/context-client@0.5.3
-    - @leight/utils@0.5.3
+  - @leight/context-client@0.5.3
+  - @leight/utils@0.5.3
 
 ## 0.5.3
 
@@ -584,7 +593,7 @@
 
 - Changed build to react-jsx
 - Updated dependencies
-    - @leight/context-client@0.5.2
+  - @leight/context-client@0.5.2
 
 ## 0.5.1
 
@@ -592,5 +601,5 @@
 
 - e4af2419: Experimental publish of the new @leight packages
 - Updated dependencies [e4af2419]
-    - @leight/context-client@0.5.1
-    - @leight/utils@0.5.1
+  - @leight/context-client@0.5.1
+  - @leight/utils@0.5.1

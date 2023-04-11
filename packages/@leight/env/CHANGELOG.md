@@ -1,12 +1,20 @@
 # @leight/env
 
+## 0.5.34
+
+### Patch Changes
+
+- Version bump (updated packages)
+- Updated dependencies
+  - @leight/zod@0.5.9
+
 ## 0.5.33
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/zod@0.5.8
+  - @leight/zod@0.5.8
 
 ## 0.5.32
 
@@ -14,7 +22,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/zod@0.5.7
+  - @leight/zod@0.5.7
 
 ## 0.5.31
 
@@ -22,7 +30,7 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/zod@0.5.6
+  - @leight/zod@0.5.6
 
 ## 0.5.30
 
@@ -30,7 +38,7 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/zod@0.5.5
+  - @leight/zod@0.5.5
 
 ## 0.5.29
 
@@ -38,7 +46,7 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/zod@0.5.4
+  - @leight/zod@0.5.4
 
 ## 0.5.28
 
@@ -46,7 +54,7 @@
 
 - Version bump & general update
 - Updated dependencies
-    - @leight/zod@0.5.3
+  - @leight/zod@0.5.3
 
 ## 0.5.27
 
@@ -55,7 +63,7 @@
 - 9e54ef4c: Added @total-typescript/ts-reset
 - Version bump
 - Updated dependencies
-    - @leight/zod@0.5.1
+  - @leight/zod@0.5.1
 
 ## 0.5.26
 

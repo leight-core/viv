@@ -1,12 +1,20 @@
 # @leight/context
 
+## 0.5.26
+
+### Patch Changes
+
+- Version bump (updated packages)
+- Updated dependencies
+  - @leight/zustand@0.5.63
+
 ## 0.5.25
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/zustand@0.5.62
+  - @leight/zustand@0.5.62
 
 ## 0.5.24
 
@@ -14,7 +22,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/zustand@0.5.61
+  - @leight/zustand@0.5.61
 
 ## 0.5.23
 
@@ -22,7 +30,7 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/zustand@0.5.60
+  - @leight/zustand@0.5.60
 
 ## 0.5.22
 
@@ -30,7 +38,7 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/zustand@0.5.59
+  - @leight/zustand@0.5.59
 
 ## 0.5.21
 
@@ -38,7 +46,7 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/zustand@0.5.58
+  - @leight/zustand@0.5.58
 
 ## 0.5.20
 
@@ -46,7 +54,7 @@
 
 - Version bump & general update
 - Updated dependencies
-    - @leight/zustand@0.5.57
+  - @leight/zustand@0.5.57
 
 ## 0.5.19
 
@@ -56,7 +64,7 @@
 - Version bump
 - Updated dependencies [9e54ef4c]
 - Updated dependencies
-    - @leight/zustand@0.5.56
+  - @leight/zustand@0.5.56
 
 ## 0.5.18
 
@@ -64,7 +72,7 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/zustand@0.5.55
+  - @leight/zustand@0.5.55
 
 ## 0.5.17
 
@@ -72,7 +80,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/zustand@0.5.54
+  - @leight/zustand@0.5.54
 
 ## 0.5.16
 
@@ -80,7 +88,7 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/zustand@0.5.53
+  - @leight/zustand@0.5.53
 
 ## 0.5.15
 
@@ -88,7 +96,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/zustand@0.5.52
+  - @leight/zustand@0.5.52
 
 ## 0.5.14
 
@@ -96,7 +104,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/zustand@0.5.51
+  - @leight/zustand@0.5.51
 
 ## 0.5.13
 
@@ -104,7 +112,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/zustand@0.5.50
+  - @leight/zustand@0.5.50
 
 ## 0.5.12
 
@@ -112,7 +120,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/zustand@0.5.49
+  - @leight/zustand@0.5.49
 
 ## 0.5.11
 
@@ -120,7 +128,7 @@
 
 - Version buuuuuuump
 - Updated dependencies
-    - @leight/zustand@0.5.48
+  - @leight/zustand@0.5.48
 
 ## 0.5.10
 
@@ -128,7 +136,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/zustand@0.5.47
+  - @leight/zustand@0.5.47
 
 ## 0.5.9
 
@@ -138,7 +146,7 @@
 - a436d96d: Updated packages
 - Updated dependencies
 - Updated dependencies [a436d96d]
-    - @leight/zustand@0.5.46
+  - @leight/zustand@0.5.46
 
 ## 0.5.8
 
@@ -146,7 +154,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/zustand@0.5.45
+  - @leight/zustand@0.5.45
 
 ## 0.5.7
 
@@ -154,7 +162,7 @@
 
 - Version bump, updated packages
 - Updated dependencies
-    - @leight/zustand@0.5.44
+  - @leight/zustand@0.5.44
 
 ## 0.5.6
 
@@ -162,7 +170,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/zustand@0.5.43
+  - @leight/zustand@0.5.43
 
 ## 0.5.5
 
@@ -170,7 +178,7 @@
 
 - Release with actual build... again
 - Updated dependencies
-    - @leight/zustand@0.5.42
+  - @leight/zustand@0.5.42
 
 ## 0.5.4
 
@@ -178,7 +186,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/zustand@0.5.41
+  - @leight/zustand@0.5.41
 
 ## 0.5.3
 
@@ -186,7 +194,7 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/zustand@0.5.40
+  - @leight/zustand@0.5.40
 
 ## 0.5.2
 
@@ -194,7 +202,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/zustand@0.5.39
+  - @leight/zustand@0.5.39
 
 ## 0.5.1
 

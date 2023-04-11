@@ -1,14 +1,24 @@
 # @leight/sort
 
+## 0.5.60
+
+### Patch Changes
+
+- Version bump (updated packages)
+- Updated dependencies
+  - @leight/context@0.5.26
+  - @leight/zod@0.5.9
+  - @leight/zustand@0.5.63
+
 ## 0.5.59
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.25
-    - @leight/zod@0.5.8
-    - @leight/zustand@0.5.62
+  - @leight/context@0.5.25
+  - @leight/zod@0.5.8
+  - @leight/zustand@0.5.62
 
 ## 0.5.58
 
@@ -16,9 +26,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.24
-    - @leight/zod@0.5.7
-    - @leight/zustand@0.5.61
+  - @leight/context@0.5.24
+  - @leight/zod@0.5.7
+  - @leight/zustand@0.5.61
 
 ## 0.5.57
 
@@ -26,9 +36,9 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/context@0.5.23
-    - @leight/zod@0.5.6
-    - @leight/zustand@0.5.60
+  - @leight/context@0.5.23
+  - @leight/zod@0.5.6
+  - @leight/zustand@0.5.60
 
 ## 0.5.56
 
@@ -36,9 +46,9 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/context@0.5.22
-    - @leight/zod@0.5.5
-    - @leight/zustand@0.5.59
+  - @leight/context@0.5.22
+  - @leight/zod@0.5.5
+  - @leight/zustand@0.5.59
 
 ## 0.5.55
 
@@ -46,9 +56,9 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/context@0.5.21
-    - @leight/zod@0.5.4
-    - @leight/zustand@0.5.58
+  - @leight/context@0.5.21
+  - @leight/zod@0.5.4
+  - @leight/zustand@0.5.58
 
 ## 0.5.54
 
@@ -56,9 +66,9 @@
 
 - Version bump & general update
 - Updated dependencies
-    - @leight/context@0.5.20
-    - @leight/zod@0.5.3
-    - @leight/zustand@0.5.57
+  - @leight/context@0.5.20
+  - @leight/zod@0.5.3
+  - @leight/zustand@0.5.57
 
 ## 0.5.53
 
@@ -68,9 +78,9 @@
 - Version bump
 - Updated dependencies [9e54ef4c]
 - Updated dependencies
-    - @leight/context@0.5.19
-    - @leight/zustand@0.5.56
-    - @leight/zod@0.5.1
+  - @leight/context@0.5.19
+  - @leight/zustand@0.5.56
+  - @leight/zod@0.5.1
 
 ## 0.5.52
 
@@ -78,8 +88,8 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/context@0.5.18
-    - @leight/zustand@0.5.55
+  - @leight/context@0.5.18
+  - @leight/zustand@0.5.55
 
 ## 0.5.51
 
@@ -87,8 +97,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.17
-    - @leight/zustand@0.5.54
+  - @leight/context@0.5.17
+  - @leight/zustand@0.5.54
 
 ## 0.5.50
 
@@ -96,8 +106,8 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/context@0.5.16
-    - @leight/zustand@0.5.53
+  - @leight/context@0.5.16
+  - @leight/zustand@0.5.53
 
 ## 0.5.49
 
@@ -105,8 +115,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.15
-    - @leight/zustand@0.5.52
+  - @leight/context@0.5.15
+  - @leight/zustand@0.5.52
 
 ## 0.5.48
 
@@ -114,8 +124,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.14
-    - @leight/zustand@0.5.51
+  - @leight/context@0.5.14
+  - @leight/zustand@0.5.51
 
 ## 0.5.47
 
@@ -123,8 +133,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.13
-    - @leight/zustand@0.5.50
+  - @leight/context@0.5.13
+  - @leight/zustand@0.5.50
 
 ## 0.5.46
 
@@ -132,8 +142,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.12
-    - @leight/zustand@0.5.49
+  - @leight/context@0.5.12
+  - @leight/zustand@0.5.49
 
 ## 0.5.45
 
@@ -141,8 +151,8 @@
 
 - Version buuuuuuump
 - Updated dependencies
-    - @leight/context@0.5.11
-    - @leight/zustand@0.5.48
+  - @leight/context@0.5.11
+  - @leight/zustand@0.5.48
 
 ## 0.5.44
 
@@ -150,8 +160,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.10
-    - @leight/zustand@0.5.47
+  - @leight/context@0.5.10
+  - @leight/zustand@0.5.47
 
 ## 0.5.43
 
@@ -161,8 +171,8 @@
 - a436d96d: Updated packages
 - Updated dependencies
 - Updated dependencies [a436d96d]
-    - @leight/context@0.5.9
-    - @leight/zustand@0.5.46
+  - @leight/context@0.5.9
+  - @leight/zustand@0.5.46
 
 ## 0.5.42
 
@@ -170,7 +180,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.8
+  - @leight/context@0.5.8
 
 ## 0.5.41
 
@@ -178,7 +188,7 @@
 
 - Version bump, updated packages
 - Updated dependencies
-    - @leight/context@0.5.7
+  - @leight/context@0.5.7
 
 ## 0.5.40
 
@@ -186,7 +196,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.6
+  - @leight/context@0.5.6
 
 ## 0.5.39
 
@@ -200,7 +210,7 @@
 
 - Release with actual build... again
 - Updated dependencies
-    - @leight/context@0.5.5
+  - @leight/context@0.5.5
 
 ## 0.5.37
 
@@ -208,7 +218,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.4
+  - @leight/context@0.5.4
 
 ## 0.5.36
 
@@ -222,7 +232,7 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/context@0.5.3
+  - @leight/context@0.5.3
 
 ## 0.5.34
 
@@ -230,7 +240,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.2
+  - @leight/context@0.5.2
 
 ## 0.5.33
 
@@ -239,7 +249,7 @@
 - 98c0d1f0: Connected sort stuff
 - a7029792: Improved overall Source API
 - Updated dependencies [312fbc60]
-    - @leight/context@0.5.1
+  - @leight/context@0.5.1
 
 ## 0.5.32
 

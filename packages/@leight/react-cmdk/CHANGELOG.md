@@ -1,5 +1,11 @@
 # @leight/react-cmdk
 
+## 0.5.63
+
+### Patch Changes
+
+- Version bump (updated packages)
+
 ## 0.5.62
 
 ### Patch Changes
@@ -128,10 +134,10 @@
 
 - Release with actual build... again
 - Updated dependencies
-    - @leight/context-client@0.5.49
-    - @leight/i18n@0.5.42
-    - @leight/utils@0.5.44
-    - @leight/utils-client@0.5.45
+  - @leight/context-client@0.5.49
+  - @leight/i18n@0.5.42
+  - @leight/utils@0.5.44
+  - @leight/utils-client@0.5.45
 
 ## 0.5.41
 
@@ -139,10 +145,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.48
-    - @leight/i18n@0.5.41
-    - @leight/utils@0.5.43
-    - @leight/utils-client@0.5.44
+  - @leight/context-client@0.5.48
+  - @leight/i18n@0.5.41
+  - @leight/utils@0.5.43
+  - @leight/utils-client@0.5.44
 
 ## 0.5.40
 
@@ -150,10 +156,10 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/context-client@0.5.47
-    - @leight/i18n@0.5.40
-    - @leight/utils@0.5.42
-    - @leight/utils-client@0.5.43
+  - @leight/context-client@0.5.47
+  - @leight/i18n@0.5.40
+  - @leight/utils@0.5.42
+  - @leight/utils-client@0.5.43
 
 ## 0.5.39
 
@@ -161,10 +167,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.46
-    - @leight/i18n@0.5.39
-    - @leight/utils@0.5.41
-    - @leight/utils-client@0.5.42
+  - @leight/context-client@0.5.46
+  - @leight/i18n@0.5.39
+  - @leight/utils@0.5.41
+  - @leight/utils-client@0.5.42
 
 ## 0.5.38
 
@@ -172,10 +178,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.44
-    - @leight/i18n@0.5.38
-    - @leight/utils@0.5.40
-    - @leight/utils-client@0.5.41
+  - @leight/context-client@0.5.44
+  - @leight/i18n@0.5.38
+  - @leight/utils@0.5.40
+  - @leight/utils-client@0.5.41
 
 ## 0.5.37
 
@@ -183,10 +189,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.43
-    - @leight/i18n@0.5.37
-    - @leight/utils@0.5.39
-    - @leight/utils-client@0.5.40
+  - @leight/context-client@0.5.43
+  - @leight/i18n@0.5.37
+  - @leight/utils@0.5.39
+  - @leight/utils-client@0.5.40
 
 ## 0.5.36
 
@@ -194,10 +200,10 @@
 
 - 2c523860: Version bump
 - Updated dependencies [2c523860]
-    - @leight/context-client@0.5.42
-    - @leight/utils-client@0.5.39
-    - @leight/utils@0.5.38
-    - @leight/i18n@0.5.36
+  - @leight/context-client@0.5.42
+  - @leight/utils-client@0.5.39
+  - @leight/utils@0.5.38
+  - @leight/i18n@0.5.36
 
 ## 0.5.35
 
@@ -205,10 +211,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.41
-    - @leight/i18n@0.5.35
-    - @leight/utils@0.5.37
-    - @leight/utils-client@0.5.38
+  - @leight/context-client@0.5.41
+  - @leight/i18n@0.5.35
+  - @leight/utils@0.5.37
+  - @leight/utils-client@0.5.38
 
 ## 0.5.34
 
@@ -216,10 +222,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.40
-    - @leight/i18n@0.5.34
-    - @leight/utils@0.5.36
-    - @leight/utils-client@0.5.37
+  - @leight/context-client@0.5.40
+  - @leight/i18n@0.5.34
+  - @leight/utils@0.5.36
+  - @leight/utils-client@0.5.37
 
 ## 0.5.33
 
@@ -227,10 +233,10 @@
 
 - Reverted some changes
 - Updated dependencies
-    - @leight/context-client@0.5.39
-    - @leight/utils-client@0.5.36
-    - @leight/utils@0.5.35
-    - @leight/i18n@0.5.33
+  - @leight/context-client@0.5.39
+  - @leight/utils-client@0.5.36
+  - @leight/utils@0.5.35
+  - @leight/i18n@0.5.33
 
 ## 0.5.32
 
@@ -238,10 +244,10 @@
 
 - Fixed package.json
 - Updated dependencies
-    - @leight/context-client@0.5.38
-    - @leight/utils-client@0.5.35
-    - @leight/utils@0.5.34
-    - @leight/i18n@0.5.32
+  - @leight/context-client@0.5.38
+  - @leight/utils-client@0.5.35
+  - @leight/utils@0.5.34
+  - @leight/i18n@0.5.32
 
 ## 0.5.31
 
@@ -249,10 +255,10 @@
 
 - Experimentally lowered number of dependencies
 - Updated dependencies
-    - @leight/context-client@0.5.37
-    - @leight/utils-client@0.5.34
-    - @leight/i18n@0.5.31
-    - @leight/utils@0.5.33
+  - @leight/context-client@0.5.37
+  - @leight/utils-client@0.5.34
+  - @leight/i18n@0.5.31
+  - @leight/utils@0.5.33
 
 ## 0.5.30
 
@@ -260,10 +266,10 @@
 
 - Fixed package.json
 - Updated dependencies
-    - @leight/context-client@0.5.36
-    - @leight/utils-client@0.5.33
-    - @leight/utils@0.5.32
-    - @leight/i18n@0.5.30
+  - @leight/context-client@0.5.36
+  - @leight/utils-client@0.5.33
+  - @leight/utils@0.5.32
+  - @leight/i18n@0.5.30
 
 ## 0.5.29
 
@@ -271,10 +277,10 @@
 
 - Moved to npm
 - Updated dependencies
-    - @leight/context-client@0.5.35
-    - @leight/i18n@0.5.29
-    - @leight/utils@0.5.31
-    - @leight/utils-client@0.5.32
+  - @leight/context-client@0.5.35
+  - @leight/i18n@0.5.29
+  - @leight/utils@0.5.31
+  - @leight/utils-client@0.5.32
 
 ## 0.5.28
 
@@ -282,10 +288,10 @@
 
 - Removed TSyringe, moved everything to esbuild
 - Updated dependencies
-    - @leight/context-client@0.5.34
-    - @leight/utils-client@0.5.31
-    - @leight/utils@0.5.30
-    - @leight/i18n@0.5.28
+  - @leight/context-client@0.5.34
+  - @leight/utils-client@0.5.31
+  - @leight/utils@0.5.30
+  - @leight/i18n@0.5.28
 
 ## 0.5.27
 
@@ -293,10 +299,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.33
-    - @leight/i18n@0.5.27
-    - @leight/utils@0.5.29
-    - @leight/utils-client@0.5.30
+  - @leight/context-client@0.5.33
+  - @leight/i18n@0.5.27
+  - @leight/utils@0.5.29
+  - @leight/utils-client@0.5.30
 
 ## 0.5.26
 
@@ -304,10 +310,10 @@
 
 - Re-release + updated deps
 - Updated dependencies
-    - @leight/context-client@0.5.32
-    - @leight/utils-client@0.5.29
-    - @leight/utils@0.5.28
-    - @leight/i18n@0.5.26
+  - @leight/context-client@0.5.32
+  - @leight/utils-client@0.5.29
+  - @leight/utils@0.5.28
+  - @leight/i18n@0.5.26
 
 ## 0.5.25
 
@@ -315,10 +321,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.31
-    - @leight/utils-client@0.5.28
-    - @leight/utils@0.5.27
-    - @leight/i18n@0.5.25
+  - @leight/context-client@0.5.31
+  - @leight/utils-client@0.5.28
+  - @leight/utils@0.5.27
+  - @leight/i18n@0.5.25
 
 ## 0.5.24
 
@@ -326,10 +332,10 @@
 
 - Just a record here
 - Updated dependencies
-    - @leight/context-client@0.5.30
-    - @leight/utils-client@0.5.27
-    - @leight/utils@0.5.26
-    - @leight/i18n@0.5.24
+  - @leight/context-client@0.5.30
+  - @leight/utils-client@0.5.27
+  - @leight/utils@0.5.26
+  - @leight/i18n@0.5.24
 
 ## 0.5.23
 
@@ -337,10 +343,10 @@
 
 - Version bump II
 - Updated dependencies
-    - @leight/context-client@0.5.29
-    - @leight/utils-client@0.5.26
-    - @leight/utils@0.5.25
-    - @leight/i18n@0.5.23
+  - @leight/context-client@0.5.29
+  - @leight/utils-client@0.5.26
+  - @leight/utils@0.5.25
+  - @leight/i18n@0.5.23
 
 ## 0.5.22
 
@@ -348,10 +354,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.28
-    - @leight/utils-client@0.5.25
-    - @leight/i18n@0.5.22
-    - @leight/utils@0.5.24
+  - @leight/context-client@0.5.28
+  - @leight/utils-client@0.5.25
+  - @leight/i18n@0.5.22
+  - @leight/utils@0.5.24
 
 ## 0.5.21
 
@@ -365,10 +371,10 @@
 
 - Build
 - Updated dependencies
-    - @leight/context-client@0.5.27
-    - @leight/utils-client@0.5.24
-    - @leight/utils@0.5.23
-    - @leight/i18n@0.5.21
+  - @leight/context-client@0.5.27
+  - @leight/utils-client@0.5.24
+  - @leight/utils@0.5.23
+  - @leight/i18n@0.5.21
 
 ## 0.5.19
 
@@ -376,10 +382,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.26
-    - @leight/i18n@0.5.20
-    - @leight/utils@0.5.22
-    - @leight/utils-client@0.5.23
+  - @leight/context-client@0.5.26
+  - @leight/i18n@0.5.20
+  - @leight/utils@0.5.22
+  - @leight/utils-client@0.5.23
 
 ## 0.5.18
 
@@ -399,10 +405,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.24
-    - @leight/utils-client@0.5.22
-    - @leight/utils@0.5.21
-    - @leight/i18n@0.5.19
+  - @leight/context-client@0.5.24
+  - @leight/utils-client@0.5.22
+  - @leight/utils@0.5.21
+  - @leight/i18n@0.5.19
 
 ## 0.5.15
 
@@ -434,8 +440,8 @@
 
 - Improved Store API and CMDK
 - Updated dependencies
-    - @leight/context-client@0.5.23
-    - @leight/utils-client@0.5.21
+  - @leight/context-client@0.5.23
+  - @leight/utils-client@0.5.21
 
 ## 0.5.10
 
@@ -443,9 +449,9 @@
 
 - Sync re-release
 - Updated dependencies
-    - @leight/context-client@0.5.22
-    - @leight/i18n@0.5.18
-    - @leight/utils@0.5.20
+  - @leight/context-client@0.5.22
+  - @leight/i18n@0.5.18
+  - @leight/utils@0.5.20
 
 ## 0.5.9
 
@@ -453,7 +459,7 @@
 
 - Fixed some internal stuff
 - Updated dependencies
-    - @leight/context-client@0.5.20
+  - @leight/context-client@0.5.20
 
 ## 0.5.8
 
@@ -461,7 +467,7 @@
 
 - Improved store stuff
 - Updated dependencies
-    - @leight/context-client@0.5.19
+  - @leight/context-client@0.5.19
 
 ## 0.5.7
 
@@ -487,7 +493,7 @@
 
 - Added some utility stuff
 - Updated dependencies
-    - @leight/i18n@0.5.17
+  - @leight/i18n@0.5.17
 
 ## 0.5.3
 

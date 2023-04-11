@@ -7,14 +7,21 @@ import {
     type PropsWithChildren
 }                         from "react";
 
+type MantineProviderProps = ComponentProps<typeof MantineProvider>;
+
 export type IShellProps = PropsWithChildren<{
-    colorScheme?: "dark" | "light";
-    emotionCache?: ComponentProps<typeof MantineProvider>["emotionCache"];
+    theme?: MantineProviderProps["theme"];
+    emotionCache?: MantineProviderProps["emotionCache"];
 }>
 
-export const Shell: FC<IShellProps> = ({colorScheme = "light", emotionCache, children}) => {
+export const Shell: FC<IShellProps> = ({theme, emotionCache, children}) => {
     return <MantineProvider
-        theme={{colorScheme}}
+        theme={{
+            colorScheme:  "light",
+            primaryColor: "green",
+            primaryShade: 8,
+            ...theme
+        }}
         withGlobalStyles
         withNormalizeCSS
         emotionCache={emotionCache}

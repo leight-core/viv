@@ -1,12 +1,20 @@
 # @leight/source-server
 
+## 0.5.63
+
+### Patch Changes
+
+- Version bump (updated packages)
+- Updated dependencies
+  - @leight/source@0.5.63
+
 ## 0.5.62
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.62
+  - @leight/source@0.5.62
 
 ## 0.5.61
 
@@ -14,7 +22,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.61
+  - @leight/source@0.5.61
 
 ## 0.5.60
 
@@ -22,7 +30,7 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/source@0.5.60
+  - @leight/source@0.5.60
 
 ## 0.5.59
 
@@ -30,7 +38,7 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/source@0.5.59
+  - @leight/source@0.5.59
 
 ## 0.5.58
 
@@ -38,7 +46,7 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/source@0.5.58
+  - @leight/source@0.5.58
 
 ## 0.5.57
 
@@ -46,7 +54,7 @@
 
 - Version bump & general update
 - Updated dependencies
-    - @leight/source@0.5.57
+  - @leight/source@0.5.57
 
 ## 0.5.56
 
@@ -56,7 +64,7 @@
 - Version bump
 - Updated dependencies [9e54ef4c]
 - Updated dependencies
-    - @leight/source@0.5.56
+  - @leight/source@0.5.56
 
 ## 0.5.55
 
@@ -64,7 +72,7 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/source@0.5.55
+  - @leight/source@0.5.55
 
 ## 0.5.54
 
@@ -72,7 +80,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.54
+  - @leight/source@0.5.54
 
 ## 0.5.53
 
@@ -80,7 +88,7 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/source@0.5.53
+  - @leight/source@0.5.53
 
 ## 0.5.52
 
@@ -88,7 +96,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.52
+  - @leight/source@0.5.52
 
 ## 0.5.51
 
@@ -96,7 +104,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.51
+  - @leight/source@0.5.51
 
 ## 0.5.50
 
@@ -104,7 +112,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.50
+  - @leight/source@0.5.50
 
 ## 0.5.49
 
@@ -112,7 +120,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.49
+  - @leight/source@0.5.49
 
 ## 0.5.48
 
@@ -120,7 +128,7 @@
 
 - Version buuuuuuump
 - Updated dependencies
-    - @leight/source@0.5.48
+  - @leight/source@0.5.48
 
 ## 0.5.47
 
@@ -128,7 +136,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.47
+  - @leight/source@0.5.47
 
 ## 0.5.46
 
@@ -138,7 +146,7 @@
 - a436d96d: Updated packages
 - Updated dependencies
 - Updated dependencies [a436d96d]
-    - @leight/source@0.5.46
+  - @leight/source@0.5.46
 
 ## 0.5.45
 
@@ -146,7 +154,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.45
+  - @leight/source@0.5.45
 
 ## 0.5.44
 
@@ -154,7 +162,7 @@
 
 - Version bump, updated packages
 - Updated dependencies
-    - @leight/source@0.5.44
+  - @leight/source@0.5.44
 
 ## 0.5.43
 
@@ -162,7 +170,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.43
+  - @leight/source@0.5.43
 
 ## 0.5.42
 
@@ -170,7 +178,7 @@
 
 - Release with actual build... again
 - Updated dependencies
-    - @leight/source@0.5.42
+  - @leight/source@0.5.42
 
 ## 0.5.41
 
@@ -178,7 +186,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.41
+  - @leight/source@0.5.41
 
 ## 0.5.40
 
@@ -186,7 +194,7 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/source@0.5.40
+  - @leight/source@0.5.40
 
 ## 0.5.39
 
@@ -194,7 +202,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.38
+  - @leight/source@0.5.38
 
 ## 0.5.38
 
@@ -203,7 +211,7 @@
 - a7029792: Improved overall Source API
 - Updated dependencies [a7029792]
 - Updated dependencies [312fbc60]
-    - @leight/source@0.5.37
+  - @leight/source@0.5.37
 
 ## 0.5.37
 
@@ -211,7 +219,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.35
+  - @leight/source@0.5.35
 
 ## 0.5.36
 
@@ -219,7 +227,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.34
+  - @leight/source@0.5.34
 
 ## 0.5.35
 
@@ -227,7 +235,7 @@
 
 - 2c523860: Version bump
 - Updated dependencies [2c523860]
-    - @leight/source@0.5.33
+  - @leight/source@0.5.33
 
 ## 0.5.34
 
@@ -235,7 +243,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.32
+  - @leight/source@0.5.32
 
 ## 0.5.33
 
@@ -243,7 +251,7 @@
 
 - Implemented some sources, added some utilities and made overall day a bit better
 - Updated dependencies
-    - @leight/source@0.5.31
+  - @leight/source@0.5.31
 
 ## 0.5.32
 
@@ -251,7 +259,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.30
+  - @leight/source@0.5.30
 
 ## 0.5.31
 
@@ -259,7 +267,7 @@
 
 - Reverted some changes
 - Updated dependencies
-    - @leight/source@0.5.29
+  - @leight/source@0.5.29
 
 ## 0.5.30
 
@@ -267,7 +275,7 @@
 
 - Fixed package.json
 - Updated dependencies
-    - @leight/source@0.5.28
+  - @leight/source@0.5.28
 
 ## 0.5.29
 
@@ -275,7 +283,7 @@
 
 - Experimentally lowered number of dependencies
 - Updated dependencies
-    - @leight/source@0.5.27
+  - @leight/source@0.5.27
 
 ## 0.5.28
 
@@ -283,7 +291,7 @@
 
 - Fixed package.json
 - Updated dependencies
-    - @leight/source@0.5.26
+  - @leight/source@0.5.26
 
 ## 0.5.27
 
@@ -291,7 +299,7 @@
 
 - Moved to npm
 - Updated dependencies
-    - @leight/source@0.5.25
+  - @leight/source@0.5.25
 
 ## 0.5.26
 
@@ -299,7 +307,7 @@
 
 - Removed TSyringe, moved everything to esbuild
 - Updated dependencies
-    - @leight/source@0.5.24
+  - @leight/source@0.5.24
 
 ## 0.5.25
 
@@ -307,7 +315,7 @@
 
 - Improved source stuff
 - Updated dependencies
-    - @leight/source@0.5.23
+  - @leight/source@0.5.23
 
 ## 0.5.24
 
@@ -315,7 +323,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.22
+  - @leight/source@0.5.22
 
 ## 0.5.23
 
@@ -323,7 +331,7 @@
 
 - Re-release + updated deps
 - Updated dependencies
-    - @leight/source@0.5.21
+  - @leight/source@0.5.21
 
 ## 0.5.22
 
@@ -331,7 +339,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.20
+  - @leight/source@0.5.20
 
 ## 0.5.21
 
@@ -339,7 +347,7 @@
 
 - Just a record here
 - Updated dependencies
-    - @leight/source@0.5.19
+  - @leight/source@0.5.19
 
 ## 0.5.20
 
@@ -347,7 +355,7 @@
 
 - Version bump II
 - Updated dependencies
-    - @leight/source@0.5.18
+  - @leight/source@0.5.18
 
 ## 0.5.19
 
@@ -355,7 +363,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.17
+  - @leight/source@0.5.17
 
 ## 0.5.18
 
@@ -363,7 +371,7 @@
 
 - Build
 - Updated dependencies
-    - @leight/source@0.5.16
+  - @leight/source@0.5.16
 
 ## 0.5.17
 
@@ -371,7 +379,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.15
+  - @leight/source@0.5.15
 
 ## 0.5.16
 
@@ -379,7 +387,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.14
+  - @leight/source@0.5.14
 
 ## 0.5.15
 
@@ -387,7 +395,7 @@
 
 - Sync re-release
 - Updated dependencies
-    - @leight/source@0.5.13
+  - @leight/source@0.5.13
 
 ## 0.5.14
 
@@ -395,7 +403,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.12
+  - @leight/source@0.5.12
 
 ## 0.5.13
 
@@ -403,7 +411,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.11
+  - @leight/source@0.5.11
 
 ## 0.5.12
 
@@ -413,7 +421,7 @@
 - Experimentally enabled Zod schema generator
 - Updated dependencies
 - Updated dependencies
-    - @leight/source@0.5.10
+  - @leight/source@0.5.10
 
 ## 0.5.11
 
@@ -421,7 +429,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/source@0.5.9
+  - @leight/source@0.5.9
 
 ## 0.5.10
 
@@ -429,7 +437,7 @@
 
 - Re-release with fixed typings
 - Updated dependencies
-    - @leight/source@0.5.8
+  - @leight/source@0.5.8
 
 ## 0.5.9
 
@@ -437,7 +445,7 @@
 
 - Re-release
 - Updated dependencies
-    - @leight/source@0.5.7
+  - @leight/source@0.5.7
 
 ## 0.5.8
 
@@ -445,7 +453,7 @@
 
 - Re-release with updated package.json
 - Updated dependencies
-    - @leight/source@0.5.6
+  - @leight/source@0.5.6
 
 ## 0.5.7
 
@@ -453,9 +461,9 @@
 
 - Added support for IRepository, added some sources; re-release of all the other packages
 - Updated dependencies
-    - @leight/query@0.5.4
-    - @leight/source@0.5.5
-    - @leight/utils@0.5.12
+  - @leight/query@0.5.4
+  - @leight/source@0.5.5
+  - @leight/utils@0.5.12
 
 ## 0.5.6
 
@@ -463,7 +471,7 @@
 
 - Updated query method, query is optional now
 - Updated dependencies
-    - @leight/source@0.5.4
+  - @leight/source@0.5.4
 
 ## 0.5.5
 
@@ -471,9 +479,9 @@
 
 - Improved container stuff
 - Updated dependencies
-    - @leight/query@0.5.3
-    - @leight/source@0.5.3
-    - @leight/utils@0.5.10
+  - @leight/query@0.5.3
+  - @leight/source@0.5.3
+  - @leight/utils@0.5.10
 
 ## 0.5.4
 
@@ -481,9 +489,9 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/utils@0.5.9
-    - @leight/query@0.5.2
-    - @leight/source@0.5.2
+  - @leight/utils@0.5.9
+  - @leight/query@0.5.2
+  - @leight/source@0.5.2
 
 ## 0.5.3
 
@@ -491,7 +499,7 @@
 
 - Fixed AbstractSource
 - Updated dependencies
-    - @leight/utils@0.5.8
+  - @leight/utils@0.5.8
 
 ## 0.5.2
 
@@ -505,5 +513,5 @@
 
 - Added new packages related to Source (Repository)
 - Updated dependencies
-    - @leight/source@0.5.1
-    - @leight/query@0.5.1
+  - @leight/source@0.5.1
+  - @leight/query@0.5.1

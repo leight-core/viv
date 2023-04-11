@@ -1,16 +1,28 @@
 # @leight/query-client
 
+## 0.5.31
+
+### Patch Changes
+
+- Version bump (updated packages)
+- Updated dependencies
+  - @leight/context@0.5.26
+  - @leight/cursor-client@0.5.33
+  - @leight/filter@0.5.59
+  - @leight/sort@0.5.60
+  - @leight/source@0.5.63
+
 ## 0.5.30
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/cursor-client@0.5.32
-    - @leight/context@0.5.25
-    - @leight/filter@0.5.58
-    - @leight/sort@0.5.59
-    - @leight/source@0.5.62
+  - @leight/cursor-client@0.5.32
+  - @leight/context@0.5.25
+  - @leight/filter@0.5.58
+  - @leight/sort@0.5.59
+  - @leight/source@0.5.62
 
 ## 0.5.29
 
@@ -18,7 +30,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/cursor-client@0.5.31
+  - @leight/cursor-client@0.5.31
 
 ## 0.5.28
 
@@ -26,11 +38,11 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/filter@0.5.57
-    - @leight/source@0.5.61
-    - @leight/context@0.5.24
-    - @leight/cursor-client@0.5.30
-    - @leight/sort@0.5.58
+  - @leight/filter@0.5.57
+  - @leight/source@0.5.61
+  - @leight/context@0.5.24
+  - @leight/cursor-client@0.5.30
+  - @leight/sort@0.5.58
 
 ## 0.5.27
 
@@ -38,11 +50,11 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/filter@0.5.56
-    - @leight/context@0.5.23
-    - @leight/cursor-client@0.5.29
-    - @leight/sort@0.5.57
-    - @leight/source@0.5.60
+  - @leight/filter@0.5.56
+  - @leight/context@0.5.23
+  - @leight/cursor-client@0.5.29
+  - @leight/sort@0.5.57
+  - @leight/source@0.5.60
 
 ## 0.5.26
 
@@ -50,10 +62,10 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/context@0.5.22
-    - @leight/cursor-client@0.5.28
-    - @leight/sort@0.5.56
-    - @leight/source@0.5.59
+  - @leight/context@0.5.22
+  - @leight/cursor-client@0.5.28
+  - @leight/sort@0.5.56
+  - @leight/source@0.5.59
 
 ## 0.5.25
 
@@ -61,10 +73,10 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/context@0.5.21
-    - @leight/cursor-client@0.5.27
-    - @leight/sort@0.5.55
-    - @leight/source@0.5.58
+  - @leight/context@0.5.21
+  - @leight/cursor-client@0.5.27
+  - @leight/sort@0.5.55
+  - @leight/source@0.5.58
 
 ## 0.5.24
 
@@ -72,10 +84,10 @@
 
 - Version bump & general update
 - Updated dependencies
-    - @leight/context@0.5.20
-    - @leight/cursor-client@0.5.26
-    - @leight/sort@0.5.54
-    - @leight/source@0.5.57
+  - @leight/context@0.5.20
+  - @leight/cursor-client@0.5.26
+  - @leight/sort@0.5.54
+  - @leight/source@0.5.57
 
 ## 0.5.23
 
@@ -85,10 +97,10 @@
 - Version bump
 - Updated dependencies [9e54ef4c]
 - Updated dependencies
-    - @leight/context@0.5.19
-    - @leight/cursor-client@0.5.25
-    - @leight/sort@0.5.53
-    - @leight/source@0.5.56
+  - @leight/context@0.5.19
+  - @leight/cursor-client@0.5.25
+  - @leight/sort@0.5.53
+  - @leight/source@0.5.56
 
 ## 0.5.22
 
@@ -96,10 +108,10 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/cursor-client@0.5.24
-    - @leight/context@0.5.18
-    - @leight/sort@0.5.52
-    - @leight/source@0.5.55
+  - @leight/cursor-client@0.5.24
+  - @leight/context@0.5.18
+  - @leight/sort@0.5.52
+  - @leight/source@0.5.55
 
 ## 0.5.21
 
@@ -107,10 +119,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.17
-    - @leight/cursor-client@0.5.23
-    - @leight/sort@0.5.51
-    - @leight/source@0.5.54
+  - @leight/context@0.5.17
+  - @leight/cursor-client@0.5.23
+  - @leight/sort@0.5.51
+  - @leight/source@0.5.54
 
 ## 0.5.20
 
@@ -118,10 +130,10 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/context@0.5.16
-    - @leight/cursor-client@0.5.22
-    - @leight/sort@0.5.50
-    - @leight/source@0.5.53
+  - @leight/context@0.5.16
+  - @leight/cursor-client@0.5.22
+  - @leight/sort@0.5.50
+  - @leight/source@0.5.53
 
 ## 0.5.19
 
@@ -129,10 +141,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.15
-    - @leight/cursor-client@0.5.21
-    - @leight/sort@0.5.49
-    - @leight/source@0.5.52
+  - @leight/context@0.5.15
+  - @leight/cursor-client@0.5.21
+  - @leight/sort@0.5.49
+  - @leight/source@0.5.52
 
 ## 0.5.18
 
@@ -140,10 +152,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.14
-    - @leight/cursor-client@0.5.20
-    - @leight/sort@0.5.48
-    - @leight/source@0.5.51
+  - @leight/context@0.5.14
+  - @leight/cursor-client@0.5.20
+  - @leight/sort@0.5.48
+  - @leight/source@0.5.51
 
 ## 0.5.17
 
@@ -151,10 +163,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.13
-    - @leight/cursor-client@0.5.19
-    - @leight/sort@0.5.47
-    - @leight/source@0.5.50
+  - @leight/context@0.5.13
+  - @leight/cursor-client@0.5.19
+  - @leight/sort@0.5.47
+  - @leight/source@0.5.50
 
 ## 0.5.16
 
@@ -162,10 +174,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.12
-    - @leight/cursor-client@0.5.18
-    - @leight/sort@0.5.46
-    - @leight/source@0.5.49
+  - @leight/context@0.5.12
+  - @leight/cursor-client@0.5.18
+  - @leight/sort@0.5.46
+  - @leight/source@0.5.49
 
 ## 0.5.15
 
@@ -173,10 +185,10 @@
 
 - Version buuuuuuump
 - Updated dependencies
-    - @leight/context@0.5.11
-    - @leight/cursor-client@0.5.17
-    - @leight/sort@0.5.45
-    - @leight/source@0.5.48
+  - @leight/context@0.5.11
+  - @leight/cursor-client@0.5.17
+  - @leight/sort@0.5.45
+  - @leight/source@0.5.48
 
 ## 0.5.14
 
@@ -184,10 +196,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.10
-    - @leight/cursor-client@0.5.16
-    - @leight/sort@0.5.44
-    - @leight/source@0.5.47
+  - @leight/context@0.5.10
+  - @leight/cursor-client@0.5.16
+  - @leight/sort@0.5.44
+  - @leight/source@0.5.47
 
 ## 0.5.13
 
@@ -197,10 +209,10 @@
 - a436d96d: Updated packages
 - Updated dependencies
 - Updated dependencies [a436d96d]
-    - @leight/cursor-client@0.5.15
-    - @leight/context@0.5.9
-    - @leight/source@0.5.46
-    - @leight/sort@0.5.43
+  - @leight/cursor-client@0.5.15
+  - @leight/context@0.5.9
+  - @leight/source@0.5.46
+  - @leight/sort@0.5.43
 
 ## 0.5.12
 
@@ -208,10 +220,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.8
-    - @leight/cursor-client@0.5.14
-    - @leight/sort@0.5.42
-    - @leight/source@0.5.45
+  - @leight/context@0.5.8
+  - @leight/cursor-client@0.5.14
+  - @leight/sort@0.5.42
+  - @leight/source@0.5.45
 
 ## 0.5.11
 
@@ -219,10 +231,10 @@
 
 - Version bump, updated packages
 - Updated dependencies
-    - @leight/context@0.5.7
-    - @leight/cursor-client@0.5.13
-    - @leight/sort@0.5.41
-    - @leight/source@0.5.44
+  - @leight/context@0.5.7
+  - @leight/cursor-client@0.5.13
+  - @leight/sort@0.5.41
+  - @leight/source@0.5.44
 
 ## 0.5.10
 
@@ -230,10 +242,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/cursor-client@0.5.12
-    - @leight/context@0.5.6
-    - @leight/source@0.5.43
-    - @leight/sort@0.5.40
+  - @leight/cursor-client@0.5.12
+  - @leight/context@0.5.6
+  - @leight/source@0.5.43
+  - @leight/sort@0.5.40
 
 ## 0.5.9
 
@@ -241,10 +253,10 @@
 
 - Release with actual build... again
 - Updated dependencies
-    - @leight/context@0.5.5
-    - @leight/cursor-client@0.5.11
-    - @leight/sort@0.5.38
-    - @leight/source@0.5.42
+  - @leight/context@0.5.5
+  - @leight/cursor-client@0.5.11
+  - @leight/sort@0.5.38
+  - @leight/source@0.5.42
 
 ## 0.5.8
 
@@ -252,10 +264,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.4
-    - @leight/cursor-client@0.5.10
-    - @leight/sort@0.5.37
-    - @leight/source@0.5.41
+  - @leight/context@0.5.4
+  - @leight/cursor-client@0.5.10
+  - @leight/sort@0.5.37
+  - @leight/source@0.5.41
 
 ## 0.5.7
 
@@ -263,10 +275,10 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/context@0.5.3
-    - @leight/cursor-client@0.5.9
-    - @leight/sort@0.5.35
-    - @leight/source@0.5.40
+  - @leight/context@0.5.3
+  - @leight/cursor-client@0.5.9
+  - @leight/sort@0.5.35
+  - @leight/source@0.5.40
 
 ## 0.5.6
 
@@ -274,10 +286,10 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context@0.5.2
-    - @leight/cursor-client@0.5.8
-    - @leight/sort@0.5.34
-    - @leight/source@0.5.38
+  - @leight/context@0.5.2
+  - @leight/cursor-client@0.5.8
+  - @leight/sort@0.5.34
+  - @leight/source@0.5.38
 
 ## 0.5.5
 
@@ -289,10 +301,10 @@
 - Updated dependencies [98c0d1f0]
 - Updated dependencies [a7029792]
 - Updated dependencies [312fbc60]
-    - @leight/cursor-client@0.5.7
-    - @leight/sort@0.5.33
-    - @leight/source@0.5.37
-    - @leight/context@0.5.1
+  - @leight/cursor-client@0.5.7
+  - @leight/sort@0.5.33
+  - @leight/source@0.5.37
+  - @leight/context@0.5.1
 
 ## 0.5.4
 
@@ -306,7 +318,7 @@
 
 - Improved cursor stuff
 - Updated dependencies
-    - @leight/cursor-client@0.5.3
+  - @leight/cursor-client@0.5.3
 
 ## 0.5.2
 
@@ -314,7 +326,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/cursor-client@0.5.2
+  - @leight/cursor-client@0.5.2
 
 ## 0.5.1
 
@@ -322,8 +334,8 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/context-client@0.5.43
-    - @leight/query@0.5.33
+  - @leight/context-client@0.5.43
+  - @leight/query@0.5.33
 
 ## 0.5.1
 
@@ -331,5 +343,5 @@
 
 - 2c523860: Version bump
 - Updated dependencies [2c523860]
-    - @leight/context-client@0.5.42
-    - @leight/query@0.5.32
+  - @leight/context-client@0.5.42
+  - @leight/query@0.5.32

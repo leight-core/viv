@@ -1,18 +1,32 @@
 # @leight/next.js-server
 
+## 0.5.69
+
+### Patch Changes
+
+- Version bump (updated packages)
+- Updated dependencies
+  - @leight/user-server@0.5.78
+  - @leight/user@0.5.75
+  - @leight/container@0.5.64
+  - @leight/next.js@0.5.29
+  - @leight/prisma@0.5.81
+  - @leight/utils@0.5.66
+  - @leight/winston@0.5.62
+
 ## 0.5.68
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/user-server@0.5.76
-    - @leight/prisma@0.5.79
-    - @leight/user@0.5.73
-    - @leight/container@0.5.63
-    - @leight/next.js@0.5.28
-    - @leight/utils@0.5.65
-    - @leight/winston@0.5.61
+  - @leight/user-server@0.5.76
+  - @leight/prisma@0.5.79
+  - @leight/user@0.5.73
+  - @leight/container@0.5.63
+  - @leight/next.js@0.5.28
+  - @leight/utils@0.5.65
+  - @leight/winston@0.5.61
 
 ## 0.5.67
 
@@ -20,13 +34,13 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/user-server@0.5.74
-    - @leight/prisma@0.5.77
-    - @leight/user@0.5.71
-    - @leight/container@0.5.62
-    - @leight/next.js@0.5.27
-    - @leight/utils@0.5.64
-    - @leight/winston@0.5.60
+  - @leight/user-server@0.5.74
+  - @leight/prisma@0.5.77
+  - @leight/user@0.5.71
+  - @leight/container@0.5.62
+  - @leight/next.js@0.5.27
+  - @leight/utils@0.5.64
+  - @leight/winston@0.5.60
 
 ## 0.5.66
 
@@ -34,13 +48,13 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/user-server@0.5.73
-    - @leight/prisma@0.5.76
-    - @leight/user@0.5.70
-    - @leight/container@0.5.61
-    - @leight/next.js@0.5.26
-    - @leight/utils@0.5.63
-    - @leight/winston@0.5.59
+  - @leight/user-server@0.5.73
+  - @leight/prisma@0.5.76
+  - @leight/user@0.5.70
+  - @leight/container@0.5.61
+  - @leight/next.js@0.5.26
+  - @leight/utils@0.5.63
+  - @leight/winston@0.5.59
 
 ## 0.5.65
 
@@ -48,13 +62,13 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/user-server@0.5.72
-    - @leight/prisma@0.5.75
-    - @leight/user@0.5.69
-    - @leight/container@0.5.60
-    - @leight/next.js@0.5.25
-    - @leight/utils@0.5.62
-    - @leight/winston@0.5.58
+  - @leight/user-server@0.5.72
+  - @leight/prisma@0.5.75
+  - @leight/user@0.5.69
+  - @leight/container@0.5.60
+  - @leight/next.js@0.5.25
+  - @leight/utils@0.5.62
+  - @leight/winston@0.5.58
 
 ## 0.5.64
 
@@ -62,13 +76,13 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/user-server@0.5.70
-    - @leight/prisma@0.5.74
-    - @leight/user@0.5.68
-    - @leight/container@0.5.59
-    - @leight/next.js@0.5.24
-    - @leight/utils@0.5.61
-    - @leight/winston@0.5.57
+  - @leight/user-server@0.5.70
+  - @leight/prisma@0.5.74
+  - @leight/user@0.5.68
+  - @leight/container@0.5.59
+  - @leight/next.js@0.5.24
+  - @leight/utils@0.5.61
+  - @leight/winston@0.5.57
 
 ## 0.5.63
 
@@ -76,13 +90,13 @@
 
 - Version bump & general update
 - Updated dependencies
-    - @leight/user-server@0.5.69
-    - @leight/prisma@0.5.73
-    - @leight/user@0.5.67
-    - @leight/container@0.5.58
-    - @leight/next.js@0.5.23
-    - @leight/utils@0.5.60
-    - @leight/winston@0.5.56
+  - @leight/user-server@0.5.69
+  - @leight/prisma@0.5.73
+  - @leight/user@0.5.67
+  - @leight/container@0.5.58
+  - @leight/next.js@0.5.23
+  - @leight/utils@0.5.60
+  - @leight/winston@0.5.56
 
 ## 0.5.62
 
@@ -92,13 +106,13 @@
 - Version bump
 - Updated dependencies [9e54ef4c]
 - Updated dependencies
-    - @leight/user-server@0.5.68
-    - @leight/prisma@0.5.72
-    - @leight/user@0.5.66
-    - @leight/container@0.5.57
-    - @leight/next.js@0.5.22
-    - @leight/utils@0.5.59
-    - @leight/winston@0.5.55
+  - @leight/user-server@0.5.68
+  - @leight/prisma@0.5.72
+  - @leight/user@0.5.66
+  - @leight/container@0.5.57
+  - @leight/next.js@0.5.22
+  - @leight/utils@0.5.59
+  - @leight/winston@0.5.55
 
 ## 0.5.61
 
@@ -106,13 +120,13 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/user-server@0.5.67
-    - @leight/prisma@0.5.71
-    - @leight/user@0.5.65
-    - @leight/container@0.5.56
-    - @leight/next.js@0.5.21
-    - @leight/utils@0.5.58
-    - @leight/winston@0.5.54
+  - @leight/user-server@0.5.67
+  - @leight/prisma@0.5.71
+  - @leight/user@0.5.65
+  - @leight/container@0.5.56
+  - @leight/next.js@0.5.21
+  - @leight/utils@0.5.58
+  - @leight/winston@0.5.54
 
 ## 0.5.60
 
@@ -120,13 +134,13 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/user-server@0.5.65
-    - @leight/prisma@0.5.69
-    - @leight/user@0.5.63
-    - @leight/container@0.5.55
-    - @leight/next.js@0.5.20
-    - @leight/utils@0.5.57
-    - @leight/winston@0.5.53
+  - @leight/user-server@0.5.65
+  - @leight/prisma@0.5.69
+  - @leight/user@0.5.63
+  - @leight/container@0.5.55
+  - @leight/next.js@0.5.20
+  - @leight/utils@0.5.57
+  - @leight/winston@0.5.53
 
 ## 0.5.59
 
@@ -134,13 +148,13 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/user-server@0.5.64
-    - @leight/prisma@0.5.68
-    - @leight/user@0.5.62
-    - @leight/container@0.5.54
-    - @leight/next.js@0.5.19
-    - @leight/utils@0.5.56
-    - @leight/winston@0.5.52
+  - @leight/user-server@0.5.64
+  - @leight/prisma@0.5.68
+  - @leight/user@0.5.62
+  - @leight/container@0.5.54
+  - @leight/next.js@0.5.19
+  - @leight/utils@0.5.56
+  - @leight/winston@0.5.52
 
 ## 0.5.58
 
@@ -148,13 +162,13 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/user-server@0.5.62
-    - @leight/prisma@0.5.66
-    - @leight/user@0.5.60
-    - @leight/container@0.5.53
-    - @leight/next.js@0.5.18
-    - @leight/utils@0.5.54
-    - @leight/winston@0.5.51
+  - @leight/user-server@0.5.62
+  - @leight/prisma@0.5.66
+  - @leight/user@0.5.60
+  - @leight/container@0.5.53
+  - @leight/next.js@0.5.18
+  - @leight/utils@0.5.54
+  - @leight/winston@0.5.51
 
 ## 0.5.57
 
@@ -162,13 +176,13 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/user-server@0.5.60
-    - @leight/user@0.5.58
-    - @leight/container@0.5.52
-    - @leight/next.js@0.5.17
-    - @leight/prisma@0.5.64
-    - @leight/utils@0.5.53
-    - @leight/winston@0.5.50
+  - @leight/user-server@0.5.60
+  - @leight/user@0.5.58
+  - @leight/container@0.5.52
+  - @leight/next.js@0.5.17
+  - @leight/prisma@0.5.64
+  - @leight/utils@0.5.53
+  - @leight/winston@0.5.50
 
 ## 0.5.56
 
@@ -176,13 +190,13 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/container@0.5.51
-    - @leight/next.js@0.5.16
-    - @leight/prisma@0.5.63
-    - @leight/user@0.5.57
-    - @leight/user-server@0.5.59
-    - @leight/utils@0.5.52
-    - @leight/winston@0.5.49
+  - @leight/container@0.5.51
+  - @leight/next.js@0.5.16
+  - @leight/prisma@0.5.63
+  - @leight/user@0.5.57
+  - @leight/user-server@0.5.59
+  - @leight/utils@0.5.52
+  - @leight/winston@0.5.49
 
 ## 0.5.55
 
@@ -190,13 +204,13 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/user-server@0.5.58
-    - @leight/user@0.5.56
-    - @leight/container@0.5.50
-    - @leight/next.js@0.5.15
-    - @leight/prisma@0.5.62
-    - @leight/utils@0.5.51
-    - @leight/winston@0.5.48
+  - @leight/user-server@0.5.58
+  - @leight/user@0.5.56
+  - @leight/container@0.5.50
+  - @leight/next.js@0.5.15
+  - @leight/prisma@0.5.62
+  - @leight/utils@0.5.51
+  - @leight/winston@0.5.48
 
 ## 0.5.54
 
@@ -204,13 +218,13 @@
 
 - Version buuuuuuump
 - Updated dependencies
-    - @leight/user-server@0.5.56
-    - @leight/user@0.5.54
-    - @leight/container@0.5.49
-    - @leight/next.js@0.5.14
-    - @leight/prisma@0.5.60
-    - @leight/utils@0.5.50
-    - @leight/winston@0.5.47
+  - @leight/user-server@0.5.56
+  - @leight/user@0.5.54
+  - @leight/container@0.5.49
+  - @leight/next.js@0.5.14
+  - @leight/prisma@0.5.60
+  - @leight/utils@0.5.50
+  - @leight/winston@0.5.47
 
 ## 0.5.53
 
@@ -218,13 +232,13 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/container@0.5.48
-    - @leight/next.js@0.5.13
-    - @leight/prisma@0.5.59
-    - @leight/user@0.5.50
-    - @leight/user-server@0.5.52
-    - @leight/utils@0.5.49
-    - @leight/winston@0.5.46
+  - @leight/container@0.5.48
+  - @leight/next.js@0.5.13
+  - @leight/prisma@0.5.59
+  - @leight/user@0.5.50
+  - @leight/user-server@0.5.52
+  - @leight/utils@0.5.49
+  - @leight/winston@0.5.46
 
 ## 0.5.52
 
@@ -234,13 +248,13 @@
 - a436d96d: Updated packages
 - Updated dependencies
 - Updated dependencies [a436d96d]
-    - @leight/user-server@0.5.51
-    - @leight/container@0.5.47
-    - @leight/next.js@0.5.12
-    - @leight/winston@0.5.45
-    - @leight/prisma@0.5.58
-    - @leight/utils@0.5.48
-    - @leight/user@0.5.49
+  - @leight/user-server@0.5.51
+  - @leight/container@0.5.47
+  - @leight/next.js@0.5.12
+  - @leight/winston@0.5.45
+  - @leight/prisma@0.5.58
+  - @leight/utils@0.5.48
+  - @leight/user@0.5.49
 
 ## 0.5.51
 
@@ -248,13 +262,13 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/container@0.5.45
-    - @leight/next.js@0.5.11
-    - @leight/prisma@0.5.56
-    - @leight/user@0.5.48
-    - @leight/user-server@0.5.50
-    - @leight/utils@0.5.47
-    - @leight/winston@0.5.44
+  - @leight/container@0.5.45
+  - @leight/next.js@0.5.11
+  - @leight/prisma@0.5.56
+  - @leight/user@0.5.48
+  - @leight/user-server@0.5.50
+  - @leight/utils@0.5.47
+  - @leight/winston@0.5.44
 
 ## 0.5.50
 
@@ -262,13 +276,13 @@
 
 - Version bump, updated packages
 - Updated dependencies
-    - @leight/container@0.5.44
-    - @leight/next.js@0.5.10
-    - @leight/prisma@0.5.55
-    - @leight/user@0.5.47
-    - @leight/user-server@0.5.49
-    - @leight/utils@0.5.46
-    - @leight/winston@0.5.43
+  - @leight/container@0.5.44
+  - @leight/next.js@0.5.10
+  - @leight/prisma@0.5.55
+  - @leight/user@0.5.47
+  - @leight/user-server@0.5.49
+  - @leight/utils@0.5.46
+  - @leight/winston@0.5.43
 
 ## 0.5.49
 
@@ -276,13 +290,13 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/user-server@0.5.48
-    - @leight/next.js@0.5.9
-    - @leight/winston@0.5.42
-    - @leight/prisma@0.5.54
-    - @leight/utils@0.5.45
-    - @leight/user@0.5.46
-    - @leight/container@0.5.43
+  - @leight/user-server@0.5.48
+  - @leight/next.js@0.5.9
+  - @leight/winston@0.5.42
+  - @leight/prisma@0.5.54
+  - @leight/utils@0.5.45
+  - @leight/user@0.5.46
+  - @leight/container@0.5.43
 
 ## 0.5.48
 
@@ -290,13 +304,13 @@
 
 - Release with actual build... again
 - Updated dependencies
-    - @leight/container@0.5.42
-    - @leight/next.js@0.5.8
-    - @leight/prisma@0.5.53
-    - @leight/user@0.5.45
-    - @leight/user-server@0.5.47
-    - @leight/utils@0.5.44
-    - @leight/winston@0.5.41
+  - @leight/container@0.5.42
+  - @leight/next.js@0.5.8
+  - @leight/prisma@0.5.53
+  - @leight/user@0.5.45
+  - @leight/user-server@0.5.47
+  - @leight/utils@0.5.44
+  - @leight/winston@0.5.41
 
 ## 0.5.47
 
@@ -304,13 +318,13 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/container@0.5.41
-    - @leight/next.js@0.5.7
-    - @leight/prisma@0.5.52
-    - @leight/user@0.5.44
-    - @leight/user-server@0.5.46
-    - @leight/utils@0.5.43
-    - @leight/winston@0.5.40
+  - @leight/container@0.5.41
+  - @leight/next.js@0.5.7
+  - @leight/prisma@0.5.52
+  - @leight/user@0.5.44
+  - @leight/user-server@0.5.46
+  - @leight/utils@0.5.43
+  - @leight/winston@0.5.40
 
 ## 0.5.46
 
@@ -318,13 +332,13 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/container@0.5.40
-    - @leight/next.js@0.5.6
-    - @leight/prisma@0.5.51
-    - @leight/user@0.5.43
-    - @leight/user-server@0.5.45
-    - @leight/utils@0.5.42
-    - @leight/winston@0.5.39
+  - @leight/container@0.5.40
+  - @leight/next.js@0.5.6
+  - @leight/prisma@0.5.51
+  - @leight/user@0.5.43
+  - @leight/user-server@0.5.45
+  - @leight/utils@0.5.42
+  - @leight/winston@0.5.39
 
 ## 0.5.45
 
@@ -332,13 +346,13 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/container@0.5.39
-    - @leight/next.js@0.5.5
-    - @leight/prisma@0.5.50
-    - @leight/user@0.5.42
-    - @leight/user-server@0.5.44
-    - @leight/utils@0.5.41
-    - @leight/winston@0.5.38
+  - @leight/container@0.5.39
+  - @leight/next.js@0.5.5
+  - @leight/prisma@0.5.50
+  - @leight/user@0.5.42
+  - @leight/user-server@0.5.44
+  - @leight/utils@0.5.41
+  - @leight/winston@0.5.38
 
 ## 0.5.44
 
@@ -346,13 +360,13 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.48
-    - @leight/container@0.5.38
-    - @leight/next.js@0.5.4
-    - @leight/user@0.5.41
-    - @leight/user-server@0.5.42
-    - @leight/utils@0.5.40
-    - @leight/winston@0.5.37
+  - @leight/prisma@0.5.48
+  - @leight/container@0.5.38
+  - @leight/next.js@0.5.4
+  - @leight/user@0.5.41
+  - @leight/user-server@0.5.42
+  - @leight/utils@0.5.40
+  - @leight/winston@0.5.37
 
 ## 0.5.43
 
@@ -360,13 +374,13 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.47
-    - @leight/container@0.5.37
-    - @leight/next.js@0.5.3
-    - @leight/user@0.5.40
-    - @leight/user-server@0.5.41
-    - @leight/utils@0.5.39
-    - @leight/winston@0.5.36
+  - @leight/prisma@0.5.47
+  - @leight/container@0.5.37
+  - @leight/next.js@0.5.3
+  - @leight/user@0.5.40
+  - @leight/user-server@0.5.41
+  - @leight/utils@0.5.39
+  - @leight/winston@0.5.36
 
 ## 0.5.42
 
@@ -374,13 +388,13 @@
 
 - 2c523860: Version bump
 - Updated dependencies [2c523860]
-    - @leight/user-server@0.5.40
-    - @leight/container@0.5.36
-    - @leight/next.js@0.5.2
-    - @leight/winston@0.5.35
-    - @leight/prisma@0.5.46
-    - @leight/utils@0.5.38
-    - @leight/user@0.5.39
+  - @leight/user-server@0.5.40
+  - @leight/container@0.5.36
+  - @leight/next.js@0.5.2
+  - @leight/winston@0.5.35
+  - @leight/prisma@0.5.46
+  - @leight/utils@0.5.38
+  - @leight/user@0.5.39
 
 ## 0.5.41
 
@@ -388,13 +402,13 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/user-server@0.5.39
-    - @leight/next.js@0.5.1
-    - @leight/prisma@0.5.45
-    - @leight/user@0.5.38
-    - @leight/container@0.5.35
-    - @leight/utils@0.5.37
-    - @leight/winston@0.5.34
+  - @leight/user-server@0.5.39
+  - @leight/next.js@0.5.1
+  - @leight/prisma@0.5.45
+  - @leight/user@0.5.38
+  - @leight/container@0.5.35
+  - @leight/utils@0.5.37
+  - @leight/winston@0.5.34
 
 ## 0.5.40
 
@@ -402,8 +416,8 @@
 
 - Implemented some sources, added some utilities and made overall day a bit better
 - Updated dependencies
-    - @leight/user-server@0.5.38
-    - @leight/prisma@0.5.44
+  - @leight/user-server@0.5.38
+  - @leight/prisma@0.5.44
 
 ## 0.5.39
 
@@ -411,12 +425,12 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/prisma@0.5.43
-    - @leight/container@0.5.34
-    - @leight/user@0.5.37
-    - @leight/user-server@0.5.37
-    - @leight/utils@0.5.36
-    - @leight/winston@0.5.33
+  - @leight/prisma@0.5.43
+  - @leight/container@0.5.34
+  - @leight/user@0.5.37
+  - @leight/user-server@0.5.37
+  - @leight/utils@0.5.36
+  - @leight/winston@0.5.33
 
 ## 0.5.38
 
@@ -424,12 +438,12 @@
 
 - Reverted some changes
 - Updated dependencies
-    - @leight/user-server@0.5.36
-    - @leight/container@0.5.33
-    - @leight/winston@0.5.32
-    - @leight/prisma@0.5.42
-    - @leight/utils@0.5.35
-    - @leight/user@0.5.36
+  - @leight/user-server@0.5.36
+  - @leight/container@0.5.33
+  - @leight/winston@0.5.32
+  - @leight/prisma@0.5.42
+  - @leight/utils@0.5.35
+  - @leight/user@0.5.36
 
 ## 0.5.37
 
@@ -437,12 +451,12 @@
 
 - Fixed package.json
 - Updated dependencies
-    - @leight/user-server@0.5.35
-    - @leight/container@0.5.32
-    - @leight/winston@0.5.31
-    - @leight/prisma@0.5.41
-    - @leight/utils@0.5.34
-    - @leight/user@0.5.35
+  - @leight/user-server@0.5.35
+  - @leight/container@0.5.32
+  - @leight/winston@0.5.31
+  - @leight/prisma@0.5.41
+  - @leight/utils@0.5.34
+  - @leight/user@0.5.35
 
 ## 0.5.36
 
@@ -450,9 +464,9 @@
 
 - Improved user/container stuff
 - Updated dependencies
-    - @leight/user-server@0.5.34
-    - @leight/container@0.5.31
-    - @leight/user@0.5.34
+  - @leight/user-server@0.5.34
+  - @leight/container@0.5.31
+  - @leight/user@0.5.34
 
 ## 0.5.35
 
@@ -466,9 +480,9 @@
 
 - Improved default next.js stuff, improved support for NextAuth, updated some user stuff
 - Updated dependencies
-    - @leight/user-server@0.5.33
-    - @leight/prisma@0.5.40
-    - @leight/user@0.5.33
+  - @leight/user-server@0.5.33
+  - @leight/prisma@0.5.40
+  - @leight/user@0.5.33
 
 ## 0.5.33
 
@@ -482,11 +496,11 @@
 
 - Experimentally lowered number of dependencies
 - Updated dependencies
-    - @leight/user-server@0.5.32
-    - @leight/container@0.5.30
-    - @leight/user@0.5.32
-    - @leight/utils@0.5.33
-    - @leight/winston@0.5.30
+  - @leight/user-server@0.5.32
+  - @leight/container@0.5.30
+  - @leight/user@0.5.32
+  - @leight/utils@0.5.33
+  - @leight/winston@0.5.30
 
 ## 0.5.31
 
@@ -494,11 +508,11 @@
 
 - Fixed package.json
 - Updated dependencies
-    - @leight/user-server@0.5.31
-    - @leight/container@0.5.29
-    - @leight/winston@0.5.29
-    - @leight/utils@0.5.32
-    - @leight/user@0.5.31
+  - @leight/user-server@0.5.31
+  - @leight/container@0.5.29
+  - @leight/winston@0.5.29
+  - @leight/utils@0.5.32
+  - @leight/user@0.5.31
 
 ## 0.5.30
 
@@ -506,11 +520,11 @@
 
 - Moved to npm
 - Updated dependencies
-    - @leight/container@0.5.28
-    - @leight/user@0.5.30
-    - @leight/user-server@0.5.30
-    - @leight/utils@0.5.31
-    - @leight/winston@0.5.28
+  - @leight/container@0.5.28
+  - @leight/user@0.5.30
+  - @leight/user-server@0.5.30
+  - @leight/utils@0.5.31
+  - @leight/winston@0.5.28
 
 ## 0.5.29
 
@@ -518,8 +532,8 @@
 
 - Some cool tuning
 - Updated dependencies
-    - @leight/user-server@0.5.28
-    - @leight/user@0.5.29
+  - @leight/user-server@0.5.28
+  - @leight/user@0.5.29
 
 ## 0.5.28
 
@@ -527,11 +541,11 @@
 
 - Removed TSyringe, moved everything to esbuild
 - Updated dependencies
-    - @leight/user-server@0.5.27
-    - @leight/container@0.5.27
-    - @leight/winston@0.5.27
-    - @leight/utils@0.5.30
-    - @leight/user@0.5.28
+  - @leight/user-server@0.5.27
+  - @leight/container@0.5.27
+  - @leight/winston@0.5.27
+  - @leight/utils@0.5.30
+  - @leight/user@0.5.28
 
 ## 0.5.27
 
@@ -539,11 +553,11 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/container@0.5.26
-    - @leight/user@0.5.27
-    - @leight/user-server@0.5.26
-    - @leight/utils@0.5.29
-    - @leight/winston@0.5.26
+  - @leight/container@0.5.26
+  - @leight/user@0.5.27
+  - @leight/user-server@0.5.26
+  - @leight/utils@0.5.29
+  - @leight/winston@0.5.26
 
 ## 0.5.26
 
@@ -551,11 +565,11 @@
 
 - Re-release + updated deps
 - Updated dependencies
-    - @leight/user-server@0.5.25
-    - @leight/container@0.5.25
-    - @leight/winston@0.5.25
-    - @leight/utils@0.5.28
-    - @leight/user@0.5.26
+  - @leight/user-server@0.5.25
+  - @leight/container@0.5.25
+  - @leight/winston@0.5.25
+  - @leight/utils@0.5.28
+  - @leight/user@0.5.26
 
 ## 0.5.25
 
@@ -563,11 +577,11 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/user-server@0.5.24
-    - @leight/container@0.5.24
-    - @leight/winston@0.5.24
-    - @leight/utils@0.5.27
-    - @leight/user@0.5.25
+  - @leight/user-server@0.5.24
+  - @leight/container@0.5.24
+  - @leight/winston@0.5.24
+  - @leight/utils@0.5.27
+  - @leight/user@0.5.25
 
 ## 0.5.24
 
@@ -575,11 +589,11 @@
 
 - Just a record here
 - Updated dependencies
-    - @leight/user-server@0.5.23
-    - @leight/container@0.5.23
-    - @leight/winston@0.5.23
-    - @leight/utils@0.5.26
-    - @leight/user@0.5.24
+  - @leight/user-server@0.5.23
+  - @leight/container@0.5.23
+  - @leight/winston@0.5.23
+  - @leight/utils@0.5.26
+  - @leight/user@0.5.24
 
 ## 0.5.23
 
@@ -587,11 +601,11 @@
 
 - Version bump II
 - Updated dependencies
-    - @leight/user-server@0.5.22
-    - @leight/container@0.5.22
-    - @leight/winston@0.5.22
-    - @leight/utils@0.5.25
-    - @leight/user@0.5.23
+  - @leight/user-server@0.5.22
+  - @leight/container@0.5.22
+  - @leight/winston@0.5.22
+  - @leight/utils@0.5.25
+  - @leight/user@0.5.23
 
 ## 0.5.22
 
@@ -599,11 +613,11 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/container@0.5.21
-    - @leight/user@0.5.22
-    - @leight/user-server@0.5.21
-    - @leight/utils@0.5.24
-    - @leight/winston@0.5.21
+  - @leight/container@0.5.21
+  - @leight/user@0.5.22
+  - @leight/user-server@0.5.21
+  - @leight/utils@0.5.24
+  - @leight/winston@0.5.21
 
 ## 0.5.21
 
@@ -611,11 +625,11 @@
 
 - Build
 - Updated dependencies
-    - @leight/user-server@0.5.20
-    - @leight/container@0.5.20
-    - @leight/winston@0.5.20
-    - @leight/utils@0.5.23
-    - @leight/user@0.5.21
+  - @leight/user-server@0.5.20
+  - @leight/container@0.5.20
+  - @leight/winston@0.5.20
+  - @leight/utils@0.5.23
+  - @leight/user@0.5.21
 
 ## 0.5.20
 
@@ -623,11 +637,11 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/container@0.5.19
-    - @leight/user@0.5.20
-    - @leight/user-server@0.5.19
-    - @leight/utils@0.5.22
-    - @leight/winston@0.5.19
+  - @leight/container@0.5.19
+  - @leight/user@0.5.20
+  - @leight/user-server@0.5.19
+  - @leight/utils@0.5.22
+  - @leight/winston@0.5.19
 
 ## 0.5.19
 
@@ -635,11 +649,11 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/user-server@0.5.18
-    - @leight/container@0.5.18
-    - @leight/winston@0.5.18
-    - @leight/utils@0.5.21
-    - @leight/user@0.5.19
+  - @leight/user-server@0.5.18
+  - @leight/container@0.5.18
+  - @leight/winston@0.5.18
+  - @leight/utils@0.5.21
+  - @leight/user@0.5.19
 
 ## 0.5.18
 
@@ -647,11 +661,11 @@
 
 - Sync re-release
 - Updated dependencies
-    - @leight/container@0.5.17
-    - @leight/user@0.5.18
-    - @leight/user-server@0.5.17
-    - @leight/utils@0.5.20
-    - @leight/winston@0.5.17
+  - @leight/container@0.5.17
+  - @leight/user@0.5.18
+  - @leight/user-server@0.5.17
+  - @leight/utils@0.5.20
+  - @leight/winston@0.5.17
 
 ## 0.5.17
 
@@ -659,11 +673,11 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/user-server@0.5.16
-    - @leight/container@0.5.16
-    - @leight/winston@0.5.16
-    - @leight/utils@0.5.19
-    - @leight/user@0.5.17
+  - @leight/user-server@0.5.16
+  - @leight/container@0.5.16
+  - @leight/winston@0.5.16
+  - @leight/utils@0.5.19
+  - @leight/user@0.5.17
 
 ## 0.5.16
 
@@ -671,11 +685,11 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/user-server@0.5.15
-    - @leight/container@0.5.15
-    - @leight/winston@0.5.15
-    - @leight/utils@0.5.18
-    - @leight/user@0.5.16
+  - @leight/user-server@0.5.15
+  - @leight/container@0.5.15
+  - @leight/winston@0.5.15
+  - @leight/utils@0.5.18
+  - @leight/user@0.5.16
 
 ## 0.5.15
 
@@ -685,11 +699,11 @@
 - Experimentally enabled Zod schema generator
 - Updated dependencies
 - Updated dependencies
-    - @leight/container@0.5.14
-    - @leight/user@0.5.15
-    - @leight/user-server@0.5.14
-    - @leight/utils@0.5.17
-    - @leight/winston@0.5.14
+  - @leight/container@0.5.14
+  - @leight/user@0.5.15
+  - @leight/user-server@0.5.14
+  - @leight/utils@0.5.17
+  - @leight/winston@0.5.14
 
 ## 0.5.14
 
@@ -697,11 +711,11 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/container@0.5.13
-    - @leight/user@0.5.14
-    - @leight/user-server@0.5.13
-    - @leight/utils@0.5.16
-    - @leight/winston@0.5.13
+  - @leight/container@0.5.13
+  - @leight/user@0.5.14
+  - @leight/user-server@0.5.13
+  - @leight/utils@0.5.16
+  - @leight/winston@0.5.13
 
 ## 0.5.13
 
@@ -709,11 +723,11 @@
 
 - Re-release with fixed typings
 - Updated dependencies
-    - @leight/container@0.5.12
-    - @leight/user@0.5.13
-    - @leight/user-server@0.5.12
-    - @leight/utils@0.5.15
-    - @leight/winston@0.5.12
+  - @leight/container@0.5.12
+  - @leight/user@0.5.13
+  - @leight/user-server@0.5.12
+  - @leight/utils@0.5.15
+  - @leight/winston@0.5.12
 
 ## 0.5.12
 
@@ -721,11 +735,11 @@
 
 - Re-release
 - Updated dependencies
-    - @leight/container@0.5.11
-    - @leight/user@0.5.12
-    - @leight/user-server@0.5.11
-    - @leight/utils@0.5.14
-    - @leight/winston@0.5.11
+  - @leight/container@0.5.11
+  - @leight/user@0.5.12
+  - @leight/user-server@0.5.11
+  - @leight/utils@0.5.14
+  - @leight/winston@0.5.11
 
 ## 0.5.11
 
@@ -733,11 +747,11 @@
 
 - Re-release with updated package.json
 - Updated dependencies
-    - @leight/user-server@0.5.10
-    - @leight/container@0.5.10
-    - @leight/winston@0.5.10
-    - @leight/utils@0.5.13
-    - @leight/user@0.5.11
+  - @leight/user-server@0.5.10
+  - @leight/container@0.5.10
+  - @leight/winston@0.5.10
+  - @leight/utils@0.5.13
+  - @leight/user@0.5.11
 
 ## 0.5.10
 
@@ -745,11 +759,11 @@
 
 - Added support for IRepository, added some sources; re-release of all the other packages
 - Updated dependencies
-    - @leight/container@0.5.9
-    - @leight/user@0.5.10
-    - @leight/user-server@0.5.9
-    - @leight/utils@0.5.12
-    - @leight/winston@0.5.9
+  - @leight/container@0.5.9
+  - @leight/user@0.5.10
+  - @leight/user-server@0.5.9
+  - @leight/utils@0.5.12
+  - @leight/winston@0.5.9
 
 ## 0.5.9
 
@@ -757,11 +771,11 @@
 
 - Improved container stuff
 - Updated dependencies
-    - @leight/user-server@0.5.8
-    - @leight/container@0.5.8
-    - @leight/user@0.5.9
-    - @leight/utils@0.5.10
-    - @leight/winston@0.5.8
+  - @leight/user-server@0.5.8
+  - @leight/container@0.5.8
+  - @leight/user@0.5.9
+  - @leight/utils@0.5.10
+  - @leight/winston@0.5.8
 
 ## 0.5.8
 
@@ -769,11 +783,11 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/utils@0.5.9
-    - @leight/container@0.5.7
-    - @leight/user@0.5.8
-    - @leight/user-server@0.5.7
-    - @leight/winston@0.5.7
+  - @leight/utils@0.5.9
+  - @leight/container@0.5.7
+  - @leight/user@0.5.8
+  - @leight/user-server@0.5.7
+  - @leight/winston@0.5.7
 
 ## 0.5.7
 
@@ -781,7 +795,7 @@
 
 - Added new packages related to Source (Repository)
 - Updated dependencies
-    - @leight/user@0.5.7
+  - @leight/user@0.5.7
 
 ## 0.5.6
 
@@ -789,11 +803,11 @@
 
 - Fixed build of all libraries, everything is fresh, nice and shinyyyy...!!
 - Updated dependencies
-    - @leight/user-server@0.5.6
-    - @leight/container@0.5.6
-    - @leight/winston@0.5.6
-    - @leight/utils@0.5.7
-    - @leight/user@0.5.6
+  - @leight/user-server@0.5.6
+  - @leight/container@0.5.6
+  - @leight/winston@0.5.6
+  - @leight/utils@0.5.7
+  - @leight/user@0.5.6
 
 ## 0.5.5
 
@@ -801,11 +815,11 @@
 
 - Changed whole build to just ESM, optimized build speed
 - Updated dependencies
-    - @leight/user-server@0.5.5
-    - @leight/container@0.5.5
-    - @leight/winston@0.5.5
-    - @leight/utils@0.5.6
-    - @leight/user@0.5.5
+  - @leight/user-server@0.5.5
+  - @leight/container@0.5.5
+  - @leight/winston@0.5.5
+  - @leight/utils@0.5.6
+  - @leight/user@0.5.5
 
 ## 0.5.4
 
@@ -813,11 +827,11 @@
 
 - Experiment with only ESM exports
 - Updated dependencies
-    - @leight/user-server@0.5.4
-    - @leight/container@0.5.4
-    - @leight/winston@0.5.4
-    - @leight/utils@0.5.5
-    - @leight/user@0.5.4
+  - @leight/user-server@0.5.4
+  - @leight/container@0.5.4
+  - @leight/winston@0.5.4
+  - @leight/utils@0.5.5
+  - @leight/user@0.5.4
 
 ## 0.5.3
 
@@ -825,11 +839,11 @@
 
 - Changed package type to "module"
 - Updated dependencies
-    - @leight/container@0.5.3
-    - @leight/user@0.5.3
-    - @leight/user-server@0.5.3
-    - @leight/utils@0.5.4
-    - @leight/winston@0.5.3
+  - @leight/container@0.5.3
+  - @leight/user@0.5.3
+  - @leight/user-server@0.5.3
+  - @leight/utils@0.5.4
+  - @leight/winston@0.5.3
 
 ## 0.5.2
 
@@ -837,11 +851,11 @@
 
 - Updatred all packages
 - Updated dependencies
-    - @leight/container@0.5.2
-    - @leight/user@0.5.2
-    - @leight/user-server@0.5.2
-    - @leight/utils@0.5.3
-    - @leight/winston@0.5.2
+  - @leight/container@0.5.2
+  - @leight/user@0.5.2
+  - @leight/user-server@0.5.2
+  - @leight/utils@0.5.3
+  - @leight/winston@0.5.2
 
 ## 0.5.1
 
@@ -849,8 +863,8 @@
 
 - e4af2419: Experimental publish of the new @leight packages
 - Updated dependencies [e4af2419]
-    - @leight/user-server@0.5.1
-    - @leight/container@0.5.1
-    - @leight/winston@0.5.1
-    - @leight/utils@0.5.1
-    - @leight/user@0.5.1
+  - @leight/user-server@0.5.1
+  - @leight/container@0.5.1
+  - @leight/winston@0.5.1
+  - @leight/utils@0.5.1
+  - @leight/user@0.5.1

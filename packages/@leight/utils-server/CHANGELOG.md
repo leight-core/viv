@@ -1,12 +1,20 @@
 # @leight/utils-server
 
+## 0.5.62
+
+### Patch Changes
+
+- Version bump (updated packages)
+- Updated dependencies
+  - @leight/utils@0.5.66
+
 ## 0.5.61
 
 ### Patch Changes
 
 - Version bump
 - Updated dependencies
-    - @leight/utils@0.5.65
+  - @leight/utils@0.5.65
 
 ## 0.5.60
 
@@ -14,7 +22,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/utils@0.5.64
+  - @leight/utils@0.5.64
 
 ## 0.5.59
 
@@ -22,7 +30,7 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/utils@0.5.63
+  - @leight/utils@0.5.63
 
 ## 0.5.58
 
@@ -30,7 +38,7 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/utils@0.5.62
+  - @leight/utils@0.5.62
 
 ## 0.5.57
 
@@ -38,7 +46,7 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/utils@0.5.61
+  - @leight/utils@0.5.61
 
 ## 0.5.56
 
@@ -46,7 +54,7 @@
 
 - Version bump & general update
 - Updated dependencies
-    - @leight/utils@0.5.60
+  - @leight/utils@0.5.60
 
 ## 0.5.55
 
@@ -56,7 +64,7 @@
 - Version bump
 - Updated dependencies [9e54ef4c]
 - Updated dependencies
-    - @leight/utils@0.5.59
+  - @leight/utils@0.5.59
 
 ## 0.5.54
 
@@ -64,7 +72,7 @@
 
 - Updated packages
 - Updated dependencies
-    - @leight/utils@0.5.58
+  - @leight/utils@0.5.58
 
 ## 0.5.53
 
@@ -72,7 +80,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/utils@0.5.57
+  - @leight/utils@0.5.57
 
 ## 0.5.52
 
@@ -80,7 +88,7 @@
 
 - VErsion bump
 - Updated dependencies
-    - @leight/utils@0.5.56
+  - @leight/utils@0.5.56
 
 ## 0.5.51
 
@@ -88,7 +96,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/utils@0.5.54
+  - @leight/utils@0.5.54
 
 ## 0.5.50
 
@@ -96,7 +104,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/utils@0.5.53
+  - @leight/utils@0.5.53
 
 ## 0.5.49
 
@@ -104,7 +112,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/utils@0.5.52
+  - @leight/utils@0.5.52
 
 ## 0.5.48
 
@@ -112,7 +120,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/utils@0.5.51
+  - @leight/utils@0.5.51
 
 ## 0.5.47
 
@@ -120,7 +128,7 @@
 
 - Version buuuuuuump
 - Updated dependencies
-    - @leight/utils@0.5.50
+  - @leight/utils@0.5.50
 
 ## 0.5.46
 
@@ -128,7 +136,7 @@
 
 - Version bump
 - Updated dependencies
-    - @leight/utils@0.5.49
+  - @leight/utils@0.5.49
 
 ## 0.5.45
 
