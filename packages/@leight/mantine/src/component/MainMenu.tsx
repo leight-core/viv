@@ -1,4 +1,4 @@
-import {IWithTranslation} from "@leight/i18n";
+import {type IWithTranslation} from "@leight/i18n";
 import {Translation}      from "@leight/i18n-client";
 import {type ILink}       from "@leight/utils-client";
 import {
@@ -26,7 +26,7 @@ const useStyles = createStyles((theme) => ({
             borderBottomColor: switchScheme(
                 theme,
                 theme.colors.dark[4],
-                theme.colors.blue[4],
+                theme.primaryColor,
             ),
         },
     },
@@ -37,7 +37,7 @@ const useStyles = createStyles((theme) => ({
             borderBottomColor: switchScheme(
                 theme,
                 theme.colors.dark[4],
-                theme.colors.blue[6],
+                theme.primaryColor,
             ),
         },
     },

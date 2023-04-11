@@ -1,5 +1,11 @@
 # @leight/mantine
 
+## 0.5.72
+
+### Patch Changes
+
+- Improved menu stuff
+
 ## 0.5.71
 
 ### Patch Changes
