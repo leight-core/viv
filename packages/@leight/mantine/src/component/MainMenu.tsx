@@ -1,13 +1,16 @@
 import {type IWithTranslation} from "@leight/i18n";
-import {Translation}      from "@leight/i18n-client";
-import {type ILink}       from "@leight/utils-client";
+import {Translation}           from "@leight/i18n-client";
+import {type ILink}            from "@leight/utils-client";
 import {
     createStyles,
     Group
-}                         from "@mantine/core";
-import Link               from "next/link";
-import {useRouter}        from "next/router";
-import {switchScheme}     from "../utils";
+}                              from "@mantine/core";
+import Link                    from "next/link";
+import {useRouter}             from "next/router";
+import {
+    switchScheme,
+    withPrimaryColor
+}                              from "../utils";
 
 const useStyles = createStyles((theme) => ({
     link:       {
@@ -26,7 +29,7 @@ const useStyles = createStyles((theme) => ({
             borderBottomColor: switchScheme(
                 theme,
                 theme.colors.dark[4],
-                theme.primaryColor,
+                withPrimaryColor(theme),
             ),
         },
     },
@@ -37,7 +40,7 @@ const useStyles = createStyles((theme) => ({
             borderBottomColor: switchScheme(
                 theme,
                 theme.colors.dark[4],
-                theme.primaryColor,
+                withPrimaryColor(theme),
             ),
         },
     },

@@ -28,9 +28,13 @@ export interface ISourceTableInternalProps<
     /**
      * Table schema used to infer all internal types.
      */
-    readonly schema: TSourceSchema["EntitySchema"];
-    readonly useSource: IUseSourceState<TSourceSchema>;
-    readonly useSort: IUseSortState<TSourceSchema["SortSchema"]>;
+    schema: TSourceSchema["EntitySchema"];
+    useSource: IUseSourceState<TSourceSchema>;
+    useSort: IUseSortState<TSourceSchema["SortSchema"]>;
+    /**
+     * Where to put pagination, defaults to ["bottom","top"]
+     */
+    pagination?: ("top" | "bottom")[];
 }
 
 /**
@@ -50,6 +54,10 @@ export const SourceTable = <
         useSource,
         useSort,
         columns,
+        pagination = [
+            "top",
+            "bottom",
+        ],
         ...props
     }: ISourceTableInternalProps<TSourceSchema, TColumnKeys>) => {
     const {
@@ -70,10 +78,12 @@ export const SourceTable = <
     const {sort, setSort} = useSort(({sort, setSort}) => ({sort, setSort}));
 
     return <Paper>
-        <Center>
-            <Pagination/>
-        </Center>
-        <Divider m={"md"}/>
+        {pagination?.includes("top") && <>
+            <Center>
+                <Pagination/>
+            </Center>
+            <Divider m={"md"}/>
+        </>}
         <Table<ISourceTableColumn<TSourceSchema>, TColumnKeys>
             isLoading={isLoading || isFetching}
             columns={Object.entries<ISourceTableColumn<TSourceSchema>>(columns).reduce<any>((prev, [name, column]) => {
@@ -104,9 +114,11 @@ export const SourceTable = <
             items={entities.filter(entity => schema.safeParse(entity).success)}
             {...props}
         />
-        <Divider m={"md"}/>
-        <Center>
-            <Pagination/>
-        </Center>
+        {pagination?.includes("bottom") && <>
+            <Divider m={"md"}/>
+            <Center>
+                <Pagination/>
+            </Center>
+        </>}
     </Paper>;
 };
