@@ -9,13 +9,22 @@ export interface IWithServerSourceGeneratorsEntityProps {
         prisma: string;
     };
     withSourceEx?: IPackageType;
+    withInclude?: Record<string, any>;
     disabled?: ("trpc")[];
 }
 
 /**
  * Generates single Prisma entity source (just helper function, should be used alone).
  */
-export const withServerSourceGeneratorsEntity = ({name, disabled = [], prisma, packages, withSourceEx}: IWithServerSourceGeneratorsEntityProps): IGeneratorServerParams => {
+export const withServerSourceGeneratorsEntity = (
+    {
+        name,
+        disabled = [],
+        prisma,
+        packages,
+        withInclude,
+        withSourceEx
+    }: IWithServerSourceGeneratorsEntityProps): IGeneratorServerParams => {
     return {
         PrismaSource: {
             entities: [
@@ -26,6 +35,7 @@ export const withServerSourceGeneratorsEntity = ({name, disabled = [], prisma, p
                         schema: packages.schema,
                         prisma: packages.prisma,
                     },
+                    withInclude,
                 },
             ],
         },

@@ -8,17 +8,11 @@ import {
 	type PrismaClient
 } from "@leight/prisma";
 import {type ISource} from "@leight/source";
-import {
-	AbstractSource,
-	withUpsert,
-	withPatch
-} from "@leight/source-server";
+import {AbstractSource} from "@leight/source-server";
 import {
 	$JobSource,
-	type IJobWhere,
-	type IJobWhereUnique,
-	type IJobOrderBy,
-	type IJobSourceSchema
+	IJobSourceSchema,
+	type IJobPrismaSchema
 } from "@leight/job";
 
 export class JobBasePrismaSource extends AbstractSource<IJobSourceSchema> {
@@ -35,21 +29,32 @@ export class JobBasePrismaSource extends AbstractSource<IJobSourceSchema> {
     async runFind(id: string): Promise<IJobSourceSchema["Entity"]> {
         return this.prisma().findUniqueOrThrow({
             where: {id},
+            include: undefined,
         });
     }
 
     async runCreate(entity: IJobSourceSchema["Create"]): Promise<IJobSourceSchema["Entity"]> {
         return this.prisma().create({
             data: entity,
+            include: undefined,
         });
     }
 
-    async runPatch(patch: IJobSourceSchema["Patch"]): Promise<IJobSourceSchema["Entity"]> {
-        return this.prisma().update(withPatch(patch));
+    async runPatch({id, ...patch}: IJobSourceSchema["Patch"]): Promise<IJobSourceSchema["Entity"]> {
+        return this.prisma().update({
+            data: patch,
+            where: {id},
+            include: undefined,
+        });
     }
 
-    async runUpsert(props: ISource.IUpsert<IJobSourceSchema>): Promise<IJobSourceSchema["Entity"]> {
-        return this.prisma().upsert(withUpsert(props));
+    async runUpsert({filter, patch: update, create}: ISource.IUpsert<IJobSourceSchema>): Promise<IJobSourceSchema["Entity"]> {
+        return this.prisma().upsert({
+            create,
+            update,
+            where: this.toWhereUnique(filter),
+            include: undefined,
+        });
     }
 
     async runCount(query?: IJobSourceSchema["Query"]): Promise<number> {
@@ -64,7 +69,8 @@ export class JobBasePrismaSource extends AbstractSource<IJobSourceSchema> {
             arg: {
                 where:   this.toWhere(query?.filter),
                 orderBy: this.toOrderBy(query?.sort),
-            }
+                include: undefined,
+            },
         }));
     }
     
@@ -72,16 +78,16 @@ export class JobBasePrismaSource extends AbstractSource<IJobSourceSchema> {
         return this.prismaClient.job;
     }
     
-    toWhere(filter?: IJobSourceSchema["Filter"]): IJobWhere | undefined {
+    toWhere(filter?: IJobSourceSchema["Filter"]): IJobPrismaSchema['Where'] | undefined {
         return filter;
     }
     
-    toWhereUnique(filter?: IJobSourceSchema["Filter"]): IJobWhereUnique | undefined {
-        return undefined;
+    toWhereUnique(filter: IJobSourceSchema["Filter"]): IJobPrismaSchema['WhereUnique'] {
+        return filter as IJobPrismaSchema['WhereUnique'];
     }
     
-    toOrderBy(sort?: IJobSourceSchema["Sort"]): IJobOrderBy | undefined {
-        return sort as IJobOrderBy;
+    toOrderBy(sort?: IJobSourceSchema["Sort"]): IJobPrismaSchema['OrderBy'] | undefined {
+        return sort as IJobPrismaSchema['OrderBy'];
     }
 }
 
@@ -89,4 +95,4 @@ export class JobBasePrismaSource extends AbstractSource<IJobSourceSchema> {
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_m2thr7x92zo9yxj2q84jruuo = true;
+export const $leight_gag17kvh2gf2op23mpziv460 = true;

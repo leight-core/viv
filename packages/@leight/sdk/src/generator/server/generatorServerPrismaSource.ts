@@ -20,6 +20,10 @@ export namespace IGeneratorServerPrismaSourceParams {
          * Required package imports
          */
         packages: IPackages;
+        /**
+         * Generates additional includes in the PrismaSource
+         */
+        withInclude?: Record<string, any>;
     }
 
     export interface IPackages {
@@ -42,7 +46,9 @@ export const generatorServerPrismaSource: IGenerator<IGeneratorServerPrismaSourc
     }) => {
     const file = withSourceFile();
 
-    entities.forEach(({name, prisma, packages}) => {
+    entities.forEach(({name, prisma, packages, withInclude}) => {
+        const $withInclude = withInclude ? JSON.stringify(withInclude) : "undefined";
+
         file.withHeader(`
     Base Prisma Source contains default implementation of Source for entity ${name} connected to Prisma. This could be used for further extensions,
     also default export uses this as a parent class.
@@ -61,8 +67,6 @@ export const generatorServerPrismaSource: IGenerator<IGeneratorServerPrismaSourc
                     ],
                     "@leight/source-server": [
                         "AbstractSource",
-                        "withUpsert",
-                        "withPatch",
                     ],
                 },
             })
@@ -70,10 +74,8 @@ export const generatorServerPrismaSource: IGenerator<IGeneratorServerPrismaSourc
                 imports: {
                     [packages.schema]: [
                         `$${name}Source`,
-                        `type I${name}Where`,
-                        `type I${name}WhereUnique`,
-                        `type I${name}OrderBy`,
-                        `type I${name}SourceSchema`,
+                        `I${name}SourceSchema`,
+                        `type I${name}PrismaSchema`,
                     ],
                 },
             })
@@ -102,21 +104,32 @@ export const generatorServerPrismaSource: IGenerator<IGeneratorServerPrismaSourc
     async runFind(id: string): Promise<I${name}SourceSchema["Entity"]> {
         return this.prisma().findUniqueOrThrow({
             where: {id},
+            include: ${$withInclude},
         });
     }
 
     async runCreate(entity: I${name}SourceSchema["Create"]): Promise<I${name}SourceSchema["Entity"]> {
         return this.prisma().create({
             data: entity,
+            include: ${$withInclude},
         });
     }
 
-    async runPatch(patch: I${name}SourceSchema["Patch"]): Promise<I${name}SourceSchema["Entity"]> {
-        return this.prisma().update(withPatch(patch));
+    async runPatch({id, ...patch}: I${name}SourceSchema["Patch"]): Promise<I${name}SourceSchema["Entity"]> {
+        return this.prisma().update({
+            data: patch,
+            where: {id},
+            include: ${$withInclude},
+        });
     }
 
-    async runUpsert(props: ISource.IUpsert<I${name}SourceSchema>): Promise<I${name}SourceSchema["Entity"]> {
-        return this.prisma().upsert(withUpsert(props));
+    async runUpsert({filter, patch: update, create}: ISource.IUpsert<I${name}SourceSchema>): Promise<I${name}SourceSchema["Entity"]> {
+        return this.prisma().upsert({
+            create,
+            update,
+            where: this.toWhereUnique(filter),
+            include: ${$withInclude},
+        });
     }
 
     async runCount(query?: I${name}SourceSchema["Query"]): Promise<number> {
@@ -131,7 +144,8 @@ export const generatorServerPrismaSource: IGenerator<IGeneratorServerPrismaSourc
             arg: {
                 where:   this.toWhere(query?.filter),
                 orderBy: this.toOrderBy(query?.sort),
-            }
+                include: ${$withInclude},
+            },
         }));
     }
     
@@ -139,16 +153,16 @@ export const generatorServerPrismaSource: IGenerator<IGeneratorServerPrismaSourc
         return this.prismaClient.${prisma};
     }
     
-    toWhere(filter?: I${name}SourceSchema["Filter"]): I${name}Where | undefined {
+    toWhere(filter?: I${name}SourceSchema["Filter"]): I${name}PrismaSchema['Where'] | undefined {
         return filter;
     }
     
-    toWhereUnique(filter?: I${name}SourceSchema["Filter"]): I${name}WhereUnique | undefined {
-        return undefined;
+    toWhereUnique(filter: I${name}SourceSchema["Filter"]): I${name}PrismaSchema['WhereUnique'] {
+        return filter as I${name}PrismaSchema['WhereUnique'];
     }
     
-    toOrderBy(sort?: I${name}SourceSchema["Sort"]): I${name}OrderBy | undefined {
-        return sort as I${name}OrderBy;
+    toOrderBy(sort?: I${name}SourceSchema["Sort"]): I${name}PrismaSchema['OrderBy'] | undefined {
+        return sort as I${name}PrismaSchema['OrderBy'];
     }
                     `,
                     },

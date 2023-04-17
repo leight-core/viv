@@ -8,17 +8,11 @@ import {
 	type PrismaClient
 } from "@leight/prisma";
 import {type ISource} from "@leight/source";
-import {
-	AbstractSource,
-	withUpsert,
-	withPatch
-} from "@leight/source-server";
+import {AbstractSource} from "@leight/source-server";
 import {
 	$UserSource,
-	type IUserWhere,
-	type IUserWhereUnique,
-	type IUserOrderBy,
-	type IUserSourceSchema
+	IUserSourceSchema,
+	type IUserPrismaSchema
 } from "@leight/user";
 
 export class UserBasePrismaSource extends AbstractSource<IUserSourceSchema> {
@@ -35,21 +29,32 @@ export class UserBasePrismaSource extends AbstractSource<IUserSourceSchema> {
     async runFind(id: string): Promise<IUserSourceSchema["Entity"]> {
         return this.prisma().findUniqueOrThrow({
             where: {id},
+            include: undefined,
         });
     }
 
     async runCreate(entity: IUserSourceSchema["Create"]): Promise<IUserSourceSchema["Entity"]> {
         return this.prisma().create({
             data: entity,
+            include: undefined,
         });
     }
 
-    async runPatch(patch: IUserSourceSchema["Patch"]): Promise<IUserSourceSchema["Entity"]> {
-        return this.prisma().update(withPatch(patch));
+    async runPatch({id, ...patch}: IUserSourceSchema["Patch"]): Promise<IUserSourceSchema["Entity"]> {
+        return this.prisma().update({
+            data: patch,
+            where: {id},
+            include: undefined,
+        });
     }
 
-    async runUpsert(props: ISource.IUpsert<IUserSourceSchema>): Promise<IUserSourceSchema["Entity"]> {
-        return this.prisma().upsert(withUpsert(props));
+    async runUpsert({filter, patch: update, create}: ISource.IUpsert<IUserSourceSchema>): Promise<IUserSourceSchema["Entity"]> {
+        return this.prisma().upsert({
+            create,
+            update,
+            where: this.toWhereUnique(filter),
+            include: undefined,
+        });
     }
 
     async runCount(query?: IUserSourceSchema["Query"]): Promise<number> {
@@ -64,7 +69,8 @@ export class UserBasePrismaSource extends AbstractSource<IUserSourceSchema> {
             arg: {
                 where:   this.toWhere(query?.filter),
                 orderBy: this.toOrderBy(query?.sort),
-            }
+                include: undefined,
+            },
         }));
     }
     
@@ -72,16 +78,16 @@ export class UserBasePrismaSource extends AbstractSource<IUserSourceSchema> {
         return this.prismaClient.user;
     }
     
-    toWhere(filter?: IUserSourceSchema["Filter"]): IUserWhere | undefined {
+    toWhere(filter?: IUserSourceSchema["Filter"]): IUserPrismaSchema['Where'] | undefined {
         return filter;
     }
     
-    toWhereUnique(filter?: IUserSourceSchema["Filter"]): IUserWhereUnique | undefined {
-        return undefined;
+    toWhereUnique(filter: IUserSourceSchema["Filter"]): IUserPrismaSchema['WhereUnique'] {
+        return filter as IUserPrismaSchema['WhereUnique'];
     }
     
-    toOrderBy(sort?: IUserSourceSchema["Sort"]): IUserOrderBy | undefined {
-        return sort as IUserOrderBy;
+    toOrderBy(sort?: IUserSourceSchema["Sort"]): IUserPrismaSchema['OrderBy'] | undefined {
+        return sort as IUserPrismaSchema['OrderBy'];
     }
 }
 
@@ -89,4 +95,4 @@ export class UserBasePrismaSource extends AbstractSource<IUserSourceSchema> {
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_rsude3wpzqme97hrwtn03ywj = true;
+export const $leight_kvxq1f4lr1u04y3ozx5xqypc = true;

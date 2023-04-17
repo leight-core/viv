@@ -17,7 +17,7 @@ export class ImportHandlerService implements IImportHandlerService {
     ) {
     }
 
-    resolve<TItem>(service: string): IImportHandler<TItem> {
+    resolve<TItem, TParams>(service: string): IImportHandler<TItem, TParams> {
         if (!service.toLowerCase().includes("import")) {
             throw new Error(`Cannot use requested service [${service}]. Probably not an import service.`);
         }

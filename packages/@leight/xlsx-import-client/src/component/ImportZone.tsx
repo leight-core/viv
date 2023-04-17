@@ -1,42 +1,53 @@
-import {useTranslation}        from "@leight/i18n-client";
-import {type IUseJobFindQuery} from "@leight/job";
+import {useTranslation}     from "@leight/i18n-client";
+import {IUseJobSourceQuery} from "@leight/job";
 import {
     type IJobInlineProps,
     JobInline
-}                              from "@leight/job-client";
+}                           from "@leight/job-client";
 import {
     DropZone,
     type IDropZoneProps
-}                              from "@leight/mantine";
-import {LoopsProvider}         from "@leight/utils-client";
-import {type IWithMutation}    from "@leight/xlsx-import";
-import {MIME_TYPES}            from "@mantine/dropzone";
-import {notifications}         from "@mantine/notifications";
-import {type FC}               from "react";
+}                           from "@leight/mantine";
+import {LoopsProvider}      from "@leight/utils-client";
+import {type IWithMutation} from "@leight/xlsx-import";
+import {MIME_TYPES}         from "@mantine/dropzone";
+import {notifications}      from "@mantine/notifications";
 
-export interface IImportZoneProps extends Omit<IDropZoneProps, "path"> {
+export interface IImportZoneProps<TParams extends Record<string, any>> extends Omit<IDropZoneProps, "path"> {
     mutation: IWithMutation;
     onSuccess?: IJobInlineProps["onSuccess"];
-    useJobFindQuery: IUseJobFindQuery;
+    useJobFindQuery: IUseJobSourceQuery["useFind"];
     path?: string;
+    /**
+     * Override import service name
+     */
+    service?: string;
+    params?: Omit<TParams, "fileId">;
 }
 
-export const ImportZone: FC<IImportZoneProps> = (
+export const ImportZone = <TParams extends Record<string, any>>(
     {
         withTranslation,
         onSuccess,
+        onUpload,
         useJobFindQuery,
         mutation: {useMutation},
-        ...       props
-    }) => {
+        service,
+        params,
+        ...props
+    }: IImportZoneProps<TParams>) => {
     const {t}      = useTranslation(withTranslation.namespace);
     const mutation = useMutation();
     return <LoopsProvider>
         <DropZone
             path={"/import"}
-            onUpload={(file) => {
+            onUpload={file => {
                 mutation.mutate(
-                    {fileId: file.id},
+                    {
+                        service,
+                        fileId: file.id,
+                        ...params
+                    },
                     {
                         onSuccess: job => {
                             notifications.show({
@@ -54,10 +65,11 @@ export const ImportZone: FC<IImportZoneProps> = (
                         },
                     }
                 );
+                onUpload?.(file);
             }}
             accept={[
                 MIME_TYPES.xls,
-                MIME_TYPES.xlsx
+                MIME_TYPES.xlsx,
             ]}
             withTranslation={withTranslation}
             {...props}

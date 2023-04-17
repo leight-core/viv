@@ -31,6 +31,7 @@
         "@leight/context-client": "^0.5.71",
         "@leight/i18n": "^0.5.69",
         "@leight/utils": "^0.5.66",
+        "@leight/zustand": "^0.5.0",
         "i18next": "^22.4.11",
         "next-i18next": "^13.2.2",
         "react": "^18.2.0",

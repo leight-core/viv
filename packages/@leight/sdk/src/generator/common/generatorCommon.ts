@@ -1,54 +1,34 @@
 import {type IGenerator} from "../../api";
 import {
-    generatorCommonEntityPrismaSchema,
-    type IGeneratorCommonEntityPrismaSchemaParams
-}                        from "./generatorCommonEntityPrismaSchema";
+    generatorCommonEntityPrismaSource,
+    type IGeneratorCommonEntityPrismaSourceParams
+}                        from "./generatorCommonEntityPrismaSource";
 import {
-    generatorCommonEntitySchema,
-    type IGeneratorCommonEntitySchemaParams
-}                        from "./generatorCommonEntitySchema";
-import {
-    generatorCommonSource,
-    type IGeneratorCommonSourceParams
-}                        from "./generatorCommonSource";
-import {
-    generatorCommonSourceSchema,
-    type IGeneratorCommonSourceSchemaParams
-}                        from "./generatorCommonSourceSchema";
+    generatorCommonEntitySource,
+    type IGeneratorCommonEntitySourceParams
+}                        from "./generatorCommonEntitySource";
 
 export interface IGeneratorCommonParams {
-    PrismaEntity?: IGeneratorCommonEntityPrismaSchemaParams;
-    EntitySchema?: IGeneratorCommonEntitySchemaParams;
-    Source?: IGeneratorCommonSourceParams;
-    SourceSchema?: IGeneratorCommonSourceSchemaParams;
+    PrismaSource?: IGeneratorCommonEntityPrismaSourceParams;
+    EntitySource?: IGeneratorCommonEntitySourceParams;
 }
 
 export const generatorCommon: IGenerator<IGeneratorCommonParams> = async (
     {
         params: {
-                    PrismaEntity,
-                    EntitySchema,
-                    Source,
-                    SourceSchema,
+                    PrismaSource,
+                    EntitySource,
                 },
         ...     props
     }) => {
     await Promise.all([
-        Source ? generatorCommonSource({
+        PrismaSource ? generatorCommonEntityPrismaSource({
             ...props,
-            params: Source,
+            params: PrismaSource,
         }) : undefined,
-        PrismaEntity ? generatorCommonEntityPrismaSchema({
+        EntitySource ? generatorCommonEntitySource({
             ...props,
-            params: PrismaEntity,
-        }) : undefined,
-        EntitySchema ? generatorCommonEntitySchema({
-            ...props,
-            params: EntitySchema,
-        }) : undefined,
-        SourceSchema ? generatorCommonSourceSchema({
-            ...props,
-            params: SourceSchema,
+            params: EntitySource,
         }) : undefined,
     ]);
 };

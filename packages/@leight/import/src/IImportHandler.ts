@@ -1,13 +1,20 @@
-import {ZodType}                from "@leight/zod";
+import {z}                      from "@leight/zod";
 import {type IImportBeginEvent} from "./IImportBeginEvent";
 import {type IImportEndEvent}   from "./IImportEndEvent";
 
-export interface IImportHandler<TItem> {
+export interface IImportHandler<TItem, TParams> {
     begin?(event: IImportBeginEvent): Promise<void>;
 
     end?(event: IImportEndEvent): Promise<void>;
 
-    handler(item: TItem): Promise<any>;
+    handler(props: IImportHandler.IHandlerProps<TItem, TParams>): Promise<any>;
 
-    validator(): ZodType;
+    validator(): z.ZodType;
+}
+
+export namespace IImportHandler {
+    export interface IHandlerProps<TItem, TParams> {
+        item: TItem;
+        params: TParams;
+    }
 }

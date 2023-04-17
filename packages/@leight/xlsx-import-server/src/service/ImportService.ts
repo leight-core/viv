@@ -25,7 +25,8 @@ import {measureTime}   from "measure-time";
 import {type Readable} from "node:stream";
 import {
     readFile,
-    stream
+    stream,
+    type WorkSheet
 }                      from "xlsx";
 
 export class ImportService implements IImportService {
@@ -46,12 +47,10 @@ export class ImportService implements IImportService {
     ) {
     }
 
-    async async({fileId}: IImportService.IAsyncProps): Promise<IImportJob> {
+    async async(params: IImportService.IAsyncProps): Promise<IImportJob> {
         return this.jobExecutor.execute({
             name:    $ImportService.toString(),
-            params:  {
-                fileId,
-            },
+            params,
             handler: async props => this.job(props),
         });
     }
@@ -59,9 +58,9 @@ export class ImportService implements IImportService {
     async job(
         {
             jobProgress,
-            params: {fileId}
+            params,
         }: IJobExecutor.HandlerRequest<IImportJob>): Promise<IImportService.ImportResult> {
-        const file                 = await this.fileService.fetch(fileId);
+        const file                 = await this.fileService.fetch(params.fileId);
         const workbook             = readFile(file.location, {
             type:      "binary",
             cellDates: true,
@@ -75,69 +74,102 @@ export class ImportService implements IImportService {
         let skip    = 0;
         let runtime = 0;
 
-        await Promise.all(
-            tabs.map(async (tab) => {
-                const workSheet = workbook.Sheets[tab.tab];
-                if (!workSheet) {
-                    return;
-                }
-                await Promise.all(
-                    tab.services.map(async () => {
-                        return streamOf(stream.to_json(workSheet), async () => {
-                            total++;
-                        });
-                    })
-                );
-            })
-        );
-
-        await jobProgress.setTotal(total);
-
-        for (const {services, tab} of tabs) {
-            const workSheet = workbook.Sheets[tab];
-            if (!workSheet) {
-                continue;
-            }
-            for (const service of services) {
-                const $stream: Readable = stream.to_json(workSheet, {
-                    defval: null,
-                });
-                try {
-                    const handler   = this.importHandlerService.resolve(service);
-                    const validator = handler.validator();
-                    await handler.begin?.({});
-                    const getElapsed = measureTime();
-                    await streamOf<Record<string, string>>(
-                        $stream,
-                        async (item) => {
-                            try {
-                                await handler.handler(
-                                    cleanOf(
-                                        validator.parse(
-                                            this.translationService.translate(item, translations)
-                                        )
+        const handleWorksheet = async (workSheet: WorkSheet, service: string) => {
+            const $stream: Readable = stream.to_json(workSheet, {
+                defval: null,
+            });
+            try {
+                const handler   = this.importHandlerService.resolve(service);
+                const validator = handler.validator();
+                await handler.begin?.({});
+                const getElapsed = measureTime();
+                await streamOf<Record<string, string>>(
+                    $stream,
+                    async (item) => {
+                        try {
+                            await handler.handler({
+                                item: cleanOf(
+                                    validator.parse(
+                                        this.translationService.translate(item, translations)
                                     )
-                                );
-                                success++;
-                                await jobProgress.onSuccess();
-                            } catch (e) {
-                                failure++;
-                                await jobProgress.onFailure();
-                                console.error(e);
-                            }
+                                ),
+                                params,
+                            });
+                            success++;
+                            await jobProgress.onSuccess();
+                        } catch (e) {
+                            failure++;
+                            await jobProgress.onFailure();
+                            console.error(e);
                         }
-                    );
-                    runtime += getElapsed().millisecondsTotal;
-                    await handler.end?.({});
-                } catch (e) {
-                    console.error(e);
-                    await streamOf($stream, async () => {
-                        skip++;
-                        await jobProgress.onSkip();
+                    }
+                );
+                runtime += getElapsed().millisecondsTotal;
+                await handler.end?.({});
+            } catch (e) {
+                console.error(e);
+                await streamOf($stream, async () => {
+                    skip++;
+                    await jobProgress.onSkip();
+                });
+            }
+        };
+
+        const handleWithService = async (service: string) => {
+            await Promise.all(
+                workbook.SheetNames.map(async (name) => {
+                    const workSheet = workbook.Sheets[name];
+                    if (!workSheet) {
+                        return;
+                    }
+                    await streamOf(stream.to_json(workSheet), async () => {
+                        total++;
                     });
+                })
+            );
+
+            await jobProgress.setTotal(total);
+
+            for (const tab of workbook.SheetNames) {
+                const workSheet = workbook.Sheets[tab];
+                if (!workSheet) {
+                    continue;
+                }
+                await handleWorksheet(workSheet, service);
+            }
+        };
+
+        const handleWithMetadata = async () => {
+            await Promise.all(
+                tabs.map(async (tab) => {
+                    const workSheet = workbook.Sheets[tab.tab];
+                    if (!workSheet) {
+                        return;
+                    }
+                    await Promise.all(
+                        tab.services.map(async () => {
+                            return streamOf(stream.to_json(workSheet), async () => {
+                                total++;
+                            });
+                        })
+                    );
+                })
+            );
+
+            await jobProgress.setTotal(total);
+
+            for (const {services, tab} of tabs) {
+                const workSheet = workbook.Sheets[tab];
+                if (!workSheet) {
+                    continue;
+                }
+                for (const service of services) {
+                    await handleWorksheet(workSheet, service);
                 }
             }
-        }
+        };
+
+        params.service ? await handleWithService(params.service) : await handleWithMetadata();
 
         return {
             total,

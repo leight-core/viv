@@ -8,17 +8,11 @@ import {
 	type PrismaClient
 } from "@leight/prisma";
 import {type ISource} from "@leight/source";
-import {
-	AbstractSource,
-	withUpsert,
-	withPatch
-} from "@leight/source-server";
+import {AbstractSource} from "@leight/source-server";
 import {
 	$FileSource,
-	type IFileWhere,
-	type IFileWhereUnique,
-	type IFileOrderBy,
-	type IFileSourceSchema
+	IFileSourceSchema,
+	type IFilePrismaSchema
 } from "@leight/file";
 
 export class FileBasePrismaSource extends AbstractSource<IFileSourceSchema> {
@@ -35,21 +29,32 @@ export class FileBasePrismaSource extends AbstractSource<IFileSourceSchema> {
     async runFind(id: string): Promise<IFileSourceSchema["Entity"]> {
         return this.prisma().findUniqueOrThrow({
             where: {id},
+            include: undefined,
         });
     }
 
     async runCreate(entity: IFileSourceSchema["Create"]): Promise<IFileSourceSchema["Entity"]> {
         return this.prisma().create({
             data: entity,
+            include: undefined,
         });
     }
 
-    async runPatch(patch: IFileSourceSchema["Patch"]): Promise<IFileSourceSchema["Entity"]> {
-        return this.prisma().update(withPatch(patch));
+    async runPatch({id, ...patch}: IFileSourceSchema["Patch"]): Promise<IFileSourceSchema["Entity"]> {
+        return this.prisma().update({
+            data: patch,
+            where: {id},
+            include: undefined,
+        });
     }
 
-    async runUpsert(props: ISource.IUpsert<IFileSourceSchema>): Promise<IFileSourceSchema["Entity"]> {
-        return this.prisma().upsert(withUpsert(props));
+    async runUpsert({filter, patch: update, create}: ISource.IUpsert<IFileSourceSchema>): Promise<IFileSourceSchema["Entity"]> {
+        return this.prisma().upsert({
+            create,
+            update,
+            where: this.toWhereUnique(filter),
+            include: undefined,
+        });
     }
 
     async runCount(query?: IFileSourceSchema["Query"]): Promise<number> {
@@ -64,7 +69,8 @@ export class FileBasePrismaSource extends AbstractSource<IFileSourceSchema> {
             arg: {
                 where:   this.toWhere(query?.filter),
                 orderBy: this.toOrderBy(query?.sort),
-            }
+                include: undefined,
+            },
         }));
     }
     
@@ -72,16 +78,16 @@ export class FileBasePrismaSource extends AbstractSource<IFileSourceSchema> {
         return this.prismaClient.file;
     }
     
-    toWhere(filter?: IFileSourceSchema["Filter"]): IFileWhere | undefined {
+    toWhere(filter?: IFileSourceSchema["Filter"]): IFilePrismaSchema['Where'] | undefined {
         return filter;
     }
     
-    toWhereUnique(filter?: IFileSourceSchema["Filter"]): IFileWhereUnique | undefined {
-        return undefined;
+    toWhereUnique(filter: IFileSourceSchema["Filter"]): IFilePrismaSchema['WhereUnique'] {
+        return filter as IFilePrismaSchema['WhereUnique'];
     }
     
-    toOrderBy(sort?: IFileSourceSchema["Sort"]): IFileOrderBy | undefined {
-        return sort as IFileOrderBy;
+    toOrderBy(sort?: IFileSourceSchema["Sort"]): IFilePrismaSchema['OrderBy'] | undefined {
+        return sort as IFilePrismaSchema['OrderBy'];
     }
 }
 
@@ -89,4 +95,4 @@ export class FileBasePrismaSource extends AbstractSource<IFileSourceSchema> {
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_hn7fp64vlqsiwzdpgv6zqnki = true;
+export const $leight_vtd1s8q971rbq56qazdkjvyk = true;

@@ -118,6 +118,7 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/zod/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/filter-client/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/viv-client/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/form-client/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.github" />
       <excludeFolder url="file://$MODULE_DIR$/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/sql/.turbo" />
@@ -325,6 +326,7 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/filter-client/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/viv-client/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/viv-client/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/form-client/.turbo" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -11,8 +11,11 @@ import {
 import {
     type ComponentProps,
     type CSSProperties,
+    FC,
     type ReactNode
 }                              from "react";
+import {TableAction}           from "./TableAction";
+import {TableRowAction}        from "./TableRowAction";
 
 export interface ITableColumn<TItem = any> {
     /**
@@ -50,35 +53,54 @@ export interface ITableInternalProps<TColumn extends ITableColumn, TColumnKeys e
     /**
      * Optional translation configuration
      */
-    readonly withTranslation?: IWithTranslation;
+    withTranslation?: IWithTranslation;
     /**
      * Define table columns; they will be rendered by default in the specified order
      */
-    readonly columns: ITableColumns<TColumn, TColumnKeys>;
+    columns: ITableColumns<TColumn, TColumnKeys>;
     /**
      * You can override some columns, if you need to
      */
-    readonly overrideColumns?: Partial<ITableColumns<TColumn, TColumnKeys>>;
+    overrideColumns?: Partial<ITableColumns<TColumn, TColumnKeys>>;
     /**
      * Shows loading overlay; defaults to false
      */
-    readonly isLoading?: boolean;
+    isLoading?: boolean;
     /**
      * If a table is long, you can specify scroll area
      */
-    readonly scrollWidth?: number;
+    scrollWidth?: number;
     /**
      * Mark the given columns as hidden
      */
-    readonly hidden?: TColumnKeys[];
+    hidden?: TColumnKeys[];
     /**
      * Specify an order of columns
      */
-    readonly order?: TColumnKeys[];
+    order?: TColumnKeys[];
     /**
      * Data of the table.
      */
-    readonly items?: InferItem<TColumn>[];
+    items?: InferItem<TColumn>[];
+
+    /**
+     * Component used to render actions over whole table
+     */
+    WithTableAction?: FC<ITableInternalProps.IWithTableActionProps<TColumn>>;
+    /**
+     * Per-row component action handler
+     */
+    WithRowAction?: FC<ITableInternalProps.IWithRowActionProps<TColumn>>;
+}
+
+export namespace ITableInternalProps {
+    export interface IWithTableActionProps<TColumn extends ITableColumn> {
+        items?: InferItem<TColumn>[];
+    }
+
+    export interface IWithRowActionProps<TColumn extends ITableColumn> {
+        item: InferItem<TColumn>;
+    }
 }
 
 export type ITableProps<TColumn extends ITableColumn, TColumnKeys extends string> = ITableInternalProps<TColumn, TColumnKeys>;
@@ -93,6 +115,8 @@ export const Table = <TColumn extends ITableColumn, TColumnKeys extends string>(
         hidden = [],
         order = Object.keys(columns) as any,
         items = [],
+        WithTableAction,
+        WithRowAction,
         ...props
     }: ITableInternalProps<TColumn, TColumnKeys>) => {
 
@@ -101,7 +125,9 @@ export const Table = <TColumn extends ITableColumn, TColumnKeys extends string>(
         (overrideColumns as any)[column] || (columns as any)[column],
     ]);
 
-    return <ScrollArea w={"100%"}>
+    return <ScrollArea
+        w={"100%"}
+    >
         <Box w={scrollWidth}>
             <LoadingOverlay
                 visible={isLoading}
@@ -113,10 +139,28 @@ export const Table = <TColumn extends ITableColumn, TColumnKeys extends string>(
                 highlightOnHover
                 withBorder
                 withColumnBorders
+                style={!items?.length ? {minHeight: "20em"} : undefined}
                 {...props}
             >
                 <thead>
                     <tr>
+                        {WithRowAction && !WithTableAction && <th
+                            style={{
+                                width: "2rem",
+                            }}
+                        />}
+                        {WithTableAction && <th
+                            style={{
+                                width: "2rem",
+                            }}
+                        >
+                            <TableAction
+                                WithTableAction={WithTableAction}
+                                props={{
+                                    items,
+                                }}
+                            />
+                        </th>}
                         {$columns?.map(([name, column]) => {
                             const defaultContent              = <Translation
                                 {...withTranslation}
@@ -141,6 +185,15 @@ export const Table = <TColumn extends ITableColumn, TColumnKeys extends string>(
                 <tbody>
                     {items
                         .map(item => <tr key={item.id}>
+                            {WithTableAction && !WithRowAction && <td></td>}
+                            {WithRowAction && <td>
+                                <TableRowAction
+                                    WithRowAction={WithRowAction}
+                                    props={{
+                                        item,
+                                    }}
+                                />
+                            </td>}
                             {$columns.map(([name, column]) => <td key={name}>
                                 {isCallable(column.render) ? column.render(item) : (item as any)[column.render]}
                             </td>)}

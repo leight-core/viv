@@ -1,21 +1,23 @@
-import {Pagination}         from "@leight/cursor-client";
-import {Paper}              from "@leight/mantine";
-import {type IUseSortState} from "@leight/sort";
-import {SortIcon}           from "@leight/sort-client";
+import {
+    CursorStore,
+    Pagination
+}                              from "@leight/cursor-client";
+import {type IPaginationProps} from "@leight/cursor-client/src/cursor/Pagination";
+import {SortIcon}              from "@leight/sort-client";
 import {
     type ISourceSchema,
-    type IUseSourceState
-}                           from "@leight/source";
-import {chain}              from "@leight/utils";
+    type ISourceStore
+}                              from "@leight/source";
+import {chain}                 from "@leight/utils";
 import {
     Center,
     Divider
-}                           from "@mantine/core";
+}                              from "@mantine/core";
 import {
     type ITableColumn,
     type ITableProps,
     Table
-}                           from "./Table";
+}                              from "./Table";
 
 export interface ISourceTableColumn<TSourceSchema extends ISourceSchema> extends ITableColumn<TSourceSchema["Entity"]> {
     readonly sort?: keyof TSourceSchema["Sort"];
@@ -29,12 +31,16 @@ export interface ISourceTableInternalProps<
      * Table schema used to infer all internal types.
      */
     schema: TSourceSchema["EntitySchema"];
-    useSource: IUseSourceState<TSourceSchema>;
-    useSort: IUseSortState<TSourceSchema["SortSchema"]>;
-    /**
-     * Where to put pagination, defaults to ["bottom","top"]
-     */
-    pagination?: ("top" | "bottom")[];
+    SourceStore: ISourceStore<TSourceSchema>;
+    pagination?: {
+        hideOnSingle?: boolean;
+        /**
+         * Where to put pagination, defaults to ["bottom","top"]
+         */
+        position?: ("top" | "bottom")[];
+
+        props?: IPaginationProps;
+    };
 }
 
 /**
@@ -43,7 +49,7 @@ export interface ISourceTableInternalProps<
 export type ISourceTableProps<
     TSourceSchema extends ISourceSchema,
     TColumnKeys extends string,
-> = Omit<ISourceTableInternalProps<TSourceSchema, TColumnKeys>, "schema" | "useSource" | "useSort" | "columns" | "withTranslation">;
+> = Omit<ISourceTableInternalProps<TSourceSchema, TColumnKeys>, "schema" | "SourceStore" | "columns" | "withTranslation">;
 
 export const SourceTable = <
     TSourceSchema extends ISourceSchema,
@@ -51,20 +57,22 @@ export const SourceTable = <
 >(
     {
         schema,
-        useSource,
-        useSort,
+        SourceStore,
         columns,
-        pagination = [
-            "top",
-            "bottom",
-        ],
+        pagination = {
+            hideOnSingle: false,
+            position:     [
+                "top",
+                "bottom"
+            ],
+        },
         ...props
     }: ISourceTableInternalProps<TSourceSchema, TColumnKeys>) => {
     const {
               entities,
               isFetching,
               isLoading,
-          }               = useSource((
+          }               = SourceStore.Source.useState((
         {
             entities,
             isFetching,
@@ -75,12 +83,15 @@ export const SourceTable = <
             isFetching,
             isLoading,
         }));
-    const {sort, setSort} = useSort(({sort, setSort}) => ({sort, setSort}));
+    const {sort, setSort} = SourceStore.Sort.useState(({sort, setSort}) => ({sort, setSort}));
+    const {pages}         = CursorStore.useState(({pages}) => ({pages}));
 
-    return <Paper>
-        {pagination?.includes("top") && <>
+    return <>
+        {pagination?.position?.includes("top") && (pagination?.hideOnSingle ? pages > 1 : true) && <>
             <Center>
-                <Pagination/>
+                <Pagination
+                    {...pagination?.props}
+                />
             </Center>
             <Divider m={"md"}/>
         </>}
@@ -114,11 +125,13 @@ export const SourceTable = <
             items={entities.filter(entity => schema.safeParse(entity).success)}
             {...props}
         />
-        {pagination?.includes("bottom") && <>
+        {pagination?.position?.includes("bottom") && (pagination?.hideOnSingle ? pages > 1 : true) && <>
             <Divider m={"md"}/>
             <Center>
-                <Pagination/>
+                <Pagination
+                    {...pagination?.props}
+                />
             </Center>
         </>}
-    </Paper>;
+    </>;
 };

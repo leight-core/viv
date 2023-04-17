@@ -3,21 +3,19 @@
  * @see jetbrains://idea/navigate/reference?project=@leight/viv&path=nextra/pages/docs/workbench/i18n.mdx
  */
 
-import {
-    createStoreContext,
-    type IStoreProps
-}                 from "@leight/context-client";
+import {createStoreContext} from "@leight/context-client";
 import {
     DateTime,
     type DateTimeFormatOptions,
     type IDateInput,
     isDateTime
-}                 from "@leight/i18n";
-import {isString} from "@leight/utils";
+}                           from "@leight/i18n";
+import {isString}           from "@leight/utils";
+import {type IStoreProps}   from "@leight/zustand";
 import {
     type ComponentProps,
     type FC
-}                 from "react";
+}                           from "react";
 
 /**
  * Store shape for date time context.

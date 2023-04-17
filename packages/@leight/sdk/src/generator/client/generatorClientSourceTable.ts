@@ -43,11 +43,10 @@ export const generatorClientSourceTable: IGenerator<IGeneratorClientSourceTableP
                     ],
                     [packages.schema]:        [
                         `type I${name}SourceSchema`,
-                        `${name}Schema`,
+                        `${name}SourceSchema`,
                     ],
                     "./ClientStore":          [
                         `${name}SourceStore`,
-                        `${name}SortStore`,
                     ],
                     "./ClientSourceProvider": [
                         `${name}Source`,
@@ -58,7 +57,7 @@ export const generatorClientSourceTable: IGenerator<IGeneratorClientSourceTableP
                 exports: {
                     [`I${name}SourceTableInternalProps<TColumnKeys extends string>`]: {
                         extends: [
-                            {type: `Omit<ISourceTableInternalProps<I${name}SourceSchema, TColumnKeys>, "useSource" | "useSort" | "schema">`},
+                            {type: `Omit<ISourceTableInternalProps<I${name}SourceSchema, TColumnKeys>, "SourceStore" | "schema">`},
                         ],
                     },
                     [`I${name}SourceTableProps<TColumnKeys extends string>`]:         {
@@ -80,9 +79,8 @@ export const generatorClientSourceTable: IGenerator<IGeneratorClientSourceTableP
                         body:    `<TColumnKeys extends string>(props: I${name}SourceTableInternalProps<TColumnKeys>) => {
     return <${name}Source>
         <SourceTable
-            useSource={${name}SourceStore.useState}
-            useSort={${name}SortStore.useState}
-            schema={${name}Schema}
+            SourceStore={${name}SourceStore}
+            schema={${name}SourceSchema['EntitySchema']}
             {...props}
         />
     </${name}Source>;
