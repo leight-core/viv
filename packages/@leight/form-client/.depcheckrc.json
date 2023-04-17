@@ -1,6 +1,8 @@
 {
     "ignores": [
         "@leight/esbuild",
+        "@leight/context",
+        "@leight/zustand",
         "@leight/tsconfig",
         "@types/node"
     ]

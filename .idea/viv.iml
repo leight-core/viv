@@ -327,6 +327,7 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/viv-client/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/viv-client/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/form-client/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/form-client/lib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

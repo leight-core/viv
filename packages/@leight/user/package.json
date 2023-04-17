@@ -34,7 +34,6 @@
         "@leight/filter": "^0.5.59",
         "@leight/prisma": "^0.5.81",
         "@leight/query": "^0.5.63",
-        "@leight/react-query": "^0.5.26",
         "@leight/sort": "^0.5.60",
         "@leight/source": "^0.5.63",
         "next-auth": "^4.20.1",
