@@ -1,6 +1,6 @@
 {
     "name": "@leight/docs",
-    "version": "0.5.18",
+    "version": "0.5.19",
     "description": "Documentation for Leight Viv",
     "license": "MIT",
     "scripts": {
@@ -19,11 +19,11 @@
         "leight-docs": "./bin/server.js"
     },
     "dependencies": {
-        "@leight/calendar-client": "^0.5.21",
-        "@leight/i18n": "^0.5.69",
-        "@leight/table-client": "^0.5.32",
-        "@leight/utils-server": "^0.5.62",
-        "@leight/zod": "^0.5.9",
+        "@leight/calendar-client": "^0.5.22",
+        "@leight/i18n": "^0.5.70",
+        "@leight/table-client": "^0.5.33",
+        "@leight/utils-server": "^0.5.63",
+        "@leight/zod": "^0.5.10",
         "next": "^13.2.4",
         "nextra": "latest",
         "nextra-theme-docs": "latest",
@@ -31,7 +31,7 @@
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.42",
+        "@leight/esbuild": "^0.5.43",
         "@types/node": "^18.15.7",
         "concurrently": "^7.6.0",
         "dotenv-cli": "^7.1.0",

@@ -1,5 +1,15 @@
 # @leight/filter
 
+## 0.5.60
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+  - @leight/context@0.5.27
+  - @leight/zod@0.5.10
+  - @leight/zustand@0.5.64
+
 ## 0.5.59
 
 ### Patch Changes

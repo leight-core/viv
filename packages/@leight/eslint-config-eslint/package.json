@@ -1,6 +1,6 @@
 {
     "name": "@leight/eslint-config-eslint",
-    "version": "0.5.51",
+    "version": "0.5.52",
     "main": "index.js",
     "license": "MIT",
     "dependencies": {

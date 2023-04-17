@@ -1,5 +1,5 @@
 {
-    "version": "0.5.63",
+    "version": "0.5.64",
     "name": "@leight/xlsx-import",
     "description": "Common stuff shared between.",
     "license": "MIT",
@@ -28,17 +28,17 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/import": "^0.5.62",
-        "@leight/job": "^0.5.75",
-        "@leight/trpc": "^0.5.62",
+        "@leight/import": "^0.5.63",
+        "@leight/job": "^0.5.76",
+        "@leight/trpc": "^0.5.63",
         "xlsx": "^0.18.5",
-        "@leight/zod": "^0.5.9"
+        "@leight/zod": "^0.5.10"
     },
     "devDependencies": {
-        "@leight/esbuild": "^0.5.42",
-        "@leight/eslint-config-eslint": "^0.5.51",
-        "@leight/tsconfig": "^0.5.65",
-        "@leight/turbowatch": "^0.5.30",
+        "@leight/esbuild": "^0.5.43",
+        "@leight/eslint-config-eslint": "^0.5.52",
+        "@leight/tsconfig": "^0.5.66",
+        "@leight/turbowatch": "^0.5.31",
         "@types/node": "^18.15.0",
         "concurrently": "^7.6.0",
         "del-cli": "^5.0.0",
