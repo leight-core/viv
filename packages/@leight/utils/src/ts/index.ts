@@ -70,3 +70,11 @@ export namespace KeysOf {
     type ExcludeTrashDTOKeys<O extends AllDTOKeys> = O extends TrashDTOKeys ? never : O;
     export type Leaves<TLeavesOf extends ILeavesOf> = ExcludeTrashDTOKeys<GetDirtyDTOKeys<TLeavesOf>>;
 }
+
+export type DeepPartial<T> = {
+    [P in keyof T]?: T[P] extends Array<infer U>
+        ? Array<DeepPartial<U>>
+        : T[P] extends ReadonlyArray<infer U>
+            ? ReadonlyArray<DeepPartial<U>>
+            : DeepPartial<T[P]>
+};

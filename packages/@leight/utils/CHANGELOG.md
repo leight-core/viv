@@ -1,5 +1,11 @@
 # @leight/utils
 
+## 0.5.68
+
+### Patch Changes
+
+- Added DeepPartial
+
 ## 0.5.67
 
 ### Patch Changes
