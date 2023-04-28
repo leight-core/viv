@@ -1,32 +1,33 @@
-import {type ICalendarEventSourceSchema} from "@leight/calendar";
-import {type IFilterStoreProps}          from "@leight/filter";
+import {type ICalendarEventSourceSchemaType} from "@leight/calendar";
 import {
     type InferSelectors,
-    switchScheme
-}                                        from "@leight/mantine";
+    switchScheme,
+    withPrimaryColor,
+    withSecondaryPrimaryColor
+}                                            from "@leight/mantine";
 import {
-    ISourceStore,
-    type ISourceStoreProps
-}                                        from "@leight/source";
+    type ISourceStore,
+    type IUseSource
+}                                            from "@leight/source";
 import {
     isCallable,
     withBool
-}                                        from "@leight/utils";
+}                                            from "@leight/utils";
 import {
     BlockStore,
     classNames
-}                                        from "@leight/utils-client";
+}                                            from "@leight/utils-client";
 import {
     Box,
     Container,
     createStyles,
     Grid,
     LoadingOverlay
-}                                        from "@mantine/core";
+}                                            from "@mantine/core";
 import {
     type ComponentProps,
     type ReactNode
-}                                        from "react";
+}                                            from "react";
 
 const useStyles = createStyles(theme => ({
     calendar:       {
@@ -87,16 +88,27 @@ const useStyles = createStyles(theme => ({
         flex:            "1 1 auto",
         justifyContent:  "center",
         alignItems:      "center",
+        "&.compact":     {
+            height: "2em",
+        },
     },
     cell:           {
-        height:    "6em",
-        padding:   "0",
-        "&:hover": {
+        height:      "6em",
+        padding:     "0",
+        "&:hover":   {
             backgroundColor: switchScheme(
                 theme,
                 theme.colors.gray[6],
                 theme.colors.gray[0]
             ),
+        },
+        "&.compact": {
+            fontWeight:     "normal",
+            height:         "2em",
+            display:        "flex",
+            flex:           "1 1 auto",
+            justifyContent: "center",
+            alignItems:     "center",
         }
     },
     monthCell:      {
@@ -139,11 +151,12 @@ const useStyles = createStyles(theme => ({
     },
     currentWeek:    {},
     currentDay:     {
-        backgroundColor: switchScheme(
-            theme,
-            theme.colors.gray[6],
-            theme.colors.gray[2]
-        ),
+        backgroundColor: withPrimaryColor(theme, -4),
+        color:           withSecondaryPrimaryColor(theme, -4),
+        "&:hover":       {
+            backgroundColor: withPrimaryColor(theme, -3),
+            color:           withSecondaryPrimaryColor(theme, -2),
+        },
     },
     inRange:        {
         fontWeight: "bold",
@@ -159,41 +172,42 @@ const useStyles = createStyles(theme => ({
 
 export type ICalendarStyles = InferSelectors<typeof useStyles>;
 
-export type ICalendarComponent<TSourceSchema extends ICalendarEventSourceSchema> =
-    ((props: ICalendarComponent.IRenderProps<TSourceSchema>) => ReactNode)
+export type ICalendarComponent<TSourceSchemaType extends ICalendarEventSourceSchemaType> =
+    ((props: ICalendarComponent.IRenderProps<TSourceSchemaType>) => ReactNode)
     | ReactNode;
 
 export namespace ICalendarComponent {
-    export interface IRenderProps<TSourceSchema extends ICalendarEventSourceSchema> {
+    export interface IRenderProps<TSourceSchemaType extends ICalendarEventSourceSchemaType> {
         classes: ICalendarStyles;
-        source?: ISourceStoreProps<TSourceSchema>["StoreProps"];
-        filter?: IFilterStoreProps<TSourceSchema["FilterSchema"]>["StoreProps"];
+        source?: IUseSource<TSourceSchemaType>;
+        compact?: boolean;
     }
 }
 
-export interface ICalendarShellEvents<TSourceSchema extends ICalendarEventSourceSchema> {
-    schema: TSourceSchema["EntitySchema"];
-    SourceStore: ISourceStore<TSourceSchema>;
+export interface ICalendarShellEvents<TSourceSchemaType extends ICalendarEventSourceSchemaType> {
+    schema: TSourceSchemaType["DtoSchema"];
+    SourceStore: ISourceStore<TSourceSchemaType>;
 }
 
-export interface ICalendarShellProps<TSourceSchema extends ICalendarEventSourceSchema> extends Omit<ComponentProps<typeof Container>, "children"> {
-    events?: ICalendarShellEvents<TSourceSchema>;
+export interface ICalendarShellProps<TSourceSchemaType extends ICalendarEventSourceSchemaType> extends Omit<ComponentProps<typeof Container>, "children"> {
+    events?: ICalendarShellEvents<TSourceSchemaType>;
     withControls?: boolean;
-    controlsTopLeft?: ICalendarComponent<TSourceSchema>;
-    controlsTopMiddle?: ICalendarComponent<TSourceSchema>;
-    controlsTopRight?: ICalendarComponent<TSourceSchema>;
-    controlsBottomLeft?: ICalendarComponent<TSourceSchema>;
-    controlsBottomMiddle?: ICalendarComponent<TSourceSchema>;
-    controlsBottomRight?: ICalendarComponent<TSourceSchema>;
-    children: ICalendarComponent<TSourceSchema>;
+    controlsTopLeft?: ICalendarComponent<TSourceSchemaType>;
+    controlsTopMiddle?: ICalendarComponent<TSourceSchemaType>;
+    controlsTopRight?: ICalendarComponent<TSourceSchemaType>;
+    controlsBottomLeft?: ICalendarComponent<TSourceSchemaType>;
+    controlsBottomMiddle?: ICalendarComponent<TSourceSchemaType>;
+    controlsBottomRight?: ICalendarComponent<TSourceSchemaType>;
+    compact?: boolean;
+    children: ICalendarComponent<TSourceSchemaType>;
 }
 
-const renderComponent = <TSourceSchema extends ICalendarEventSourceSchema>(component: ICalendarComponent<TSourceSchema> | undefined, props: ICalendarComponent.IRenderProps<TSourceSchema>) => isCallable(component) ? component(props) : component;
+const renderComponent = <TSourceSchemaType extends ICalendarEventSourceSchemaType>(component: ICalendarComponent<TSourceSchemaType> | undefined, props: ICalendarComponent.IRenderProps<TSourceSchemaType>) => isCallable(component) ? component(props) : component;
 
 /**
  * Styled shell for Calendar.
  */
-export const CalendarShell = <TSourceSchema extends ICalendarEventSourceSchema = ICalendarEventSourceSchema>(
+export const CalendarShell = <TSourceSchemaType extends ICalendarEventSourceSchemaType = ICalendarEventSourceSchemaType>(
     {
         events,
         withControls = true,
@@ -203,27 +217,27 @@ export const CalendarShell = <TSourceSchema extends ICalendarEventSourceSchema =
         controlsBottomLeft,
         controlsBottomMiddle,
         controlsBottomRight,
+        compact = false,
         children,
         ...props
-    }: ICalendarShellProps<TSourceSchema>) => {
+    }: ICalendarShellProps<TSourceSchemaType>) => {
     const blockStore         = BlockStore.useOptionalState();
-    const source             = events?.SourceStore.Source.useState();
-    const filter             = events?.SourceStore.Filter.useState();
+    const source             = events?.SourceStore.useSource();
     const {classes}          = useStyles();
     const controlColumnCount = 18;
     const controlWidth       = 7;
 
-    const renderProps: ICalendarComponent.IRenderProps<TSourceSchema> = {
+    const renderProps: ICalendarComponent.IRenderProps<TSourceSchemaType> = {
         classes,
         source,
-        filter,
+        compact,
     };
 
     return <Box
         className={classes.calendar}
         {...props}
     >
-        <LoadingOverlay visible={withBool(blockStore?.isBlock, events?.SourceStore.Source.useState().isFetching || false)}/>
+        <LoadingOverlay visible={withBool(blockStore?.isBlock, source?.result.isFetching || false)}/>
         {withControls && <Grid
             columns={controlColumnCount}
             className={classNames(

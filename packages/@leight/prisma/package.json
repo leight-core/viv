@@ -19,6 +19,8 @@
         "src"
     ],
     "scripts": {
+        "setup": "npm run generate",
+        "init": "npm run build",
         "dev": "turbowatch",
         "generate": "concurrently npm:generate:*",
         "generate:prisma": "prisma generate",

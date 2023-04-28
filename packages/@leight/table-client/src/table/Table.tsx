@@ -1,35 +1,60 @@
-import {type IWithTranslation} from "@leight/i18n";
-import {Translation}           from "@leight/i18n-client";
-import {isCallable}            from "@leight/utils";
+import {type IWithTranslation}            from "@leight/i18n";
+import {Translation}                      from "@leight/i18n-client";
+import {withPrimaryColor}                 from "@leight/mantine";
+import {type IMultiSelectionStoreContext} from "@leight/selection";
+import {type IWithIdentity}               from "@leight/source";
+import {
+    isCallable,
+    isString
+}                                         from "@leight/utils";
+import {classNames}                       from "@leight/utils-client";
 import {
     Box,
+    createStyles,
     Group,
     LoadingOverlay,
     ScrollArea,
     Table as CoolTable
-}                              from "@mantine/core";
+}                                         from "@mantine/core";
 import {
     type ComponentProps,
     type CSSProperties,
-    FC,
+    type FC,
     type ReactNode
-}                              from "react";
-import {TableAction}           from "./TableAction";
-import {TableRowAction}        from "./TableRowAction";
+}                                         from "react";
+import {TableAction}                      from "./TableAction";
+import {TableRowAction}                   from "./TableRowAction";
 
-export interface ITableColumn<TItem = any> {
+const useStyles = createStyles(theme => ({
+    table: {
+        "&[data-striped] tbody tr.selection":                  {
+            backgroundColor: withPrimaryColor(theme, -5),
+            "&:hover":       {
+                backgroundColor: withPrimaryColor(theme, -6),
+            },
+        },
+        "&[data-striped] tbody tr.selection:nth-of-type(odd)": {
+            backgroundColor: withPrimaryColor(theme, -4),
+            "$:hover":       {
+                backgroundColor: withPrimaryColor(theme, -3),
+            },
+        },
+    },
+}));
+
+export interface ITableColumn<TItem extends IWithIdentity = IWithIdentity> {
     /**
      * Explicitly override column title (by default column name is taken from Record<> in Table)
      */
-    readonly title?: string;
+    title?: string;
     /**
      * Specify width of a column
      */
-    readonly width?: number;
+    width?: number;
     /**
      * Mandatory render method; if you do not want to render a column, mark it as hidden on a table itself.
      */
-    render: ((item: TItem) => ReactNode) | (keyof TItem);
+    render: ITableColumn.IRender<TItem>;
     /**
      * Optionally return styles for a table header column
      */
@@ -45,11 +70,20 @@ export interface ITableColumn<TItem = any> {
     onHeaderClick?(): void;
 }
 
+export namespace ITableColumn {
+    export type IRender<TItem extends IWithIdentity> = (props: IRenderProps<TItem>) => ReactNode;
+
+    export interface IRenderProps<TItem extends IWithIdentity> {
+        item: TItem;
+        highlight: string[];
+    }
+
+    export type IItem<T> = T extends ITableColumn<infer U> ? U : T;
+}
+
 export type ITableColumns<TColumn extends ITableColumn, TColumnKeys extends string> = Record<TColumnKeys, TColumn>;
 
-type InferItem<T> = T extends ITableColumn<infer U> ? U : T;
-
-export interface ITableInternalProps<TColumn extends ITableColumn, TColumnKeys extends string> extends Partial<Omit<ComponentProps<typeof CoolTable>, "hidden">> {
+export interface ITableInternalProps<TColumn extends ITableColumn, TColumnKeys extends string> extends Partial<Omit<ComponentProps<typeof CoolTable>, "hidden" | "onClick">> {
     /**
      * Optional translation configuration
      */
@@ -81,7 +115,10 @@ export interface ITableInternalProps<TColumn extends ITableColumn, TColumnKeys e
     /**
      * Data of the table.
      */
-    items?: InferItem<TColumn>[];
+    items?: ITableColumn.IItem<TColumn>[];
+    highlight?: string[];
+
+    disableActions?: boolean;
 
     /**
      * Component used to render actions over whole table
@@ -91,15 +128,35 @@ export interface ITableInternalProps<TColumn extends ITableColumn, TColumnKeys e
      * Per-row component action handler
      */
     WithRowAction?: FC<ITableInternalProps.IWithRowActionProps<TColumn>>;
+
+    renderPrefix?: ITableInternalProps.IRenderPrefix<TColumn>;
+    renderFooter?: ITableInternalProps.IRenderFooter<TColumn>;
+
+    MultiSelectionContext?: IMultiSelectionStoreContext<ITableColumn.IItem<TColumn>>;
+
+    onClick?(item: ITableColumn.IItem<TColumn>): void;
 }
 
 export namespace ITableInternalProps {
+    export type IRenderPrefix<TColumn extends ITableColumn> = (props: IRenderPrefixProps<TColumn>) => ReactNode;
+    export type IRenderFooter<TColumn extends ITableColumn> = (props: IRenderFooterProps<TColumn>) => ReactNode;
+
+    export interface IRenderPrefixProps<TColumn extends ITableColumn> {
+        items: ITableColumn.IItem<TColumn>[];
+        columns?: TColumn[];
+    }
+
+    export interface IRenderFooterProps<TColumn extends ITableColumn> {
+        items: ITableColumn.IItem<TColumn>[];
+        columns?: TColumn[];
+    }
+
     export interface IWithTableActionProps<TColumn extends ITableColumn> {
-        items?: InferItem<TColumn>[];
+        items?: ITableColumn.IItem<TColumn>[];
     }
 
     export interface IWithRowActionProps<TColumn extends ITableColumn> {
-        item: InferItem<TColumn>;
+        item: ITableColumn.IItem<TColumn>;
     }
 }
 
@@ -113,17 +170,30 @@ export const Table = <TColumn extends ITableColumn, TColumnKeys extends string>(
         isLoading = false,
         scrollWidth,
         hidden = [],
-        order = Object.keys(columns) as any,
+        order = Object.keys(columns) as TColumnKeys[],
         items = [],
         WithTableAction,
         WithRowAction,
+        highlight = [],
+        renderPrefix,
+        renderFooter,
+        disableActions = false,
+        onClick,
+        MultiSelectionContext,
         ...props
     }: ITableInternalProps<TColumn, TColumnKeys>) => {
 
+    const {classes} = useStyles();
+
+    /**
+     * Do not memo this, or memo carefully! Changing this breaks column sorting and maybe something else too.
+     */
     const $columns: [string, TColumn][] = order.filter(column => !hidden.includes(column)).map(column => [
         column,
-        (overrideColumns as any)[column] || (columns as any)[column],
+        overrideColumns[column] || columns[column],
     ]);
+
+    const multiSelection = MultiSelectionContext?.useState();
 
     return <ScrollArea
         w={"100%"}
@@ -134,22 +204,24 @@ export const Table = <TColumn extends ITableColumn, TColumnKeys extends string>(
                 overlayBlur={2}
                 transitionDuration={250}
             />
+            {renderPrefix?.({items, columns: $columns.map(([, column]) => column)})}
             <CoolTable
                 striped
                 highlightOnHover
                 withBorder
                 withColumnBorders
                 style={!items?.length ? {minHeight: "20em"} : undefined}
+                className={classes.table}
                 {...props}
             >
                 <thead>
                     <tr>
-                        {WithRowAction && !WithTableAction && <th
+                        {!disableActions && WithRowAction && !WithTableAction && <th
                             style={{
                                 width: "2rem",
                             }}
                         />}
-                        {WithTableAction && <th
+                        {!disableActions && WithTableAction && <th
                             style={{
                                 width: "2rem",
                             }}
@@ -164,7 +236,8 @@ export const Table = <TColumn extends ITableColumn, TColumnKeys extends string>(
                         {$columns?.map(([name, column]) => {
                             const defaultContent              = <Translation
                                 {...withTranslation}
-                                label={`table.column.${column?.title || name}`}
+                                label={"table.column"}
+                                withLabel={column?.title || name}
                                 withLabelFallback={column?.title || name}
                             />;
                             const defaultStyle: CSSProperties = {
@@ -184,9 +257,14 @@ export const Table = <TColumn extends ITableColumn, TColumnKeys extends string>(
                 </thead>
                 <tbody>
                     {items
-                        .map(item => <tr key={item.id}>
-                            {WithTableAction && !WithRowAction && <td></td>}
-                            {WithRowAction && <td>
+                        .map(item => <tr
+                            key={item.id}
+                            className={classNames(
+                                multiSelection?.isSelected(item) ? "selection" : undefined,
+                            )}
+                        >
+                            {!disableActions && WithTableAction && !WithRowAction && <td></td>}
+                            {!disableActions && WithRowAction && <td>
                                 <TableRowAction
                                     WithRowAction={WithRowAction}
                                     props={{
@@ -194,11 +272,27 @@ export const Table = <TColumn extends ITableColumn, TColumnKeys extends string>(
                                     }}
                                 />
                             </td>}
-                            {$columns.map(([name, column]) => <td key={name}>
-                                {isCallable(column.render) ? column.render(item) : (item as any)[column.render]}
+                            {$columns.map(([name, column]) => <td
+                                key={name}
+                                style={onClick ? {cursor: "pointer"} : undefined}
+                                onClick={() => onClick?.(item)}
+                            >
+                                {column.render({
+                                    item,
+                                    highlight: isString(highlight) ? [highlight] : highlight,
+                                })}
                             </td>)}
                         </tr>)}
                 </tbody>
+                {renderFooter ? <tfoot>
+                    {!disableActions && (WithTableAction || WithRowAction) && <td></td>}
+                    <tr>
+                        {renderFooter({
+                            items,
+                            columns: $columns.map(([, column]) => column),
+                        })}
+                    </tr>
+                </tfoot> : null}
             </CoolTable>
         </Box>
     </ScrollArea>;

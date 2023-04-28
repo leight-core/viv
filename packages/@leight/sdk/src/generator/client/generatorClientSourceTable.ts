@@ -28,28 +28,24 @@ export namespace IGeneratorClientSourceTableParams {
 
 export const generatorClientSourceTable: IGenerator<IGeneratorClientSourceTableParams> = async (
     {
-        folder,
         barrel,
+        directory,
         params: {entities}
     }) => {
-    const file = withSourceFile();
-
     entities.forEach(({name, packages}) => {
-        file.withImports({
+        withSourceFile()
+            .withImports({
                 imports: {
-                    "@leight/table-client":   [
+                    "@leight/table-client":           [
                         "SourceTable",
                         "type ISourceTableInternalProps",
                     ],
-                    [packages.schema]:        [
-                        `type I${name}SourceSchema`,
+                    [packages.schema]:                [
+                        `type I${name}SourceSchemaType`,
                         `${name}SourceSchema`,
                     ],
-                    "./ClientStore":          [
+                    [`../Source/${name}SourceStore`]: [
                         `${name}SourceStore`,
-                    ],
-                    "./ClientSourceProvider": [
-                        `${name}Source`,
                     ],
                 }
             })
@@ -57,8 +53,11 @@ export const generatorClientSourceTable: IGenerator<IGeneratorClientSourceTableP
                 exports: {
                     [`I${name}SourceTableInternalProps<TColumnKeys extends string>`]: {
                         extends: [
-                            {type: `Omit<ISourceTableInternalProps<I${name}SourceSchema, TColumnKeys>, "SourceStore" | "schema">`},
+                            {type: `Omit<ISourceTableInternalProps<I${name}SourceSchemaType, TColumnKeys>, "SourceStore" | "schema">`},
                         ],
+                        body:    `
+sourceCacheTime?: number;
+                        `,
                     },
                     [`I${name}SourceTableProps<TColumnKeys extends string>`]:         {
                         extends: [
@@ -77,22 +76,19 @@ export const generatorClientSourceTable: IGenerator<IGeneratorClientSourceTableP
  */
                         `,
                         body:    `<TColumnKeys extends string>(props: I${name}SourceTableInternalProps<TColumnKeys>) => {
-    return <${name}Source>
-        <SourceTable
-            SourceStore={${name}SourceStore}
-            schema={${name}SourceSchema['EntitySchema']}
-            {...props}
-        />
-    </${name}Source>;
+    return <SourceTable
+        SourceStore={${name}SourceStore}
+        schema={${name}SourceSchema["DtoSchema"]}
+        {...props}
+    />;
 }
                     `,
                     },
                 },
+            })
+            .saveTo({
+                file: normalize(`${directory}/Table/${name}SourceTable.tsx`),
+                barrel,
             });
-    });
-
-    file.saveTo({
-        file: normalize(`${process.cwd()}/${folder}/ClientSourceTable.tsx`),
-        barrel,
     });
 };

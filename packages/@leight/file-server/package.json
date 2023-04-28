@@ -27,7 +27,9 @@
         "build:types": "tsc --outDir lib",
         "depcheck": "depcheck",
         "lint": "eslint src",
-        "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
+        "cleanup": "concurrently npm:cleanup:*",
+        "cleanup:sdk": "del-cli src/sdk/**",
+        "cleanup:lib": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
         "@leight/container": "^0.5.65",
@@ -35,7 +37,6 @@
         "@leight/next.js": "^0.5.30",
         "@leight/next.js-server": "^0.5.70",
         "@leight/prisma": "^0.5.82",
-        "@leight/query": "^0.5.64",
         "@leight/source": "^0.5.64",
         "@leight/source-server": "^0.5.64",
         "@leight/trpc-source-server": "^0.5.18",

@@ -1,4 +1,4 @@
-import {IContainer}           from "@leight/container";
+import {type IContainer}      from "@leight/container";
 import {
     $ImportHandlerService,
     type IImportHandlerService

@@ -1,16 +1,22 @@
-import {type IGenerator} from "../../api";
+import {type IGenerator}    from "../../api";
+import {generatorSdkBarrel} from "../generatorSdkBarrel";
 import {
     generatorCommonEntityPrismaSource,
     type IGeneratorCommonEntityPrismaSourceParams
-}                        from "./generatorCommonEntityPrismaSource";
+}                           from "./generatorCommonEntityPrismaSource";
 import {
     generatorCommonEntitySource,
     type IGeneratorCommonEntitySourceParams
-}                        from "./generatorCommonEntitySource";
+}                           from "./generatorCommonEntitySource";
+import {
+    generatorForm,
+    type IGeneratorFormParams
+}                           from "./generatorForm";
 
 export interface IGeneratorCommonParams {
     PrismaSource?: IGeneratorCommonEntityPrismaSourceParams;
     EntitySource?: IGeneratorCommonEntitySourceParams;
+    Form?: IGeneratorFormParams;
 }
 
 export const generatorCommon: IGenerator<IGeneratorCommonParams> = async (
@@ -18,6 +24,7 @@ export const generatorCommon: IGenerator<IGeneratorCommonParams> = async (
         params: {
                     PrismaSource,
                     EntitySource,
+                    Form,
                 },
         ...     props
     }) => {
@@ -30,5 +37,14 @@ export const generatorCommon: IGenerator<IGeneratorCommonParams> = async (
             ...props,
             params: EntitySource,
         }) : undefined,
+        Form ? generatorForm({
+            ...props,
+            params: Form,
+        }) : undefined,
     ]);
+    await generatorSdkBarrel({
+        ...props,
+        barrel: true,
+        params: {},
+    });
 };

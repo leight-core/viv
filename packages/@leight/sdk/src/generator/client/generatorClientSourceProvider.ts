@@ -16,7 +16,6 @@ export namespace IGeneratorClientSourceProviderParams {
          * Required package imports
          */
         packages: IPackages;
-        withTrpc?: boolean;
     }
 
     export interface IPackages {
@@ -29,87 +28,40 @@ export namespace IGeneratorClientSourceProviderParams {
 
 export const generatorClientSourceProvider: IGenerator<IGeneratorClientSourceProviderParams> = async (
     {
-        folder,
         barrel,
+        directory,
         params: {entities}
     }) => {
-    const file = withSourceFile();
-
-    entities.forEach(({name, withTrpc, packages}) => {
-        file.withImports({
+    entities.forEach(({name, packages}) => {
+        withSourceFile()
+            .withImports({
                 imports: {
-                    "@leight/source-client": [
-                        "type ISourceProps",
-                        "Source",
-                    ],
-                    "@leight/query-client":  [
+                    "@leight/source-client":  [
                         "type IQueryProviderProps",
                         "QueryProvider",
                     ],
-                    [packages.schema]:       [
-                        `type I${name}SourceSchema`,
-                        `${name}SourceSchema`,
+                    [packages.schema]:        [
+                        `type I${name}SourceSchemaType`,
                     ],
-                    "react":                 [
+                    "react":                  [
                         "type FC",
                     ],
-                    "./ClientStore":         [
+                    [`./${name}SourceStore`]: [
                         `${name}SourceStore`,
-                    ]
+                    ],
                 }
             })
-            .withImports(withTrpc ? undefined : {
-                imports: {
-                    '@leight/source': [
-                        'type IUseSourceQuery',
-                    ],
-                },
-            })
-            .withImports(withTrpc ? {
-                imports: {
-                    ["./ClientTrpcSource"]: [
-                        `Use${name}SourceQuery`,
-                    ],
-                },
-            } : undefined)
             .withInterfaces({
                 exports: {
-                    [`I${name}SourceProps`]:        {
-                        extends: [
-                            {type: `ISourceProps<I${name}SourceSchema>`},
-                        ],
-                        body:    withTrpc ? undefined : `
-UseSourceQuery: IUseSourceQuery<I${name}SourceSchema>;
-                    `,
-                    },
                     [`I${name}QueryProviderProps`]: {
                         extends: [
-                            {type: `IQueryProviderProps<I${name}SourceSchema>`},
+                            {type: `IQueryProviderProps<I${name}SourceSchemaType>`},
                         ],
-                        body:    withTrpc ? undefined : `
-UseSourceQuery: IUseSourceQuery<I${name}SourceSchema>;
-                    `,
                     },
                 },
             })
             .withConsts({
                 exports: {
-                    [`${name}Source`]:        {
-                        type:    `FC<I${name}SourceProps>`,
-                        comment: `
-/**
- * Provides access to ${name} data with a connection to filtering and sorting. 
- */
-                        `,
-                        body:    `props => {
-    return <Source<I${name}SourceSchema>
-        schema={${name}SourceSchema["EntitySchema"]}
-        SourceStore={${name}SourceStore}
-        ${withTrpc ? `UseSourceQuery={Use${name}SourceQuery}\n\t\t` : ""}{...props}
-    />;
-}
-                    `,
-                    },
                     [`${name}QueryProvider`]: {
                         type:    `FC<I${name}QueryProviderProps>`,
                         comment: `
@@ -118,19 +70,18 @@ UseSourceQuery: IUseSourceQuery<I${name}SourceSchema>;
  */
                         `,
                         body:    `props => {
-    return <QueryProvider<I${name}SourceSchema>
+    return <QueryProvider<I${name}SourceSchemaType>
         SourceStore={${name}SourceStore}
-        ${withTrpc ? `UseSourceQuery={Use${name}SourceQuery}\n\t\t` : ""}{...props}
+        {...props}
     />;
 }
                     `,
                     },
-                },
+                }
+            })
+            .saveTo({
+                file: normalize(`${directory}/Source/${name}QueryProvider.tsx`),
+                barrel,
             });
-    });
-
-    file.saveTo({
-        file: normalize(`${process.cwd()}/${folder}/ClientSourceProvider.tsx`),
-        barrel,
     });
 };

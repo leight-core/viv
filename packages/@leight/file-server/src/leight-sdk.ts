@@ -1,18 +1,31 @@
 import {
     withSdk,
-    withServerSourceGenerators,
-    withServerSourceGeneratorsEntity
+    withServerSourceGenerators
 } from "@leight/sdk";
 
 void withSdk(
-    withServerSourceGenerators(
-        withServerSourceGeneratorsEntity({
-            name:     "File",
-            packages: {
-                schema: "@leight/file",
-                prisma: "@leight/prisma",
-            },
-            prisma:   "file",
-        })
-    )
+    withServerSourceGenerators({
+        PrismaSource: {
+            entities: [
+                {
+                    name:     "File",
+                    packages: {
+                        schema: "@leight/file",
+                        prisma: "@leight/prisma",
+                    },
+                    prisma:   "file",
+                },
+            ],
+        },
+        Source:       {
+            entities: [
+                {
+                    name:     "File",
+                    packages: {
+                        schema: "@leight/file",
+                    },
+                },
+            ],
+        },
+    })
 );

@@ -28,17 +28,16 @@ export namespace IGeneratorClientSourceStoreParams {
 
 export const generatorClientSourceStore: IGenerator<IGeneratorClientSourceStoreParams> = async (
     {
-        folder,
         barrel,
+        directory,
         params: {entities}
     }) => {
-    const file = withSourceFile()
-        .withHeader(`
-    Source code containing improved Zustand store stuff for Source support (client-side).
-        `);
-
     entities.forEach(({name, packages}) => {
-        file.withImports({
+        withSourceFile()
+            .withHeader(`
+    Source code containing improved Zustand store stuff for Source support (client-side).
+        `)
+            .withImports({
                 imports: {
                     "@leight/source-client": [
                         "withSourceStore",
@@ -48,22 +47,29 @@ export const generatorClientSourceStore: IGenerator<IGeneratorClientSourceStoreP
                     ],
                 },
             })
+            .withImports({
+                imports: {
+                    [`../Trpc/Use${name}SourceQuery`]: [
+                        `Use${name}SourceQuery`,
+                    ],
+                },
+            })
             .withConsts({
                 exports: {
                     [`${name}SourceStore`]: {
                         body: `
 withSourceStore({
     name: "${name}",
-    SourceSchema: ${name}SourceSchema,
+    schema: ${name}SourceSchema,
+    use: Use${name}SourceQuery,
 })
                     `,
                     },
                 },
+            })
+            .saveTo({
+                file: normalize(`${directory}/Source/${name}SourceStore.ts`),
+                barrel,
             });
-    });
-
-    file.saveTo({
-        file: normalize(`${process.cwd()}/${folder}/ClientStore.ts`),
-        barrel,
     });
 };

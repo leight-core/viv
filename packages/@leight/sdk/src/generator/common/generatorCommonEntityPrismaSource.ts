@@ -1,9 +1,5 @@
 import {type IPackageType} from "@leight/generator";
-import {
-    withPackageImport,
-    withPackageType,
-    withSourceFile
-}                          from "@leight/generator-server";
+import {withSourceFile}    from "@leight/generator-server";
 import {normalize}         from "node:path";
 import {type IGenerator}   from "../../api";
 
@@ -21,15 +17,6 @@ export namespace IGeneratorCommonEntityPrismaSourceParams {
          * Required package imports
          */
         packages: IPackages;
-        /**
-         * Optional extensions of individual parts of the schemas
-         */
-        withSchemaEx?: IWithSchemaEx;
-        withSourceEx?: IWithSourceEx;
-        /**
-         * Specify sort fields of the Sort query
-         */
-        sorts?: string[];
     }
 
     export interface IPackages {
@@ -48,6 +35,7 @@ export namespace IGeneratorCommonEntityPrismaSourceParams {
          * Optional extension of entity schema
          */
         schema?: IPackageType;
+        dto?: IPackageType;
         create?: IPackageType;
         toCreate?: IPackageType;
         patch?: IPackageType;
@@ -64,120 +52,93 @@ export const generatorCommonEntityPrismaSource: IGenerator<IGeneratorCommonEntit
     {
         packageName,
         barrel,
-        folder,
+        directory,
         params: {entities},
     }) => {
-    const file = withSourceFile();
-
-    entities.forEach(({name, withSchemaEx, withSourceEx, sorts = ["id"], packages}) => {
-        file.withImports({
+    entities.forEach(({name, packages}) => {
+        withSourceFile()
+            .withImports({
                 imports: {
-                    [packages.prisma]:   [
-                        `${name}Schema as $EntitySchema`,
-                        `${name}OptionalDefaultsSchema`,
-                        `${name}PartialSchema`,
+                    [`../../schema/${name}SourceSchema`]: [
+                        `type I${name}SourceSchemaType`,
+                    ],
+                    "@leight/source":                  [
+                        "type ISourceMapper",
+                    ],
+                },
+            })
+            .withTypes({
+                exports: {
+                    [`I${name}SourceMapper`]: `ISourceMapper<I${name}SourceSchemaType>`,
+                },
+            })
+            .saveTo({
+                file:   normalize(`${directory}/api/${name}Types.ts`),
+                barrel: false,
+            });
+
+        withSourceFile()
+            .withImports({
+                imports: {
+                    "@leight/source":                  [
+                        "type IUseSourceQuery",
+                        "type ISource",
+                    ],
+                    [`../../schema/${name}SourceSchema`]: [
+                        `type I${name}SourceSchemaType`,
+                    ],
+                },
+            })
+            .withTypes({
+                exports: {
+                    [`IUse${name}SourceQuery`]: `IUseSourceQuery<I${name}SourceSchemaType>`,
+                },
+            })
+            .withInterfaces({
+                exports: {
+                    [`I${name}Source`]: {
+                        extends: [
+                            {type: `ISource<I${name}SourceSchemaType>`},
+                        ],
+                    },
+                }
+            })
+            .withConsts({
+                exports: {
+                    [`$${name}Source`]:        {body: `Symbol.for("${packageName}/I${name}Source")`},
+                    [`$${name}SourceMapper`]:  {body: `Symbol.for("${packageName}/I${name}SourceMapper")`},
+                    [`$${name}SourceService`]: {body: `Symbol.for("${packageName}/I${name}SourceService")`},
+                }
+            })
+            .saveTo({
+                file: normalize(`${directory}/Source/${name}PrismaSource.ts`),
+                barrel,
+            });
+
+        withSourceFile()
+            .withImports({
+                imports: {
+                    "@leight/source":  [
+                        "withSourceSchemaEx",
+                        "type ISourceSchemaExType",
+                    ],
+                    [packages.prisma]: [
                         `${name}WhereInputSchema`,
                         `${name}WhereUniqueInputSchema`,
                         `${name}OrderByWithRelationInputSchema`,
                     ],
-                    "@leight/filter":    [
-                        "FilterSchema",
-                    ],
-                    "@leight/sort":      [
-                        "SortOrderSchema",
-                    ],
-                    "@leight/container": [
-                        "type IContainer",
-                        "ServiceContext",
-                    ],
-                    "@leight/source":    [
-                        "withSourceExSchema",
-                        "type InferSourceExSchema",
-                        "type IUseSourceQuery",
-                        "WithIdentitySchema",
-                        "type ISource",
-                        "type InferSourceSchema",
-                        "withSourceSchema",
-                    ],
-                    "@leight/zod":       [
-                        "z",
-                    ],
                 },
             })
-            .withImports({
-                imports: withSchemaEx?.schema?.withPackage ? {
-                    [withSchemaEx.schema.withPackage.package]: [
-                        withPackageImport(withSchemaEx.schema),
-                    ],
-                } : {},
-            })
-            .withImports({
-                imports: withSchemaEx?.toCreate?.withPackage ? {
-                    [withSchemaEx.toCreate?.withPackage.package]: [
-                        withPackageImport(withSchemaEx.toCreate),
-                    ],
-                } : {
-                    "@leight/source": [
-                        "ToCreateSchema",
-                    ],
-                },
-            })
-            .withImports({
-                imports: withSchemaEx?.create?.withPackage ? {
-                    [withSchemaEx.create?.withPackage.package]: [
-                        withPackageImport(withSchemaEx.create),
-                    ],
-                } : {},
-            })
-            .withImports({
-                imports: withSchemaEx?.toPatch?.withPackage ? {
-                    [withSchemaEx.toPatch?.withPackage.package]: [
-                        withPackageImport(withSchemaEx.toPatch),
-                    ],
-                } : {
-                    "@leight/source": [
-                        "ToPatchSchema",
-                    ],
-                },
-            })
-            .withImports({
-                imports: withSchemaEx?.patch?.withPackage ? {
-                    [withSchemaEx.patch?.withPackage.package]: [
-                        withPackageImport(withSchemaEx.patch),
-                    ],
-                } : {
-                    "@leight/source": [
-                        "WithIdentitySchema",
-                    ],
-                },
-            })
-            .withImports({
-                imports: withSchemaEx?.filter?.withPackage ? {
-                    [withSchemaEx.filter?.withPackage.package]: [
-                        withPackageImport(withSchemaEx.filter),
-                    ],
-                } : {
-                    "@leight/filter": [
-                        "FilterSchema",
-                    ],
-                },
-            })
-            .withImports({
-                imports: withSchemaEx?.params?.withPackage ? {
-                    [withSchemaEx?.params?.withPackage.package]: [
-                        withPackageImport(withSchemaEx.params),
-                    ],
-                } : {
-                    "@leight/query": [
-                        "ParamsSchema",
-                    ],
+            .withTypes({
+                exports: {
+                    [`I${name}PrismaSchemaType`]: `ISourceSchemaExType.of<typeof ${name}PrismaSchema>`,
                 },
             })
             .withConsts({
                 exports: {
                     [`${name}PrismaSchema`]: {
                         body: `
-withSourceExSchema({
+withSourceSchemaEx({
     WhereSchema:       ${name}WhereInputSchema,
     WhereUniqueSchema: ${name}WhereUniqueInputSchema,
     OrderBySchema:     ${name}OrderByWithRelationInputSchema,
@@ -186,74 +147,9 @@ withSourceExSchema({
                     },
                 },
             })
-            .withTypes({
-                exports: {
-                    [`I${name}SourceSchema`]: `InferSourceSchema<typeof ${name}SourceSchema>`,
-                    [`I${name}PrismaSchema`]: `InferSourceExSchema<typeof ${name}PrismaSchema>`,
-
-                    [`IUse${name}SourceQuery`]: `IUseSourceQuery<I${name}SourceSchema>`,
-                },
-            })
-            .withConsts({
-                exports: {
-                    [`${name}SourceSchema`]: {
-                        body: `
-withSourceSchema({
-    EntitySchema: ${withSchemaEx?.schema ? `$EntitySchema.merge(${withPackageType(withSchemaEx.schema)})` : "$EntitySchema"},
-    ToCreateSchema: ${withSchemaEx?.toCreate ? withPackageType(withSchemaEx.toCreate) : "ToCreateSchema"},
-    CreateSchema: ${withSchemaEx?.create ? withPackageType(withSchemaEx.create) : `${name}OptionalDefaultsSchema`},
-    ToPatchSchema: ${withSchemaEx?.toPatch ? withPackageType(withSchemaEx.toPatch) : "ToPatchSchema"},
-    PatchSchema: ${withSchemaEx?.patch ? withPackageType(withSchemaEx.patch) : `${name}PartialSchema.merge(WithIdentitySchema)`},
-    FilterSchema: ${withSchemaEx?.filter ? withPackageType(withSchemaEx.filter) : `z.union([
-        ${name}WhereInputSchema,
-        ${name}WhereUniqueInputSchema,
-        FilterSchema,
-    ])`},
-    ParamsSchema: ${withSchemaEx?.params ? withPackageType(withSchemaEx.params) : "ParamsSchema"},
-    SortSchema: z.object({
-        ${sorts.map(sort => `${sort}: SortOrderSchema`).join(",\n\t")}
-    }),
-})
-                        `,
-                    },
-                },
-            })
-            .withImports(withSourceEx?.extends ? {
-                imports: withSourceEx.extends
-                             .filter(((item): item is Required<IPackageType> => Boolean(item.withPackage)))
-                             .reduce((prev, withPackage) => ({
-                                 ...prev,
-                                 [withPackage.withPackage.package]: [
-                                     withPackageImport(withPackage, "type"),
-                                     ...(prev[withPackage.withPackage.package] || [])
-                                 ],
-                             }), {} as Record<string, any>),
-            } : undefined)
-            .withInterfaces({
-                exports: {
-                    [`I${name}Source`]: {
-                        extends: [
-                                     {type: `ISource<I${name}SourceSchema>`},
-                                 ].concat(withSourceEx?.extends || []),
-                    },
-                }
-            })
-            .withConsts({
-                exports: {
-                    [`$${name}Source`]: {body: `Symbol.for("${packageName}/I${name}Source")`},
-                }
-            })
-            .withConsts({
-                exports: {
-                    [`${name}SourceContext`]: {
-                        body: `(container: IContainer) => new ServiceContext<I${name}Source>(container, $${name}Source)`,
-                    },
-                },
+            .saveTo({
+                file: normalize(`${directory}/schema/${name}PrismaSchema.ts`),
+                barrel,
             });
-    });
-
-    file.saveTo({
-        file: normalize(`${process.cwd()}/${folder}/PrismaSource.ts`),
-        barrel,
     });
 };

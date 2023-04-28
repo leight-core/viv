@@ -1,41 +1,86 @@
-import {type BindKey} from "@leight/container";
 import {
-    type ISource,
-    type ISourceSchema,
+    type BindKey,
+    type IContainer
+}                    from "@leight/container";
+import {
+    type ISourceSchemaType,
+    type ISourceService,
     type IWithIdentity,
-    WithIdentitySchema
-}                     from "@leight/source";
-import {
-    type IWithHandlerProps,
-    withHandler
-}                     from "@leight/trpc-server";
+    IWithOptionalIdentity
+}                    from "@leight/source";
+import {withHandler} from "@leight/trpc-server";
 
-export const withSourceHandler      = <TSourceSchema extends ISourceSchema>(props: IWithHandlerProps<TSourceSchema["Query"] | undefined, TSourceSchema["Entity"][]>) => withHandler<TSourceSchema["Query"] | undefined, TSourceSchema["Entity"][]>(props);
-export const withSourceCountHandler = <TSourceSchema extends ISourceSchema>(props: IWithHandlerProps<TSourceSchema["Query"] | undefined, number>) => withHandler<TSourceSchema["Query"] | undefined, number>(props);
-export const withFetchHandler       = <TSourceSchema extends ISourceSchema>(props: IWithHandlerProps<TSourceSchema["Query"], TSourceSchema["Entity"]>) => withHandler<TSourceSchema["Query"], TSourceSchema["Entity"]>(props);
-export const withFindHandler        = <TSourceSchema extends ISourceSchema>(props: IWithHandlerProps<IWithIdentity, TSourceSchema["Entity"]>) => withHandler<IWithIdentity, TSourceSchema["Entity"]>(props);
-
-export interface IWithSourceProcedureProps<TSourceSchema extends ISourceSchema> {
-    source: BindKey;
-    schema: TSourceSchema["QuerySchema"];
+export interface IWithSourceProcedureProps {
+    sourceService: BindKey;
 }
 
-export const withSourceProcedure = <TSourceSchema extends ISourceSchema>({source, schema}: IWithSourceProcedureProps<TSourceSchema>) => {
+export const withSourceProcedure = <TSourceSchemaType extends ISourceSchemaType>(
+    {
+        sourceService,
+    }: IWithSourceProcedureProps) => {
+
+    const withSourceService = (container: IContainer) => {
+        return container.resolve<ISourceService<TSourceSchemaType>>(sourceService);
+    };
+
     return {
-        QuerySchema:         schema,
-        QueryOptionalSchema: schema.optional(),
-        IdentitySchema:      WithIdentitySchema,
-        Query:               withSourceHandler<TSourceSchema>({
-            handler: async ({container, request}) => container.resolve<ISource<TSourceSchema>>(source).query(request),
+        handleCreate:       withHandler<TSourceSchemaType["ToCreate"], TSourceSchemaType["Dto"]>({
+            handler: async ({container, request: toCreate}) => withSourceService(container).handleCreate({toCreate}),
         }),
-        QueryCount:          withSourceCountHandler<TSourceSchema>({
-            handler: async ({container, request}) => container.resolve<ISource<TSourceSchema>>(source).count(request),
+        handlePatch:        withHandler<TSourceSchemaType["ToPatch"], TSourceSchemaType["Dto"]>({
+            handler: async ({container, request: toPatch}) => withSourceService(container).handlePatch({toPatch}),
         }),
-        Fetch:               withFetchHandler<TSourceSchema>({
-            handler: async ({container, request}) => container.resolve<ISource<TSourceSchema>>(source).fetch(request),
+        handleDelete:       withHandler<IWithIdentity, TSourceSchemaType["Dto"]>({
+            handler: async ({container, request}) => {
+                const $sourceService = withSourceService(container);
+                return $sourceService.toDto(
+                    await $sourceService.source().delete(request)
+                );
+            },
         }),
-        Find:                withFindHandler<TSourceSchema>({
-            handler: async ({container, request: {id}}) => container.resolve<ISource<TSourceSchema>>(source).find(id),
+        handleDeleteWith:   withHandler<TSourceSchemaType["Query"], TSourceSchemaType["Dto"][]>({
+            handler: async ({container, request}) => {
+                const $sourceService = withSourceService(container);
+                return Promise.all(
+                    (await $sourceService.source().deleteWith(request)).map(item => $sourceService.toDto(item))
+                );
+            },
+        }),
+        handleQuery:        withHandler<TSourceSchemaType["QueryOptional"], TSourceSchemaType["Dto"][]>({
+            handler: async ({container, request}) => {
+                const $sourceService = withSourceService(container);
+                return Promise.all(
+                    (await $sourceService.source().query(request)).map(item => $sourceService.toDto(item))
+                );
+            },
+        }),
+        handleCount:        withHandler<TSourceSchemaType["QueryOptional"], number>({
+            handler: async ({container, request}) => withSourceService(container).source().count(request),
+        }),
+        handleFetch:        withHandler<TSourceSchemaType["Query"], TSourceSchemaType["Dto"]>({
+            handler: async ({container, request}) => {
+                const $sourceService = withSourceService(container);
+                return $sourceService.toDto(
+                    await $sourceService.source().fetch(request)
+                );
+            },
+        }),
+        handleFind:         withHandler<IWithIdentity, TSourceSchemaType["Dto"]>({
+            handler: async ({container, request: {id}}) => {
+                const $sourceService = withSourceService(container);
+                return $sourceService.toDto(
+                    await $sourceService.source().find(id)
+                );
+            },
+        }),
+        handleFindOptional: withHandler<IWithOptionalIdentity, TSourceSchemaType["Dto"] | null>({
+            handler: async ({container, request}) => {
+                const $sourceService = withSourceService(container);
+                const entity         = await $sourceService.source().findOptional(request?.id);
+                return entity ? $sourceService.toDto(
+                    entity
+                ) : null;
+            },
         }),
     };
 };

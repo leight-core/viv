@@ -33,7 +33,7 @@ export const DefaultTable = () => {
              * See type in the IDE to reveal it's mysteries
              */
             id: {
-                render: "id",
+                render: ({item: {id}}) => id,
             },
             /**
              * When you want to render the same value as it's input object,
@@ -45,14 +45,14 @@ export const DefaultTable = () => {
              */
             number: {
                 width:  10,
-                render: "number",
+                render: ({item: {number}}) => number,
             },
             foo:    {
                 width: 120,
                 /**
                  * Yaay! You can provide custom render method. Input is your `TItem`.
                  */
-                render: ({foo}) => {
+                render: ({item: {foo}}) => {
                     return <>extended {foo}</>;
                 },
             },

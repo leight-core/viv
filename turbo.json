@@ -11,9 +11,6 @@
                 "prisma/schema.prisma"
             ]
         },
-        "generate": {
-            "cache": false
-        },
         "depcheck": {
             "outputMode": "new-only",
             "inputs": [
@@ -29,8 +26,21 @@
                 "src/**"
             ]
         },
+        "generate": {
+            "cache": false,
+            "outputs": [
+                "src/sdk/**"
+            ],
+            "inputs": [
+                "src/leight-sdk.ts"
+            ]
+        },
+        "setup": {
+            "cache": false
+        },
         "init": {
             "dependsOn": [
+                "setup",
                 "^init"
             ],
             "outputs": [
@@ -44,12 +54,11 @@
             "outputMode": "new-only",
             "dependsOn": [
                 "^build",
-                "generate",
-                "depcheck",
                 "lint"
             ],
             "outputs": [
-                "lib/**"
+                "lib/**",
+                ".next/**"
             ],
             "inputs": [
                 "prisma/schema.prisma",

@@ -45,6 +45,13 @@ export interface IWithClasses {
     exports?: Record<string, IClass>;
 }
 
+export interface IWithExports {
+    /**
+     * Export all (*) from the given file
+     */
+    exportsOf?: string[];
+}
+
 export interface IExportable {
     export(): string;
 }

@@ -5,18 +5,25 @@ import {
     $FileService,
     $FileServiceConfig,
     $FileSource,
+    $FileSourceMapper,
+    $FileSourceService,
     type IChunkService,
     type IChunkServiceConfig,
     type IFileService,
     type IFileServiceConfig,
     type IFileSource,
+    type IFileSourceMapper
 }                        from "@leight/file";
-import {FileSource}      from "./sdk";
-
+import {
+    FileBaseSourceMapper,
+    FileBaseSourceService,
+    type IFileSourceService
+}                        from "./sdk";
 import {
     ChunkService,
     FileService
-} from "./service";
+}                        from "./service";
+import {FileSource}      from "./source";
 
 export interface IFileContainer {
     ChunkService: IChunkService;
@@ -24,6 +31,8 @@ export interface IFileContainer {
     FileService: IFileService;
     FileServiceConfig: IFileServiceConfig;
     FileSource: IFileSource;
+    FileSourceService: IFileSourceService;
+    FileSourceMapper: IFileSourceMapper;
 }
 
 /**
@@ -41,7 +50,9 @@ export const FileContainer = (container: IContainer): IFileContainer => {
             path:            ".data/file/{fileId}",
             defaultMimeType: "application/octet-stream",
         })
-        .bindClass($FileSource, FileSource);
+        .bindClass($FileSource, FileSource)
+        .bindClass($FileSourceService, FileBaseSourceService)
+        .bindClass($FileSourceMapper, FileBaseSourceMapper);
 
     return {
         get ChunkService() {
@@ -58,6 +69,12 @@ export const FileContainer = (container: IContainer): IFileContainer => {
         },
         get FileSource() {
             return container.resolve<IFileSource>($FileSource);
+        },
+        get FileSourceService() {
+            return container.resolve<IFileSourceService>($FileSourceService);
+        },
+        get FileSourceMapper() {
+            return container.resolve<IFileSourceMapper>($FileSourceMapper);
         },
     };
 };

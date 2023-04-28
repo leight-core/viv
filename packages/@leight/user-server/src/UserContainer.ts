@@ -4,23 +4,33 @@ import {
     $UserJwtService,
     $UserService,
     $UserSource,
+    $UserSourceMapper,
+    $UserSourceService,
     type IRegistrationService,
     type IUserJwtService,
     type IUserService,
-    type IUserSource,
+    type IUserSourceEx,
+    type IUserSourceMapper,
 }                        from "@leight/user";
-import {UserSource}      from "./sdk";
+import {
+    type IUserSourceService,
+    UserBaseSourceMapper,
+    UserBaseSourceService
+}                        from "./sdk";
 import {
     RegistrationService,
     UserJwtService,
     UserService
 }                        from "./service";
+import {UserSource}      from "./source";
 
 export interface IUserContainer {
     RegistrationService: IRegistrationService;
     UserJwtService: IUserJwtService;
     UserService: IUserService;
-    UserSource: IUserSource;
+    UserSource: IUserSourceEx;
+    UserSourceService: IUserSourceService;
+    UserSourceMapper: IUserSourceMapper;
 }
 
 export const UserContainer = (container: IContainer): IUserContainer => {
@@ -28,7 +38,9 @@ export const UserContainer = (container: IContainer): IUserContainer => {
         .bindClass($RegistrationService, RegistrationService)
         .bindClass($UserJwtService, UserJwtService)
         .bindClass($UserService, UserService)
-        .bindClass($UserSource, UserSource);
+        .bindClass($UserSource, UserSource)
+        .bindClass($UserSourceService, UserBaseSourceService)
+        .bindClass($UserSourceMapper, UserBaseSourceMapper);
 
     return {
         get RegistrationService() {
@@ -41,7 +53,13 @@ export const UserContainer = (container: IContainer): IUserContainer => {
             return container.resolve<IUserService>($UserService);
         },
         get UserSource() {
-            return container.resolve<IUserSource>($UserSource);
+            return container.resolve<IUserSourceEx>($UserSource);
+        },
+        get UserSourceService() {
+            return container.resolve<IUserSourceService>($UserSourceService);
+        },
+        get UserSourceMapper() {
+            return container.resolve<IUserSourceMapper>($UserSourceMapper);
         },
     };
 };

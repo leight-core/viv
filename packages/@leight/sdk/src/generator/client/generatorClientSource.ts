@@ -1,30 +1,46 @@
-import {type IGenerator} from "../../api";
+import {type IGenerator}    from "../../api";
+import {generatorSdkBarrel} from "../generatorSdkBarrel";
+import {
+    generatorClientFilterForm,
+    IGeneratorClientFilterFormParams
+}                           from "./generatorClientFilterForm";
 import {
     generatorClientForm,
     type IGeneratorClientFormParams
-}                        from "./generatorClientForm";
+}                           from "./generatorClientForm";
+import {
+    generatorClientSelection,
+    IGeneratorClientSelectionParams
+}                           from "./generatorClientSelection";
 import {
     generatorClientSourceProvider,
     type IGeneratorClientSourceProviderParams
-}                        from "./generatorClientSourceProvider";
+}                           from "./generatorClientSourceProvider";
+import {
+    generatorClientSourceSelect,
+    type IGeneratorClientSourceSelectParams
+}                           from "./generatorClientSourceSelect";
 import {
     generatorClientSourceStore,
     type IGeneratorClientSourceStoreParams
-}                        from "./generatorClientSourceStore";
+}                           from "./generatorClientSourceStore";
 import {
     generatorClientSourceTable,
     type IGeneratorClientSourceTableParams
-}                        from "./generatorClientSourceTable";
+}                           from "./generatorClientSourceTable";
 import {
     generatorClientTrpcSource,
-    IGeneratorClientTrpcSourceParams
-}                        from "./generatorClientTrpcSource";
+    type IGeneratorClientTrpcSourceParams
+}                           from "./generatorClientTrpcSource";
 
 export interface IGeneratorClientSourceParams {
     SourceProvider?: IGeneratorClientSourceProviderParams;
     SourceStore?: IGeneratorClientSourceStoreParams;
     SourceTable?: IGeneratorClientSourceTableParams;
     Form?: IGeneratorClientFormParams;
+    FilterForm?: IGeneratorClientFilterFormParams;
+    Selection?: IGeneratorClientSelectionParams;
+    Select?: IGeneratorClientSourceSelectParams;
     Trpc?: IGeneratorClientTrpcSourceParams;
 }
 
@@ -36,6 +52,9 @@ export const generatorClientSource: IGenerator<IGeneratorClientSourceParams> = a
                     SourceTable,
                     Form,
                     Trpc,
+                    Selection,
+                    Select,
+                    FilterForm,
                 },
         ...     props
     }) => {
@@ -56,9 +75,26 @@ export const generatorClientSource: IGenerator<IGeneratorClientSourceParams> = a
             ...props,
             params: Form,
         }) : undefined,
+        FilterForm ? generatorClientFilterForm({
+            ...props,
+            params: FilterForm,
+        }) : undefined,
+        Selection ? generatorClientSelection({
+            ...props,
+            params: Selection,
+        }) : undefined,
+        Select ? generatorClientSourceSelect({
+            ...props,
+            params: Select,
+        }) : undefined,
         Trpc ? generatorClientTrpcSource({
             ...props,
             params: Trpc,
         }) : undefined,
     ]);
+    await generatorSdkBarrel({
+        ...props,
+        barrel: true,
+        params: {},
+    });
 };

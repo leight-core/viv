@@ -2,6 +2,7 @@ import {
     type IExportable,
     type IWithClasses,
     type IWithConsts,
+    type IWithExports,
     type IWithImports,
     type IWithInterfaces,
     type IWithTypes
@@ -25,6 +26,7 @@ import {
 }                           from "node:path";
 import {Classes}            from "./Classes";
 import {Consts}             from "./Consts";
+import {Exports}            from "./Exports";
 import {Imports}            from "./Imports";
 import {Interfaces}         from "./Interfaces";
 import {Types}              from "./Types";
@@ -36,6 +38,7 @@ export class SourceFile implements IExportable {
     public readonly $interfaces: Interfaces;
     public readonly $classes: Classes;
     public readonly $consts: Consts;
+    public readonly $exports: Exports;
 
     constructor() {
         this.$header     = `
@@ -48,6 +51,7 @@ export class SourceFile implements IExportable {
         this.$interfaces = new Interfaces();
         this.$classes    = new Classes();
         this.$consts     = new Consts();
+        this.$exports    = new Exports();
     }
 
     public withHeader(comment?: string) {
@@ -84,6 +88,11 @@ export class SourceFile implements IExportable {
         return this;
     }
 
+    public withExports({exportsOf}: IWithExports) {
+        exportsOf && this.$exports.exportsOf(exportsOf);
+        return this;
+    }
+
     public export() {
         return (this.$header ? `/**\n\t${this.$header.trim()}\n */\n` : "") + ([
             this.$imports,
@@ -91,6 +100,7 @@ export class SourceFile implements IExportable {
             this.$interfaces,
             this.$classes,
             this.$consts,
+            this.$exports,
         ] as const).map(item => item.export().trim()).filter(Boolean).join("\n\n");
     }
 

@@ -62,6 +62,7 @@ model User {
     UserToken UserToken[]
     File      File[]
     Job       Job[]
+    Filter    Filter[]
 }
 
 model VerificationToken {
@@ -162,4 +163,16 @@ enum JobStatus {
 model Keyword {
     id   String @id @default(cuid())
     text String @unique @db.Text
+}
+
+model Filter {
+    id     String @id @default(cuid())
+    name   String
+    type   String
+    userId String
+    user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+    filter Json
+    dto    Json?
+
+    @@unique([userId, type, name])
 }

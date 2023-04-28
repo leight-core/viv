@@ -50,7 +50,7 @@ export const BetterTable: FC<IBetterTableProps> = props => {
                  * to translations.
                  */
                 title:  "ID",
-                render: "id",
+                render: ({item: {id}}) => id,
             },
             /**
              * When you want to render the same value as it's input object,
@@ -69,7 +69,7 @@ export const BetterTable: FC<IBetterTableProps> = props => {
                 /**
                  * Yaay! You can provide custom render method. Input is your `TItem`.
                  */
-                render: ({foo}) => {
+                render: ({item: {foo}}) => {
                     return <>extended {foo}</>;
                 },
             },
@@ -81,7 +81,7 @@ export const BetterTable: FC<IBetterTableProps> = props => {
         ]}
         overrideColumns={{
             number: {
-                render: ({number}) => number * 2,
+                render: ({item: {number}}) => number * 2,
             },
         }}
         /**

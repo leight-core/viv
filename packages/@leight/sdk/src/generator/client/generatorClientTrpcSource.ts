@@ -35,25 +35,52 @@ export namespace IGeneratorClientTrpcSourceParams {
          * Part of the trpc call chain (base is `trpc`.${trpcPath}.`...rest of standard trpc router`
          */
         path: string;
+        invalidators?: string[];
     }
 }
 
 export const generatorClientTrpcSource: IGenerator<IGeneratorClientTrpcSourceParams> = async (
     {
-        folder,
         barrel,
+        directory,
         params: {entities}
     }) => {
-    const file = withSourceFile();
-
     entities.forEach(({name, withTrpc, packages}) => {
-        file.withImports({
+        withTrpc.invalidators && withSourceFile()
+            .withImports({
+                imports: {
+                    [withTrpc.package]: [
+                        "trpc",
+                    ],
+                },
+            })
+            .withConsts({
+                exports: {
+                    [`use${name}QueryInvalidator`]: {
+                        body: `
+() => {
+    const trpcContext = trpc.useContext();
+    return () => {
+        ${withTrpc.invalidators.map(invalidator => `trpcContext.${invalidator}.invalidate();`).join("\n\t\t")}
+    };
+}
+                        `,
+                    },
+                },
+            })
+            .saveTo({
+                file: normalize(`${directory}/Trpc/use${name}QueryInvalidator.tsx`),
+                barrel,
+            });
+
+        withSourceFile()
+            .withImports({
                 imports: {
                     "@leight/source-client": [
                         "withSourceQuery",
                     ],
                     [packages.schema]:       [
-                        `type I${name}SourceSchema`,
+                        `type I${name}SourceSchemaType`,
                         `type IUse${name}SourceQuery`,
                     ],
                 }
@@ -69,14 +96,13 @@ export const generatorClientTrpcSource: IGenerator<IGeneratorClientTrpcSourcePar
                 exports: {
                     [`Use${name}SourceQuery`]: {
                         type: `IUse${name}SourceQuery`,
-                        body: `withSourceQuery<I${name}SourceSchema>(trpc.${withTrpc.path}.source)`,
-                    }
+                        body: `withSourceQuery<I${name}SourceSchemaType>(trpc.${withTrpc.path}.source)`,
+                    },
                 }
+            })
+            .saveTo({
+                file: normalize(`${directory}/Trpc/Use${name}SourceQuery.tsx`),
+                barrel,
             });
-    });
-
-    file.saveTo({
-        file: normalize(`${process.cwd()}/${folder}/ClientTrpcSource.tsx`),
-        barrel,
     });
 };

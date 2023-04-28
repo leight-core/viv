@@ -6,8 +6,8 @@
 
 - Version bump
 - Updated dependencies
-  - @leight/context-client@0.5.72
-  - @leight/filter@0.5.60
+- @leight/context-client@0.5.72
+- @leight/filter@0.5.60
 
 ## 0.5.4
 
@@ -15,8 +15,8 @@
 
 - Version bump (updated packages)
 - Updated dependencies
-  - @leight/context-client@0.5.71
-  - @leight/filter@0.5.59
+- @leight/context-client@0.5.71
+- @leight/filter@0.5.59
 
 ## 0.5.3
 
@@ -24,8 +24,8 @@
 
 - Version bump
 - Updated dependencies
-  - @leight/context-client@0.5.70
-  - @leight/filter@0.5.58
+- @leight/context-client@0.5.70
+- @leight/filter@0.5.58
 
 ## 0.5.2
 
@@ -33,8 +33,8 @@
 
 - Version bump
 - Updated dependencies
-  - @leight/context-client@0.5.69
-  - @leight/filter@0.5.57
+- @leight/context-client@0.5.69
+- @leight/filter@0.5.57
 
 ## 0.5.1
 
@@ -42,5 +42,5 @@
 
 - VErsion bump
 - Updated dependencies
-  - @leight/filter@0.5.56
-  - @leight/context-client@0.5.68
+- @leight/filter@0.5.56
+- @leight/context-client@0.5.68

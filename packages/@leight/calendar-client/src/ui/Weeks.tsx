@@ -1,46 +1,43 @@
 import {
-    type ICalendarEventSourceSchema,
+    type ICalendarEventSourceSchemaType,
     type IDay,
     type IWeeks
-}                      from "@leight/calendar";
-import {DateTime}      from "@leight/i18n";
-import {DateInline}    from "@leight/i18n-client";
-import {classNames}    from "@leight/utils-client";
+}                             from "@leight/calendar";
+import {DateTime}             from "@leight/i18n";
+import {DateInline}           from "@leight/i18n-client";
+import {FulltextStoreContext} from "@leight/source-client";
+import {classNames}           from "@leight/utils-client";
 import {
     ActionIcon,
     Button,
     Grid,
     Group,
-    Overlay,
     Stack,
     Text
-}                      from "@mantine/core";
-import {useDisclosure} from "@mantine/hooks";
+}                             from "@mantine/core";
 import {
     IconCalendarEvent,
     IconChevronLeft,
     IconChevronRight,
     IconChevronsLeft,
-    IconChevronsRight,
-    IconX
-}                      from "@tabler/icons-react";
+    IconChevronsRight
+}                             from "@tabler/icons-react";
 import {
     type PropsWithChildren,
     type ReactNode,
     useEffect,
-    useRef,
     useState
-}                      from "react";
-import {WeeksOfStore}  from "../context";
+}                             from "react";
+import {WeeksOfStore}         from "../context";
 import {
     CalendarShell,
     type ICalendarShellProps
-}                      from "./CalendarShell";
+}                             from "./CalendarShell";
 
-export type IWeeksProps<TSourceSchema extends ICalendarEventSourceSchema = ICalendarEventSourceSchema> = PropsWithChildren<Omit<ICalendarShellProps<TSourceSchema>, "children" | "onClick" | "onChange"> & {
+export type IWeeksProps<TSourceSchemaType extends ICalendarEventSourceSchemaType = ICalendarEventSourceSchemaType> = PropsWithChildren<Omit<ICalendarShellProps<TSourceSchemaType>, "children" | "onClick" | "onChange"> & {
     onClick?(props: IWeeksProps.IOnClickProps): void;
     onChange?(props: IWeeksProps.IOnChangeProps): void;
-    renderDayInline?(props: IWeeksProps.IRenderInlineProps<TSourceSchema>): ReactNode;
+    renderDayInline?(props: IWeeksProps.IRenderInlineProps<TSourceSchemaType>): ReactNode;
 
     weekCountSize?: number;
     defaultWithWeekNo?: boolean;
@@ -57,14 +54,15 @@ export namespace IWeeksProps {
         weeks: IWeeks;
     }
 
-    export interface IRenderInlineProps<TSourceSchema extends ICalendarEventSourceSchema> {
-        schema: TSourceSchema["EntitySchema"];
+    export interface IRenderInlineProps<TSourceSchemaType extends ICalendarEventSourceSchemaType> {
+        schema: TSourceSchemaType["DtoSchema"];
         day: IDay;
-        events: TSourceSchema["Entity"][];
+        events: TSourceSchemaType["Dto"][];
+        compact?: boolean;
     }
 }
 
-export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalendarEventSourceSchema>(
+export const Weeks = <TSourceSchemaType extends ICalendarEventSourceSchemaType = ICalendarEventSourceSchemaType>(
     {
         onClick,
         onChange: $onChange = () => null,
@@ -76,8 +74,9 @@ export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalend
         columnSize = 3,
         children,
         ...props
-    }: IWeeksProps<TSourceSchema>) => {
+    }: IWeeksProps<TSourceSchemaType>) => {
     const {
+              id,
               nextMonth,
               prevMonth,
               prevYear,
@@ -90,41 +89,37 @@ export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalend
                          end,
                          isCurrent,
                      }
-          }                                                     = WeeksOfStore.useState();
-    const source                                                = events?.SourceStore.Source.useState();
-    const filter                                                = events?.SourceStore.Filter.useState();
-    const $events                                               = events && source?.entities
-        .filter(event => events.schema.safeParse(event))
-        .map(event => events.schema.parse(event))
-        .reduce<Record<string, TSourceSchema["Entity"][]>>((prev, current) => {
-            const stamp = current.date.toLocaleString({day: "numeric", month: "numeric", year: "numeric"});
-            return {
-                ...prev,
-                [stamp]: (prev[stamp] || []).concat(current),
-            };
+          }                         = WeeksOfStore.useState();
+    const source                    = events?.SourceStore.useSource();
+    const filter                    = events?.SourceStore.Query.useState();
+    const fulltextContext           = FulltextStoreContext.useOptionalState();
+    const $events                   = events && source?.data
+        .reduce<Record<string, TSourceSchemaType["Dto"][]>>((prev, current) => {
+            const stamp = DateTime.fromJSDate(current.date).toLocaleString({day: "numeric", month: "numeric", year: "numeric"});
+            prev[stamp] = (prev[stamp] || []).concat(current);
+            return prev;
         }, {});
-    const [isOverlay, {open: openOverlay, close: closeOverlay}] = useDisclosure(false);
-    const overlay                                               = useRef<ReactNode>();
-    const [withWeeks, setWithWeeks]                             = useState(defaultWithWeekNo);
-    const withOverlay                                           = (children: ReactNode) => {
-        overlay.current = children;
-        openOverlay();
-    };
+    const [withWeeks, setWithWeeks] = useState(defaultWithWeekNo);
 
     useEffect(() => {
         filter?.setFilter({
-            from: start,
-            to:   end,
+            fulltext:  fulltextContext?.fulltext || undefined,
+            withRange: {
+                from: start.toUTC().toJSDate(),
+                to:   end.toUTC().toJSDate(),
+            },
         });
     }, [
-        start.toISO(),
-        end.toISO(),
+        id,
     ]);
 
-    const onChange: IWeeksProps<TSourceSchema>["onChange"] = props => {
+    const onChange: IWeeksProps<TSourceSchemaType>["onChange"] = props => {
         filter?.setFilter({
-            from: props.weeks.start,
-            to:   props.weeks.end,
+            fulltext:  fulltextContext?.fulltext || undefined,
+            withRange: {
+                from: props.weeks.start.toUTC().toJSDate(),
+                to:   props.weeks.end.toUTC().toJSDate(),
+            },
         });
         $onChange?.(props);
     };
@@ -139,6 +134,7 @@ export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalend
         controlsTopLeft={<Group spacing={"sm"}>
             <Button.Group>
                 <Button
+                    compact={props.compact}
                     size={"sm"}
                     variant={"subtle"}
                     onClick={() => onChange({weeks: prevMonth()})}
@@ -150,6 +146,7 @@ export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalend
                     />
                 </Button>
                 <Button
+                    compact={props.compact}
                     size={"sm"}
                     variant={"subtle"}
                     onClick={() => onChange({weeks: prevYear()})}
@@ -164,6 +161,7 @@ export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalend
         </Group>}
         controlsTopMiddle={<Group spacing={"sm"}>
             <Button
+                compact={props.compact}
                 variant={"subtle"}
                 onClick={() => onChange({weeks: today()})}
                 disabled={isCurrent}
@@ -179,6 +177,7 @@ export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalend
         controlsTopRight={<Group spacing={"sm"}>
             <Button.Group>
                 <Button
+                    compact={props.compact}
                     size={"sm"}
                     variant={"subtle"}
                     onClick={() => onChange({weeks: nextYear()})}
@@ -190,6 +189,7 @@ export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalend
                     />
                 </Button>
                 <Button
+                    compact={props.compact}
                     size={"sm"}
                     variant={"subtle"}
                     onClick={() => onChange({weeks: nextMonth()})}
@@ -202,7 +202,7 @@ export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalend
                 </Button>
             </Button.Group>
         </Group>}
-        controlsBottomLeft={<ActionIcon
+        controlsBottomLeft={props.compact ? undefined : <ActionIcon
             variant={"subtle"}
             onClick={() => setWithWeeks(weeks => !weeks)}
         >
@@ -211,18 +211,6 @@ export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalend
         {...props}
     >
         {({classes}) => <>
-            {isOverlay && <Overlay color={"#FFF"} opacity={1}>
-                <Group position={"apart"}>
-                    <div/>
-                    <ActionIcon
-                        variant={"subtle"}
-                        onClick={() => closeOverlay()}
-                    >
-                        <IconX/>
-                    </ActionIcon>
-                </Group>
-                {overlay.current}
-            </Overlay>}
             {/*
                 First of all: render header with all days of the week; they're already localised from
                 the calendar, so it's just simple render here.
@@ -237,7 +225,10 @@ export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalend
             >
                 {withWeeks && <Grid.Col
                     span={weekCountSize}
-                    className={classes.header}
+                    className={classNames(
+                        classes.header,
+                        props.compact ? "compact" : undefined,
+                    )}
                 >
                     <ActionIcon variant={"light"}>
                         <IconCalendarEvent/>
@@ -246,7 +237,10 @@ export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalend
                 {list.map(day => <Grid.Col
                     key={`day-${day}`}
                     span={columnSize}
-                    className={classes.header}
+                    className={classNames(
+                        classes.header,
+                        props.compact ? "compact" : undefined,
+                    )}
                 >
                     {day}
                 </Grid.Col>)}
@@ -272,7 +266,22 @@ export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalend
                 {/*
                     Grid is already properly setup (number of columns), so render day by day as a calendar says.
                  */}
-                {days.map(day => <Grid.Col
+                {days.map(day => props.compact ? <>
+                    <Grid.Col
+                        key={day.id}
+                        span={columnSize}
+                        className={classNames(
+                            "compact",
+                            classes.cell,
+                            day.isCurrent && highlightToday ? classes.currentDay : undefined,
+                            day.isOutOfRange ? classes.outOfRange : classes.inRange,
+                        )}
+                        style={onClick ? {cursor: "pointer"} : undefined}
+                        onClick={() => onClick?.({day})}
+                    >
+                        {day.day.day}
+                    </Grid.Col>
+                </> : <Grid.Col
                     key={day.id}
                     span={columnSize}
                     className={classNames(
@@ -288,18 +297,20 @@ export const Weeks = <TSourceSchema extends ICalendarEventSourceSchema = ICalend
                         style={{height: "100%", padding: "0 0.3em"}}
                     >
                         <Group position={"apart"}>
-                            <Group spacing={0}>
-                                <ActionIcon size={"sm"}>
-                                    <IconCalendarEvent/>
-                                </ActionIcon>
-                            </Group>
+                            <div></div>
+                            {/*<Group spacing={0}>*/}
+                            {/*    <ActionIcon size={"sm"}>*/}
+                            {/*        <IconCalendarEvent/>*/}
+                            {/*    </ActionIcon>*/}
+                            {/*</Group>*/}
                             {day.day.day}
                         </Group>
                         {renderDayInline && events ? <div>
                             {renderDayInline({
-                                schema: events.schema,
+                                schema:  events.schema,
                                 day,
-                                events: $events?.[day.id] || [],
+                                events:  $events?.[day.id] || [],
+                                compact: props.compact,
                             })}
                         </div> : null}
                     </Stack>

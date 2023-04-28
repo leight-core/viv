@@ -1,9 +1,4 @@
-import {IPackageType}    from "@leight/generator";
-import {
-    withPackageImport,
-    withPackageType,
-    withSourceFile
-}                        from "@leight/generator-server";
+import {withSourceFile}  from "@leight/generator-server";
 import {normalize}       from "node:path";
 import {type IGenerator} from "../../api";
 
@@ -21,16 +16,6 @@ export namespace IGeneratorServerSourceParams {
          * Required package imports
          */
         packages: IPackages;
-        /**
-         * If you want to extend default Source implementation by your own
-         * stuff, put here a type and package it's coming from
-         */
-        sourceEx?: IPackageType;
-        /**
-         * If the Source is using Prisma connection, you should put "true" here as it's included
-         * from different package.
-         */
-        withPrisma?: boolean;
     }
 
     export interface IPackages {
@@ -44,47 +29,96 @@ export namespace IGeneratorServerSourceParams {
 export const generatorServerSource: IGenerator<IGeneratorServerSourceParams> = async (
     {
         barrel,
-        folder,
+        directory,
         params: {entities},
     }) => {
-    const file = withSourceFile();
-
-    entities.forEach(({name, sourceEx, withPrisma, packages}) => {
-        const baseSource = withPrisma ? `${name}BasePrismaSource` : `${name}BaseSource`;
-
-        file.withImports({
+    entities.forEach(({name, packages}) => {
+        withSourceFile()
+            .withImports({
                 imports: {
-                    [packages.schema]: [
-                        `type I${name}Source`,
+                    "@leight/source-server": [
+                        `AbstractSourceMapper`,
+                    ],
+                    [packages.schema]:       [
+                        `type I${name}SourceSchemaType`,
+                        `type I${name}SourceMapper`,
                     ],
                 },
             })
-            .withImports(sourceEx?.type ? undefined : {
-                imports: {
-                    [withPrisma ? "./ServerPrismaSource" : "./ServerBaseSource"]: [
-                        baseSource,
-                    ],
-                },
-            })
-            .withImports(sourceEx?.withPackage ? {
-                imports: {
-                    [sourceEx.withPackage.package]: [
-                        withPackageImport(sourceEx),
-                    ],
-                },
-            } : undefined)
             .withClasses({
                 exports: {
-                    [`${name}Source`]: {
-                        extends:    sourceEx?.type ? withPackageType(sourceEx) : baseSource,
-                        implements: `I${name}Source`,
+                    [`${name}BaseSourceMapper`]: {
+                        extends:    `AbstractSourceMapper<I${name}SourceSchemaType>`,
+                        implements: `I${name}SourceMapper`,
                     },
                 },
+            })
+            .saveTo({
+                file: normalize(`${directory}/SourceMapper/${name}BaseSourceMapper.ts`),
+                barrel,
             });
-    });
 
-    file.saveTo({
-        file: normalize(`${process.cwd()}/${folder}/ServerSource.ts`),
-        barrel,
+        withSourceFile()
+            .withImports({
+                imports: {
+                    "@leight/source-server": [
+                        "AbstractSourceService",
+                    ],
+                    "@leight/source":        [
+                        "type ISourceService",
+                        "type ISourceMapper",
+                        "type ISource",
+                    ],
+                    [packages.schema]:       [
+                        `$${name}Source`,
+                        `$${name}SourceMapper`,
+                        `type I${name}SourceSchemaType`,
+                    ],
+                },
+            })
+            .withInterfaces({
+                exports: {
+                    [`I${name}SourceService`]: {
+                        extends: [
+                            {
+                                type: `ISourceService<I${name}SourceSchemaType>`,
+                            },
+                        ],
+                    },
+                },
+            })
+            .withClasses({
+                exports: {
+                    [`${name}BaseSourceService`]: {
+                        implements: `I${name}SourceService`,
+                        extends:    `AbstractSourceService<I${name}SourceSchemaType>`,
+                        body:       `
+static inject = [
+        $${name}Source,
+        $${name}SourceMapper,
+    ];
+    
+    constructor(
+        protected $source: ISource<I${name}SourceSchemaType>,
+        protected $mapper: ISourceMapper<I${name}SourceSchemaType>,
+    ) {
+        super();
+    }
+    
+    source(): ISource<I${name}SourceSchemaType> {
+        return this.$source;
+    }
+    
+    mapper(): ISourceMapper<I${name}SourceSchemaType> {
+        return this.$mapper;
+    }
+                        `
+                    },
+                },
+            })
+            .saveTo({
+                file: normalize(`${directory}/SourceService/${name}BaseSourceService.ts`),
+                barrel,
+            });
     });
 };

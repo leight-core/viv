@@ -41,32 +41,30 @@ export namespace IGeneratorServerPrismaSourceParams {
 export const generatorServerPrismaSource: IGenerator<IGeneratorServerPrismaSourceParams> = async (
     {
         barrel,
-        folder,
+        directory,
         params: {entities},
     }) => {
-    const file = withSourceFile();
-
     entities.forEach(({name, prisma, packages, withInclude}) => {
         const $withInclude = withInclude ? JSON.stringify(withInclude) : "undefined";
 
-        file.withHeader(`
+        withSourceFile()
+            .withHeader(`
     Base Prisma Source contains default implementation of Source for entity ${name} connected to Prisma. This could be used for further extensions,
     also default export uses this as a parent class.
-        `);
-
-        file.withImports({
+        `)
+            .withImports({
                 imports: {
-                    "@leight/query":         [
-                        "withCursor",
-                    ],
                     "@leight/prisma":        [
                         "$PrismaClient",
                     ],
                     "@leight/source":        [
+                        "withCursor",
                         "type ISource",
+                        "type IWithIdentity",
+                        "SourceError",
                     ],
                     "@leight/source-server": [
-                        "AbstractSource",
+                        "AbstractSourceEx",
                     ],
                 },
             })
@@ -74,8 +72,8 @@ export const generatorServerPrismaSource: IGenerator<IGeneratorServerPrismaSourc
                 imports: {
                     [packages.schema]: [
                         `$${name}Source`,
-                        `I${name}SourceSchema`,
-                        `type I${name}PrismaSchema`,
+                        `type I${name}SourceSchemaType`,
+                        `type I${name}PrismaSchemaType`,
                     ],
                 },
             })
@@ -89,7 +87,7 @@ export const generatorServerPrismaSource: IGenerator<IGeneratorServerPrismaSourc
             .withClasses({
                 exports: {
                     [`${name}BasePrismaSource`]: {
-                        extends: `AbstractSource<I${name}SourceSchema>`,
+                        extends: `AbstractSourceEx<I${name}PrismaSchemaType, I${name}SourceSchemaType>`,
                         body:    `
     static inject = [
         $PrismaClient,
@@ -101,50 +99,69 @@ export const generatorServerPrismaSource: IGenerator<IGeneratorServerPrismaSourc
         super($${name}Source);
     }
 
-    async runFind(id: string): Promise<I${name}SourceSchema["Entity"]> {
+    async runFind(id: string): Promise<I${name}SourceSchemaType["Entity"]> {
         return this.prisma().findUniqueOrThrow({
-            where: {id},
-            include: ${$withInclude},
+            where: {id},${withInclude ? `\n\t\t\t\tinclude: ${$withInclude},` : ''}
         });
     }
 
-    async runCreate(entity: I${name}SourceSchema["Create"]): Promise<I${name}SourceSchema["Entity"]> {
+    async runCreate(entity: I${name}SourceSchemaType["Create"]): Promise<I${name}SourceSchemaType["Entity"]> {
         return this.prisma().create({
-            data: entity,
-            include: ${$withInclude},
+            data: entity,${withInclude ? `\n\t\t\t\tinclude: ${$withInclude},` : ''}
         });
     }
 
-    async runPatch({id, ...patch}: I${name}SourceSchema["Patch"]): Promise<I${name}SourceSchema["Entity"]> {
+    async runPatch({id, ...patch}: I${name}SourceSchemaType["Patch"]): Promise<I${name}SourceSchemaType["Entity"]> {
         return this.prisma().update({
             data: patch,
-            where: {id},
-            include: ${$withInclude},
+            where: {id},${withInclude ? `\n\t\t\t\tinclude: ${$withInclude},` : ''}
         });
     }
 
-    async runUpsert({filter, patch: update, create}: ISource.IUpsert<I${name}SourceSchema>): Promise<I${name}SourceSchema["Entity"]> {
+    async runUpsert({filter, patch: update, create}: ISource.IUpsert<I${name}SourceSchemaType>): Promise<I${name}SourceSchemaType["Entity"]> {
         return this.prisma().upsert({
             create,
             update,
-            where: this.toWhereUnique(filter),
-            include: ${$withInclude},
+            where: this.toWhereUnique(filter),${withInclude ? `\n\t\t\t\tinclude: ${$withInclude},` : ''}
         });
     }
 
-    async runCount(query?: I${name}SourceSchema["Query"]): Promise<number> {
+    async runDelete({id}: IWithIdentity): Promise<I${name}SourceSchemaType["Entity"]> {
+        const item = await this.find(id);
+        const where = this.toWhereUnique({id});
+        if(!where) {
+            throw new SourceError("Cannot delete an item with an empty where condition!");
+        }
+        await this.prisma().delete({
+            where,
+        });
+        return item;
+    }
+    
+    async runDeleteWith(query: I${name}SourceSchemaType["Query"]): Promise<I${name}SourceSchemaType["Entity"][]> {
+        const items = await this.query(query);
+        const where = this.toWhere(query.filter);
+        if(!where) {
+            throw new SourceError("Cannot delete an item with an empty where condition!");
+        } 
+        await this.prisma().deleteMany({
+            where,
+        });
+        return items;
+    }
+
+    async runCount(query?: I${name}SourceSchemaType["Query"]): Promise<number> {
         return this.prisma().count({
             where: this.toWhere(query?.filter),
         });
     }
 
-    async runQuery(query?: I${name}SourceSchema["Query"]): Promise<I${name}SourceSchema["Entity"][]> {
+    async runQuery(query?: I${name}SourceSchemaType["Query"]): Promise<I${name}SourceSchemaType["Entity"][]> {
         return this.prisma().findMany(withCursor({
             query,
             arg: {
                 where:   this.toWhere(query?.filter),
-                orderBy: this.toOrderBy(query?.sort),
-                include: ${$withInclude},
+                orderBy: this.toOrderBy(query?.sort),${withInclude ? `\n\t\t\t\tinclude: ${$withInclude},` : ''}
             },
         }));
     }
@@ -152,26 +169,13 @@ export const generatorServerPrismaSource: IGenerator<IGeneratorServerPrismaSourc
     prisma() {
         return this.prismaClient.${prisma};
     }
-    
-    toWhere(filter?: I${name}SourceSchema["Filter"]): I${name}PrismaSchema['Where'] | undefined {
-        return filter;
-    }
-    
-    toWhereUnique(filter: I${name}SourceSchema["Filter"]): I${name}PrismaSchema['WhereUnique'] {
-        return filter as I${name}PrismaSchema['WhereUnique'];
-    }
-    
-    toOrderBy(sort?: I${name}SourceSchema["Sort"]): I${name}PrismaSchema['OrderBy'] | undefined {
-        return sort as I${name}PrismaSchema['OrderBy'];
-    }
                     `,
                     },
                 },
+            })
+            .saveTo({
+                file: normalize(`${directory}/Source/${name}BasePrismaSource.ts`),
+                barrel,
             });
-    });
-
-    file.saveTo({
-        file: normalize(`${process.cwd()}/${folder}/ServerPrismaSource.ts`),
-        barrel,
     });
 };
