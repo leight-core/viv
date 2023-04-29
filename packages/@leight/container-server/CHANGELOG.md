@@ -1,5 +1,34 @@
 # @leight/container-server
 
+## 0.5.65
+
+### Patch Changes
+
+- Added filter stuff
+- Updated dependencies
+  - @leight/xlsx-import-server@0.5.65
+  - @leight/keyword-server@0.5.2
+  - @leight/filter-server@0.5.1
+  - @leight/import-server@0.5.65
+  - @leight/file-server@0.5.76
+  - @leight/user-server@0.5.81
+  - @leight/job-server@0.5.77
+  - @leight/container@0.5.67
+
+## 0.5.64
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+  - @leight/container@0.5.66
+  - @leight/file-server@0.5.75
+  - @leight/import-server@0.5.64
+  - @leight/job-server@0.5.76
+  - @leight/keyword-server@0.5.1
+  - @leight/user-server@0.5.80
+  - @leight/xlsx-import-server@0.5.64
+
 ## 0.5.63
 
 ### Patch Changes

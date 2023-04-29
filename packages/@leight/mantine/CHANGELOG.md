@@ -1,5 +1,43 @@
 # @leight/mantine
 
+## 0.5.76
+
+### Patch Changes
+
+- Added filter stuff
+- Updated dependencies
+  - @leight/context-client@0.5.74
+  - @leight/source-client@0.5.37
+  - @leight/utils-client@0.5.70
+  - @leight/file-client@0.5.76
+  - @leight/i18n-client@0.5.72
+  - @leight/context@0.5.29
+  - @leight/zustand@0.5.66
+  - @leight/layout@0.5.66
+  - @leight/source@0.5.66
+  - @leight/utils@0.5.70
+  - @leight/file@0.5.75
+  - @leight/i18n@0.5.72
+
+## 0.5.75
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+  - @leight/context@0.5.28
+  - @leight/context-client@0.5.73
+  - @leight/file@0.5.74
+  - @leight/file-client@0.5.75
+  - @leight/i18n@0.5.71
+  - @leight/i18n-client@0.5.71
+  - @leight/layout@0.5.65
+  - @leight/source@0.5.65
+  - @leight/source-client@0.5.36
+  - @leight/utils@0.5.69
+  - @leight/utils-client@0.5.69
+  - @leight/zustand@0.5.65
+
 ## 0.5.74
 
 ### Patch Changes

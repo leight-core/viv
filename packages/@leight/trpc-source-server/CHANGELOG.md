@@ -1,5 +1,27 @@
 # @leight/trpc-source-server
 
+## 0.5.20
+
+### Patch Changes
+
+- Added filter stuff
+- Updated dependencies
+  - @leight/source-server@0.5.66
+  - @leight/trpc-server@0.5.71
+  - @leight/container@0.5.67
+  - @leight/source@0.5.66
+
+## 0.5.19
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+  - @leight/container@0.5.66
+  - @leight/source@0.5.65
+  - @leight/source-server@0.5.65
+  - @leight/trpc-server@0.5.70
+
 ## 0.5.18
 
 ### Patch Changes

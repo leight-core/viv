@@ -119,6 +119,8 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/filter-client/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/viv-client/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/form-client/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/filter-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/keyword-server/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.github" />
       <excludeFolder url="file://$MODULE_DIR$/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/sql/.turbo" />
@@ -328,6 +330,10 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/viv-client/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/form-client/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/form-client/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/filter-server/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/filter-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/keyword-server/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/keyword-server/lib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

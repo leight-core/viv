@@ -1,5 +1,27 @@
 # @leight/file
 
+## 0.5.75
+
+### Patch Changes
+
+- Added filter stuff
+- Updated dependencies
+  - @leight/container@0.5.67
+  - @leight/prisma@0.5.84
+  - @leight/source@0.5.66
+  - @leight/zod@0.5.12
+
+## 0.5.74
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+  - @leight/container@0.5.66
+  - @leight/prisma@0.5.83
+  - @leight/source@0.5.65
+  - @leight/zod@0.5.11
+
 ## 0.5.73
 
 ### Patch Changes

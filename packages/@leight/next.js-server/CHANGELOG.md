@@ -1,5 +1,33 @@
 # @leight/next.js-server
 
+## 0.5.72
+
+### Patch Changes
+
+- Added filter stuff
+- Updated dependencies
+  - @leight/user-server@0.5.81
+  - @leight/container@0.5.67
+  - @leight/next.js@0.5.32
+  - @leight/winston@0.5.65
+  - @leight/prisma@0.5.84
+  - @leight/utils@0.5.70
+  - @leight/user@0.5.78
+
+## 0.5.71
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+  - @leight/container@0.5.66
+  - @leight/next.js@0.5.31
+  - @leight/prisma@0.5.83
+  - @leight/user@0.5.77
+  - @leight/user-server@0.5.80
+  - @leight/utils@0.5.69
+  - @leight/winston@0.5.64
+
 ## 0.5.70
 
 ### Patch Changes

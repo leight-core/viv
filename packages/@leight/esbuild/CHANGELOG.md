@@ -1,5 +1,17 @@
 # @leight/esbuild
 
+## 0.5.45
+
+### Patch Changes
+
+- Added filter stuff
+
+## 0.5.44
+
+### Patch Changes
+
+- Version bump
+
 ## 0.5.43
 
 ### Patch Changes

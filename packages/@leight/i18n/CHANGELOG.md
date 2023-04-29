@@ -1,5 +1,21 @@
 # @leight/i18n
 
+## 0.5.72
+
+### Patch Changes
+
+- Added filter stuff
+- Updated dependencies
+  - @leight/utils@0.5.70
+
+## 0.5.71
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+  - @leight/utils@0.5.69
+
 ## 0.5.70
 
 ### Patch Changes

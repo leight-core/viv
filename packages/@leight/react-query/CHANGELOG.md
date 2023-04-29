@@ -1,5 +1,17 @@
 # @leight/react-query
 
+## 0.5.29
+
+### Patch Changes
+
+- Added filter stuff
+
+## 0.5.28
+
+### Patch Changes
+
+- Version bump
+
 ## 0.5.27
 
 ### Patch Changes

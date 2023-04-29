@@ -1,5 +1,31 @@
 # @leight/source-client
 
+## 0.5.37
+
+### Patch Changes
+
+- Added filter stuff
+- Updated dependencies
+  - @leight/context-client@0.5.74
+  - @leight/react-query@0.5.29
+  - @leight/context@0.5.29
+  - @leight/zustand@0.5.66
+  - @leight/source@0.5.66
+  - @leight/utils@0.5.70
+
+## 0.5.36
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+  - @leight/context@0.5.28
+  - @leight/context-client@0.5.73
+  - @leight/react-query@0.5.28
+  - @leight/source@0.5.65
+  - @leight/utils@0.5.69
+  - @leight/zustand@0.5.65
+
 ## 0.5.35
 
 ### Patch Changes

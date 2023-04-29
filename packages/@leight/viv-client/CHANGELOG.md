@@ -1,5 +1,25 @@
 # @leight/viv-client
 
+## 0.5.5
+
+### Patch Changes
+
+- Added filter stuff
+- Updated dependencies
+  - @leight/calendar-client@0.5.24
+  - @leight/context-client@0.5.74
+  - @leight/mantine@0.5.76
+
+## 0.5.4
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+  - @leight/calendar-client@0.5.23
+  - @leight/context-client@0.5.73
+  - @leight/mantine@0.5.75
+
 ## 0.5.3
 
 ### Patch Changes

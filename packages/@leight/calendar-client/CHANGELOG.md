@@ -1,5 +1,39 @@
 # @leight/calendar-client
 
+## 0.5.24
+
+### Patch Changes
+
+- Added filter stuff
+- Updated dependencies
+  - @leight/context-client@0.5.74
+  - @leight/source-client@0.5.37
+  - @leight/utils-client@0.5.70
+  - @leight/i18n-client@0.5.72
+  - @leight/calendar@0.5.15
+  - @leight/mantine@0.5.76
+  - @leight/zustand@0.5.66
+  - @leight/source@0.5.66
+  - @leight/utils@0.5.70
+  - @leight/i18n@0.5.72
+
+## 0.5.23
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+  - @leight/calendar@0.5.14
+  - @leight/context-client@0.5.73
+  - @leight/i18n@0.5.71
+  - @leight/i18n-client@0.5.71
+  - @leight/mantine@0.5.75
+  - @leight/source@0.5.65
+  - @leight/source-client@0.5.36
+  - @leight/utils@0.5.69
+  - @leight/utils-client@0.5.69
+  - @leight/zustand@0.5.65
+
 ## 0.5.22
 
 ### Patch Changes

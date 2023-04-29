@@ -4,6 +4,10 @@ import {
     type IFileContainer
 }                        from "@leight/file-server";
 import {
+    FilterContainer,
+    type IFilterContainer
+}                        from "@leight/filter-server";
+import {
     type IImportContainer,
     ImportContainer
 }                        from "@leight/import-server";
@@ -32,6 +36,7 @@ export interface IServerContainer {
     JobContainer: IJobContainer;
     ImportContainer: IImportContainer;
     KeywordContainer: IKeywordContainer;
+    FilterContainer: IFilterContainer;
 }
 
 export const ServerContainer = (container: IContainer): IServerContainer => {
@@ -42,5 +47,6 @@ export const ServerContainer = (container: IContainer): IServerContainer => {
         JobContainer:        JobContainer(container),
         ImportContainer:     ImportContainer(container),
         KeywordContainer:    KeywordContainer(container),
+        FilterContainer:     FilterContainer(container),
     };
 };

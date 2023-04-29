@@ -1,5 +1,17 @@
 # @leight/utils
 
+## 0.5.70
+
+### Patch Changes
+
+- Added filter stuff
+
+## 0.5.69
+
+### Patch Changes
+
+- Version bump
+
 ## 0.5.68
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @leight/zod
 
+## 0.5.12
+
+### Patch Changes
+
+- Added filter stuff
+
+## 0.5.11
+
+### Patch Changes
+
+- Version bump
+
 ## 0.5.10
 
 ### Patch Changes

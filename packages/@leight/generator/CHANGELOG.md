@@ -1,5 +1,17 @@
 # @leight/generator
 
+## 0.5.21
+
+### Patch Changes
+
+- Added filter stuff
+
+## 0.5.20
+
+### Patch Changes
+
+- Version bump
+
 ## 0.5.19
 
 ### Patch Changes
