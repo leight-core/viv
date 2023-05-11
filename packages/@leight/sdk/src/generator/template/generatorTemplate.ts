@@ -15,6 +15,7 @@ export type IGeneratorTemplateProps =
 export const generatorTemplate = (
     {
         packageName = resolvePackageJson().name,
+        barrel = false,
         folder = "src/sdk",
         ...params
     }: IGeneratorTemplateProps) => {
@@ -24,7 +25,7 @@ export const generatorTemplate = (
 
     const $params = {
         packageName,
-        barrel:    false,
+        barrel,
         directory: normalize(`${process.cwd()}/${folder}`),
     } as const;
 
@@ -32,12 +33,10 @@ export const generatorTemplate = (
         async () => {
             await withTemplate({
                 ...$params,
-                barrel: true,
                 params: params,
             });
-            await generatorSdkBarrel({
+            barrel && await generatorSdkBarrel({
                 ...$params,
-                barrel: true,
                 params: {},
             });
         },
