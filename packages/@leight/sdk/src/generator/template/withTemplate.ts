@@ -18,10 +18,14 @@ export interface IWithTemplateParams {
 
 export namespace IWithTemplateParams {
     export interface ITemplate {
-        template: string;
-        file: string;
+        renders: IRender[] | IRender;
         context?: Record<string, any>;
         config?: Partial<EtaConfig>;
+    }
+
+    export interface IRender {
+        template: string;
+        file: string;
     }
 }
 
@@ -44,29 +48,33 @@ export const withTemplate: IGenerator<IWithTemplateParams> = async (
     };
 
     for (const {
-        template,
-        file,
+        renders,
         context = {},
         config,
     } of templates) {
         const $context = {...globalContext, ...context};
         const $etaConfig = {...etaConfig, ...config};
 
-        const $file = normalize(Eta.render(`${directory}/${file}`, $context, $etaConfig));
-        const $template = Eta.render(normalize(`${process.cwd()}/${template}`), {
-            ...$context,
-            $file,
-        }, $etaConfig);
+        for (const {
+            template,
+            file
+        } of Array.isArray(renders) ? renders : [renders]) {
+            const $file = normalize(Eta.render(`${directory}/${file}`, $context, $etaConfig));
+            const $template = Eta.render(normalize(`${process.cwd()}/${template}`), {
+                ...$context,
+                $file,
+            }, $etaConfig);
 
-        mkdirSync(dirname($file), {recursive: true});
+            mkdirSync(dirname($file), {recursive: true});
 
-        writeFileSync($file, await Eta.renderFile($template, {
-            ...$context,
-            $file,
-            $template
-        }, $etaConfig), {
-            flag:     "w+",
-            encoding: "utf8",
-        });
+            writeFileSync($file, await Eta.renderFile($template, {
+                ...$context,
+                $file,
+                $template
+            }, $etaConfig), {
+                flag:     "w+",
+                encoding: "utf8",
+            });
+        }
     }
 };
