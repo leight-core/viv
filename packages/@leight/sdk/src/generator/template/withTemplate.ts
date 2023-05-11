@@ -8,6 +8,7 @@ import {
     dirname,
     normalize
 }                        from "node:path";
+import * as process      from "process";
 import {type IGenerator} from "../../api";
 
 export interface IWithTemplateParams {
@@ -70,7 +71,7 @@ export const withTemplate: IGenerator<IWithTemplateParams> = async (
             writeFileSync($file, await Eta.renderFile($template, {
                 ...$context,
                 $file,
-                $template
+                $template: $template.replace(normalize(process.cwd()), ""),
             }, $etaConfig), {
                 flag:     "w+",
                 encoding: "utf8",

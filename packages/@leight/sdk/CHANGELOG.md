@@ -1,5 +1,11 @@
 # @leight/sdk
 
+## 0.5.30
+
+### Patch Changes
+
+- Improved templates
+
 ## 0.5.29
 
 ### Patch Changes
