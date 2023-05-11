@@ -84,7 +84,7 @@ RUN \
     curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
     apt-get update && \
     apt-get install -y --no-install-recommends --no-install-suggests \
-        nginx openssh-server \
+        nginx \
         libreadline-dev libpq-dev libxml2-dev libonig-dev libsqlite3-dev libzip-dev libldap2-dev libpng-dev \
         libc-client-dev libkrb5-dev libsasl2-dev libmemcached-dev libsodium-dev libargon2-dev libxslt-dev libwebp-dev \
         libjpeg-dev libxpm-dev nodejs patch cron msmtp procps libfcgi0ldbl libc-client2007e-dev zlib1g-dev sendmail
@@ -101,12 +101,7 @@ COPY --from=composer /usr/bin/composer /usr/local/bin/composer
 ADD rootfs/runtime /
 
 RUN \
-    echo 'root:1234' | chpasswd && \
-    chmod 600 -R /etc/ssh && \
-    chmod 600 -R /root/.ssh && \
-    chmod +x -R /usr/local/bin && \
-    mkdir -p /var/run/sshd && \
-    chmod 0755 -R /var/run/sshd
+    chmod +x -R /usr/local/bin
 
 # just see some info 'round (and also see if PHP binary is ok)
 RUN \

@@ -9,6 +9,3 @@
 
     Have a nice day :)!
 
-    P.S. You can cat private key for access this container through SSH:
-    cat /root/.ssh/id_rsa
-

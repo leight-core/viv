@@ -6,6 +6,10 @@ RUN \
       openssh
 
 ADD rootfs /
-RUN chmod 0600 -R /etc/ssh
+
+RUN \
+    chmod 0600 -R /etc/ssh && \
+    chmod 600 -R /root/.ssh && \
+    echo 'root:1234' | chpasswd
 
 WORKDIR /root
