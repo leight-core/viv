@@ -27,7 +27,7 @@ RUN \
   make && \
   make install && \
   ldconfig
-RUN rm ImageMagick.tar.gz
+RUN rm ImageMagick.tar.gz && rm -rf ImageMagick-*/
 
 RUN \
     npm install -g npm && \
