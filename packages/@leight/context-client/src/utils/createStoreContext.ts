@@ -1,18 +1,11 @@
 import {type IStoreContext} from "@leight/context";
-import {
-    type IStateCreator,
-    type IStoreApi,
-    type IStoreProps
-}                           from "@leight/zustand";
-import {createStore}        from "zustand";
-import {createContext}      from "./createContext";
-import {createProvider}     from "./createProvider";
-import {
-    createOptionalUseState,
-    createUseState
-}                           from "./createUseState";
-import {useContext}         from "./useContext";
-import {useOptionalContext} from "./useOptionalContext";
+import {type IStateCreator, type IStoreApi, type IStoreProps} from "@leight/zustand";
+import {createStore} from "zustand";
+import {createContext} from "./createContext";
+import {withProvider} from "./withProvider";
+import {withUseState, withUseState$} from "./withUseState";
+import {useContext} from "./useContext";
+import {useContext$} from "./useContext$";
 
 export interface ICreateStoreContextProps<TStoreProps extends IStoreProps> {
     state: IStateCreator<TStoreProps>,
@@ -31,17 +24,21 @@ export const createStoreContext = <TStoreProps extends IStoreProps>(
     }: ICreateStoreContextProps<TStoreProps>): IStoreContext<TStoreProps> => {
     const Context = createContext<IStoreApi<TStoreProps>>();
     return {
-        Provider:         createProvider<TStoreProps>({
+        name,
+        Provider: withProvider<TStoreProps>({
             name,
             Context,
-            createStore: ({defaults: $defaults, state: $state}) => createStore<TStoreProps["StoreProps"]>(($set, $get, $store) => ({
+            createStore: ({
+                              defaults: $defaults,
+                              state: $state
+                          }) => createStore<TStoreProps["StoreProps"]>(($set, $get, $store) => ({
                 ...state({defaults: $defaults, state: $state})($set, $get, $store),
                 ...$defaults,
             })),
         }),
-        useState:         createUseState(Context, name, hint),
-        useOptionalState: createOptionalUseState(Context),
-        useStore:         () => useContext(Context, name, hint).store,
-        useOptionalStore: () => useOptionalContext(Context)?.store || null,
+        use: withUseState(Context, name, hint),
+        use$: withUseState$(Context),
+        useStore: () => useContext(Context, name, hint).store,
+        useStore$: () => useContext$(Context)?.store || null,
     };
 };

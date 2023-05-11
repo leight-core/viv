@@ -49,7 +49,7 @@ const CalendarInternal: FC<ICalendarInternalProps> = (props) => {
      * This is just an example how to use (control) loading state of
      * a Calendar.
      */
-    const {unblock}     = BlockStore.useState(({unblock}) => ({unblock}));
+    const {unblock}     = BlockStore.use(({unblock}) => ({unblock}));
     const [day, setDay] = useState<IDay>();
     useEffect(() => {
         setTimeout(() => {

@@ -1,161 +1,204 @@
 import {
-    type IFormInputs,
-    type IFormSchemaType
-}                               from "@leight/form";
-import {Translation}            from "@leight/i18n-client";
-import {WithIcon}               from "@leight/mantine";
-import {ISelectionStoreContext} from "@leight/selection";
+    type IFormSchemaType,
+    type IUseForm
+}                                    from "@leight/form";
+import {Translation}                 from "@leight/i18n-client";
+import {type ISelectionStoreContext} from "@leight/selection";
 import {
-    type ISourceSchemaType,
-    ISourceStore
-}                               from "@leight/source";
-import {FulltextProvider}       from "@leight/source-client";
+    type ISource,
+    type ISourceSchema,
+    type SourceType
+}                                    from "@leight/source";
+import {FulltextProvider}            from "@leight/source-client";
+import {generateId}                  from "@leight/utils";
 import {
-    ActionIcon,
-    Box,
+    Button,
     Divider,
     Group,
-    Loader,
-    Modal,
-    Stack,
-    Text
-}                               from "@mantine/core";
-import {useDisclosure}          from "@mantine/hooks";
+    Modal
+}                                    from "@mantine/core";
+import {useDisclosure}               from "@mantine/hooks";
 import {
+    IconArrowBackUp,
     IconClick,
     IconX
-}                               from "@tabler/icons-react";
+}                                    from "@tabler/icons-react";
 import {
-    type ComponentProps,
     type FC,
     type ReactNode
-}                               from "react";
-import {Description}            from "./Description";
-import {Error}                  from "./Error";
-import {Label}                  from "./Label";
+}                                    from "react";
+import {
+    type IInputExProps,
+    InputEx
+}                                    from "./InputEx";
+import {Label}                       from "./Label";
 
-export interface ISourceSelectProps<TFormSchemaType extends IFormSchemaType, TSourceSchemaType extends ISourceSchemaType> extends Omit<ComponentProps<typeof Box<"div">>, "placeholder">, IFormInputs.IInputProps<TFormSchemaType> {
-    label?: string;
-    description?: string;
-    placeholder?: ReactNode;
-    withAsterisk?: boolean;
-    Selector: ISourceSelectProps.ISelectorComponent<TSourceSchemaType>;
-    SelectionContext: ISelectionStoreContext<TSourceSchemaType["Dto"]>;
-    SourceStore: ISourceStore<TSourceSchemaType>;
+export interface ISourceSelectProps<
+    TFormSchemaType extends IFormSchemaType,
+    TSourceSchema extends ISourceSchema,
+    TSourceType extends SourceType<TSourceSchema> = SourceType<TSourceSchema>
+> extends IInputExProps<TFormSchemaType> {
+    Selector: ISourceSelectProps.ISelectorComponent<TSourceSchema>;
+    SelectionContext: ISelectionStoreContext<TSourceType["Dto"]>;
+    Source: ISource<TSourceSchema>;
 
-    render(item: TSourceSchemaType["Dto"]): ReactNode;
+    onCommit?(props: ISourceSelectProps.IOnCommitProps<TFormSchemaType, TSourceSchema>): void;
+
+    render(item: TSourceType["Dto"]): ReactNode;
 }
 
 export namespace ISourceSelectProps {
-    export type ISelectorComponent<TSourceSchemaType extends ISourceSchemaType> = FC<ISelectorComponentProps<TSourceSchemaType>>;
+    export type ISelectorComponent<TSourceSchema extends ISourceSchema> = FC<ISelectorComponentProps<TSourceSchema>>;
 
-    export type ISelectorComponentProps<TSourceSchemaType extends ISourceSchemaType> = {
-        onClick(item: TSourceSchemaType["Dto"]): void;
+    export type ISelectorComponentProps<
+        TSourceSchema extends ISourceSchema,
+        TSourceType extends SourceType<TSourceSchema> = SourceType<TSourceSchema>
+    > = {
+        SelectionContext?: ISelectionStoreContext<TSourceType["Dto"]>;
+        onClick(item: TSourceType["Dto"]): void;
+    }
+
+    export interface IOnCommitProps<
+        TFormSchemaType extends IFormSchemaType,
+        TSourceSchema extends ISourceSchema,
+        TSourceType extends SourceType<TSourceSchema> = SourceType<TSourceSchema>
+    > {
+        item?: TSourceType["Dto"];
+        form: IUseForm<TFormSchemaType>;
     }
 }
 
-export const SourceSelect = <TFormSchemaType extends IFormSchemaType, TSourceSchemaType extends ISourceSchemaType>(
+export const SourceSelect = <
+    TFormSchemaType extends IFormSchemaType,
+    TSourceSchema extends ISourceSchema
+>(
     {
-        FormContext,
-        path,
-        label,
-        description,
-        placeholder,
-        withAsterisk,
         Selector,
         SelectionContext,
-        SourceStore,
+        Source,
         render,
+        onCommit,
         ...props
-    }: ISourceSelectProps<TFormSchemaType, TSourceSchemaType>) => {
-    const [opened, {open, close}]                             = useDisclosure(false);
-    const {MantineContext: {useFormContext}, withTranslation} = FormContext.useState(({MantineContext, withTranslation}) => ({MantineContext, withTranslation}));
-    const {onChange, value, error}                            = useFormContext().getInputProps(path);
-    const entity                                              = SourceStore.use.useFindOptional({id: value});
-    return value && entity.isLoading ? <Loader/> : (entity.isSuccess ? <SelectionContext.Provider
+    }: ISourceSelectProps<TFormSchemaType, TSourceSchema>) => {
+    const [opened, {
+        open,
+        close
+    }] = useDisclosure(false);
+    const {
+        MantineContext: {useFormContext},
+        withTranslation
+    } = props.FormContext.use((
+        {
+            MantineContext,
+            withTranslation
+        }) => ({
+        MantineContext,
+        withTranslation
+    }));
+    const form = useFormContext();
+    const {
+        onChange,
+        value
+    } = form.getInputProps(props.path);
+    const entity = Source.repository.useFetch$({
+        id: value || "",
+    });
+
+    return entity.isLoading ? <InputEx
+        {...props}
+        isLoading
+    /> : (entity.isSuccess ? <SelectionContext.Provider
+        key={generateId()}
         defaults={{
-            item: entity.data || undefined,
+            item:      entity.data || undefined,
+            selection: entity.data || undefined,
         }}
     >
-        {({store}) => {
-            const {item, select} = store.getState();
+        {() => {
+            // eslint-disable-next-line react-hooks/rules-of-hooks
+            const {
+                item,
+                select,
+                selection,
+                cancel,
+                clear,
+                commit
+            } = SelectionContext.use();
             return <>
-                <Box
-                    mt={"md"}
-                    {...props}
+                <Modal
+                    opened={opened}
+                    onClose={close}
+                    zIndex={502}
+                    size={"75%"}
+                    title={<Label
+                        withTranslation={withTranslation}
+                        label={`${props.label}.modal.title`}
+                        withAsterisk={props.withAsterisk}
+                    />}
                 >
-                    <Modal
-                        opened={opened}
-                        onClose={close}
-                        zIndex={502}
-                        size={"75%"}
-                        title={<Label
-                            withTranslation={withTranslation}
-                            label={`${label}.modal.title`}
-                            withAsterisk={withAsterisk}
-                        />}
-                    >
-                        <Divider/>
-                        <FulltextProvider>
-                            <Selector
-                                onClick={item => {
-                                    select(item);
-                                    onChange(item.id);
+                    <Divider/>
+                    <FulltextProvider>
+                        <Selector
+                            SelectionContext={SelectionContext}
+                            onClick={select}
+                        />
+                        <Divider mt={"sm"} mb={"sm"}/>
+                        <Group spacing={"md"} position={"apart"}>
+                            <Group spacing={"sm"}>
+                                <Button
+                                    leftIcon={<IconArrowBackUp/>}
+                                    variant={"subtle"}
+                                    size={"md"}
+                                    onClick={() => {
+                                        cancel();
+                                        close();
+                                    }}
+                                >
+                                    <Translation {...withTranslation} label={"selection"} withLabel={"cancel.button"}/>
+                                </Button>
+                                <Button
+                                    leftIcon={<IconX/>}
+                                    variant={"subtle"}
+                                    size={"md"}
+                                    onClick={() => {
+                                        clear();
+                                        close();
+                                    }}
+                                >
+                                    <Translation {...withTranslation} label={"selection"} withLabel={"clear.button"}/>
+                                </Button>
+                            </Group>
+                            <Button
+                                leftIcon={<IconClick/>}
+                                size={"lg"}
+                                onClick={() => {
+                                    onChange(selection?.id);
+                                    commit();
+                                    onCommit?.({
+                                        item: selection || undefined,
+                                        form
+                                    });
                                     close();
                                 }}
-                            />
-                        </FulltextProvider>
-                    </Modal>
-
-                    <Stack
-                        spacing={"sm"}
-                    >
-                        <Stack spacing={1}>
-                            <Label withTranslation={withTranslation} withAsterisk={withAsterisk} label={label}/>
-                            <Description withTranslation={withTranslation} description={description}/>
-                        </Stack>
-                        <Group
-                            onClick={() => open()}
-                            sx={{cursor: "pointer"}}
-                            align={"center"}
-                            spacing={4}
-                        >
-                            <WithIcon
-                                variant={"subtle"}
-                                c={"gray"}
-                                icon={<IconClick/>}
-                            />
-                            <Stack
-                                spacing={0}
                             >
-                                <Text
-                                    fw={"500"}
-                                >
-                                    {item ? <Group
-                                        spacing={4}
-                                        align={"center"}
-                                    >
-                                        {render(item)}
-                                        <ActionIcon
-                                            onClick={e => {
-                                                e.stopPropagation();
-                                                select(undefined);
-                                                onChange(undefined);
-                                            }}
-                                        >
-                                            <IconX/>
-                                        </ActionIcon>
-                                    </Group> : <Text
-                                        c={"dimmed"}
-                                    >
-                                        <Translation {...withTranslation} withLabel={placeholder}/>
-                                    </Text>}
-                                </Text>
-                                <Error error={error}/>
-                            </Stack>
+                                <Translation {...withTranslation} label={"selection"} withLabel={"submit.button"}/>
+                            </Button>
                         </Group>
-                    </Stack>
-                </Box>
+                    </FulltextProvider>
+                </Modal>
+
+                <InputEx
+                    onClick={open}
+                    onClear={clear}
+                    {...props}
+                >
+                    {item ? <Group
+                        spacing={4}
+                        align={"center"}
+                    >
+                        {render(item)}
+                    </Group> : null}
+                </InputEx>
             </>;
         }}
     </SelectionContext.Provider> : <>boom</>);

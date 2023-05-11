@@ -1,45 +1,55 @@
-import {type ICalendarEventSourceSchemaType} from "@leight/calendar";
-import {DateInline}                          from "@leight/i18n-client";
+import {type ICalendarEventSourceSchema} from "@leight/calendar";
+import {DateInline}                      from "@leight/i18n-client";
 import {
     ActionIcon,
     Box,
     Button,
     Overlay
-}                                            from "@mantine/core";
+}                                        from "@mantine/core";
 import {
     IconCalendarSearch,
     IconX
-}                                            from "@tabler/icons-react";
-import {useState}                            from "react";
+}                                        from "@tabler/icons-react";
+import {useState}                        from "react";
 import {
     MonthsOfStore,
     WeeksOfStore,
     YearsOfStore
-}                                            from "../context";
-import {Months}                              from "./Months";
+}                                        from "../context";
+import {Months}                          from "./Months";
 import {
     type IWeeksProps,
     Weeks
-}                                            from "./Weeks";
-import {Years}                               from "./Years";
+}                                        from "./Weeks";
+import {Years}                           from "./Years";
 
-export interface ICalendarProps<TSourceSchema extends ICalendarEventSourceSchemaType = ICalendarEventSourceSchemaType> extends IWeeksProps<TSourceSchema> {
+export interface ICalendarProps<TSourceSchema extends ICalendarEventSourceSchema = ICalendarEventSourceSchema> extends IWeeksProps<TSourceSchema> {
     withControls?: boolean;
     compact?: boolean;
 }
 
-export const Calendar = <TSourceSchema extends ICalendarEventSourceSchemaType = ICalendarEventSourceSchemaType>(
+export const Calendar = <TSourceSchema extends ICalendarEventSourceSchema = ICalendarEventSourceSchema>(
     {
         onClick,
         withControls = true,
         onChange,
         ...props
     }: ICalendarProps<TSourceSchema>) => {
-    const {weeksOf, weeks}              = WeeksOfStore.useState(({weeksOf, weeks}) => ({weeksOf, weeks}));
-    const {monthsOf}                    = MonthsOfStore.useState(({monthsOf}) => ({monthsOf}));
-    const {yearsOf}                     = YearsOfStore.useState(({yearsOf}) => ({yearsOf}));
+    const {
+        weeksOf,
+        weeks
+    } = WeeksOfStore.use((
+        {
+            weeksOf,
+            weeks
+        }) => ({
+        weeksOf,
+        weeks
+    }));
+    const {monthsOf} = MonthsOfStore.use(({monthsOf}) => ({monthsOf}));
+    const {yearsOf} = YearsOfStore.use(({yearsOf}) => ({yearsOf}));
     const [selectMonth, setSelectMonth] = useState(false);
-    const [selectYear, setSelectYear]   = useState(false);
+    const [selectYear, setSelectYear] = useState(false);
     return <Box pos={"relative"}>
         <Weeks<TSourceSchema>
             onClick={onClick}
@@ -74,7 +84,8 @@ export const Calendar = <TSourceSchema extends ICalendarEventSourceSchemaType = 
             {selectMonth && <Overlay color={"#FFF"} opacity={1}>
                 <Months<TSourceSchema>
                     onClick={({month: {month}}) => {
-                        onChange?.({weeks: weeksOf(month)});
+                        const weeks = weeksOf(month);
+                        onChange?.({weeks});
                         setSelectMonth(false);
                     }}
                     controlsBottomMiddle={<ActionIcon
@@ -89,7 +100,8 @@ export const Calendar = <TSourceSchema extends ICalendarEventSourceSchemaType = 
             {selectYear && <Overlay color={"#FFF"} opacity={1}>
                 <Years<TSourceSchema>
                     onClick={({year: {year}}) => {
-                        onChange?.({weeks: weeksOf(year)});
+                        const weeks = weeksOf(year);
+                        onChange?.({weeks});
                         setSelectYear(false);
                     }}
                     controlsBottomMiddle={<ActionIcon

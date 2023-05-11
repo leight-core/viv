@@ -2,36 +2,45 @@ import {type IStoreProps} from "@leight/zustand";
 import {type ISortOrder}  from "../schema";
 import {
     type ISourceSchema,
-    type ISourceSchemaType
+    type SourceType
 }                         from "../source";
 
-export type IQueryStoreProps<TSourceSchemaType extends ISourceSchemaType> = IStoreProps<{
-    $id: string;
-    $schema: ISourceSchema.of<TSourceSchemaType>;
+export type IQueryStoreProps<
+    TSourceSchema extends ISourceSchema,
+    TSourceType extends SourceType<TSourceSchema> = SourceType<TSourceSchema>
+> = IStoreProps<{
+    page: number;
+    size: number;
 
-    $page: number;
-    $size: number;
-
-    $filter: TSourceSchemaType["Filter"];
+    filter: TSourceType["Filter"];
     /**
      * If set, all filter changes are shallow merged with this
      */
-    $applyFilter?: TSourceSchemaType["Filter"];
-    $filterDto?: IQueryStoreProps.IFilterDto;
-    $sort: TSourceSchemaType["Sort"];
+    applyFilter?: TSourceType["Filter"];
+    filterDto?: IQueryStoreProps.IFilterDto;
+    sort: TSourceType["Sort"];
 
-    $query: TSourceSchemaType["Query"];
+    query: TSourceType["Query"];
 
-    setFilter(filter?: TSourceSchemaType["Filter"]): void;
-    applyFilter(filter?: TSourceSchemaType["Filter"]): void;
-    applyShallowFilter(filter?: TSourceSchemaType["Filter"]): void;
-    setShallowFilter(filter?: TSourceSchemaType["Filter"]): void;
-    setFilterDto(dto?: IQueryStoreProps.IFilterDto): void;
+    withFilter(filter?: TSourceType["Filter"]): void;
+    withApplyFilter(filter?: TSourceType["Filter"]): void;
+    withApplyShallowFilter(filter?: TSourceType["Filter"]): void;
+    withShallowFilter(filter?: TSourceType["Filter"]): void;
+    withFilterDto(dto?: IQueryStoreProps.IFilterDto): void;
+    withShallowFilterDto(dto?: IQueryStoreProps.IFilterDto): void;
+    /**
+     * Is there active filter? Does not include applyFilter
+     */
+    hasFilter(): boolean;
+    /**
+     * Is there any applied filter?
+     */
+    hasApplyFilter(): boolean;
 
-    setSort(sort: keyof TSourceSchemaType["Sort"], order: ISortOrder): void;
+    withSort(sort: keyof TSourceType["Sort"], order: ISortOrder): void;
 
-    setSize(size: number): void;
-    setPage(page: number): void;
+    withSize(size: number): void;
+    withPage(page: number): void;
 }>;
 
 export namespace IQueryStoreProps {

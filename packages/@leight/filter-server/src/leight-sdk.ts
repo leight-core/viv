@@ -1,31 +1,56 @@
-import {
-    withSdk,
-    withServerSourceGenerators
-} from "@leight/sdk";
+import {generatorServer} from "@leight/sdk";
 
-void withSdk(
-    withServerSourceGenerators({
-        PrismaSource: {
-            entities: [
-                {
-                    name:     "Filter",
-                    packages: {
-                        schema: "@leight/filter",
-                        prisma: "@leight/prisma",
-                    },
-                    prisma:   "filter",
+void generatorServer({
+    withRepositoryEx:        {
+        repositories: [
+            {
+                name:     "Filter",
+                packages: {
+                    schema: "@leight/filter",
+                    prisma: "@leight/prisma",
                 },
-            ],
-        },
-        Source:       {
-            entities: [
-                {
-                    name:     "Filter",
-                    packages: {
-                        schema: "@leight/filter",
-                    },
+                prisma:   "filter",
+            },
+        ],
+    },
+    withRepositoryService:   {
+        repositories: [
+            {
+                name:     "Filter",
+                packages: {
+                    schema: "@leight/filter",
                 },
-            ],
-        },
-    })
-);
+            },
+        ],
+    },
+    withRepositoryMapper:    {
+        repositories: [
+            {
+                name:     "Filter",
+                packages: {
+                    schema: "@leight/filter",
+                },
+            },
+        ],
+    },
+    withRepositoryHandler:   {
+        repositories: [
+            {
+                name:     "Filter",
+                packages: {
+                    schema: "@leight/filter",
+                },
+            },
+        ],
+    },
+    withRepositoryContainer: {
+        repositories: [
+            {
+                name:     "Filter",
+                packages: {
+                    schema: "@leight/filter",
+                },
+            }
+        ],
+    },
+});

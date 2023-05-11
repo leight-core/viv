@@ -1,3 +1,4 @@
+import {type IFilterSource}   from "@leight/filter";
 import {type IFormSchemaType} from "@leight/form";
 import {
     BaseForm,
@@ -9,8 +10,8 @@ import {
     ModalStore
 }                             from "@leight/mantine";
 import {
-    type ISourceSchemaType,
-    type ISourceStore
+    type ISource,
+    type ISourceSchema
 }                             from "@leight/source";
 import {
     Button,
@@ -22,18 +23,41 @@ import {
     IconX
 }                             from "@tabler/icons-react";
 
-export interface IBaseFilterFormProps<TFormSchemaType extends IFormSchemaType, TSourceSchemaType extends ISourceSchemaType> extends IBaseFormProps<TFormSchemaType> {
-    SourceStore: ISourceStore<TSourceSchemaType>;
+export interface IBaseFilterFormProps<
+    TFormSchemaType extends IFormSchemaType,
+    TSourceSchema extends ISourceSchema
+> extends IBaseFormProps<TFormSchemaType> {
+    Source: ISource<TSourceSchema>;
+    withFilterQuery?: IBaseFilterFormProps.IWithFilterQuery<TFormSchemaType>;
 }
 
-export const BaseFilterForm = <TFormSchemaType extends IFormSchemaType, TSourceSchemaType extends ISourceSchemaType>(
+export namespace IBaseFilterFormProps {
+    export interface IWithFilterQuery<TFormSchemaType extends IFormSchemaType> {
+        type: string;
+        Source: IFilterSource;
+
+        getName(props: IWithFilterQuery.IGetNameProps<TFormSchemaType>): string | undefined;
+    }
+
+    export namespace IWithFilterQuery {
+        export interface IGetNameProps<TFormSchemaType extends IFormSchemaType> extends Omit<IBaseFormProps.IOnSubmitProps<TFormSchemaType>, "onDefaultSubmit"> {
+        }
+    }
+}
+
+export const BaseFilterForm = <
+    TFormSchemaType extends IFormSchemaType,
+    TSourceSchema extends ISourceSchema
+>(
     {
-        SourceStore,
+        Source,
+        withFilterQuery,
         ...props
-    }: IBaseFilterFormProps<TFormSchemaType, TSourceSchemaType>
+    }: IBaseFilterFormProps<TFormSchemaType, TSourceSchema>
 ) => {
-    const modalContext  = ModalStore.useOptionalState();
-    const drawerContext = DrawerStore.useOptionalState();
+    const modalContext = ModalStore.use$();
+    const drawerContext = DrawerStore.use$();
+    const upsertFilter = withFilterQuery?.Source.repository.useUpsert();
 
     const withAutoClose = () => {
         props.withAutoClose?.forEach(close => {
@@ -43,32 +67,70 @@ export const BaseFilterForm = <TFormSchemaType extends IFormSchemaType, TSourceS
     };
 
     const {
-              defaultValues,
-              setShallowFilter,
-              setFilter,
-              setFilterDto,
-              setPage,
-          } = SourceStore.Query.useState((
+        defaultValues,
+        withShallowFilter,
+        withFilter,
+        withFilterDto,
+        hasFilter,
+        withPage,
+    } = Source.query.use((
         {
-            $filterDto,
-            setShallowFilter,
-            setFilter,
-            setFilterDto,
-            setPage,
+            filterDto,
+            withShallowFilter,
+            withFilter,
+            withFilterDto,
+            hasFilter,
+            withPage,
         }) => (
         {
-            defaultValues: $filterDto,
-            setShallowFilter,
-            setFilter,
-            setFilterDto,
-            setPage,
+            defaultValues: filterDto,
+            withShallowFilter,
+            withFilter,
+            withFilterDto,
+            hasFilter,
+            withPage,
         }));
+
     return <BaseForm
         notification={false}
-        onSubmit={({request, values, onDefaultSubmit}) => {
-            setShallowFilter(request);
-            setFilterDto(values);
-            setPage(0);
+        onSubmit={({
+                       request,
+                       values,
+                       form,
+                       onDefaultSubmit
+                   }) => {
+            withShallowFilter(request);
+            withFilterDto(values);
+            withPage(0);
+            if (withFilterQuery) {
+                const name = withFilterQuery.getName({
+                    request,
+                    form,
+                    values
+                });
+                if (name) {
+                    upsertFilter?.mutate({
+                        create: {
+                            name,
+                            type:   withFilterQuery.type,
+                            filter: request,
+                            dto:    values,
+                        },
+                        patch:  {
+                            name,
+                            type:   withFilterQuery.type,
+                            filter: request,
+                            dto:    values,
+                        },
+                        filter: {
+                            type_name: {
+                                name,
+                                type: withFilterQuery.type,
+                            },
+                        },
+                    });
+                }
+            }
             onDefaultSubmit();
         }}
         submitProps={{
@@ -84,18 +146,18 @@ export const BaseFilterForm = <TFormSchemaType extends IFormSchemaType, TSourceS
             >
                 <Translation namespace={"common"} label={"filter"} withLabel={"close.button"}/>
             </Button>
-            <Button
+            {hasFilter() && <Button
                 variant={"subtle"}
                 size={"md"}
                 leftIcon={<IconFilterX/>}
                 onClick={() => {
-                    setFilter(undefined);
-                    setFilterDto(undefined);
+                    withFilter(undefined);
+                    withFilterDto(undefined);
                     withAutoClose();
                 }}
             >
                 <Translation namespace={"common"} label={"filter"} withLabel={"clear.button"}/>
-            </Button>
+            </Button>}
             <Submit/>
         </Group>}
         {...props}

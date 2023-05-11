@@ -1,9 +1,10 @@
 import {type IWithTranslation} from "@leight/i18n";
 import {Translation}           from "@leight/i18n-client";
 import {
-    type IJobSourceSchemaType,
-    type IUseJobSourceQuery
+    type IJobSourceSchema,
+    type JobSource
 }                              from "@leight/job";
+import {type ISource}          from "@leight/source";
 import {notifications}         from "@mantine/notifications";
 import {
     type IJobInlineProps,
@@ -11,9 +12,9 @@ import {
 }                              from "../ui";
 
 export interface IWithJobNotificationProps {
-    job: IJobSourceSchemaType["Dto"];
+    job: JobSource["Type"]["Dto"];
     withTranslation: IWithTranslation;
-    useJobFindQuery: IUseJobSourceQuery["useFind"];
+    useJobGetQuery: ISource.IUseRepository<IJobSourceSchema>["useGet"];
     onSuccess?: IJobInlineProps["onSuccess"];
 }
 
@@ -21,17 +22,17 @@ export const withJobNotification = (
     {
         job,
         withTranslation,
-        useJobFindQuery,
+        useJobGetQuery,
         onSuccess,
     }: IWithJobNotificationProps) => {
     notifications.show({
         id:        `job-${job.id}`,
         loading:   true,
         autoClose: false,
-        title:     <Translation {...withTranslation} label={`${withTranslation.label}.job.title`}/>,
+        title:     <Translation {...withTranslation} withLabel={"job.title"}/>,
         message:   <JobInline
                        withTranslation={withTranslation}
-                       useJobFindQuery={useJobFindQuery}
+                       useJobGetQuery={useJobGetQuery}
                        onSuccess={onSuccess}
                        job={job}
                    />,

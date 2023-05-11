@@ -1,50 +1,108 @@
-import {type IGenerator}    from "../../api";
-import {generatorSdkBarrel} from "../generatorSdkBarrel";
+import {resolvePackageJson}      from "@leight/utils-server";
+import {normalize}               from "node:path";
+import {type ISdkGeneratorProps} from "../../api";
+import {withSdk}                 from "../../index";
+import {generatorSdkBarrel}      from "../generatorSdkBarrel";
 import {
-    generatorCommonEntityPrismaSource,
-    type IGeneratorCommonEntityPrismaSourceParams
-}                           from "./generatorCommonEntityPrismaSource";
+    type IWithFormParams,
+    withForm
+}                                from "./withForm";
 import {
-    generatorCommonEntitySource,
-    type IGeneratorCommonEntitySourceParams
-}                           from "./generatorCommonEntitySource";
+    type IWithRepositoryParams,
+    withRepository
+}                                from "./withRepository";
 import {
-    generatorForm,
-    type IGeneratorFormParams
-}                           from "./generatorForm";
+    type IWithRepositoryExParams,
+    withRepositoryEx
+}                                from "./withRepositoryEx";
+import {
+    type IWithRepositoryMapperParams,
+    withRepositoryMapper
+}                                from "./withRepositoryMapper";
+import {
+    type IWithRepositorySymbolParams,
+    withRepositorySymbol
+}                                from "./withRepositorySymbol";
+import {
+    IWithSourceTypeParams,
+    withSourceType
+}                                from "./withSourceType";
 
-export interface IGeneratorCommonParams {
-    PrismaSource?: IGeneratorCommonEntityPrismaSourceParams;
-    EntitySource?: IGeneratorCommonEntitySourceParams;
-    Form?: IGeneratorFormParams;
-}
+export type IGeneratorCommonProps =
+    ISdkGeneratorProps
+    & {
+        /**
+         * Generate base Repository interface
+         */
+        withRepository?: IWithRepositoryParams;
+        /**
+         * Generate extended Repository interface
+         */
+        withRepositoryEx?: IWithRepositoryExParams;
+        /**
+         * Generate base Repository symbols (for usage in Container)
+         */
+        withRepositorySymbol?: IWithRepositorySymbolParams;
+        /**
+         * Generate base Repository mapper
+         */
+        withRepositoryMapper?: IWithRepositoryMapperParams;
+        withSourceType?: IWithSourceTypeParams;
+        /**
+         * Generate base form stuff (interfaces)
+         */
+        withForm?: IWithFormParams;
+    }
 
-export const generatorCommon: IGenerator<IGeneratorCommonParams> = async (
+export const generatorCommon = (
     {
-        params: {
-                    PrismaSource,
-                    EntitySource,
-                    Form,
-                },
-        ...     props
-    }) => {
-    await Promise.all([
-        PrismaSource ? generatorCommonEntityPrismaSource({
-            ...props,
-            params: PrismaSource,
-        }) : undefined,
-        EntitySource ? generatorCommonEntitySource({
-            ...props,
-            params: EntitySource,
-        }) : undefined,
-        Form ? generatorForm({
-            ...props,
-            params: Form,
-        }) : undefined,
+        packageName = resolvePackageJson().name,
+        folder = "src/sdk",
+        ...params
+    }: IGeneratorCommonProps) => {
+    if (!packageName) {
+        throw new Error("Cannot resolve packageName");
+    }
+
+    const $params = {
+        packageName,
+        barrel:    false,
+        directory: normalize(`${process.cwd()}/${folder}`),
+    } as const;
+
+    return withSdk([
+        async () => {
+            await Promise.all([
+                params.withRepository ? withRepository({
+                    ...$params,
+                    params: params.withRepository,
+                }) : undefined,
+                params.withRepositoryEx ? withRepositoryEx({
+                    ...$params,
+                    params: params.withRepositoryEx,
+                }) : undefined,
+                params.withRepositorySymbol ? withRepositorySymbol({
+                    ...$params,
+                    params: params.withRepositorySymbol,
+                }) : undefined,
+                params.withRepositoryMapper ? withRepositoryMapper({
+                    ...$params,
+                    params: params.withRepositoryMapper,
+                }) : undefined,
+                params.withSourceType ? withSourceType({
+                    ...$params,
+                    params: params.withSourceType,
+                }) : undefined,
+                params.withForm ? withForm({
+                    ...$params,
+                    params: params.withForm,
+                }) : undefined,
+            ]);
+            await generatorSdkBarrel({
+                ...$params,
+                barrel: true,
+                params: {},
+            });
+        },
     ]);
-    await generatorSdkBarrel({
-        ...props,
-        barrel: true,
-        params: {},
-    });
 };

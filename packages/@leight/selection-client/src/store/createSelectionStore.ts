@@ -1,9 +1,10 @@
 import {createStoreContext} from "@leight/context-client";
 import {
-    IMultiSelectionStoreProps,
+    type IMultiSelectionStoreProps,
     type ISelectionStoreProps
 }                           from "@leight/selection";
 import {type IWithIdentity} from "@leight/source";
+import {isEmpty}            from "@leight/utils";
 
 export interface ICreateSelectionStoreProps {
     name: string;
@@ -16,12 +17,24 @@ export const createSelectionStore = <TItem extends IWithIdentity>(
 ) => {
     return createStoreContext<ISelectionStoreProps<TItem>>({
         state: () => (set, get) => ({
-            item: undefined,
-            select(item) {
-                set({item});
+            item:      undefined,
+            selection: undefined,
+            clear() {
+                set({item: undefined, selection: undefined});
+            },
+            commit() {
+                set(state => ({
+                    item: state.selection,
+                }));
+            },
+            cancel() {
+                set({selection: undefined});
+            },
+            select(selection) {
+                set({selection});
             },
             isSelected(item) {
-                return get().item?.id === item.id;
+                return get().selection?.id === item.id;
             },
             required() {
                 const item = get().item;
@@ -89,6 +102,9 @@ export const createMultiSelectionStore = <TItem extends IWithIdentity>(
             },
             cancel() {
                 set({selection: {}});
+            },
+            isSelection() {
+                return !isEmpty(get().selection);
             },
         }),
         name,

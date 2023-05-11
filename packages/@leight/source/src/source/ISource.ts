@@ -1,41 +1,61 @@
-import {type IWithIdentity}     from "../schema";
-import {type ISourceSchemaType} from "./ISourceSchemaType";
+import {type IStoreContext}    from "@leight/context";
+import {
+    type IUseMutation,
+    type IUseQuery,
+    type IUseQueryResult
+}                              from "@leight/react-query";
+import {z}                     from "@leight/zod";
+import {type IQueryStoreProps} from "../query";
+import {
+    type IWithIdentity,
+    type IWithIdentity$
+}                              from "../schema";
+import {type ISourceSchema}    from "./ISourceSchema";
+import {type SourceType}       from "./SourceType";
 
 /**
- * Implementation of data source (general, not just a database one).
+ * Client side Source tools.
  */
-export interface ISource<TSourceSchemaType extends ISourceSchemaType> {
-    create(entity: TSourceSchemaType["Create"]): Promise<TSourceSchemaType["Entity"]>;
-
-    upsert(props: ISource.IUpsert<TSourceSchemaType>): Promise<TSourceSchemaType["Entity"]>;
-
-    patch(patch: TSourceSchemaType["Patch"]): Promise<TSourceSchemaType["Entity"]>;
-
-    delete(withIdentity: IWithIdentity): Promise<TSourceSchemaType["Entity"]>;
-
-    deleteWith(query: TSourceSchemaType["Query"]): Promise<TSourceSchemaType["Entity"][]>;
-
-    /**
-     * Count items based on an optional query.
-     */
-    count(query?: TSourceSchemaType["Query"]): Promise<number>;
-
-    /**
-     * Query items.
-     */
-    query(query?: TSourceSchemaType["Query"]): Promise<TSourceSchemaType["Entity"][]>;
-
-    fetch(query: TSourceSchemaType["Query"]): Promise<TSourceSchemaType["Entity"]>;
-
-    find(id: string): Promise<TSourceSchemaType["Entity"]>;
-
-    findOptional(id?: string): Promise<TSourceSchemaType["Entity"] | null>;
+export interface ISource<
+    TSourceSchema extends ISourceSchema = ISourceSchema
+> {
+    name: string;
+    schema: TSourceSchema;
+    repository: ISource.IUseRepository<TSourceSchema>;
+    query: ISource.IQueryContext<TSourceSchema>;
+    use: ISource.IUse<TSourceSchema>;
+    useInvalidator: ISource.IUseInvalidator;
 }
 
 export namespace ISource {
-    export interface IUpsert<TSourceSchemaType extends ISourceSchemaType> {
-        create: TSourceSchemaType["Create"];
-        patch: Omit<TSourceSchemaType["Patch"], "id">;
-        filter: TSourceSchemaType["Filter"];
+    export interface IUseRepository<
+        TSourceSchema extends ISourceSchema,
+        TSourceType extends SourceType<TSourceSchema> = SourceType<TSourceSchema>
+    > {
+        useCreate: IUseMutation<TSourceType["ToCreate"], TSourceType["Dto"]>;
+        usePatch: IUseMutation<TSourceType["ToPatchProps"], TSourceType["Dto"]>;
+        usePatchBy: IUseMutation<TSourceType["ToPatchByProps"], unknown>;
+        useUpsert: IUseMutation<TSourceType["ToUpsertProps"], TSourceType["Dto"]>;
+        useDelete: IUseMutation<TSourceType["Delete"], TSourceType["Dto"]>;
+        useDeleteBy: IUseMutation<TSourceType["DeleteBy"], unknown>;
+        useQuery: IUseQuery<TSourceType["Query"], TSourceType["Dto"][]>;
+        useCount: IUseQuery<TSourceType["Count"], number>;
+        useFetch: IUseQuery<TSourceType["Fetch"], TSourceType["Dto"]>;
+        useFetch$: IUseQuery<TSourceType["Fetch$"], TSourceType["Dto"] | null>;
+        useGet: IUseQuery<IWithIdentity, TSourceType["Dto"]>;
+        useGet$: IUseQuery<IWithIdentity$, TSourceType["Dto"] | null>;
     }
+
+    export type IUse<TSourceSchema extends ISourceSchema> = ({cacheTime}?: {
+        cacheTime?: number
+    }) => IUseResult<TSourceSchema>;
+
+    export interface IUseResult<TSourceSchema extends ISourceSchema> {
+        result: IUseQueryResult<z.infer<TSourceSchema["DtoSchema"]>[]>;
+        data: z.infer<TSourceSchema["DtoSchema"]>[];
+    }
+
+    export type IUseInvalidator = () => () => void;
+
+    export type IQueryContext<TSourceSchema extends ISourceSchema> = IStoreContext<IQueryStoreProps<TSourceSchema>>;
 }

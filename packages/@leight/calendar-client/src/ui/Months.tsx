@@ -1,5 +1,5 @@
 import {
-    type ICalendarEventSourceSchemaType,
+    type ICalendarEventSourceSchema,
     type IMonth
 }                               from "@leight/calendar";
 import {DateTime}               from "@leight/i18n";
@@ -22,7 +22,7 @@ import {
     type ICalendarShellProps
 }                               from "./CalendarShell";
 
-export type IMonthsProps<TSourceSchemaType extends ICalendarEventSourceSchemaType = ICalendarEventSourceSchemaType> = PropsWithChildren<Omit<ICalendarShellProps<TSourceSchemaType>, "children" | "onClick"> & {
+export type IMonthsProps<TSourceSchema extends ICalendarEventSourceSchema = ICalendarEventSourceSchema> = PropsWithChildren<Omit<ICalendarShellProps<TSourceSchema>, "children" | "onClick"> & {
     onClick?(props: IIMonthsProps.IOnClickProps): void;
 }>;
 
@@ -32,15 +32,34 @@ export namespace IIMonthsProps {
     }
 }
 
-export const Months = <TSourceSchemaType extends ICalendarEventSourceSchemaType = ICalendarEventSourceSchemaType>(
+export const Months = <TSourceSchema extends ICalendarEventSourceSchema = ICalendarEventSourceSchema>(
     {
         children,
         onClick,
         ...props
-    }: IMonthsProps<TSourceSchemaType>) => {
-    const {months: {months, isCurrent, date}, today, prevYear, nextYear} = MonthsOfStore.useState();
-    const columnCount                                                    = 4;
-    const rowCount                                                       = months.length / columnCount;
+    }: IMonthsProps<TSourceSchema>) => {
+    const {
+        months: {
+                    months,
+                    isCurrent,
+                    date
+                },
+        today,
+        prevYear,
+        nextYear
+    } = MonthsOfStore.use(({
+                               months,
+                               today,
+                               prevYear,
+                               nextYear
+                           }) => ({
+        months,
+        today,
+        prevYear,
+        nextYear
+    }));
+    const columnCount = 4;
+    const rowCount = months.length / columnCount;
     return <CalendarShell
         controlsTopLeft={<Group spacing={"sm"}>
             <Button.Group>
@@ -65,7 +84,11 @@ export const Months = <TSourceSchemaType extends ICalendarEventSourceSchemaType 
             >
                 <Text c={"dimmed"}>
                     {isCurrent ?
-                        <DateInline date={DateTime.now()} options={{day: "numeric", month: "long", year: "numeric"}}/> :
+                        <DateInline date={DateTime.now()} options={{
+                            day:   "numeric",
+                            month: "long",
+                            year:  "numeric"
+                        }}/> :
                         <DateInline date={date} options={{year: "numeric"}}/>
                     }
                 </Text>

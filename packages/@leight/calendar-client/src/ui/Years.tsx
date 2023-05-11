@@ -1,5 +1,5 @@
 import {
-    type ICalendarEventSourceSchemaType,
+    type ICalendarEventSourceSchema,
     type IYear
 }                               from "@leight/calendar";
 import {DateInline}             from "@leight/i18n-client";
@@ -24,7 +24,7 @@ import {
     type ICalendarShellProps
 }                               from "./CalendarShell";
 
-export type IYearsProps<TSourceSchemaType extends ICalendarEventSourceSchemaType = ICalendarEventSourceSchemaType> = PropsWithChildren<Omit<ICalendarShellProps<TSourceSchemaType>, "children" | "onClick"> & {
+export type IYearsProps<TSourceSchema extends ICalendarEventSourceSchema = ICalendarEventSourceSchema> = PropsWithChildren<Omit<ICalendarShellProps<TSourceSchema>, "children" | "onClick"> & {
     onClick?(props: IYearsProps.IOnClickProps): void;
 }>;
 
@@ -34,28 +34,28 @@ export namespace IYearsProps {
     }
 }
 
-export const Years = <TSourceSchemaType extends ICalendarEventSourceSchemaType = ICalendarEventSourceSchemaType>(
+export const Years = <TSourceSchema extends ICalendarEventSourceSchema = ICalendarEventSourceSchema>(
     {
         children,
         onClick,
         ...props
-    }: IYearsProps<TSourceSchemaType>) => {
+    }: IYearsProps<TSourceSchema>) => {
     const {
-              years: {
-                         years,
-                         isCurrent,
-                         start,
-                         end,
-                         columns,
-                         rows,
-                         count,
-                     },
-              today,
-              prevYear,
-              nextYear,
-              prevYears,
-              nextYears,
-          } = YearsOfStore.useState();
+        years: {
+                   years,
+                   isCurrent,
+                   start,
+                   end,
+                   columns,
+                   rows,
+                   count,
+               },
+        today,
+        prevYear,
+        nextYear,
+        prevYears,
+        nextYears,
+    } = YearsOfStore.use();
     return <CalendarShell
         controlsTopLeft={<Group spacing={"sm"}>
             <Button.Group>

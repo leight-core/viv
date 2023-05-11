@@ -1,10 +1,11 @@
 import {type IWithTranslation} from "@leight/i18n";
 import {Translation}           from "@leight/i18n-client";
 import {
-    type IJobSourceSchemaType,
-    type IUseJobSourceQuery,
-    JobDoneStatus
+    type IJobSourceSchema,
+    JobDoneStatus,
+    type JobSource
 }                              from "@leight/job";
+import {type ISource}          from "@leight/source";
 import {toHumanNumber}         from "@leight/utils";
 import {Progress}              from "@mantine/core";
 import {notifications}         from "@mantine/notifications";
@@ -20,30 +21,30 @@ import {
 
 export interface IJobInlineInternalProps {
     withTranslation: IWithTranslation;
-    job: IJobSourceSchemaType["Entity"];
-    useJobFindQuery: IUseJobSourceQuery["useFind"];
+    job: JobSource["Type"]["Dto"];
+    useJobGetQuery: ISource.IUseRepository<IJobSourceSchema>["useGet"];
 
     onSuccess?(props: IJobInlineInternalProps.IOnSuccessProps): void;
 }
 
 export namespace IJobInlineInternalProps {
     export interface IOnSuccessProps {
-        job: IJobSourceSchemaType["Entity"];
+        job: JobSource["Type"]["Dto"];
     }
 }
 
-export type IJobInlineProps = Omit<IJobInlineInternalProps, "useJobFindQuery">;
+export type IJobInlineProps = Omit<IJobInlineInternalProps, "useJobGetQuery">;
 
 export const JobInline: FC<IJobInlineInternalProps> = (
     {
         job,
-        useJobFindQuery,
+        useJobGetQuery,
         onSuccess,
         withTranslation,
     }) => {
     const [refresh, setRefresh] = useState(true);
-    const notificationId        = `job-${job.id}`;
-    const result                = useJobFindQuery({id: job.id}, {
+    const notificationId = `job-${job.id}`;
+    const result = useJobGetQuery({id: job.id}, {
         initialData:     job,
         refetchInterval: refresh ? 750 : undefined,
         onSuccess:       job => {

@@ -3,6 +3,7 @@ import {
     type IFormSchemaType
 }                                       from "@leight/form";
 import {useTranslation}                 from "@leight/i18n-client";
+import {toHumanNumber}                  from "@leight/utils";
 import {NumberInput as CoolNumberInput} from "@mantine/core";
 import {type ComponentProps}            from "react";
 import {withDefaultInputProps}          from "../utils";
@@ -19,8 +20,18 @@ export const NumberInput = <TFormSchema extends IFormSchemaType>(
         description,
         ...props
     }: INumberInputProps<TFormSchema>) => {
-    const {MantineContext: {useFormContext}, withTranslation} = FormContext.useState(({MantineContext, withTranslation}) => ({MantineContext, withTranslation}));
-    const {t}                                                 = useTranslation(withTranslation.namespace);
+    const {
+        MantineContext: {useFormContext},
+        withTranslation
+    } = FormContext.use((
+        {
+            MantineContext,
+            withTranslation
+        }) => ({
+        MantineContext,
+        withTranslation
+    }));
+    const {t} = useTranslation(withTranslation.namespace);
     return <CoolNumberInput
         {...withDefaultInputProps<TFormSchema>({
             t,
@@ -31,6 +42,10 @@ export const NumberInput = <TFormSchema extends IFormSchemaType>(
             description,
             path,
         })}
+        formatter={value => {
+            const number = parseFloat(value);
+            return !Number.isNaN(number) ? toHumanNumber({number}) : "";
+        }}
         {...props}
     />;
 };

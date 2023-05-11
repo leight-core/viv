@@ -1,6 +1,6 @@
 import {type IWithTranslation} from "@leight/i18n";
 import {useTranslation}        from "@leight/i18n-client";
-import {type ISourceStore}     from "@leight/source";
+import {type ISource}          from "@leight/source";
 import {FulltextStoreContext}  from "@leight/source-client";
 import {generateId}            from "@leight/utils";
 import {
@@ -23,7 +23,7 @@ import {WithIcon}              from "../component";
 export type IFulltextProps =
     ComponentProps<typeof TextInput>
     & {
-        SourceStore: ISourceStore<any>;
+        Source: ISource<any>;
         loading?: boolean;
         debounce?: number;
         withTranslation?: IWithTranslation;
@@ -32,22 +32,32 @@ export type IFulltextProps =
 
 export const Fulltext: FC<IFulltextProps> = (
     {
-        SourceStore,
+        Source,
         loading,
         debounce = 500,
         withTranslation,
         onSearch,
         ...props
     }) => {
-    const {t}                       = useTranslation(withTranslation?.namespace);
-    const {fulltext, setFulltext}   = FulltextStoreContext.useState(({fulltext, setFulltext}) => ({fulltext, setFulltext}));
-    const {setPage}                 = SourceStore.Query.useState(({setPage}) => ({setPage}));
+    const {t} = useTranslation(withTranslation?.namespace);
+    const {
+        fulltext,
+        setFulltext
+    } = FulltextStoreContext.use((
+        {
+            fulltext,
+            setFulltext
+        }) => ({
+        fulltext,
+        setFulltext
+    }));
+    const {withPage} = Source.query.use(({withPage}) => ({withPage}));
     const [debounced, setDebounced] = useDebouncedState(fulltext || "", debounce);
 
     useEffect(() => {
         setFulltext(debounced || undefined);
         onSearch?.(debounced || undefined);
-        setPage(0);
+        withPage(0);
     }, [debounced]);
 
     return <TextInput

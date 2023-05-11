@@ -1,5 +1,5 @@
 import {
-    IFormFields,
+    type IFormFields,
     type IFormInputsFactory,
     type IFormInputsOverrideFactory,
     type IFormMapper,
@@ -9,7 +9,8 @@ import {
     type IFormToRequest,
     type IFormToRequestWithDto,
     type IFormToValues,
-    type IMantineFormContext
+    type IMantineFormContext,
+    type IUseForm
 }                               from "@leight/form";
 import {type IWithTranslation}  from "@leight/i18n";
 import {
@@ -79,6 +80,7 @@ export namespace IBaseFormProps {
     export interface IOnSubmitProps<TFormSchemaType extends IFormSchemaType> {
         request: TFormSchemaType["Request"];
         values: TFormSchemaType["Values"];
+        form: IUseForm<TFormSchemaType>;
 
         /**
          * Calls default form submit stuff
@@ -109,9 +111,12 @@ export const BaseForm = <TFormSchemaType extends IFormSchemaType>(
         RenderSubmit,
         ...props
     }: IBaseFormProps<TFormSchemaType>) => {
-    const {FormProvider, useForm} = MantineContext;
-    const {t}                     = useTranslation(withTranslation.namespace);
-    const form                    = useForm({
+    const {
+        FormProvider,
+        useForm
+    } = MantineContext;
+    const {t} = useTranslation(withTranslation.namespace);
+    const form = useForm({
         initialValues:   defaultValues,
         validate:        values => {
             if (!schemas?.ValuesSchema) {
@@ -123,7 +128,7 @@ export const BaseForm = <TFormSchemaType extends IFormSchemaType>(
             }
             const errors: Record<string, string> = {};
             parsed.error.errors.forEach(error => {
-                const path   = error.path.join(".");
+                const path = error.path.join(".");
                 errors[path] = t(`${withTranslation.label}.error.${path}.${error.message}`, withTranslation.values);
             });
             return errors;
@@ -139,8 +144,14 @@ export const BaseForm = <TFormSchemaType extends IFormSchemaType>(
         <FormStoreProvider
             MantineContext={MantineContext}
             schemas={schemas}
-            inputs={inputs({schemas, FormContext})}
-            inputsOverride={inputsOverride?.({schemas, FormContext})}
+            inputs={inputs({
+                schemas,
+                FormContext
+            })}
+            inputsOverride={inputsOverride?.({
+                schemas,
+                FormContext
+            })}
             FormStoreContext={FormContext}
             withTranslation={withTranslation}
             defaultValues={defaultValues}
@@ -172,9 +183,9 @@ const FormInternal = <TFormSchemaType extends IFormSchemaType>(
         RenderSubmit,
         children,
     }: IFormInternalProps<TFormSchemaType>) => {
-    const {isBlock} = BlockStore.useOptionalState() || {isBlock: false};
-    const modal     = ModalStore.useOptionalState();
-    const drawer    = DrawerStore.useOptionalState();
+    const {isBlock} = BlockStore.use$() || {isBlock: false};
+    const modal = ModalStore.use$();
+    const drawer = DrawerStore.use$();
 
     const onDefaultSubmit = () => {
         withAutoClose.forEach(item => {
@@ -198,13 +209,21 @@ const FormInternal = <TFormSchemaType extends IFormSchemaType>(
             label={`${withTranslation.label}.submit.button`}
         />
     </Button>;
-    const Submit       = RenderSubmit ? () => <RenderSubmit Submit={SubmitButton}/> : SubmitButton;
+    const Submit = RenderSubmit ? () => <RenderSubmit Submit={SubmitButton}/> : SubmitButton;
 
     return <Box pos={"relative"}>
         <LoadingOverlay visible={isBlock}/>
         <form
-            onSubmit={form.onSubmit(({request, values}) => {
-                onSubmit?.({request, values, onDefaultSubmit});
+            onSubmit={form.onSubmit(({
+                                         request,
+                                         values
+                                     }) => {
+                onSubmit?.({
+                    request,
+                    values,
+                    form,
+                    onDefaultSubmit
+                });
             })}
         >
             {children}
@@ -233,7 +252,12 @@ export interface IDtoFormProps<TFormSchemaType extends IFormSchemaType> extends 
     dto: TFormSchemaType["Dto"];
 }
 
-export const DtoForm = <TFormSchemaType extends IFormSchemaType>({toRequest, toValues, dto, ...props}: IDtoFormProps<TFormSchemaType>) => {
+export const DtoForm = <TFormSchemaType extends IFormSchemaType>({
+                                                                     toRequest,
+                                                                     toValues,
+                                                                     dto,
+                                                                     ...props
+                                                                 }: IDtoFormProps<TFormSchemaType>) => {
     return <BaseForm
         toRequest={({values}) => toRequest({
             values,

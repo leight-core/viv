@@ -2,141 +2,159 @@ import {createStoreContext} from "@leight/context-client";
 import {
     type IQueryStoreProps,
     type ISourceSchema,
-    type ISourceSchemaType
+    type SourceType
 }                           from "@leight/source";
-import {generateId}         from "@leight/utils";
+import {
+    cleanOf,
+    isEmpty
+}                           from "@leight/utils";
 
-export interface ICreateQueryStoreProps<TSourceSchemaType extends ISourceSchemaType> {
+export interface ICreateQueryStoreProps {
     name: string;
-    schema: ISourceSchema.of<TSourceSchemaType>;
 }
 
-export const createQueryStore = <TSourceSchemaType extends ISourceSchemaType>(
+export const createQueryStore = <
+    TSourceSchema extends ISourceSchema,
+    TSourceType extends SourceType<TSourceSchema> = SourceType<TSourceSchema>,
+>(
     {
         name,
-        schema,
-    }: ICreateQueryStoreProps<TSourceSchemaType>) => {
-    return createStoreContext<IQueryStoreProps<TSourceSchemaType>>({
-        state: ({defaults}) => set => ({
-            $id:          generateId(),
-            $schema:      schema,
-            $filter:      defaults?.$query?.filter,
-            $applyFilter: undefined,
-            $filterDto:   undefined,
-            $sort:        defaults?.$query?.sort || {},
-            $page:        defaults?.$query?.cursor?.page || 0,
-            $size:        defaults?.$query?.cursor?.size || 30,
-            $query:       defaults?.$query || {
+    }: ICreateQueryStoreProps) => {
+    return createStoreContext<IQueryStoreProps<TSourceSchema>>({
+        state: ({defaults}) => (set, get) => ({
+            filter:      defaults?.query?.filter as TSourceType["Filter"],
+            applyFilter: undefined,
+            filterDto:   undefined,
+            sort:        defaults?.query?.sort || {},
+            page:        defaults?.query?.cursor?.page || 0,
+            size:        defaults?.query?.cursor?.size || 30,
+            query:       defaults?.query || {
                 cursor: {
                     page: 0,
                     size: 30,
                 },
             },
-            setFilter(filter) {
-                set(({$query, $applyFilter}) => ({
-                    $id:     generateId(),
-                    $filter: {
+            withFilter(filter) {
+                set(({
+                         query,
+                         applyFilter
+                     }) => ({
+                    filter: {
                         ...filter,
-                        ...$applyFilter,
+                        ...applyFilter,
                     },
-                    $query:  {
-                        ...$query,
+                    query:  {
+                        ...query,
                         filter: {
                             ...filter,
-                            ...$applyFilter,
+                            ...applyFilter,
                         },
                     },
                 }));
             },
-            applyFilter(filter) {
-                set(({$query}) => ({
-                    $id:          generateId(),
-                    $applyFilter: filter,
-                    $filter:      filter,
-                    $query:       {
-                        ...$query,
-                        filter: filter,
+            withApplyFilter(filter) {
+                set(({query}) => ({
+                    applyFilter: filter,
+                    filter:      filter,
+                    query:       {
+                        ...query,
+                        filter,
                     },
                 }));
             },
-            applyShallowFilter(filter) {
-                set(({$query, $applyFilter}) => ({
-                    $id:          generateId(),
-                    $applyFilter: {
-                        ...$applyFilter,
+            withApplyShallowFilter(filter) {
+                set(({
+                         query,
+                         applyFilter
+                     }) => ({
+                    applyFilter: {
+                        ...applyFilter,
                         ...filter,
                     },
-                    $filter:      {
-                        ...$query.filter,
-                        ...$applyFilter,
+                    filter:      {
+                        ...query.filter,
+                        ...applyFilter,
                         ...filter,
                     },
-                    $query:       {
-                        ...$query,
+                    query:       {
+                        ...query,
                         filter: {
-                            ...$query.filter,
-                            ...$applyFilter,
+                            ...query.filter,
+                            ...applyFilter,
                             ...filter,
                         },
                     },
                 }));
             },
-            setShallowFilter(filter) {
-                set(({$query, $applyFilter}) => ({
-                    $id:     generateId(),
-                    $filter: {
-                        ...$query.filter,
+            withShallowFilter(filter) {
+                set(({
+                         query,
+                         applyFilter
+                     }) => ({
+                    filter: {
+                        ...query.filter,
                         ...filter,
-                        ...$applyFilter,
+                        ...applyFilter,
                     },
-                    $query:  {
-                        ...$query,
+                    query:  {
+                        ...query,
                         filter: {
-                            ...$query.filter,
+                            ...query.filter,
                             ...filter,
-                            ...$applyFilter,
+                            ...applyFilter,
                         },
                     },
                 }));
             },
-            setFilterDto(dto) {
-                set({$filterDto: dto});
+            withFilterDto(dto) {
+                set({filterDto: dto});
             },
-            setSort(key, order) {
-                set(({$query}) => ({
-                    $id:    generateId(),
-                    $sort:  {
+            withShallowFilterDto(dto) {
+                set(state => ({
+                    filterDto: {
+                        ...state.filterDto,
+                        ...dto,
+                    },
+                }));
+            },
+            hasFilter() {
+                return !isEmpty(cleanOf(get().filter));
+            },
+            hasApplyFilter() {
+                return !isEmpty(get().applyFilter);
+            },
+            withSort(key, order) {
+                set(({query}) => ({
+                    sort:  {
                         [key as any]: order,
                     },
-                    $query: {
-                        ...$query,
+                    query: {
+                        ...query,
                         sort: {
                             [key as any]: order,
                         },
                     },
                 }));
             },
-            setSize(size) {
-                set(({$query}) => ({
-                    $id:    generateId(),
-                    $size:  size,
-                    $query: {
-                        ...$query,
+            withSize(size) {
+                set(({query}) => ({
+                    size:  size,
+                    query: {
+                        ...query,
                         cursor: {
-                            ...$query.cursor,
+                            ...query.cursor,
                             size,
                         },
                     },
                 }));
             },
-            setPage(page) {
-                set(({$query}) => ({
-                    $id:    generateId(),
-                    $page:  page,
-                    $query: {
-                        ...$query,
+            withPage(page) {
+                set(({query}) => ({
+                    page:  page,
+                    query: {
+                        ...query,
                         cursor: {
-                            ...$query.cursor,
+                            ...query.cursor,
                             page,
                         },
                     },

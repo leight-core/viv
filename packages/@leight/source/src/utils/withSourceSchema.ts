@@ -1,3 +1,4 @@
+import {z} from "@leight/zod";
 import {
     CreateSchema,
     CursorSchema,
@@ -15,14 +16,14 @@ import {
     type IToPatchSchema,
     ParamsSchema,
     PatchSchema,
-    QuerySchema,
     SortSchema,
     ToCreateSchema,
-    ToPatchSchema
-}                           from "../schema";
+    ToPatchSchema,
+    WithIdentitySchema
+} from "../schema";
 import {type ISourceSchema} from "../source";
 
-export type IWithSourceSchemaProps<
+export interface IWithSourceSchemaProps<
     TEntitySchema extends IEntitySchema,
     TDtoSchema extends IDtoSchema,
     TToCreateSchema extends IToCreateSchema,
@@ -32,7 +33,17 @@ export type IWithSourceSchemaProps<
     TFilterSchema extends IFilterSchema,
     TSortSchema extends ISortSchema,
     TParamsSchema extends IParamsSchema,
-> = Partial<ISourceSchema<TEntitySchema, TDtoSchema, TToCreateSchema, TCreateSchema, TToPatchSchema, TPatchSchema, TFilterSchema, TSortSchema, TParamsSchema>>;
+> {
+    EntitySchema?: TEntitySchema;
+    DtoSchema?: TDtoSchema;
+    ToCreateSchema?: TToCreateSchema;
+    CreateSchema?: TCreateSchema;
+    ToPatchSchema?: TToPatchSchema;
+    PatchSchema?: TPatchSchema;
+    FilterSchema?: TFilterSchema;
+    SortSchema?: TSortSchema;
+    ParamsSchema?: TParamsSchema;
+}
 
 export const withSourceSchema = <
     TEntitySchema extends IEntitySchema,
@@ -46,15 +57,15 @@ export const withSourceSchema = <
     TParamsSchema extends IParamsSchema,
 >(
     {
-        EntitySchema:   $EntitySchema = EntitySchema as TEntitySchema,
-        DtoSchema:      $DtoSchema = DtoSchema as TDtoSchema,
+        EntitySchema: $EntitySchema = EntitySchema as TEntitySchema,
+        DtoSchema: $DtoSchema = DtoSchema as TDtoSchema,
         ToCreateSchema: $ToCreateSchema = ToCreateSchema as TToCreateSchema,
-        CreateSchema:   $CreateSchema = CreateSchema as TCreateSchema,
-        ToPatchSchema:  $ToPatchSchema = ToPatchSchema as TToPatchSchema,
-        PatchSchema:    $PatchSchema = PatchSchema as TPatchSchema,
-        FilterSchema:   $FilterSchema = FilterSchema as TFilterSchema,
-        SortSchema:     $SortSchema = SortSchema as TSortSchema,
-        ParamsSchema:   $ParamsSchema = ParamsSchema as TParamsSchema,
+        CreateSchema: $CreateSchema = CreateSchema as TCreateSchema,
+        ToPatchSchema: $ToPatchSchema = ToPatchSchema as TToPatchSchema,
+        PatchSchema: $PatchSchema = PatchSchema as TPatchSchema,
+        FilterSchema: $FilterSchema = FilterSchema as TFilterSchema,
+        SortSchema: $SortSchema = SortSchema as TSortSchema,
+        ParamsSchema: $ParamsSchema = ParamsSchema as TParamsSchema,
     }: IWithSourceSchemaProps<
         TEntitySchema,
         TDtoSchema,
@@ -76,23 +87,66 @@ export const withSourceSchema = <
     TSortSchema,
     TParamsSchema
 > => {
-    const $QuerySchema = QuerySchema({
-        filterSchema: $FilterSchema,
-        sortSchema:   $SortSchema,
-        paramsSchema: $ParamsSchema,
-    });
+    const Repository = {
+        EntitySchema: $EntitySchema,
+        CreateSchema: $CreateSchema,
+        PatchSchema: $PatchSchema,
+        PatchSchemaProps: z.object({
+            patch: $PatchSchema,
+            filter: $FilterSchema,
+        }),
+        PatchBySchemaProps: z.object({
+            patch: $PatchSchema,
+            filter: $FilterSchema,
+        }),
+        UpsertSchemaProps: z.object({
+            create: $CreateSchema,
+            patch: $PatchSchema,
+            filter: $FilterSchema,
+        }),
+        QuerySchema: z.object({
+            filter: $FilterSchema.optional(),
+            sort: $SortSchema.optional(),
+            cursor: CursorSchema.optional(),
+            params: $ParamsSchema.optional(),
+        }),
+        CountSchema: $FilterSchema,
+        DeleteBySchema: $FilterSchema,
+        DeleteSchema: WithIdentitySchema,
+        Fetch$Schema: $FilterSchema,
+        FetchSchema: $FilterSchema,
+        FilterSchema: $FilterSchema,
+        SortSchema: $SortSchema,
+        ParamsSchema: $ParamsSchema,
+        CursorSchema,
+    } as const;
+    const Mapper = {
+        ...Repository,
+        DtoSchema: $DtoSchema,
+        ToCreateSchema: $ToCreateSchema,
+        ToPatchSchema: $ToPatchSchema,
+        ToPatchSchemaProps: z.object({
+            patch: $ToPatchSchema,
+            filter: $FilterSchema,
+        }),
+        ToPatchBySchemaProps: z.object({
+            patch: $ToPatchSchema,
+            filter: $FilterSchema,
+        }),
+        ToUpsertSchemaProps: z.object({
+            create: $ToCreateSchema,
+            patch: $ToPatchSchema,
+            filter: $FilterSchema,
+        }),
+    } as const;
+    const Service = {
+        ...Mapper,
+    } as const;
+
     return {
-        EntitySchema:        $EntitySchema,
-        DtoSchema:           $DtoSchema,
-        ToCreateSchema:      $ToCreateSchema,
-        CreateSchema:        $CreateSchema,
-        ToPatchSchema:       $ToPatchSchema,
-        PatchSchema:         $PatchSchema,
-        FilterSchema:        $FilterSchema,
-        SortSchema:          $SortSchema,
-        ParamsSchema:        $ParamsSchema,
-        CursorSchema:        CursorSchema,
-        QuerySchema:         $QuerySchema,
-        QueryOptionalSchema: $QuerySchema.optional(),
+        ...Service,
+        Repository,
+        Mapper,
+        Service,
     };
 };
