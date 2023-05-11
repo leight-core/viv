@@ -1,5 +1,14 @@
 # @leight/job-server
 
+## 0.5.79
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+  - @leight/user@0.5.80
+  - @leight/job@0.5.80
+
 ## 0.5.78
 
 ### Patch Changes

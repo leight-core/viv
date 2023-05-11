@@ -1,5 +1,13 @@
 # @leight/user-server
 
+## 0.5.83
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+  - @leight/user@0.5.80
+
 ## 0.5.82
 
 ### Patch Changes

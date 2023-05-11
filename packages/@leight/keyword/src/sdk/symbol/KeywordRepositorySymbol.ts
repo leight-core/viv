@@ -10,4 +10,4 @@ export const $KeywordRepositoryService = Symbol.for("@leight/keyword/IKeywordRep
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_won4p770e95jd12im0t3baym = true;
+export const $leight_iqurss9lhsyfdg36xw3yuymg = true;

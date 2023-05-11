@@ -1,5 +1,13 @@
 # @leight/keyword-server
 
+## 0.5.4
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+  - @leight/keyword@0.5.4
+
 ## 0.5.3
 
 ### Patch Changes

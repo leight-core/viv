@@ -16,4 +16,4 @@ export const FileRepositoryHandler = withRepositoryHandler<FileSource["Schema"][
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_s2b06703qzzeo0gsqaw7el3f = true;
+export const $leight_z1m0kn7njlpjcl9qlmz852y7 = true;

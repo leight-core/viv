@@ -1,5 +1,14 @@
 # @leight/label-server
 
+## 0.5.2
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+  - @leight/label@0.5.2
+  - @leight/user@0.5.80
+
 ## 0.5.1
 
 ### Patch Changes

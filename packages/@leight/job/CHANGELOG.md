@@ -1,5 +1,11 @@
 # @leight/job
 
+## 0.5.80
+
+### Patch Changes
+
+- Version bump
+
 ## 0.5.79
 
 ### Patch Changes

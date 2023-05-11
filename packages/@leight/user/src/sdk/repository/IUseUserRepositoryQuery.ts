@@ -12,4 +12,4 @@ export type IUseUserRepositoryQuery = IUseRepositoryQuery<SourceSchema>;
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_d5odyxeix5mg7xilql1de46u = true;
+export const $leight_imyxwtruttplaeutg65xrkv3 = true;

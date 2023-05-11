@@ -12,4 +12,4 @@ export type IUseLabelRepository = ISource.IUseRepository<SourceSchema>;
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_o86mefsyzioiit7ian3ju82u = true;
+export const $leight_lfjt4l2tq9m6e19l767sydqt = true;

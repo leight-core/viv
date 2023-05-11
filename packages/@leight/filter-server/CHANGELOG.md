@@ -1,5 +1,14 @@
 # @leight/filter-server
 
+## 0.5.3
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+  - @leight/filter@0.5.77
+  - @leight/user@0.5.80
+
 ## 0.5.2
 
 ### Patch Changes
