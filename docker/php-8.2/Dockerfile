@@ -6,14 +6,10 @@ ENV \
     PHP_VERSION=8.2.6
 
 WORKDIR /usr/src
-RUN \
-    curl -SLk "https://php.net/get/php-$PHP_VERSION.tar.xz/from/this/mirror" | tar -Jx --strip-components=1
 
-# download and build PHP
-WORKDIR /usr/src
 RUN \
-    ./configure --help
-RUN \
+    curl -SLk "https://php.net/get/php-$PHP_VERSION.tar.xz/from/this/mirror" | tar -Jx --strip-components=1 && \
+    ./configure --help && \
     ./configure \
 		--with-config-file-path="$PHP_INI_DIR" \
 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" \
@@ -62,13 +58,11 @@ RUN \
 	&& make -j"$(nproc)" \
 	&& make install \
 	&& /usr/src/build/shtool install -c ext/phar/phar.phar /usr/local/bin/phar.phar \
-	&& ln -s -f phar.phar /usr/local/bin/phar
-
-RUN mkdir -p /usr/local/etc/php/conf.d/
-RUN chmod +x -R /usr/local/bin
-
-RUN pecl install xdebug
-RUN pecl install memcached
+	&& ln -s -f phar.phar /usr/local/bin/phar && \
+    mkdir -p /usr/local/etc/php/conf.d/ && \
+    chmod +x -R /usr/local/bin && \
+    pecl install xdebug && \
+    pecl install memcached
 
 # start a new, clean stage (without any heavy dependency)
 FROM leightcore/php:base as runtime
@@ -81,10 +75,7 @@ COPY --from=build /usr/local/lib/php/ /usr/local/lib/php/
 COPY --from=build /usr/local/etc/ /usr/local/etc/
 
 RUN \
-    chmod +x -R /usr/local/bin
-
-# just see some info 'round (and also see if PHP binary is ok)
-RUN \
+    chmod +x -R /usr/local/bin && \
     php -v && \
     php -m && \
     nginx -t && \

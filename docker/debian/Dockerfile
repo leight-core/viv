@@ -6,20 +6,15 @@ ENV \
 RUN \
     apt-get update && \
     apt-get install -y --no-install-recommends --no-install-suggests \
-        ca-certificates curl git wget zip unzip bzip2 supervisor zsh
-
-RUN \
+        ca-certificates curl git wget supervisor && \
     curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
     apt-get update && \
     apt-get install -y --no-install-recommends --no-install-suggests \
-        nodejs
-
-RUN \
+        nodejs && \
     npm install -g npm && \
     npm install -g pnpm && \
-    npm install -g yarn
-
-RUN mkdir -p /etc/supervisor/conf.d
+    npm install -g yarn && \
+    mkdir -p /etc/supervisor/conf.d
 
 ADD rootfs /
 
