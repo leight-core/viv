@@ -1,4 +1,4 @@
-FROM leightcore/debian as build
+FROM leightcore/php:base as build
 
 # setup mandatory environment variables
 ENV \
@@ -70,24 +70,8 @@ RUN chmod +x -R /usr/local/bin
 RUN pecl install xdebug
 RUN pecl install memcached
 
-# add all required files for the image (configurations, ...)
-ADD rootfs/build /
-
-# take composer from official composer imsage
-COPY --from=composer /usr/bin/composer /usr/local/bin/composer
-
 # start a new, clean stage (without any heavy dependency)
-FROM leightcore/debian as runtime
-
-# install just required dependencies to keep the image as light as possible
-RUN \
-    curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
-    apt-get update && \
-    apt-get install -y --no-install-recommends --no-install-suggests \
-        nginx \
-        libreadline-dev libpq-dev libxml2-dev libonig-dev libsqlite3-dev libzip-dev libldap2-dev libpng-dev \
-        libc-client-dev libkrb5-dev libsasl2-dev libmemcached-dev libsodium-dev libargon2-dev libxslt-dev libwebp-dev \
-        libjpeg-dev libxpm-dev nodejs patch cron msmtp procps libfcgi0ldbl libc-client2007e-dev zlib1g-dev sendmail
+FROM leightcore/php:base as runtime
 
 # take built binaries from build
 COPY --from=build /usr/local/bin/php /usr/local/bin/php
@@ -95,10 +79,6 @@ COPY --from=build /usr/local/sbin/php-fpm /usr/local/sbin/php-fpm
 COPY --from=build /usr/local/etc/php/conf.d/ /usr/local/etc/php/conf.d/
 COPY --from=build /usr/local/lib/php/ /usr/local/lib/php/
 COPY --from=build /usr/local/etc/ /usr/local/etc/
-# take composer from official composer imsage
-COPY --from=composer /usr/bin/composer /usr/local/bin/composer
-
-ADD rootfs/runtime /
 
 RUN \
     chmod +x -R /usr/local/bin
