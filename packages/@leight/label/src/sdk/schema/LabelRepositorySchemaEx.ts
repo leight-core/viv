@@ -27,4 +27,4 @@ export const LabelRepositorySchemaEx: ILabelRepositoryExSchema = {
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_zy1iv0gp087cx6503ycce13j = true;
+export const $leight_nxpxf7ommiy5lh0ycyuoahrs = true;

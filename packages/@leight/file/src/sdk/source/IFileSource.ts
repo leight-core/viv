@@ -4,12 +4,12 @@
     So, please, DO NOT modify this file as it would get re-generated and you would be f*cked up.
  */
 import {type ISource} from "@leight/source";
-import {type IFilterSourceSchema as SourceSchema} from "../schema/IFilterSourceSchema";
+import {type IFileSourceSchema as SourceSchema} from "../schema/IFileSourceSchema";
 
-export type IFilterSource = ISource<SourceSchema>;
+export type IFileSource = ISource<SourceSchema>;
 
 /**
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_pgekk6p70r8wwzzo49wke9h0 = true;
+export const $leight_grgwt3dsm9gj4cxud0t5z3dk = true;

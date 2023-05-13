@@ -3,12 +3,13 @@
     
     So, please, DO NOT modify this file as it would get re-generated and you would be f*cked up.
  */
-import {type ISource} from "@leight/source";
+import {type IRepositoryService} from "@leight/source";
+import {type IUserSourceSchema as SourceSchema} from "../schema/IUserSourceSchema";
 
-export type IUseFilterInvalidator = ISource.IUseInvalidator;
+export type IUserRepositoryService = IRepositoryService<SourceSchema>;
 
 /**
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_m8hhj7sg9gzitx71ydztjw2e = true;
+export const $leight_y1sc7p6k61w2gm2i4umjzjqu = true;

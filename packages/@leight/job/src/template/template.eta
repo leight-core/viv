@@ -1,5 +1,0 @@
-Some generated file, yaay
-
-Wanna render {{= it.foo }}
-
-// generated from {{= it.$template}}, this file {{= it.$file}}

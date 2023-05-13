@@ -12,4 +12,4 @@ export type IUseJobRepository = ISource.IUseRepository<SourceSchema>;
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_sk00d8yu0bs549kagh98qxkk = true;
+export const $leight_pr1feum52szh0jp6vkgjdv3d = true;

@@ -12,4 +12,4 @@ export type IUseCalendarEventRepository = ISource.IUseRepository<SourceSchema>;
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_g10b1ivckw48rszteo5nat2z = true;
+export const $leight_zuoft1i58fctgp1lzujwz5dm = true;

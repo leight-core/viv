@@ -3,12 +3,13 @@
     
     So, please, DO NOT modify this file as it would get re-generated and you would be f*cked up.
  */
-import {type FileSource} from "../../schema";
+import {type IRepositoryService} from "@leight/source";
+import {type IJobSourceSchema as SourceSchema} from "../schema/IJobSourceSchema";
 
-export type IFileSourceType = FileSource["Type"];
+export type IJobRepositoryService = IRepositoryService<SourceSchema>;
 
 /**
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_rpox541dfz9me30vek8r2w6s = true;
+export const $leight_op2i1swjazw4ftw8v5h6a4t8 = true;

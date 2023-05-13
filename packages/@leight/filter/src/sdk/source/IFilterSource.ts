@@ -4,11 +4,12 @@
     So, please, DO NOT modify this file as it would get re-generated and you would be f*cked up.
  */
 import {type ISource} from "@leight/source";
+import {type IFilterSourceSchema as SourceSchema} from "../schema/IFilterSourceSchema";
 
-export type IUseFileInvalidator = ISource.IUseInvalidator;
+export type IFilterSource = ISource<SourceSchema>;
 
 /**
  * Default export marking a file it's generated and also preventing failing
  * an empty file export (every module "must" have an export).
  */
-export const $leight_as9hpj2pemeuf0yyed5ky86a = true;
+export const $leight_utnqvudlr5tg9rjim50sq6e9 = true;
