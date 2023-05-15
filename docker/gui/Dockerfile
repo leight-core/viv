@@ -1,11 +1,11 @@
-FROM alpine
-
-RUN \
-    apk update && \
-    apk add --no-cache \
-        pcmanfm font-opensans adwaita-icon-theme
+FROM leightcore/debian
 
 ENV DISPLAY=:0
 ENV PULSE_SERVER=/tmp/PulseServer
 
-CMD pcmanfm
+RUN \
+    apt-get update && \
+    apt-get install -y --no-install-recommends --no-install-suggests \
+        krusader konsole breeze-icon-theme
+
+CMD krusader
