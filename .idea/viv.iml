@@ -122,6 +122,7 @@
       <sourceFolder url="file://$MODULE_DIR$/apps/docs/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/@misc/env/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/@misc/esbuild/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/store/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.github" />
       <excludeFolder url="file://$MODULE_DIR$/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/sql/.turbo" />
@@ -336,6 +337,7 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/@misc/env/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/@misc/esbuild/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/@misc/esbuild/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/store/.turbo" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
