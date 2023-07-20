@@ -74,6 +74,7 @@
                 "NODE_ENV",
                 "NEXT_PUBLIC_CACHE",
                 "NEXT_PUBLIC_VERSION",
+                "NEXT_PUBLIC_RPC",
                 "DATABASE_URL",
                 "BUILD_ID"
             ]
