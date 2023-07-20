@@ -1,9 +1,7 @@
-import {z}    from "@leight/zod";
-import {
-    type IJson,
-    LiteralSchema
-}             from "../api";
-import {Pack} from "../utils";
+import {z}             from "zod";
+import {Pack}          from "../utils";
+import {type IJson}    from "./JsonSchema";
+import {LiteralSchema} from "./LiteralSchema";
 
 export const JsonPackSchema: z.ZodType<string, z.ZodTypeDef, IJson> = z.lazy(() => z.union([
     LiteralSchema,

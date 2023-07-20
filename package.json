@@ -1,7 +1,7 @@
 {
     "name": "@leight-core/viv",
     "private": true,
-    "description": "All-in-one solution for fullstack Next.js development with Zustand, Mantine, tRPC and Prisma.",
+    "description": "All-in-one solution for fullstack Next.js development.",
     "license": "MIT",
     "repository": {
         "type": "git",
@@ -15,21 +15,20 @@
         "build:force": "turbo run init --force --concurrency=50% --no-daemon && turbo run build --concurrency=50% --force --no-daemon",
         "generate": "turbo run init --concurrency=50% --no-daemon && turbo run generate --concurrency=50% --no-daemon",
         "lint": "turbo run lint --no-daemon",
-        "depcheck": "turbo run depcheck --no-daemon --parallel",
         "cleanup": "turbo run cleanup --concurrency=1 --parallel --no-daemon",
         "changeset": "changeset",
         "changeset:version": "changeset version",
         "changeset:publish": "changeset publish",
-        "npkill": "npx npkill"
+        "npkill": "npkill"
     },
     "workspaces": [
-        "apps/*",
         "packages/**/*"
     ],
     "devDependencies": {
-        "@changesets/cli": "^2.26.1",
-        "@roarr/cli": "^5.11.0",
-        "turbo": "^1.8.8",
-        "typescript": "^5.0.3"
+        "@changesets/cli": "^2.26.2",
+        "@roarr/cli": "^5.12.3",
+        "npkill": "^0.11.3",
+        "turbo": "^1.10.9",
+        "typescript": "^5.1.6"
     }
 }

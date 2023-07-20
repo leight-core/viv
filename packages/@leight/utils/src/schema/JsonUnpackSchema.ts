@@ -1,4 +1,4 @@
-import {z}    from "@leight/zod";
+import {z}    from "zod";
 import {Pack} from "../utils";
 
 export const JsonUnpackSchema = z.string().transform(Pack.unpack);

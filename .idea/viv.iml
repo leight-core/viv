@@ -93,7 +93,6 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/react-query/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/esbuild/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/drizzle/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/env/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/next.js/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/query-client/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/source-client/src" isTestSource="false" />
@@ -108,8 +107,6 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/generator-server/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/generator/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/sdk/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/apps/nextra/pages" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/apps/nextra/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/apps/ladle/public" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/apps/ladle/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/apps/vitebook/src" isTestSource="false" />
@@ -121,6 +118,10 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/form-client/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/filter-server/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/packages/@leight/keyword-server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/apps/docs/pages" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/apps/docs/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/@misc/env/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/@leight/@misc/esbuild/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.github" />
       <excludeFolder url="file://$MODULE_DIR$/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/sql/.turbo" />
@@ -283,10 +284,7 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/prisma-zod/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/react-cmdk/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/react-cmdk/lib" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/esbuild/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/drizzle/lib" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/env/.turbo" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/env/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/esbuild/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/next.js/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/next.js/lib" />
@@ -317,9 +315,6 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/generator/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/generator/lib" />
       <excludeFolder url="file://$MODULE_DIR$/docs/.next" />
-      <excludeFolder url="file://$MODULE_DIR$/apps/nextra/.next" />
-      <excludeFolder url="file://$MODULE_DIR$/apps/nextra/.turbo" />
-      <excludeFolder url="file://$MODULE_DIR$/apps/nextra/bin" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/calendar/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/calendar/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/zod/.turbo" />
@@ -334,6 +329,13 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/filter-server/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/keyword-server/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/keyword-server/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/docs/.next" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/docs/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/docs/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/@misc/env/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/@misc/env/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/@misc/esbuild/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/@misc/esbuild/lib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
