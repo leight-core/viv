@@ -1,5 +1,13 @@
 # @leight/env
 
+## 0.5.36
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/utils@0.5.2
+
 ## 0.5.35
 
 ### Patch Changes

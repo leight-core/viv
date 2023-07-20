@@ -1,5 +1,5 @@
 {
-    "version": "0.5.1",
+    "version": "0.5.2",
     "name": "@leight/rpc",
     "description": "RPC stuff.",
     "license": "MIT",
@@ -25,16 +25,16 @@
         "cleanup:lib": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/store": "^0.5.0",
-        "@leight/utils": "^0.5.0",
+        "@leight/store": "^0.5.2",
+        "@leight/utils": "^0.5.2",
         "@tanstack/react-query": "^5.0.0-alpha.81",
         "axios": "^1.4.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "^0.5.0",
-        "@leight/tsconfig": "^0.5.0",
+        "@leight/eslint-config-eslint": "^0.5.57",
+        "@leight/tsconfig": "^0.5.71",
         "@types/node": "^20.4.2",
         "@types/react": "^18.2.15",
         "@types/react-dom": "^18.2.7",

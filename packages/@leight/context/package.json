@@ -1,5 +1,5 @@
 {
-    "version": "0.5.1",
+    "version": "0.5.2",
     "name": "@leight/context",
     "description": "Context helper stuff, including support for Zustand.",
     "license": "MIT",
@@ -29,8 +29,8 @@
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "^0.5.0",
-        "@leight/tsconfig": "^0.5.0",
+        "@leight/eslint-config-eslint": "^0.5.57",
+        "@leight/tsconfig": "^0.5.71",
         "@types/node": "^20.4.2",
         "@types/react": "^18.2.15",
         "concurrently": "^8.2.0",
