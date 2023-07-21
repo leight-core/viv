@@ -1,5 +1,5 @@
 {
-    "version": "0.6.0",
+    "version": "0.6.1",
     "name": "@leight/rpc",
     "description": "RPC stuff.",
     "license": "MIT",
@@ -26,11 +26,10 @@
     },
     "dependencies": {
         "@leight/store": "^0.6.0",
-        "@leight/utils": "^0.6.0",
+        "@leight/utils": "^0.6.2",
         "@tanstack/react-query": "^5.0.0-alpha.81",
         "axios": "^1.4.0",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react": "^18.2.0"
     },
     "devDependencies": {
         "@leight/eslint-config-eslint": "^0.6.0",

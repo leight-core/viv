@@ -1,5 +1,5 @@
 {
-    "version": "0.6.1",
+    "version": "0.6.2",
     "name": "@leight/utils",
     "description": "Some simple utils used in @leight libraries.",
     "license": "MIT",
@@ -39,7 +39,6 @@
         "is-string": "^1.0.7",
         "path-to-regexp": "^6.2.1",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0",
         "zod": "^3.21.4"
     },
     "devDependencies": {

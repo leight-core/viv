@@ -1,5 +1,13 @@
 # @leight/i18n
 
+## 0.6.2
+
+### Patch Changes
+
+- Removed unnecessary packages
+- Updated dependencies
+    - @leight/utils@0.6.2
+
 ## 0.6.1
 
 ### Patch Changes

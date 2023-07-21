@@ -1,5 +1,5 @@
 {
-    "version": "0.6.1",
+    "version": "0.6.2",
     "name": "@leight/i18n",
     "description": "I18n support.",
     "license": "MIT",
@@ -26,19 +26,19 @@
     },
     "dependencies": {
         "@leight/store": "^0.6.0",
-        "@leight/utils": "^0.6.0",
+        "@leight/utils": "^0.6.2",
         "@types/luxon": "^3.3.0",
         "luxon": "^3.3.0",
         "next": "^13.4.10",
         "next-intl": "^2.14.6",
         "preferred-locale": "^2.0.1",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react": "^18.2.0"
     },
     "devDependencies": {
         "@leight/eslint-config-eslint": "^0.6.0",
         "@leight/tsconfig": "^0.6.0",
         "@types/node": "^20.4.2",
+        "@types/react": "^18.2.15",
         "concurrently": "^8.2.0",
         "del-cli": "^5.0.0",
         "eslint": "^8.45.0",
