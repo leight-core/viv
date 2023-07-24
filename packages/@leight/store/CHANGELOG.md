@@ -1,5 +1,14 @@
 # @leight/store
 
+## 0.6.1
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/context@0.6.2
+    - @leight/utils@0.6.3
+
 ## 0.6.0
 
 ### Minor Changes

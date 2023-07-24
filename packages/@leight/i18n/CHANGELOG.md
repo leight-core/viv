@@ -1,5 +1,14 @@
 # @leight/i18n
 
+## 0.6.3
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/store@0.6.1
+    - @leight/utils@0.6.3
+
 ## 0.6.2
 
 ### Patch Changes

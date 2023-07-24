@@ -1,5 +1,5 @@
 {
-  "version": "0.6.0",
+  "version": "0.6.1",
   "name": "@leight/store",
   "description": "Store stuff.",
   "license": "MIT",
@@ -28,14 +28,14 @@
     "cleanup:lib": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
   },
   "dependencies": {
-    "@leight/context": "^0.6.0",
-    "@leight/utils": "^0.6.0",
+    "@leight/context": "^0.6.2",
+    "@leight/utils": "^0.6.3",
     "react": "^18.2.0",
     "zustand": "^4.3.9"
   },
   "devDependencies": {
-    "@leight/eslint-config-eslint": "^0.6.0",
-    "@leight/tsconfig": "^0.6.0",
+    "@leight/eslint-config-eslint": "^0.6.1",
+    "@leight/tsconfig": "^0.6.1",
     "@types/node": "^20.4.2",
     "@types/react": "^18.2.15",
     "concurrently": "^8.2.0",

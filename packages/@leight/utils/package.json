@@ -1,5 +1,5 @@
 {
-  "version": "0.6.2",
+  "version": "0.6.3",
   "name": "@leight/utils",
   "description": "Some simple utils used in @leight libraries.",
   "license": "MIT",
@@ -45,8 +45,8 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
-    "@leight/eslint-config-eslint": "^0.6.0",
-    "@leight/tsconfig": "^0.6.0",
+    "@leight/eslint-config-eslint": "^0.6.1",
+    "@leight/tsconfig": "^0.6.1",
     "@types/node": "^20.4.2",
     "@types/react": "^18.2.15",
     "concurrently": "^8.2.0",

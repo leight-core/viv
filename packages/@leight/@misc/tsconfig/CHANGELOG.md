@@ -1,5 +1,11 @@
 # @leight/tsconfig
 
+## 0.6.1
+
+### Patch Changes
+
+- Version bump
+
 ## 0.6.0
 
 ### Minor Changes
