@@ -1,5 +1,11 @@
 # @leight/rpc
 
+## 0.6.5
+
+### Patch Changes
+
+- Added invalidators
+
 ## 0.6.4
 
 ### Patch Changes

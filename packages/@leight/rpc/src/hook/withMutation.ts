@@ -5,6 +5,7 @@ import {
     type MutationKey,
     useMutation
 }                              from "@tanstack/react-query";
+import {type IInvalidator}     from "../api/IInvalidator";
 import {type IMutationOptions} from "../api/IMutationOptions";
 import {type IWithMutation}    from "../api/IWithMutation";
 import {type IRequestSchema}   from "../schema/RequestSchema";
@@ -13,12 +14,17 @@ import {RpcStore}              from "../store/RpcStore";
 import {withBulk}              from "../utils/withBulk";
 
 export interface IWithMutationProps<TRequestSchema extends IRequestSchema, TResponseSchema extends IResponseSchema> {
+    key?: MutationKey;
+    service: string;
     schema: {
         request: TRequestSchema,
         response: TResponseSchema,
     },
-    service: string;
-    key?: MutationKey;
+    /**
+     * When a mutation is successful, run this query invalidator (basically could be anything); consider this method
+     * as a specialized case of "onSuccess", but **do not** use it like it.
+     */
+    invalidator?: IInvalidator;
 }
 
 /**
@@ -26,24 +32,27 @@ export interface IWithMutationProps<TRequestSchema extends IRequestSchema, TResp
  */
 export const withMutation = <TRequestSchema extends IRequestSchema, TResponseSchema extends IResponseSchema>(
     {
+        key,
+        service,
         schema: {
                     request:  requestSchema,
                     response: responseSchema,
                 },
-        service,
-        key,
+        invalidator,
     }: IWithMutationProps<TRequestSchema, TResponseSchema>): IWithMutation<TRequestSchema, TResponseSchema> => {
     const mutationKey = (key || [service]);
     return {
-        key: mutationKey as string[],
+        key:         mutationKey as string[],
         service,
         schema:      {
             request:  requestSchema,
             response: responseSchema,
         },
+        invalidator,
         useMutation: ({
                           mutationKey: $mutationKey,
-                          ...          options
+                          onSuccess,
+                          ...options
                       }: IMutationOptions<z.infer<TRequestSchema>, z.infer<TResponseSchema>> = {}) => {
             const store = RpcStore.use();
             return useMutation({
@@ -55,6 +64,10 @@ export const withMutation = <TRequestSchema extends IRequestSchema, TResponseSch
                     schema:  responseSchema,
                 }),
                 ...options,
+                onSuccess: (data, variables, context) => {
+                    invalidator?.({});
+                    onSuccess?.(data, variables, context);
+                },
             });
         },
     };

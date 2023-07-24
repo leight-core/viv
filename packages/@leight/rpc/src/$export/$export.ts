@@ -1,5 +1,6 @@
 export * from "./IBulkRef";
 export * from "./IErrorResponse";
+export * from "./IInvalidator";
 export * from "./IMutationOptions";
 export * from "./IQueryClient";
 export * from "./IQueryOptions";
