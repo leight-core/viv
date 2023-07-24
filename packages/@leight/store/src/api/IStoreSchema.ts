@@ -17,14 +17,22 @@ import {type IStorePropsType} from "./IStorePropsType";
  * This interface should be used as a type only.
  */
 export interface IStoreSchema<TStoreProps extends IStoreProps> {
+    /**
+     * Store props (store shape).
+     */
     Props: TStoreProps;
-
+    /**
+     * Props used in store factory (to make a store).
+     */
     FactoryProps: {
         state: IStoreSchema<TStoreProps>["StateCreator"],
         name: string,
         hint?: string
     };
 
+    /**
+     * Method used to create a store.
+     */
     Create(props: IStoreSchema<TStoreProps>["StateCreatorProps"]): StoreApi<TStoreProps["StoreProps"]>;
 
     StateCreator(props: IStoreSchema<TStoreProps>["StateCreatorProps"]): StateCreator<TStoreProps["StoreProps"]>;
@@ -42,7 +50,9 @@ export interface IStoreSchema<TStoreProps extends IStoreProps> {
             state?: never;
         }
     >;
-
+    /**
+     * User-land Store shape.
+     */
     Store: {
         name: string;
         Provider: IStoreSchema<TStoreProps>["Provider"];
