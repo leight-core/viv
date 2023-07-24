@@ -15,5 +15,5 @@ export interface IWithQuery<TRequestSchema extends IRequestSchema, TResponseSche
         response: TResponseSchema,
     };
 
-    useQuery(props: IQueryOptions<z.infer<TResponseSchema>, z.infer<TRequestSchema>>): IUseQueryResult<TResponseSchema>;
+    useQuery(props: IQueryOptions<z.infer<TResponseSchema>, z.infer<TRequestSchema>>): IUseQueryResult<z.infer<TResponseSchema>>;
 }

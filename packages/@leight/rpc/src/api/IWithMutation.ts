@@ -14,5 +14,5 @@ export interface IWithMutation<TRequestSchema extends IRequestSchema, TResponseS
     };
     invalidator?: IInvalidator;
 
-    useMutation(props?: IMutationOptions<z.infer<TRequestSchema>, z.infer<TResponseSchema>>): IUseMutationResult<TRequestSchema, TResponseSchema>;
+    useMutation(props?: IMutationOptions<z.infer<TRequestSchema>, z.infer<TResponseSchema>>): IUseMutationResult<z.infer<TRequestSchema>, z.infer<TResponseSchema>>;
 }
