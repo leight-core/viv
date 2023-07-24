@@ -12,6 +12,8 @@ export * from "./IUseMutation";
 export * from "./IUseMutationResult";
 export * from "./IUseQuery";
 export * from "./IUseQueryResult";
+export * from "./IWithMutation";
+export * from "./IWithQuery";
 export * from "./QueryProvider";
 export * from "./RequestSchema";
 export * from "./ResponseSchema";

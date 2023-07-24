@@ -1,5 +1,11 @@
 # @leight/rpc
 
+## 0.6.4
+
+### Patch Changes
+
+- Exported new types
+
 ## 0.6.3
 
 ### Patch Changes
