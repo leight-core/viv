@@ -28,7 +28,8 @@
         "cleanup": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "esbuild": "^0.18.15"
+        "esbuild": "^0.18.15",
+        "glob": "^10.3.3"
     },
     "devDependencies": {
         "@leight/eslint-config-eslint": "^0.6.0",

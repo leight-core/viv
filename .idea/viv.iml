@@ -340,6 +340,8 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/@misc/esbuild/lib" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/rpc/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@leight/store/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/rpc/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@leight/store/lib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
