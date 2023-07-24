@@ -1,16 +1,13 @@
-import {useContext}       from "@leight/context";
-import {type Context}     from "react";
-import {useStore}         from "zustand";
-import {type IStoreApi}   from "../api/IStoreApi";
-import {type IStoreProps} from "../api/IStoreProps";
-import {type IUseState}   from "../api/IUseState";
+import {useContext}        from "@leight/context";
+import {useStore}          from "zustand";
+import {type IStoreSchema} from "../api/IStoreSchema";
 
-export const withUseState = <TStoreProps extends IStoreProps>(
-    Context: Context<IStoreApi<TStoreProps> | null>,
+export const withUseState = <TStoreSchema extends IStoreSchema<any>>(
+    Context: TStoreSchema["Context"],
     name: string,
     hint?: string
-): IUseState<TStoreProps> => {
-    return <T>(selector?: (state: TStoreProps["StoreProps"]) => T) => {
+): TStoreSchema["UseState"] => {
+    return <T>(selector?: (state: TStoreSchema["Props"]) => T) => {
         const {store} = useContext(Context, name, hint);
         return selector ? useStore(store, selector) : useStore(store);
     };

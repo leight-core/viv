@@ -1,25 +1,22 @@
-import {Pack}                from "@leight/utils";
+import {Pack}              from "@leight/utils";
 import {
     useEffect,
     useMemo
-}                            from "react";
-import {type ICreateStore}   from "../api/ICreateStore";
-import {type IStoreContext}  from "../api/IStoreContext";
-import {type IStoreProps}    from "../api/IStoreProps";
-import {type IStoreProvider} from "../api/IStoreProvider";
+}                          from "react";
+import {type IStoreSchema} from "../api/IStoreSchema";
 
-export interface IWithStoreProviderProps<TStoreProps extends IStoreProps> {
+export interface IWithStoreProviderProps<TStoreSchema extends IStoreSchema<any>> {
     name: string;
-    createStore: ICreateStore<TStoreProps>;
-    Context: IStoreContext<TStoreProps>;
+    createStore: TStoreSchema["Create"];
+    Context: TStoreSchema["Context"];
 }
 
-export const withStoreProvider = <TStoreProps extends IStoreProps>(
+export const withStoreProvider = <TStoreSchema extends IStoreSchema<any>>(
     {
         name,
         createStore,
         Context,
-    }: IWithStoreProviderProps<TStoreProps>): IStoreProvider<TStoreProps> => {
+    }: IWithStoreProviderProps<TStoreSchema>): TStoreSchema["Provider"] => {
     return function StoreProvider(
         {
             children,

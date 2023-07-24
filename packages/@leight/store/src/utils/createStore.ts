@@ -4,10 +4,8 @@ import {
     useContext$
 }                                       from "@leight/context";
 import {createStore as coolCreateStore} from "zustand";
-import {ICreateStoreContextProps}       from "../$export/ICreateStoreContextProps";
-import {IStore}                         from "../$export/IStore";
-import {IStoreApi}                      from "../$export/IStoreApi";
-import {IStoreProps}                    from "../$export/IStoreProps";
+import {type IStoreProps}               from "../api/IStoreProps";
+import {type IStoreSchema}              from "../api/IStoreSchema";
 import {withStoreProvider}              from "./withStoreProvider";
 import {withUseState}                   from "./withUseState";
 import {withUseState$}                  from "./withUseState$";
@@ -15,16 +13,19 @@ import {withUseState$}                  from "./withUseState$";
 /**
  * Creates store hook and provider of Zustand.
  */
-export const createStore = <TStoreProps extends IStoreProps>(
+export const createStore = <
+    TStoreProps extends IStoreProps,
+    TStoreSchema extends IStoreSchema<any> = IStoreSchema.Of<TStoreProps>,
+>(
     {
         state,
         name,
         hint,
-    }: ICreateStoreContextProps<TStoreProps>): IStore<TStoreProps> => {
-    const Context = createContext<IStoreApi<TStoreProps>>();
+    }: TStoreSchema["FactoryProps"]): TStoreSchema["Store"] => {
+    const Context = createContext<TStoreSchema["StoreContext"]>();
     return {
         name,
-        Provider:  withStoreProvider<TStoreProps>({
+        Provider: withStoreProvider<TStoreSchema>({
             name,
             Context,
             createStore: ({
