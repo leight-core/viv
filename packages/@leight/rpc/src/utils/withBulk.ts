@@ -51,6 +51,13 @@ export const withBulk = async <TRequestSchema extends IRequestSchema, TResponseS
         callback: () => axios
             .post<IRpcBulkResponse, AxiosResponse<IRpcBulkResponse>, IRpcBulkResponse>("/rpc", $bulk)
             .then(({data}) => {
+                /**
+                 * Resolve, when response is null
+                 *
+                 * Make fallback timeout to reject "dead" queries
+                 */
+
+
                 const {bulk} = RpcBulkResponseSchema.parse(data);
                 /**
                  * Iterate through requests we sent
