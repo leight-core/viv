@@ -1,5 +1,11 @@
 # @leight/rpc
 
+## 0.6.3
+
+### Patch Changes
+
+- Improved types
+
 ## 0.6.2
 
 ### Patch Changes

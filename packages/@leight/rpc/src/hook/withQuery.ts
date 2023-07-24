@@ -3,6 +3,7 @@
 import {z}                    from "@leight/utils";
 import {useQuery}             from "@tanstack/react-query";
 import {type IQueryOptions}   from "../api/IQueryOptions";
+import {IWithQuery}           from "../api/IWithQuery";
 import {type IRequestSchema}  from "../schema/RequestSchema";
 import {type IResponseSchema} from "../schema/ResponseSchema";
 import {RpcStore}             from "../store/RpcStore";
@@ -10,7 +11,7 @@ import {withBulk}             from "../utils/withBulk";
 
 export interface IWithQueryProps<TRequestSchema extends IRequestSchema, TResponseSchema extends IResponseSchema> {
     schema: {
-        request?: TRequestSchema,
+        request: TRequestSchema,
         response: TResponseSchema,
     },
     service: string;
@@ -28,11 +29,15 @@ export const withQuery = <TRequestSchema extends IRequestSchema, TResponseSchema
                 },
         service,
         key,
-    }: IWithQueryProps<TRequestSchema, TResponseSchema>) => {
+    }: IWithQueryProps<TRequestSchema, TResponseSchema>): IWithQuery<TRequestSchema, TResponseSchema> => {
     const queryKey = key || [service];
     return {
-        key:      queryKey,
+        key:    queryKey as string[],
         service,
+        schema: {
+            request:  requestSchema,
+            response: responseSchema,
+        },
         useQuery: ({
                        options: {
                                     queryKey: $queryKey,

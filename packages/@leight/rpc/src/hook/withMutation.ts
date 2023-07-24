@@ -5,7 +5,8 @@ import {
     type MutationKey,
     useMutation
 }                              from "@tanstack/react-query";
-import {type IMutationOptions} from "../$export/IMutationOptions";
+import {type IMutationOptions} from "../api/IMutationOptions";
+import {type IWithMutation}    from "../api/IWithMutation";
 import {type IRequestSchema}   from "../schema/RequestSchema";
 import {type IResponseSchema}  from "../schema/ResponseSchema";
 import {RpcStore}              from "../store/RpcStore";
@@ -31,10 +32,10 @@ export const withMutation = <TRequestSchema extends IRequestSchema, TResponseSch
                 },
         service,
         key,
-    }: IWithMutationProps<TRequestSchema, TResponseSchema>) => {
-    const mutationKey = key || [service];
+    }: IWithMutationProps<TRequestSchema, TResponseSchema>): IWithMutation<TRequestSchema, TResponseSchema> => {
+    const mutationKey = (key || [service]);
     return {
-        key:         mutationKey,
+        key: mutationKey as string[],
         service,
         schema:      {
             request:  requestSchema,
