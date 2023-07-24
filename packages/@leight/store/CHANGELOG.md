@@ -1,5 +1,17 @@
 # @leight/store
 
+## 0.6.3
+
+### Patch Changes
+
+- Version bump
+
+## 0.6.2
+
+### Patch Changes
+
+- Added Consumer to Store
+
 ## 0.6.1
 
 ### Patch Changes

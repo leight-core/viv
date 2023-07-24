@@ -39,6 +39,7 @@ export const createStore = <
                 ...$defaults,
             })),
         }),
+        Consumer: Context.Consumer,
         use:       withUseState(Context, name, hint),
         use$:      withUseState$(Context),
         useStore:  () => useContext(Context, name, hint).store,

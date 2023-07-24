@@ -1,5 +1,5 @@
 {
-  "version": "0.6.3",
+  "version": "0.6.4",
   "name": "@leight/i18n",
   "description": "I18n support.",
   "license": "MIT",
@@ -28,7 +28,7 @@
     "cleanup:lib": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
   },
   "dependencies": {
-    "@leight/store": "^0.6.1",
+    "@leight/store": "^0.6.3",
     "@leight/utils": "^0.6.3",
     "@types/luxon": "^3.3.0",
     "luxon": "^3.3.0",

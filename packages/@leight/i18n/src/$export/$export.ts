@@ -10,6 +10,7 @@ export * from "./Translation";
 export * from "./isDateTime";
 export * from "./isTranslation";
 export * from "./localeOf";
+export * from "./useLabel";
 export * from "./useRouter";
 export * from "./useTranslation";
 export * from "luxon";

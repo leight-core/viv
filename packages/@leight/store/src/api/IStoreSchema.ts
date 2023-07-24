@@ -1,5 +1,6 @@
 import {type MergeIf}         from "@leight/utils";
 import {
+    Consumer,
     type Context,
     type FC,
     type PropsWithChildren
@@ -56,6 +57,7 @@ export interface IStoreSchema<TStoreProps extends IStoreProps> {
     Store: {
         name: string;
         Provider: IStoreSchema<TStoreProps>["Provider"];
+        Consumer: IStoreSchema<TStoreProps>["Consumer"];
         use: IStoreSchema<TStoreProps>["UseState"];
         use$: IStoreSchema<TStoreProps>["UseState$"];
         useStore: () => StoreApi<TStoreProps["StoreProps"]>;
@@ -70,6 +72,7 @@ export interface IStoreSchema<TStoreProps extends IStoreProps> {
 
     Context: Context<IStoreSchema<TStoreProps>["StoreContext"] | null>;
     Provider: FC<IStoreSchema<TStoreProps>["ProviderProps"]>;
+    Consumer: Consumer<IStoreSchema<TStoreProps>["StoreContext"] | null>;
     ProviderProps: PropsWithChildren<IStoreSchema<TStoreProps>["StateCreatorProps"]>;
 
     UseState$: {
