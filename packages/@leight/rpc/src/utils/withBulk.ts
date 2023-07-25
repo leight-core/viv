@@ -53,7 +53,7 @@ export const withBulk = async <TRequestSchema extends IRequestSchema, TResponseS
 
     const guardianOfGalaxy = () => {
         const entries = Object.entries({...bulkRef.current});
-        entries.length && console.info("Bulk timeout", bulkRef.current);
+        entries.length && console.warn("Bulk timeout", bulkRef.current);
         entries.forEach(([id, {reject}]) => {
             reject({
                 error: {
