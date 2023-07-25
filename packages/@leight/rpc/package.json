@@ -1,5 +1,5 @@
 {
-    "version": "0.6.10",
+    "version": "0.6.11",
     "name": "@leight/rpc",
     "description": "RPC stuff.",
     "license": "MIT",
@@ -10,16 +10,16 @@
     "engines": {
         "node": ">=16.0.0"
     },
-  "sideEffects": false,
-  "type": "module",
-  "main": "src/index.ts",
-  "module": "src/index.ts",
-  "types": "src/index.ts",
-  "files": [
-    "src"
-  ],
-  "scripts": {
-    "build": "concurrently npm:build:*",
+    "sideEffects": false,
+    "type": "module",
+    "main": "src/index.ts",
+    "module": "src/index.ts",
+    "types": "src/index.ts",
+    "files": [
+        "src"
+    ],
+    "scripts": {
+        "build": "concurrently npm:build:*",
     "build:esbuild": "node esbuild.mjs",
     "build:types": "tsc --outDir lib",
     "lint": "eslint src",

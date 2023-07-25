@@ -1,5 +1,11 @@
 # @leight/rpc
 
+## 0.6.11
+
+### Patch Changes
+
+- Logging for mutation errors
+
 ## 0.6.10
 
 ### Patch Changes

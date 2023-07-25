@@ -57,12 +57,19 @@ export const withMutation = <TRequestSchema extends IRequestSchema, TResponseSch
             const store = RpcStore.use();
             return useMutation({
                 mutationKey: mutationKey.concat($mutationKey || []),
-                mutationFn:  async request => withBulk<TRequestSchema, TResponseSchema>({
-                    service,
-                    request: requestSchema?.parse(request) ?? request,
-                    store,
-                    schema:  responseSchema,
-                }),
+                mutationFn:  async request => {
+                    try {
+                        return withBulk<TRequestSchema, TResponseSchema>({
+                            service,
+                            request: requestSchema?.parse(request) ?? request,
+                            store,
+                            schema:  responseSchema,
+                        });
+                    } catch (e) {
+                        console.error(e);
+                        throw e;
+                    }
+                },
                 ...options,
                 onSuccess: (data, variables, context) => {
                     invalidator?.({});
