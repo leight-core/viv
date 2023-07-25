@@ -1,5 +1,11 @@
 # @leight/rpc
 
+## 0.6.7
+
+### Patch Changes
+
+- Fixed RPC with timeout
+
 ## 0.6.6
 
 ### Patch Changes

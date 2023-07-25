@@ -1,35 +1,23 @@
 import {
     createStore,
-    type IStoreProps
-}                             from "@leight/store";
+    type IStoreProps,
+    type IStorePropsType
+}                      from "@leight/store";
 import {
     type FC,
     type MutableRefObject,
     type PropsWithChildren,
     useRef
-}                             from "react";
-import {type IBulkRef}        from "../api/IBulkRef";
-import {type IRpcBulkRequest} from "../schema/RpcBulkRequestSchema";
+}                      from "react";
+import {type IBulkRef} from "../api/IBulkRef";
 
-export type IRpcStoreProps = IStoreProps<{
-    /**
-     * When a bulk is processed (so we got response from a server or whatever place),
-     * commit bulk, thus all promises and so will be processed.
-     */
-    commit(): void;
-}, {
+export type IRpcStoreProps = IStoreProps<IStorePropsType, {
     bulkTimerRef: MutableRefObject<NodeJS.Timeout | undefined>;
-    requestRef: MutableRefObject<IRpcBulkRequest>;
     bulkRef: MutableRefObject<Record<string, IBulkRef>>;
 }>;
 
 export const RpcStore = createStore<IRpcStoreProps>({
-    state: ({
-                state,
-            }) => (set, get) => ({
-        commit() {
-            get().requestRef.current = {bulk: {}};
-        },
+    state: ({state}) => () => ({
         ...state,
     }),
     name:  "RpcStore",
@@ -42,7 +30,6 @@ export const RpcProvider: FC<IRpcProviderProps> = props => {
     return <RpcStore.Provider
         state={{
             bulkTimerRef: useRef<NodeJS.Timeout>(),
-            requestRef:   useRef({bulk: {}}),
             bulkRef:      useRef({}),
         }}
         {...props}
