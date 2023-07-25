@@ -1,7 +1,7 @@
 {
-    "version": "0.6.2",
-    "name": "@leight/context",
-    "description": "Context helper stuff, including support for Zustand.",
+    "version": "0.6.0",
+    "name": "@leight/file",
+    "description": "Common file stuff.",
     "license": "MIT",
     "repository": {
         "type": "git",
@@ -28,13 +28,13 @@
         "cleanup:lib": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "react": "^18.2.0"
+        "@leight/utils": "^0.6.0"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "^0.6.1",
-        "@leight/tsconfig": "^0.6.1",
-        "@types/node": "^20.4.2",
-        "@types/react": "^18.2.15",
+        "@leight/esbuild": "^0.6.0",
+        "@leight/eslint-config-eslint": "^0.6.0",
+        "@leight/tsconfig": "^0.6.0",
+        "@types/node": "^20.4.5",
         "concurrently": "^8.2.0",
         "del-cli": "^5.0.0",
         "eslint": "^8.45.0",

@@ -1,7 +1,7 @@
 {
-    "version": "0.6.2",
-    "name": "@leight/context",
-    "description": "Context helper stuff, including support for Zustand.",
+    "version": "0.6.0",
+    "name": "@leight/ui",
+    "description": "Common UI stuff.",
     "license": "MIT",
     "repository": {
         "type": "git",
@@ -28,13 +28,34 @@
         "cleanup:lib": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "react": "^18.2.0"
+        "@emotion/cache": "^11.11.0",
+        "@emotion/react": "^11.11.1",
+        "@leight/file": "^0.6.0",
+        "@leight/i18n": "^0.6.0",
+        "@leight/rpc": "^0.6.0",
+        "@leight/store": "^0.6.0",
+        "@leight/utils": "^0.6.0",
+        "@mantine/core": "^6.0.16",
+        "@mantine/dropzone": "^6.0.16",
+        "@mantine/hooks": "^6.0.16",
+        "@mantine/modals": "^6.0.16",
+        "@mantine/notifications": "^6.0.16",
+        "@mantine/nprogress": "^6.0.16",
+        "@tabler/icons-react": "^2.28.0",
+        "axios": "^1.4.0",
+        "next": "^13.4.10",
+        "next-auth": "^4.22.1",
+        "next-intl": "^2.19.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "uuid": "^9.0.0"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "^0.6.1",
-        "@leight/tsconfig": "^0.6.1",
+        "@leight/eslint-config-eslint": "^0.6.0",
+        "@leight/tsconfig": "^0.6.0",
         "@types/node": "^20.4.2",
         "@types/react": "^18.2.15",
+        "@types/uuid": "^9.0.2",
         "concurrently": "^8.2.0",
         "del-cli": "^5.0.0",
         "eslint": "^8.45.0",

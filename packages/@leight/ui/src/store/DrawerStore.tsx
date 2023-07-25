@@ -1,8 +1,13 @@
+"use client";
+
 import {
     createStore,
     type IStoreProps
-}                from "@leight/store";
-import {type FC} from "react";
+} from "@leight/store";
+import {
+    type FC,
+    type PropsWithChildren
+} from "react";
 
 export type IDrawerStoreProps = IStoreProps<{
     isOpened: Record<string, boolean>;
@@ -37,9 +42,9 @@ export const DrawerStore = createStore<IDrawerStoreProps>({
     hint:  "Add DrawerStoreProvider",
 });
 
-export interface IDrawerStoreProviderProps {
+export type IDrawerStoreProviderProps = PropsWithChildren<{
     defaultOpened?: Record<string, boolean>;
-}
+}>
 
 export const DrawerStoreProvider: FC<IDrawerStoreProviderProps> = (
     {

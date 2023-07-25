@@ -1,17 +1,22 @@
+"use client";
+
 import {
     createStore,
     type IStoreProps
-}                from "@leight/store";
-import {type FC} from "react";
+} from "@leight/store";
+import {
+    type FC,
+    type PropsWithChildren
+} from "react";
 
-export type IDrawerStoreProps = IStoreProps<{
+export type IModalStoreProps = IStoreProps<{
     isOpened: Record<string, boolean>;
     open(id: string): void;
     close(id: string): void;
     setOpen(id: string, isOpened: boolean): void;
 }>;
 
-export const DrawerStore = createStore<IDrawerStoreProps>({
+export const ModalStore = createStore<IModalStoreProps>({
     state: () => set => ({
         isOpened: {},
         open:     id => set(state => ({
@@ -33,20 +38,20 @@ export const DrawerStore = createStore<IDrawerStoreProps>({
             },
         })),
     }),
-    name:  "DrawerStore",
-    hint:  "Add DrawerStoreProvider",
+    name:  "ModalStore",
+    hint:  "Add ModalStoreProvider",
 });
 
-export interface IDrawerStoreProviderProps {
+export type IModalStoreProviderProps = PropsWithChildren<{
     defaultOpened?: Record<string, boolean>;
-}
+}>;
 
-export const DrawerStoreProvider: FC<IDrawerStoreProviderProps> = (
+export const ModalStoreProvider: FC<IModalStoreProviderProps> = (
     {
         defaultOpened,
         ...props
     }) => {
-    return <DrawerStore.Provider
+    return <ModalStore.Provider
         defaults={{
             isOpened: defaultOpened || {},
         }}
