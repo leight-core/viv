@@ -1,5 +1,11 @@
 # @leight/rpc
 
+## 0.6.10
+
+### Patch Changes
+
+- Fixed RPC schema
+
 ## 0.6.9
 
 ### Patch Changes

@@ -1,15 +1,15 @@
 {
-  "version": "0.6.9",
-  "name": "@leight/rpc",
-  "description": "RPC stuff.",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/leight-core/viv.git"
-  },
-  "engines": {
-    "node": ">=16.0.0"
-  },
+    "version": "0.6.10",
+    "name": "@leight/rpc",
+    "description": "RPC stuff.",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/leight-core/viv.git"
+    },
+    "engines": {
+        "node": ">=16.0.0"
+    },
   "sideEffects": false,
   "type": "module",
   "main": "src/index.ts",
