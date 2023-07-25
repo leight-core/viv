@@ -35,6 +35,7 @@ export const withBulk = async <TRequestSchema extends IRequestSchema, TResponseS
         store: {
                    bulkRef,
                    bulkTimerRef,
+                   timeoutRef,
                },
         service,
         request: data,
@@ -63,7 +64,8 @@ export const withBulk = async <TRequestSchema extends IRequestSchema, TResponseS
         });
     };
 
-    const timeoutId = setTimeout(guardianOfGalaxy, timeout);
+    clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(guardianOfGalaxy, timeout);
 
     withTimeout({
         timerRef: bulkTimerRef,
@@ -75,7 +77,6 @@ export const withBulk = async <TRequestSchema extends IRequestSchema, TResponseS
                 }, {} as Record<string, IRpcRequest<any>>),
             })
             .then(({data}) => {
-                clearTimeout(timeoutId);
                 const {bulk} = RpcBulkResponseSchema.parse(data);
                 /**
                  * Iterate through requests we sent

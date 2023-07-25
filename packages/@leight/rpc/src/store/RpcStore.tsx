@@ -13,6 +13,7 @@ import {type IBulkRef} from "../api/IBulkRef";
 
 export type IRpcStoreProps = IStoreProps<IStorePropsType, {
     bulkTimerRef: MutableRefObject<NodeJS.Timeout | undefined>;
+    timeoutRef: MutableRefObject<NodeJS.Timeout | undefined>;
     bulkRef: MutableRefObject<Record<string, IBulkRef>>;
 }>;
 
@@ -30,6 +31,7 @@ export const RpcProvider: FC<IRpcProviderProps> = props => {
     return <RpcStore.Provider
         state={{
             bulkTimerRef: useRef<NodeJS.Timeout>(),
+            timeoutRef: useRef<NodeJS.Timeout>(),
             bulkRef:      useRef({}),
         }}
         {...props}
