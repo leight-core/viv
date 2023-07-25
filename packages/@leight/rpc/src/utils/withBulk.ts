@@ -4,7 +4,6 @@ import {
     z
 }                                  from "@leight/utils";
 import axios, {type AxiosResponse} from "axios";
-import {type IBulkRef}             from "../api/IBulkRef";
 import {type IErrorResponse}       from "../schema/ErrorResponseSchema";
 import {type IRequestSchema}       from "../schema/RequestSchema";
 import {type IResponseSchema}      from "../schema/ResponseSchema";
@@ -53,7 +52,9 @@ export const withBulk = async <TRequestSchema extends IRequestSchema, TResponseS
     };
 
     const guardianOfGalaxy = () => {
-        Object.entries({...bulkRef.current}).forEach(([id, {reject}]) => {
+        const entries = Object.entries({...bulkRef.current});
+        entries.length && console.info("Bulk timeout", bulkRef.current);
+        entries.forEach(([id, {reject}]) => {
             reject({
                 error: {
                     message: "Bulk timeout reached.",
@@ -65,7 +66,7 @@ export const withBulk = async <TRequestSchema extends IRequestSchema, TResponseS
     };
 
     clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(guardianOfGalaxy, timeout);
+    timeoutRef.current = setTimeout(guardianOfGalaxy, timeout * 1000);
 
     withTimeout({
         timerRef: bulkTimerRef,
@@ -78,28 +79,22 @@ export const withBulk = async <TRequestSchema extends IRequestSchema, TResponseS
             })
             .then(({data}) => {
                 const {bulk} = RpcBulkResponseSchema.parse(data);
-                /**
-                 * Iterate through requests we sent
-                 */
-                for (const k of Object.keys(bulkRef.current)) {
+                Object.entries({...bulkRef.current}).forEach(([id, {
+                    schema,
+                    reject,
+                    resolve
+                }]) => {
                     /**
                      * We're sure there is bulkRef as it's created together, check presence of data and
                      * resolve/reject the given promise.
                      */
-                    const {
-                        schema,
-                        reject,
-                        resolve
-                    } = bulkRef.current[k] as IBulkRef;
-                    delete bulkRef.current[k];
+                    delete bulkRef.current[id];
                     try {
-                        const data = bulk?.[k];
-                        if (isData(data)) {
-                            resolve(schema?.parse(data.data) ?? data.data);
+                        const data = bulk?.[id];
+                        if (data === null || isData(data)) {
+                            resolve(schema?.parse(data?.data) || data?.data || null);
                         } else if (isError(data)) {
                             reject(data);
-                        } else {
-                            reject(new Error(`Missing response for [${k}].`));
                         }
                     } catch (e) {
                         console.error(e);
@@ -110,13 +105,14 @@ export const withBulk = async <TRequestSchema extends IRequestSchema, TResponseS
                             },
                         } satisfies IErrorResponse);
                     }
-                }
+                });
             })
             .catch(e => {
-                for (const k of Object.keys(bulkRef.current)) {
-                    (bulkRef.current[k] as IBulkRef).reject(e);
-                    delete bulkRef.current[k];
-                }
+                console.error(e);
+                Object.entries({...bulkRef.current}).forEach(([id, {reject}]) => {
+                    reject(e);
+                    delete bulkRef.current[id];
+                });
             })
             .finally(() => {
                 /**
@@ -124,7 +120,7 @@ export const withBulk = async <TRequestSchema extends IRequestSchema, TResponseS
                  *
                  * At least I hope.
                  */
-                setTimeout(guardianOfGalaxy, timeout);
+                setTimeout(guardianOfGalaxy, timeout * 1000);
             }),
     });
 });

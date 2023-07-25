@@ -1,5 +1,11 @@
 # @leight/rpc
 
+## 0.6.9
+
+### Patch Changes
+
+- Fixed bulking, yaaay
+
 ## 0.6.8
 
 ### Patch Changes
