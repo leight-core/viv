@@ -28,6 +28,8 @@ export * from "./minMaxOf";
 export * from "./toHref";
 export * from "./toHumanBytes";
 export * from "./toHumanNumber";
+export * from "./toHumanTimeMs";
+export * from "./toHumanTimeSec";
 export * from "./uniqueOf";
 export * from "./withTimeout";
 export * from "./z";

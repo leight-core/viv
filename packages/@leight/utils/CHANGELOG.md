@@ -1,5 +1,11 @@
 # @leight/utils
 
+## 0.6.8
+
+### Patch Changes
+
+- Exported humanized time
+
 ## 0.6.7
 
 ### Patch Changes
