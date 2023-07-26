@@ -77,6 +77,8 @@ export const withBulk = async <TRequestSchema extends IRequestSchema, TResponseS
                     bulk[id] = request;
                     return bulk;
                 }, {} as Record<string, IRpcRequest<any>>),
+            }, {
+                baseURL: "",
             })
             .then(({data}) => {
                 const {bulk} = RpcBulkResponseSchema.parse(data);

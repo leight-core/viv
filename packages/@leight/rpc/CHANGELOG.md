@@ -1,5 +1,11 @@
 # @leight/rpc
 
+## 0.6.18
+
+### Patch Changes
+
+- Experiment with empty base URL
+
 ## 0.6.17
 
 ### Patch Changes
