@@ -5,7 +5,9 @@ import {
 
 export const useRouter = () => {
     const router = useCoolRouter();
-    const {locale} = useParams();
+    const {locale} = useParams() as unknown as {
+        locale: string
+    };
     /**
      * Mimic original next.js router, override push
      */
