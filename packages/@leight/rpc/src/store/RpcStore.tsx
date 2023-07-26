@@ -15,6 +15,7 @@ export type IRpcStoreProps = IStoreProps<IStorePropsType, {
     bulkTimerRef: MutableRefObject<NodeJS.Timeout | undefined>;
     timeoutRef: MutableRefObject<NodeJS.Timeout | undefined>;
     bulkRef: MutableRefObject<Record<string, IBulkRef>>;
+    url: string;
 }>;
 
 export const RpcStore = createStore<IRpcStoreProps>({
@@ -25,14 +26,21 @@ export const RpcStore = createStore<IRpcStoreProps>({
     hint:  "Add RpcProvider."
 });
 
-export type IRpcProviderProps = PropsWithChildren;
+export type IRpcProviderProps = PropsWithChildren<{
+    url?: string;
+}>;
 
-export const RpcProvider: FC<IRpcProviderProps> = props => {
+export const RpcProvider: FC<IRpcProviderProps> = (
+    {
+        url,
+        ...props
+    }) => {
     return <RpcStore.Provider
         state={{
             bulkTimerRef: useRef<NodeJS.Timeout>(),
-            timeoutRef: useRef<NodeJS.Timeout>(),
+            timeoutRef:   useRef<NodeJS.Timeout>(),
             bulkRef:      useRef({}),
+            url:          url || "/api/rpc",
         }}
         {...props}
     />;

@@ -35,6 +35,7 @@ export const withBulk = async <TRequestSchema extends IRequestSchema, TResponseS
                    bulkRef,
                    bulkTimerRef,
                    timeoutRef,
+                   url,
                },
         service,
         request: data,
@@ -71,7 +72,7 @@ export const withBulk = async <TRequestSchema extends IRequestSchema, TResponseS
     withTimeout({
         timerRef: bulkTimerRef,
         callback: () => axios
-            .post<IRpcBulkResponse, AxiosResponse<IRpcBulkResponse>, IRpcBulkRequest>("/rpc", {
+            .post<IRpcBulkResponse, AxiosResponse<IRpcBulkResponse>, IRpcBulkRequest>(url, {
                 bulk: Object.entries(bulkRef.current).reduce((bulk, [id, {request}]) => {
                     bulk[id] = request;
                     return bulk;

@@ -1,5 +1,11 @@
 # @leight/rpc
 
+## 0.6.16
+
+### Patch Changes
+
+- Exported URL in RPC store
+
 ## 0.6.15
 
 ### Patch Changes
