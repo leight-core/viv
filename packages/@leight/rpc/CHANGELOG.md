@@ -1,5 +1,17 @@
 # @leight/rpc
 
+## 0.6.15
+
+### Patch Changes
+
+- Re-reverted react-query, looks good
+
+## 0.6.14
+
+### Patch Changes
+
+- Reverted to an older version of react query
+
 ## 0.6.13
 
 ### Patch Changes
