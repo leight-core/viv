@@ -1,5 +1,11 @@
 # @leight/utils
 
+## 0.6.5
+
+### Patch Changes
+
+- Added deepmerge
+
 ## 0.6.4
 
 ### Patch Changes

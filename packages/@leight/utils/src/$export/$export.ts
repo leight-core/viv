@@ -19,6 +19,7 @@ export * from "./generateId";
 export * from "./isCallable";
 export * from "./isObject";
 export * from "./isString";
+export * from "./merge";
 export * from "./minMaxOf";
 export * from "./toHref";
 export * from "./toHumanNumber";

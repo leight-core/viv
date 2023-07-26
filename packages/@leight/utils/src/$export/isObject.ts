@@ -1,3 +1,1 @@
-import isCoolObject from "is-object";
-
-export const isObject = isCoolObject;
+export {default as isObject} from "is-object";
