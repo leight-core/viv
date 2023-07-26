@@ -23,6 +23,7 @@ export * from "./LoopsProvider";
 export * from "./LoopsStore";
 export * from "./ModalStore";
 export * from "./Overlay";
+export * from "./Providers";
 export * from "./PublicLayout";
 export * from "./Stack";
 export * from "./VersionStamp";
