@@ -1,5 +1,14 @@
 # @leight/rpc
 
+## 0.6.13
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/store@0.6.5
+    - @leight/utils@0.6.10
+
 ## 0.6.12
 
 ### Patch Changes
