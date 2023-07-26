@@ -1,5 +1,13 @@
 # @leight/ui
 
+## 0.6.4
+
+### Patch Changes
+
+- Improved RPC
+- Updated dependencies
+    - @leight/rpc@0.6.17
+
 ## 0.6.3
 
 ### Patch Changes

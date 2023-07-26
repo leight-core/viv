@@ -32,7 +32,7 @@ export type IRpcProviderProps = PropsWithChildren<{
 
 export const RpcProvider: FC<IRpcProviderProps> = (
     {
-        url,
+        url = process.env.NEXT_PUBLIC_RPC || "/api/rpc",
         ...props
     }) => {
     return <RpcStore.Provider
@@ -40,7 +40,7 @@ export const RpcProvider: FC<IRpcProviderProps> = (
             bulkTimerRef: useRef<NodeJS.Timeout>(),
             timeoutRef:   useRef<NodeJS.Timeout>(),
             bulkRef:      useRef({}),
-            url:          url || "/api/rpc",
+            url,
         }}
         {...props}
     />;

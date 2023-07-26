@@ -1,5 +1,11 @@
 # @leight/rpc
 
+## 0.6.17
+
+### Patch Changes
+
+- Improved RPC
+
 ## 0.6.16
 
 ### Patch Changes

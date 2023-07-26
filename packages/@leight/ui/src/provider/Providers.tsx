@@ -7,8 +7,7 @@ import {
 import {DateTimeProvider}       from "@leight/i18n";
 import {
     createQueryClient,
-    QueryProvider,
-    WithAxios
+    QueryProvider
 }                               from "@leight/rpc";
 import {
     MantineProvider,
@@ -37,6 +36,7 @@ export type IProvidersProps = PropsWithChildren<{
      * Translations used in the application
      */
     translations: Record<string, any>;
+    rpcUrl?: string;
 }>;
 
 export const Providers: FC<IProvidersProps> = (
@@ -45,6 +45,7 @@ export const Providers: FC<IProvidersProps> = (
         emotionCache = withEmotionCache(),
         locale,
         translations,
+        rpcUrl,
         children,
     }
 ) => {
@@ -60,8 +61,8 @@ export const Providers: FC<IProvidersProps> = (
 
     return <QueryProvider
         queryClient={createQueryClient()}
+        rpcUrl={rpcUrl}
     >
-        <WithAxios/>
         <CacheProvider
             value={emotionCache}
         >

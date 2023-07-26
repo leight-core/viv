@@ -12,15 +12,19 @@ import {RpcProvider} from "../store/RpcStore";
 
 export type IQueryProviderProps = PropsWithChildren<{
     queryClient: QueryClient;
+    rpcUrl?: string;
 }>;
 
 export const QueryProvider: FC<IQueryProviderProps> = (
     {
         queryClient,
+        rpcUrl,
         children
     }) => {
     return <QueryClientProvider client={queryClient}>
-        <RpcProvider>
+        <RpcProvider
+            url={rpcUrl}
+        >
             {children}
         </RpcProvider>
     </QueryClientProvider>;
