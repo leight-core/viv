@@ -1,5 +1,11 @@
 # @leight/utils
 
+## 0.6.7
+
+### Patch Changes
+
+- Exported more utils
+
 ## 0.6.6
 
 ### Patch Changes
