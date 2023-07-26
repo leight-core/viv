@@ -1,5 +1,5 @@
 {
-    "version": "0.6.8",
+    "version": "0.6.9",
     "name": "@leight/utils",
     "description": "Some simple utils used in @leight libraries.",
     "license": "MIT",
@@ -29,6 +29,7 @@
     },
     "dependencies": {
         "@paralleldrive/cuid2": "^2.2.1",
+        "@types/humanize-duration": "^3.27.1",
         "@types/is-callable": "^1.1.0",
         "@types/is-empty": "^1.2.1",
         "@types/is-object": "^1.0.2",
@@ -49,7 +50,6 @@
     "devDependencies": {
         "@leight/eslint-config-eslint": "^0.6.2",
         "@leight/tsconfig": "^0.6.2",
-        "@types/humanize-duration": "^3.27.1",
         "@types/node": "^20.4.2",
         "@types/react": "^18.2.15",
         "concurrently": "^8.2.0",
