@@ -1,3 +1,1 @@
-import empty from "is-empty";
-
-export const isEmpty = empty;
+export {default as isEmpty} from "is-empty";
