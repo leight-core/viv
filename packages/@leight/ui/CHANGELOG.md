@@ -1,5 +1,11 @@
 # @leight/ui
 
+## 0.6.5
+
+### Patch Changes
+
+- Changed default theme color
+
 ## 0.6.4
 
 ### Patch Changes

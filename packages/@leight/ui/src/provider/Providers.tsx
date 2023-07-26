@@ -73,8 +73,8 @@ export const Providers: FC<IProvidersProps> = (
                 <MantineProvider
                     theme={{
                         colorScheme:  "light",
-                        primaryColor: "green",
-                        primaryShade: 8,
+                        primaryColor: "blue",
+                        primaryShade: 5,
                         ...theme
                     }}
                     withGlobalStyles
