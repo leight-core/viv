@@ -15,7 +15,7 @@ export const Link: FC<ILinkProps> = (
     }) => {
     const {locale} = useRouter();
     return <CoolLink
-        href={`/${locale}/${href}`}
+        href={`/${locale}${href}`}
         {...props}
     />;
 };

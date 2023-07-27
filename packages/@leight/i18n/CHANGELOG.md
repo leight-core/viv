@@ -1,5 +1,11 @@
 # @leight/i18n
 
+## 0.6.9
+
+### Patch Changes
+
+- Fixed link generator
+
 ## 0.6.8
 
 ### Patch Changes
