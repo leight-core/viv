@@ -1,5 +1,11 @@
 # @leight/i18n
 
+## 0.6.8
+
+### Patch Changes
+
+- Added localised Link component
+
 ## 0.6.7
 
 ### Patch Changes

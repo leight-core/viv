@@ -6,6 +6,7 @@ export * from "./IDateTimeStoreProps";
 export * from "./ILocaleOfProps";
 export * from "./IWithTranslation";
 export * from "./IWithTranslator";
+export * from "./Link";
 export * from "./Translation";
 export * from "./isDateTime";
 export * from "./isTranslation";
