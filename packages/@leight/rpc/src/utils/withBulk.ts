@@ -88,7 +88,7 @@ export const withBulk = async <TRequestSchema extends IRequestSchema, TResponseS
                     resolve
                 }]) => {
                     /**
-                     * We're sure there is bulkRef as it's created together, check presence of data and
+                     * We're sure there is bulkRef as it's created together, check the presence of data and
                      * resolve/reject the given promise.
                      */
                     delete bulkRef.current[id];
