@@ -1,5 +1,11 @@
 # @leight/ui
 
+## 0.6.10
+
+### Patch Changes
+
+- Using localised Link
+
 ## 0.6.9
 
 ### Patch Changes

@@ -2,6 +2,7 @@
 
 import {
     type IWithTranslation,
+    Link,
     Translation
 }                         from "@leight/i18n";
 import {type ILink}       from "@leight/utils";
@@ -9,7 +10,6 @@ import {
     createStyles,
     Group
 }                         from "@mantine/core";
-import Link               from "next/link";
 import {usePathname}      from "next/navigation";
 import {WithIcon}         from "../ui/WithIcon";
 import {switchScheme}     from "../utils/switchScheme";
