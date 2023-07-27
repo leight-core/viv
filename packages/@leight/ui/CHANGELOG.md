@@ -1,5 +1,11 @@
 # @leight/ui
 
+## 0.6.7
+
+### Patch Changes
+
+- Improved layout
+
 ## 0.6.6
 
 ### Patch Changes

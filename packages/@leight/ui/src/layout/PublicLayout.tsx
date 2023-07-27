@@ -19,6 +19,7 @@ import {
     type ComponentProps,
     type FC,
     type PropsWithChildren,
+    type ReactNode,
     useEffect
 }                   from "react";
 import {BlockStore} from "../store/BlockStore";
@@ -34,6 +35,10 @@ export interface IPublicLayoutProps extends PropsWithChildren {
      * Hides login button from header
      */
     withoutLogin?: boolean;
+    /**
+     * Center part of the layout (header)
+     */
+    center?: ReactNode;
 }
 
 export const PublicLayout: FC<IPublicLayoutProps> = (
@@ -42,6 +47,7 @@ export const PublicLayout: FC<IPublicLayoutProps> = (
         homeUrl = "/public",
         loginUrl,
         withoutLogin = false,
+        center,
         children
     }) => {
     const block = BlockStore.use$();
@@ -67,6 +73,7 @@ export const PublicLayout: FC<IPublicLayoutProps> = (
                             src={logo}
                         />
                     </Link>
+                    {center}
                     {!withoutLogin && <Group>
                         <Button
                             leftIcon={<IconLogin/>}

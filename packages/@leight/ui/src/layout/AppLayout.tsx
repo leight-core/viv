@@ -15,6 +15,7 @@ import {
     type ComponentProps,
     type FC,
     type PropsWithChildren,
+    ReactNode,
     useEffect
 }                                 from "react";
 import {type IWithLogoutMutation} from "../api/IWithLogoutMutation";
@@ -25,6 +26,10 @@ export interface IAppLayoutProps extends PropsWithChildren {
     homeUrl?: string;
     publicUrl?: string;
     logoutMutation?: IWithLogoutMutation;
+    /**
+     * Center part of the layout (header)
+     */
+    center?: ReactNode;
 }
 
 /**
@@ -36,6 +41,7 @@ export const AppLayout: FC<IAppLayoutProps> = (
         homeUrl = "/root",
         publicUrl = "/public",
         logoutMutation,
+        center,
         children
     }) => {
     const logout = logoutMutation?.useMutation();
@@ -61,6 +67,7 @@ export const AppLayout: FC<IAppLayoutProps> = (
                             src={logo}
                         />
                     </Link>
+                    {center}
                     {logout && <Group>
                         <ActionIcon
                             size={"xl"}
