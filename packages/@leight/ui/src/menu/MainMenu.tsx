@@ -10,7 +10,7 @@ import {
     Group
 }                         from "@mantine/core";
 import Link               from "next/link";
-import {useRouter}        from "next/router";
+import {usePathname}      from "next/navigation";
 import {WithIcon}         from "../ui/WithIcon";
 import {switchScheme}     from "../utils/switchScheme";
 import {withPrimaryColor} from "../utils/withPrimaryColor";
@@ -63,12 +63,12 @@ export const MainMenu = <TLinks extends IMainMenuLinks>(
         active,
         withTranslation,
     }: IMainMenuProps<TLinks>) => {
-    const router = useRouter();
+    const pathname = usePathname();
     const {
         classes,
         cx
     } = useStyles();
-    const $active = (active || router.pathname) as string;
+    const $active = (active || pathname) as string;
     return <Group
         sx={{height: "100%"}}
         spacing={0}

@@ -1,5 +1,11 @@
 # @leight/ui
 
+## 0.6.8
+
+### Patch Changes
+
+- Fixed useRouter in menu
+
 ## 0.6.7
 
 ### Patch Changes
