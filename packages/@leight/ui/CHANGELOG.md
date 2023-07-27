@@ -1,5 +1,11 @@
 # @leight/ui
 
+## 0.6.9
+
+### Patch Changes
+
+- Fixed menu translaitons
+
 ## 0.6.8
 
 ### Patch Changes

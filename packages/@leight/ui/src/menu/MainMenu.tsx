@@ -89,7 +89,7 @@ export const MainMenu = <TLinks extends IMainMenuLinks>(
                     />
                     <Translation
                         {...withTranslation}
-                        label={link.label || id}
+                        withLabel={link.label || id}
                     />
                 </Group>
             </Link>
