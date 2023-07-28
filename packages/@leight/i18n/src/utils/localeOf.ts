@@ -5,6 +5,9 @@ export interface ILocaleOfProps {
     fallback: string;
 }
 
+/**
+ * Extract preferred locale from the available locales and fallback locale.
+ */
 export const localeOf = (
     {
         available,

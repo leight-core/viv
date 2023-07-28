@@ -1,5 +1,13 @@
 # @leight/ui
 
+## 0.6.17
+
+### Patch Changes
+
+- Improved locale stuff
+- Updated dependencies
+    - @leight/i18n@0.6.18
+
 ## 0.6.16
 
 ### Patch Changes

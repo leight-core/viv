@@ -1,6 +1,6 @@
 import {
     type IWithTranslation,
-    Link,
+    LocaleLink,
     Translation
 }                        from "@leight/i18n";
 import {type IHrefProps} from "@leight/utils";
@@ -40,7 +40,7 @@ export const ButtonLink: FC<IButtonLinkProps> = (
 				</span> : null}
             </Button>;
         }
-        return <Link
+        return <LocaleLink
             href={href}
             passHref
             legacyBehavior
@@ -56,7 +56,7 @@ export const ButtonLink: FC<IButtonLinkProps> = (
 					</span> : null}
                 </Button>
             </a>
-        </Link>;
+        </LocaleLink>;
     } catch (e) {
         console.error(e);
         return <Button

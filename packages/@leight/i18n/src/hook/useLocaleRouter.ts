@@ -7,7 +7,10 @@ import {
     useRouter as useCoolRouter
 } from "next/navigation";
 
-export const useRouter = () => {
+/**
+ * Router with locale; expects "locale" parameter in Next.js `useParams` hook.
+ */
+export const useLocaleRouter = () => {
     const router = useCoolRouter();
     const {locale} = useParams() as unknown as {
         locale: string

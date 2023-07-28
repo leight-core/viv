@@ -2,7 +2,7 @@
 
 import {
     type IWithTranslation,
-    Link,
+    LocaleLink,
     Translation
 }                         from "@leight/i18n";
 import {type ILink}       from "@leight/utils";
@@ -74,7 +74,7 @@ export const MainMenu = <TLinks extends IMainMenuLinks>(
         spacing={0}
     >
         {Object.entries(links).map(([id, link]) => (
-            <Link
+            <LocaleLink
                 key={id}
                 href={link.href}
                 className={cx(classes.link, {
@@ -92,7 +92,7 @@ export const MainMenu = <TLinks extends IMainMenuLinks>(
                         withLabel={link.label || id}
                     />
                 </Group>
-            </Link>
+            </LocaleLink>
         ))}
     </Group>;
 };

@@ -1,7 +1,7 @@
 "use client";
 
 import {
-    useRouter,
+    useLocaleRouter,
     useTranslation
 }                   from "@leight/i18n";
 import {
@@ -52,7 +52,7 @@ export const PublicLayout: FC<IPublicLayoutProps> = (
     }) => {
     const block = BlockStore.use$();
     const t = useTranslation("public");
-    const router = useRouter();
+    const router = useLocaleRouter();
     useEffect(() => {
         block?.unblock();
     }, []);

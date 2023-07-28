@@ -1,5 +1,5 @@
 {
-    "version": "0.6.16",
+    "version": "0.6.17",
     "name": "@leight/ui",
     "description": "Common UI stuff.",
     "license": "MIT",
@@ -31,7 +31,7 @@
         "@emotion/cache": "^11.11.0",
         "@emotion/react": "^11.11.1",
         "@leight/file": "^0.6.4",
-        "@leight/i18n": "^0.6.17",
+        "@leight/i18n": "^0.6.18",
         "@leight/rpc": "^0.6.19",
         "@leight/store": "^0.6.6",
         "@leight/utils": "^0.6.14",

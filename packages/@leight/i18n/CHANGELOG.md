@@ -1,5 +1,11 @@
 # @leight/i18n
 
+## 0.6.18
+
+### Patch Changes
+
+- Improved locale stuff
+
 ## 0.6.17
 
 ### Patch Changes

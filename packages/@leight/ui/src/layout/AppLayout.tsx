@@ -1,6 +1,6 @@
 "use client";
 
-import {useRouter}                from "@leight/i18n";
+import {useLocaleRouter}          from "@leight/i18n";
 import {
     ActionIcon,
     Box,
@@ -46,7 +46,7 @@ export const AppLayout: FC<IAppLayoutProps> = (
     }) => {
     const logout = logoutMutation?.useMutation();
     const block = BlockStore.use$();
-    const router = useRouter();
+    const router = useLocaleRouter();
     useEffect(() => {
         block?.unblock();
     }, []);
