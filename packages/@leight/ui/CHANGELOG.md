@@ -1,5 +1,11 @@
 # @leight/ui
 
+## 0.6.11
+
+### Patch Changes
+
+- Added useRouter without locale
+
 ## 0.6.10
 
 ### Patch Changes

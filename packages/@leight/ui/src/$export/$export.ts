@@ -36,4 +36,5 @@ export * from "./Stack";
 export * from "./VersionStamp";
 export * from "./useChunk";
 export * from "./useLoop";
+export * from "./useRedirect";
 export * from "./withSuccessNotification";
