@@ -1,4 +1,7 @@
-import buildUrl    from "build-url-ts";
+import {
+    type IHrefQuery,
+    linkTo
+}                  from "@leight/utils";
 import CoolLink    from "next/link";
 import {
     type ComponentProps,
@@ -7,7 +10,7 @@ import {
 import {useRouter} from "../hook/useRouter";
 
 export interface ILinkProps extends ComponentProps<typeof CoolLink> {
-    query?: Record<string, any> | undefined | null;
+    query?: IHrefQuery;
 }
 
 export const Link: FC<ILinkProps> = (
@@ -18,9 +21,9 @@ export const Link: FC<ILinkProps> = (
     }) => {
     const {locale} = useRouter();
     return <CoolLink
-        href={buildUrl({
-            path:        `/${locale}${href}`,
-            queryParams: query || undefined,
+        href={linkTo({
+            href: `/${locale}${href}`,
+            query,
         })}
         {...props}
     />;

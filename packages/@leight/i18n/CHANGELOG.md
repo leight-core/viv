@@ -1,5 +1,11 @@
 # @leight/i18n
 
+## 0.6.13
+
+### Patch Changes
+
+- Updated link
+
 ## 0.6.12
 
 ### Patch Changes
