@@ -1,0 +1,9 @@
+{
+    "root": true,
+    "extends": [
+        "@leight/eslint"
+    ],
+    "rules": {
+        "react/display-name": "off"
+    }
+}
