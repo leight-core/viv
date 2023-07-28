@@ -1,3 +1,5 @@
+"use client";
+
 import {type IWithTranslation} from "../utils/IWithTranslation";
 import {useTranslation}        from "./useTranslation";
 

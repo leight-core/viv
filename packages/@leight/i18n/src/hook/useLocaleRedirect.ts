@@ -1,3 +1,5 @@
+"use client";
+
 import {type IHrefProps} from "@leight/utils";
 import {useEffect}       from "react";
 import {useLocaleRouter} from "./useLocaleRouter";

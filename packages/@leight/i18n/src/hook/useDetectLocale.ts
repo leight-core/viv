@@ -1,3 +1,5 @@
+"use client";
+
 import {useEffect}           from "react";
 import {type ILocaleOfProps} from "../utils/localeOf";
 import {useLocaleOf}         from "./useLocaleOf";

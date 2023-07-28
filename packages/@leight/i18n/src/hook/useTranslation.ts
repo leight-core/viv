@@ -1,3 +1,5 @@
+"use client";
+
 import {isString}              from "@leight/utils";
 import {useTranslations}       from "next-intl";
 import {isTranslation}         from "../utils/isTranslation";
