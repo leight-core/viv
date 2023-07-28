@@ -1,5 +1,11 @@
 # @leight/utils
 
+## 0.6.12
+
+### Patch Changes
+
+- Improved linkTo
+
 ## 0.6.11
 
 ### Patch Changes
