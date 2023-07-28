@@ -1,5 +1,11 @@
 # @leight/i18n
 
+## 0.6.19
+
+### Patch Changes
+
+- Added new hook
+
 ## 0.6.18
 
 ### Patch Changes

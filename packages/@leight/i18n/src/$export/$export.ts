@@ -17,4 +17,5 @@ export * from "./useLocaleOf";
 export * from "./useLocaleRedirect";
 export * from "./useLocaleRouter";
 export * from "./useTranslation";
+export * from "./useWithLocaleRedirect";
 export * from "luxon";
