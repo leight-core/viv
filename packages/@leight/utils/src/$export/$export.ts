@@ -23,6 +23,7 @@ export * from "./isCallable";
 export * from "./isEmpty";
 export * from "./isObject";
 export * from "./isString";
+export * from "./linkTo";
 export * from "./merge";
 export * from "./minMaxOf";
 export * from "./toHref";

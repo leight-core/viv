@@ -77,7 +77,9 @@ export const PublicLayout: FC<IPublicLayoutProps> = (
                     {!withoutLogin && <Group>
                         <Button
                             leftIcon={<IconLogin/>}
-                            onClick={() => loginUrl ? router.push(loginUrl) : signIn()}
+                            onClick={() => loginUrl ? router.push({
+                                href: loginUrl,
+                            }) : signIn()}
                         >
                             {t("button.sign-in")}
                         </Button>

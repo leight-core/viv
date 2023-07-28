@@ -74,7 +74,9 @@ export const AppLayout: FC<IAppLayoutProps> = (
                             onClick={() => {
                                 block?.block();
                                 logout.mutate(undefined, {
-                                    onSuccess: () => router.push(publicUrl),
+                                    onSuccess: () => router.push({
+                                        href: publicUrl,
+                                    }),
                                 });
                             }}
                         >

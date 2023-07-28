@@ -1,5 +1,14 @@
 # @leight/ui
 
+## 0.6.13
+
+### Patch Changes
+
+- Improved link stuff
+- Updated dependencies
+    - @leight/utils@0.6.11
+    - @leight/i18n@0.6.12
+
 ## 0.6.12
 
 ### Patch Changes

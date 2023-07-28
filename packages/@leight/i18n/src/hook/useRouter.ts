@@ -1,4 +1,8 @@
 import {
+    type IHrefProps,
+    linkTo
+} from "@leight/utils";
+import {
     useParams,
     useRouter as useCoolRouter
 } from "next/navigation";
@@ -14,6 +18,12 @@ export const useRouter = () => {
     return {
         locale,
         ...router,
-        push: (href: string) => router.push(`/${locale ?? ""}${href}`),
+        push: ({
+                   href,
+                   query
+               }: IHrefProps) => router.push(linkTo({
+            href: `/${locale ?? ""}${href}`,
+            query,
+        })),
     } as const;
 };
