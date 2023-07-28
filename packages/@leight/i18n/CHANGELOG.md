@@ -1,5 +1,11 @@
 # @leight/i18n
 
+## 0.6.16
+
+### Patch Changes
+
+- Fixed wrong import
+
 ## 0.6.15
 
 ### Patch Changes
