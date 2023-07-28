@@ -1,29 +1,32 @@
 import {
-    type IHrefQuery,
+    isString,
     linkTo
-}                  from "@leight/utils";
-import CoolLink    from "next/link";
+}                        from "@leight/utils";
+import {type IHrefProps} from "@leight/utils/lib";
+import CoolLink          from "next/link";
 import {
     type ComponentProps,
     type FC
-}                  from "react";
-import {useRouter} from "../hook/useRouter";
+}                        from "react";
+import {useRouter}       from "../hook/useRouter";
 
-export interface ILinkProps extends ComponentProps<typeof CoolLink> {
-    query?: IHrefQuery;
+export interface ILinkProps extends Omit<ComponentProps<typeof CoolLink>, "href"> {
+    href: IHrefProps | string;
 }
 
 export const Link: FC<ILinkProps> = (
     {
         href,
-        query,
         ...props
     }) => {
     const {locale} = useRouter();
+    console.log("Locale link", locale, href);
     return <CoolLink
-        href={linkTo({
-            href: `/${locale}${href}`,
-            query,
+        href={linkTo(isString(href) ? {
+            href,
+        } : {
+            href:  `/${locale}${href.href}`,
+            query: href.query,
         })}
         {...props}
     />;

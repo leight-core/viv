@@ -3,6 +3,7 @@ export * from "./BlockProvider";
 export * from "./BlockStore";
 export * from "./Box";
 export * from "./Button";
+export * from "./ButtonLink";
 export * from "./Center";
 export * from "./Container";
 export * from "./DimmedText";
