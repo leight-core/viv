@@ -1,6 +1,1 @@
-import {type IHrefQuery} from "./IHrefQuery";
-
-export interface IHrefProps<TQuery extends IHrefQuery = IHrefQuery> {
-    href: string;
-    query?: TQuery;
-}
+export {type IHrefProps} from "../api/IHrefProps";
