@@ -1,5 +1,13 @@
 # @leight/ui
 
+## 0.6.12
+
+### Patch Changes
+
+- VErsion bump
+- Updated dependencies
+    - @leight/i18n@0.6.11
+
 ## 0.6.11
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @leight/i18n
 
+## 0.6.11
+
+### Patch Changes
+
+- VErsion bump
+
 ## 0.6.10
 
 ### Patch Changes

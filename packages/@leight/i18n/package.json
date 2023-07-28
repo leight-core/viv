@@ -1,5 +1,5 @@
 {
-    "version": "0.6.10",
+    "version": "0.6.11",
     "name": "@leight/i18n",
     "description": "I18n support.",
     "license": "MIT",
@@ -31,6 +31,7 @@
         "@leight/store": "^0.6.5",
         "@leight/utils": "^0.6.10",
         "@types/luxon": "^3.3.0",
+        "build-url-ts": "^6.1.5",
         "luxon": "^3.3.0",
         "next": "^13.4.10",
         "next-intl": "^2.14.6",

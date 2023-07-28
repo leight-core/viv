@@ -133,7 +133,7 @@ export const DropZone: FC<IDropZoneProps> = (
                     </CoolDropzone.Idle>
                     <div>
                         <Text size={"xl"} inline>
-                            <Translation {...withTranslation} />
+                            <Translation {...withTranslation}/>
                         </Text>
                         <Text
                             size={"sm"}
@@ -143,7 +143,7 @@ export const DropZone: FC<IDropZoneProps> = (
                         >
                             <Translation
                                 {...withTranslation}
-                                label={`${withTranslation.label}.hint`}
+                                withLabel={"hint"}
                             />
                         </Text>
                     </div>
@@ -153,19 +153,22 @@ export const DropZone: FC<IDropZoneProps> = (
         {files.length > 0 && (
             <>
                 <Divider m={"md"}/>
-                <Table fontSize={"xs"} highlightOnHover>
+                <Table
+                    fontSize={"xs"}
+                    highlightOnHover
+                >
                     <thead>
                         <tr>
                             <th style={{width: "420px"}}>
                                 <Translation
                                     {...withTranslation}
-                                    label={`${withTranslation.label}.file`}
+                                    withLabel={"file"}
                                 />
                             </th>
                             <th>
                                 <Translation
                                     {...withTranslation}
-                                    label={`${withTranslation.label}.progress`}
+                                    withLabel={"progress"}
                                 />
                             </th>
                         </tr>

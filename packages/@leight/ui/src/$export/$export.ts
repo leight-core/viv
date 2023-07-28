@@ -7,6 +7,7 @@ export * from "./Center";
 export * from "./Container";
 export * from "./DimmedText";
 export * from "./DrawerStore";
+export * from "./DropZone";
 export * from "./ErrorOverlay";
 export * from "./FulltextStore";
 export * from "./Group";
