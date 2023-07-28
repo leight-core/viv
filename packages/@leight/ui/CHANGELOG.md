@@ -1,5 +1,14 @@
 # @leight/ui
 
+## 0.6.16
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/utils@0.6.14
+    - @leight/file@0.6.4
+
 ## 0.6.15
 
 ### Patch Changes

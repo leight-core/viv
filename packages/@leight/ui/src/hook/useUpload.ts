@@ -1,11 +1,11 @@
 import {
-    type IChunkService,
     type IFile,
+    type IFileCommit,
     type IFileWithPath
 }                            from "@leight/file";
 import {
     type IHrefProps,
-    toHref
+    linkTo
 }                            from "@leight/utils";
 import axios                 from "axios";
 import {useRef}              from "react";
@@ -52,7 +52,7 @@ export const useUpload = (
                          end
                      }) {
             return axios.post(
-                toHref({
+                linkTo({
                     ...chunkHref,
                     query: {chunkId: uuid.current}
                 }),
@@ -69,8 +69,8 @@ export const useUpload = (
             return axios
                 .post<unknown, {
                     data: IFile
-                }, IChunkService.CommitProps>(
-                    toHref({
+                }, IFileCommit>(
+                    linkTo({
                         ...commitHref,
                         query: {chunkId: uuid.current}
                     }),

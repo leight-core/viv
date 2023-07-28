@@ -6,7 +6,7 @@ import {
 }                  from "@leight/i18n";
 import {
     type IHrefProps,
-    toHref
+    linkTo
 }                  from "@leight/utils";
 import {Tabs}      from "@mantine/core";
 import {useRouter} from "next/router";
@@ -47,7 +47,7 @@ export const TabLinkMenu: FC<ITabLinkMenuProps> = (
                     <Tabs.Tab
                         key={href.href}
                         icon={<WithIcon icon={icon}/>}
-                        value={toHref(href)}
+                        value={linkTo(href)}
                     >
                         {withTranslation && (
                             <Translation {...withTranslation} />

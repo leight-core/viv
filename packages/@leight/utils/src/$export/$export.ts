@@ -26,7 +26,6 @@ export * from "./isString";
 export * from "./linkTo";
 export * from "./merge";
 export * from "./minMaxOf";
-export * from "./toHref";
 export * from "./toHumanBytes";
 export * from "./toHumanNumber";
 export * from "./toHumanTimeMs";
