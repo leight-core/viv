@@ -1,6 +1,7 @@
 "use client";
 
 import {
+    LocaleLink,
     useLocaleRouter,
     useTranslation
 }                   from "@leight/i18n";
@@ -14,7 +15,6 @@ import {
 import {IconLogin}  from "@tabler/icons-react";
 import {signIn}     from "next-auth/react";
 import Image        from "next/image";
-import Link         from "next/link";
 import {
     type ComponentProps,
     type FC,
@@ -64,16 +64,18 @@ export const PublicLayout: FC<IPublicLayoutProps> = (
             />
             <Header height={72} px={"md"}>
                 <Group position={"apart"} sx={{height: "100%"}}>
-                    <Link href={`/${router.locale ?? ""}${homeUrl ?? ""}`}>
-                        <Image
-                            priority={true}
-                            width={200}
-                            height={64}
-                            alt={"logo"}
-                            src={logo}
-                        />
-                    </Link>
-                    {center}
+                    <Group>
+                        <LocaleLink href={homeUrl}>
+                            <Image
+                                priority={true}
+                                width={200}
+                                height={64}
+                                alt={"logo"}
+                                src={logo}
+                            />
+                        </LocaleLink>
+                        {center}
+                    </Group>
                     {!withoutLogin && <Group>
                         <Button
                             leftIcon={<IconLogin/>}
