@@ -12,6 +12,7 @@ export * from "./isDateTime";
 export * from "./isTranslation";
 export * from "./localeOf";
 export * from "./useLabel";
+export * from "./useRedirect";
 export * from "./useRouter";
 export * from "./useTranslation";
 export * from "luxon";
