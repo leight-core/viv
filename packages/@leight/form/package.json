@@ -1,5 +1,5 @@
 {
-    "version": "0.6.3",
+    "version": "0.6.4",
     "name": "@leight/form",
     "description": "Form support stuff.",
     "license": "MIT",
@@ -28,11 +28,11 @@
         "cleanup:lib": "del-cli .turbo lib tsconfig.tsbuildinfo src/**/*.{d.ts,d.ts.map,js,js.map}"
     },
     "dependencies": {
-        "@leight/i18n": "^0.6.17",
-        "@leight/rpc": "^0.6.19",
-        "@leight/store": "^0.6.6",
-        "@leight/ui": "^0.6.15",
-        "@leight/utils": "^0.6.13",
+        "@leight/i18n": "^0.6.20",
+        "@leight/rpc": "^0.6.20",
+        "@leight/store": "^0.6.7",
+        "@leight/ui": "^0.6.19",
+        "@leight/utils": "^0.6.15",
         "@mantine/core": "^6.0.17",
         "@mantine/form": "^6.0.17",
         "@mantine/hooks": "^6.0.17",
@@ -40,8 +40,8 @@
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "^0.6.3",
-        "@leight/tsconfig": "^0.6.3",
+        "@leight/eslint-config-eslint": "^0.6.4",
+        "@leight/tsconfig": "^0.6.4",
         "@types/node": "^20.4.2",
         "@types/react": "^18.2.15",
         "concurrently": "^8.2.0",

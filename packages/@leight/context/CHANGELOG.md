@@ -1,5 +1,11 @@
 # @leight/context
 
+## 0.6.6
+
+### Patch Changes
+
+- Version bump
+
 ## 0.6.5
 
 ### Patch Changes

@@ -1,5 +1,5 @@
 {
-    "version": "0.6.3",
+    "version": "0.6.4",
     "name": "@leight/esbuild",
     "description": "Esbuild helper stuff.",
     "license": "MIT",
@@ -32,8 +32,8 @@
         "glob": "^10.3.3"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "^0.6.3",
-        "@leight/tsconfig": "^0.6.3",
+        "@leight/eslint-config-eslint": "^0.6.4",
+        "@leight/tsconfig": "^0.6.4",
         "@types/node": "^20.4.2",
         "concurrently": "^8.2.0",
         "del-cli": "^5.0.0",

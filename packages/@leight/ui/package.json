@@ -1,5 +1,5 @@
 {
-    "version": "0.6.18",
+    "version": "0.6.19",
     "name": "@leight/ui",
     "description": "Common UI stuff.",
     "license": "MIT",
@@ -30,11 +30,11 @@
     "dependencies": {
         "@emotion/cache": "^11.11.0",
         "@emotion/react": "^11.11.1",
-        "@leight/file": "^0.6.4",
-        "@leight/i18n": "^0.6.18",
-        "@leight/rpc": "^0.6.19",
-        "@leight/store": "^0.6.6",
-        "@leight/utils": "^0.6.14",
+        "@leight/file": "^0.6.5",
+        "@leight/i18n": "^0.6.20",
+        "@leight/rpc": "^0.6.20",
+        "@leight/store": "^0.6.7",
+        "@leight/utils": "^0.6.15",
         "@mantine/core": "^6.0.16",
         "@mantine/dropzone": "^6.0.16",
         "@mantine/hooks": "^6.0.16",
@@ -51,8 +51,8 @@
         "uuid": "^9.0.0"
     },
     "devDependencies": {
-        "@leight/eslint-config-eslint": "^0.6.3",
-        "@leight/tsconfig": "^0.6.3",
+        "@leight/eslint-config-eslint": "^0.6.4",
+        "@leight/tsconfig": "^0.6.4",
         "@types/node": "^20.4.2",
         "@types/react": "^18.2.15",
         "@types/uuid": "^9.0.2",

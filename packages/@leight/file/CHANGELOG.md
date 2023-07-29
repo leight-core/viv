@@ -1,5 +1,13 @@
 # @leight/file
 
+## 0.6.5
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/utils@0.6.15
+
 ## 0.6.4
 
 ### Patch Changes

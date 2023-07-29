@@ -1,5 +1,17 @@
 # @leight/ui
 
+## 0.6.19
+
+### Patch Changes
+
+- Version bump
+- Updated dependencies
+    - @leight/file@0.6.5
+    - @leight/i18n@0.6.20
+    - @leight/rpc@0.6.20
+    - @leight/store@0.6.7
+    - @leight/utils@0.6.15
+
 ## 0.6.18
 
 ### Patch Changes
