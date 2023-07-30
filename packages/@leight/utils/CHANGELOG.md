@@ -1,5 +1,11 @@
 # @leight/utils
 
+## 0.6.16
+
+### Patch Changes
+
+- Added some utility functions
+
 ## 0.6.15
 
 ### Patch Changes

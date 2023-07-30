@@ -21,6 +21,8 @@ export * from "./generateId";
 export * from "./intersectOf";
 export * from "./isCallable";
 export * from "./isEmpty";
+export * from "./isHrefProps";
+export * from "./isLink";
 export * from "./isObject";
 export * from "./isString";
 export * from "./linkTo";
