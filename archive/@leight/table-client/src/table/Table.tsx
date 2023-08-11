@@ -159,6 +159,7 @@ export namespace ITableInternalProps {
         items?: ITableColumn.IItem<TColumn>[];
     }
 
+    dd;
     export interface IWithRowActionProps<TColumn extends ITableColumn> {
         item: ITableColumn.IItem<TColumn>;
     }
