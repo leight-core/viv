@@ -57,13 +57,17 @@ export const withQuery = <TRequestSchema extends IRequestSchema, TResponseSchema
             });
         },
         useQuery:   options => {
+            const store = RpcStore.use();
+            const request = null;
             return useQuery({
+                queryKey: queryKey.concat(options?.queryKey || []).concat([request].filter(Boolean)),
+                queryFn:  async () => withBulk<TRequestSchema, TResponseSchema>({
+                    service,
+                    request: requestSchema?.parse(request) ?? request,
+                    store,
+                    schema:  responseSchema,
+                }),
                 ...options,
-                queryKey,
-                queryFn: async () => {
-                    console.error("Not implemented yet: useQuery with key", queryKey);
-                    return [];
-                },
             });
         },
         useQueryEx: ({

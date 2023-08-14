@@ -1,5 +1,11 @@
 # @leight/rpc
 
+## 0.6.24
+
+### Patch Changes
+
+- Improved default query
+
 ## 0.6.23
 
 ### Patch Changes
