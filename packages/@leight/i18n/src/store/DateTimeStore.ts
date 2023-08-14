@@ -48,5 +48,5 @@ export const DateTimeStore = createStore<IDateTimeStoreProps>({
         ...state,
     }),
     name:  "DateTimeStore",
-    hint:  "Add DateTimeStore.Provider.",
+    hint: "Add DateTimeProvider.",
 });

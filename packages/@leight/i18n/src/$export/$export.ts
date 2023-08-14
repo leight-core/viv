@@ -1,5 +1,6 @@
 export * from "./DateTime";
 export * from "./DateTimeProvider";
+export * from "./DateTimeStore";
 export * from "./DetectLocale";
 export * from "./IDateInput";
 export * from "./IDateTimeStoreProps";

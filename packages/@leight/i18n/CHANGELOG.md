@@ -1,5 +1,11 @@
 # @leight/i18n
 
+## 0.6.22
+
+### Patch Changes
+
+- Exported DateTimeStore
+
 ## 0.6.21
 
 ### Patch Changes
