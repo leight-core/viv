@@ -1,5 +1,11 @@
 # @leight/query
 
+## 0.6.3
+
+### Patch Changes
+
+- Added new type
+
 ## 0.6.2
 
 ### Patch Changes
