@@ -1,5 +1,11 @@
 # @leight/query
 
+## 0.6.4
+
+### Patch Changes
+
+- Improved query types
+
 ## 0.6.3
 
 ### Patch Changes

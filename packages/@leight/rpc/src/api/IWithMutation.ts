@@ -11,6 +11,5 @@ export interface IWithMutation<TRequestSchema extends IRequestSchema, TResponseS
         response: TResponseSchema,
     };
     useInvalidator: IInvalidator.Use;
-
-    useMutation: IUseMutation<TRequestSchema, TResponseSchema>;
+    useMutation: IUseMutation.Use<TRequestSchema, TResponseSchema>;
 }

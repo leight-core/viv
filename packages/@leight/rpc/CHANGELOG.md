@@ -1,5 +1,13 @@
 # @leight/rpc
 
+## 0.6.23
+
+### Patch Changes
+
+- Improved query types
+- Updated dependencies
+    - @leight/query@0.6.4
+
 ## 0.6.22
 
 ### Patch Changes
