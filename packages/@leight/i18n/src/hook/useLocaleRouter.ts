@@ -26,9 +26,11 @@ export const useLocaleRouter = () => {
         push: ({
                    href,
                    query
-               }: IHrefProps) => router.push(linkTo({
-            href: `/${locale ?? ""}${href}`,
-            query,
-        })),
+               }: IHrefProps) => {
+            return router.push(linkTo({
+                href: `/${locale ?? ""}${href}`,
+                query,
+            }));
+        },
     } as const;
 };

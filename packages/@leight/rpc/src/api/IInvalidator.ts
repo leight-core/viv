@@ -1,6 +1,20 @@
-export type IInvalidator = (props: IInvalidator.Props) => void;
+import {type QueryClient} from "@tanstack/react-query";
 
 export namespace IInvalidator {
-    export interface Props {
+    /**
+     * Actual invalidator implementation (low level).
+     */
+    export type Invalidator = (props: InvalidatorProps) => void
+    /**
+     * Invalidator hook type.
+     */
+    export type Use = () => UseInvalidator;
+    /**
+     * Invalidator type in user-land.
+     */
+    export type UseInvalidator = () => void;
+
+    export interface InvalidatorProps {
+        queryClient: QueryClient;
     }
 }

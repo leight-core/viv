@@ -1,9 +1,10 @@
+import isObject          from "is-object";
 import {type IHrefProps} from "../api/IHrefProps";
 
 export const isHrefProps = (input: any): input is IHrefProps => {
-    if (!input) {
+    if (!input || !isObject(input)) {
         return false;
-    } else if (Object.hasOwn(input, "href")) {
+    } else if ("href" in input) {
         return true;
     }
     return false;

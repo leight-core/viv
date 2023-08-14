@@ -1,1 +1,1 @@
-export type CheckIfExtends<TCheck, TExtends, TYes, TNo> = TCheck extends TExtends ? TYes : TNo;
+export {type CheckIfExtends} from "../api/CheckIfExtends";

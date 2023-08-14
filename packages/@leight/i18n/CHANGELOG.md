@@ -1,19 +1,12 @@
 # @leight/i18n
 
-## 0.6.20
+## 0.6.21
 
 ### Patch Changes
 
-- Version bump
+- Updated packages
 - Updated dependencies
-    - @leight/store@0.6.7
-    - @leight/utils@0.6.15
-
-## 0.6.19
-
-### Patch Changes
-
-- Added new hook
+    - @leight/utils@0.6.17
 
 ## 0.6.18
 

@@ -1,10 +1,13 @@
 import {
+    IErrorResponse,
+    isError
+}                                  from "@leight/query";
+import {
     generateId,
     withTimeout,
-    z
+    type z
 }                                  from "@leight/utils";
 import axios, {type AxiosResponse} from "axios";
-import {type IErrorResponse}       from "../schema/ErrorResponseSchema";
 import {type IRequestSchema}       from "../schema/RequestSchema";
 import {type IResponseSchema}      from "../schema/ResponseSchema";
 import {type IRpcBulkRequest}      from "../schema/RpcBulkRequestSchema";
@@ -15,7 +18,6 @@ import {
 import {type IRpcRequest}          from "../schema/RpcRequestSchema";
 import {type IRpcStoreProps}       from "../store/RpcStore";
 import {isData}                    from "./isData";
-import {isError}                   from "./isError";
 
 export interface IWithBulkProps<TRequestSchema extends IRequestSchema, TResponseSchema extends IResponseSchema> {
     schema?: TResponseSchema;

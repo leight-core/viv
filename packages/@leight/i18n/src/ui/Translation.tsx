@@ -25,12 +25,18 @@ export const Translation: FC<ITranslationProps> = (
         withLabel,
         values,
     }) => {
-    const t = useTranslation(namespace);
+    const t = useTranslation({
+        namespace,
+        label,
+        values,
+    });
+    if (!withLabel) {
+        return null;
+    }
     if (!isString(withLabel)) {
         return <>{withLabel}</>;
     }
-    const $label = [label, withLabel].filter(Boolean).join(".");
     return <>
-        {t($label, values)}
+        {t(withLabel, values)}
     </>;
 };

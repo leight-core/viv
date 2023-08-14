@@ -1,7 +1,7 @@
+import {ErrorResponseSchema}        from "@leight/query";
 import {z}                          from "@leight/utils";
 import {type withRpcResponseSchema} from "../utils/withRpcResponseSchema";
 import {DataResponseSchema}         from "./DataResponseSchema";
-import {ErrorResponseSchema}        from "./ErrorResponseSchema";
 
 export const RpcResponseSchema = z.union([
     ErrorResponseSchema,

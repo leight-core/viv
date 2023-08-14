@@ -1,9 +1,13 @@
 "use client";
 
-import {z}                    from "@leight/utils";
-import {useQuery}             from "@tanstack/react-query";
-import {type IQueryOptions}   from "../api/IQueryOptions";
-import {IWithQuery}           from "../api/IWithQuery";
+import {IQueryOptions}        from "@leight/query";
+import {type z}               from "@leight/utils";
+import {
+    useQuery,
+    useQueryClient
+}                             from "@tanstack/react-query";
+import {type IInvalidator}    from "../api/IInvalidator";
+import {type IWithQuery}      from "../api/IWithQuery";
 import {type IRequestSchema}  from "../schema/RequestSchema";
 import {type IResponseSchema} from "../schema/ResponseSchema";
 import {RpcStore}             from "../store/RpcStore";
@@ -16,6 +20,7 @@ export interface IWithQueryProps<TRequestSchema extends IRequestSchema, TRespons
     },
     service: string;
     key?: string[];
+    invalidator?: IInvalidator.Invalidator;
 }
 
 /**
@@ -28,15 +33,28 @@ export const withQuery = <TRequestSchema extends IRequestSchema, TResponseSchema
                     response: responseSchema,
                 },
         service,
+        invalidator,
         key,
     }: IWithQueryProps<TRequestSchema, TResponseSchema>): IWithQuery<TRequestSchema, TResponseSchema> => {
     const queryKey = key || [service];
     return {
-        key:      queryKey as string[],
+        key:    queryKey as string[],
         service,
-        schema:   {
+        schema: {
             request:  requestSchema,
             response: responseSchema,
+        },
+        useInvalidator() {
+            const queryClient = useQueryClient();
+            return invalidator ? (() => {
+                invalidator({
+                    queryClient,
+                });
+            }) : (() => {
+                queryClient.invalidateQueries({
+                    queryKey,
+                });
+            });
         },
         useQuery: ({
                        options: {

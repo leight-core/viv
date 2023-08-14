@@ -1,8 +1,7 @@
-import {z}                    from "@leight/utils";
+import {type IUseQuery}       from "@leight/query";
 import {type IRequestSchema}  from "../schema/RequestSchema";
 import {type IResponseSchema} from "../schema/ResponseSchema";
-import {type IQueryOptions}   from "./IQueryOptions";
-import {type IUseQueryResult} from "./IUseQueryResult";
+import {type IInvalidator}    from "./IInvalidator";
 
 /**
  * This is a base object containing everything you need to use an RPC query.
@@ -14,6 +13,7 @@ export interface IWithQuery<TRequestSchema extends IRequestSchema, TResponseSche
         request: TRequestSchema,
         response: TResponseSchema,
     };
+    useInvalidator: IInvalidator.Use;
 
-    useQuery(props: IQueryOptions<z.infer<TResponseSchema>, z.infer<TRequestSchema>>): IUseQueryResult<z.infer<TResponseSchema>>;
+    useQuery: IUseQuery<TRequestSchema, TResponseSchema>;
 }

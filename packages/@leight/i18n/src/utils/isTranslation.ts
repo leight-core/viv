@@ -1,7 +1,8 @@
-import {type IWithTranslation} from ".././$export/IWithTranslation";
+import {isObject}              from "@leight/utils";
+import {type IWithTranslation} from "./IWithTranslation";
 
 export const isTranslation = (input?: any): input is IWithTranslation => {
-    if (!input) {
+    if (!input || !isObject(input)) {
         return false;
     }
     return "namespace" in input || "label" in input || "withLabel" in input || "values" in input;
