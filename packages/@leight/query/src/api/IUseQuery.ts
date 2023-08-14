@@ -15,4 +15,6 @@ export namespace IUseQuery {
     > {
         (props: IQueryOptions<z.infer<TResponseSchema>, z.infer<TRequestSchema>>): IUseQueryResult<z.infer<TResponseSchema>>;
     }
+
+    export type UseList<TSchema extends z.ZodSchema> = IUseQuery.Use<z.ZodArray<z.infer<TSchema>>>;
 }
