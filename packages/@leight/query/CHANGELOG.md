@@ -1,5 +1,17 @@
 # @leight/query
 
+## 0.6.6
+
+### Patch Changes
+
+- Improved QueryResult component
+
+## 0.6.5
+
+### Patch Changes
+
+- Added QueryResult component
+
 ## 0.6.4
 
 ### Patch Changes

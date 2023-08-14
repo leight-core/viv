@@ -4,11 +4,11 @@ import {type IErrorResponse} from "../schema/ErrorResponseSchema";
 
 export interface IQueryResultProps<TResult> {
     result: IUseQuery.Result<TResult>;
-    WithLoading: FC<object>;
-    WithSuccess: FC<{
+    WithLoading?: FC<object>;
+    WithSuccess?: FC<{
         data: TResult;
     }>;
-    WithError: FC<{
+    WithError?: FC<{
         error: IErrorResponse;
     }>;
 }
@@ -20,13 +20,12 @@ export const QueryResult = <TResult, >(
         WithSuccess,
         WithError,
     }: IQueryResultProps<TResult>) => {
-    if (result.isLoading) {
+    if (result.isLoading && WithLoading) {
         return <WithLoading/>;
-    } else if (result.isSuccess) {
+    } else if (result.isSuccess && WithSuccess) {
         return <WithSuccess data={result.data}/>;
-    } else if (result.isError) {
+    } else if (result.isError && WithError) {
         return <WithError error={result.error}/>;
     }
-    console.error("Unhandled React Query status!");
     return null;
 };
