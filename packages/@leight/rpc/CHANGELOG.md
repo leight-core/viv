@@ -1,5 +1,13 @@
 # @leight/rpc
 
+## 0.6.22
+
+### Patch Changes
+
+- Improved React Query stuff
+- Updated dependencies
+    - @leight/query@0.6.2
+
 ## 0.6.21
 
 ### Patch Changes

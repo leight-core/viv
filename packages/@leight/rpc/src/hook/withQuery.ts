@@ -56,13 +56,23 @@ export const withQuery = <TRequestSchema extends IRequestSchema, TResponseSchema
                 });
             });
         },
-        useQuery: ({
-                       options: {
-                                    queryKey: $queryKey,
-                                    ...       options
-                                } = {queryKey},
-                       request,
-                   }: IQueryOptions<z.infer<TResponseSchema>, z.infer<TRequestSchema>>) => {
+        useQuery:   options => {
+            return useQuery({
+                ...options,
+                queryKey,
+                queryFn: async () => {
+                    console.error("Not implemented yet: useQuery with key", queryKey);
+                    return [];
+                },
+            });
+        },
+        useQueryEx: ({
+                         options: {
+                                      queryKey: $queryKey,
+                                      ...       options
+                                  } = {queryKey},
+                         request,
+                     }: IQueryOptions<z.infer<TResponseSchema>, z.infer<TRequestSchema>>) => {
             const store = RpcStore.use();
             return useQuery({
                 queryKey: queryKey.concat($queryKey || []).concat([request].filter(Boolean)),
